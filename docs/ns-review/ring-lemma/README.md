@@ -1,13 +1,20 @@
-# Ring Lemma sources (Oct 2026 ingest)
+# Ring Lemma — corrected geometric note (Oct 2, 2026)
 
-Copies of Jonathan’s uploads for audit. **Governing honesty summary:** [`../RING-LEMMA-RECONCILIATION-2026-10.md`](../RING-LEMMA-RECONCILIATION-2026-10.md).
+**Exact lemma PDF for Jonathan:** `RingLemma_Corrected_Geometric_Note_2026-10-02.pdf`
 
-| File | Original upload | Role |
-| --- | --- | --- |
-| `RingLemma_Corrected_Geometric_Note_2026-10-02.tex` | `RingLemma_Corrected_Geometric_Note_2026-10-02_f623.tex` | **Current geometric SoT** — RL-G1…G3; no PDE/NS claim |
-| `RingLemma_Simons_June19_2026.tex` | `RingLemma_Simons_June19_2026_740b.tex` | **Archive** — June 19 augmented/SND narrative; Ring geometry **superseded** |
-| `RingLemma_Ledger_Reconciliation_2026-10-02_72fe.txt` | same basename | Proposed July-ledger row reconciliation (NS-1…NS-11 vs April Ring source) |
+Built from `RingLemma_Corrected_Geometric_Note_2026-10-02.tex` with `pdflatex` (2 pages).
 
-Upload path (agent environment): `/home/ubuntu/.cursor/projects/workspace/uploads/`.
+## Scope
 
-**Honesty:** No Clay. SND = conditional texture. NS-10 OPEN. NS-11 not claimed. June 19 is not the geometric authority after Oct 2.
+Spatial geometry only: band-limited vorticity direction estimates (RL-style \(L^2\)-threshold \(L^{5/2}\), sharpness, and \(L^\infty\)-threshold linear bound). **No PDE / Navier–Stokes / Clay regularity claim.**
+
+## Sources
+
+| File | Role |
+|------|------|
+| `RingLemma_Corrected_Geometric_Note_2026-10-02.tex` | Corrected geometric note (preferred publish source) |
+| `RingLemma_Corrected_Geometric_Note_2026-10-02.pdf` | Compiled PDF delivery |
+| `RingLemma_Ledger_Reconciliation_2026-10-02_72fe.txt` | Ledger reconciliation |
+| `RingLemma_Simons_June19_2026.tex` | Recovered June 19 manuscript (superseded geometrically by Oct 2 note) |
+
+Artifact mirror: `/opt/cursor/artifacts/nse-status-now/RingLemma_Corrected_Geometric_Note_2026-10-02.pdf`
