@@ -132,6 +132,54 @@ Installed Ring hardware (done) → optional SND texture → live gate still open
 
 ---
 
+## 16 — Ring 2D slice gallery
+
+**File:** `figures/ring-geom-2d-slice-gallery.png`
+
+Four successive \(\mathbb{T}^3\) cuts: \(|\omega|\) with \(E_c\) contour, then \(\xi\) arrows on that set. How the strong geometry changes through the torus.
+
+---
+
+## 17 — Ring 2D twist close-up
+
+**File:** `figures/ring-geom-2d-twist-closeup.png`
+
+One mid-plane: dense direction field on \(E_c\), and the measured twist rate \(|\nabla\xi|\) Ring bounds.
+
+---
+
+## 18 — Ring 3D strong set
+
+**File:** `figures/ring-geom-3d-strong-set.png`
+
+Point cloud of \(E_c\) colored by \(|\omega|\), plus 3D direction sticks \(\xi=\omega/|\omega|\).
+
+---
+
+## 19 — Ring 3D Fourier shell
+
+**File:** `figures/ring-geom-3d-fourier-shell.png`
+
+Frequency-space annulus (the literal “ring” of modes) and a cutaway view of the same shell.
+
+---
+
+## 20 — Ring 3D direction ribbons
+
+**File:** `figures/ring-geom-3d-direction-ribbons.png`
+
+Integral curves of \(\xi\) inside \(E_c\). Band-limit ⇒ these ribbons cannot kink arbitrarily sharply.
+
+---
+
+## 21 — Ring 2D/3D combo
+
+**File:** `figures/ring-geom-2d3d-combo.png`
+
+Same geometry twice: a 2D torus cut with arrows, and the full 3D strong set with the cut plane marked.
+
+---
+
 ## Φ-renorm callout (text figure)
 
 Keep visible in any slide that shows the side branch:
