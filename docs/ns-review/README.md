@@ -23,7 +23,7 @@ Reproducibility: [`scripts/ns_attacks/`](../../scripts/ns_attacks/).
 
 **One-line:** OPEN at \(T_{j\leftarrow j}\) / PRODUCT-BLOCK. NS not claimed.
 
-Campaign / outreach materials (if present under `docs/campaign/`) are **not** part of the scientific face.
+Campaign / outreach materials (if present under `docs/campaign/`) are **not** part of the scientific face. Jonathan-facing status board (DONE / live gates / apps, no Clay trophy language): [`../campaign/NSE-VISUAL-PROGRESS.md`](../campaign/NSE-VISUAL-PROGRESS.md). Ring publish decision: [`RING-LEMMA-PUBLISH-CHECKLIST.md`](./RING-LEMMA-PUBLISH-CHECKLIST.md) — YES as short spatial geometry note after edits.
 
 ## Φ-renorm (KEEP; conditional)
 
