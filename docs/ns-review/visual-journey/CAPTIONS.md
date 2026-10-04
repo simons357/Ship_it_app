@@ -92,6 +92,46 @@ Amplitude ratios on an explicit triad. Documents that pure viscous absorption \(
 
 ---
 
+## 11 — Ring Lemma hardware card
+
+**File:** `figures/ring-hardware-what-it-is-card.png`
+
+Plain-English card: Ring is spatial hardware on band-limited vorticity direction. Lists what it does (bounds \(\nabla\xi\) on \(E_c\) / \(F_a\)) and what it does not (no NS evolution, no Clay).
+
+---
+
+## 12 — Ring Fourier ball
+
+**File:** `figures/ring-hardware-fourier-ball.png`
+
+3D lattice of Fourier modes inside \(|k|\le L\), plus the gradient ceilings the shell forces: \(L^{5/2}\) from \(L^2\) mass, and Bernstein’s linear-in-\(L\) bound from \(L^\infty\).
+
+---
+
+## 13 — Ring strong-set direction field
+
+**File:** `figures/ring-hardware-strong-set-xi.png`
+
+Synthetic band-limited vorticity on a \(\mathbb{T}^3\) slice: \(|\omega|\) heatmap, direction arrows \(\xi=\omega/|\omega|\) only on the strong set \(E_c\), and measured \(|\nabla\xi|\) on that set. Snapshot geometry — not dynamics.
+
+---
+
+## 14 — Ring sharpness scaling
+
+**File:** `figures/ring-hardware-sharpness-scaling.png`
+
+Log-log plot of the Oct 2 shear-family lower bound forcing \(L^{5/2}\) at fixed \(L^2\) threshold. The plain \(CL\) hope is false for RL-G1’s set.
+
+---
+
+## 15 — Ring on the map
+
+**File:** `figures/ring-hardware-on-the-map.png`
+
+Installed Ring hardware (done) → optional SND texture → live gate still open (\(T_{j\leftarrow j}\), \(\alpha_+\), product / \(\mathcal{R}_\star\)).
+
+---
+
 ## Φ-renorm callout (text figure)
 
 Keep visible in any slide that shows the side branch:
