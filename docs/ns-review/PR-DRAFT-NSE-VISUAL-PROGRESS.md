@@ -4,7 +4,7 @@
 **Base:** `main` (tip also carries campaign/visual assets from `cursor/visual-ns-book-0cc5`)  
 **Compare:** https://github.com/simons357/Ship_it_app/compare/main...cursor/nse-visual-progress-0cc5  
 
-**PR create:** use ManagePullRequest if available; else open the compare link as a **draft** PR. Prior runs sometimes hit `gh` 403.
+**PR create:** `gh pr create` returned **403** (`Resource not accessible by integration`). ManagePullRequest tool not available in this run. Open the compare link above to file the **draft** PR (or wait for Cloud Agent PR automation).
 
 ## Title
 
