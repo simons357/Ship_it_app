@@ -29,6 +29,10 @@ claim-ledger or aerostat packs):
   survives, no occupancy;
   regeneration of all-high scalene is
   the remaining blank).
+- [`TWO-TRIANGLE-NORMAL-ANGLE.md`](TWO-TRIANGLE-NORMAL-ANGLE.md)
+  — \(\rho_2=1/\sqrt2\) is the orthogonal
+  \(e_2\) special case; near-parallel
+  oriented normals send \(\rho\to 1\).
 
 ## STATUS board
 

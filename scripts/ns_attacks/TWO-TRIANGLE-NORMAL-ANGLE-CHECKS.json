@@ -1,0 +1,1751 @@
+{
+  "scope": "Two-triangle HH\u2192L snapshot: assembled equal-weight channel \u03c1=|e2+e2'|/2 vs angle between triangle normals. Not Need\u2605 proved. Not (17). Not occupancy census.",
+  "geometric_identity": {
+    "formula": "rho = sqrt((1+cos \u03b8)/2) = |cos(\u03b8/2)| for equal amplitudes, phases that align the channel scalars",
+    "samples": [
+      {
+        "case": "orthogonal",
+        "cos_theta": "0",
+        "rho_squared": "1/2",
+        "rho": 0.7071067811865476,
+        "one_over_sqrt2": 0.7071067811865475
+      },
+      {
+        "case": "cos=1/2 (60\u00b0)",
+        "cos_theta": "1/2",
+        "rho_squared": "3/4",
+        "rho": 0.8660254037844386,
+        "one_over_sqrt2": 0.7071067811865475
+      },
+      {
+        "case": "cos=3/4",
+        "cos_theta": "3/4",
+        "rho_squared": "7/8",
+        "rho": 0.9354143466934853,
+        "one_over_sqrt2": 0.7071067811865475
+      },
+      {
+        "case": "cos=15/16",
+        "cos_theta": "15/16",
+        "rho_squared": "31/32",
+        "rho": 0.9842509842514764,
+        "one_over_sqrt2": 0.7071067811865475
+      },
+      {
+        "case": "cos=255/256",
+        "cos_theta": "255/256",
+        "rho_squared": "511/512",
+        "rho": 0.9990229601966113,
+        "one_over_sqrt2": 0.7071067811865475
+      },
+      {
+        "case": "parallel",
+        "cos_theta": "1",
+        "rho_squared": "1",
+        "rho": 1.0,
+        "one_over_sqrt2": 0.7071067811865475
+      }
+    ],
+    "conclusion": "At orthogonal normals (\u03b8=\u03c0/2) one gets exactly 1/\u221a2. As oriented normals become parallel (\u03b8\u21920), \u03c1\u21921 and the 1/\u221a2 improvement disappears. As oriented normals become antiparallel (\u03b8\u2192\u03c0), \u03c1\u21920 (stronger cancellation)."
+  },
+  "lattice_scan": {
+    "alpha_max": 50,
+    "beta_max": 40,
+    "pair_count": 8094,
+    "orthogonal_undirected_count": 714,
+    "near_parallel_planes_cos_abs_ge_0.95_count": 300,
+    "near_parallel_oriented_cos_ge_0.95_count": 252,
+    "near_antiparallel_oriented_cos_le_-0.95_count": 48,
+    "mid_angle_count": 4668,
+    "orthogonal_examples": [
+      {
+        "alpha": 50,
+        "beta": 36,
+        "k": [
+          -6,
+          0,
+          0
+        ],
+        "leg_a": [
+          [
+            -3,
+            -5,
+            -4
+          ],
+          [
+            -3,
+            5,
+            4
+          ]
+        ],
+        "leg_b": [
+          [
+            -3,
+            -4,
+            5
+          ],
+          [
+            -3,
+            4,
+            -5
+          ]
+        ],
+        "cos_abs": 0.0,
+        "rho_undirected_planes": 0.7071067811865476,
+        "cos_oriented": 0.0,
+        "rho_oriented_normals": 0.7071067811865476,
+        "theta_abs_deg": 90.0
+      },
+      {
+        "alpha": 50,
+        "beta": 36,
+        "k": [
+          -6,
+          0,
+          0
+        ],
+        "leg_a": [
+          [
+            -3,
+            -5,
+            4
+          ],
+          [
+            -3,
+            5,
+            -4
+          ]
+        ],
+        "leg_b": [
+          [
+            -3,
+            -4,
+            -5
+          ],
+          [
+            -3,
+            4,
+            5
+          ]
+        ],
+        "cos_abs": 0.0,
+        "rho_undirected_planes": 0.7071067811865476,
+        "cos_oriented": 0.0,
+        "rho_oriented_normals": 0.7071067811865476,
+        "theta_abs_deg": 90.0
+      },
+      {
+        "alpha": 50,
+        "beta": 36,
+        "k": [
+          0,
+          -6,
+          0
+        ],
+        "leg_a": [
+          [
+            -5,
+            -3,
+            -4
+          ],
+          [
+            5,
+            -3,
+            4
+          ]
+        ],
+        "leg_b": [
+          [
+            -4,
+            -3,
+            5
+          ],
+          [
+            4,
+            -3,
+            -5
+          ]
+        ],
+        "cos_abs": 0.0,
+        "rho_undirected_planes": 0.7071067811865476,
+        "cos_oriented": 0.0,
+        "rho_oriented_normals": 0.7071067811865476,
+        "theta_abs_deg": 90.0
+      },
+      {
+        "alpha": 50,
+        "beta": 36,
+        "k": [
+          0,
+          -6,
+          0
+        ],
+        "leg_a": [
+          [
+            -5,
+            -3,
+            4
+          ],
+          [
+            5,
+            -3,
+            -4
+          ]
+        ],
+        "leg_b": [
+          [
+            -4,
+            -3,
+            -5
+          ],
+          [
+            4,
+            -3,
+            5
+          ]
+        ],
+        "cos_abs": 0.0,
+        "rho_undirected_planes": 0.7071067811865476,
+        "cos_oriented": 0.0,
+        "rho_oriented_normals": 0.7071067811865476,
+        "theta_abs_deg": 90.0
+      },
+      {
+        "alpha": 50,
+        "beta": 36,
+        "k": [
+          0,
+          0,
+          -6
+        ],
+        "leg_a": [
+          [
+            -5,
+            -4,
+            -3
+          ],
+          [
+            5,
+            4,
+            -3
+          ]
+        ],
+        "leg_b": [
+          [
+            -4,
+            5,
+            -3
+          ],
+          [
+            4,
+            -5,
+            -3
+          ]
+        ],
+        "cos_abs": 0.0,
+        "rho_undirected_planes": 0.7071067811865476,
+        "cos_oriented": 0.0,
+        "rho_oriented_normals": 0.7071067811865476,
+        "theta_abs_deg": 90.0
+      },
+      {
+        "alpha": 50,
+        "beta": 36,
+        "k": [
+          0,
+          0,
+          -6
+        ],
+        "leg_a": [
+          [
+            -5,
+            4,
+            -3
+          ],
+          [
+            5,
+            -4,
+            -3
+          ]
+        ],
+        "leg_b": [
+          [
+            -4,
+            -5,
+            -3
+          ],
+          [
+            4,
+            5,
+            -3
+          ]
+        ],
+        "cos_abs": 0.0,
+        "rho_undirected_planes": 0.7071067811865476,
+        "cos_oriented": 0.0,
+        "rho_oriented_normals": 0.7071067811865476,
+        "theta_abs_deg": 90.0
+      },
+      {
+        "alpha": 50,
+        "beta": 36,
+        "k": [
+          0,
+          0,
+          6
+        ],
+        "leg_a": [
+          [
+            -5,
+            -4,
+            3
+          ],
+          [
+            5,
+            4,
+            3
+          ]
+        ],
+        "leg_b": [
+          [
+            -4,
+            5,
+            3
+          ],
+          [
+            4,
+            -5,
+            3
+          ]
+        ],
+        "cos_abs": 0.0,
+        "rho_undirected_planes": 0.7071067811865476,
+        "cos_oriented": 0.0,
+        "rho_oriented_normals": 0.7071067811865476,
+        "theta_abs_deg": 90.0
+      },
+      {
+        "alpha": 50,
+        "beta": 36,
+        "k": [
+          0,
+          0,
+          6
+        ],
+        "leg_a": [
+          [
+            -5,
+            4,
+            3
+          ],
+          [
+            5,
+            -4,
+            3
+          ]
+        ],
+        "leg_b": [
+          [
+            -4,
+            -5,
+            3
+          ],
+          [
+            4,
+            5,
+            3
+          ]
+        ],
+        "cos_abs": 0.0,
+        "rho_undirected_planes": 0.7071067811865476,
+        "cos_oriented": 0.0,
+        "rho_oriented_normals": 0.7071067811865476,
+        "theta_abs_deg": 90.0
+      }
+    ],
+    "orthogonal_oriented_examples": [
+      {
+        "alpha": 50,
+        "beta": 36,
+        "k": [
+          -6,
+          0,
+          0
+        ],
+        "leg_a": [
+          [
+            -3,
+            -5,
+            -4
+          ],
+          [
+            -3,
+            5,
+            4
+          ]
+        ],
+        "leg_b": [
+          [
+            -3,
+            -4,
+            5
+          ],
+          [
+            -3,
+            4,
+            -5
+          ]
+        ],
+        "cos_abs": 0.0,
+        "rho_undirected_planes": 0.7071067811865476,
+        "cos_oriented": 0.0,
+        "rho_oriented_normals": 0.7071067811865476,
+        "theta_abs_deg": 90.0
+      },
+      {
+        "alpha": 50,
+        "beta": 36,
+        "k": [
+          -6,
+          0,
+          0
+        ],
+        "leg_a": [
+          [
+            -3,
+            -5,
+            4
+          ],
+          [
+            -3,
+            5,
+            -4
+          ]
+        ],
+        "leg_b": [
+          [
+            -3,
+            -4,
+            -5
+          ],
+          [
+            -3,
+            4,
+            5
+          ]
+        ],
+        "cos_abs": 0.0,
+        "rho_undirected_planes": 0.7071067811865476,
+        "cos_oriented": 0.0,
+        "rho_oriented_normals": 0.7071067811865476,
+        "theta_abs_deg": 90.0
+      },
+      {
+        "alpha": 50,
+        "beta": 36,
+        "k": [
+          0,
+          -6,
+          0
+        ],
+        "leg_a": [
+          [
+            -5,
+            -3,
+            -4
+          ],
+          [
+            5,
+            -3,
+            4
+          ]
+        ],
+        "leg_b": [
+          [
+            -4,
+            -3,
+            5
+          ],
+          [
+            4,
+            -3,
+            -5
+          ]
+        ],
+        "cos_abs": 0.0,
+        "rho_undirected_planes": 0.7071067811865476,
+        "cos_oriented": 0.0,
+        "rho_oriented_normals": 0.7071067811865476,
+        "theta_abs_deg": 90.0
+      },
+      {
+        "alpha": 50,
+        "beta": 36,
+        "k": [
+          0,
+          -6,
+          0
+        ],
+        "leg_a": [
+          [
+            -5,
+            -3,
+            4
+          ],
+          [
+            5,
+            -3,
+            -4
+          ]
+        ],
+        "leg_b": [
+          [
+            -4,
+            -3,
+            -5
+          ],
+          [
+            4,
+            -3,
+            5
+          ]
+        ],
+        "cos_abs": 0.0,
+        "rho_undirected_planes": 0.7071067811865476,
+        "cos_oriented": 0.0,
+        "rho_oriented_normals": 0.7071067811865476,
+        "theta_abs_deg": 90.0
+      },
+      {
+        "alpha": 50,
+        "beta": 36,
+        "k": [
+          0,
+          0,
+          -6
+        ],
+        "leg_a": [
+          [
+            -5,
+            -4,
+            -3
+          ],
+          [
+            5,
+            4,
+            -3
+          ]
+        ],
+        "leg_b": [
+          [
+            -4,
+            5,
+            -3
+          ],
+          [
+            4,
+            -5,
+            -3
+          ]
+        ],
+        "cos_abs": 0.0,
+        "rho_undirected_planes": 0.7071067811865476,
+        "cos_oriented": 0.0,
+        "rho_oriented_normals": 0.7071067811865476,
+        "theta_abs_deg": 90.0
+      },
+      {
+        "alpha": 50,
+        "beta": 36,
+        "k": [
+          0,
+          0,
+          -6
+        ],
+        "leg_a": [
+          [
+            -5,
+            4,
+            -3
+          ],
+          [
+            5,
+            -4,
+            -3
+          ]
+        ],
+        "leg_b": [
+          [
+            -4,
+            -5,
+            -3
+          ],
+          [
+            4,
+            5,
+            -3
+          ]
+        ],
+        "cos_abs": 0.0,
+        "rho_undirected_planes": 0.7071067811865476,
+        "cos_oriented": 0.0,
+        "rho_oriented_normals": 0.7071067811865476,
+        "theta_abs_deg": 90.0
+      },
+      {
+        "alpha": 50,
+        "beta": 36,
+        "k": [
+          0,
+          0,
+          6
+        ],
+        "leg_a": [
+          [
+            -5,
+            -4,
+            3
+          ],
+          [
+            5,
+            4,
+            3
+          ]
+        ],
+        "leg_b": [
+          [
+            -4,
+            5,
+            3
+          ],
+          [
+            4,
+            -5,
+            3
+          ]
+        ],
+        "cos_abs": 0.0,
+        "rho_undirected_planes": 0.7071067811865476,
+        "cos_oriented": 0.0,
+        "rho_oriented_normals": 0.7071067811865476,
+        "theta_abs_deg": 90.0
+      },
+      {
+        "alpha": 50,
+        "beta": 36,
+        "k": [
+          0,
+          0,
+          6
+        ],
+        "leg_a": [
+          [
+            -5,
+            4,
+            3
+          ],
+          [
+            5,
+            -4,
+            3
+          ]
+        ],
+        "leg_b": [
+          [
+            -4,
+            -5,
+            3
+          ],
+          [
+            4,
+            5,
+            3
+          ]
+        ],
+        "cos_abs": 0.0,
+        "rho_undirected_planes": 0.7071067811865476,
+        "cos_oriented": 0.0,
+        "rho_oriented_normals": 0.7071067811865476,
+        "theta_abs_deg": 90.0
+      }
+    ],
+    "near_parallel_planes_top": [
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          -1,
+          -1,
+          0
+        ],
+        "leg_a": [
+          [
+            -1,
+            0,
+            -7
+          ],
+          [
+            0,
+            -1,
+            7
+          ]
+        ],
+        "leg_b": [
+          [
+            -1,
+            0,
+            7
+          ],
+          [
+            0,
+            -1,
+            -7
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": -0.9797979797979798,
+        "rho_oriented_normals": 0.10050378152592125,
+        "theta_abs_deg": 11.53636237237645
+      },
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          -1,
+          0,
+          -1
+        ],
+        "leg_a": [
+          [
+            -1,
+            -7,
+            0
+          ],
+          [
+            0,
+            7,
+            -1
+          ]
+        ],
+        "leg_b": [
+          [
+            -1,
+            7,
+            0
+          ],
+          [
+            0,
+            -7,
+            -1
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": -0.9797979797979798,
+        "rho_oriented_normals": 0.10050378152592125,
+        "theta_abs_deg": 11.53636237237645
+      },
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          -1,
+          0,
+          1
+        ],
+        "leg_a": [
+          [
+            -1,
+            -7,
+            0
+          ],
+          [
+            0,
+            7,
+            1
+          ]
+        ],
+        "leg_b": [
+          [
+            -1,
+            7,
+            0
+          ],
+          [
+            0,
+            -7,
+            1
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": -0.9797979797979798,
+        "rho_oriented_normals": 0.10050378152592125,
+        "theta_abs_deg": 11.53636237237645
+      },
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          -1,
+          1,
+          0
+        ],
+        "leg_a": [
+          [
+            -1,
+            0,
+            -7
+          ],
+          [
+            0,
+            1,
+            7
+          ]
+        ],
+        "leg_b": [
+          [
+            -1,
+            0,
+            7
+          ],
+          [
+            0,
+            1,
+            -7
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": -0.9797979797979798,
+        "rho_oriented_normals": 0.10050378152592125,
+        "theta_abs_deg": 11.53636237237645
+      },
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          0,
+          -1,
+          -1
+        ],
+        "leg_a": [
+          [
+            -7,
+            -1,
+            0
+          ],
+          [
+            7,
+            0,
+            -1
+          ]
+        ],
+        "leg_b": [
+          [
+            -7,
+            0,
+            -1
+          ],
+          [
+            7,
+            -1,
+            0
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": 0.9797979797979798,
+        "rho_oriented_normals": 0.994936676326182,
+        "theta_abs_deg": 11.53636237237645
+      },
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          0,
+          -1,
+          1
+        ],
+        "leg_a": [
+          [
+            -7,
+            -1,
+            0
+          ],
+          [
+            7,
+            0,
+            1
+          ]
+        ],
+        "leg_b": [
+          [
+            -7,
+            0,
+            1
+          ],
+          [
+            7,
+            -1,
+            0
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": 0.9797979797979798,
+        "rho_oriented_normals": 0.994936676326182,
+        "theta_abs_deg": 11.53636237237645
+      },
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          0,
+          1,
+          -1
+        ],
+        "leg_a": [
+          [
+            -7,
+            0,
+            -1
+          ],
+          [
+            7,
+            1,
+            0
+          ]
+        ],
+        "leg_b": [
+          [
+            -7,
+            1,
+            0
+          ],
+          [
+            7,
+            0,
+            -1
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": 0.9797979797979798,
+        "rho_oriented_normals": 0.994936676326182,
+        "theta_abs_deg": 11.53636237237645
+      },
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          0,
+          1,
+          1
+        ],
+        "leg_a": [
+          [
+            -7,
+            0,
+            1
+          ],
+          [
+            7,
+            1,
+            0
+          ]
+        ],
+        "leg_b": [
+          [
+            -7,
+            1,
+            0
+          ],
+          [
+            7,
+            0,
+            1
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": 0.9797979797979798,
+        "rho_oriented_normals": 0.994936676326182,
+        "theta_abs_deg": 11.53636237237645
+      },
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          1,
+          -1,
+          0
+        ],
+        "leg_a": [
+          [
+            0,
+            -1,
+            -7
+          ],
+          [
+            1,
+            0,
+            7
+          ]
+        ],
+        "leg_b": [
+          [
+            0,
+            -1,
+            7
+          ],
+          [
+            1,
+            0,
+            -7
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": -0.9797979797979798,
+        "rho_oriented_normals": 0.10050378152592125,
+        "theta_abs_deg": 11.53636237237645
+      },
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          1,
+          0,
+          -1
+        ],
+        "leg_a": [
+          [
+            0,
+            -7,
+            -1
+          ],
+          [
+            1,
+            7,
+            0
+          ]
+        ],
+        "leg_b": [
+          [
+            0,
+            7,
+            -1
+          ],
+          [
+            1,
+            -7,
+            0
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": -0.9797979797979798,
+        "rho_oriented_normals": 0.10050378152592125,
+        "theta_abs_deg": 11.53636237237645
+      },
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          1,
+          0,
+          1
+        ],
+        "leg_a": [
+          [
+            0,
+            -7,
+            1
+          ],
+          [
+            1,
+            7,
+            0
+          ]
+        ],
+        "leg_b": [
+          [
+            0,
+            7,
+            1
+          ],
+          [
+            1,
+            -7,
+            0
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": -0.9797979797979798,
+        "rho_oriented_normals": 0.10050378152592125,
+        "theta_abs_deg": 11.53636237237645
+      },
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          1,
+          1,
+          0
+        ],
+        "leg_a": [
+          [
+            0,
+            1,
+            -7
+          ],
+          [
+            1,
+            0,
+            7
+          ]
+        ],
+        "leg_b": [
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            1,
+            0,
+            -7
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": -0.9797979797979798,
+        "rho_oriented_normals": 0.10050378152592125,
+        "theta_abs_deg": 11.53636237237645
+      }
+    ],
+    "near_parallel_oriented_top": [
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          0,
+          -1,
+          -1
+        ],
+        "leg_a": [
+          [
+            -7,
+            -1,
+            0
+          ],
+          [
+            7,
+            0,
+            -1
+          ]
+        ],
+        "leg_b": [
+          [
+            -7,
+            0,
+            -1
+          ],
+          [
+            7,
+            -1,
+            0
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": 0.9797979797979798,
+        "rho_oriented_normals": 0.994936676326182,
+        "theta_abs_deg": 11.53636237237645
+      },
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          0,
+          -1,
+          1
+        ],
+        "leg_a": [
+          [
+            -7,
+            -1,
+            0
+          ],
+          [
+            7,
+            0,
+            1
+          ]
+        ],
+        "leg_b": [
+          [
+            -7,
+            0,
+            1
+          ],
+          [
+            7,
+            -1,
+            0
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": 0.9797979797979798,
+        "rho_oriented_normals": 0.994936676326182,
+        "theta_abs_deg": 11.53636237237645
+      },
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          0,
+          1,
+          -1
+        ],
+        "leg_a": [
+          [
+            -7,
+            0,
+            -1
+          ],
+          [
+            7,
+            1,
+            0
+          ]
+        ],
+        "leg_b": [
+          [
+            -7,
+            1,
+            0
+          ],
+          [
+            7,
+            0,
+            -1
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": 0.9797979797979798,
+        "rho_oriented_normals": 0.994936676326182,
+        "theta_abs_deg": 11.53636237237645
+      },
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          0,
+          1,
+          1
+        ],
+        "leg_a": [
+          [
+            -7,
+            0,
+            1
+          ],
+          [
+            7,
+            1,
+            0
+          ]
+        ],
+        "leg_b": [
+          [
+            -7,
+            1,
+            0
+          ],
+          [
+            7,
+            0,
+            1
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": 0.9797979797979798,
+        "rho_oriented_normals": 0.994936676326182,
+        "theta_abs_deg": 11.53636237237645
+      },
+      {
+        "alpha": 50,
+        "beta": 6,
+        "k": [
+          -2,
+          -1,
+          -1
+        ],
+        "leg_a": [
+          [
+            -5,
+            3,
+            4
+          ],
+          [
+            3,
+            -4,
+            -5
+          ]
+        ],
+        "leg_b": [
+          [
+            -5,
+            4,
+            3
+          ],
+          [
+            3,
+            -5,
+            -4
+          ]
+        ],
+        "cos_abs": 0.979381443298969,
+        "rho_undirected_planes": 0.994832006747614,
+        "cos_oriented": 0.979381443298969,
+        "rho_oriented_normals": 0.994832006747614,
+        "theta_abs_deg": 11.655094744381675
+      },
+      {
+        "alpha": 50,
+        "beta": 6,
+        "k": [
+          -2,
+          -1,
+          1
+        ],
+        "leg_a": [
+          [
+            -5,
+            3,
+            -4
+          ],
+          [
+            3,
+            -4,
+            5
+          ]
+        ],
+        "leg_b": [
+          [
+            -5,
+            4,
+            -3
+          ],
+          [
+            3,
+            -5,
+            4
+          ]
+        ],
+        "cos_abs": 0.979381443298969,
+        "rho_undirected_planes": 0.994832006747614,
+        "cos_oriented": 0.979381443298969,
+        "rho_oriented_normals": 0.994832006747614,
+        "theta_abs_deg": 11.655094744381675
+      },
+      {
+        "alpha": 50,
+        "beta": 6,
+        "k": [
+          -2,
+          1,
+          -1
+        ],
+        "leg_a": [
+          [
+            -5,
+            -4,
+            3
+          ],
+          [
+            3,
+            5,
+            -4
+          ]
+        ],
+        "leg_b": [
+          [
+            -5,
+            -3,
+            4
+          ],
+          [
+            3,
+            4,
+            -5
+          ]
+        ],
+        "cos_abs": 0.979381443298969,
+        "rho_undirected_planes": 0.994832006747614,
+        "cos_oriented": 0.979381443298969,
+        "rho_oriented_normals": 0.994832006747614,
+        "theta_abs_deg": 11.655094744381675
+      },
+      {
+        "alpha": 50,
+        "beta": 6,
+        "k": [
+          -2,
+          1,
+          1
+        ],
+        "leg_a": [
+          [
+            -5,
+            -4,
+            -3
+          ],
+          [
+            3,
+            5,
+            4
+          ]
+        ],
+        "leg_b": [
+          [
+            -5,
+            -3,
+            -4
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ],
+        "cos_abs": 0.979381443298969,
+        "rho_undirected_planes": 0.994832006747614,
+        "cos_oriented": 0.979381443298969,
+        "rho_oriented_normals": 0.994832006747614,
+        "theta_abs_deg": 11.655094744381675
+      }
+    ],
+    "near_antiparallel_oriented_top": [
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          -1,
+          -1,
+          0
+        ],
+        "leg_a": [
+          [
+            -1,
+            0,
+            -7
+          ],
+          [
+            0,
+            -1,
+            7
+          ]
+        ],
+        "leg_b": [
+          [
+            -1,
+            0,
+            7
+          ],
+          [
+            0,
+            -1,
+            -7
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": -0.9797979797979798,
+        "rho_oriented_normals": 0.10050378152592125,
+        "theta_abs_deg": 11.53636237237645
+      },
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          -1,
+          0,
+          -1
+        ],
+        "leg_a": [
+          [
+            -1,
+            -7,
+            0
+          ],
+          [
+            0,
+            7,
+            -1
+          ]
+        ],
+        "leg_b": [
+          [
+            -1,
+            7,
+            0
+          ],
+          [
+            0,
+            -7,
+            -1
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": -0.9797979797979798,
+        "rho_oriented_normals": 0.10050378152592125,
+        "theta_abs_deg": 11.53636237237645
+      },
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          -1,
+          0,
+          1
+        ],
+        "leg_a": [
+          [
+            -1,
+            -7,
+            0
+          ],
+          [
+            0,
+            7,
+            1
+          ]
+        ],
+        "leg_b": [
+          [
+            -1,
+            7,
+            0
+          ],
+          [
+            0,
+            -7,
+            1
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": -0.9797979797979798,
+        "rho_oriented_normals": 0.10050378152592125,
+        "theta_abs_deg": 11.53636237237645
+      },
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          -1,
+          1,
+          0
+        ],
+        "leg_a": [
+          [
+            -1,
+            0,
+            -7
+          ],
+          [
+            0,
+            1,
+            7
+          ]
+        ],
+        "leg_b": [
+          [
+            -1,
+            0,
+            7
+          ],
+          [
+            0,
+            1,
+            -7
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": -0.9797979797979798,
+        "rho_oriented_normals": 0.10050378152592125,
+        "theta_abs_deg": 11.53636237237645
+      },
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          1,
+          -1,
+          0
+        ],
+        "leg_a": [
+          [
+            0,
+            -1,
+            -7
+          ],
+          [
+            1,
+            0,
+            7
+          ]
+        ],
+        "leg_b": [
+          [
+            0,
+            -1,
+            7
+          ],
+          [
+            1,
+            0,
+            -7
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": -0.9797979797979798,
+        "rho_oriented_normals": 0.10050378152592125,
+        "theta_abs_deg": 11.53636237237645
+      },
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          1,
+          0,
+          -1
+        ],
+        "leg_a": [
+          [
+            0,
+            -7,
+            -1
+          ],
+          [
+            1,
+            7,
+            0
+          ]
+        ],
+        "leg_b": [
+          [
+            0,
+            7,
+            -1
+          ],
+          [
+            1,
+            -7,
+            0
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": -0.9797979797979798,
+        "rho_oriented_normals": 0.10050378152592125,
+        "theta_abs_deg": 11.53636237237645
+      },
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          1,
+          0,
+          1
+        ],
+        "leg_a": [
+          [
+            0,
+            -7,
+            1
+          ],
+          [
+            1,
+            7,
+            0
+          ]
+        ],
+        "leg_b": [
+          [
+            0,
+            7,
+            1
+          ],
+          [
+            1,
+            -7,
+            0
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": -0.9797979797979798,
+        "rho_oriented_normals": 0.10050378152592125,
+        "theta_abs_deg": 11.53636237237645
+      },
+      {
+        "alpha": 50,
+        "beta": 2,
+        "k": [
+          1,
+          1,
+          0
+        ],
+        "leg_a": [
+          [
+            0,
+            1,
+            -7
+          ],
+          [
+            1,
+            0,
+            7
+          ]
+        ],
+        "leg_b": [
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            1,
+            0,
+            -7
+          ]
+        ],
+        "cos_abs": 0.9797979797979798,
+        "rho_undirected_planes": 0.994936676326182,
+        "cos_oriented": -0.9797979797979798,
+        "rho_oriented_normals": 0.10050378152592125,
+        "theta_abs_deg": 11.53636237237645
+      }
+    ]
+  },
+  "verdict": {
+    "rho_1_over_sqrt2_is": "specific to orthogonal e2 geometry under equal weights",
+    "near_parallel_oriented_normals": "\u03c1\u21921; the 1/\u221a2 vector-sum improvement is lost",
+    "near_antiparallel_oriented_normals": "\u03c1\u21920; signed assembly can cancel harder than 1/\u221a2",
+    "lattice_witness": "e.g. \u03b1=50, \u03b2=2, k=(-1,-1,0): undirected planes ~11.5\u00b0 apart (cos|\u00b7|\u22480.980) with oriented cos\u2248-0.980 \u21d2 \u03c1_oriented\u22480.101 (antiparallel cancellation), while the parallel-oriented alignment case pushes \u03c1 toward 1.",
+    "does_not_kill_signed_route": "The signed sum still uses Im and receiver compensation; only stamping 1/\u221a2 as a universal two-triangle constant is unsupported.",
+    "next": "Keep signed assembly; treat 1/\u221a2 as the orthogonal special case, not a robust universal factor"
+  }
+}

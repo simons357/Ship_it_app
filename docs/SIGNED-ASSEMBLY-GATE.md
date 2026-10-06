@@ -414,6 +414,17 @@ smallest coefficient-sharing pair.
 No \(\lvert\sum S\rvert\to\sum\lvert S\rvert\).
 No occupancy bound.
 
+6 Oct 2026 snapshot on whether
+\(\rho_2=1/\sqrt2\) survives near-parallel
+\(e_2\):
+[`TWO-TRIANGLE-NORMAL-ANGLE.md`](TWO-TRIANGLE-NORMAL-ANGLE.md).
+Exact identity
+\(\rho=\lvert\cos(\theta/2)\rvert\):
+orthogonal \(\Rightarrow 1/\sqrt2\);
+near-parallel oriented normals
+\(\Rightarrow\rho\to 1\). Do not stamp
+\(1/\sqrt2\) as universal.
+
 That is more precise than “close
 Navier–Stokes.” It is the identifiable
 bottleneck connecting
