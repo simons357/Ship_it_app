@@ -46,7 +46,7 @@ claim-ledger or aerostat packs):
 | Criterion (17): \(\sup_N S_{K,N}(T)<\infty\) with \(K=K(u_0,\nu)\) | **OPEN** — **priority target** |
 | Two-shell complete signed assembly \(\mathcal T=(b-a)(j_{b\leftarrow aa}-j_{a\leftarrow bb})\) | **Spatial test survives** (no occupancy); full write [`DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md`](DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md) |
 | Frozen \(K\) from initial \(\dot H^{1/2}\) tail | **Written** (datum-sensitive; \(t=0\) uniform in \(N\)) |
-| Regenerated all-high scalene in time (radius \(5\) from \(K=2\) two-sphere; \(\mathcal T_{\mathrm{sc}}(0)=0\), \(\mathcal T_{\mathrm{sc}}'(0)=28\) full field) | **OPEN** — remaining blank toward (17) |
+| Regenerated all-high scalene in time | **Local jet written** on \(K=2\) datum: \(\mathcal T_{\mathrm{sc}}(h_2)=(15084/1625)t^6+O(t^7)\); orders \(\le t^5\) vanish; \(\nu\)-independent — [`ALL-HIGH-T6-K2-DATUM.md`](ALL-HIGH-T6-K2-DATUM.md). Integrated budget / (17) still **OPEN** |
 | Universal energy-only \(F(E_0,\nu,K,T)\) on \(S^{(3)}\); reverse \(S^{(3)}\lesssim S+F\) | **KILLED** (exact shear obstruction, 3 Oct 2026) |
 | Unrestricted \(\star\); charge-only close; Theorem H as NS close | **KILLED** (prior desks) |
 | Global regularity / Clay / RH | **NOT CLAIMED** |
@@ -105,10 +105,12 @@ statements. Short board:
    \(\mathcal T_{\mathrm{sc}}(h)\) — two-shell
    **spatial** instance survives (6 Oct 2026);
    all-high-in-time still OPEN.
-4. Regenerative quartic forcing in (14)
-   along actual NSE — **OPEN, now the plow**.
+4. Regenerative quartic / all-high jet —
+   local \(t^6\) onset on the \(K=2\) datum
+   **written**; general control still OPEN.
 5. Integrate to uniform-in-\(N\) budget
-   at fixed \(K(u_0,\nu)\) = (17) — OPEN.
+   at fixed \(K(u_0,\nu)\) = (17) — OPEN
+   (incl. \(\nu Y/4\) threshold test).
 6. Continuation / Galerkin limit after
    uniform \(X\) — standard, not the blank.
 
@@ -129,8 +131,9 @@ Priority: (17).
 Energy-only \(S^{(3)}\) reverse: KILLED.
 Two-shell spatial signed assembly:
 survives (no occupancy).
-Regenerated all-high scalene in time:
-OPEN — plow here.
+All-high local jet on \(K=2\) datum:
+\(t^6\) onset written; (17) still OPEN —
+plow the integrated budget / threshold.
 (L3-5) fixed-datum: OPEN, deprioritized.
 Lemma A / sign gate: unaltered (as on
 parent desks).

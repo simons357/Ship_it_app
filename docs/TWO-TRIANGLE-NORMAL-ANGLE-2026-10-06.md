@@ -51,8 +51,13 @@ not a universal two-triangle constant.
 
 - Near-**parallel** oriented normals: the vector-sum improvement is
   **lost** (\(\rho\to 1\)).
-- Near-**antiparallel** oriented normals: signed assembly can cancel
+- Near-**antiparallel** oriented normals: for the **fixed phases**
+  used in the equal-weight identity, signed assembly can cancel
   **harder** than \(1/\sqrt2\) (\(\rho\to 0\)).
+- When **partner phases are optimized**, the attainable maximum
+  depends on \(\lvert\cos\theta\rvert\): either nearly parallel
+  orientation can approach full compatibility. That does **not**
+  restore \(1/\sqrt2\) as a universal constant.
 
 ---
 

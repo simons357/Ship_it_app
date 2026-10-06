@@ -12,6 +12,9 @@ Full note:
 \]
 
 Orthogonal \(\Rightarrow 1/\sqrt2\). Near-parallel oriented normals
-\(\Rightarrow\rho\to 1\). Near-antiparallel \(\Rightarrow\rho\to 0\).
+\(\Rightarrow\rho\to 1\). Near-antiparallel with fixed phases
+\(\Rightarrow\rho\to 0\); with optimized partner phases the max
+tracks \(\lvert\cos\theta\rvert\) (full compatibility possible
+either way). Still not a universal \(1/\sqrt2\).
 
 Checks: `scripts/ns_attacks/two_triangle_normal_angle_checks.py`.

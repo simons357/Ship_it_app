@@ -38,7 +38,7 @@ PR merges; no claim-ledger / aerostat):
 | **Criterion (17)** signed scalene budget | **OPEN — PRIORITY** | Same quantifier shape as (L3-5), different integrand. |
 | Two-shell complete signed assembly \(\mathcal T=(b-a)(j_{b\leftarrow aa}-j_{a\leftarrow bb})\) | **Spatial test survives** | No occupancy. Full write [`DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md`](../docs/DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md) |
 | Frozen \(K\) from initial \(\dot H^{1/2}\) tail | **Written** | \(K=\min\{n\ge1:C_0\|P_{>n}u_0\|_{\dot H^{1/2}}\le c\nu/2\}\). Uniform in \(N\) at \(t=0\) only. |
-| Regenerated all-high scalene in time | **OPEN — plow** | Exact two-sphere datum, \(K=2\), generates radius \(5\); \(\mathcal T_{\mathrm{sc}}(0)=0\), \(\mathcal T_{\mathrm{sc}}'(0)=28\) on the **full field**. |
+| Regenerated all-high scalene in time | **Local jet written / (17) OPEN** | \(K=2\) datum: \(\mathcal T_{\mathrm{sc}}(h_2)=(15084/1625)t^6+O(t^7)\); orders \(\le t^5\) vanish; \(\nu\)-independent. Blocks \((5,8,25)\), \((5,10,25)\). Full-field \(\mathcal T_{\mathrm{sc}}'(0)=28\) is separate. [`ALL-HIGH-T6-K2-DATUM.md`](../docs/ALL-HIGH-T6-K2-DATUM.md) |
 | Universal energy-only \(F(E_0,\nu,K,T)\) bounding \(S^{(3)}\) for all smooth data of energy \(E_0\) | **KILLED** | Exact shear family, 3 Oct 2026. |
 | Reverse comparison \(S^{(3)}\le C\,S+F(E_0,\nu,K,T)\) | **KILLED** | Same family: \(S=0\), \(S^{(3)}\) arbitrarily large. |
 | Unrestricted \(\sup\mathcal R_\star<\infty\); charge-only close; Theorem H as NS close | **KILLED** | Prior desks; do not reopen here. |
@@ -277,15 +277,15 @@ denominator fantasy that ignores regeneration.
 trajectories; uniform in \(N\) after \(K=K(u_0,\nu)\)
 is fixed. Datum-sensitive constants allowed.
 
-**Status.** OPEN — **now the plow.** Viscosity damps;
-it does not remove \(\mathcal Q\). The exact
-two-sphere datum with \(K=2\) has
-\(\mathcal T_{\mathrm{sc}}(0)=0\) and
-\(\mathcal T_{\mathrm{sc}}'(0)=28\) on the full field
-while immediately generating squared radius \(5\).
-That is a regeneration witness, not \(\sup_N\)
-control. Fixed-data numerical episodes at squared
-cutoffs \(6,12,20\) remain trajectory evidence only.
+**Status.** Local all-high jet on the \(K=2\) datum
+**written** (6 Oct):
+\(\mathcal T_{\mathrm{sc}}(h_2)=(15084/1625)t^6+O(t^7)\),
+orders \(\le t^5\) vanish, coefficient independent of
+\(\nu\), blocks \((5,8,25)\) and \((5,10,25)\).
+Full-field \(\mathcal T_{\mathrm{sc}}'(0)=28\) remains a
+separate witness. **Plow now:** whether
+\([\mathcal T_{\mathrm{sc}}-\nu Y/4]_+\) is positive, and
+general (17). Not \(\sup_N\) control yet.
 
 ### Gate 4 — High-pass consistency (**OPEN**, bookkeeping)
 
@@ -406,7 +406,8 @@ No fake proof of (17). Shear filter still applies.
 Priority: signed scalene criterion **(17)**.
 Energy-only \(S^{(3)}\) reverse: **KILLED**.
 Two-shell spatial signed assembly: **survives**.
-Regenerated all-high scalene in time: **OPEN — plow**.
+All-high \(t^6\) jet on \(K=2\) datum: **written**;
+integrated budget / (17): **OPEN — plow**.
 Fixed-datum (L3-5): **OPEN**, not priority.
 Repeated-radius / (16) complement: **seated**.
 Global regularity: **not claimed**.

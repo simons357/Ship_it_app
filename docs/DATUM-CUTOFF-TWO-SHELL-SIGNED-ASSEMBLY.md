@@ -218,6 +218,12 @@ K=2 is an admissible initial-tail choice for this datum, for every ν: h₂(0)=0
 
 Important scope: the derivative 28 is the full-field scalene transfer. It is not T_sc(h₂). The newly generated high modes initially have only squared radius 5, and the old radii 1 and 2 are below K. This calculation therefore does not establish a positive all-high episode or a failure of (17). It rules out inferring persistence of a zero tail or a two-sphere support class from initial spectral placement.
 
+Follow-up (same day): the all-high object on this datum is now written as a local jet — orders through \(t^5\) vanish and
+\(\mathcal T_{\mathrm{sc}}(h_2(t))=(15084/1625)\,t^6+O(t^7)\),
+\(\nu\)-independent, from blocks \((5,8,25)\) and \((5,10,25)\). See
+[`ALL-HIGH-T6-K2-DATUM.md`](ALL-HIGH-T6-K2-DATUM.md).
+Still not a positive \([\mathcal T_{\mathrm{sc}}-\nu Y/4]_+\) episode and not (17).
+
 ## 5. Filters and outcome
 
 The exact checks also cover a multicarrier shear u=(f(y),0,g(y)): every q·u_p is zero, B=0, and both signed transfers are zero, regardless of carrier frequency or occupancy. The datum cutoff removes its initial tail; heat produces no new modes. An exact one-sphere cyclic field has signed T=0 even though B is nonzero. Sign reversal sends the two-sphere example's T=4 to -4.
