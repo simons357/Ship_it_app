@@ -57,10 +57,18 @@ lets every admissible scalene shape draw on shell energies
 over**. That is the open blank. It is a frequency-geometry
 assembly problem, not a physical-shell problem.
 
+**Attack now on file:** SCHEME B — prove
+\(\lvert\mathcal T_{\mathrm{sc}}\rvert\le C_\star X\sqrt Y\)
+by exact-sphere regrouping (same charge pattern as (11)),
+then Young into \(\nu Y/4\). Naive Young-after-shape-sum
+is **not** enough (probe). See
+[`SCHEME-B-SHELL-POT.md`](SCHEME-B-SHELL-POT.md).
+
 ---
 
 ## STATUS
 
 SHELL = EXACT FOURIER SQUARED-RADIUS SET (NOT PHYSICAL).
-ALL-SHAPE ASSEMBLY WITHOUT REPEATED SHELL CHARGING: OPEN → (17).
+SCHEME A / A′: FAILED.
+SCHEME B (B1) ONCE-PER-SHELL POT: OPEN → (17).
 NS NOT SOLVED.

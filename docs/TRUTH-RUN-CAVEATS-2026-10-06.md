@@ -143,6 +143,11 @@ blank toward (17).
 Locked one-pager:
 [`ALL-SHAPE-SHELL-POT-BLANK.md`](ALL-SHAPE-SHELL-POT-BLANK.md).
 
+Attack design replacing the blank’s “need a pot”:
+[`SCHEME-B-SHELL-POT.md`](SCHEME-B-SHELL-POT.md)
+— target (B1) \(\lvert\mathcal T_{\mathrm{sc}}\rvert\le C_\star X\sqrt Y\);
+SCHEME A′ (Young after shapes) killed by probe.
+
 ---
 
 ## 4. How the two approaches stay complementary

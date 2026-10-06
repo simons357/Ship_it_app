@@ -1,0 +1,41 @@
+{
+  "target": "|T_sc| \u2264 C_star X \u221aY  (SCHEME B / B1)",
+  "terminology": "shell = exact |k|^2; not physical",
+  "runs": [
+    {
+      "rmax": 12,
+      "n_shapes_total": 43,
+      "n_samples": 144,
+      "ratio_max": 0.015442399011889702,
+      "ratio_p95": 0.0052719946981475115,
+      "ratio_median": 0.0009288678232639142,
+      "ratio_mean": 0.001705525464915405,
+      "rep_constant_in_11": 0.8660254037844386,
+      "reading": "If ratio_max stays O(1) across laws/supports, (B1) is numerically plausible with C_star on the order of a few units (compare \u221a3/2\u22480.866 for repeated radius). If ratio grows with rmax, (B1) needs weights beyond X\u221aY or is false."
+    },
+    {
+      "rmax": 16,
+      "n_shapes_total": 86,
+      "n_samples": 108,
+      "ratio_max": 0.008559798231671675,
+      "ratio_p95": 0.003941548768996033,
+      "ratio_median": 0.0009148209244703966,
+      "ratio_mean": 0.0014184314325178709,
+      "rep_constant_in_11": 0.8660254037844386,
+      "reading": "If ratio_max stays O(1) across laws/supports, (B1) is numerically plausible with C_star on the order of a few units (compare \u221a3/2\u22480.866 for repeated radius). If ratio grows with rmax, (B1) needs weights beyond X\u221aY or is false."
+    }
+  ],
+  "growth_ratio_max_12_to_16": 0.5543049512631525,
+  "sample_peak": {
+    "law": "decay_1_a",
+    "active": "all",
+    "trial": 2,
+    "E": 0.8974154356970627,
+    "X": 1.631346509033815,
+    "Y": 6.933754781190679,
+    "T_sc": -0.03677003005696544,
+    "abs_T_sc_over_X_sqrtY": 0.008559798231671675,
+    "n_shapes_used": 86
+  },
+  "status": "NUMERICAL probe of (B1); not a proof of (17)"
+}

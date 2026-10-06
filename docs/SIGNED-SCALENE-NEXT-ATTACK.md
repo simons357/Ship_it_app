@@ -131,9 +131,12 @@ statements. Short board:
    (incl. outside inputs; frequency helps).
 5. Assemble **all** scalene shapes without
    repeatedly charging the same shell
-   energies — OPEN (blank toward (17)).
+   energies — SCHEME B (B1) **OPEN**
+   ([`SCHEME-B-SHELL-POT.md`](SCHEME-B-SHELL-POT.md));
+   A / A′ dead.
 6. Integrate to uniform-in-\(N\) budget
-   (17) — OPEN (incl. \(\nu Y/4\) threshold).
+   (17) — OPEN (incl. \(\nu Y/4\) threshold);
+   bridge (B2) conditional on (B1).
 7. Continuation / Galerkin limit after
    uniform \(X\) — standard, not the blank.
 
@@ -159,9 +162,11 @@ All-high local jet on \(K=2\) datum:
 Fixed-pair bounds (P1)–(P3): author claimed;
 first audit target \(\int\lvert Q\rvert\).
 SCHEME A (sum per shape): FAILED.
-All-shape pot without repeatedly spending the same
-**frequency-shell** energy allowance: **OPEN — plow**
-([`ALL-SHAPE-SHELL-POT-BLANK.md`](ALL-SHAPE-SHELL-POT-BLANK.md)).
+SCHEME A′ (Young after shape sum): FAILED (probe).
+SCHEME B once-per-shell pot: **OPEN — plow**
+([`SCHEME-B-SHELL-POT.md`](SCHEME-B-SHELL-POT.md)).
+Target (B1): \(\lvert\mathcal T_{\mathrm{sc}}\rvert\le C_\star X\sqrt Y\)
+(exact-sphere regrouping; each \(e_a\) once via \(X,Y\)).
 “Shell” = exact \(\lvert k\rvert^2\) Fourier set, not a
 physical shell or hole in the fluid.
 (17) still OPEN.

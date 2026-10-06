@@ -13,5 +13,9 @@ Unfinished blank (terminology locked):
 “shell” = exact \(\lvert k\rvert^2\) set in frequency
 space, **not** a physical shell or hole in the fluid.
 
+Attack on the blank:
+[`SCHEME-B-SHELL-POT.md`](SCHEME-B-SHELL-POT.md)
+— (B1) \(\lvert\mathcal T_{\mathrm{sc}}\rvert\le C_\star X\sqrt Y\).
+
 First packet audit target: energy-only
 \(\int\lvert\mathcal Q_{5825}\rvert\,dt\).

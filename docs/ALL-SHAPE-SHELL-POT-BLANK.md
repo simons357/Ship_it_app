@@ -10,3 +10,6 @@ Full note:
 Unfinished: account for all Fourier-triangle shapes
 together without repeatedly spending the same
 \(\lvert k\rvert^2\)-shell’s energy allowance.
+
+Attack: [`SCHEME-B-SHELL-POT.md`](SCHEME-B-SHELL-POT.md)
+— target \(\lvert\mathcal T_{\mathrm{sc}}\rvert\le C_\star X\sqrt Y\).
