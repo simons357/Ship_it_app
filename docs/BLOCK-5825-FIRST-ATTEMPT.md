@@ -15,5 +15,5 @@ Census: \(24\) oriented triples; viscous rate \(38\nu\).
 =\mathcal Q^{\mathrm{in}}+\mathcal Q^{\mathrm{low}}+\mathcal Q^{\mathrm{other}}.
 \]
 
-Next leftover: \(\mathcal Q^{\mathrm{other}}\) (coupling
-to \((5,10,25)\) and further shells).
+Next: [`Q-OTHER-51025.md`](Q-OTHER-51025.md) —
+joint \(S_4\) vs outside-high \(\mathcal Q^{\infty}\).

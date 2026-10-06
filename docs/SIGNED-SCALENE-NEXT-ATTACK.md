@@ -42,6 +42,11 @@ claim-ledger or aerostat packs):
   intra-block dilation-stable;
   external energy-only absorption
   fails; summing blocks still open.
+- [`Q-OTHER-51025.md`](Q-OTHER-51025.md)
+  — \(\mathcal Q^{\mathrm{other}}\) split:
+  joint \(S_4=\{5,8,10,25\}\) finite;
+  outside-high \(\mathcal Q^{\infty}\) still
+  the blank toward (17).
 
 ## STATUS board
 

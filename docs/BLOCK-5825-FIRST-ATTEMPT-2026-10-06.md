@@ -133,7 +133,7 @@ Correspondingly
 |---|---|---|
 | \(\mathcal Q^{\mathrm{in}}\) | both \(B\)-inputs on \(\{5,8,25\}\) | Finite \(24\) triangles. Occupancy does not grow under dilation of this support. |
 | \(\mathcal Q^{\mathrm{low}}\) | at least one \(B\)-input with \(\lvert k\rvert\le K=2\) | Frozen-\(K\) low modes. Same shape as the seated fixed-low complement, but here feeding this block’s currents. |
-| \(\mathcal Q^{\mathrm{other}}\) | other **high** shells (e.g. \(10\), and later radii) | Summing blocks / repeated episodes. Not absorbed on this page. |
+| \(\mathcal Q^{\mathrm{other}}\) | other **high** shells (e.g. \(10\), and later radii) | Split further in [`Q-OTHER-51025.md`](Q-OTHER-51025.md): joint \(S_4=\{5,8,10,25\}\) dilation-stable; outside-high still open. |
 
 Every receiver in (B7) is already assembled before
 this split. Do not take \(\lvert\widehat B_k\rvert\)
