@@ -44,9 +44,11 @@ claim-ledger or aerostat packs):
   fails; summing blocks still open.
 - [`Q-OTHER-51025.md`](Q-OTHER-51025.md)
   — \(\mathcal Q^{\mathrm{other}}\) split:
-  joint \(S_4=\{5,8,10,25\}\) finite;
-  outside-high \(\mathcal Q^{\infty}\) still
-  the blank toward (17).
+  joint \(S_4=\{5,8,10,25\}\) finite.
+- [`BLOCK-5825-PARTIAL-BOUNDS.md`](BLOCK-5825-PARTIAL-BOUNDS.md)
+  — author correction: fixed-block bounds
+  (P1)–(P3) including outside inputs;
+  all-shape assembly still OPEN toward (17).
 
 ## STATUS board
 
@@ -121,14 +123,14 @@ statements. Short board:
    all-high-in-time still OPEN.
 4. Regenerative quartic / all-high jet —
    local \(t^6\) onset **written**;
-   \((5,8,25)\) + joint \(S_4\) with
-   \((5,10,25)\) dilation-stable;
-   \(\mathcal Q^{\infty}\) (outside \(S_4\))
-   still OPEN.
-5. Integrate to uniform-in-\(N\) budget
-   at fixed \(K(u_0,\nu)\) = (17) — OPEN
-   (incl. \(\nu Y/4\) threshold test).
-6. Continuation / Galerkin limit after
+   fixed-pair bounds (P1)–(P3) **claimed**
+   (incl. outside inputs; frequency helps).
+5. Assemble **all** scalene shapes without
+   repeatedly charging the same shell
+   energies — OPEN (blank toward (17)).
+6. Integrate to uniform-in-\(N\) budget
+   (17) — OPEN (incl. \(\nu Y/4\) threshold).
+7. Continuation / Galerkin limit after
    uniform \(X\) — standard, not the blank.
 
 ## Non-goals
@@ -150,9 +152,9 @@ Two-shell spatial signed assembly:
 survives (no occupancy).
 All-high local jet on \(K=2\) datum:
 \(t^6\) onset written.
-Joint \(S_4=\{5,8,10,25\}\): finite / dilation-stable.
-Outside-high \(\mathcal Q^{\infty}\): **OPEN — plow**.
-(17) still OPEN.
+Fixed-pair bounds (P1)–(P3): author claimed.
+All-shape assembly without repeated shell charging:
+**OPEN — plow**. (17) still OPEN.
 (L3-5) fixed-datum: OPEN, deprioritized.
 Lemma A / sign gate: unaltered (as on
 parent desks).

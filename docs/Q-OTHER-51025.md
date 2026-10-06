@@ -2,14 +2,14 @@
 
 6 October 2026.
 **Couple \((5,8,25)\) to \((5,10,25)\). Joint finite.
-Outside-high still open. (17) OPEN.**
+Fixed-pair bounds claimed — see partial-bounds note.
+All-shape assembly OPEN toward (17).**
 
 Full note:
 [`Q-OTHER-51025-2026-10-06.md`](Q-OTHER-51025-2026-10-06.md).
+Correction:
+[`BLOCK-5825-PARTIAL-BOUNDS.md`](BLOCK-5825-PARTIAL-BOUNDS.md).
 
 \[
 S_4=\{5,8,10,25\}.
 \]
-
-\(\mathcal Q^{\leftrightarrow}\) on \(S_4\): dilation-stable.
-\(\mathcal Q^{\infty}\) outside \(S_4\): still the blank.

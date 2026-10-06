@@ -2,18 +2,15 @@
 
 6 October 2026.
 **Proof attempt. Intra-block dilation-stable.
-External energy-only absorption fails.
+Outside energy-only failure overclaimed — see partial bounds.
 (17) OPEN.**
 
 Full note:
 [`BLOCK-5825-FIRST-ATTEMPT-2026-10-06.md`](BLOCK-5825-FIRST-ATTEMPT-2026-10-06.md).
+Correction:
+[`BLOCK-5825-PARTIAL-BOUNDS.md`](BLOCK-5825-PARTIAL-BOUNDS.md).
 
 Census: \(24\) oriented triples; viscous rate \(38\nu\).
 
-\[
-\dot{\mathcal T}_{5,8,25}+38\nu\,\mathcal T_{5,8,25}
-=\mathcal Q^{\mathrm{in}}+\mathcal Q^{\mathrm{low}}+\mathcal Q^{\mathrm{other}}.
-\]
-
-Next: [`Q-OTHER-51025.md`](Q-OTHER-51025.md) —
-joint \(S_4\) vs outside-high \(\mathcal Q^{\infty}\).
+Next blank toward (17): assemble **all** scalene shapes
+without repeatedly charging the same shell energies.

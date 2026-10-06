@@ -282,12 +282,12 @@ is fixed. Datum-sensitive constants allowed.
 \(\mathcal T_{\mathrm{sc}}(h_2)=(15084/1625)t^6+O(t^7)\),
 orders \(\le t^5\) vanish, coefficient independent of
 \(\nu\), blocks \((5,8,25)\) and \((5,10,25)\).
-One-block \((5,8,25)\) + \(\mathcal Q^{\mathrm{other}}\) split:
-[`Q-OTHER-51025.md`](../docs/Q-OTHER-51025.md) —
-joint \(S_4=\{5,8,10,25\}\) dilation-stable; outside-high
-\(\mathcal Q^{\infty}\) still open.
-**Plow now:** \(\mathcal Q^{\infty}\) / cascading shells;
-\(\nu Y/4\) threshold; (17).
+Fixed-pair author bounds:
+[`BLOCK-5825-PARTIAL-BOUNDS.md`](../docs/BLOCK-5825-PARTIAL-BOUNDS.md) —
+(P1)–(P3) include outside inputs; frequency helps viscosity.
+Prior “outside defeats energy-only” for these shapes withdrawn.
+**Plow now:** assemble all scalene shapes without repeatedly
+charging the same shell energies; (17).
 
 ### Gate 4 — High-pass consistency (**OPEN**, bookkeeping)
 

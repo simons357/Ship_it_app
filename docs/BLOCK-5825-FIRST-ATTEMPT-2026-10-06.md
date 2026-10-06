@@ -24,18 +24,20 @@ Census:
 1. The signed evolution of the complete \((5,8,25)\) block
    is written exactly from (7) and (14), with every
    receiver and with forcing split by source.
-2. Viscosity **does** match the linear slots. It does
-   **not**, by energy and the three shell \(L^2\)
-   quantities alone, absorb the **external** quartic
-   forcing without a frequency-growing or high-norm
-   factor. Intra-block forcing on this **finite**
-   triangle set is the part that can be estimated
-   without occupancy and that **survives** frequency
-   dilation at fixed energy.
-3. A crude energy bound on the external forcing
-   reintroduces a factor that grows with frequency.
-   That is the named next obstruction — before
-   summing blocks or repeated episodes.
+2. Viscosity **does** match the linear slots. Intra-block
+   forcing on this **finite** triangle set is occupancy-free
+   and **survives** frequency dilation at fixed energy.
+3. **Correction (same day):** the claim that outside
+   forcing defeats an energy-only estimate for this
+   **fixed** block is too strong. Author partial bound
+   (P1) integrates \(\lvert\mathcal T_{5825}\rvert\) with
+   all outside inputs using only \(E_0,\nu\); frequency
+   scaling helps viscosity. See
+   [`BLOCK-5825-PARTIAL-BOUNDS.md`](BLOCK-5825-PARTIAL-BOUNDS.md).
+   The remaining obstruction toward (17) is assembling
+   **all** scalene shapes without repeatedly charging
+   the same shell energies — not outside feeding on
+   this one block.
 
 (17) remains **OPEN**. This page does not claim a
 positive \([\mathcal T_{\mathrm{sc}}-\nu Y/4]_+\)
@@ -243,17 +245,17 @@ charges the **full** dissipation budget and does not
 close a single-block remainder without controlling
 the other high shells that share that \(\nu Y\).
 
-**Verdict on step 2.** Viscosity absorbs the linear
-slots exactly. Energy + \(\{e_5,e_8,e_{25}\}\) absorb
-a dilation-stable majorant of \(\mathcal Q^{\mathrm{in}}\)
-at the snapshot level. They do **not** absorb
-\(\mathcal Q^{\mathrm{other}}\) (and do not honestly
-absorb \(\mathcal Q^{\mathrm{low}}\) as a
-**single-block** budget) without either (i) a
-frequency-growing crude factor or (ii) a smoothness
-/ future-\(X\) hypothesis. That is a **precise
-failure** of an energy-only one-block close, not a
-failure of the signed identities.
+**Verdict on step 2 (revised).** Viscosity absorbs the
+linear slots exactly. A crude
+\(\lvert\widehat B_k\rvert\le\lvert k\rvert E\) before
+signed assembly remains the wrong tool. But for the
+**assembled** fixed block \(\mathcal T_{5825}\), an
+energy-only integrated bound **including outside
+inputs** is claimed in
+[`BLOCK-5825-PARTIAL-BOUNDS.md`](BLOCK-5825-PARTIAL-BOUNDS.md)
+(P1). The earlier “precise failure of energy-only
+one-block close” is **withdrawn as too strong** for
+this fixed shape.
 
 ---
 
@@ -292,8 +294,9 @@ initially; this attempt does not change that.
 \((5,8,25)\) SIGNED EVOLUTION: WRITTEN (B7), (B14).
 \(\mathcal Q\) SPLIT: IN / LOW / OTHER.
 INTRA-BLOCK: FINITE; DILATION DOES NOT GROW THE CONSTANT.
-EXTERNAL / OTHER-HIGH: ENERGY-ONLY ABSORPTION FAILS
-(FREQUENCY-GROWING CRUDE FACTOR OR CIRCULAR \(X\)).
-SUMMING BLOCKS + REPEATED EPISODES: STILL THE BLANK
-TOWARD (17).
+FIXED-BLOCK ENERGY BOUND WITH OUTSIDE INPUTS: SEE
+PARTIAL BOUNDS (P1); PRIOR “OUTSIDE DEFEATS ENERGY-ONLY”
+WITHDRAWN AS TOO STRONG FOR THIS BLOCK.
+ALL-SHAPE ASSEMBLY WITHOUT REPEATED SHELL CHARGING:
+STILL THE BLANK TOWARD (17).
 NS NOT SOLVED.
