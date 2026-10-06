@@ -365,6 +365,17 @@ moves.
 
 ## Next target
 
+6 October 2026 two-shell spatial write
+(not a substitute for this gate in
+time, and not (17)):
+[`TWO-SHELL-SPATIAL-REGENERATION.md`](TWO-SHELL-SPATIAL-REGENERATION.md).
+Complete two-sphere assembly
+\(\mathcal T=(b-a)(j_{b\leftarrow aa}-j_{a\leftarrow bb})\)
+survives with no occupancy factor.
+The remaining obstruction named
+there is regeneration of all-high
+scalene.
+
 That blank is now split as SAG-5:
 [`SAG-5-COMPATIBILITY.md`](SAG-5-COMPATIBILITY.md).
 

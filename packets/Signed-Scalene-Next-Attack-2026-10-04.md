@@ -36,6 +36,9 @@ PR merges; no claim-ledger / aerostat):
 | (L3-4): \(S\le C_S S^{(3)}+\mathrm{controlled}\) | **PROVED** | **One-way only.** |
 | (L3-5) fixed-datum high-mode \(L^3\) budget | **OPEN** | \(\forall u_0,\nu\ \exists K(u_0,\nu)\ \forall T:\ \sup_N S^{(3)}_{K,N}(T)<\infty\). Not refuted by shears. |
 | **Criterion (17)** signed scalene budget | **OPEN — PRIORITY** | Same quantifier shape as (L3-5), different integrand. |
+| Two-shell complete signed assembly \(\mathcal T=(b-a)(j_{b\leftarrow aa}-j_{a\leftarrow bb})\) | **Spatial test survives** | No occupancy factor. Receiver compensation and flat-triangle cancellation visible. [`TWO-SHELL-SPATIAL-REGENERATION.md`](../docs/TWO-SHELL-SPATIAL-REGENERATION.md) |
+| Frozen \(K\) from initial \(\dot H^{1/2}\) tail | **Written** | \(K=\min\{n\ge1:C_0\|P_{>n}u_0\|_{\dot H^{1/2}}\le c\nu/2\}\). Uniform in \(N\) at \(t=0\) only. |
+| Regenerated all-high scalene in time | **OPEN — plow** | Exact two-sphere datum, \(K=2\), generates radius \(5\); \(\mathcal T_{\mathrm{sc}}(0)=0\), \(\mathcal T_{\mathrm{sc}}'(0)=28\) on the **full field**. |
 | Universal energy-only \(F(E_0,\nu,K,T)\) bounding \(S^{(3)}\) for all smooth data of energy \(E_0\) | **KILLED** | Exact shear family, 3 Oct 2026. |
 | Reverse comparison \(S^{(3)}\le C\,S+F(E_0,\nu,K,T)\) | **KILLED** | Same family: \(S=0\), \(S^{(3)}\) arbitrarily large. |
 | Unrestricted \(\sup\mathcal R_\star<\infty\); charge-only close; Theorem H as NS close | **KILLED** | Prior desks; do not reopen here. |
@@ -210,7 +213,7 @@ Galerkin \(N\), each \(T<\infty\). Constants depend on
 Not the blank. Do not “re-prove” (16) as the main
 attack; cite it.
 
-### Gate 2 — Signed assembly of all-high scalene transfer (**OPEN**)
+### Gate 2 — Signed assembly of all-high scalene transfer (**OPEN** in time; two-shell spatial instance **survives**)
 
 **Statement (snapshot form).** Control
 
@@ -245,7 +248,15 @@ substitute for (17). Gate 2 here is the scalene /
 \(\mathcal T_{\mathrm{sc}}\) instance of that blank on
 the high-pass field.
 
-### Gate 3 — Regenerative forcing along the NSE (**OPEN**)
+**6 Oct 2026 update.** Two-shell **spatial** complete
+assembly
+\(\mathcal T=(b-a)(j_{b\leftarrow aa}-j_{a\leftarrow bb})\)
+survives with no occupancy factor (receiver
+compensation and flat-triangle cancellation visible).
+That does **not** close all-high scalene in time.
+See [`TWO-SHELL-SPATIAL-REGENERATION.md`](../docs/TWO-SHELL-SPATIAL-REGENERATION.md).
+
+### Gate 3 — Regenerative forcing along the NSE (**OPEN — now the plow**)
 
 **Statement.** For distinct-radius blocks, the vault
 has
@@ -266,10 +277,15 @@ denominator fantasy that ignores regeneration.
 trajectories; uniform in \(N\) after \(K=K(u_0,\nu)\)
 is fixed. Datum-sensitive constants allowed.
 
-**Status.** OPEN. Viscosity damps; it does not remove
-\(\mathcal Q\). Fixed-data numerical episodes at
-squared cutoffs \(6,12,20\) remain trajectory
-evidence only — not \(\sup_N\) control.
+**Status.** OPEN — **now the plow.** Viscosity damps;
+it does not remove \(\mathcal Q\). The exact
+two-sphere datum with \(K=2\) has
+\(\mathcal T_{\mathrm{sc}}(0)=0\) and
+\(\mathcal T_{\mathrm{sc}}'(0)=28\) on the full field
+while immediately generating squared radius \(5\).
+That is a regeneration witness, not \(\sup_N\)
+control. Fixed-data numerical episodes at squared
+cutoffs \(6,12,20\) remain trajectory evidence only.
 
 ### Gate 4 — High-pass consistency (**OPEN**, bookkeeping)
 
@@ -287,6 +303,15 @@ This is where initial high-frequency concentration
 of a **fixed** smooth \(u_0\) is allowed to enter —
 explicitly — without pretending the constant depends
 only on \(E_0\).
+
+**6 Oct recipe (written, not a time bound):**
+
+\[
+K=\min\{n\ge1:C_0\|P_{>n}u_0\|_{\dot H^{1/2}}\le c\nu/2\}.
+\]
+
+Uniform in \(N\) at \(t=0\). Later high modes are
+Gate 3.
 
 ### Gate 5 — Integrate to criterion (17) (**OPEN** — main target)
 
@@ -327,11 +352,16 @@ Do not claim Gate 6 here.
 | Shear vanishing corollary as mandatory rejection filter for future budgets | **Yes** (restatement of PR #159 + definitions; not new analysis) |
 | Deprioritization of (L3-5) / energy-only \(S^{(3)}\) relative to (17) | **Yes** (desk decision; matches obstruction Consequence) |
 | Lemma A / first-variation sign gate | **Unaltered** — not touched |
+| Two-shell complete signed assembly, no occupancy | **Yes** (6 Oct) — spatial test survives; not (17) |
+| Regenerated all-high scalene in time | **No** — named as the remaining blank |
 
-**Verdict: plan-only on the mathematical blank.**
-No fake proof essay. The next real lemma, if written,
-must sit at Gate 2 or Gate 3 with named quantifiers
-and must pass the shear rejection filter.
+**Verdict as of 4 Oct:** plan-only on the mathematical blank.
+
+**Verdict as of 6 Oct:** two-shell **spatial** signed
+assembly is no longer the thing to re-prove (occupancy
+not forced). The remaining blank is regenerated
+all-high scalene in time (Gate 3), toward (17).
+No fake proof of (17). Shear filter still applies.
 
 ---
 
@@ -354,17 +384,20 @@ and must pass the shear rejection filter.
 
 ## 7. Suggested immediate work items (operators)
 
-1. Write Gate 2 as a lemma template with hypotheses
-   that explicitly allow dependence on the Fourier
-   profile of \(u_0\) and forbid energy-only-only
-   constants; leave the estimate blank or mark OPEN.
+1. Do not restart occupancy counting on two shells.
+   The spatial signed assembly already survives.
 2. Enumerate which parts of \(\mathcal Q_{abc,N}\)
    in (14) are high–high–high versus mixed with
-   modes \(\le K\), after \(K=K(u_0,\nu)\) is chosen
-   so the initial high tail is small.
-3. Keep a one-page “shear filter” checklist on every
-   proposed replacement integrand.
-4. Do not open a new \(L^3\) energy-only program.
+   modes \(\le K\), using the frozen cutoff
+   \(K=\min\{n\ge1:C_0\|P_{>n}u_0\|_{\dot H^{1/2}}\le c\nu/2\}\).
+3. Control regenerated all-high
+   \(\mathcal T_{\mathrm{sc}}(h_{K,N}(t))\) without
+   assuming (16). The \(K=2\to\) radius-\(5\) datum
+   is the rejection test for “initial tail small
+   \(\Rightarrow\) later tail small.”
+4. Keep the shear filter on every replacement
+   integrand. Do not open a new \(L^3\) energy-only
+   program.
 
 ---
 
@@ -372,6 +405,8 @@ and must pass the shear rejection filter.
 
 Priority: signed scalene criterion **(17)**.
 Energy-only \(S^{(3)}\) reverse: **KILLED**.
+Two-shell spatial signed assembly: **survives**.
+Regenerated all-high scalene in time: **OPEN — plow**.
 Fixed-datum (L3-5): **OPEN**, not priority.
 Repeated-radius / (16) complement: **seated**.
 Global regularity: **not claimed**.

@@ -22,6 +22,11 @@ claim-ledger or aerostat packs):
 - [`L3-5-EXACT-SHEAR-OBSTRUCTION.md`](L3-5-EXACT-SHEAR-OBSTRUCTION.md)
   — energy-only strengthening of (L3-5)
   **FALSIFIED**; shears give \(S\equiv 0\).
+- [`TWO-SHELL-SPATIAL-REGENERATION.md`](TWO-SHELL-SPATIAL-REGENERATION.md)
+  — two-shell spatial signed assembly
+  survives (no occupancy);
+  regeneration of all-high scalene is
+  the remaining blank.
 
 ## STATUS board
 
@@ -33,6 +38,9 @@ claim-ledger or aerostat packs):
 | Classical (L3-1); one-way (L3-4): \(S\le C_S S^{(3)}+\mathrm{controlled}\) | **PROVED** |
 | Fixed-datum (L3-5): \(\sup_N S^{(3)}_{K,N}(T)<\infty\) with \(K=K(u_0,\nu)\) | **OPEN** (not refuted by shears) |
 | Criterion (17): \(\sup_N S_{K,N}(T)<\infty\) with \(K=K(u_0,\nu)\) | **OPEN** — **priority target** |
+| Two-shell complete signed assembly \(\mathcal T=(b-a)(j_{b\leftarrow aa}-j_{a\leftarrow bb})\) | **Spatial test survives** (no occupancy); see [`TWO-SHELL-SPATIAL-REGENERATION.md`](TWO-SHELL-SPATIAL-REGENERATION.md) |
+| Frozen \(K\) from initial \(\dot H^{1/2}\) tail | **Written** (datum-sensitive; \(t=0\) uniform in \(N\)) |
+| Regenerated all-high scalene in time (radius \(5\) from \(K=2\) two-sphere; \(\mathcal T_{\mathrm{sc}}(0)=0\), \(\mathcal T_{\mathrm{sc}}'(0)=28\) full field) | **OPEN** — remaining blank toward (17) |
 | Universal energy-only \(F(E_0,\nu,K,T)\) on \(S^{(3)}\); reverse \(S^{(3)}\lesssim S+F\) | **KILLED** (exact shear obstruction, 3 Oct 2026) |
 | Unrestricted \(\star\); charge-only close; Theorem H as NS close | **KILLED** (prior desks) |
 | Global regularity / Clay / RH | **NOT CLAIMED** |
@@ -88,9 +96,11 @@ statements. Short board:
 2. Keep seated complement \(\Rightarrow\) (16)
    (PROVED conditional).
 3. Signed assembly of all-high scalene
-   \(\mathcal T_{\mathrm{sc}}(h)\) — OPEN.
+   \(\mathcal T_{\mathrm{sc}}(h)\) — two-shell
+   **spatial** instance survives (6 Oct 2026);
+   all-high-in-time still OPEN.
 4. Regenerative quartic forcing in (14)
-   along actual NSE — OPEN.
+   along actual NSE — **OPEN, now the plow**.
 5. Integrate to uniform-in-\(N\) budget
    at fixed \(K(u_0,\nu)\) = (17) — OPEN.
 6. Continuation / Galerkin limit after
@@ -111,6 +121,10 @@ statements. Short board:
 
 Priority: (17).
 Energy-only \(S^{(3)}\) reverse: KILLED.
+Two-shell spatial signed assembly:
+survives (no occupancy).
+Regenerated all-high scalene in time:
+OPEN — plow here.
 (L3-5) fixed-datum: OPEN, deprioritized.
 Lemma A / sign gate: unaltered (as on
 parent desks).
