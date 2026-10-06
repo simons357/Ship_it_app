@@ -131,12 +131,17 @@ sum on shapes. Then either
 Either way, SCHEME A does not produce a uniform
 \(\sup_N\mathcal S_{K,N}(T)<\infty\).
 
-**What would be needed.** A pot that charges each shell
-(or each unit of \(Y\) / \(X\)) **at most once**, or a
-convergent weight over shapes — the author’s “normalized
-budget for the fixed pair” is a step for **two** shapes;
-lifting it to all shapes without repeated charging is
-exactly the open blank toward (17).
+**What would be needed.** A pot that charges each
+**frequency shell** (exact \(\lvert k\rvert^2\) set — not
+a physical shell or hole in the fluid) or each unit of
+\(Y\) / \(X\) **at most once**, or a convergent weight
+over shapes — the author’s “normalized budget for the
+fixed pair” is a step for **two** shapes; lifting it to
+all shapes without repeated charging is exactly the open
+blank toward (17).
+
+Locked one-pager:
+[`ALL-SHAPE-SHELL-POT-BLANK.md`](ALL-SHAPE-SHELL-POT-BLANK.md).
 
 ---
 

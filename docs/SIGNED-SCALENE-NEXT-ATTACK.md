@@ -159,7 +159,11 @@ All-high local jet on \(K=2\) datum:
 Fixed-pair bounds (P1)–(P3): author claimed;
 first audit target \(\int\lvert Q\rvert\).
 SCHEME A (sum per shape): FAILED.
-All-shape once-per-shell pot: **OPEN — plow**.
+All-shape pot without repeatedly spending the same
+**frequency-shell** energy allowance: **OPEN — plow**
+([`ALL-SHAPE-SHELL-POT-BLANK.md`](ALL-SHAPE-SHELL-POT-BLANK.md)).
+“Shell” = exact \(\lvert k\rvert^2\) Fourier set, not a
+physical shell or hole in the fluid.
 (17) still OPEN.
 (L3-5) fixed-datum: OPEN, deprioritized.
 Lemma A / sign gate: unaltered (as on

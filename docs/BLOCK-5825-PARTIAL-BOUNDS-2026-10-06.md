@@ -64,8 +64,11 @@ A normalized time-budget bound for the fixed pair that covers
 packet.
 
 **Remaining obstacle toward (17):** assembling **all** scalene
-shapes without repeatedly charging the same shell energies.
+triangle shapes in frequency space without repeatedly
+spending the same Fourier-shell energy allowance
+(exact \(\lvert k\rvert^2\) sets — not physical shells).
 That remains **OPEN**.
+See [`ALL-SHAPE-SHELL-POT-BLANK.md`](ALL-SHAPE-SHELL-POT-BLANK.md).
 
 Exact checks passed for the signed receiver sum and full-forcing
 evolution (author packet).
