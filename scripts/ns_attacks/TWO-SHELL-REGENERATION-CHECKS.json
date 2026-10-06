@@ -1,0 +1,83 @@
+{
+  "normalization": "T3, normalized volume; Fourier exponent exp(i k.x)",
+  "E": "14",
+  "X": "20",
+  "Y": "32",
+  "modal_transfers": [
+    {
+      "k": [
+        -1,
+        -1,
+        0
+      ],
+      "tau": "2"
+    },
+    {
+      "k": [
+        -1,
+        0,
+        0
+      ],
+      "tau": "-1"
+    },
+    {
+      "k": [
+        0,
+        -1,
+        0
+      ],
+      "tau": "-1"
+    },
+    {
+      "k": [
+        0,
+        1,
+        0
+      ],
+      "tau": "-1"
+    },
+    {
+      "k": [
+        1,
+        0,
+        0
+      ],
+      "tau": "-1"
+    },
+    {
+      "k": [
+        1,
+        1,
+        0
+      ],
+      "tau": "2"
+    }
+  ],
+  "J_radius_2": "4",
+  "T": "4",
+  "initial_T_scalene": "0",
+  "B_at_2_1_0": [
+    [
+      "1/5",
+      "0"
+    ],
+    [
+      "-2/5",
+      "0"
+    ],
+    [
+      "2",
+      "0"
+    ]
+  ],
+  "generated_radii_squared": [
+    5
+  ],
+  "initial_derivative_T_scalene": "28",
+  "independent_cubic_recovery": "passed",
+  "divergence_free": "passed",
+  "one_exact_sphere_signed_T": "0",
+  "one_exact_sphere_B_nonzero": true,
+  "shear_B_zero": true,
+  "sign_reversal": "passed"
+}

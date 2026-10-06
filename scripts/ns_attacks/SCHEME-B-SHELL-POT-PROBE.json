@@ -1,0 +1,508 @@
+{
+  "terminology": "shell = exact |k|^2 Fourier set; not a physical shell or hole",
+  "runs": [
+    {
+      "rmax": 20,
+      "scalene_shape_count": 191,
+      "shells_touched": 18,
+      "scheme_A_proxies": {
+        "sum_shapes_1": 191,
+        "sum_1_over_a_plus_b_plus_c": 7.096371312682223,
+        "sum_1_over_rate_squared": 0.3292017786832772,
+        "sum_sqrtc_over_rate": 25.755286203764875,
+        "shape_cubic_unit_e": 739.5809413928206,
+        "degree_inflated_shell_mass_unit_e": 21232.288133313636,
+        "status": "These grow with #shapes / touch degrees \u2014 SCHEME A path."
+      },
+      "scheme_B_proxies": {
+        "once_shell_mass_unit_e": 684.1816405936454,
+        "ratio_degree_inflated_over_once_shell": 31.033115876788173,
+        "shape_cubic_e_eq_1_over_a2": 3.0098559922074557,
+        "once_shell_pot_e_eq_1_over_a2": 2.0994738874115186,
+        "young_split_total_equals_shape_cubic_decayed": 3.0098559922074557,
+        "young_equals_shape_check": true,
+        "note": "Young split moves mass onto shells but still accumulates touch(a) contributions into young_shell[a]; without an exact-sphere regrouping, Young alone does NOT kill degree inflation. SCHEME B needs mode-level incidence, not post-hoc Young on shape sum.",
+        "worst_young_overask_vs_once_face": [
+          {
+            "shell": 17,
+            "asked_over_once_face": 6.331260501667297,
+            "shape_degree": 44
+          },
+          {
+            "shell": 9,
+            "asked_over_once_face": 5.7314925388635976,
+            "shape_degree": 48
+          },
+          {
+            "shell": 14,
+            "asked_over_once_face": 5.479221151203337,
+            "shape_degree": 42
+          },
+          {
+            "shell": 18,
+            "asked_over_once_face": 5.09974696126125,
+            "shape_degree": 36
+          },
+          {
+            "shell": 13,
+            "asked_over_once_face": 4.99543327006594,
+            "shape_degree": 40
+          },
+          {
+            "shell": 10,
+            "asked_over_once_face": 4.757635650787592,
+            "shape_degree": 41
+          },
+          {
+            "shell": 11,
+            "asked_over_once_face": 3.9836381982341167,
+            "shape_degree": 34
+          },
+          {
+            "shell": 5,
+            "asked_over_once_face": 3.61547049181214,
+            "shape_degree": 41
+          }
+        ]
+      },
+      "shape_vs_mode_incidence": {
+        "most_shared_shells_by_shape_degree": [
+          {
+            "shell": 9,
+            "shape_degree": 48
+          },
+          {
+            "shell": 17,
+            "shape_degree": 44
+          },
+          {
+            "shell": 14,
+            "shape_degree": 42
+          },
+          {
+            "shell": 5,
+            "shape_degree": 41
+          },
+          {
+            "shell": 10,
+            "shape_degree": 41
+          },
+          {
+            "shell": 13,
+            "shape_degree": 40
+          },
+          {
+            "shell": 6,
+            "shape_degree": 39
+          },
+          {
+            "shell": 18,
+            "shape_degree": 36
+          }
+        ],
+        "mode_completions_max": 308,
+        "mode_completions_mean": 144.7422680412371,
+        "partner_shells_per_mode_max": 17,
+        "max_mode_completions_by_shell_top": [
+          {
+            "shell": 1,
+            "max_mode_completions": 308,
+            "shape_degree": 31
+          },
+          {
+            "shell": 3,
+            "max_mode_completions": 264,
+            "shape_degree": 26
+          },
+          {
+            "shell": 2,
+            "max_mode_completions": 242,
+            "shape_degree": 34
+          },
+          {
+            "shell": 5,
+            "max_mode_completions": 200,
+            "shape_degree": 41
+          },
+          {
+            "shell": 4,
+            "max_mode_completions": 186,
+            "shape_degree": 19
+          },
+          {
+            "shell": 6,
+            "max_mode_completions": 170,
+            "shape_degree": 39
+          },
+          {
+            "shell": 8,
+            "max_mode_completions": 166,
+            "shape_degree": 23
+          },
+          {
+            "shell": 9,
+            "max_mode_completions": 166,
+            "shape_degree": 48
+          }
+        ],
+        "busiest_modes": [
+          {
+            "completions": 308,
+            "mode": [
+              1,
+              0,
+              0
+            ],
+            "shell": 1,
+            "partner_shells": 17
+          },
+          {
+            "completions": 308,
+            "mode": [
+              0,
+              1,
+              0
+            ],
+            "shell": 1,
+            "partner_shells": 17
+          },
+          {
+            "completions": 308,
+            "mode": [
+              0,
+              0,
+              1
+            ],
+            "shell": 1,
+            "partner_shells": 17
+          },
+          {
+            "completions": 308,
+            "mode": [
+              0,
+              0,
+              -1
+            ],
+            "shell": 1,
+            "partner_shells": 17
+          },
+          {
+            "completions": 308,
+            "mode": [
+              0,
+              -1,
+              0
+            ],
+            "shell": 1,
+            "partner_shells": 17
+          },
+          {
+            "completions": 308,
+            "mode": [
+              -1,
+              0,
+              0
+            ],
+            "shell": 1,
+            "partner_shells": 17
+          },
+          {
+            "completions": 264,
+            "mode": [
+              1,
+              1,
+              1
+            ],
+            "shell": 3,
+            "partner_shells": 17
+          },
+          {
+            "completions": 264,
+            "mode": [
+              1,
+              1,
+              -1
+            ],
+            "shell": 3,
+            "partner_shells": 17
+          }
+        ],
+        "oriented_triples_per_shape_max": 144,
+        "oriented_triples_per_shape_mean": 49.00523560209424,
+        "shell_cardinalities_sample": {
+          "1": 6,
+          "2": 12,
+          "5": 24,
+          "8": 12,
+          "9": 30,
+          "10": 24,
+          "13": 24,
+          "14": 48,
+          "17": 48
+        }
+      },
+      "verdict": {
+        "SCHEME_A": "FAILED \u2014 shape sums and degree-inflated shell mass grow with rmax",
+        "naive_Young_split": "INSUFFICIENT alone \u2014 still deposits touch(a) mass on each shell",
+        "SCHEME_B_target": "Regroup signed transfer at mode/exact-sphere level so each frequency shell e_a is charged O(1) times (like repeated-radius (11)), then Young against \u03bdY/4. Shape-degree charging forbidden.",
+        "status": "PROBE \u2014 not a proof of (17)"
+      }
+    },
+    {
+      "rmax": 30,
+      "scalene_shape_count": 631,
+      "shells_touched": 26,
+      "scheme_A_proxies": {
+        "sum_shapes_1": 631,
+        "sum_1_over_a_plus_b_plus_c": 15.525172199401672,
+        "sum_1_over_rate_squared": 0.49670338661468183,
+        "sum_sqrtc_over_rate": 68.6570059229716,
+        "shape_cubic_unit_e": 2994.5556509028156,
+        "degree_inflated_shell_mass_unit_e": 131569.7254159101,
+        "status": "These grow with #shapes / touch degrees \u2014 SCHEME A path."
+      },
+      "scheme_B_proxies": {
+        "once_shell_mass_unit_e": 1719.537553982368,
+        "ratio_degree_inflated_over_once_shell": 76.51459842281479,
+        "shape_cubic_e_eq_1_over_a2": 4.060532173660202,
+        "once_shell_pot_e_eq_1_over_a2": 2.16322113298202,
+        "young_split_total_equals_shape_cubic_decayed": 4.060532173660202,
+        "young_equals_shape_check": true,
+        "note": "Young split moves mass onto shells but still accumulates touch(a) contributions into young_shell[a]; without an exact-sphere regrouping, Young alone does NOT kill degree inflation. SCHEME B needs mode-level incidence, not post-hoc Young on shape sum.",
+        "worst_young_overask_vs_once_face": [
+          {
+            "shell": 17,
+            "asked_over_once_face": 9.338835392867813,
+            "shape_degree": 106
+          },
+          {
+            "shell": 26,
+            "asked_over_once_face": 9.129612972342994,
+            "shape_degree": 98
+          },
+          {
+            "shell": 29,
+            "asked_over_once_face": 8.803536258958317,
+            "shape_degree": 97
+          },
+          {
+            "shell": 21,
+            "asked_over_once_face": 8.027428496024939,
+            "shape_degree": 95
+          },
+          {
+            "shell": 18,
+            "asked_over_once_face": 7.914155652076322,
+            "shape_degree": 91
+          },
+          {
+            "shell": 14,
+            "asked_over_once_face": 7.651148518055768,
+            "shape_degree": 102
+          },
+          {
+            "shell": 25,
+            "asked_over_once_face": 7.219993728450244,
+            "shape_degree": 79
+          },
+          {
+            "shell": 9,
+            "asked_over_once_face": 6.70009985871813,
+            "shape_degree": 99
+          }
+        ]
+      },
+      "shape_vs_mode_incidence": {
+        "most_shared_shells_by_shape_degree": [
+          {
+            "shell": 17,
+            "shape_degree": 106
+          },
+          {
+            "shell": 14,
+            "shape_degree": 102
+          },
+          {
+            "shell": 9,
+            "shape_degree": 99
+          },
+          {
+            "shell": 26,
+            "shape_degree": 98
+          },
+          {
+            "shell": 29,
+            "shape_degree": 97
+          },
+          {
+            "shell": 21,
+            "shape_degree": 95
+          },
+          {
+            "shell": 5,
+            "shape_degree": 92
+          },
+          {
+            "shell": 18,
+            "shape_degree": 91
+          }
+        ],
+        "mode_completions_max": 630,
+        "mode_completions_mean": 299.8048780487805,
+        "partner_shells_per_mode_max": 25,
+        "max_mode_completions_by_shell_top": [
+          {
+            "shell": 1,
+            "max_mode_completions": 630,
+            "shape_degree": 55
+          },
+          {
+            "shell": 3,
+            "max_mode_completions": 558,
+            "shape_degree": 51
+          },
+          {
+            "shell": 2,
+            "max_mode_completions": 514,
+            "shape_degree": 65
+          },
+          {
+            "shell": 5,
+            "max_mode_completions": 472,
+            "shape_degree": 92
+          },
+          {
+            "shell": 4,
+            "max_mode_completions": 436,
+            "shape_degree": 39
+          },
+          {
+            "shell": 6,
+            "max_mode_completions": 418,
+            "shape_degree": 85
+          },
+          {
+            "shell": 9,
+            "max_mode_completions": 402,
+            "shape_degree": 99
+          },
+          {
+            "shell": 11,
+            "max_mode_completions": 388,
+            "shape_degree": 71
+          }
+        ],
+        "busiest_modes": [
+          {
+            "completions": 630,
+            "mode": [
+              1,
+              0,
+              0
+            ],
+            "shell": 1,
+            "partner_shells": 25
+          },
+          {
+            "completions": 630,
+            "mode": [
+              0,
+              1,
+              0
+            ],
+            "shell": 1,
+            "partner_shells": 25
+          },
+          {
+            "completions": 630,
+            "mode": [
+              0,
+              0,
+              1
+            ],
+            "shell": 1,
+            "partner_shells": 25
+          },
+          {
+            "completions": 630,
+            "mode": [
+              0,
+              0,
+              -1
+            ],
+            "shell": 1,
+            "partner_shells": 25
+          },
+          {
+            "completions": 630,
+            "mode": [
+              0,
+              -1,
+              0
+            ],
+            "shell": 1,
+            "partner_shells": 25
+          },
+          {
+            "completions": 630,
+            "mode": [
+              -1,
+              0,
+              0
+            ],
+            "shell": 1,
+            "partner_shells": 25
+          },
+          {
+            "completions": 558,
+            "mode": [
+              1,
+              1,
+              1
+            ],
+            "shell": 3,
+            "partner_shells": 25
+          },
+          {
+            "completions": 558,
+            "mode": [
+              1,
+              1,
+              -1
+            ],
+            "shell": 3,
+            "partner_shells": 25
+          }
+        ],
+        "oriented_triples_per_shape_max": 216,
+        "oriented_triples_per_shape_mean": 58.4405705229794,
+        "shell_cardinalities_sample": {
+          "1": 6,
+          "2": 12,
+          "5": 24,
+          "8": 12,
+          "9": 30,
+          "10": 24,
+          "13": 24,
+          "14": 48,
+          "17": 48,
+          "25": 30
+        }
+      },
+      "verdict": {
+        "SCHEME_A": "FAILED \u2014 shape sums and degree-inflated shell mass grow with rmax",
+        "naive_Young_split": "INSUFFICIENT alone \u2014 still deposits touch(a) mass on each shell",
+        "SCHEME_B_target": "Regroup signed transfer at mode/exact-sphere level so each frequency shell e_a is charged O(1) times (like repeated-radius (11)), then Young against \u03bdY/4. Shape-degree charging forbidden.",
+        "status": "PROBE \u2014 not a proof of (17)"
+      }
+    }
+  ],
+  "growth_20_to_30": {
+    "shapes": 3.303664921465969,
+    "sum_1_over_rate": 2.1877620991528426,
+    "once_shell_unit_e": 2.513276375686394,
+    "degree_inflated": 6.196681421701136,
+    "mode_completions_max": 2.0454545454545454,
+    "reading": "If mode_completions_max grows much slower than shapes / degree_inflated, exact-sphere regrouping is the right SCHEME B lever. If it tracks shape degree, need a stronger weight."
+  }
+}

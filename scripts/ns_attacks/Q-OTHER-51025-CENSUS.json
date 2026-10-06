@@ -1,0 +1,290 @@
+{
+  "blocks": {
+    "5_8_25": {
+      "oriented_triples": 24,
+      "shell_counts": {
+        "5": 24,
+        "8": 12,
+        "25": 30
+      },
+      "viscous_rate": "38 nu"
+    },
+    "5_10_25": {
+      "oriented_triples": 48,
+      "shell_counts": {
+        "5": 24,
+        "10": 24,
+        "25": 30
+      },
+      "viscous_rate": "40 nu",
+      "T_formula": "T=(25-10)Ip+(5-25)Iq+(10-5)Ir=15 Ip -20 Iq +5 Ir"
+    }
+  },
+  "joint_support_squared_radii": [
+    5,
+    8,
+    10,
+    25
+  ],
+  "shared_shells": [
+    5,
+    25
+  ],
+  "Q_other_channels_into_5825_from_shell_10": {
+    "pairs_with_partner_in_joint_support": 216,
+    "pairs_with_partner_low_le_2": 48,
+    "pairs_with_partner_outside_joint_high": 1320,
+    "distinct_5825_targets_hit_by_joint": 66,
+    "sample_joint": [
+      {
+        "k": [
+          0,
+          -2,
+          -1
+        ],
+        "k_r2": 5,
+        "from_10": [
+          0,
+          -3,
+          1
+        ],
+        "partner": [
+          0,
+          1,
+          -2
+        ],
+        "partner_r2": 5,
+        "tag": "partner_shared_5_or_25"
+      },
+      {
+        "k": [
+          0,
+          -2,
+          -1
+        ],
+        "k_r2": 5,
+        "from_10": [
+          0,
+          -1,
+          -3
+        ],
+        "partner": [
+          0,
+          -1,
+          2
+        ],
+        "partner_r2": 5,
+        "tag": "partner_shared_5_or_25"
+      },
+      {
+        "k": [
+          0,
+          -2,
+          -1
+        ],
+        "k_r2": 5,
+        "from_10": [
+          0,
+          1,
+          3
+        ],
+        "partner": [
+          0,
+          -3,
+          -4
+        ],
+        "partner_r2": 25,
+        "tag": "partner_shared_5_or_25"
+      },
+      {
+        "k": [
+          0,
+          -2,
+          -1
+        ],
+        "k_r2": 5,
+        "from_10": [
+          0,
+          3,
+          -1
+        ],
+        "partner": [
+          0,
+          -5,
+          0
+        ],
+        "partner_r2": 25,
+        "tag": "partner_shared_5_or_25"
+      },
+      {
+        "k": [
+          0,
+          -1,
+          -2
+        ],
+        "k_r2": 5,
+        "from_10": [
+          0,
+          -3,
+          -1
+        ],
+        "partner": [
+          0,
+          2,
+          -1
+        ],
+        "partner_r2": 5,
+        "tag": "partner_shared_5_or_25"
+      },
+      {
+        "k": [
+          0,
+          -1,
+          -2
+        ],
+        "k_r2": 5,
+        "from_10": [
+          0,
+          -1,
+          3
+        ],
+        "partner": [
+          0,
+          0,
+          -5
+        ],
+        "partner_r2": 25,
+        "tag": "partner_shared_5_or_25"
+      }
+    ],
+    "sample_outside": [
+      {
+        "k": [
+          0,
+          -2,
+          -1
+        ],
+        "k_r2": 5,
+        "from_10": [
+          -3,
+          -1,
+          0
+        ],
+        "partner": [
+          3,
+          -1,
+          -1
+        ],
+        "partner_r2": 11,
+        "tag": "partner_outside"
+      },
+      {
+        "k": [
+          0,
+          -2,
+          -1
+        ],
+        "k_r2": 5,
+        "from_10": [
+          -3,
+          0,
+          -1
+        ],
+        "partner": [
+          3,
+          -2,
+          0
+        ],
+        "partner_r2": 13,
+        "tag": "partner_outside"
+      },
+      {
+        "k": [
+          0,
+          -2,
+          -1
+        ],
+        "k_r2": 5,
+        "from_10": [
+          -3,
+          0,
+          1
+        ],
+        "partner": [
+          3,
+          -2,
+          -2
+        ],
+        "partner_r2": 17,
+        "tag": "partner_outside"
+      },
+      {
+        "k": [
+          0,
+          -2,
+          -1
+        ],
+        "k_r2": 5,
+        "from_10": [
+          -3,
+          1,
+          0
+        ],
+        "partner": [
+          3,
+          -3,
+          -1
+        ],
+        "partner_r2": 19,
+        "tag": "partner_outside"
+      },
+      {
+        "k": [
+          0,
+          -2,
+          -1
+        ],
+        "k_r2": 5,
+        "from_10": [
+          -1,
+          -3,
+          0
+        ],
+        "partner": [
+          1,
+          1,
+          -1
+        ],
+        "partner_r2": 3,
+        "tag": "partner_outside"
+      },
+      {
+        "k": [
+          0,
+          -2,
+          -1
+        ],
+        "k_r2": 5,
+        "from_10": [
+          -1,
+          0,
+          -3
+        ],
+        "partner": [
+          1,
+          -2,
+          2
+        ],
+        "partner_r2": 9,
+        "tag": "partner_outside"
+      }
+    ]
+  },
+  "cross_generation": {
+    "B_from_5_and_8_to_radius_10": 0,
+    "B_from_5_and_10_to_radius_8": 0,
+    "sample_5_8_to_10": [],
+    "sample_5_10_to_8": []
+  },
+  "scope": "lattice coupling census for Q^other between (5,8,25) and (5,10,25); not a bound"
+}

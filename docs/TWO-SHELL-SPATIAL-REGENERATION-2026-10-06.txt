@@ -1,0 +1,29 @@
+TWO-SHELL SPATIAL ASSEMBLY SURVIVES; REGENERATION IS THE OBSTRUCTION
+6 October 2026
+
+Choose the fixed cutoff by
+K = min{ n ≥ 1 : C_0 ||P_{>n} u_0||_{Ḣ^{1/2}} ≤ c ν / 2 }.
+This makes the initial high tail small uniformly in the Galerkin cutoff.
+
+For two exact spheres a < b, the complete signed assembly gives
+T = (b-a) ( j_{b←aa} - j_{a←bb} ).
+The spatial bound survives: receiver compensation and flat-triangle
+cancellation remain visible, with no occupancy factor.
+
+The obstruction is regeneration. An exact two-sphere datum with K=2
+has zero initial high tail, yet immediately generates squared radius 5.
+Its full-field scalene transfer satisfies
+T_sc(0) = 0,    T_sc'(0) = 28.
+That derivative concerns the full field, not the all-high tail.
+
+So the two-shell spatial test survives. Controlling regenerated all-high
+scalene transfer over time remains the missing step toward (17).
+
+STATUS: TWO-SHELL SPATIAL SIGNED ASSEMBLY SURVIVES (NO OCCUPANCY).
+        REGENERATED ALL-HIGH SCALENE IN TIME OPEN.
+        CRITERION (17) OPEN.
+        NS NOT SOLVED.
+
+Vault note: docs/TWO-SHELL-SPATIAL-REGENERATION-2026-10-06.md
+Parents: FOURIER-TRIANGLE.md (6)-(7),(14)-(17); SIGNED-ASSEMBLY-GATE.md;
+SIGNED-SCALENE-NEXT-ATTACK.md.
