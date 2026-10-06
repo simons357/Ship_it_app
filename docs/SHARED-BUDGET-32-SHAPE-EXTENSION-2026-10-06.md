@@ -10,6 +10,10 @@ Author package (handoff name):
 **Cover note for reviewers:**
 [`COVER-NOTE-17-FAMILY-32-SHAPE-REVIEW.md`](COVER-NOTE-17-FAMILY-32-SHAPE-REVIEW.md).
 
+**Phase-cancellation exploration** (does not alter proved
+scopes; worst-case coherent ratio can hit 1):
+[`PHASE-CANCELLATION-EXPLORATION.md`](PHASE-CANCELLATION-EXPLORATION.md).
+
 Parents / scope separation:
 - Original **17-family** shared-budget argument (high-pass
   conclusion at its stated scope).

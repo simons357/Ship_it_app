@@ -38,6 +38,7 @@ Last reviewed: **2026-10-06** (32-shape shared-budget extension filed for review
 | **Start here** | Newest open: [#145](https://github.com/simons357/Ship_it_app/pull/145) audit package · [#142](https://github.com/simons357/Ship_it_app/pull/142) Sprint 01 |
 | **Related gate stack** | Gates / SAG / lemmas / Fourier-triangle / MIN-CYCLE / channel algebra — dozens of open PRs (see GitHub “Open”) |
 | **32-shape shared-budget extension** | Independent review filing: 17 + 15 nonzero from \((9,25)\) → 32 shapes; charge multiplicity 4; [`SHARED-BUDGET-32-SHAPE-EXTENSION.md`](SHARED-BUDGET-32-SHAPE-EXTENSION.md). Not (17). Separate from [#165](https://github.com/simons357/Ship_it_app/pull/165). |
+| **Phase cancellation** | Exploration: random phases cancel; shared-mode coherent worst case can reach ratio 1 — [`PHASE-CANCELLATION-EXPLORATION.md`](PHASE-CANCELLATION-EXPLORATION.md). |
 
 ### 3. Phi-renorm / swirl papers
 
