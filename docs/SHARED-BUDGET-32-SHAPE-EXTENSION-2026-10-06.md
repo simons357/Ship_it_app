@@ -7,6 +7,9 @@ NS not solved. PR #165 unchanged.**
 Author package (handoff name):
 `Shared-Budget-17-Family-Audit-and-9-25-Extension.zip`
 
+**Cover note for reviewers:**
+[`COVER-NOTE-17-FAMILY-32-SHAPE-REVIEW.md`](COVER-NOTE-17-FAMILY-32-SHAPE-REVIEW.md).
+
 Parents / scope separation:
 - Original **17-family** shared-budget argument (high-pass
   conclusion at its stated scope).
@@ -35,11 +38,15 @@ combined charge is
 \boxed{
 \rho+3\rho'\approx 3.1077752815,
 \qquad
+\rho\approx 0.6318550824,
+\qquad
 \rho'\approx 0.8253067330.
 }
 \]
 
-This supplies an **explicit combined tail estimate**.
+(\(\rho\) = original 17-family constant; \(\rho'\) = new
+\((9,25)\)-family constant.) This supplies an **explicit
+combined tail estimate**.
 The common high-pass cutoff must become
 
 \[
@@ -117,7 +124,9 @@ ZIP to complete the binary handoff.
 - Does **not** establish global regularity / Clay.
 - Does **not** claim control of arbitrary shape families.
 - Does **not** modify PR #165 (signed-scalene / (Q⋆)
-  chain). That PR remains as filed.
+  chain). That PR could not be updated (write access
+  denied); this filing is the independent-review
+  submission instead.
 
 Overlap of shells across families can keep the max
 charge from rising when a new family is added; the

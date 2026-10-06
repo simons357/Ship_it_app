@@ -1,9 +1,10 @@
 {
   "extension": "17 + 15 nonzero from (9,25) \u2192 32 shapes",
   "combined_charge_multiplicity_nonzero_transfer": 4,
+  "rho_face": 0.6318550824,
   "rho_prime_face": 0.825306733,
   "rho_plus_3_rho_prime_face": 3.1077752815,
-  "implied_rho_face": 0.6318550825,
+  "rho_from_sum_minus_3_rho_prime": 0.6318550825,
   "reconstruction_check": true,
   "triple_product_factors": {
     "sqrt3": 1.7320508075688772,
