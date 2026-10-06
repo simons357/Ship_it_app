@@ -33,6 +33,9 @@ claim-ledger or aerostat packs):
   — \(\rho_2=1/\sqrt2\) is the orthogonal
   \(e_2\) special case; near-parallel
   oriented normals send \(\rho\to 1\).
+- [`ALL-HIGH-T6-K2-DATUM.md`](ALL-HIGH-T6-K2-DATUM.md)
+  — all-high local jet on the \(K=2\)
+  datum: \((15084/1625)t^6+O(t^7)\).
 
 ## STATUS board
 

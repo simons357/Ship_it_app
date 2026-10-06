@@ -27,5 +27,7 @@ Witness: modes \((1,0,0)\), \((0,1,0)\), \((-1,-1,0)\);
 \(\mathcal T_{\mathrm{sc}}(0)=0\), \(\mathcal T_{\mathrm{sc}}'(0)=28\)
 on the **full field**, independent of \(\nu\).
 
-Next: regenerated all-high three-radius blocks in time.
+All-high follow-up:
+[`ALL-HIGH-T6-K2-DATUM.md`](ALL-HIGH-T6-K2-DATUM.md)
+— \(\mathcal T_{\mathrm{sc}}(h_2)=(15084/1625)t^6+O(t^7)\).
 Not (17).
