@@ -282,12 +282,13 @@ is fixed. Datum-sensitive constants allowed.
 \(\mathcal T_{\mathrm{sc}}(h_2)=(15084/1625)t^6+O(t^7)\),
 orders \(\le t^5\) vanish, coefficient independent of
 \(\nu\), blocks \((5,8,25)\) and \((5,10,25)\).
-Fixed-pair author bounds:
-[`BLOCK-5825-PARTIAL-BOUNDS.md`](../docs/BLOCK-5825-PARTIAL-BOUNDS.md) —
-(P1)–(P3) include outside inputs; frequency helps viscosity.
-Prior “outside defeats energy-only” for these shapes withdrawn.
-**Plow now:** assemble all scalene shapes without repeatedly
-charging the same shell energies; (17).
+Fixed-pair author bounds + truth run:
+[`BLOCK-5825-PARTIAL-BOUNDS.md`](../docs/BLOCK-5825-PARTIAL-BOUNDS.md),
+[`TRUTH-RUN-CAVEATS.md`](../docs/TRUTH-RUN-CAVEATS.md) —
+Duhamel OK; first unchecked step \(\int|Q|\); budget integrand
+separated from \(\int|T_{5825}|\); SCHEME A (sum per shape) FAILED.
+**Plow now:** audit \(Q\)-step in review packet; once-per-shell
+all-shape pot; (17).
 
 ### Gate 4 — High-pass consistency (**OPEN**, bookkeeping)
 

@@ -1,0 +1,58 @@
+{
+  "P1_duhamel_skeleton": {
+    "identity": "T'=Q-38\u03bdT \u21d2 \u222b|T|\u2264|T0|/(38\u03bd)+(1/(38\u03bd))\u222b|Q|",
+    "author_second_coefficient": 0.275533,
+    "implied_\u222b|Q|_coefficient_K_if_form_K_E0\u00b2/\u03bd": 10.470253999999999,
+    "first_unjustified_step_without_packet": "Bound \u222b|Q_5825| dt by a multiple of E0\u00b2/\u03bd using only energy (and possibly shell structure), including outside inputs \u2014 this is where the analytic packet must be checked",
+    "status": "Duhamel reduction STANDARD; Q-integral bound NOT independently verified here"
+  },
+  "P2_P3_consistency": {
+    "alpha_face": 0.375329,
+    "beta_face": 1.501315,
+    "beta_over_alpha": 3.999997335670838,
+    "interpretation": "If |T_sum|\u2264\u03b1\u221aE0/n Y_S4 and viscous allowance were \u03bd Y_S4, threshold would be n\u2265\u03b1\u221aE0/\u03bd. Observed \u03b2/\u03b1\u22484 suggests allowance \u03bdY/4 (budget viscosity share) or a rate/normalization factor ~4. Not a proof \u2014 consistency probe only.",
+    "status": "NUMERICAL consistency probe; proofs not verified"
+  },
+  "jet_threshold_K2_witness": {
+    "E0": 14,
+    "X0": 20,
+    "Y0": 32,
+    "T_sc_h2_leading": "15084/1625",
+    "nuY0_over_4": "8 \u03bd",
+    "t_star_nu_1": 0.9755236547927235,
+    "t_star_nu_0_1": 0.6646165291887189,
+    "conclusion": "For every \u03bd>0, T_sc(h2)=O(t^6) starts below \u03bdY/4 near t=0. So (P1) on T_5825 does NOT by itself turn on the budget integrand [T_sc(h)-\u03bdY/4]_+/X. Distinct objects \u2014 EXACT qualitative separation.",
+    "status": "EXACT qualitative on the named jet (using filed t^6 coefficient)"
+  },
+  "all_shape_double_charge": {
+    "rmax": 30,
+    "scalene_shape_count": 631,
+    "shapes_touching_shell_5": 92,
+    "most_shared_shells": [
+      [
+        17,
+        106
+      ],
+      [
+        14,
+        102
+      ],
+      [
+        9,
+        99
+      ],
+      [
+        26,
+        98
+      ],
+      [
+        29,
+        97
+      ]
+    ],
+    "naive_sum_risk": "If each shape used a (P1)-style bound charging E0 (or shared shell energies) once per shape, total constant grows with #shapes and overcounts shells that participate in many triples. Sample: shell 5 sits in many shapes already at rmax=30.",
+    "failed_scheme": "SCHEME A (FAILED as a path to (17)): sum_shapes \u222b|T_abc| \u2264 (#shapes)*C E0\u00b2/\u03bd\u00b2. #shapes\u2192\u221e as rmax\u2192\u221e, so no uniform bound.",
+    "open_scheme_need": "Need a pot that charges each shell energy at most once (or a convergent weight), not once per scalene multiset.",
+    "status": "EXACT census obstruction to naive summation; (17) still OPEN"
+  }
+}

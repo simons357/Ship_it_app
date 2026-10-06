@@ -116,6 +116,10 @@ Independent review of the analytic proofs in
 records the correction and the boxed partial results for
 the PR #165 chain.
 
+Truth-run delimitation (Duhamel vs \(Q\)-step; budget
+integrand; SCHEME A failure):
+[`TRUTH-RUN-CAVEATS.md`](TRUTH-RUN-CAVEATS.md).
+
 ---
 
 ## 3. Consequence for the next attack

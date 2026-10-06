@@ -49,6 +49,10 @@ claim-ledger or aerostat packs):
   — author correction: fixed-block bounds
   (P1)–(P3) including outside inputs;
   all-shape assembly still OPEN toward (17).
+- [`TRUTH-RUN-CAVEATS.md`](TRUTH-RUN-CAVEATS.md)
+  — Duhamel STANDARD; \(\int\lvert Q\rvert\) unchecked;
+  budget \(\neq\int\lvert T_{5825}\rvert\);
+  SCHEME A (sum per shape) FAILED.
 
 ## STATUS board
 
@@ -152,9 +156,11 @@ Two-shell spatial signed assembly:
 survives (no occupancy).
 All-high local jet on \(K=2\) datum:
 \(t^6\) onset written.
-Fixed-pair bounds (P1)–(P3): author claimed.
-All-shape assembly without repeated shell charging:
-**OPEN — plow**. (17) still OPEN.
+Fixed-pair bounds (P1)–(P3): author claimed;
+first audit target \(\int\lvert Q\rvert\).
+SCHEME A (sum per shape): FAILED.
+All-shape once-per-shell pot: **OPEN — plow**.
+(17) still OPEN.
 (L3-5) fixed-datum: OPEN, deprioritized.
 Lemma A / sign gate: unaltered (as on
 parent desks).
