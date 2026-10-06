@@ -368,7 +368,8 @@ moves.
 6 October 2026 two-shell spatial write
 (not a substitute for this gate in
 time, and not (17)):
-[`TWO-SHELL-SPATIAL-REGENERATION.md`](TWO-SHELL-SPATIAL-REGENERATION.md).
+[`DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md`](DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md)
+(desk: [`TWO-SHELL-SPATIAL-REGENERATION.md`](TWO-SHELL-SPATIAL-REGENERATION.md)).
 Complete two-sphere assembly
 \(\mathcal T=(b-a)(j_{b\leftarrow aa}-j_{a\leftarrow bb})\)
 survives with no occupancy factor.

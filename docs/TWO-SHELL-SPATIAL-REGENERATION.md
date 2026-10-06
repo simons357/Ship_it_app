@@ -5,37 +5,27 @@
 Regeneration of all-high scalene remains the blank.
 (17) OPEN. NS not solved.**
 
-Authoritative note:
-[`TWO-SHELL-SPATIAL-REGENERATION-2026-10-06.md`](TWO-SHELL-SPATIAL-REGENERATION-2026-10-06.md)
-(plain-text twin:
-[`TWO-SHELL-SPATIAL-REGENERATION-2026-10-06.txt`](TWO-SHELL-SPATIAL-REGENERATION-2026-10-06.txt)).
+**Authoritative write (ZIP):**
+[`DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md`](DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md).
+Packet ZIP:
+[`../packets/Datum-Cutoff-Two-Shell-Signed-Assembly.zip`](../packets/Datum-Cutoff-Two-Shell-Signed-Assembly.zip).
+Exact checks:
+`scripts/ns_attacks/two_shell_regeneration_checks.py`
+(run beside `c10_full_local_exact_checks.py`).
 
-Cutoff from the initial tail:
+Earlier short packing note:
+[`TWO-SHELL-SPATIAL-REGENERATION-2026-10-06.md`](TWO-SHELL-SPATIAL-REGENERATION-2026-10-06.md).
 
-\[
-K=\min\{n\ge1:C_0\|P_{>n}u_0\|_{\dot H^{1/2}}\le c\nu/2\}.
-\]
-
+Cutoff from the initial \(\dot H^{1/2}\) tail of \(u_0\).
 Two exact spheres \(a<b\):
+\(\mathcal T=(b-a)(j_{b\leftarrow aa}-j_{a\leftarrow bb})\).
+No occupancy factor.
 
-\[
-\mathcal T=(b-a)\bigl(j_{b\leftarrow aa}-j_{a\leftarrow bb}\bigr).
-\]
+Witness: modes \((1,0,0)\), \((0,1,0)\), \((-1,-1,0)\);
+\(E=14\), \(X=20\), \(Y=32\), \(J=4\), \(\mathcal T=4\);
+\(K=2\) admissible; generates radius \(5\);
+\(\mathcal T_{\mathrm{sc}}(0)=0\), \(\mathcal T_{\mathrm{sc}}'(0)=28\)
+on the **full field**, independent of \(\nu\).
 
-No occupancy factor. Receiver compensation and
-flat-triangle cancellation stay visible.
-
-Obstruction: exact two-sphere datum with \(K=2\)
-has zero initial high tail and immediately generates
-squared radius \(5\), with
-
-\[
-\mathcal T_{\mathrm{sc}}(0)=0,
-\qquad
-\mathcal T_{\mathrm{sc}}'(0)=28
-\]
-
-on the **full field**, not the all-high tail.
-
-Next: control regenerated all-high scalene in time
-toward (17). Do not restart occupancy counting.
+Next: regenerated all-high three-radius blocks in time.
+Not (17).

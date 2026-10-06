@@ -23,10 +23,12 @@ claim-ledger or aerostat packs):
   — energy-only strengthening of (L3-5)
   **FALSIFIED**; shears give \(S\equiv 0\).
 - [`TWO-SHELL-SPATIAL-REGENERATION.md`](TWO-SHELL-SPATIAL-REGENERATION.md)
-  — two-shell spatial signed assembly
-  survives (no occupancy);
+  — desk pointer; full write
+  [`DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md`](DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md)
+  (two-shell spatial signed assembly
+  survives, no occupancy;
   regeneration of all-high scalene is
-  the remaining blank.
+  the remaining blank).
 
 ## STATUS board
 
@@ -38,7 +40,7 @@ claim-ledger or aerostat packs):
 | Classical (L3-1); one-way (L3-4): \(S\le C_S S^{(3)}+\mathrm{controlled}\) | **PROVED** |
 | Fixed-datum (L3-5): \(\sup_N S^{(3)}_{K,N}(T)<\infty\) with \(K=K(u_0,\nu)\) | **OPEN** (not refuted by shears) |
 | Criterion (17): \(\sup_N S_{K,N}(T)<\infty\) with \(K=K(u_0,\nu)\) | **OPEN** — **priority target** |
-| Two-shell complete signed assembly \(\mathcal T=(b-a)(j_{b\leftarrow aa}-j_{a\leftarrow bb})\) | **Spatial test survives** (no occupancy); see [`TWO-SHELL-SPATIAL-REGENERATION.md`](TWO-SHELL-SPATIAL-REGENERATION.md) |
+| Two-shell complete signed assembly \(\mathcal T=(b-a)(j_{b\leftarrow aa}-j_{a\leftarrow bb})\) | **Spatial test survives** (no occupancy); full write [`DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md`](DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md) |
 | Frozen \(K\) from initial \(\dot H^{1/2}\) tail | **Written** (datum-sensitive; \(t=0\) uniform in \(N\)) |
 | Regenerated all-high scalene in time (radius \(5\) from \(K=2\) two-sphere; \(\mathcal T_{\mathrm{sc}}(0)=0\), \(\mathcal T_{\mathrm{sc}}'(0)=28\) full field) | **OPEN** — remaining blank toward (17) |
 | Universal energy-only \(F(E_0,\nu,K,T)\) on \(S^{(3)}\); reverse \(S^{(3)}\lesssim S+F\) | **KILLED** (exact shear obstruction, 3 Oct 2026) |

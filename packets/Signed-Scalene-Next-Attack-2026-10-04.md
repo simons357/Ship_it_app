@@ -36,7 +36,7 @@ PR merges; no claim-ledger / aerostat):
 | (L3-4): \(S\le C_S S^{(3)}+\mathrm{controlled}\) | **PROVED** | **One-way only.** |
 | (L3-5) fixed-datum high-mode \(L^3\) budget | **OPEN** | \(\forall u_0,\nu\ \exists K(u_0,\nu)\ \forall T:\ \sup_N S^{(3)}_{K,N}(T)<\infty\). Not refuted by shears. |
 | **Criterion (17)** signed scalene budget | **OPEN — PRIORITY** | Same quantifier shape as (L3-5), different integrand. |
-| Two-shell complete signed assembly \(\mathcal T=(b-a)(j_{b\leftarrow aa}-j_{a\leftarrow bb})\) | **Spatial test survives** | No occupancy factor. Receiver compensation and flat-triangle cancellation visible. [`TWO-SHELL-SPATIAL-REGENERATION.md`](../docs/TWO-SHELL-SPATIAL-REGENERATION.md) |
+| Two-shell complete signed assembly \(\mathcal T=(b-a)(j_{b\leftarrow aa}-j_{a\leftarrow bb})\) | **Spatial test survives** | No occupancy. Full write [`DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md`](../docs/DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md) |
 | Frozen \(K\) from initial \(\dot H^{1/2}\) tail | **Written** | \(K=\min\{n\ge1:C_0\|P_{>n}u_0\|_{\dot H^{1/2}}\le c\nu/2\}\). Uniform in \(N\) at \(t=0\) only. |
 | Regenerated all-high scalene in time | **OPEN — plow** | Exact two-sphere datum, \(K=2\), generates radius \(5\); \(\mathcal T_{\mathrm{sc}}(0)=0\), \(\mathcal T_{\mathrm{sc}}'(0)=28\) on the **full field**. |
 | Universal energy-only \(F(E_0,\nu,K,T)\) bounding \(S^{(3)}\) for all smooth data of energy \(E_0\) | **KILLED** | Exact shear family, 3 Oct 2026. |
@@ -254,7 +254,7 @@ assembly
 survives with no occupancy factor (receiver
 compensation and flat-triangle cancellation visible).
 That does **not** close all-high scalene in time.
-See [`TWO-SHELL-SPATIAL-REGENERATION.md`](../docs/TWO-SHELL-SPATIAL-REGENERATION.md).
+See [`DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md`](../docs/DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md).
 
 ### Gate 3 — Regenerative forcing along the NSE (**OPEN — now the plow**)
 

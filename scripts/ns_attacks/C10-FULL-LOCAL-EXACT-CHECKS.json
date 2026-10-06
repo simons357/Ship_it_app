@@ -1,0 +1,86 @@
+{
+  "arithmetic": "exact Gaussian rationals",
+  "sharp_shell_triad_T": [
+    "4",
+    "0"
+  ],
+  "soft_multiplier_triad_T": [
+    "7/2",
+    "0"
+  ],
+  "one_length_T": [
+    "0",
+    "0"
+  ],
+  "triad_rows": [
+    {
+      "k": [
+        1,
+        0,
+        0
+      ],
+      "energy_pairing": [
+        "-1",
+        "0"
+      ]
+    },
+    {
+      "k": [
+        -1,
+        0,
+        0
+      ],
+      "energy_pairing": [
+        "-1",
+        "0"
+      ]
+    },
+    {
+      "k": [
+        0,
+        1,
+        0
+      ],
+      "energy_pairing": [
+        "-1",
+        "0"
+      ]
+    },
+    {
+      "k": [
+        0,
+        -1,
+        0
+      ],
+      "energy_pairing": [
+        "-1",
+        "0"
+      ]
+    },
+    {
+      "k": [
+        -1,
+        -1,
+        0
+      ],
+      "energy_pairing": [
+        "2",
+        "0"
+      ]
+    },
+    {
+      "k": [
+        1,
+        1,
+        0
+      ],
+      "energy_pairing": [
+        "2",
+        "0"
+      ]
+    }
+  ],
+  "full_local_identity": "passed",
+  "energy_orthogonality": "passed",
+  "scope": "finite exact Fourier algebra; no class depletion conclusion"
+}

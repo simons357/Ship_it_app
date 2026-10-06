@@ -1025,7 +1025,7 @@ Two-shell spatial signed assembly
 (6 Oct 2026) survives without
 occupancy; regeneration of all-high
 scalene remains the blank:
-[`TWO-SHELL-SPATIAL-REGENERATION.md`](TWO-SHELL-SPATIAL-REGENERATION.md).
+[`DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md`](DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md).
 Centered clock (18) EXACT; its
 sufficient \(T_c\) bound is a
 distinct OPEN route.

@@ -1,9 +1,8 @@
 # Two-shell spatial assembly survives; regeneration is the obstruction
 
 6 October 2026.
-**Two-shell signed spatial test: survives (no occupancy).
-Regenerated all-high scalene in time: still OPEN.
-Criterion (17) not proved. NS not solved. Not Clay.**
+**Short packing note. Authoritative write is the ZIP document
+[`DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md`](DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md).**
 
 Desk pointer:
 [`TWO-SHELL-SPATIAL-REGENERATION.md`](TWO-SHELL-SPATIAL-REGENERATION.md).

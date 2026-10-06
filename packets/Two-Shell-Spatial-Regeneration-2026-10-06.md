@@ -5,7 +5,9 @@ Regenerated all-high scalene in time remains OPEN.
 (17) not proved. NS not solved. Not Clay.**
 
 Full note:
-[`docs/TWO-SHELL-SPATIAL-REGENERATION-2026-10-06.md`](../docs/TWO-SHELL-SPATIAL-REGENERATION-2026-10-06.md).
+[`docs/DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md`](../docs/DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md).
+ZIP:
+[`Datum-Cutoff-Two-Shell-Signed-Assembly.zip`](Datum-Cutoff-Two-Shell-Signed-Assembly.zip).
 
 Desk:
 [`docs/TWO-SHELL-SPATIAL-REGENERATION.md`](../docs/TWO-SHELL-SPATIAL-REGENERATION.md).
