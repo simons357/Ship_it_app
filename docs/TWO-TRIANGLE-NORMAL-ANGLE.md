@@ -11,10 +11,9 @@ Full note:
 \rho(\theta)=\sqrt{(1+\cos\theta)/2}=\lvert\cos(\theta/2)\rvert.
 \]
 
-Orthogonal \(\Rightarrow 1/\sqrt2\). Near-parallel oriented normals
-\(\Rightarrow\rho\to 1\). Near-antiparallel with fixed phases
-\(\Rightarrow\rho\to 0\); with optimized partner phases the max
-tracks \(\lvert\cos\theta\rvert\) (full compatibility possible
-either way). Still not a universal \(1/\sqrt2\).
+Orthogonal \(\Rightarrow 1/\sqrt2\). Near-antiparallel cancellation
+needs **fixed** phases; optimizing partner phases replaces
+\(\cos\theta\) by \(\lvert\cos\theta\rvert\). Still not a
+universal \(1/\sqrt2\).
 
 Checks: `scripts/ns_attacks/two_triangle_normal_angle_checks.py`.

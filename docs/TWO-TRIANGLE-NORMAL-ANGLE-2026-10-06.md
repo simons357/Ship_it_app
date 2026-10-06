@@ -54,10 +54,12 @@ not a universal two-triangle constant.
 - Near-**antiparallel** oriented normals: for the **fixed phases**
   used in the equal-weight identity, signed assembly can cancel
   **harder** than \(1/\sqrt2\) (\(\rho\to 0\)).
-- When **partner phases are optimized**, the attainable maximum
-  depends on \(\lvert\cos\theta\rvert\): either nearly parallel
-  orientation can approach full compatibility. That does **not**
-  restore \(1/\sqrt2\) as a universal constant.
+- When **partner phases are optimized**, \(\cos\theta\) is
+  replaced by \(\lvert\cos\theta\rvert\) in the attainable
+  maximum: either nearly parallel orientation can approach
+  full compatibility. Near-antiparallel cancellation is a
+  **fixed-phase** statement. That does **not** restore
+  \(1/\sqrt2\) as a universal constant.
 
 ---
 

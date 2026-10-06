@@ -38,7 +38,7 @@ PR merges; no claim-ledger / aerostat):
 | **Criterion (17)** signed scalene budget | **OPEN — PRIORITY** | Same quantifier shape as (L3-5), different integrand. |
 | Two-shell complete signed assembly \(\mathcal T=(b-a)(j_{b\leftarrow aa}-j_{a\leftarrow bb})\) | **Spatial test survives** | No occupancy. Full write [`DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md`](../docs/DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md) |
 | Frozen \(K\) from initial \(\dot H^{1/2}\) tail | **Written** | \(K=\min\{n\ge1:C_0\|P_{>n}u_0\|_{\dot H^{1/2}}\le c\nu/2\}\). Uniform in \(N\) at \(t=0\) only. |
-| Regenerated all-high scalene in time | **Local jet written / (17) OPEN** | \(K=2\) datum: \(\mathcal T_{\mathrm{sc}}(h_2)=(15084/1625)t^6+O(t^7)\); orders \(\le t^5\) vanish; \(\nu\)-independent. Blocks \((5,8,25)\), \((5,10,25)\). Full-field \(\mathcal T_{\mathrm{sc}}'(0)=28\) is separate. [`ALL-HIGH-T6-K2-DATUM.md`](../docs/ALL-HIGH-T6-K2-DATUM.md) |
+| Regenerated all-high scalene in time | **Local jet written / (17) OPEN** | \(K=2\) datum: \(\mathcal T_{\mathrm{sc}}(h_2)=(15084/1625)t^6+O(t^7)\); orders \(\le t^5\) vanish; \(\nu\)-independent; same for \(N\ge 5\); below \(\nu Y/4\) initially. Blocks \((5,8,25)\), \((5,10,25)\). [`ALL-HIGH-T6-K2-DATUM.md`](../docs/ALL-HIGH-T6-K2-DATUM.md) |
 | Universal energy-only \(F(E_0,\nu,K,T)\) bounding \(S^{(3)}\) for all smooth data of energy \(E_0\) | **KILLED** | Exact shear family, 3 Oct 2026. |
 | Reverse comparison \(S^{(3)}\le C\,S+F(E_0,\nu,K,T)\) | **KILLED** | Same family: \(S=0\), \(S^{(3)}\) arbitrarily large. |
 | Unrestricted \(\sup\mathcal R_\star<\infty\); charge-only close; Theorem H as NS close | **KILLED** | Prior desks; do not reopen here. |

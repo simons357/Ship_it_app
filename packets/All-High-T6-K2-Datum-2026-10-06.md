@@ -12,5 +12,10 @@ Full note:
 Parent datum write:
 [`docs/DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md`](../docs/DATUM-CUTOFF-TWO-SHELL-SIGNED-ASSEMBLY.md).
 
-STATUS: ALL-HIGH ONSET AT \(t^6\), COEFFICIENT
-\(15084/1625\), \(\nu\)-INDEPENDENT. (17) OPEN.
+STATUS: GENUINE ALL-HIGH REGENERATION AT \(t^6\),
+COEFFICIENT \(15084/1625\), \(\nu\)-INDEPENDENT,
+SAME FOR \(N\ge 5\). BELOW \(\nu Y/4\) INITIALLY.
+(17) OPEN.
+
+Author packet name: `All-High-Regeneration-First-Nonzero.zip`
+(re-attach if not yet in `packets/`).

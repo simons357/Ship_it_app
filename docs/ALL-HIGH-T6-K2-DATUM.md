@@ -12,6 +12,7 @@ Full note:
 \]
 
 Orders \(\le t^5\) vanish. Coefficient independent
-of \(\nu\). Blocks \((5,8,25)\), \((5,10,25)\).
-Positive budget integrand not established
-(\(\nu Y/4\) threshold). Criterion (17) OPEN.
+of \(\nu\); same for Galerkin \(N\ge 5\).
+Blocks \((5,8,25)\), \((5,10,25)\). Genuine all-high
+regeneration; remains below \(\nu Y/4\) initially.
+Criterion (17) OPEN.
