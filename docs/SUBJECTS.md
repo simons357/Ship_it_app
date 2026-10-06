@@ -3,7 +3,7 @@
 One page to see **what this repo is about** and **where each thread lives**.
 
 Update this file when a subject changes status (merge, park, abandon, or rename).  
-Last reviewed: **2026-10-01** (transfer-lemma kill lock filed).
+Last reviewed: **2026-10-06** (32-shape shared-budget extension filed for review).
 
 ---
 

@@ -1,0 +1,22 @@
+{
+  "extension": "17 + 15 nonzero from (9,25) \u2192 32 shapes",
+  "combined_charge_multiplicity_nonzero_transfer": 4,
+  "rho_prime_face": 0.825306733,
+  "rho_plus_3_rho_prime_face": 3.1077752815,
+  "implied_rho_face": 0.6318550825,
+  "reconstruction_check": true,
+  "triple_product_factors": {
+    "sqrt3": 1.7320508075688772,
+    "sqrt2": 1.4142135623730951
+  },
+  "constant_3_fixed_shell_lemma": "valid under its hypotheses",
+  "constant_2_distinct_donor": "sharpening of distinct-donor case",
+  "common_highpass_cutoff": "K = max{2, 3(M-1)}",
+  "not_claimed": [
+    "criterion (17)",
+    "global regularity",
+    "arbitrary families"
+  ],
+  "pr_165": "unchanged",
+  "status": "NUMERICAL face check only; analytic proofs in author ZIP"
+}
