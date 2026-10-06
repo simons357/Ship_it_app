@@ -490,7 +490,10 @@ Need★ = this gate on two shells.
 Attack 8 = counting probe, not a bound.
 SAG-5 = global compatibility defect
 (5A rank, 5B cocycle). \(\rho_2=1/\sqrt{2}\)
-stamped, constant, not \(N^{-\delta}\).
+stamped on the orthogonal sharing-pair
+geometry, constant, not \(N^{-\delta}\);
+not robust under near-parallel oriented
+\(e_2\) ([`TWO-TRIANGLE-NORMAL-ANGLE.md`](TWO-TRIANGLE-NORMAL-ANGLE.md)).
 SAG-6A EXACT. 6B sparse. 6D
 \(\rho_k(N)=1\), coherent family.
 One-\(k\) equal-input stack is not
