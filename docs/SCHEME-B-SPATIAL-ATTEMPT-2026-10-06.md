@@ -181,45 +181,44 @@ False in general: take \(N\) shells with
 \(\alpha e_\alpha=1/N\), then \(X=1\) but
 \(\sum\sqrt{\alpha e_\alpha}=\sqrt{N}\).
 
-**Stuck conclusion.** With only the crude factor
-\(\sqrt{Y_{\mathrm{rec}}}\le\sqrt{Y}\) pulled out of the
-donor sum, (B-CS) **does not close** in \(X\) alone.
-The repeated-radius miracle was summing the
-\(g\)-weights **inside** one input shell before CS.
-Scalene needs an analogous **internal** summation —
-e.g. fix receiver shell \(\gamma\) and sum donors with
-exact-sphere geometry, or keep
-\(\sqrt{Y_{\mathrm{rec}}^{\alpha\beta}}\) correlated with
-which shells receive from \((\alpha,\beta)\) so that a
-double CS hits \(Y\) and \(X\) without
-\(\#\mathrm{shells}\).
+**Stuck conclusion for absolute majorants.** With only
+the crude factor \(\sqrt{Y_{\mathrm{rec}}}\le\sqrt{Y}\)
+pulled out, (B-CS) **does not close** in \(X\) alone.
+Counterexample to the *method*: spread \(X=1\) equally
+over \(N\) shells (\(\alpha e_\alpha=1/N\)). Then
+\(\sum\sqrt{\alpha e_\alpha}=\sqrt N\) and
+\(\sum_{\alpha\neq\beta}\sqrt{e_\alpha e_\beta}\) grows
+like \(N\), so no absolute \(C\) works for (B-W').
+
+**But (B1) for signed \(\mathcal T_{\mathrm{sc}}\) is not
+killed.** On those same equal-\(X\)-spread fields, the
+assembled signed ratio
+\(\lvert\mathcal T_{\mathrm{sc}}\rvert/(X\sqrt Y)\) stayed
+\(O(10^{-2})\) from \(r_{\max}=8\) to \(16\) (aligned
+phases gave \(\approx 0\); random/staggered did not track
+\(\sqrt N\)). So the divergence is an artifact of taking
+absolute values on donor pairs too early — the same Loss
+already named in [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md) §8.
 
 ---
 
 ## Step 5 — repaired attack order after the stuck step
 
-1. **Do not** pull \(\sqrt{Y}\) out uniformly.
-2. Write
-   \[
-   \mathcal T_{\mathrm{sc}}
-   =\sum_\gamma
-   \sum_{\substack{\alpha<\beta\\ \{\alpha,\beta,\gamma\}\mathrm{\ scalene}}}
-   \mathcal T_{\alpha\beta\gamma}
-   \]
-   and, for each fixed \(\gamma\), assemble all donor
-   pairs into one receiver-shell channel (as (SC) does
-   for one \(\beta\)). Apply (B-V) per \((\alpha,\beta)\)
-   **or** a joint donor assembly on shell \(\gamma\).
-3. Bound the \(\gamma\)-channel by
-   \(C g_\gamma e_\gamma^{1/2}\Phi_\gamma(\{e_\alpha\})\)
-   with \(\Phi_\gamma\) charging each \(e_\alpha\) once
-   across \(\gamma\).
-4. Sum on \(\gamma\) with weights \(\to\sqrt{Y}\) and
-   collapse \(\Phi\) with weighted CS \(\to X\).
+1. **Do not** pass to \(\sum_{\alpha\neq\beta}\sqrt{e_\alpha e_\beta}\).
+2. Keep the signed sum over donor pairs inside each
+   receiver shell (mirror (SC)): one assembled \(V_k\)
+   on shell \(\gamma\) including **all** mixed donors
+   before \(\lvert V_k\rvert\).
+3. Bound \(\sum_{\lvert k\rvert^2=\gamma}\lvert V_k\rvert^2\)
+   by a quadratic form in \(\{e_\alpha\}\) with
+   **once-per-shell** diagonal (Plancherel / (8)-style
+   off-diagonal), not by \(\bigl(\sum\sqrt{e_\alpha}\bigr)^2\).
+4. Only then CS against \(e_\gamma\) and sum \(\gamma\)
+   into \(\sqrt Y\), collapsing the donor quadratic form
+   into \(X\).
 
-This is Lemma B-spatial’s remaining core. Steps 1–3
-above are the usable reduction; Step 4 is the blank
-inside SCHEME B.
+Step 3 is the remaining analytic blank inside SCHEME B:
+a multi-donor exact-sphere bound on one receiver shell.
 
 ---
 
@@ -227,7 +226,8 @@ inside SCHEME B.
 
 (B-P) PLANCHEREL DONOR POT: EXACT.
 (B-J) ONE-PAIR CHANNEL BOUND: STANDARD GIVEN (B-V).
-(B-W') CRUDE PULL-OUT OF √Y: LEADS TO DIVERGENT SHELL-PAIR SUM — NOT A CLOSE.
-(B1) FULL SPATIAL: OPEN — STUCK AT COLLAPSING DONOR SUM WITHOUT #SHELLS.
+(B-W') ABSOLUTE DONOR-PAIR SUM: KILLED AS A METHOD (#SHELLS COUNTEREXAMPLE).
+SIGNED (B1): STILL OPEN — NUMERICALLY STABLE ON THE SAME ADVERSARIAL SPREAD.
+NEXT: MULTI-DONOR ASSEMBLY ON ONE RECEIVER SHELL BEFORE ABSOLUTES.
 (B2)/(17): BLOCKED ON (B1).
 NS NOT SOLVED.

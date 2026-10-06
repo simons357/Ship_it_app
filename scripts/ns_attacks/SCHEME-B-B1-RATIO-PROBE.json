@@ -37,5 +37,17 @@
     "abs_T_sc_over_X_sqrtY": 0.008559798231671675,
     "n_shapes_used": 86
   },
-  "status": "NUMERICAL probe of (B1); not a proof of (17)"
+  "status": "NUMERICAL probe of (B1); not a proof of (17)",
+  "adversarial_equal_X_spread": {
+    "method": "a*e_a=1/n_shells (X=1), phases aligned/random/staggered",
+    "ratios_max_by_rmax_staggered": {
+      "8": 0.00018,
+      "10": 0.00592,
+      "12": 0.00811,
+      "14": 0.00892,
+      "16": 0.00877
+    },
+    "absolute_majorant": "sum sqrt(e_a e_b) grows like #shells \u2014 killed as proof method",
+    "signed_T_sc": "ratio stayed O(0.01), no sqrt(N) growth \u2014 (B1) not killed"
+  }
 }
