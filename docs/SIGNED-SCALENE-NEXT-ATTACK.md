@@ -36,6 +36,12 @@ claim-ledger or aerostat packs):
 - [`ALL-HIGH-T6-K2-DATUM.md`](ALL-HIGH-T6-K2-DATUM.md)
   — all-high local jet on the \(K=2\)
   datum: \((15084/1625)t^6+O(t^7)\).
+- [`BLOCK-5825-FIRST-ATTEMPT.md`](BLOCK-5825-FIRST-ATTEMPT.md)
+  — one complete regenerated block
+  \((5,8,25)\): evolution written;
+  intra-block dilation-stable;
+  external energy-only absorption
+  fails; summing blocks still open.
 
 ## STATUS board
 
@@ -110,7 +116,9 @@ statements. Short board:
    all-high-in-time still OPEN.
 4. Regenerative quartic / all-high jet —
    local \(t^6\) onset on the \(K=2\) datum
-   **written**; general control still OPEN.
+   **written**; one-block \((5,8,25)\)
+   attempt: intra OK, \(\mathcal Q^{\mathrm{other}}\)
+   still OPEN.
 5. Integrate to uniform-in-\(N\) budget
    at fixed \(K(u_0,\nu)\) = (17) — OPEN
    (incl. \(\nu Y/4\) threshold test).
@@ -135,8 +143,11 @@ Energy-only \(S^{(3)}\) reverse: KILLED.
 Two-shell spatial signed assembly:
 survives (no occupancy).
 All-high local jet on \(K=2\) datum:
-\(t^6\) onset written; (17) still OPEN —
-plow the integrated budget / threshold.
+\(t^6\) onset written.
+One-block \((5,8,25)\): evolution written;
+external energy-only absorption **fails**.
+(17) still OPEN — plow \(\mathcal Q^{\mathrm{other}}\)
+/ summing blocks.
 (L3-5) fixed-datum: OPEN, deprioritized.
 Lemma A / sign gate: unaltered (as on
 parent desks).

@@ -282,10 +282,12 @@ is fixed. Datum-sensitive constants allowed.
 \(\mathcal T_{\mathrm{sc}}(h_2)=(15084/1625)t^6+O(t^7)\),
 orders \(\le t^5\) vanish, coefficient independent of
 \(\nu\), blocks \((5,8,25)\) and \((5,10,25)\).
-Full-field \(\mathcal T_{\mathrm{sc}}'(0)=28\) remains a
-separate witness. **Plow now:** whether
-\([\mathcal T_{\mathrm{sc}}-\nu Y/4]_+\) is positive, and
-general (17). Not \(\sup_N\) control yet.
+One-block attempt on \((5,8,25)\):
+[`BLOCK-5825-FIRST-ATTEMPT.md`](../docs/BLOCK-5825-FIRST-ATTEMPT.md)
+— signed evolution written; intra-block dilation-stable;
+external energy-only absorption **fails**.
+**Plow now:** \(\mathcal Q^{\mathrm{other}}\) / summing
+with \((5,10,25)\); \(\nu Y/4\) threshold; (17).
 
 ### Gate 4 — High-pass consistency (**OPEN**, bookkeeping)
 
