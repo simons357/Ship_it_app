@@ -108,7 +108,10 @@ Thank you.
 | Item | Status |
 |---|---|
 | This cover note | Filed on `cursor/shared-budget-32-shape-c3ed` |
+| ZIP-root README (same text) | [`packets/Shared-Budget-17-Family-Audit-and-9-25-Extension/README.md`](../packets/Shared-Budget-17-Family-Audit-and-9-25-Extension/README.md) |
 | Extension desk | [`SHARED-BUDGET-32-SHAPE-EXTENSION.md`](SHARED-BUDGET-32-SHAPE-EXTENSION.md) |
 | Author ZIP | Named above; attach to the review PR when present in the environment |
 | PR #165 | **Not updated** (write access denied); separate (Q⋆) / signed-scalene chain |
 | (17) / Clay | **Not claimed** |
+
+No tone change requested; cover note used as-is for the review request and ZIP README.
