@@ -120,9 +120,10 @@ statements. Short board:
    **spatial** instance survives (6 Oct 2026);
    all-high-in-time still OPEN.
 4. Regenerative quartic / all-high jet —
-   local \(t^6\) onset on the \(K=2\) datum
-   **written**; one-block \((5,8,25)\)
-   attempt: intra OK, \(\mathcal Q^{\mathrm{other}}\)
+   local \(t^6\) onset **written**;
+   \((5,8,25)\) + joint \(S_4\) with
+   \((5,10,25)\) dilation-stable;
+   \(\mathcal Q^{\infty}\) (outside \(S_4\))
    still OPEN.
 5. Integrate to uniform-in-\(N\) budget
    at fixed \(K(u_0,\nu)\) = (17) — OPEN
@@ -149,10 +150,9 @@ Two-shell spatial signed assembly:
 survives (no occupancy).
 All-high local jet on \(K=2\) datum:
 \(t^6\) onset written.
-One-block \((5,8,25)\): evolution written;
-external energy-only absorption **fails**.
-(17) still OPEN — plow \(\mathcal Q^{\mathrm{other}}\)
-/ summing blocks.
+Joint \(S_4=\{5,8,10,25\}\): finite / dilation-stable.
+Outside-high \(\mathcal Q^{\infty}\): **OPEN — plow**.
+(17) still OPEN.
 (L3-5) fixed-datum: OPEN, deprioritized.
 Lemma A / sign gate: unaltered (as on
 parent desks).
