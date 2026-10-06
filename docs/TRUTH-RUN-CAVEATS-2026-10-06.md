@@ -23,9 +23,9 @@ as a path to (17).
 
 | Caveat | Truth found |
 |---|---|
-| (1) Verify (P1)–(P3) | Duhamel reduction to \(\int\lvert Q\rvert\) is **STANDARD**. The first unchecked step is the energy-only bound on \(\int\lvert Q_{5825}\rvert\,dt\). Constants not verified (packet absent). (P2)–(P3) faces satisfy \(\beta/\alpha=4\) to float precision — consistent with comparing to \(\nu Y/4\). |
-| (2) \(\int\lvert T_{5825}\rvert\) vs budget | **Distinct objects.** On the \(K=2\) jet, \(\mathcal T_{\mathrm{sc}}(h_2)=O(t^6)\) while \(\nu Y/4\to 8\nu>0\), so the budget integrand stays off near \(t=0\). (P1) does not turn it on. |
-| (3) All-shape assembly | **SCHEME A FAILED:** summing per-shape (P1)-style bounds over all scalene multisets has no uniform constant (#shapes \(\to\infty\); shared shells overcounted). Need a once-per-shell (or convergent) pot. |
+| (1) Verify (P1)–(P3) | Damping / Duhamel is **STANDARD**. Substantive claim is (Q⋆) \(\lvert Q\rvert\le D\beta\,E\,X_{\mathrm{block}}\) (packet); then \(\int\lvert Q\rvert\le D\beta E_0^2/(2\nu)\) by the energy budget. (Q⋆) unchecked until packet audit. Factor four in (P2)–(P3) is **by author definition** (threshold = \(4\times\) transfer-bound constant) — verify from exact expressions, not float faces. |
+| (2) \(\int\lvert T_{5825}\rvert\) vs budget | **Distinct objects.** On the \(K=2\) jet, \(\mathcal T_{\mathrm{sc}}(h_2)=O(t^6)\) stays below \(\nu Y/4\) near \(t=0\). Jet appearance is **not** a positive budget episode. |
+| (3) All-shape assembly | **SCHEME A FAILED** as a path: naïve per-shape sum repeatedly charges shared shells. Overlap counts **diagnose** that failure; they do **not** alone prove every weighted summation must fail. Once-per-shell / convergent pot still OPEN (SCHEME B). |
 
 (17) remains **OPEN**. Author fixed-pair claims are not discarded; their reach is delimited.
 
@@ -50,36 +50,40 @@ Integrating absolute values (STANDARD),
 +\frac1{38\nu}\int_0^T\lvert\mathcal Q(s)\rvert\,ds.
 \]
 
-Matching the author face \(0.275533\,E_0^2/\nu^2\) forces, if
-\(\int\lvert Q\rvert\le K E_0^2/\nu\),
+**Right review target** (author qualification): the packet
+bound
 
 \[
-K=0.275533\times 38\approx 10.470.
+\lvert\mathcal Q\rvert\le D\beta\,E\,X_{\mathrm{block}},
+\tag{Q⋆}
 \]
 
-**First unjustified step without the packet:** the bound on
-\(\int\lvert\mathcal Q_{5825}\rvert\,dt\) by an energy-only
-multiple of \(E_0^2/\nu\), **including outside inputs**, with
-no future \(X\). That is exactly what to audit in
-`Block-5825-Review.pdf` — not the Duhamel algebra.
+not the damping calculation. If (Q⋆) holds, then
+\(\int\lvert Q\rvert\,dt\le D\beta E_0\int X_{\mathrm{block}}
+\le D\beta E_0^2/(2\nu)\) by the established energy
+budget — STANDARD after (Q⋆). Scrutiny of (Q⋆):
+geometric factors, all differentiated terms, shared-mode
+counting. See
+[`Q-BOUND-REVIEW-TARGET.md`](Q-BOUND-REVIEW-TARGET.md).
 
-(P2)–(P3): with faces \(\alpha=0.375329\),
-\(\beta=1.501315\),
+Matching the decimal face \(0.275533\,E_0^2/\nu^2\) with
+rate \(38\nu\) forces an implied
+\(\int\lvert Q\rvert\le K E_0^2/\nu\) with
+\(K\approx 0.275533\times 38\); prefer exact packet
+constants over this float back-solve.
 
-\[
-\frac\beta\alpha=4.00000\quad\text{(float)}.
-\]
-
-If \(\lvert T_{5825,n}\rvert+\lvert T_{51025,n}\rvert
-\le\alpha\sqrt{E_0}\,Y_{S_4,n}/n\) is compared to the
-budget share \(\nu Y_{S_4}/4\), the threshold is
-\(n\ge 4\alpha\sqrt{E_0}/\nu=\beta\sqrt{E_0}/\nu\).
-This is a **consistency probe**, not a verification of
-the inequality (P2).
+(P2)–(P3): author defines the threshold constant as
+**four times** the transfer-bound constant (budget share
+\(\nu Y/4\)). Cursor’s \(\beta/\alpha\approx 4\) from
+decimal faces was only a float check — **withdrawn as
+verification**. Confirm the factor four from the exact
+packet expressions.
 
 Shell-feed breakdown ([`Q-OTHER-51025`](Q-OTHER-51025.md))
-stays on file as the diagnostic map if the \(Q\)-bound
-fails.
+stays on file as the diagnostic map if (Q⋆) fails.
+
+`Block-5825-Review.pdf` / `.zip`: **not uploaded** to
+PR #165 pending explicit authorization.
 
 ---
 
@@ -106,8 +110,9 @@ along any continuous trajectory with those jets
 \(Y(0)>0\)).
 
 So: agreeing to (P1) is not agreeing that the budget
-integrand lights up. Cursor’s earlier caveat stands as
-a separation of objects, not as hostility to (P1).
+integrand lights up. The jet’s appearance is **not**
+evidence of a positive high-pass budget episode near
+\(t=0\) (author + Cursor agree).
 
 ---
 
@@ -121,15 +126,18 @@ shells exceed **100** shapes each.
 **SCHEME A (FAILED path to (17)).** Assign each shape a
 (P1)-style bound
 \(\int\lvert T_{abc}\rvert\le C_{abc}E_0^2/\nu^2\) and
-sum on shapes. Then either
+**naïvely sum** on shapes. Then either
 
 - \(\sum C_{abc}\) diverges as the radius cutoff
   \(\to\infty\), or
 - shared shell energies are charged once per shape and
   massively overcounted.
 
-Either way, SCHEME A does not produce a uniform
-\(\sup_N\mathcal S_{K,N}(T)<\infty\).
+Overlap / incidence counts **show why** that naïve sum
+double-charges frequency shells. Per author
+qualification, they do **not** alone prove that every
+weighted summation must fail — convergent weights or a
+once-per-shell pot remain open routes.
 
 **What would be needed.** A pot that charges each
 **frequency shell** (exact \(\lvert k\rvert^2\) set — not
@@ -143,10 +151,10 @@ blank toward (17).
 Locked one-pager:
 [`ALL-SHAPE-SHELL-POT-BLANK.md`](ALL-SHAPE-SHELL-POT-BLANK.md).
 
-Attack design replacing the blank’s “need a pot”:
+Attack design:
 [`SCHEME-B-SHELL-POT.md`](SCHEME-B-SHELL-POT.md)
-— target (B1) \(\lvert\mathcal T_{\mathrm{sc}}\rvert\le C_\star X\sqrt Y\);
-SCHEME A′ (Young after shapes) killed by probe.
+— target (B1); absolute donor-pair shortcuts killed;
+signed assembly still OPEN.
 
 ---
 
@@ -168,10 +176,14 @@ Failure modes (as agreed):
 
 ## STATUS
 
-(P1) DUAMEL SKELETON: STANDARD.
-(P1) \(\int\lvert Q\rvert\) ENERGY BOUND: UNCHECKED — FIRST PACKET TARGET.
-(P2)–(P3): \(\beta/\alpha=4\) CONSISTENT WITH \(\nu Y/4\); PROOF UNCHECKED.
-BUDGET INTEGRAND VS \(\int\lvert T_{5825}\rvert\): SEPARATED; JET STAYS BELOW THRESHOLD INITIALLY.
-SCHEME A (SUM PER SHAPE): FAILED.
+DAMPING / DUAMEL: STANDARD.
+(Q⋆) \(\lvert Q\rvert\le D\beta\,E\,X_{\mathrm{block}}\): UNCHECKED — FIRST PACKET TARGET
+([`Q-BOUND-REVIEW-TARGET.md`](Q-BOUND-REVIEW-TARGET.md)).
+∫\|Q\| AFTER (Q⋆) VIA ENERGY BUDGET: STANDARD.
+(P2)–(P3) FACTOR FOUR: BY AUTHOR DEFINITION — VERIFY EXACT EXPRESSIONS (FLOAT PROBE WITHDRAWN AS VERIFICATION).
+BUDGET INTEGRAND VS \(\int\lvert T_{5825}\rvert\): SEPARATED; JET BELOW THRESHOLD ≠ POSITIVE EPISODE.
+SCHEME A (NAÏVE SUM PER SHAPE): FAILED.
+OVERLAP COUNTS: DIAGNOSE DOUBLE-CHARGE; DO NOT KILL ALL WEIGHTED SUMS.
 ALL-SHAPE ONCE-PER-SHELL POT: OPEN → (17).
+PDF/ZIP ON PR #165: AWAITING EXPLICIT AUTHORIZATION.
 NS NOT SOLVED.

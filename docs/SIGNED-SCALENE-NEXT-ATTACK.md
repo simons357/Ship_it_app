@@ -160,8 +160,12 @@ survives (no occupancy).
 All-high local jet on \(K=2\) datum:
 \(t^6\) onset written.
 Fixed-pair bounds (P1)–(P3): author claimed;
-first audit target \(\int\lvert Q\rvert\).
-SCHEME A (sum per shape): FAILED.
+first audit target (Q⋆)
+\(\lvert Q\rvert\le D\beta\,E\,X_{\mathrm{block}}\)
+([`Q-BOUND-REVIEW-TARGET.md`](Q-BOUND-REVIEW-TARGET.md));
+damping STANDARD; PDF/ZIP upload awaits authorization.
+SCHEME A (naïve sum per shape): FAILED; overlaps diagnose
+double-charge, do not kill all weighted sums.
 SCHEME A′ (Young after shape sum): FAILED (probe).
 SCHEME B once-per-shell pot: **OPEN — plow**
 ([`SCHEME-B-SHELL-POT.md`](SCHEME-B-SHELL-POT.md)).

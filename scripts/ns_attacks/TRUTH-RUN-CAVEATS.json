@@ -3,15 +3,15 @@
     "identity": "T'=Q-38\u03bdT \u21d2 \u222b|T|\u2264|T0|/(38\u03bd)+(1/(38\u03bd))\u222b|Q|",
     "author_second_coefficient": 0.275533,
     "implied_\u222b|Q|_coefficient_K_if_form_K_E0\u00b2/\u03bd": 10.470253999999999,
-    "first_unjustified_step_without_packet": "Bound \u222b|Q_5825| dt by a multiple of E0\u00b2/\u03bd using only energy (and possibly shell structure), including outside inputs \u2014 this is where the analytic packet must be checked",
-    "status": "Duhamel reduction STANDARD; Q-integral bound NOT independently verified here"
+    "review_target_Q_star": "Packet proposes |Q| \u2264 D\u03b2 E X_block. That inequality is the scrutiny (geometry, differentiated terms, shared modes). If it holds, \u222b|Q| \u2264 D\u03b2 E0 \u222b X_block \u2264 D\u03b2 E0\u00b2/(2\u03bd) by the energy budget \u2014 STANDARD after Q\u22c6. Damping/Duhamel is not the dispute.",
+    "status": "Duhamel STANDARD; (Q\u22c6) NOT independently verified here; PDF/ZIP not on PR pending explicit authorization"
   },
   "P2_P3_consistency": {
     "alpha_face": 0.375329,
     "beta_face": 1.501315,
     "beta_over_alpha": 3.999997335670838,
-    "interpretation": "If |T_sum|\u2264\u03b1\u221aE0/n Y_S4 and viscous allowance were \u03bd Y_S4, threshold would be n\u2265\u03b1\u221aE0/\u03bd. Observed \u03b2/\u03b1\u22484 suggests allowance \u03bdY/4 (budget viscosity share) or a rate/normalization factor ~4. Not a proof \u2014 consistency probe only.",
-    "status": "NUMERICAL consistency probe; proofs not verified"
+    "interpretation": "Author defines the threshold constant as four times the transfer-bound constant (\u03bdY/4 share). Float \u03b2/\u03b1\u22484 from decimal faces is NOT verification \u2014 check exact packet expressions.",
+    "status": "Factor four by author definition; float probe withdrawn as verification"
   },
   "jet_threshold_K2_witness": {
     "E0": 14,
@@ -51,8 +51,9 @@
       ]
     ],
     "naive_sum_risk": "If each shape used a (P1)-style bound charging E0 (or shared shell energies) once per shape, total constant grows with #shapes and overcounts shells that participate in many triples. Sample: shell 5 sits in many shapes already at rmax=30.",
-    "failed_scheme": "SCHEME A (FAILED as a path to (17)): sum_shapes \u222b|T_abc| \u2264 (#shapes)*C E0\u00b2/\u03bd\u00b2. #shapes\u2192\u221e as rmax\u2192\u221e, so no uniform bound.",
+    "failed_scheme": "SCHEME A (FAILED as a path to (17)): na\u00efve sum_shapes \u222b|T_abc| \u2264 (#shapes)*C E0\u00b2/\u03bd\u00b2. #shapes\u2192\u221e as rmax\u2192\u221e, so no uniform bound.",
+    "overlap_qualification": "Overlap counts show why na\u00efve adding repeatedly charges shell energies. They do not alone prove every weighted summation must fail.",
     "open_scheme_need": "Need a pot that charges each shell energy at most once (or a convergent weight), not once per scalene multiset.",
-    "status": "EXACT census obstruction to naive summation; (17) still OPEN"
+    "status": "EXACT census obstruction to na\u00efve summation; weighted / once-per-shell routes remain open; (17) still OPEN"
   }
 }

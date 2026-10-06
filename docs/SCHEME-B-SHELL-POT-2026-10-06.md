@@ -30,8 +30,9 @@ A **shape** is an admissible scalene multiset
 
 | Scheme | Status |
 |---|---|
-| **A** — bound each \(\int\lvert\mathcal T_{abc}\rvert\), sum on shapes | **FAILED** (truth run) |
+| **A** — bound each \(\int\lvert\mathcal T_{abc}\rvert\), **naïvely** sum on shapes | **FAILED** (truth run) |
 | **A′** — Young-split the shape sum onto shells after the fact | **FAILED as a close** — still deposits shape-degree mass on each shell (probe) |
+| Overlap / incidence counts alone | **Diagnostic only** — show why A double-charges; do **not** prove every weighted summation fails (author qualification) |
 | **B** — regroup signed \(\mathcal T_{\mathrm{sc}}\) at mode / exact-sphere level; charge each \(e_a\) \(O(1)\) times; compare to \(\nu Y/4\) | **OPEN — plow** |
 
 (17) remains **OPEN**. This page replaces the blank’s

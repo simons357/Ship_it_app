@@ -21,4 +21,6 @@ Full note:
 n\ge 1.501315\,\frac{\sqrt{E_0}}{\nu}.
 \]
 
-Author review: `Block-5825-Review.pdf` / `.zip` (re-attach if needed).
+Author review: `Block-5825-Review.pdf` / `.zip`
+— **not uploaded** to PR #165 pending explicit authorization.
+Scrutiny: [`Q-BOUND-REVIEW-TARGET.md`](Q-BOUND-REVIEW-TARGET.md).

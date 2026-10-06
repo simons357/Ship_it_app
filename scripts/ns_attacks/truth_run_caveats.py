@@ -101,24 +101,32 @@ payload = {
         "identity": "T'=Q-38νT ⇒ ∫|T|≤|T0|/(38ν)+(1/(38ν))∫|Q|",
         "author_second_coefficient": c_p1,
         "implied_∫|Q|_coefficient_K_if_form_K_E0²/ν": K_implied,
-        "first_unjustified_step_without_packet": (
-            "Bound ∫|Q_5825| dt by a multiple of E0²/ν using only energy "
-            "(and possibly shell structure), including outside inputs — "
-            "this is where the analytic packet must be checked"
+        "review_target_Q_star": (
+            "Packet proposes |Q| ≤ Dβ E X_block. That inequality is the "
+            "scrutiny (geometry, differentiated terms, shared modes). "
+            "If it holds, ∫|Q| ≤ Dβ E0 ∫ X_block ≤ Dβ E0²/(2ν) by the "
+            "energy budget — STANDARD after Q⋆. Damping/Duhamel is not "
+            "the dispute."
         ),
-        "status": "Duhamel reduction STANDARD; Q-integral bound NOT independently verified here",
+        "status": (
+            "Duhamel STANDARD; (Q⋆) NOT independently verified here; "
+            "PDF/ZIP not on PR pending explicit authorization"
+        ),
     },
     "P2_P3_consistency": {
         "alpha_face": alpha,
         "beta_face": beta,
         "beta_over_alpha": beta / alpha,
         "interpretation": (
-            "If |T_sum|≤α√E0/n Y_S4 and viscous allowance were ν Y_S4, "
-            "threshold would be n≥α√E0/ν. Observed β/α≈4 suggests allowance "
-            "νY/4 (budget viscosity share) or a rate/normalization factor ~4. "
-            "Not a proof — consistency probe only."
+            "Author defines the threshold constant as four times the "
+            "transfer-bound constant (νY/4 share). Float β/α≈4 from "
+            "decimal faces is NOT verification — check exact packet "
+            "expressions."
         ),
-        "status": "NUMERICAL consistency probe; proofs not verified",
+        "status": (
+            "Factor four by author definition; float probe withdrawn "
+            "as verification"
+        ),
     },
     "jet_threshold_K2_witness": {
         "E0": 14,
@@ -147,14 +155,22 @@ payload = {
             "Sample: shell 5 sits in many shapes already at rmax=30."
         ),
         "failed_scheme": (
-            "SCHEME A (FAILED as a path to (17)): sum_shapes ∫|T_abc| ≤ "
+            "SCHEME A (FAILED as a path to (17)): naïve sum_shapes ∫|T_abc| ≤ "
             "(#shapes)*C E0²/ν². #shapes→∞ as rmax→∞, so no uniform bound."
+        ),
+        "overlap_qualification": (
+            "Overlap counts show why naïve adding repeatedly charges "
+            "shell energies. They do not alone prove every weighted "
+            "summation must fail."
         ),
         "open_scheme_need": (
             "Need a pot that charges each shell energy at most once "
             "(or a convergent weight), not once per scalene multiset."
         ),
-        "status": "EXACT census obstruction to naive summation; (17) still OPEN",
+        "status": (
+            "EXACT census obstruction to naïve summation; weighted / "
+            "once-per-shell routes remain open; (17) still OPEN"
+        ),
     },
 }
 

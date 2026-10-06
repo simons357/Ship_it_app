@@ -47,9 +47,11 @@ energy allowance.
 
 Fixed-pair bounds for \((5,8,25)\) and \((5,10,25)\)
 (including outside inputs) may stand on their own.
-**SCHEME A** — charge once per shape and sum — fails as
-a path to (17), because the number of shapes diverges and
-shared frequency shells are overcounted.
+**SCHEME A** — charge once per shape and **naïvely** sum —
+fails as a path to (17), because the number of shapes
+diverges and shared frequency shells are overcounted.
+Overlap counts diagnose that failure; they do not alone
+prove every weighted summation must fail.
 
 What is still needed toward (17): a bookkeeping pot that
 lets every admissible scalene shape draw on shell energies

@@ -4,8 +4,12 @@
 **Author correction to the Cursor one-block / \(\mathcal Q^{\mathrm{other}}\) write-ups.
 Partial result. Not (17). NS not solved.**
 
-Author packet (re-attach if missing from uploads):
+Author packet (ready on author side; **not** on PR #165
+until explicitly authorized):
 `Block-5825-Review.pdf`, `Block-5825-Review-Package.zip`.
+First audit target inside the packet: (Q⋆)
+\(\lvert\mathcal Q\rvert\le D\beta\,E\,X_{\mathrm{block}}\) —
+[`Q-BOUND-REVIEW-TARGET.md`](Q-BOUND-REVIEW-TARGET.md).
 
 Parents corrected:
 [`BLOCK-5825-FIRST-ATTEMPT-2026-10-06.md`](BLOCK-5825-FIRST-ATTEMPT-2026-10-06.md),
@@ -111,8 +115,11 @@ What is corrected:
 | (P2)–(P3) for \(n\)-scaled complete shells of the two blocks | **CLAIMED** (author analytic) |
 | Normalized time budget for the fixed pair, repeated episodes | **CLAIMED** in author PDF (file into vault with the ZIP) |
 | Constants \(0.275533\), \(0.375329\), \(1.501315\) | Numerical faces of exact constants in the review proofs — prefer exact forms from the PDF when filing the full write |
+| Threshold factor four in (P2)–(P3) | **By author definition** (threshold = \(4\times\) transfer-bound constant / \(\nu Y/4\) share) — verify from exact packet expressions, not float \(\beta/\alpha\) |
+| (Q⋆) \(\lvert Q\rvert\le D\beta\,E\,X_{\mathrm{block}}\) | **CLAIMED** in packet; first independent audit target |
 | (17) for all scalene shapes | **OPEN** |
 | Global regularity / Clay | **NOT CLAIMED** |
+| PDF/ZIP on PR #165 | **AWAITING EXPLICIT AUTHORIZATION** |
 
 Independent review of the analytic proofs in
 `Block-5825-Review.pdf` remains appropriate. This page
