@@ -274,6 +274,12 @@ From `SCHEME-B-B1-RATIO-PROBE.json` (NUMERICAL, not a proof):
    signed sum, exact spheres. Mirror the (11) write-up:
    assemble first, apply B-bilinear inside the sum,
    weighted CS into \(X\sqrt Y\) **once**.
+   First attempt:
+   [`SCHEME-B-SPATIAL-ATTEMPT.md`](SCHEME-B-SPATIAL-ATTEMPT.md)
+   — Plancherel donor pot OK; stuck collapsing
+   \(\sum_{\alpha\neq\beta}w\sqrt{e_\alpha e_\beta}\) without
+   a \(\#\mathrm{shells}\) factor (crude \(\sqrt Y\)
+   pull-out fails). Next: receiver-shell assembly.
 2. **Lemma B-highpass (OPEN).** Same with
    \(\mathcal T_{\mathrm{sc}}(h_K)\); absorb cross-shell
    feed into \(C\) or into the \(\nu Y/4\) bookkeeping

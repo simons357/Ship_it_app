@@ -165,8 +165,10 @@ SCHEME A (sum per shape): FAILED.
 SCHEME A′ (Young after shape sum): FAILED (probe).
 SCHEME B once-per-shell pot: **OPEN — plow**
 ([`SCHEME-B-SHELL-POT.md`](SCHEME-B-SHELL-POT.md)).
-Target (B1): \(\lvert\mathcal T_{\mathrm{sc}}\rvert\le C_\star X\sqrt Y\)
-(exact-sphere regrouping; each \(e_a\) once via \(X,Y\)).
+Target (B1): \(\lvert\mathcal T_{\mathrm{sc}}\rvert\le C_\star X\sqrt Y\).
+Spatial attempt: Plancherel OK; stuck at donor-sum
+collapse
+([`SCHEME-B-SPATIAL-ATTEMPT.md`](SCHEME-B-SPATIAL-ATTEMPT.md)).
 “Shell” = exact \(\lvert k\rvert^2\) Fourier set, not a
 physical shell or hole in the fluid.
 (17) still OPEN.
