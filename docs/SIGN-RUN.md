@@ -18,6 +18,8 @@ Lemma A (unaltered):
 [`U3-DERIV.md`](U3-DERIV.md).
 Audit:
 [`U3-AUDIT.md`](U3-AUDIT.md).
+Share-gates (not Track A/B):
+[`SHARE-GATES.md`](SHARE-GATES.md).
 Triangles:
 [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
 Machine: `python3 scripts/sign_run.py`.

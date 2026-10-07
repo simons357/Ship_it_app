@@ -106,6 +106,7 @@ stay samples. They are not this kill.
 | Discrete \(T_c\) expansion | \(T_c=\Lambda\langle\delta,T\rangle+\sum\delta_m^2 T_m\). Exact. \(T_m\) is the live neighboring transfer. [`SIGN-GATE.md`](SIGN-GATE.md). |
 | Finite-\(N\) BOTH SIGNS on neighboring helical triads | Printed on \(N=2,\dots,8\). \(\lvert\rho\rvert\ge 0.84\). \(\lvert R_2/L_1\rvert\) falls. Persistence OPEN. [`SIGN-RUN.md`](SIGN-RUN.md). |
 | Energy-class \(L^4_t L^3\) / Serrin index \(3/2\) | Ladyzhenskaya interpolation from \(L^\infty_t L^2\) and \(L^2_t L^6\). Owned. Not Serrin. [`U3-DERIV.md`](U3-DERIV.md), [`U3-AUDIT.md`](U3-AUDIT.md). |
+| Pythagorean-square lattice triad \(p+q+r=0\) | \(z=N^2\), \(y=s^2\), \(x=N^2+s^2-2Nj\). \(\lvert p\times q\rvert=N\lvert v\rvert\). If \(j\ge N/2\) and \(s\le N\), then \(x\le y\le z\). Algebra. Not the kill. [`SHARE-GATES.md`](SHARE-GATES.md). |
 
 ---
 
@@ -171,6 +172,9 @@ stay samples. They are not this kill.
 | Lemma B / charge–epoch ledger as sitting | Charge is a different bill. \(D_s\) cannot pay \(D_a\) on a narrow annulus. Not written. [`PRESS.md`](PRESS.md). |
 | First-variation sign gate as a seated verdict / as a useful \(K\) | \(L_{1,N}\) is the gate. Finite-\(N\) BOTH SIGNS is printed. Persistence OPEN. Universal depletion is not killed. Do not invent a persistent \(\mathcal A_N^{+}\). [`SIGN-GATE.md`](SIGN-GATE.md), [`SIGN-RUN.md`](SIGN-RUN.md). |
 | \(\|u\|_3\) derivation as sitting / as beyond ESS / as a useful \(K\) | D1–D3 retained at stated scope. \(L^4_t L^3\) is not Serrin. \(\int X^2\) supplies \(L^4_t L^6\). No cutoff-uniform budget derived in this audit. Not an impossibility theorem. PRESS L3 is \(\Phi_e\le W_{\lambda_e}\), not \(\|u\|_3\). [`U3-DERIV.md`](U3-DERIV.md), [`U3-AUDIT.md`](U3-AUDIT.md). |
+| Share-Gate A as a stamped kill / as regularity / as every shared-budget | Kill target named: construct \(z_j\to\infty\) and prove \(L_{z_j}\to\infty\). Not stamped. Would not kill signed cancellation, shared-energy accounting, criterion (17), or regularity. Not Track A/B. [`SHARE-GATES.md`](SHARE-GATES.md). |
+| Share-Gate B as a regularity proof / as a revival of \(K\sim\sqrt{E}\) | First target is the frequency exponent after global energy sharing. Schematic inequality not derived. \(K\sim\sqrt{E}\) stays dead on \(v_n\). [`SHARE-GATES.md`](SHARE-GATES.md), [`ENERGY-K.md`](ENERGY-K.md). |
+| Merge Share-Gate A/B with Track A, Track B, Lemma A/B, or leftover 1 | Different letters. Do not start leftover 1. [`SHARE-GATES.md`](SHARE-GATES.md). |
 | Substituting \(T^{(0)}\) into the finite-gap identity | Transfer variation is the next order. Keep neighboring \(T_m\) as \(R_{2,N}\). [`SIGN-GATE.md`](SIGN-GATE.md). |
 | ONE SIGN as a seated \(I_3\) bridge | Named question only. Arithmetic rigidity is not sign depletion. [`SIGN-GATE.md`](SIGN-GATE.md). |
 | Switch this line to augmented NS / Theorem A | Track A is a different PDE. A is not B. |
@@ -216,6 +220,13 @@ Exact-shell \(K\le 16/9\) is
 C10 is not a theorem. Named leftover-5
 candidate; (A) not seated:
 [`C10-CHAIN.md`](C10-CHAIN.md).
+Share-Gate A kill
+(\(z_j\to\infty\), \(L_{z_j}\to\infty\))
+and Share-Gate B frequency
+exponent are **OPEN** named
+holes on the energy-budget
+path, not a thirteenth leftover:
+[`SHARE-GATES.md`](SHARE-GATES.md).
 Do not work Theorem H. Do not merge
 C10 with \(T_c\).
 16 Sep handoff / four-bucket score:
@@ -278,6 +289,8 @@ Finite-\(N\) run:
 [`U3-DERIV.md`](U3-DERIV.md).
 Audit:
 [`U3-AUDIT.md`](U3-AUDIT.md).
+Share-gates (not Track A/B):
+[`SHARE-GATES.md`](SHARE-GATES.md).
 
 SND-to-regularity implication is
 **OPEN** as a named hole on the SND/H

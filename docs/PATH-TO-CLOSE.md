@@ -49,6 +49,8 @@ Finite-\(N\) run:
 [`U3-DERIV.md`](U3-DERIV.md).
 Audit:
 [`U3-AUDIT.md`](U3-AUDIT.md).
+Share-gates (not Track A/B):
+[`SHARE-GATES.md`](SHARE-GATES.md).
 
 This desk is **unaugmented**.
 A is not B. Keep \(1/r^4\).
@@ -273,6 +275,14 @@ this audit. Not an
 impossibility theorem.
 [`U3-DERIV.md`](U3-DERIV.md),
 [`U3-AUDIT.md`](U3-AUDIT.md).
+Share-Gate A is a named
+kill target, not stamped.
+Share-Gate B is OPEN in
+parallel. First target
+is the frequency
+exponent, not regularity.
+Not Track A/B.
+[`SHARE-GATES.md`](SHARE-GATES.md).
 
 Useful \(K\) or a named death.
 Do not restore

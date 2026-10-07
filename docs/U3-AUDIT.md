@@ -32,6 +32,8 @@ Energy class:
 [`UNAUGMENTED-NS-CHAIN.md`](UNAUGMENTED-NS-CHAIN.md).
 Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
+Share-gates (not Track A/B):
+[`SHARE-GATES.md`](SHARE-GATES.md).
 Machine: `python3 scripts/u3_audit.py`.
 Does not overwrite `stokes_moments.py`.
 Do not start leftover 1.

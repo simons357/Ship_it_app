@@ -58,6 +58,8 @@ Finite-\(N\) run:
 [`U3-DERIV.md`](U3-DERIV.md).
 Audit:
 [`U3-AUDIT.md`](U3-AUDIT.md).
+Share-gates (not Track A/B):
+[`SHARE-GATES.md`](SHARE-GATES.md).
 
 This page answers the operator’s
 question: how do we beat unforced

@@ -88,6 +88,8 @@ Finite-\(N\) run:
 [`U3-DERIV.md`](U3-DERIV.md).
 Audit:
 [`U3-AUDIT.md`](U3-AUDIT.md).
+Share-gates (not Track A/B):
+[`SHARE-GATES.md`](SHARE-GATES.md).
 Do not start leftover 1.
 Do not weld \(\star\).
 Do not cash B★ as G5.

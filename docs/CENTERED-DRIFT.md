@@ -65,6 +65,8 @@ Finite-\(N\) run:
 [`U3-DERIV.md`](U3-DERIV.md).
 Audit:
 [`U3-AUDIT.md`](U3-AUDIT.md).
+Share-gates (not Track A/B):
+[`SHARE-GATES.md`](SHARE-GATES.md).
 Identities sit. The first
 missing implication is this
 page’s estimate.
@@ -364,6 +366,8 @@ No new 9D sweeps.
 | Lemma A / \(\Phi_e\le W_{\lambda_e}\) as a useful \(K\) | **NO** as a \(K\). **YES** as a unit-torus weight bound. Lemma B stays OPEN. [`PRESS.md`](PRESS.md). |
 | First-variation sign gate as a useful \(K\) / as a verdict | **NO.** \(L_{1,N}\) is the gate. Finite-\(N\) BOTH SIGNS is printed. Persistence OPEN. Universal depletion is not killed. [`SIGN-GATE.md`](SIGN-GATE.md), [`SIGN-RUN.md`](SIGN-RUN.md). |
 | \(\|u\|_3\) budget as a useful \(K\) / as beyond ESS | **NO.** D1–D3 retained at stated scope. \(L^4_t L^3\) is not Serrin. \(\int X^2\) supplies \(L^4_t L^6\). No budget derived in this audit. Not an impossibility theorem. [`U3-DERIV.md`](U3-DERIV.md), [`U3-AUDIT.md`](U3-AUDIT.md). |
+| Share-Gate A as a stamped kill / as regularity | **NO** as stamped. Kill target named. Lattice triad identities sit. Frozen-rule and \(L_{z_j}\to\infty\) do not. [`SHARE-GATES.md`](SHARE-GATES.md). |
+| Share-Gate B as regularity / as \(K\sim\sqrt{E}\) | **NO.** First target is the frequency exponent. Schematic not derived. \(K\sim\sqrt{E}\) stays dead. [`SHARE-GATES.md`](SHARE-GATES.md). |
 | Y-remainder cousin (pathwise \(K_Y\)) | **OPEN.** Same circularity test. |
 | Unrestricted \(\star\) | **DEAD.** |
 | C10 \(\Rightarrow\) this estimate | **NO** without an inequality. C10 did not seat (A). |

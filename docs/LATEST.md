@@ -151,6 +151,8 @@ docs/SIGN-RUN.md
 docs/U3-DERIV.md
 Three-gate audit:
 docs/U3-AUDIT.md
+Share-gates (Gate A kill target; Gate B OPEN; not Track A/B):
+docs/SHARE-GATES.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):

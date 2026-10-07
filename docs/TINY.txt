@@ -195,6 +195,8 @@ docs/SIGN-RUN.md
 docs/U3-DERIV.md
 Three-gate audit:
 docs/U3-AUDIT.md
+Share-gates (Gate A kill target; Gate B OPEN; not Track A/B):
+docs/SHARE-GATES.md
 
 What you were told vs what sits:
 docs/WHAT-I-WAS-TOLD.md
