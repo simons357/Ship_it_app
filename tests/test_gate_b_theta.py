@@ -49,8 +49,12 @@ class TestGateBTheta(unittest.TestCase):
         self.assertAlmostEqual(fam["rhos"][13], 1.0833160571, places=8)
         self.assertTrue(fam["S_le_L"])
         self.assertTrue(fam["L_le_sqrtM_S"])
-        self.assertAlmostEqual(fam["L"], 2.5404778725, places=8)
-        self.assertAlmostEqual(fam["S"], 1.501117, places=5)
+        expected_L = 0.6318550824 + 0.8253067330 + 1.0833160571
+        expected_S = sqrt(
+            0.6318550824**2 + 0.8253067330**2 + 1.0833160571**2
+        )
+        self.assertAlmostEqual(fam["L"], expected_L, places=8)
+        self.assertAlmostEqual(fam["S"], expected_S, places=8)
 
     def test_subnet_L_grows_S_stays_O1(self) -> None:
         r20 = subnet_l1_l2(20)
