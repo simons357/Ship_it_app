@@ -1,0 +1,57 @@
+{
+  "status": "preliminary_verify_only",
+  "claims": {
+    "gaussian_E_Q_match_exact": true,
+    "axis_zero_matches_bench": true,
+    "axis_s1_matches_bench": true,
+    "m0_c0_match_bench": true,
+    "pure_absorption_rejected_by_amplitude": true
+  },
+  "gaussian": {
+    "E_num": 0.9843506216033426,
+    "Q_num": 0.6960409996157659,
+    "E_exact": 0.9843506216076512,
+    "D_exact": 4.921753108038256,
+    "Q_exact": 0.6960409996039635,
+    "E_rel_err": 4.3770516515025255e-12,
+    "Q_rel_err": 1.6956541230470706e-11
+  },
+  "frozen_drift_leading_coeff_over_nu_eps": 0.02320136665346545,
+  "example_frozen_Q_a_eps_m3_2": {
+    "eps": 0.01,
+    "nu": 1.0,
+    "T": 1.0,
+    "Q_spacetime": 2.3201366653465456,
+    "leading_pi32_over_240_nu_eps": 2.3201366653465447
+  },
+  "initial_U_signs": {
+    "origin_axis_limit": 0.2,
+    "first_axis_zero_s": 0.6068607794181862,
+    "axis_value_at_s1": -0.07642695329193716,
+    "midplane_value_at_s1": 0.052940559132137466,
+    "bench_first_zero": 0.6067752158654651,
+    "bench_axis_s1": -0.0764359761,
+    "zero_abs_err": 8.556355272104632e-05,
+    "s1_abs_err": 9.022808062836285e-06
+  },
+  "local_layer": {
+    "m0": 0.41880122360984423,
+    "c0": 3.539263940332917e-05,
+    "bench_m0": 0.4188012236,
+    "bench_c0": 3.53926394e-05,
+    "m0_abs_err": 9.8442365370488e-12,
+    "c0_rel_err": 9.406395160301959e-11
+  },
+  "amplitude": {
+    "C_F_scale": "M^5",
+    "D_F_scale": "M^4",
+    "ratio_C_over_D_scale": "M",
+    "universal_pure_absorption_C_le_eta_nu_D": false
+  },
+  "honesty": {
+    "ns_solved": false,
+    "gate_proved": false,
+    "shahmurov_deficiency_alleged": false,
+    "full_nse_simulation_run": false
+  }
+}
