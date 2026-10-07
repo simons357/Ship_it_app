@@ -79,8 +79,9 @@
     }
   ],
   "gate_A": {
-    "status": "OPEN until lemma text accepted; spine is analytic not four-shell numeric",
-    "outcome_if_lemma_accepted": "B"
+    "status": "CLOSED \u2014 Outcome B",
+    "kill": "L_{z_n}\u2192\u221e along z_n=2n\u00b2 (see docs/GATE-A-KILL-CERTIFICATE-2026-10-07.md)",
+    "number_theory": "r_2(m)\u226a_\u03b5 m^\u03b5 \u21d2 N_n \u226b n^{2-2\u03b5} \u21d2 L*_n \u226b n^{1-2\u03b5}"
   },
-  "status": "Gate A analytic lower-bound probe \u2014 not (17)"
+  "status": "Gate A analytic kill support \u2014 Outcome B; not (17)"
 }

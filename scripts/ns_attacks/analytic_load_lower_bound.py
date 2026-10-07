@@ -103,10 +103,11 @@ def main():
         },
         "rows": rows,
         "gate_A": {
-            "status": "OPEN until lemma text accepted; spine is analytic not four-shell numeric",
-            "outcome_if_lemma_accepted": "B",
+            "status": "CLOSED — Outcome B",
+            "kill": "L_{z_n}→∞ along z_n=2n² (see docs/GATE-A-KILL-CERTIFICATE-2026-10-07.md)",
+            "number_theory": "r_2(m)≪_ε m^ε ⇒ N_n ≫ n^{2-2ε} ⇒ L*_n ≫ n^{1-2ε}",
         },
-        "status": "Gate A analytic lower-bound probe — not (17)",
+        "status": "Gate A analytic kill support — Outcome B; not (17)",
     }
     path = Path(__file__).with_name("ANALYTIC-LOAD-LOWER-BOUND.json")
     path.write_text(json.dumps(payload, indent=2) + "\n")

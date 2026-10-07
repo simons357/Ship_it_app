@@ -76,7 +76,7 @@
     }
   },
   "growth_diagnostic_F2": {
-    "note": "Convention F2 aggregate. Matches author table at c=25,50,101,401. R(c)=A/\u221ac worsens overall \u2192 Outcome B.",
+    "note": "Convention F2 aggregate. Matches author table at c=25,50,101,401. Diagnostic only; kill is analytic L_{z_n}\u2192\u221e.",
     "rows": [
       {
         "c": 25,
@@ -233,8 +233,8 @@
     "status": "source-backed from budget-rebalancing note; not re-proved here"
   },
   "gate_A_outcome": {
-    "verdict": "OPEN",
-    "meaning": "Numeric F2 growth is diagnostic only. Kill requires analytic L_{z_j}\u2192\u221e (see analytic_load_lower_bound.py). Charging frozen; general-c \u03c1 authorized; \u03c15/9/13 match."
+    "verdict": "B",
+    "meaning": "Analytic kill: L_{z_n}\u2192\u221e along z_n=2n\u00b2 (docs/GATE-A-KILL-CERTIFICATE-2026-10-07.md). Numeric table remains diagnostic support only."
   },
-  "status": "Gate A support \u2014 OPEN analytic spine; not (17)"
+  "status": "Gate A support \u2014 Outcome B; not (17)"
 }

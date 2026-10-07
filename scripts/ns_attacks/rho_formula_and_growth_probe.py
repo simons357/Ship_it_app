@@ -268,14 +268,14 @@ def main():
             "status": "source-backed from budget-rebalancing note; not re-proved here",
         },
         "gate_A_outcome": {
-            "verdict": "OPEN",
+            "verdict": "B",
             "meaning": (
-                "Numeric F2 growth is diagnostic only. Kill requires analytic "
-                "L_{z_j}→∞ (see analytic_load_lower_bound.py). Charging frozen; "
-                "general-c ρ authorized; ρ5/9/13 match."
+                "Analytic kill: L_{z_n}→∞ along z_n=2n² "
+                "(docs/GATE-A-KILL-CERTIFICATE-2026-10-07.md). "
+                "Numeric table remains diagnostic support only."
             ),
         },
-        "status": "Gate A support — OPEN analytic spine; not (17)",
+        "status": "Gate A support — Outcome B; not (17)",
     }
     path = Path(__file__).with_name("RHO-FORMULA-AND-GROWTH-PROBE.json")
     path.write_text(json.dumps(payload, indent=2) + "\n")

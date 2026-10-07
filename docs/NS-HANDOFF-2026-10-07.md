@@ -226,8 +226,8 @@ real Fourier field.
 
 | Priority | Task | Status |
 |---|---|---|
-| **A** | Positive all-shape load | **OPEN** ([`GATE-A-POSITIVE-ASSEMBLY.md`](GATE-A-POSITIVE-ASSEMBLY.md)): charging F1/F2 frozen; \(\rho_5,\rho_9,\rho_{13}\) match; general-\(c\) authorized; kill needs analytic \(L_{z_j}\to\infty\) (spine \(z_n=2n^2\)) |
-| **B** | Shared-energy accounting | Queued after A kill ([`GATE-B-SHARED-ENERGY.md`](GATE-B-SHARED-ENERGY.md)) |
+| **A** | Positive all-shape load | **CLOSED — Outcome B** ([`GATE-A-KILL-CERTIFICATE.md`](GATE-A-KILL-CERTIFICATE.md)): \(L_{z_n}\to\infty\) along \(z_n=2n^2\) |
+| **B** | Shared-energy accounting | **ACTIVE** ([`GATE-B-SHARED-ENERGY.md`](GATE-B-SHARED-ENERGY.md)) |
 | **C** | Exact missing exponent | Queued after B |
 | **D** | Structural attack on that deficit only | Queued — only if recovers exponent |
 | Parked | 52/70/100 family extensions; random-phase fishing; Ring without bridge | — |
@@ -263,8 +263,8 @@ regularity or novelty claim.
 
 ZIP RETRIEVAL: NO LONGER THE RESEARCH BLOCKER (RECOVERED IN SOURCE CONVERSATION).
 17/32 FINITE CHECKS: RERUN HERE (lists, R=216×4, ρ+3ρ′, individual mult 3).
-GATE A: OPEN — ANALYTIC \(L_{z_j}\to\infty\) SPINE ACTIVE (NOT FOUR-SHELL NUMERIC).
-GATE B: QUEUED AFTER A KILL.
+GATE A: CLOSED — OUTCOME B (\(L_{z_n}\to\infty\) ALONG \(z_n=2n^2\)).
+GATE B: ACTIVE (SHARED ENERGY → EXACT DEFICIT).
 RESTRICTED-FAMILY THEOREM: PROVED AT STATED SCOPE (AUDIT VERDICT).
 (17) / CLAY / SWIRL CLOSURE: OPEN.
 PHASE: NARROWED — NOT A BLANKET DEAD END.
