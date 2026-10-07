@@ -1,0 +1,334 @@
+{
+  "status_labels": {
+    "rerun": "arithmetic in this script",
+    "source_backed": "G3 JSON notes; data/R2 PROVENANCE; Exact-Certificate report in parent chat",
+    "reported": "y_A, y_B, cycles, six T2 errors PASS vs rationalized JSON",
+    "open": "Library JSON 87745\u2026; Exact-Certificate ZIP bytes not in this checkout"
+  },
+  "artifacts": {
+    "M.tsv_sha256": "53b628fd00685d2b9b5f02507294fd2bf85492d1ff6de26eb3136ec6ffde45bc",
+    "b_exact.tsv_sha256": "05935f11a4a9100c9596ab692a68307106c53f270fb995a549e5e8a0847fc1d6",
+    "g3_json_sha256": "8ee60ffe2dcc9b0f67b97b7edb720b22f3ac4fe45198849f0489ca58d0556727",
+    "note": "These hashes are the G3 transcription locks in PROVENANCE.json (COMPUTED_EVIDENCE_ONLY), not the absent Library JSON."
+  },
+  "generator_convention": {
+    "formula": "b = \u03c0/2 - arg(g_sym), g_sym = g_ord(p,q) + g_ord(q,p)",
+    "json_notes": [
+      "No target row count was supplied to the generator.",
+      "No integer kernel, holonomy, MIN-CYCLE, Q-orbit, or return-time calculation was performed.",
+      "Targets use b=pi/2-arg(g_sym), with g_sym=g_ord(p,q)+g_ord(q,p), per the orientation audit relayed in chat."
+    ],
+    "equivalent_local_flip": "arg(-g_sym) = arg(g_sym)+\u03c0 \u21d2 b \u2190 b-\u03c0 \u2261 b+\u03c0 (mod 2\u03c0) on a channel whose g_sym sign is flipped"
+  },
+  "four_pi_offset_targets": [
+    {
+      "row": 0,
+      "labels": [
+        "T3:(+1,-1,+1)"
+      ],
+      "triads": [
+        3
+      ],
+      "g3_turn": "-1/2",
+      "g3_radians": "\u2212\u03c0",
+      "lock_turn": "0",
+      "difference": "\u03c0"
+    },
+    {
+      "row": 5,
+      "labels": [
+        "T3:(-1,+1,+1)"
+      ],
+      "triads": [
+        3
+      ],
+      "g3_turn": "-1/2",
+      "g3_radians": "\u2212\u03c0",
+      "lock_turn": "0",
+      "difference": "\u03c0"
+    },
+    {
+      "row": 10,
+      "labels": [
+        "T0:(+1,-1,+1)"
+      ],
+      "triads": [
+        0
+      ],
+      "g3_turn": "-1/2",
+      "g3_radians": "\u2212\u03c0",
+      "lock_turn": "0",
+      "difference": "\u03c0"
+    },
+    {
+      "row": 11,
+      "labels": [
+        "T0:(+1,-1,-1)"
+      ],
+      "triads": [
+        0
+      ],
+      "g3_turn": "-1/2",
+      "g3_radians": "\u2212\u03c0",
+      "lock_turn": "0",
+      "difference": "\u03c0"
+    }
+  ],
+  "global_convention_probes": {
+    "conjugation_beta_to_minus_beta_mismatches": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "global_plus_pi_mismatches": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "local_plus_pi_on_four_mismatches": []
+  },
+  "mode_phase_absorption": {
+    "A_strong_only_delta": {
+      "description": "\u0394\u03b2 = 1/2 turn on rows 0,5,10,11 only; weak \u0394\u03b2 = 0. This is the Exact-Certificate comparison shape.",
+      "delta_turns": [
+        "1/2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1/2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1/2",
+        "1/2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "solvable_mod1": false,
+      "inconsistent_rows": [
+        {
+          "row": 15,
+          "rhs": "-1/2"
+        },
+        {
+          "row": 16,
+          "rhs": "-1/2"
+        },
+        {
+          "row": 17,
+          "rhs": "1/2"
+        },
+        {
+          "row": 18,
+          "rhs": "1/2"
+        }
+      ],
+      "particular_y": [
+        "0",
+        "0",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "0",
+        "1/2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "pivots": [
+        {
+          "row": 0,
+          "col": 0
+        },
+        {
+          "row": 1,
+          "col": 1
+        },
+        {
+          "row": 2,
+          "col": 2
+        },
+        {
+          "row": 3,
+          "col": 3
+        },
+        {
+          "row": 4,
+          "col": 4
+        },
+        {
+          "row": 5,
+          "col": 5
+        },
+        {
+          "row": 6,
+          "col": 6
+        },
+        {
+          "row": 7,
+          "col": 8
+        },
+        {
+          "row": 8,
+          "col": 10
+        }
+      ],
+      "free_cols": [
+        7,
+        9,
+        11
+      ]
+    },
+    "B_identity_consistent_delta": {
+      "description": "Same strong \u0394\u03b2, weak \u0394\u03b2 forced by WEAK_IDENTITIES. Would be a pure mode-phase gauge \u2014 but the generator assigns weak targets from their own g_sym, and the audit held weak targets fixed.",
+      "delta_turns": [
+        "1/2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1/2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1/2",
+        "1/2",
+        "0",
+        "0",
+        "0",
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "0"
+      ],
+      "solvable_mod1": true,
+      "inconsistent_rows": [],
+      "particular_y": [
+        "0",
+        "0",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "0",
+        "1/2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "pivots": [
+        {
+          "row": 0,
+          "col": 0
+        },
+        {
+          "row": 1,
+          "col": 1
+        },
+        {
+          "row": 2,
+          "col": 2
+        },
+        {
+          "row": 3,
+          "col": 3
+        },
+        {
+          "row": 4,
+          "col": 4
+        },
+        {
+          "row": 5,
+          "col": 5
+        },
+        {
+          "row": 6,
+          "col": 6
+        },
+        {
+          "row": 7,
+          "col": 8
+        },
+        {
+          "row": 8,
+          "col": 10
+        }
+      ],
+      "free_cols": [
+        7,
+        9,
+        11
+      ]
+    }
+  },
+  "weak_T2_error_shift_if_strong_only_map": {
+    "14": "0",
+    "15": "1/2",
+    "16": "1/2",
+    "17": "1/2",
+    "18": "1/2",
+    "19": "0"
+  },
+  "identities_on_disk_M": true,
+  "classification": {
+    "code": "hybrid_a_local_generator_b_blocks_G6A",
+    "summary": "(Local generator) The four offsets equal sign(g_sym) flips under b=\u03c0/2\u2212arg(g_sym). (Not global) Conjugation and global +\u03c0 do not reproduce the lock match. (Not mode-phase gauge) Strong-only \u0394\u03b2 is inconsistent mod 1 on weak rows 15\u201318. Therefore G6-A cannot transfer through an asserted raw r2 identity."
+  },
+  "g6a_transfer": {
+    "via_raw_r2_identity": false,
+    "via_strong_only_local_bridge": false,
+    "via_identity_consistent_gauge": "Would equate \u03b2 systems by a mode-phase, but that is not the audit mismatch (weak targets were not remapped), and it is not how the G3 generator writes weak b.",
+    "scope": "Fixed finite network only. Evolving NSE / classical regularity: Open."
+  },
+  "certificate_posture": {
+    "y_A_y_B_cycles_T2_vs_JSON": "Reported PASS (Exact-Certificate conversation)",
+    "same_y_under_strong_only_mapped_beta": "Fails on the four rows: residual picks up 1/2 turn",
+    "T2_frozen_errors_under_strong_only_map": "Shift by the weak_T2_error_shift table on Z_K; upper-bound residues are not automatically preserved"
+  },
+  "sibling_pr": {
+    "number": 169,
+    "branch": "cursor/b41-phase-convention-0cc5",
+    "agreement": "Same four rows and local +\u03c0 / sign(g_sym) story",
+    "this_branch_adds": "Exact mod-1 obstruction for strong-only absorption; identity-consistent gauge contrast; global-map negatives"
+  },
+  "ns_regularity": "open"
+}
