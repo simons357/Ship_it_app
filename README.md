@@ -20,6 +20,17 @@ python -m domain_architect --registry
 python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units
 ```
 
+## Gate B assembly tests (7 October 2026)
+
+Diagnostic Fourier bookkeeping for unaugmented NS. **Not (17). NS not solved.**
+
+- First test (nonnegative \(Q_x\)): any uniform power bound requires \(\theta\ge 1/2\); optimal \(\theta\) remains open. Note: [`docs/GATE-B-SOURCE-ASSEMBLY-AND-CONCENTRATION-TEST.md`](docs/GATE-B-SOURCE-ASSEMBLY-AND-CONCENTRATION-TEST.md). Checker: `python3 scripts/ns_attacks/nonnegative_qx_assembly.py`.
+- Second test (signed cancellation): exact \(T_{abc}\), one divergence-free field. Note: [`docs/GATE-B-SIGNED-CANCELLATION-TEST.md`](docs/GATE-B-SIGNED-CANCELLATION-TEST.md). Checker: `python3 scripts/ns_attacks/signed_cancellation_test.py`.
+
+```bash
+python3 -m unittest tests.test_nonnegative_qx_assembly tests.test_signed_cancellation -v
+```
+
 ## Harmonic Blueprint Experiment 01
 
 Cross-event spectral selection test on black-hole ringdown modes.
