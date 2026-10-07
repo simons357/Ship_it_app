@@ -1,0 +1,25 @@
+# data/R2/b_exact.tsv
+# G3-corrected-channel-quotient. COMPUTED_EVIDENCE_ONLY.
+# Exact target phases as fractions of a turn: b/(2π).
+# Source b = π/2 − arg(g_sym). Not Library JSON. Not a canonical lock.
+# Verifier is read-only.
+-1/2
+0
+-3/8
+-3/8
+1/8
+-1/2
+0
+3/8
+-1/8
+-1/8
+-1/2
+-1/2
+0
+0
+-5/24
+1/24
+-7/24
+-5/24
+11/24
+-7/24
