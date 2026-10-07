@@ -1,0 +1,23 @@
+{
+  "source": "Oct 7 2026 handoff / Shared-Budget-17-Family-Audit-and-9-25-Extension",
+  "library_id_reported": "libfile_e69ca0f14ab4819186900a547b61df20",
+  "zip_name": "Shared-Budget-17-Family-Audit-and-9-25-Extension.zip",
+  "zip_binary_in_this_workspace": false,
+  "terminology": "shell label a means |k|^2 = a (exact spheres, not thick dyadic annuli)",
+  "original_family": {
+    "anchors": [5, 25],
+    "third_shell_labels_b": [8, 10, 14, 18, 20, 22, 24, 26, 30, 34, 36, 38, 40, 42, 46, 50, 52],
+    "shape_form": "(5, b, 25) and dilations (5 n^2, b n^2, 25 n^2)",
+    "count": 17
+  },
+  "added_family": {
+    "anchors": [9, 25],
+    "third_shell_labels_all": [4, 6, 10, 12, 14, 16, 24, 30, 34, 38, 44, 52, 54, 56, 58, 62, 64],
+    "zero_transfer_collinear_endpoints": [4, 64],
+    "active_third_shell_labels_b": [6, 10, 12, 14, 16, 24, 30, 34, 38, 44, 52, 54, 56, 58, 62],
+    "shape_form": "(9, b, 25) and dilations",
+    "active_count": 15
+  },
+  "union_nonzero_shapes": 32,
+  "do_not_substitute": "37-shape casual phrase is not this package"
+}

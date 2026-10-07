@@ -1,0 +1,257 @@
+{
+  "status": "NUMERICAL",
+  "family": {
+    "n_shapes": 32,
+    "original_17": [
+      [
+        5,
+        8,
+        25
+      ],
+      [
+        5,
+        10,
+        25
+      ],
+      [
+        5,
+        14,
+        25
+      ],
+      [
+        5,
+        18,
+        25
+      ],
+      [
+        5,
+        20,
+        25
+      ],
+      [
+        5,
+        22,
+        25
+      ],
+      [
+        5,
+        24,
+        25
+      ],
+      [
+        5,
+        26,
+        25
+      ],
+      [
+        5,
+        30,
+        25
+      ],
+      [
+        5,
+        34,
+        25
+      ],
+      [
+        5,
+        36,
+        25
+      ],
+      [
+        5,
+        38,
+        25
+      ],
+      [
+        5,
+        40,
+        25
+      ],
+      [
+        5,
+        42,
+        25
+      ],
+      [
+        5,
+        46,
+        25
+      ],
+      [
+        5,
+        50,
+        25
+      ],
+      [
+        5,
+        52,
+        25
+      ]
+    ],
+    "added_15": [
+      [
+        9,
+        6,
+        25
+      ],
+      [
+        9,
+        10,
+        25
+      ],
+      [
+        9,
+        12,
+        25
+      ],
+      [
+        9,
+        14,
+        25
+      ],
+      [
+        9,
+        16,
+        25
+      ],
+      [
+        9,
+        24,
+        25
+      ],
+      [
+        9,
+        30,
+        25
+      ],
+      [
+        9,
+        34,
+        25
+      ],
+      [
+        9,
+        38,
+        25
+      ],
+      [
+        9,
+        44,
+        25
+      ],
+      [
+        9,
+        52,
+        25
+      ],
+      [
+        9,
+        54,
+        25
+      ],
+      [
+        9,
+        56,
+        25
+      ],
+      [
+        9,
+        58,
+        25
+      ],
+      [
+        9,
+        62,
+        25
+      ]
+    ],
+    "dilation": "n=1 only in this probe"
+  },
+  "shell_phase_exact_32": {
+    "n_shapes": 32,
+    "n_shell_labels": 28,
+    "shell_labels": [
+      5,
+      6,
+      8,
+      9,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22,
+      24,
+      25,
+      26,
+      30,
+      34,
+      36,
+      38,
+      40,
+      42,
+      44,
+      46,
+      50,
+      52,
+      54,
+      56,
+      58,
+      62
+    ],
+    "worst_case_coherent": {
+      "ratio": 1.0,
+      "sum_signed": 31.522961568046952,
+      "sum_abs": 31.522961568046952,
+      "n_nonzero": 32,
+      "restart": 0
+    },
+    "random_phase_baseline": {
+      "ratio_mean": 0.17822644607274718,
+      "ratio_max": 0.6216283140521819,
+      "ratio_median": 0.15082771958597788,
+      "n_samples": 80
+    },
+    "reading": "ratio=1 means common signs among nonzero cos contributions on the exact 32 list \u2014 not geometric-bound saturation"
+  },
+  "representative_triad_df": {
+    "note": "One lattice witness triad per exact shape; shared DF modes across overlapping witnesses. Finite coordinate ascent. Not a full-shell sum.",
+    "worst_case_search": {
+      "abs_signed": 3.4785248407448313,
+      "sum_signed": -3.4785248407448313,
+      "sum_abs": 3.4785248407448313,
+      "coherence_ratio": 1.0,
+      "E": 0.9999999999999999,
+      "Y": 28.448979591836732,
+      "budget_proxy": 88.41303555882122,
+      "eta_eff": 0.039344026802818774,
+      "restart": 4,
+      "n_modes": 49,
+      "n_shapes": 32,
+      "max_abs_shape": 0.2738452496530706
+    },
+    "random_baseline": {
+      "coherence_ratio_mean": 0.18566265725651418,
+      "coherence_ratio_max": 0.6893101299614474,
+      "eta_eff_mean": 0.0030371222124475996,
+      "eta_eff_max": 0.01258728878393993,
+      "n_samples": 40
+    },
+    "budget_proxy_definition": "B_proxy = (\u03c1+3\u03c1') \u221aE Y with E=\u2211|\u00fb_k|\u00b2, Y=\u2211|k|\u00b2|\u00fb_k|\u00b2 on the representative-mode field; numerical face only",
+    "rho_plus_3_rho_prime": 3.1077752814793693
+  },
+  "reading": {
+    "shell_phase": "If worst_case_coherent.ratio hits 1 on the exact list, common signs are attainable; that does not saturate geometric C_b bounds.",
+    "representative_df": "Compare coherence_ratio and eta_eff under DF+reality. eta_eff uses a proxy budget, not the paper high-pass lemma.",
+    "next_analytic": "Signed multi-shape lemma still Open; this search only constrains optimistic cancellation hopes on the exact family."
+  },
+  "not_claimed": [
+    "criterion (17)",
+    "global regularity",
+    "swirl closure",
+    "optimality of rho+3rho'",
+    "full-lattice shell sums"
+  ]
+}
