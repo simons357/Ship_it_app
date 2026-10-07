@@ -1,5 +1,7 @@
 # Harmonic Blueprint / Domain Architect
 
+**Keep up with subjects:** [`docs/SUBJECTS.md`](docs/SUBJECTS.md) — living index of threads (on main, drafts, parked, abandoned).
+
 This repository now contains two related research objects. Neither is a
 unified physical theory.
 

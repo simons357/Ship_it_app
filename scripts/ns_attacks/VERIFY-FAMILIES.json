@@ -1,0 +1,123 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "lists": {
+    "family_5_25_thirds_n": 17,
+    "family_9_25_active_n": 15,
+    "union_nonzero_shapes": 32,
+    "family_5_25_thirds": [
+      8,
+      10,
+      14,
+      18,
+      20,
+      22,
+      24,
+      26,
+      30,
+      34,
+      36,
+      38,
+      40,
+      42,
+      46,
+      50,
+      52
+    ],
+    "family_9_25_active": [
+      6,
+      10,
+      12,
+      14,
+      16,
+      24,
+      30,
+      34,
+      38,
+      44,
+      52,
+      54,
+      56,
+      58,
+      62
+    ],
+    "family_9_25_zero_transfer": [
+      4,
+      64
+    ]
+  },
+  "constants_faces": {
+    "rho": 0.6318550823987903,
+    "rho_prime": 0.8253067330268596,
+    "rho_plus_3_rho_prime": 3.1077752814793693,
+    "reconstruction_ok": true
+  },
+  "overlap": {
+    "R_216_zero_pruned_multiplicity": 4,
+    "R_216_charges": [
+      {
+        "family_anchor": 5,
+        "label": 24,
+        "n": 3,
+        "R": 216
+      },
+      {
+        "family_anchor": 9,
+        "label": 6,
+        "n": 6,
+        "R": 216
+      },
+      {
+        "family_anchor": 9,
+        "label": 24,
+        "n": 3,
+        "R": 216
+      },
+      {
+        "family_anchor": 9,
+        "label": 54,
+        "n": 2,
+        "R": 216
+      }
+    ],
+    "R_216_matches_handoff_table": true,
+    "R_14400_third_shell_only_literal_count": 4,
+    "R_14400_third_shell_only_active_count": 2,
+    "R_14400_third_shell_only_literal_charges": [
+      {
+        "family_anchor": 5,
+        "label": 36,
+        "n": 20,
+        "R": 14400
+      },
+      {
+        "family_anchor": 9,
+        "label": 4,
+        "n": 60,
+        "R": 14400
+      },
+      {
+        "family_anchor": 9,
+        "label": 16,
+        "n": 30,
+        "R": 14400
+      },
+      {
+        "family_anchor": 9,
+        "label": 64,
+        "n": 15,
+        "R": 14400
+      }
+    ],
+    "note": "Zero-pruned multiplicity 4 at R=216 matches the handoff table (rerun here). Literal multiplicity 6 at R=14400 is reported from the ZIP charge-group definition; third-shell-only scan here does not reproduce 6 \u2014 keep both accountings distinct."
+  },
+  "individual_multiplicity_scan": {
+    "family_5_max": 3,
+    "family_9_active_max": 3,
+    "handoff_claimed_individual": 3,
+    "matches_handoff": true
+  },
+  "highpass_cutoff_formula": "K = max{2, 3(M-1)} for the combined family",
+  "original_family_cutoff_note": "Original smaller cutoff was max{2, \u221a5 (M-1)} \u2014 a product, not \u221a(5(M-1)); do not reuse for the extension without proof",
+  "scope": "Finite checks only. Restricted-family theorem remains source-backed at stated scope; not (17)."
+}

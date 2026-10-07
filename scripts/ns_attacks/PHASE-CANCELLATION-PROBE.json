@@ -1,0 +1,84 @@
+{
+  "terminology": "shell = exact |k|^2; not physical",
+  "author_random_triad_reference": {
+    "n_triads": 500,
+    "sum_abs_approx": 3468,
+    "sum_signed_approx": -4.3,
+    "cancellation_ratio_approx": 0.0012
+  },
+  "random_receiver_experiment": {
+    "n_triads": 500,
+    "receiver_shell": 13,
+    "donor_pool_size": 2784,
+    "sum_abs": 1947.3170809308192,
+    "sum_signed": -82.71534346335811,
+    "cancellation_ratio": 0.042476566489017854
+  },
+  "shared_mode_family_compact": {
+    "note": "Exact 32-list awaits ZIP; compact mode-level family on {5,8,9,10,25} including jet blocks and (9,25) anchor shells",
+    "worst_case_coherent": {
+      "ratio": 1.0,
+      "sum_signed": -10.214507395901592,
+      "sum_abs": 10.214507395901592,
+      "restart": 0,
+      "n_modes": 60,
+      "n_shapes": 5,
+      "max_abs_shape": 4.333631389572087
+    },
+    "random_phase_baseline": {
+      "ratio_mean": 0.5947778731439005,
+      "ratio_max": 1.0,
+      "ratio_median": 0.646674037692164,
+      "n_samples": 40
+    },
+    "active_shells": [
+      5,
+      8,
+      9,
+      10,
+      25
+    ],
+    "shapes": [
+      [
+        5,
+        8,
+        9
+      ],
+      [
+        5,
+        8,
+        25
+      ],
+      [
+        5,
+        9,
+        10
+      ],
+      [
+        5,
+        10,
+        25
+      ],
+      [
+        9,
+        10,
+        25
+      ]
+    ]
+  },
+  "shell_phase_toy_32": {
+    "note": "Synthetic 32 triples on 12 shell labels with shared shell phases \u2014 models overlap constraint without full lattice",
+    "n_shapes": 32,
+    "n_shell_labels": 12,
+    "worst_case_ratio": 1.0,
+    "random_ratio_mean": 0.14631704877728632,
+    "random_ratio_max": 0.6150483413415756
+  },
+  "reading": {
+    "single_triad": "no worst-case phase gain",
+    "random_independent": "strong cancellation (optimistic)",
+    "shared_mode": "compare worst_case_coherent.ratio to random baseline; if O(1), shared phases destroy the 0.0012 regime",
+    "next": "signed multi-shape lemma guided by measured coherent ratio"
+  },
+  "status": "NUMERICAL exploration; not a proof of (17)"
+}
