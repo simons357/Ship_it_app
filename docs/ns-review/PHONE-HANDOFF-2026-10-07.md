@@ -224,7 +224,7 @@ Ring Lemma is installed **side hardware**, not this door.
 
 ---
 
-## F. One-screen “update the phones” blurb (copy/paste)
+## G. One-screen “update the phones” blurb (copy/paste)
 
 > **7 Oct update.** Ring Lemma = spatial hardware done (twist ceiling for band-limited vorticity); not the live NS gate. Yesterday’s DA swirl note is a separate Shahmurov-axisymmetric probe: feedback loop swirl→meridional→inward squeeze→stronger swirl, viscosity opposing. Low-order bounds don’t kill the swirl budget; viscosity alone can’t absorb all compression. Next target = signed compression ≤ ην·smoothing + controlled B·Q. Four doors still open. Shared-Budget 17→32 ZIP still not verified in this workspace — all-shape estimate open. NS not solved.
 
