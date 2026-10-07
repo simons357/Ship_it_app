@@ -3,7 +3,7 @@
 One page to see **what this repo is about** and **where each thread lives**.
 
 Update this file when a subject changes status (merge, park, abandon, or rename).  
-Last reviewed: **2026-10-07** (NS handoff; 17/32 family lists + verify rerun).
+Last reviewed: **2026-10-07** (Gate A Outcome B kill certificate; Gate B shared-energy active).
 
 ---
 
@@ -39,6 +39,7 @@ Last reviewed: **2026-10-07** (NS handoff; 17/32 family lists + verify rerun).
 | **Related gate stack** | Gates / SAG / lemmas / Fourier-triangle / MIN-CYCLE / channel algebra — dozens of open PRs (see GitHub “Open”) |
 | **32-shape shared-budget extension** | 17 + 15 nonzero from \((9,25)\); mult 4 zero-pruned; [`SHARED-BUDGET-32-SHAPE-EXTENSION.md`](SHARED-BUDGET-32-SHAPE-EXTENSION.md). ZIP no longer the blocker. Not (17). |
 | **NS handoff (7 Oct 2026)** | Cross-device update: [`NS-HANDOFF.md`](NS-HANDOFF.md). Finite verify: `scripts/ns_attacks/verify_families.py`. |
+| **Gates A–D** | Gate A **Outcome B** (positive all-shape killed) → Gate B shared energy → deficit → structure. **No more family extensions.** [`PROGRAM-GATES-A-D.md`](PROGRAM-GATES-A-D.md) · [`GATE-A-POSITIVE-ASSEMBLY.md`](GATE-A-POSITIVE-ASSEMBLY.md) · [`GATE-B-SHARED-ENERGY.md`](GATE-B-SHARED-ENERGY.md). |
 | **Phase cancellation** | Narrowed: ratio 1 = common signs, not bound saturation; not all signed routes dead — [`PHASE-CANCELLATION-EXPLORATION.md`](PHASE-CANCELLATION-EXPLORATION.md). |
 
 ### 3. Phi-renorm / swirl papers

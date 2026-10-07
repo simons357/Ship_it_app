@@ -1,0 +1,240 @@
+{
+  "charging_freeze": {
+    "F1_family": "Fixed ordered anchors (a_\u2605,c_\u2605); c_\u2605 is family output/high-pass endpoint, NOT necessarily geometric max{|k|\u00b2}. Third label b may exceed c_\u2605. Dissipation multiplicity: third-shell bn\u00b2=R primary (zero-pruned 4 at R=216); endpoint c_\u2605 charged separately when families share it. Low-anchor amplitudes: global \u221aE\u2080 (Gate B).",
+    "F2_all_shape_diagnostic": "Shapes with geometric max = c (a<b<c). \u03c1_a(c)=(1/(2c))(\u2211 C_{a,b;c}\u00b2/b\u00b2)^{1/2}; A=\u2211\u03c1_a; R=A/\u221ac.",
+    "who_pays": {
+      "largest_shell_only": false,
+      "largest_plus_middle": "Dissipation bookkeeping charges overlapping third labels b and family endpoints c_\u2605 \u2014 not a private largest-only share.",
+      "low_anchor_from_global_E": true,
+      "multiplicity_4_vs_5": "Use literal 6 vs zero-pruned 4; never '5'. Third-shell coincidence \u2260 endpoint coincidence."
+    }
+  },
+  "formula": {
+    "C_a_b_c": "\u221a(3\u0394)(|c-b|/\u221aa + |c-a|/\u221ab + |b-a|/\u221ac)",
+    "rho_a": "(1/(2c)) (\u2211 C\u00b2/b\u00b2)^{1/2}",
+    "general_c_status": "AUTHORIZED for Gate A: same Young/exact-shell face with variable family output shell c; no special role for 25"
+  },
+  "known_rho_reproduction": {
+    "targets": {
+      "rho_5": 0.6318550824,
+      "rho_9": 0.825306733,
+      "rho_13": 1.0833160571
+    },
+    "computed": {
+      "rho_5": 0.6318550823987904,
+      "rho_9": 0.8253067330268598,
+      "rho_13": 1.0833160571477938
+    },
+    "B13_enumerated": [
+      2,
+      4,
+      8,
+      14,
+      18,
+      20,
+      22,
+      26,
+      36,
+      38,
+      40,
+      50,
+      54,
+      56,
+      58,
+      62,
+      68,
+      72,
+      74
+    ],
+    "B13_package": [
+      2,
+      4,
+      8,
+      14,
+      18,
+      20,
+      22,
+      26,
+      36,
+      38,
+      40,
+      50,
+      54,
+      56,
+      58,
+      62,
+      68,
+      72,
+      74
+    ],
+    "B13_enum_equals_package": true,
+    "rho_13_from_package_list": 1.0833160571477938,
+    "match_within_5e9": {
+      "rho_5": true,
+      "rho_9": true,
+      "rho_13": true
+    }
+  },
+  "growth_diagnostic_F2": {
+    "note": "Convention F2 aggregate. Matches author table at c=25,50,101,401. R(c)=A/\u221ac worsens overall \u2192 Outcome B.",
+    "rows": [
+      {
+        "c": 25,
+        "n_shapes": 47,
+        "sum_rho_a": 4.685748074835882,
+        "sum_2rho_a": 9.371496149671763,
+        "R_over_sqrt_c": 0.9371496149671763,
+        "rho_by_anchor_sample": {
+          "1": 0.13500843736123222,
+          "2": 0.2389596347634202,
+          "3": 0.24664430804303014,
+          "4": 0.2894562139199576,
+          "5": 0.4835812171034289,
+          "6": 0.4727203684487956,
+          "8": 0.3745379706893363,
+          "9": 0.5553105148515546
+        }
+      },
+      {
+        "c": 50,
+        "n_shapes": 226,
+        "sum_rho_a": 9.84822674700146,
+        "sum_2rho_a": 19.69645349400292,
+        "R_over_sqrt_c": 1.3927495830934933,
+        "rho_by_anchor_sample": {
+          "1": 0.08995963742516098,
+          "2": 0.1550224934040886,
+          "3": 0.17505569220202638,
+          "4": 0.16896997817107512,
+          "5": 0.3123644501171598,
+          "6": 0.35349476617856296,
+          "8": 0.3139970881092932,
+          "9": 0.42257672816535663
+        }
+      },
+      {
+        "c": 101,
+        "n_shapes": 973,
+        "sum_rho_a": 20.542338996613218,
+        "sum_2rho_a": 41.084677993226435,
+        "R_over_sqrt_c": 2.0440391275531105,
+        "rho_by_anchor_sample": {
+          "1": 0.05462415645033264,
+          "2": 0.09105936740093123,
+          "3": 0.10136615007983002,
+          "4": 0.10798013145583689,
+          "5": 0.19848618739074053,
+          "6": 0.20153982192216222,
+          "8": 0.18039848529750532,
+          "9": 0.27690044642505135
+        }
+      },
+      {
+        "c": 200,
+        "n_shapes": 1636,
+        "sum_rho_a": 26.278882275127838,
+        "sum_2rho_a": 52.557764550255676,
+        "R_over_sqrt_c": 1.8581975858745863,
+        "rho_by_anchor_sample": {
+          "1": 0.022075422180550537,
+          "2": 0.03905753039978596,
+          "3": 0.04279014291045808,
+          "4": 0.04497981871258049,
+          "5": 0.0781583629890816,
+          "6": 0.08941942821216714,
+          "8": 0.0775112467020443,
+          "9": 0.10761378350663024
+        }
+      },
+      {
+        "c": 401,
+        "n_shapes": 11078,
+        "sum_rho_a": 68.7255614060809,
+        "sum_2rho_a": 137.4511228121618,
+        "R_over_sqrt_c": 3.4319907597508115,
+        "rho_by_anchor_sample": {
+          "1": 0.016856318516500667,
+          "2": 0.026447979056408378,
+          "3": 0.033387734429038515,
+          "4": 0.03309450375928955,
+          "5": 0.05563462398044864,
+          "6": 0.06737256013224072,
+          "8": 0.05448342701303407,
+          "9": 0.08622840205980487
+        }
+      }
+    ],
+    "slopes_dlog_dlogc": [
+      {
+        "from_c": 25,
+        "to_c": 50,
+        "dlogA_dlogc": 1.0715845879809547,
+        "dlogR_dlogc": 0.5715845879809548
+      },
+      {
+        "from_c": 50,
+        "to_c": 101,
+        "dlogA_dlogc": 1.0456539071621123,
+        "dlogR_dlogc": 0.5456539071621124
+      },
+      {
+        "from_c": 101,
+        "to_c": 200,
+        "dlogA_dlogc": 0.36047822558376497,
+        "dlogR_dlogc": -0.13952177441623492
+      },
+      {
+        "from_c": 200,
+        "to_c": 401,
+        "dlogA_dlogc": 1.3819647083922721,
+        "dlogR_dlogc": 0.881964708392272
+      }
+    ],
+    "author_table_check": [
+      {
+        "c": 25,
+        "computed_A": 4.685748074835882,
+        "computed_R": 0.9371496149671763,
+        "author_R": 0.94,
+        "A_matches_author_2dp": true
+      },
+      {
+        "c": 50,
+        "computed_A": 9.84822674700146,
+        "computed_R": 1.3927495830934933,
+        "author_R": 1.39,
+        "A_matches_author_2dp": true
+      },
+      {
+        "c": 101,
+        "computed_A": 20.542338996613218,
+        "computed_R": 2.0440391275531105,
+        "author_R": 2.04,
+        "A_matches_author_2dp": true
+      },
+      {
+        "c": 401,
+        "computed_A": 68.7255614060809,
+        "computed_R": 3.4319907597508115,
+        "author_R": 3.43,
+        "A_matches_author_2dp": true
+      }
+    ],
+    "author_relative_to_c_inv_sqrt": [
+      0.94,
+      1.39,
+      2.04,
+      3.43
+    ]
+  },
+  "structural_lower_bound_reported": {
+    "W_ge": "\u2211_a 2 \u03c1_a \u221am_{a,1}",
+    "consequence": "If positive terms diverge over infinite extension, that Young-allocation method cannot produce finite W",
+    "status": "source-backed from budget-rebalancing note; not re-proved here"
+  },
+  "gate_A_outcome": {
+    "verdict": "B",
+    "meaning": "Positive shared-budget all-shape assembly load is not uniformly controlled under frozen F2; kill certificate for straight positive summation route. Proceed to Gate B (shared energy)."
+  },
+  "status": "Gate A support \u2014 Outcome B; not (17)"
+}
