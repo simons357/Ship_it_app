@@ -1,0 +1,195 @@
+{
+  "object": "signed Q_x from exact T_abc, one DF Hermitian-capable field",
+  "definition": {
+    "T_abc": "(c-b) Im I_p + (a-c) Im I_q + (b-a) Im I_r",
+    "Q_x_signed": "sum_{triads with low vertex x} T_abc / f_x",
+    "identity": "sum_x f_x Q_x^{sgn} = sum T_abc",
+    "constraint": "one globally compatible DF field; shared w on the subnet",
+    "forbidden": "no |sum S| -> sum |S| before grouping"
+  },
+  "single_triad": {
+    "rows": [
+      {
+        "n": 4,
+        "Lambda": 32,
+        "E": 1.0000000000000002,
+        "Omega": 19.33333333333334,
+        "Qplus2": 77.1575670012936,
+        "Qplus2_over_Omega": 3.9909086379979435,
+        "Qsgn2": 16.55370403946053,
+        "Qsgn2_over_Omega": 0.8562260710065789,
+        "T": 9.557285483267934,
+        "abs_T": 9.557285483267934,
+        "envelope_Cfff": 44.546942078213455,
+        "signed_le_majorant": true,
+        "coherence": 1.0,
+        "df_residual_max": 0.0,
+        "ratio_Qsgn_to_Qplus": 0.2145441423675658
+      },
+      {
+        "n": 8,
+        "Lambda": 128,
+        "E": 1.0000000000000002,
+        "Omega": 77.33333333333336,
+        "Qplus2": 617.2605360103488,
+        "Qplus2_over_Omega": 7.981817275995887,
+        "Qsgn2": 127.16190767681957,
+        "Qsgn2_over_Omega": 1.6443350130623215,
+        "T": 73.41696162787812,
+        "abs_T": 73.41696162787812,
+        "envelope_Cfff": 356.37553662570764,
+        "signed_le_majorant": true,
+        "coherence": 1.0,
+        "df_residual_max": 3.1401849173675503e-16,
+        "ratio_Qsgn_to_Qplus": 0.20601010474236378
+      }
+    ],
+    "theta_hat_nonneg": 0.5,
+    "theta_hat_signed_adversary": 0.47072029539783233,
+    "note": "A single triad has nothing to cancel against. Signed |T| stays under the C-majorant; theta stays 1/2."
+  },
+  "subnet_shared_w": {
+    "rows": [
+      {
+        "n": 4,
+        "c": 32,
+        "Lambda": 32,
+        "n_triads": 4,
+        "M_shells": 9,
+        "n_modes": 9,
+        "E": 1.0,
+        "Omega": 15.111111111111109,
+        "Qplus2": 41.81535393062389,
+        "Qplus2_over_Omega": 2.7671925395265817,
+        "Qsgn2_adversary": 8.47633422061724,
+        "Qsgn2_over_Omega_adversary": 0.5609338822467291,
+        "coherence_adversary": 0.4795313827220684,
+        "T_adversary": 2.5429777732261347,
+        "abs_sum_adversary": 5.303047652044953,
+        "majorant_holds": true,
+        "T_plus": 27.178857307422504,
+        "T_signed_reassembled": 2.5429777732261347,
+        "reassembly_identity": true,
+        "random_baseline": {
+          "n_samples": 24,
+          "Q2_mean": 3.753831479790709,
+          "Q2_max": 6.357078026196167,
+          "Q2_median": 3.6845928810111332,
+          "coherence_mean": 0.5270771759452035,
+          "coherence_max": 1.0,
+          "abs_T_mean": 1.138042892494483,
+          "abs_T_max": 2.669912323450635
+        },
+        "signed_gain_vs_nonneg": 0.20270865660207915,
+        "random_Q2_over_Omega": 0.24841531851556165
+      },
+      {
+        "n": 6,
+        "c": 72,
+        "Lambda": 72,
+        "n_triads": 12,
+        "M_shells": 24,
+        "n_modes": 25,
+        "E": 1.0000000000000002,
+        "Omega": 32.95833333333334,
+        "Qplus2": 104.05038719410942,
+        "Qplus2_over_Omega": 3.1570281828806896,
+        "Qsgn2_adversary": 21.06085429926466,
+        "Qsgn2_over_Omega_adversary": 0.6390145425819869,
+        "coherence_adversary": 0.5121182143130631,
+        "T_adversary": 6.871370631155496,
+        "abs_sum_adversary": 13.417547822181064,
+        "majorant_holds": true,
+        "T_plus": 67.07862234245927,
+        "T_signed_reassembled": 6.871370631155496,
+        "reassembly_identity": true,
+        "random_baseline": {
+          "n_samples": 24,
+          "Q2_mean": 7.9875955524873925,
+          "Q2_max": 13.600084250531733,
+          "Q2_median": 7.62095039901991,
+          "coherence_mean": 0.3222576227109137,
+          "coherence_max": 0.837065064590413,
+          "abs_T_mean": 1.37499748081282,
+          "abs_T_max": 3.326815700645409
+        },
+        "signed_gain_vs_nonneg": 0.20241014826763634,
+        "random_Q2_over_Omega": 0.24235435304639363
+      },
+      {
+        "n": 8,
+        "c": 128,
+        "Lambda": 128,
+        "n_triads": 16,
+        "M_shells": 30,
+        "n_modes": 33,
+        "E": 0.9999999999999998,
+        "Omega": 56.566666666666656,
+        "Qplus2": 253.5101558800405,
+        "Qplus2_over_Omega": 4.481617369711972,
+        "Qsgn2_adversary": 52.32602534037787,
+        "Qsgn2_over_Omega_adversary": 0.9250328581092141,
+        "coherence_adversary": 0.6660801317763189,
+        "T_adversary": 21.80508112906049,
+        "abs_sum_adversary": 32.736423275244924,
+        "majorant_holds": true,
+        "T_plus": 160.6929491446111,
+        "T_signed_reassembled": 21.805081129060493,
+        "reassembly_identity": true,
+        "random_baseline": {
+          "n_samples": 24,
+          "Q2_mean": 19.154430117087813,
+          "Q2_max": 30.703245484273424,
+          "Q2_median": 19.938283337019246,
+          "coherence_mean": 0.22682034131306747,
+          "coherence_max": 0.7891992233170668,
+          "abs_T_mean": 2.543163047725396,
+          "abs_T_max": 10.374996821929752
+        },
+        "signed_gain_vs_nonneg": 0.20640603197427024,
+        "random_Q2_over_Omega": 0.33861691426790486
+      }
+    ],
+    "theta_hats": [
+      {
+        "from_n": 4,
+        "to_n": 6,
+        "theta_hat_nonneg": 0.1625267518812409,
+        "theta_hat_signed_adversary": 0.1607094768913527,
+        "theta_hat_signed_random": -0.030460195537020805
+      },
+      {
+        "from_n": 6,
+        "to_n": 8,
+        "theta_hat_nonneg": 0.6089237012054715,
+        "theta_hat_signed_adversary": 0.6429007611534788,
+        "theta_hat_signed_random": 0.5813161994966214
+      }
+    ],
+    "mean_theta_signed_adversary": 0.4018051190224158,
+    "mean_theta_signed_random": 0.2754280019798003,
+    "mean_Qsgn_over_Qplus": 0.20384161228132858,
+    "Qsgn_over_Qplus_spread": 0.003995883706633896,
+    "constant_factor_only_on_sample": true,
+    "coherent_adversary_beats_half_on_sample": false,
+    "random_phases_smaller_than_adversary": true
+  },
+  "reading": {
+    "nonnegative_regrouping": "ruled out as a source of gain (theta >= 1/2, optimal open)",
+    "single_triad_signed": "cannot beat the majorant; no cancellation available",
+    "shared_w_adversary": "finite DF search on the diagnostic subnet. A stable Q^{sgn}/Q^+ ratio is a constant geometric factor, not a drop of theta below 1/2. Unstable hats at n=4,6,8 are not a power. Random-phase means are optimistic and not a bound.",
+    "not_a_theorem": true
+  },
+  "locks": {
+    "preserves_signed_cancellation": true,
+    "uses_exact_T_abc": true,
+    "one_df_field": true,
+    "no_abs_before_assembly": true,
+    "theta_signed_proved": false,
+    "theorem_17_proved": false,
+    "not_a_close": true,
+    "gate_A": "UNRESOLVED / DIAGNOSTIC ONLY",
+    "gate_B_active": true,
+    "seed": 0
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "object": "explicit nonnegative Q_x of Dish #3",
+  "definition": {
+    "Q_x": "sum_{triads with low vertex x} C_xyz f_y f_z",
+    "C_abc": "nonnegative September 20 majorant",
+    "E": "sum f_x^2",
+    "Omega": "sum x f_x^2  (enstrophy; x = |k|^2)",
+    "Lambda": "max occupied x",
+    "uniform_power_bound": "||Q(f)||_2 <= K Lambda^theta Omega(f) for all f >= 0"
+  },
+  "lemma_similar_triad": {
+    "statement": "On any similar dilation of a fixed positive triad with equal-energy amplitudes, ||Q||_2 / Omega scales as Lambda^{1/2}. Hence every uniform power bound on this nonnegative Q_x requires theta >= 1/2.",
+    "rows": [
+      {
+        "n": 4,
+        "a": 5,
+        "b": 21,
+        "c": 32,
+        "Lambda": 32,
+        "E": 1.0000000000000002,
+        "Omega": 19.33333333333334,
+        "C_abc": 231.47270100388073,
+        "Q2": 77.1575670012936,
+        "Q2_over_Omega": 3.9909086379979435,
+        "Q_a": 77.1575670012936,
+        "homogeneity_check_C_over_n3": 3.6167609531856364,
+        "homogeneity_check_ratio_over_n": 0.9977271594994859
+      },
+      {
+        "n": 8,
+        "a": 20,
+        "b": 84,
+        "c": 128,
+        "Lambda": 128,
+        "E": 1.0000000000000002,
+        "Omega": 77.33333333333336,
+        "C_abc": 1851.7816080310458,
+        "Q2": 617.2605360103488,
+        "Q2_over_Omega": 7.981817275995887,
+        "Q_a": 617.2605360103488,
+        "homogeneity_check_C_over_n3": 3.6167609531856364,
+        "homogeneity_check_ratio_over_n": 0.9977271594994859
+      },
+      {
+        "n": 16,
+        "a": 80,
+        "b": 336,
+        "c": 512,
+        "Lambda": 512,
+        "E": 1.0000000000000002,
+        "Omega": 309.3333333333334,
+        "C_abc": 14814.252864248367,
+        "Q2": 4938.08428808279,
+        "Q2_over_Omega": 15.963634551991774,
+        "Q_a": 4938.08428808279,
+        "homogeneity_check_C_over_n3": 3.6167609531856364,
+        "homogeneity_check_ratio_over_n": 0.9977271594994859
+      },
+      {
+        "n": 32,
+        "a": 320,
+        "b": 1344,
+        "c": 2048,
+        "Lambda": 2048,
+        "E": 1.0000000000000002,
+        "Omega": 1237.3333333333337,
+        "C_abc": 118514.02291398693,
+        "Q2": 39504.67430466232,
+        "Q2_over_Omega": 31.927269103983548,
+        "Q_a": 39504.67430466232,
+        "homogeneity_check_C_over_n3": 3.6167609531856364,
+        "homogeneity_check_ratio_over_n": 0.9977271594994859
+      }
+    ],
+    "theta_hats": [
+      {
+        "from_n": 4,
+        "to_n": 8,
+        "theta_hat": 0.5
+      },
+      {
+        "from_n": 8,
+        "to_n": 16,
+        "theta_hat": 0.5
+      },
+      {
+        "from_n": 16,
+        "to_n": 32,
+        "theta_hat": 0.5
+      }
+    ],
+    "mean_theta_hat": 0.5,
+    "C_scales_as_n3": true,
+    "Omega_scales_as_n2": true,
+    "ratio_scales_as_n": true,
+    "theta_equals_half_on_this_family": true
+  },
+  "subnet_diagnostic": {
+    "rows": [
+      {
+        "n": 8,
+        "c": 128,
+        "Lambda": 128,
+        "M_shells": 30,
+        "n_triads": 16,
+        "E": 0.9999999999999998,
+        "Omega": 56.566666666666656,
+        "Q2": 253.5101558800405,
+        "Q2_over_Omega": 4.481617369711972,
+        "T_plus": 160.6929491446111,
+        "T_plus_over_sqrtE_Omega": 2.840771051466314,
+        "cs_holds": true
+      },
+      {
+        "n": 16,
+        "c": 512,
+        "Lambda": 512,
+        "M_shells": 98,
+        "n_triads": 56,
+        "E": 0.9999999999999999,
+        "Omega": 218.99999999999997,
+        "Q2": 1205.74729492661,
+        "Q2_over_Omega": 5.505695410623791,
+        "T_plus": 784.1331703066919,
+        "T_plus_over_sqrtE_Omega": 3.580516759391288,
+        "cs_holds": true
+      },
+      {
+        "n": 32,
+        "c": 2048,
+        "Lambda": 2048,
+        "M_shells": 300,
+        "n_triads": 182,
+        "E": 0.9999999999999997,
+        "Omega": 848.583333333333,
+        "Q2": 5984.842385579279,
+        "Q2_over_Omega": 7.0527456178877905,
+        "T_plus": 3885.504966496377,
+        "T_plus_over_sqrtE_Omega": 4.578813669641221,
+        "cs_holds": true
+      }
+    ],
+    "theta_hats": [
+      {
+        "from_n": 8,
+        "to_n": 16,
+        "theta_hat": 0.1484526592073472
+      },
+      {
+        "from_n": 16,
+        "to_n": 32,
+        "theta_hat": 0.17863010313478236
+      }
+    ],
+    "mean_theta_hat": 0.1635413811710648,
+    "note": "Many overlapping nonnegative triads. Empirical theta is a diagnostic, not a new upper bound."
+  },
+  "locks": {
+    "requires_theta_ge_half": true,
+    "theta_optimal_open": true,
+    "cannot_gain_by_regrouping_this_majorant": true,
+    "next_test_must_preserve_signed_cancellation": true,
+    "theta_proved_equal_half_uniformly": false,
+    "C_majorant_is_upper_bound": true,
+    "theorem_17_proved": false,
+    "not_a_close": true,
+    "gate_A": "UNRESOLVED / DIAGNOSTIC ONLY",
+    "gate_B_active": true
+  }
+}
