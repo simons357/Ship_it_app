@@ -41,12 +41,16 @@ list is attached), measuring
 | Synthetic 32 triples / 12 shell phases, coherent | **\(1.0\)** |
 | Same toy, random shell phases | mean \(\approx 0.15\) |
 
-**Conclusion from numerics:** optimistic random-phase
-cancellation **does not survive** worst-case shared-mode
-consistency on these overlapping families — the coherent
-ratio can reach \(1\). A signed multi-shape lemma must use
-**geometric** structure (constant-2 / exact-shell), not a
-hope that phases stay disordered.
+**Conclusion from numerics (narrowed 7 Oct 2026):** optimistic
+random-phase cancellation is **not** a worst-case theorem
+input. On tested overlapping proxies, a coherent search can
+reach ratio \(1\) (common signs). That rules out a blanket
+cancellation **discount** at the demonstrated scope — it does
+**not** prove geometric-bound saturation, and it does **not**
+kill every phase-aware / signed estimate. Prefer exact-family
+optimization against the **proposed shared budget** with one
+divergence-free real field. See
+[`NS-HANDOFF-2026-10-07.md`](NS-HANDOFF-2026-10-07.md) §5.
 
 ---
 
@@ -149,10 +153,11 @@ worst-case shared-phase configuration.
 ## STATUS
 
 SINGLE-TRIAD: NO WORST-CASE PHASE GAIN.
-RANDOM-PHASE CANCELLATION: NUMERICAL (STRONG); NOT A WORST-CASE BOUND.
-SHARED-MODE COHERENT SEARCH (FAMILY PROXY): RATIO CAN REACH 1 — OPTIMISTIC CANCELLATION KILLED.
-SYNTHETIC 32 / SHARED SHELL PHASES: SAME — WORST-CASE RATIO 1.
-NEXT: SIGNED MULTI-SHAPE LEMMA VIA GEOMETRY (NOT PHASE HOPE).
-EXACT 32-LIST: AWAITS AUTHOR ZIP.
+RANDOM-PHASE CANCELLATION: DIAGNOSTIC ONLY.
+COHERENT RATIO 1: COMMON SIGNS AT TESTED SCOPE — NOT BOUND SATURATION.
+BLANKET CANCELLATION DISCOUNT: UNJUSTIFIED.
+“ALL PHASE-AWARE ROUTES DEAD”: ALSO UNJUSTIFIED (NARROWED 7 OCT).
+NEXT: EXACT-FAMILY SIGNED EFFICIENCY VS PROPOSED BUDGET.
+EXACT 32-LIST: ON FILE (HANDOFF); ZIP BYTES STILL ABSENT IN THIS WORKSPACE.
 (17) NOT CLAIMED.
 NS NOT SOLVED.

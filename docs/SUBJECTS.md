@@ -3,7 +3,7 @@
 One page to see **what this repo is about** and **where each thread lives**.
 
 Update this file when a subject changes status (merge, park, abandon, or rename).  
-Last reviewed: **2026-10-06** (32-shape shared-budget extension filed for review).
+Last reviewed: **2026-10-07** (NS handoff; 17/32 family lists + verify rerun).
 
 ---
 
@@ -37,8 +37,9 @@ Last reviewed: **2026-10-06** (32-shape shared-budget extension filed for review
 | **Status** | **Active drafts** (largest open pile) |
 | **Start here** | Newest open: [#145](https://github.com/simons357/Ship_it_app/pull/145) audit package · [#142](https://github.com/simons357/Ship_it_app/pull/142) Sprint 01 |
 | **Related gate stack** | Gates / SAG / lemmas / Fourier-triangle / MIN-CYCLE / channel algebra — dozens of open PRs (see GitHub “Open”) |
-| **32-shape shared-budget extension** | Independent review filing: 17 + 15 nonzero from \((9,25)\) → 32 shapes; charge multiplicity 4; [`SHARED-BUDGET-32-SHAPE-EXTENSION.md`](SHARED-BUDGET-32-SHAPE-EXTENSION.md). Not (17). Separate from [#165](https://github.com/simons357/Ship_it_app/pull/165). |
-| **Phase cancellation** | Exploration: random phases cancel; shared-mode coherent worst case can reach ratio 1 — [`PHASE-CANCELLATION-EXPLORATION.md`](PHASE-CANCELLATION-EXPLORATION.md). |
+| **32-shape shared-budget extension** | 17 + 15 nonzero from \((9,25)\); mult 4 zero-pruned; [`SHARED-BUDGET-32-SHAPE-EXTENSION.md`](SHARED-BUDGET-32-SHAPE-EXTENSION.md). ZIP no longer the blocker. Not (17). |
+| **NS handoff (7 Oct 2026)** | Cross-device update: [`NS-HANDOFF.md`](NS-HANDOFF.md). Finite verify: `scripts/ns_attacks/verify_families.py`. |
+| **Phase cancellation** | Narrowed: ratio 1 = common signs, not bound saturation; not all signed routes dead — [`PHASE-CANCELLATION-EXPLORATION.md`](PHASE-CANCELLATION-EXPLORATION.md). |
 
 ### 3. Phi-renorm / swirl papers
 

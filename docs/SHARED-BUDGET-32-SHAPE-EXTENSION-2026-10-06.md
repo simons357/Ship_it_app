@@ -35,29 +35,40 @@ Parents / scope separation:
 | Enlargement | Original 17 shapes **plus** 15 nonzero shapes from \((9,25)\) → **32** shapes |
 | Control of arbitrary families | **Not claimed** — one controlled extension only |
 
+Exact third-shell lists and overlap witnesses:
+[`NS-HANDOFF-2026-10-07.md`](NS-HANDOFF-2026-10-07.md).
+Finite checks: `scripts/ns_attacks/verify_families.py`.
+
 Using the paper’s existing constants, the sharper weighted
 combined charge is
 
 \[
 \boxed{
-\rho+3\rho'\approx 3.1077752815,
+\rho+3\rho'\approx 3.1077752814793693,
 \qquad
-\rho\approx 0.6318550824,
+\rho\approx 0.6318550823987903,
 \qquad
-\rho'\approx 0.8253067330.
+\rho'\approx 0.8253067330268596.
 }
 \]
 
 (\(\rho\) = original 17-family constant; \(\rho'\) = new
-\((9,25)\)-family constant.) This supplies an **explicit
-combined tail estimate**.
-The common high-pass cutoff must become
+\((9,25)\)-family constant.) Combined multiplicity: **6**
+literal / **4** zero-pruned (different accountings).
+Common high-pass cutoff:
 
 \[
 \boxed{
 K=\max\bigl\{2,\ 3(M-1)\bigr\}.
 }
 \]
+
+Original family used \(\max\{2,\sqrt5\,(M-1)\}\) — product,
+not \(\sqrt{5(M-1)}\); do not reuse without proof.
+
+**ZIP retrieval is no longer the research blocker** (recovered
+in the Oct 7 source conversation). This workspace may still
+lack the binary; content is filed from the handoff.
 
 Adding families does **not** necessarily increase the
 maximum charge every time; that depends on their overlap.
