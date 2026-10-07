@@ -211,7 +211,7 @@ Ring Lemma is installed **side hardware**, not this door.
 
 ---
 
-## E. File / PR map for phones
+## F. File / PR map for phones
 
 | Topic | Path / PR |
 |---|---|
