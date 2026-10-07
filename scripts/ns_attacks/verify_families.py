@@ -186,14 +186,17 @@ def main():
             "R_216_charges": sorted(
                 charges_216, key=lambda c: (c["family_anchor"], c["label"], c["n"])
             ),
-            "R_14400_literal_charge_count": len(charges_14400),
-            "R_14400_active_charge_count": len(charges_14400_active),
-            "R_14400_literal_charges": sorted(
+            "R_216_matches_handoff_table": multiplicity_216 == 4,
+            "R_14400_third_shell_only_literal_count": len(charges_14400),
+            "R_14400_third_shell_only_active_count": len(charges_14400_active),
+            "R_14400_third_shell_only_literal_charges": sorted(
                 charges_14400, key=lambda c: (c["family_anchor"], c["label"], c["n"])
             ),
             "note": (
-                "Combined literal multiplicity 6 and zero-pruned 4 are different "
-                "accountings (handoff); both refer to specific definitions"
+                "Zero-pruned multiplicity 4 at R=216 matches the handoff table "
+                "(rerun here). Literal multiplicity 6 at R=14400 is reported from "
+                "the ZIP charge-group definition; third-shell-only scan here does "
+                "not reproduce 6 — keep both accountings distinct."
             ),
         },
         "individual_multiplicity_scan": {

@@ -68,4 +68,9 @@ Please audit the geometric lemmas first, then the overlap arithmetic, then the h
 
 The package is self-contained and ready for examination. PR #165 on the repository could not be updated (write access denied).
 
+**Oct 7 note:** ZIP retrieval is no longer the research blocker
+(recovered in the source conversation; bundled verify passed
+there). Exact lists and finite checks are also filed in the
+vault handoff / `verify_families.py`.
+
 Thank you.
