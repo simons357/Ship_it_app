@@ -1,7 +1,7 @@
 # Gate B — shared-energy correction
 
 7 October 2026.
-**ACTIVE after Gate A Outcome B. Not (17).**
+**QUEUED — opens only after Gate A analytic kill. Not (17).**
 
 Parent kill certificate:
 [`GATE-A-POSITIVE-ASSEMBLY-2026-10-07.md`](GATE-A-POSITIVE-ASSEMBLY-2026-10-07.md).
@@ -45,6 +45,6 @@ centered transfer, further geometric decomposition) each get one question:
 
 ## STATUS
 
-GATE B: ACTIVE — SHARED-ENERGY REDO PENDING.
-GATE A: CLOSED (OUTCOME B).
+GATE B: QUEUED.
+GATE A: OPEN (ANALYTIC SPINE).
 NS NOT SOLVED.

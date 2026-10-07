@@ -233,8 +233,8 @@
     "status": "source-backed from budget-rebalancing note; not re-proved here"
   },
   "gate_A_outcome": {
-    "verdict": "B",
-    "meaning": "Positive shared-budget all-shape assembly load is not uniformly controlled under frozen F2; kill certificate for straight positive summation route. Proceed to Gate B (shared energy)."
+    "verdict": "OPEN",
+    "meaning": "Numeric F2 growth is diagnostic only. Kill requires analytic L_{z_j}\u2192\u221e (see analytic_load_lower_bound.py). Charging frozen; general-c \u03c1 authorized; \u03c15/9/13 match."
   },
-  "status": "Gate A support \u2014 Outcome B; not (17)"
+  "status": "Gate A support \u2014 OPEN analytic spine; not (17)"
 }

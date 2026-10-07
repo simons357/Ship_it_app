@@ -1,0 +1,86 @@
+{
+  "definition": {
+    "L_z": "A(z)=\u2211_a \u03c1_a(z) under Convention F2",
+    "z_n": "2 n\u00b2",
+    "subnet": "u=(k,0,\u2113), v=(n-k,n,-\u2113), w=(-n,-n,0)",
+    "rectangle": "k/n \u2208 [0.3,0.7], \u2113/n \u2208 [0,0.4]"
+  },
+  "analytic_spine": {
+    "one_term": "L*_n \u2265 (\u03ba/n) \u00b7 #{distinct a=k\u00b2+\u2113\u00b2}",
+    "kappa_lower_from_rerun": 1.4837569518122458,
+    "number_theory_input": "#{distinct sums of two squares in a \u0398(n)\u00d7\u0398(n) rectangle} \u224d n\u00b2/\u221a(log n) (Landau\u2013Ramanujan type)",
+    "conclusion": "L*_n \u2192 \u221e along z_n=2n\u00b2, hence L_{z_n}\u2192\u221e"
+  },
+  "rows": [
+    {
+      "n": 20,
+      "z_n": 800,
+      "distinct_a": 68,
+      "pairs": 81,
+      "min_C_over_b_n": 1.4837569518122458,
+      "A_lb_max_term": 2.281605227152397,
+      "A_subnet_full_rho": 2.435595782465211,
+      "A_lb_over_n": 0.11408026135761987,
+      "distinct_a_over_n2": 0.17,
+      "R_lb": 0.08066692640550666,
+      "n_over_sqrt_log": 11.555227400537543
+    },
+    {
+      "n": 40,
+      "z_n": 3200,
+      "distinct_a": 227,
+      "pairs": 289,
+      "min_C_over_b_n": 1.4837569518122458,
+      "A_lb_max_term": 3.8458596267765,
+      "A_subnet_full_rho": 4.212518141605622,
+      "A_lb_over_n": 0.0961464906694125,
+      "distinct_a_over_n2": 0.141875,
+      "R_lb": 0.0679858355396307,
+      "n_over_sqrt_log": 20.826330667952693
+    },
+    {
+      "n": 80,
+      "z_n": 12800,
+      "distinct_a": 794,
+      "pairs": 1089,
+      "min_C_over_b_n": 1.4837569518122458,
+      "A_lb_max_term": 6.746883368980903,
+      "A_subnet_full_rho": 7.621994116865506,
+      "A_lb_over_n": 0.08433604211226128,
+      "distinct_a_over_n2": 0.1240625,
+      "R_lb": 0.0596345872760142,
+      "n_over_sqrt_log": 38.216638170821355
+    },
+    {
+      "n": 160,
+      "z_n": 51200,
+      "distinct_a": 2892,
+      "pairs": 4225,
+      "min_C_over_b_n": 1.4837569518122458,
+      "A_lb_max_term": 12.313708351357892,
+      "A_subnet_full_rho": 14.276584921097182,
+      "A_lb_over_n": 0.07696067719598683,
+      "distinct_a_over_n2": 0.11296875,
+      "R_lb": 0.05441941672999117,
+      "n_over_sqrt_log": 71.02226563767421
+    },
+    {
+      "n": 320,
+      "z_n": 204800,
+      "distinct_a": 10693,
+      "pairs": 16641,
+      "min_C_over_b_n": 1.4837569518122458,
+      "A_lb_max_term": 22.816497022282746,
+      "A_subnet_full_rho": 27.148270015264327,
+      "A_lb_over_n": 0.07130155319463358,
+      "distinct_a_over_n2": 0.104423828125,
+      "R_lb": 0.05041781177305874,
+      "n_over_sqrt_log": 133.2371297321489
+    }
+  ],
+  "gate_A": {
+    "status": "OPEN until lemma text accepted; spine is analytic not four-shell numeric",
+    "outcome_if_lemma_accepted": "B"
+  },
+  "status": "Gate A analytic lower-bound probe \u2014 not (17)"
+}
