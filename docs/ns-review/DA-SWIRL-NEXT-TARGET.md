@@ -75,7 +75,7 @@ Retain every localization / boundary-layer cost from the \(\chi\)-weighted \(G\)
 | \(L^4\) gate from NSE | not proved |
 | Four Shahmurov doors | all still open |
 | This target | **OPEN — work here** |
-| Shared-Budget 17/32 | separate track; source ZIP not verified in this workspace |
+| Shared-Budget 17/32 | separate track; ZIP recovered 7 Oct (`verify_families.py` passed); Priority 1 analytic review |
 
 Full bench: `DA-SWIRL-FOUR-DOORS-2026-10-06.md`  
 Phone sync: `PHONE-HANDOFF-2026-10-07.md`

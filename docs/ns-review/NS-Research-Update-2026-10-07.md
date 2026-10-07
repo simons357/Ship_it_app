@@ -8,10 +8,15 @@
 
 ## 0. Current priority (read this first)
 
+**Canonical full handoff (upload this to phones first):**  
+[`NS-CROSS-DEVICE-HANDOFF-2026-10-07.md`](NS-CROSS-DEVICE-HANDOFF-2026-10-07.md)  
+Exact lists: [`SHARED-BUDGET-32-SHAPE-LIST.md`](SHARED-BUDGET-32-SHAPE-LIST.md)
+
 **Primary:** Independently review the exact **32-shape shared-budget** argument, then investigate extending it to omitted interaction families **without uncontrolled repeated dissipation charges**.
 
-**Reported elsewhere:** the previously missing ZIP `Shared-Budget-17-Family-Audit-and-9-25-Extension.zip` has been recovered and its finite verification script passes.  
-**In this cloud workspace (checked 7 Oct):** filing lives on branch `cursor/shared-budget-32-shape-c3ed` (cover note, extension desk, constants face-check, phase probe). The packets folder currently contains the cover-note **README only** — full author ZIP body (exact shape list + enumeration script) must still be confirmed present before a bot claims a full independent audit.
+**ZIP status (updated):** previously missing `Shared-Budget-17-Family-Audit-and-9-25-Extension.zip` was **recovered 7 Oct**; `verify_families.py` **passed** (enumerations, determinants, overlap witnesses, constants). **Stop treating ZIP retrieval as the blocker.**  
+That rerun confirms the bundled finite checks — **not** a fresh specialist proof of every analytic inequality.  
+Repo filing: `cursor/shared-budget-32-shape-c3ed` · PR #166. Agents without Library access still need the ZIP binary mirrored into the repo to re-run `verify_families.py` locally.
 
 **Secondary tracks (keep separate — do not merge currencies):**
 1. Exact-shell / shared-budget geometry (17→32)  

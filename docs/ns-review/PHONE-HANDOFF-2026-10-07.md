@@ -15,7 +15,7 @@
 | Ring Lemma (Oct 2) | **Spatial hardware DONE** (proved scoped geometry) — not the live dynamical gate |
 | Live gate on main unaug chain | Still **OPEN**: same-scale \(T\), \(\alpha_+\), product / \(\mathcal{R}_\star\) |
 | DA swirl four-doors bench (6 Oct) | **Useful probe archived**; no Shahmurov door closed; signed compression = next target |
-| Shared-Budget 17→32 ZIP | **Not present in this cloud workspace** as of this writing. A separate session claimed Library retrieval — treat as **unverified here** until the file is attached or committed |
+| Shared-Budget 17→32 ZIP | **Recovered 7 Oct** — `verify_families.py` passed. Stop treating retrieval as the blocker. Full analytic review of the package is now Priority 1. Canonical write-up: `NS-CROSS-DEVICE-HANDOFF-2026-10-07.md` |
 | Broader all-shape estimate | **OPEN** |
 
 ---
@@ -136,32 +136,28 @@ Useful research note: kills shortcuts, states a precise remaining target.
 
 ---
 
-## C. Shared-Budget 17→32 package — retrieval status
+## C. Shared-Budget 17→32 package — recovered
 
-### Reported progress (from the pasted desk summary)
-- Original **17-shape** argument and controlled **32-shape** extension, with **overlap counting** so damping is not spent twice  
-- Phase experiments: tested configs can **reinforce** one another  
-- They did **not** settle the exact 32-family or show the geometric bound is **saturated**  
-- Next question: does **combined transfer** stay inside the proposed budget, and under what cutoff/amplitude can **viscosity absorb** it?
+**Status:** ZIP recovered 7 Oct; `verify_families.py` passed. Retrieval is **no longer** the blocker.
 
-### Important separation (do not blur)
-- Generating / seeing **new high-frequency modes** ≠ proving transfer **exceeds** the viscous budget  
-- Phase reinforcement among tested configs ≠ saturation of the 32-shape geometric bound  
+### Exact families (squared radii)
+- **17** from \((5,b,25)\): \(b\in\{8,10,14,18,20,22,24,26,30,34,36,38,40,42,46,50,52\}\)
+- **15** active from \((9,b,25)\): \(b\in\{6,10,12,14,16,24,30,34,38,44,52,54,56,58,62\}\) (dropped zero-transfer \(4,64\))
+- Union = **32** shapes + all integer dilations
 
-### Retrieval blocker
-Filename sought: `Shared-Budget-17-Family-Audit-and-9-25-Extension.zip`
+### Constants / multiplicity
+- \(\rho+3\rho'\approx 3.1077752814793693\)
+- Combined multiplicity **6** (literal) / **4** (zero-pruned) — different accountings, not a contradiction
+- High-pass: \(K=\max\{2,3(M-1)\}\) → restricted positive excess vanishes for this family only — **not** criterion (17)
 
-| Location checked (this cloud agent) | Found? |
-|---|---|
-| Current workspace / artifacts | **No** |
-| Related git branches / history | **No** (that exact ZIP name) |
-| Existing `NS-Audit-Package.zip` | Related Lemma★ family material only — **not** the 17/32 shared-budget source |
-| Google Drive search from this session | **No hit** returned |
+### Separations to keep
+- New high-frequency modes ≠ transfer exceeds viscous budget  
+- Phase ratio \(1\) = common signs ≠ geometric-bound saturation  
+- Do not call all phase-aware routes dead  
 
-**Another session claimed** the ZIP was found via a Library skill.  
-**This session has not received the file.** Until it is attached here or committed to the repo, treat independent verification of the 17/32 argument as **still blocked**.
+Full detail: `NS-CROSS-DEVICE-HANDOFF-2026-10-07.md` · lists: `SHARED-BUDGET-32-SHAPE-LIST.md` · PR #166
 
-**Broader all-shape estimate:** remains **OPEN**.
+**Broader all-shape estimate / (17):** remains **OPEN**.
 
 ---
 
@@ -191,12 +187,11 @@ C_F \le \eta\nu D_F + B Q
 with \(B\) paid by controlled data, all localization fluxes from the \(\chi\)-localized \(G\) identity retained.  
 Reject: gate assumed to prove gate; dropped fluxes; cutoff-dependent fake constants; frozen-drift pretended to be full NSE.
 
-### Priority 2 — shared budget (blocked on source in this workspace)
-Once ZIP (or exact shape list + shared-budget inequality) is in-repo:
-1. Extract 17-list and 32-extension with overlap accounting  
-2. Recompute combined transfer vs proposed budget  
-3. State cutoff/amplitude window for viscous absorption  
-4. Keep all-shape estimate marked open unless proved  
+### Priority 2 — shared budget (ZIP recovered — analytic review is the work)
+1. Finish independent review of geometric lemmas → overlap → high-pass  
+2. Exact-family signed efficiency vs proposed budget (numerical OK if labeled)  
+3. Extension beyond 32 without uncontrolled repeated dissipation charges  
+4. Keep all-shape / (17) marked open unless proved 
 
 ### Priority 3 — main unaugmented chain (unchanged live gate)
 Still open: same-scale \(T_{j\leftarrow j}\), \(\alpha_+\) depletion dynamics, product / uniform \(\mathcal{R}_\star\).  
