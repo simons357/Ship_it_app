@@ -1,0 +1,39 @@
+{
+  "pi_offset_rows": [
+    0,
+    5,
+    10,
+    11
+  ],
+  "labels": [
+    [
+      "T3:(+1,-1,+1)"
+    ],
+    [
+      "T3:(-1,+1,+1)"
+    ],
+    [
+      "T0:(+1,-1,+1)"
+    ],
+    [
+      "T0:(+1,-1,-1)"
+    ]
+  ],
+  "g3_turn": [
+    "-1/2",
+    "-1/2",
+    "-1/2",
+    "-1/2"
+  ],
+  "mapped_turn": [
+    "0",
+    "0",
+    "0",
+    "0"
+  ],
+  "convention_map": "On rows 0,5,10,11 only: b_lock = b_G3 + \u03c0 (mod 2\u03c0). Equivalent to flipping sign of g_sym before b = \u03c0/2 - arg(g_sym).",
+  "weak_identities_on_disk_M": true,
+  "g6a_via_raw_r2_identity": false,
+  "g6a_via_explicit_convention_bridge": "possible only if bridge is recorded; not stamped here",
+  "ns_regularity": "open"
+}

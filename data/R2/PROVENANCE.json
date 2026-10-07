@@ -1,0 +1,23 @@
+{
+  "folder": "data/R2",
+  "files": {
+    "g3_corrected_channel_quotient.json": "G3 gate payload (source)",
+    "M.tsv": "integer 20\u00d712 \u0393 rows transcribed from G3",
+    "b_exact.tsv": "exact b/(2\u03c0) turn fractions transcribed from G3"
+  },
+  "provenance": "g3_corrected_channel_quotient",
+  "status": "COMPUTED_EVIDENCE_ONLY",
+  "verifier": "read-only",
+  "synthetic_fixture": false,
+  "not_library_json": true,
+  "library_json_sha256_absent": "87745b3cb585e138b6768ab5b9e330f3f045ff4d4ad82ba6f71f0b6fe86be898",
+  "canonical_r2_identity": "unverified",
+  "kernel_or_holonomy_computed": false,
+  "classical_NS": "open",
+  "b42_identities_on_this_Gamma": true,
+  "sha256": {
+    "M.tsv": "53b628fd00685d2b9b5f02507294fd2bf85492d1ff6de26eb3136ec6ffde45bc",
+    "b_exact.tsv": "05935f11a4a9100c9596ab692a68307106c53f270fb995a549e5e8a0847fc1d6",
+    "g3_json": "8ee60ffe2dcc9b0f67b97b7edb720b22f3ac4fe45198849f0489ca58d0556727"
+  }
+}
