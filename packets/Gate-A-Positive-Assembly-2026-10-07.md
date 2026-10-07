@@ -1,12 +1,13 @@
 # Gate A — 7 October 2026
 
-**Outcome B (analytic kill).** Not (17).
+**UNRESOLVED / DIAGNOSTIC ONLY.** Not OPEN, FAILED, or DEAD. Not (17).
 
-\[
-L_{z_n}\to\infty\quad\text{along}\quad z_n=2n^2.
-\]
+The previous Outcome B / kill wording is withdrawn as a program status.
+\(L_{z_n}\) growth along \(z_n=2n^2\) remains a diagnostic \(\ell^1\)
+load on the \(C\)-majorant face.
 
-Kill certificate:
-[`docs/GATE-A-KILL-CERTIFICATE-2026-10-07.md`](../docs/GATE-A-KILL-CERTIFICATE-2026-10-07.md).
+Desk:
+[`docs/GATE-A-POSITIVE-ASSEMBLY-2026-10-07.md`](../docs/GATE-A-POSITIVE-ASSEMBLY-2026-10-07.md).
 
-Next: Gate B shared energy.
+Main line is Gate B / Dish #3:
+[`docs/GATE-B-THETA.md`](../docs/GATE-B-THETA.md).

@@ -1,9 +1,12 @@
 # Gate A — positive shared-budget all-shape load
 
 7 October 2026.
-**CLOSED — Outcome B (analytic kill). Not (17).**
+**UNRESOLVED / DIAGNOSTIC ONLY. Not OPEN, FAILED, or DEAD. Not (17).**
 
-Kill certificate:
+Previous “Outcome B / kill” wording is withdrawn as a program status.
+The finite computations stay on the board as diagnostics.
+
+Diagnostic \(\ell^1\) load:
 [`GATE-A-KILL-CERTIFICATE-2026-10-07.md`](GATE-A-KILL-CERTIFICATE-2026-10-07.md).
 
 Parents:
@@ -15,20 +18,23 @@ Probes:
 - `scripts/ns_attacks/analytic_load_lower_bound.py`
 
 Program: [`PROGRAM-GATES-A-D.md`](PROGRAM-GATES-A-D.md).
+Main line: [`GATE-B-THETA.md`](GATE-B-THETA.md).
 
 ---
 
-## RESULT — Outcome B
+## RESULT — diagnostic, not a verdict
 
 | Item | Status |
 |---|---|
-| Charging convention F1/F2 | **FROZEN** |
-| \(\rho_5,\rho_9,\rho_{13}\) | **Exact match** (**Rerun here**) |
-| General-\(c\) \(\rho\) | **Authorized** |
-| Four-shell numeric table | Diagnostic only — not the kill |
-| Analytic sequence \(L_{z_n}\to\infty\) | **PROVED** — \(z_n=2n^2\) subnet |
-| Straight positive assembly → all shapes | **KILL CERTIFICATE** |
-| Next | **Gate B** — shared energy → exact missing exponent |
+| Charging convention F1/F2 | **FROZEN** (smallest-leg / multiplicity-5 stands; 6/4 not reopened) |
+| \(\rho_5,\rho_9,\rho_{13}\) at \(c=25\) | **Exact match** (**Rerun here**) |
+| General-\(c\) \(\rho\), including \(1/(2c)\) | **Diagnostic algebraic face. Not a source-of-truth lemma.** |
+| Four-shell numeric table | Diagnostic only |
+| \(L_{z_n}\) growth on \(z_n=2n^2\) | Diagnostic \(\ell^1\) load. **Not a kill.** |
+| Coercive reason that \(C_{abc}\) is a paid cost | **Missing.** September 20 (16) is an upper bound. |
+| Infinite sequence with proved divergent allocation cost | **Missing.** Do not manufacture one. |
+| Straight positive assembly → all shapes | **Unresolved.** Finite 17/32/51 remain valid at stated scope. |
+| Next | **Gate B / Dish #3** — global \(\sum f_x^2=E\), then \(\theta\) |
 
 ---
 
@@ -38,50 +44,56 @@ Program: [`PROGRAM-GATES-A-D.md`](PROGRAM-GATES-A-D.md).
 |---|---|
 | Largest shell only? | **No** |
 | Who pays? | Third labels \(b\) + family endpoints \(c_\star\) |
-| Low anchor? | Global \(\sqrt{E_0}\) (Gate B) |
-| Multiplicity? | Literal **6** / zero-pruned **4** — never “5” |
+| Low anchor? | Global \(\sqrt{E}\) (Gate B) |
+| Multiplicity? | Frozen smallest-leg / **multiplicity-5** convention stands. The 6 / zero-pruned 4 accounting is a separate filed tag and is **not reopened**. |
 
 ---
 
-## 2. Authorized \(\rho\)
+## 2. Filed \(\rho\) at \(c=25\); general-\(c\) not SoT
+
+The October 7 51-shape note defines, at the filed low anchor and
+\(c=25\),
 
 \[
-\rho_a(c)
+\rho_a
+=
+\frac1{50}
+\left(\sum_{b\in B_a}
+\frac{C_{a,b}^2}{b^2}\right)^{1/2}
 =
 \frac1{2c}
-\left(\sum_{b\in B_a(c)}
-\frac{C_{a,b;c}^2}{b^2}\right)^{1/2}
+\left(\sum_{b\in B_a}
+\frac{C_{a,b}^2}{b^2}\right)^{1/2}.
 \]
 
-with \(C_{a,b;c}=\sqrt{3\Delta}(\lvert c-b\rvert/\sqrt a+\lvert c-a\rvert/\sqrt b+\lvert b-a\rvert/\sqrt c)\).
-Fixed \(c_\star=25\): \(\rho_5,\rho_9,\rho_{13}\) match. Variable \(c\): same face.
+September 20 already has
+\(C_{abc}=\sqrt{3\Delta}(\lvert c-b\rvert/\sqrt a+\lvert c-a\rvert/\sqrt b+\lvert b-a\rvert/\sqrt c)\).
+That majorant is an **upper** bound.
 
-Load:
+The same algebraic face with variable \(c\) is used in the probes.
+It is **not** a promoted general-\(c\) allocation lemma under the
+frozen smallest-leg convention.
+
+Load (diagnostic):
 \[
 L_z:=\sum_a\rho_a(z)\quad\text{(Convention F2)}.
 \]
 
 ---
 
-## 3. Legitimate kill
+## 3. Diagnostic \(\ell^1\) growth — not a kill
 
-\[
-\boxed{
-z_n=2n^2,\qquad L_{z_n}\to\infty.
-}
-\]
-
-Construction: subnet
+On the subnet
 \(u=(k,0,\ell),\ v=(n-k,n,-\ell),\ w=(-n,-n,0)\)
-on \(\mathcal R_n\) with \(k/n\in[3/10,7/10]\), \(\ell/n\in[0,2/5]\).
-Uniform \(C/b\ge\kappa n\) (\(\kappa=1.48\); continuum min at corner
-\((3/10,0)\), \(\widetilde\Delta=9/100\)). Distinct two-square sums
-\(N_n\gg_\varepsilon n^{2-2\varepsilon}\) via \(r_2(m)\ll_\varepsilon m^\varepsilon\). Hence
-\[
-L_n^\star\ge\frac{\kappa N_n}{4n}\to\infty,\qquad L_{z_n}\ge L_n^\star.
-\]
+with \(k/n\in[0.3,0.7]\), \(\ell/n\in[0,0.4]\), the \(\ell^1\)
+sum \(L_{z_n}\) grows. Construction text:
+[`GATE-A-KILL-CERTIFICATE-2026-10-07.md`](GATE-A-KILL-CERTIFICATE-2026-10-07.md).
 
-Full proof text: [`GATE-A-KILL-CERTIFICATE-2026-10-07.md`](GATE-A-KILL-CERTIFICATE-2026-10-07.md).
+This does **not** close Gate A:
+
+- \(C_{abc}\) is an upper bound, not a coercive cost.
+- General-\(c\) \(1/(2c)\) is not a source-of-truth lemma.
+- No filed infinite sequence has a proved divergent *allocation cost*.
 
 Numeric check of the spine (**Rerun here**):
 
@@ -93,19 +105,22 @@ Numeric check of the spine (**Rerun here**):
 | 160 | 51200 | 2892 | 12.31 |
 | 320 | 204800 | 10693 | 22.82 |
 
+Do not extend this table to finish Gate A.
+
 ---
 
 ## 4. Gate B next
 
-Force \(\sum_k\lvert u_k\rvert^2=E\). Extract the exact missing exponent.
-No more 52/70/100 family extensions.
+Force \(\sum_x f_x^2=E\). One Cauchy–Schwarz. Extract \(\theta\).
+No more 52/70/100 family extensions. No larger-\(c\) chase.
 
 ---
 
 ## STATUS
 
-GATE A: **CLOSED — OUTCOME B.**
-KILL: \(L_{z_n}\to\infty\) ALONG \(z_n=2n^2\).
-NEXT: GATE B.
+GATE A: **UNRESOLVED / DIAGNOSTIC ONLY.**
+NOT OPEN. NOT FAILED. NOT DEAD.
+\(L_{z_n}\) GROWTH: DIAGNOSTIC \(\ell^1\) LOAD, NOT A KILL.
+NEXT: GATE B / DISH #3.
 (17) NOT CLAIMED.
 NS NOT SOLVED.

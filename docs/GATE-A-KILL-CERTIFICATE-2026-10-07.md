@@ -1,42 +1,51 @@
-# Gate A — legitimate kill certificate
+# Gate A — diagnostic \(\ell^1\) load certificate
 
 7 October 2026.
-**Outcome B: analytic sequence \(L_{z_n}\to\infty\). Not (17).**
+**Diagnostic only.** \(L_{z_n}\) grows along \(z_n=2n^2\) on the
+\(C\)-majorant face. That is **not** a kill, not Outcome B, and
+does not close Gate A. Not (17).
 
 Parent: [`GATE-A-POSITIVE-ASSEMBLY-2026-10-07.md`](GATE-A-POSITIVE-ASSEMBLY-2026-10-07.md).
 Probe: `scripts/ns_attacks/analytic_load_lower_bound.py`.
+Main line: [`GATE-B-THETA.md`](GATE-B-THETA.md).
 
 ---
 
-## Kill statement
+## Why this is not a kill
 
-Under Convention F2 and the authorized coefficient
+Under Convention F2 and the *diagnostic* coefficient
 \[
 \rho_a(z)
 =
 \frac1{2z}
 \left(\sum_{b\in B_a(z)}\frac{C_{a,b;z}^2}{b^2}\right)^{1/2},
 \]
-define the all-shape load
+define the all-shape \(\ell^1\) load
 \[
 L_z
 :=
 \sum_a\rho_a(z).
 \]
 
-**Theorem.** There exists an infinite sequence of high shells
-\(z_n\to\infty\) such that
-\[
-\boxed{L_{z_n}\to\infty.}
-\]
-Consequently, straight positive shared-budget assembly cannot keep the
-equal-allocation load uniformly controlled as the high shell tends to
-infinity. Finite-family success (17/32/51) is not withdrawn — it remains
-laboratory evidence at finite scope.
+Along \(z_n=2n^2\) one has \(L_{z_n}\to\infty\) *on this face*.
+That is an \(\ell^1\) diagnostic. It is **not** a proved divergent
+allocation cost, because:
+
+1. September 20 \(C_{abc}\) is an **upper** bound. It does not by
+   itself force the positive allocation to pay that size.
+2. The factor \(1/(2z)\) is the algebraic \(c=25\) face written at
+   variable \(z\). That is **not** a filed general-\(c\) allocation
+   lemma under the frozen smallest-leg convention.
+3. Nothing currently filed establishes an infinite lattice sequence
+   with a proved divergent *allocation cost*.
+
+Do not manufacture a stronger infinite-sequence note just to finish
+Gate A. Frozen multiplicity-5 / smallest-leg stands. 17/32/51 remain
+valid at stated finite scope.
 
 ---
 
-## Sequence
+## Sequence (diagnostic)
 
 \[
 z_n = 2n^2,\qquad n=2,3,4,\ldots
@@ -97,7 +106,7 @@ precision.) Hence every subnet shape satisfies
 
 ---
 
-## Load lower bound
+## Load lower bound (still an upper-bound face)
 
 Restrict F2 to subnet anchors. One-term estimate:
 \[
@@ -118,7 +127,7 @@ The rectangle has \(\lvert\mathcal R_n\rvert\ge c_0 n^2\) pairs. Each integer
 \[
 r_2(m)\le 4\,d(m)\ll_\varepsilon m^\varepsilon\ll_\varepsilon n^{2\varepsilon}
 \]
-representationsations as a sum of two squares. Therefore
+representations as a sum of two squares. Therefore
 \[
 N_n
 \ge
@@ -135,32 +144,38 @@ L_n^\star
 \]
 Since \(L_{z_n}\ge L_n^\star\),
 \[
-L_{z_n}\to\infty.
+L_{z_n}\to\infty
 \]
+*as an \(\ell^1\) sum of \(C\)-majorant coefficients*. That is the
+diagnostic. It is not a coercive allocation-cost theorem.
 
 ---
 
 ## What is not claimed
 
 - Criterion (17), Clay, global regularity.
+- That Gate A is CLOSED, FAILED, or DEAD.
 - Withdrawal of the 17/32/51 restricted-family theorems.
 - That \(\mathcal R(z)=L_z/\sqrt{z}\) diverges (the subnet only forces
-  \(L\to\infty\); full F2 may give stronger relative growth).
-- Any substitute of swirl / Ring / B41 for this kill.
+  \(L\to\infty\) on this face).
+- That the \(C\)-majorant is a cost the positive allocation must pay.
+- A filed general-\(c\) allocation lemma.
+- Any substitute of swirl / Ring / B41 for this diagnostic.
 
 ---
 
 ## Program consequence
 
-**Outcome B.** Stop extending finite families by brute force.
-Proceed to Gate B: shared-energy correction, then extract the exact
-missing exponent.
+Stop extending finite families by brute force. Do not chase larger
+\(c\). Proceed to Gate B: one global Cauchy–Schwarz on
+\(\sum_x f_x^2=E\), then extract \(\theta\).
 
 ---
 
 ## STATUS
 
-GATE A: **CLOSED — OUTCOME B (ANALYTIC KILL).**
-SEQUENCE: \(z_n=2n^2\), \(L_{z_n}\to\infty\).
+GATE A: **UNRESOLVED / DIAGNOSTIC ONLY.**
+SEQUENCE: \(z_n=2n^2\), \(L_{z_n}\to\infty\) ON THE \(C\)-MAJORANT FACE.
+THAT GROWTH IS NOT A KILL.
 (17) NOT CLAIMED.
 NS NOT SOLVED.

@@ -79,9 +79,9 @@
     }
   ],
   "gate_A": {
-    "status": "CLOSED \u2014 Outcome B",
-    "kill": "L_{z_n}\u2192\u221e along z_n=2n\u00b2 (see docs/GATE-A-KILL-CERTIFICATE-2026-10-07.md)",
+    "status": "UNRESOLVED / DIAGNOSTIC ONLY",
+    "diagnostic": "L_{z_n}\u2192\u221e along z_n=2n\u00b2 on the C-majorant face (see docs/GATE-A-KILL-CERTIFICATE-2026-10-07.md). Not a kill.",
     "number_theory": "r_2(m)\u226a_\u03b5 m^\u03b5 \u21d2 N_n \u226b n^{2-2\u03b5} \u21d2 L*_n \u226b n^{1-2\u03b5}"
   },
-  "status": "Gate A analytic kill support \u2014 Outcome B; not (17)"
+  "status": "Gate A diagnostic \u2113\u00b9 load; not a kill; not (17)"
 }

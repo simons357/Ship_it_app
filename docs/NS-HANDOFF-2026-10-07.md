@@ -11,6 +11,11 @@ rerun tags where this agent re-executed finite checks.
 PR #166 carries the independent-review package; PR #165
 unchanged (write access denied on that chain).
 
+**Status correction (same day):** Gate A is **UNRESOLVED /
+DIAGNOSTIC ONLY** — not OPEN, FAILED, or DEAD. The previous
+Outcome B / kill wording is withdrawn as a program status.
+Main line is Gate B / Dish #3: [`GATE-B-THETA.md`](GATE-B-THETA.md).
+
 ---
 
 ## 1. Executive update
@@ -226,8 +231,8 @@ real Fourier field.
 
 | Priority | Task | Status |
 |---|---|---|
-| **A** | Positive all-shape load | **CLOSED — Outcome B** ([`GATE-A-KILL-CERTIFICATE.md`](GATE-A-KILL-CERTIFICATE.md)): \(L_{z_n}\to\infty\) along \(z_n=2n^2\) |
-| **B** | Shared-energy accounting | **ACTIVE** ([`GATE-B-SHARED-ENERGY.md`](GATE-B-SHARED-ENERGY.md)) |
+| **A** | Positive all-shape load | **UNRESOLVED / DIAGNOSTIC ONLY** ([`GATE-A-POSITIVE-ASSEMBLY.md`](GATE-A-POSITIVE-ASSEMBLY.md)): \(L_{z_n}\) growth is an \(\ell^1\) diagnostic, not a kill |
+| **B** | Shared-energy / Dish #3 | **ACTIVE** ([`GATE-B-THETA.md`](GATE-B-THETA.md)): one CS on \(\sum f_x^2=E\); target \(\theta\) |
 | **C** | Exact missing exponent | Queued after B |
 | **D** | Structural attack on that deficit only | Queued — only if recovers exponent |
 | Parked | 52/70/100 family extensions; random-phase fishing; Ring without bridge | — |
@@ -263,8 +268,8 @@ regularity or novelty claim.
 
 ZIP RETRIEVAL: NO LONGER THE RESEARCH BLOCKER (RECOVERED IN SOURCE CONVERSATION).
 17/32 FINITE CHECKS: RERUN HERE (lists, R=216×4, ρ+3ρ′, individual mult 3).
-GATE A: CLOSED — OUTCOME B (\(L_{z_n}\to\infty\) ALONG \(z_n=2n^2\)).
-GATE B: ACTIVE (SHARED ENERGY → EXACT DEFICIT).
+GATE A: UNRESOLVED / DIAGNOSTIC ONLY (\(L_{z_n}\) GROWTH IS NOT A KILL).
+GATE B: ACTIVE (DISH #3 → \(\theta\) AFTER GLOBAL ENERGY SHARING).
 RESTRICTED-FAMILY THEOREM: PROVED AT STATED SCOPE (AUDIT VERDICT).
 (17) / CLAY / SWIRL CLOSURE: OPEN.
 PHASE: NARROWED — NOT A BLANKET DEAD END.

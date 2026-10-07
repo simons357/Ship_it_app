@@ -6,13 +6,13 @@
       "largest_shell_only": false,
       "largest_plus_middle": "Dissipation bookkeeping charges overlapping third labels b and family endpoints c_\u2605 \u2014 not a private largest-only share.",
       "low_anchor_from_global_E": true,
-      "multiplicity_4_vs_5": "Use literal 6 vs zero-pruned 4; never '5'. Third-shell coincidence \u2260 endpoint coincidence."
+      "multiplicity_4_vs_5": "Frozen smallest-leg / multiplicity-5 convention stands. Filed 6 vs zero-pruned 4 is a separate tag; not reopened."
     }
   },
   "formula": {
     "C_a_b_c": "\u221a(3\u0394)(|c-b|/\u221aa + |c-a|/\u221ab + |b-a|/\u221ac)",
     "rho_a": "(1/(2c)) (\u2211 C\u00b2/b\u00b2)^{1/2}",
-    "general_c_status": "AUTHORIZED for Gate A: same Young/exact-shell face with variable family output shell c; no special role for 25"
+    "general_c_status": "DIAGNOSTIC algebraic face only \u2014 not a source-of-truth allocation lemma. Same Young/exact-shell expression with variable family output shell c."
   },
   "known_rho_reproduction": {
     "targets": {
@@ -76,7 +76,7 @@
     }
   },
   "growth_diagnostic_F2": {
-    "note": "Convention F2 aggregate. Matches author table at c=25,50,101,401. Diagnostic only; kill is analytic L_{z_n}\u2192\u221e.",
+    "note": "Convention F2 aggregate. Matches author table at c=25,50,101,401. R(c)=A/\u221ac growth is an \u2113\u00b9 diagnostic, not a kill.",
     "rows": [
       {
         "c": 25,
@@ -233,8 +233,8 @@
     "status": "source-backed from budget-rebalancing note; not re-proved here"
   },
   "gate_A_outcome": {
-    "verdict": "B",
-    "meaning": "Analytic kill: L_{z_n}\u2192\u221e along z_n=2n\u00b2 (docs/GATE-A-KILL-CERTIFICATE-2026-10-07.md). Numeric table remains diagnostic support only."
+    "verdict": "UNRESOLVED / DIAGNOSTIC ONLY",
+    "meaning": "L_{z_n}\u2192\u221e along z_n=2n\u00b2 on the C-majorant face (docs/GATE-A-KILL-CERTIFICATE-2026-10-07.md). Not a kill. C is an upper bound. General-c 1/(2c) is not SoT."
   },
-  "status": "Gate A support \u2014 Outcome B; not (17)"
+  "status": "Gate A UNRESOLVED / DIAGNOSTIC ONLY; not (17)"
 }

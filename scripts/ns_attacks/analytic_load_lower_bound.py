@@ -9,7 +9,8 @@ One-term bound: L*_n ≥ (κ/n) · #{distinct a=k²+ℓ² in the rectangle}.
 Distinct sums of two squares in a Θ(n)×Θ(n) rectangle are
 ≍ n²/√(log n) (Landau–Ramanujan type), hence L*_n → ∞.
 
-Not (17). Supports Gate A Outcome B.
+Not (17). Diagnostic ℓ¹ load on the C-majorant face.
+Gate A remains UNRESOLVED / DIAGNOSTIC ONLY — not a kill.
 """
 from __future__ import annotations
 
@@ -103,11 +104,14 @@ def main():
         },
         "rows": rows,
         "gate_A": {
-            "status": "CLOSED — Outcome B",
-            "kill": "L_{z_n}→∞ along z_n=2n² (see docs/GATE-A-KILL-CERTIFICATE-2026-10-07.md)",
+            "status": "UNRESOLVED / DIAGNOSTIC ONLY",
+            "diagnostic": (
+                "L_{z_n}→∞ along z_n=2n² on the C-majorant face "
+                "(see docs/GATE-A-KILL-CERTIFICATE-2026-10-07.md). Not a kill."
+            ),
             "number_theory": "r_2(m)≪_ε m^ε ⇒ N_n ≫ n^{2-2ε} ⇒ L*_n ≫ n^{1-2ε}",
         },
-        "status": "Gate A analytic kill support — Outcome B; not (17)",
+        "status": "Gate A diagnostic ℓ¹ load; not a kill; not (17)",
     }
     path = Path(__file__).with_name("ANALYTIC-LOAD-LOWER-BOUND.json")
     path.write_text(json.dumps(payload, indent=2) + "\n")

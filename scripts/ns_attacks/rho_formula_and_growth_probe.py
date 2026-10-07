@@ -5,8 +5,9 @@ Formula (family output/high endpoint c_★, from 51-shape note):
   ρ_a = (1/(2c)) (∑_{b∈B_a} C_{a,b;c}² / b²)^{1/2}
 
 Fixed-c=25 families: ρ_5, ρ_9, ρ_13 reproduced exactly (Rerun here).
-General-c: same algebraic face with variable output shell (authorized for
-Gate A stress test under Convention F2). Not (17).
+General-c: same algebraic face with variable output shell — diagnostic
+only, not a source-of-truth allocation lemma. Not (17).
+Gate A remains UNRESOLVED / DIAGNOSTIC ONLY.
 """
 from __future__ import annotations
 
@@ -227,8 +228,8 @@ def main():
                 ),
                 "low_anchor_from_global_E": True,
                 "multiplicity_4_vs_5": (
-                    "Use literal 6 vs zero-pruned 4; never '5'. "
-                    "Third-shell coincidence ≠ endpoint coincidence."
+                    "Frozen smallest-leg / multiplicity-5 convention stands. "
+                    "Filed 6 vs zero-pruned 4 is a separate tag; not reopened."
                 ),
             },
         },
@@ -236,8 +237,9 @@ def main():
             "C_a_b_c": "√(3Δ)(|c-b|/√a + |c-a|/√b + |b-a|/√c)",
             "rho_a": "(1/(2c)) (∑ C²/b²)^{1/2}",
             "general_c_status": (
-                "AUTHORIZED for Gate A: same Young/exact-shell face with "
-                "variable family output shell c; no special role for 25"
+                "DIAGNOSTIC algebraic face only — not a source-of-truth "
+                "allocation lemma. Same Young/exact-shell expression with "
+                "variable family output shell c."
             ),
         },
         "known_rho_reproduction": {
@@ -252,7 +254,7 @@ def main():
         "growth_diagnostic_F2": {
             "note": (
                 "Convention F2 aggregate. Matches author table at c=25,50,101,401. "
-                "R(c)=A/√c worsens overall → Outcome B."
+                "R(c)=A/√c growth is an ℓ¹ diagnostic, not a kill."
             ),
             "rows": growth,
             "slopes_dlog_dlogc": slopes,
@@ -268,14 +270,14 @@ def main():
             "status": "source-backed from budget-rebalancing note; not re-proved here",
         },
         "gate_A_outcome": {
-            "verdict": "B",
+            "verdict": "UNRESOLVED / DIAGNOSTIC ONLY",
             "meaning": (
-                "Analytic kill: L_{z_n}→∞ along z_n=2n² "
+                "L_{z_n}→∞ along z_n=2n² on the C-majorant face "
                 "(docs/GATE-A-KILL-CERTIFICATE-2026-10-07.md). "
-                "Numeric table remains diagnostic support only."
+                "Not a kill. C is an upper bound. General-c 1/(2c) is not SoT."
             ),
         },
-        "status": "Gate A support — Outcome B; not (17)",
+        "status": "Gate A UNRESOLVED / DIAGNOSTIC ONLY; not (17)",
     }
     path = Path(__file__).with_name("RHO-FORMULA-AND-GROWTH-PROBE.json")
     path.write_text(json.dumps(payload, indent=2) + "\n")
