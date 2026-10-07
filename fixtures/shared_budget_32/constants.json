@@ -1,0 +1,38 @@
+{
+  "source": "Oct 7 2026 handoff (bundled script faces)",
+  "evidence": {
+    "rho": "Reported (bundled script); face stored",
+    "rho_prime": "Reported (bundled script); face stored",
+    "rho_plus_3_rho_prime": "Rerun here (face arithmetic via verify_families.py)",
+    "individual_multiplicity": "Rerun here (scan)",
+    "combined_literal_multiplicity_6": "Reported (witness |k|^2=14400; charge-group definition in ZIP)",
+    "combined_zero_pruned_multiplicity_4": "Rerun here at |k|^2=216"
+  },
+  "rho": 0.6318550823987903,
+  "rho_prime": 0.8253067330268596,
+  "rho_plus_3_rho_prime": 3.1077752814793693,
+  "original_individual_multiplicity": 3,
+  "added_active_individual_multiplicity": 3,
+  "combined_literal_multiplicity": 6,
+  "combined_zero_pruned_multiplicity": 4,
+  "overlap_witness_R_216_charges": [
+    {"family_anchor": 5, "label": 24, "n": 3, "R": 216},
+    {"family_anchor": 9, "label": 6, "n": 6, "R": 216},
+    {"family_anchor": 9, "label": 24, "n": 3, "R": 216},
+    {"family_anchor": 9, "label": 54, "n": 2, "R": 216}
+  ],
+  "highpass": {
+    "M": "max{1, ceil((ρ+3ρ') √E₀ / (η ν))}",
+    "K_combined": "max{2, 3(M-1)}",
+    "original_family_smaller_cutoff": "max{2, √5 (M-1)} — product √5·(M-1), NOT √(5(M-1))",
+    "restricted_conclusion": "[T_combined(P_{>K} u_N) − η ν Y_N]_+ = 0",
+    "scope": "selected 32-family only; NOT all-scalene criterion (17)"
+  },
+  "geometric_normalization": {
+    "convolution_square_constant_3": "valid under hypotheses (diagonal ≤1, off-diagonal ≤2)",
+    "distinct_donor_convolution_square_2": "sharpening under distinct-input hypotheses",
+    "triple_product_factors": ["sqrt(3)", "sqrt(2)"],
+    "shape_constants": "use √(3Δ); displayed ρ not silently recomputed with constant-2",
+    "do_not_call_triple_product_factors": "3 and 2 (unless different squared normalization is explicit)"
+  }
+}
