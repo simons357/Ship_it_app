@@ -1,47 +1,46 @@
-# Gate D — NS-agent attachment pack (8 October 2026)
+# Gate D — NS-agent attachment pack (author uploads)
 
-**Individual files for the NS agent. Drop these onto that machine. Do not rebuild from a pointer.**
+**Individual files. Copy these onto the NS machine. Do not rebuild from a pointer.**
 
-## Required attachments (evolution unlock)
+## Required attachments
 
-| # | File | Role |
-|---|---|---|
-| 1 | `Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt` | Six-box adversary note |
-| 2 | `verify_signed_gate.py` | Exact packet construction + checks |
-| 3 | `Signed-Gate-Checks.json` | Expected PASS outputs |
-| 4 | `gate_d_initial_sweep.py` | Driver for `GATE-D-INITIAL-SWEEP-2026-10-08.json` |
-| 5 | `GATE-D-INITIAL-SWEEP-2026-10-08.json` | Static t=0 sweep (**not** \(B_{I_H}\)) |
-| 6 | `gate_d_adversarial_run.py` | Galerkin evolution driver for \(I_H\), \(B_{I_H}\) |
+| File | Role |
+|---|---|
+| `Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt` | Six-box adversary note |
+| `verify_signed_gate.py` | Exact packet construction + checks |
+| `Signed-Gate-Checks.json` | PASS outputs |
+| `gated_initial.py` | **Author** initial-sweep driver |
 
-Also included (full source text, not excerpts):
+Also present:
 
-- `NS_EPISODE_BALANCE_NOTE_2026-09-20.md` — defines \(D,Q_\Sigma,V,M\) and episode identity
-- `NS_ORBIT_R4_SMALL_DATA_2026-09-20.md` — small-\(\ell^1\) \(\int UW\) prototype
-- `GATE-D-RUN-BRIEF.txt` — author execution brief
-- `SHA256SUMS.txt`
+| File | Role |
+|---|---|
+| `GATE-D-INITIAL-SWEEP-2026-10-08.json` | Output of `gated_initial.py` at \(\nu=10^{-5}\), cutoff \(8H\) |
+| `gate_d_adversarial_run.py` | Separate evolution driver (for \(I_H\), \(B_{I_H}\)) |
+| `NS_EPISODE_BALANCE_NOTE_2026-09-20.md` | Full episode identity (\(D,Q_\Sigma,V,M\)) |
+| `NS_ORBIT_R4_SMALL_DATA_2026-09-20.md` | Small-\(\ell^1\) \(\int UW\) prototype |
+| `SHA256SUMS.txt` | Checksums |
 
-## Verify on the NS machine
+## Commands
 
 ```bash
 python3 verify_signed_gate.py
-# expect status PASS; writes/matches Signed-Gate-Checks.json
+# PASS
 
-python3 gate_d_initial_sweep.py --n 1 2 3 4
-# writes GATE-D-INITIAL-SWEEP-2026-10-08.json
-# This is NOT B_IH. Do not score it as episode cost.
+# Initial static sweep (NOT B_IH): nu=1e-5, cutoff 8H
+python3 -c "import gated_initial as g, json; from pathlib import Path
+rows=[g.run(n,1e-5,8) for n in (1,2,3,4)]
+Path('GATE-D-INITIAL-SWEEP-2026-10-08.json').write_text(json.dumps({'rows':rows,'computes_B_IH':False},indent=2)+'\n')"
 
-python3 gate_d_adversarial_run.py --n 1
-# evolution: D_H(0), D_H'(0), I_H, B_IH, resource spends
+# Or single-n: python3 gated_initial.py <n> <cutmul>
+python3 gated_initial.py 1 8
 ```
 
 ## Hard rules
 
-- Use the six-box Signed-Gate packet only. **No Gaussian substitute.**
-- Initial sweep ≠ episode measurement.
-- Lemma not stamped until real \(B_{I_H}\) family data exist and are scored.
+- Six-box Signed-Gate only. **No Gaussian.**
+- `GATE-D-INITIAL-SWEEP` is t=0 / local-clock only — **not** \(B_{I_H}\).
+- Lemma not stamped until real episode evolution is scored.
 - (17) not claimed.
 
-## Artifact mirror
-
-Identical copies of the three signed-gate files + both drivers also live under
-`/opt/cursor/artifacts/gate-d-ns-attachments/` in the producing cloud agent.
+Artifact mirror: `/opt/cursor/artifacts/gate-d-ns-attachments/`.

@@ -1,35 +1,20 @@
 # Signed Gate-B sharp-band packet — locations
 
-7 October 2026 (updated 8 October 2026).
+**Author uploads are on disk. This pointer is not the packet.**
 
-**Bytes are in the vault. Do not treat this file as a substitute for the packet.**
-
----
-
-## Individual attachment pack (for NS agent)
+## Attachment pack
 
 `handoff/gate-d-signed-packet-2026-10-08/`
 
-| File | Present |
-|---|---|
-| `Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt` | yes |
-| `verify_signed_gate.py` | yes |
-| `Signed-Gate-Checks.json` | yes |
-| `gate_d_initial_sweep.py` | yes |
-| `GATE-D-INITIAL-SWEEP-2026-10-08.json` | yes (static; **not** \(B_{I_H}\)) |
-| `gate_d_adversarial_run.py` | yes (evolution) |
+- `Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt`
+- `verify_signed_gate.py`
+- `Signed-Gate-Checks.json`
+- `gated_initial.py` (author initial-sweep driver)
 
-Also mirrored under `/opt/cursor/artifacts/gate-d-ns-attachments/`.
-
-## Verify
+Initial sweep JSON (`nu=1e-5`, cutoff `8H`): static only — **not** \(B_{I_H}\).
 
 ```bash
 cd handoff/gate-d-signed-packet-2026-10-08
-python3 verify_signed_gate.py   # PASS
+python3 verify_signed_gate.py
+python3 gated_initial.py 1 8
 ```
-
-## STATUS
-
-PACKET FILES ON DISK. POINTER IS NOT THE PACKET.
-INITIAL SWEEP ≠ EPISODE COST.
-NS NOT SOLVED.
