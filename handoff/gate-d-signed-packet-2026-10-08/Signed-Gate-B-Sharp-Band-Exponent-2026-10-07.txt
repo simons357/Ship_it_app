@@ -1,0 +1,158 @@
+SIGNED GATE B: SHARP INSTANTANEOUS BAND EXPONENT
+7 October 2026
+
+Result and scope
+
+For real divergence-free trigonometric polynomials h on the normalized
+three-torus supported in H <= |k| <= 4H, put
+ E = sum_k |hhat(k)|^2, Y = sum_k |k|^4 |hhat(k)|^2.
+Use the source convention T = -Re <B(h,h), -Delta h>, and let T_sc
+retain precisely the interactions with three distinct squared radii.
+Define R(H) = sup_{h != 0} |T_sc(h)|/(sqrt(E) Y).
+The sharp uniform power exponent is 1/2:
+ R(H) <= 1728 sqrt(H) for integer H >= 1,
+ R(63n) >= c_* sqrt(63n) for every integer n >= 1,
+with an explicit positive constant c_* below. Thus no uniform exponent
+strictly smaller than 1/2 works. This is the exponent of this explicitly
+defined signed ratio, not a determination of the earlier unsigned Q_x
+operator norm, whose established bounds remain 1/2 <= theta_Q <= 2.
+
+The coherent-packet obstruction is already in Section 4 of
+NS_LEMMA_19_COUNTEREXAMPLE_2026-09-20.md. Here the second packet center
+is changed from 4L e2 to 3L e2 to fit the same fourfold frequency band as
+the Gate B assembly test. The upper estimate completes the matching power
+bound. This note makes no claim of novelty or global regularity.
+
+1. Universal upper estimate
+
+Write g_k = |hhat(k)|, extended by zero. The Leray projection has norm
+at most one. The absolute value of any ordered summand is bounded by
+|k|^2 |q| g_p g_q g_k <= 64 H^3 g_p g_q g_k, with p+q=k.
+Restricting to scalene triples only removes nonnegative terms from this
+majorant. Discrete Young and Cauchy-Schwarz therefore give
+ |T_sc| <= 64 H^3 ||g*g||_2 ||g||_2
+        <= 64 H^3 ||g||_1 ||g||_2^2
+        <= 1728 H^(9/2) E^(3/2).
+Indeed the support contains at most (8H+1)^3 <= 729 H^3 lattice points.
+Since Y >= H^4 E, division proves R(H) <= 1728 sqrt(H).
+The constant is deliberately crude; the exponent is the relevant result.
+
+2. Exact signed family attaining the power
+
+Set L=64n, H=63n and take integer boxes
+ P = (L,0,0) + [-n,n]^3,
+ Q = (0,3L,0) + [-n,n]^3,
+ R = (L,3L,0) + [-2n,2n]^3.
+On P use hhat(p)=i |p|^2 P_p e2; on Q and R use
+hhat(v)=i |v|^2 P_v e3. Extend by hhat(-v)=conjugate(hhat(v)).
+Here P_v projects onto v-perp. All coefficient vectors divided by i are
+integers: |v|^2 P_v e_j = |v|^2 e_j - v_j v. Reality and
+incompressibility are exact.
+
+The six boxes are disjoint. Their minimum mode length is at least 63n;
+the maximum squared length is at most
+ (66^2+194^2+2^2)n^2 = 41996 n^2 < (252n)^2 = (4H)^2.
+Only P+Q=R and its receiver permutations and negatives can interact.
+To see this, enumerate the six centers: their only zero-sum triples are
+(P,Q,-R) and its negative. Any other center sum has a coordinate of
+magnitude at least L, while the combined offsets are at most 6n<L.
+Every p in P and q in Q has k=p+q in R.
+
+Write a=|p|^2, b=|q|^2, c=|k|^2, epsilon=1/64 and
+A=P_p e2, B=P_q e3, C=P_k e3. All pairs obey a<b<c and c>=4a.
+In fact a<=2L^2, b>8L^2, and
+c-b >= (1-10 epsilon-5 epsilon^2)L^2 > 0.
+The complete signed triple kernel, before multiplying by abc, is
+ F = (c-b)(q dot A)(B dot C)
+   + (c-a)(k dot B)(C dot A)
+   + (b-a)(p dot C)(A dot B).
+The actual transfer, including negatives and all receiver orderings, is
+ T_sc = 2 sum_{p in P, q in Q} abc F.
+
+Uniform bounds are
+ |A-e2|<=2 epsilon, |B-e3|<=epsilon, |C-e3|<=epsilon,
+ |p|<=2L, |q|<=4L, |k|<=6L,
+ a<=2L^2, b<=16L^2, c<=36L^2.
+Thus q dot A >= (3-9 epsilon)L and
+B dot C >= 1-2 epsilon-epsilon^2. Because q dot B=0,
+|k dot B|=|p dot B|<=3 epsilon L. Also |p dot C|<=3 epsilon L,
+and |C dot A|, |A dot B| <= 4 epsilon.
+Using |c-a|<=38L^2 and |b-a|<=18L^2 bounds the total magnitude of the
+last two terms by 672 epsilon^2 L^3. Consequently
+ F/L^3 >= (1-10 epsilon-5 epsilon^2)(3-9 epsilon)
+           (1-2 epsilon-epsilon^2) - 672 epsilon^2
+        = 2329130643/1073741824 > 2.
+Every grouped signed contribution is strictly positive. No replacement
+of the signed transfer by its absolute envelope occurs in this lower bound.
+
+3. All-scale lower bound
+
+There are (2n+1)^6 positive pairs. Moreover
+ a >= 63^2 n^2, b >= 191^2 n^2,
+ c >= (62^2+190^2)n^2 = 39944 n^2.
+Hence T_sc > A0 n^15, where
+ A0 = 4 * 64^3 * 63^2 * 191^2 * 39944 * 64.
+The support size is M=4(2n+1)^3+2(4n+1)^3 <= 358 n^3.
+Since each coefficient has norm at most (252n)^2,
+ E <= M(252n)^4, Y <= M(252n)^8,
+ sqrt(E)Y <= 358^(3/2) 252^10 n^(29/2).
+It follows that
+ T_sc/(sqrt(E)Y) > c_* sqrt(H),
+ c_* = A0/[358^(3/2) 252^10 sqrt(63)] > 0.
+This analytic bound for every n proves the exponent obstruction. It does
+not depend on fitting a numerical trend. Rescaling to E=1 leaves this
+ratio unchanged.
+
+4. Exact computational verification
+
+Run: python3 verify_signed_gate.py
+The standard-library checker uses integer and Fraction arithmetic for all
+decisive assertions. It checks the projection, Hermitian symmetry, support,
+distinct and separated radii, and positivity for n=1,2,3. It evaluates
+729, 15625 and 117649 positive pairs respectively. At n=1 it independently
+evaluates the FULL ordered Fourier convolution and obtains exactly
+ T_sc = T_full = 7108328663202825907200.
+The repeated-radius and nonseparated contributions vanish. For n=2,3
+only the grouped signed calculation is evaluated, not the full convolution.
+The companion JSON contains E, X, Y and T as exact decimal integer strings.
+Floating point is used only for labeled diagnostic ratios. These small-n
+ratios decrease initially; they are not presented as evidence of growth.
+The proof above supplies the all-scale conclusion.
+
+5. Consequences for the research route
+
+At E=1 and any fixed viscosity nu>0, this family has
+T_sc/(nu Y) >= (c_*/nu) sqrt(H), unbounded as H=63n increases.
+Uniform instantaneous absorption based on energy and signed cancellation
+alone therefore fails. The obstruction consists of genuine real,
+divergence-free fields, with all interactions scalene and separated.
+
+This does not disprove a time-integrated estimate for one fixed initial
+datum. Different n give different initial data. No estimate of the duration
+of coherence or of the nonlinear evolution has been established here.
+Gate A remains diagnostic and unresolved; the multiplicity-5 freeze,
+rho-floor diagnostic, and 17/32/51 conclusions retain their prior scopes.
+No new G6-A transfer or NSE regularity claim is authorized by this result.
+
+The dynamical object still requiring control is precisely the one in
+NS_SCALENE_EVOLUTION_IDENTITY_2026-09-20.md. With h=P_{>K}u_N,
+X_N=||grad u_N||_2^2 and Y_N=||Delta u_N||_2^2, it is
+ S_{K,N}(T) = integral_0^T (T_sc(h)-nu Y_N/4)_+ / X_N dt.
+Where X_N>0, each radius block satisfies
+ d(T_abc/X_N)/dt + [nu(a+b+c)+X_N'/X_N](T_abc/X_N)
+   = Q_abc,N/X_N.
+The quartic Q_abc,N includes the full Galerkin nonlinear forcing in EACH
+of the three slots, including inputs below K. It is not the unsigned Q_x.
+If Hcorr=sum T_abc/[nu(a+b+c)] and
+R4=sum Q_abc,N/[nu(a+b+c)], then Hcorr'=-T_sc+R4 and
+ S_{K,N}(T) = integral_0^T [-(Hcorr/X_N)' + R4/X_N
+                    - Hcorr X_N'/X_N^2 - nu Y_N/(4X_N)]_+ dt.
+Quartic forcing, normalization, and positive downward variation all remain
+to be bounded. Integrating a total derivative alone does not control its
+positive part. The signed static test is complete; dynamical Gate B is open.
+
+Sources used
+
+NS_LEMMA_19_COUNTEREXAMPLE_2026-09-20.md, Sections 2 and 4.
+NS_SCALENE_EVOLUTION_IDENTITY_2026-09-20.md.
+Gate-B-Source-Assembly-and-Concentration-Test-2026-10-07.txt.

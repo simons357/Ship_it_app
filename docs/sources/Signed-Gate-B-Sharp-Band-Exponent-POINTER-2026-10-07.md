@@ -1,27 +1,35 @@
-# Signed Gate-B sharp-band packet — Gate C adversary
+# Signed Gate-B sharp-band packet — locations
 
-7 October 2026 (pointer updated 8 October 2026 after ZIP ingest).
+7 October 2026 (updated 8 October 2026).
+
+**Bytes are in the vault. Do not treat this file as a substitute for the packet.**
 
 ---
 
-## Files in this vault
+## Individual attachment pack (for NS agent)
 
-| File | Role |
+`handoff/gate-d-signed-packet-2026-10-08/`
+
+| File | Present |
 |---|---|
-| [`Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt`](Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt) | Six-box Fourier packet; sharp \(H^{1/2}\) static obstruction |
-| [`../scripts/ns_attacks/verify_signed_gate.py`](../scripts/ns_attacks/verify_signed_gate.py) | Exact signed finite checks |
-| [`Signed-Gate-Checks.json`](Signed-Gate-Checks.json) | Check outputs (`PASS`) |
-| [`GATE-D-RUN-BRIEF.txt`](GATE-D-RUN-BRIEF.txt) | Author execution brief from ZIP |
+| `Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt` | yes |
+| `verify_signed_gate.py` | yes |
+| `Signed-Gate-Checks.json` | yes |
+| `gate_d_initial_sweep.py` | yes |
+| `GATE-D-INITIAL-SWEEP-2026-10-08.json` | yes (static; **not** \(B_{I_H}\)) |
+| `gate_d_adversarial_run.py` | yes (evolution) |
 
-**Do not substitute** a Gaussian packet or any other synthetic field.
+Also mirrored under `/opt/cursor/artifacts/gate-d-ns-attachments/`.
 
----
+## Verify
 
-## Gate D run
-
-Executed: [`../GATE-D-ADVERSARIAL-RUN-RESULTS.md`](../GATE-D-ADVERSARIAL-RUN-RESULTS.md).
+```bash
+cd handoff/gate-d-signed-packet-2026-10-08
+python3 verify_signed_gate.py   # PASS
+```
 
 ## STATUS
 
-ADVERSARY INGESTED. VERIFY PASS. EPISODE DATA FILED (\(n=1,2\)).
+PACKET FILES ON DISK. POINTER IS NOT THE PACKET.
+INITIAL SWEEP ≠ EPISODE COST.
 NS NOT SOLVED.
