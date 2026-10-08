@@ -1,16 +1,17 @@
-# Gate D — 8 October 2026
+# Gate D — 8 October 2026 (refined)
 
-**The shot:**
-\[
-\sum_I B_I\le C(u_0,\nu,K,T)
-\]
-uniformly in \(N\) ⇒ control \(\mathcal S_{K,N}(T)\).
+**Turnover Lemma shot.**
 
-Mechanism: height×duration with enough decay for \(H^{1/2}\).
-Clue: onset law — positive crossing, first shrinking window
-\(O(\rho^{-2})\); amplitude ≠ budget cost.
+Need dangerous-window duration \(\sim H^{-5/2}\) (or height drop
+\(H^{-1/2}\)). Dimensional match: \(\tau_{\mathrm{nl}}\sim H^{-5/2}\).
 
-Not shell-count / Young / generic phase.
+Bridge: onset \(O(\rho^{-2})\) (amplitude) ↔ \(H^{1/2}\) (frequency).
+
+Adversarial test: coherent Gate-C packet → \(D(0),D'(0)\) →
+\(H^{5/2}\lvert I_H\rvert\).
 
 Full note:
 [`docs/GATE-D-HALF-DERIVATIVE-ATTACK-2026-10-08.md`](../docs/GATE-D-HALF-DERIVATIVE-ATTACK-2026-10-08.md).
+
+Protocol:
+[`docs/GATE-D-TURNOVER-ADVERSARIAL-TEST-2026-10-08.md`](../docs/GATE-D-TURNOVER-ADVERSARIAL-TEST-2026-10-08.md).

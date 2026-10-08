@@ -20,10 +20,12 @@ Gate B forced shared energy. Gate C named the deficit:
 \[
 \boxed{\text{We need a dynamical mechanism worth one half derivative.}}
 \]
-Gate D shot: \(\sum_I B_I\le C(u_0,\nu,K,T)\) uniformly in \(N\),
-via **height×duration** decay on normalized blocks (onset clue:
-first window \(O(\rho^{-2})\)). That would control \(\mathcal S_{K,N}(T)\)
-and recover \(H^{1/2}\). Not shell-count, Young, or generic phase.
+Gate D shot: **Turnover Lemma** — need dangerous-window duration
+\(\sim H^{-5/2}\) (or height drop \(H^{-1/2}\)) so that
+height\(\times\)duration erases \(H^{1/2}\). Bridge onset amplitude
+\(O(\rho^{-2})\) to frequency \(H^{1/2}\). Dimensional match
+\(\tau_{\mathrm{nl}}\sim H^{-5/2}\). Next: coherent Gate-C packet
+adversarial test.
 
 ---
 
@@ -37,7 +39,7 @@ and recover \(H^{1/2}\). Not shell-count, Young, or generic phase.
 \to
 \text{exact deficit }(\tfrac12)
 \to
-\text{height}\times\text{duration on }B_I
+\text{Turnover Lemma }(\tau_{\mathrm{nl}}\sim H^{-5/2})
 }
 \]
 
@@ -46,7 +48,7 @@ and recover \(H^{1/2}\). Not shell-count, Young, or generic phase.
 | **A** | Positive all-shape load vs viscous gain | **CLOSED — Outcome B** |
 | **B** | Shared-energy accounting | **CLOSED** — setup for the exponent |
 | **C** | Exact missing exponent | **CLOSED — \(\tfrac12\)** |
-| **D** | \(\sum B_I\le C\) via height×duration → \(\mathcal S_{K,N}\) / \(H^{1/2}\) | **ACTIVE** |
+| **D** | Turnover Lemma / \(H^{5/2}\lvert I_H\rvert\) adversarial test | **ACTIVE** |
 
 ---
 
@@ -64,14 +66,14 @@ and recover \(H^{1/2}\). Not shell-count, Young, or generic phase.
 
 ## Immediate work (Gate D)
 
-1. Define \(B_I\) from the normalized block / quartic forcing identity.
-2. Upgrade onset \(O(\rho^{-2})\) first-window clue → general height×duration.
-3. Sum \(\sum_I B_I\) uniformly in \(N\); check \(H^{1/2}\) recovery in \(\mathcal S_{K,N}\).
+1. Coherent Gate-C packet → exact \(D(0),D'(0)\) → measure \(H^{5/2}\lvert I_H\rvert\).
+2. State / prove Turnover Lemma (duration \(\lesssim H^{-5/2}\) or summable \(\mathcal R_I\)).
+3. Bridge onset \(O(\rho^{-2})\) amplitude clue to frequency \(H^{-5/2}\).
 
 ---
 
 ## STATUS
 
 GATES A–C: CLOSED.
-GATE D: ACTIVE — \(\sum B_I\) / HEIGHT×DURATION SHOT.
+GATE D: ACTIVE — TURNOVER LEMMA / ADVERSARIAL PACKET TEST.
 NS NOT SOLVED.

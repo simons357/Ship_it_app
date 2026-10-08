@@ -1,14 +1,14 @@
-# Gate D — height × duration
+# Gate D — Turnover Lemma
 
 8 October 2026.
-**Active shot.**
+**Active shot — refined.**
 
 \[
-\boxed{\sum_I B_I\le C(u_0,\nu,K,T)}
-\quad\text{(uniformly in \(N\))}
+\boxed{\text{We need an effective dangerous-window duration of order }H^{-5/2}}
 \]
-controls \(\mathcal S_{K,N}(T)\). Mechanism: height×duration with enough
-decay for \(H^{1/2}\). Clue: onset first window \(O(\rho^{-2})\).
+(or height drop \(H^{-1/2}\)). Dimensional match: \(\tau_{\mathrm{nl}}\sim H^{-5/2}\).
+
+Adversarial test: coherent Gate-C packet → \(D(0),D'(0)\) → \(H^{5/2}\lvert I_H\rvert\).
 
 Full note:
 [`GATE-D-HALF-DERIVATIVE-ATTACK-2026-10-08.md`](GATE-D-HALF-DERIVATIVE-ATTACK-2026-10-08.md).

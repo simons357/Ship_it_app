@@ -7,8 +7,8 @@
 \boxed{\text{We need a dynamical mechanism worth one half derivative.}}
 \]
 
-Shot: \(\sum_I B_I\le C\) via height×duration (onset clue \(O(\rho^{-2})\)).
-Controls \(\mathcal S_{K,N}(T)\); targets \(H^{1/2}\).
+Shot: Turnover Lemma — dangerous window \(\sim H^{-5/2}\)
+(\(\tau_{\mathrm{nl}}\) match). Adversarial: coherent Gate-C packet.
 Not shell-count, Young, or generic instantaneous phase.
 
 Full note:

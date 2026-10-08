@@ -53,12 +53,11 @@ Stop saying “something is missing.” The enemy is named.
 
 Shot (not shell-count, Young, or generic instantaneous phase):
 
-> Does **height×duration** on normalized block costs \(B_I\) give
-> \(\sum_I B_I\le C(u_0,\nu,K,T)\) uniformly in \(N\), with enough decay
-> to recover \(H^{1/2}\) in \(\mathcal S_{K,N}(T)\)?
-> (Clue: onset law, first shrinking window \(O(\rho^{-2})\).)
+> Does **nonlinear turnover** supply exactly the missing half derivative —
+> dangerous-window duration \(\sim H^{-5/2}\) (or height drop \(H^{-1/2}\))
+> on the coherent Gate-C packet?
 
-If no — kill quickly. If yes — that is the main line.
+Bridge required: onset \(O(\rho^{-2})\) (amplitude) ↔ \(H^{1/2}\) (frequency).
 
 Out of scope as substitutes: shell-count upgrades; Young reshuffles;
 generic instantaneous phase; Ring without dynamical bridge; swirl as

@@ -9,6 +9,5 @@ Exact missing exponent after shared energy:
 Full note:
 [`docs/GATE-C-HALF-DERIVATIVE-2026-10-08.md`](../docs/GATE-C-HALF-DERIVATIVE-2026-10-08.md).
 
-Gate D shot: \(\sum B_I\le C\) via height×duration
-(onset clue \(O(\rho^{-2})\)) —
+Gate D: Turnover Lemma (window \(\sim H^{-5/2}\)) —
 [`docs/GATE-D-HALF-DERIVATIVE-ATTACK-2026-10-08.md`](../docs/GATE-D-HALF-DERIVATIVE-ATTACK-2026-10-08.md).
