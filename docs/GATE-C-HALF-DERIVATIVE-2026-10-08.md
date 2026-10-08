@@ -51,22 +51,17 @@ Stop saying “something is missing.” The enemy is named.
 
 ## Gate D contract
 
-Every structural candidate is asked exactly once:
+Main line (not shell-count, Young, or generic instantaneous phase):
 
-> Does this recover the missing half derivative?
+> Does the **quartic forcing / normalized block-evolution identity**
+> recover the missing half derivative — via time integration, damping,
+> or structural cancellation?
 
-If no — kill quickly.
+If no — kill that lever quickly.
 If yes — that becomes the main line.
 
-Candidates in scope for that question only:
-- signed assembly
-- phase incompatibility
-- B41-type capacity effects
-- C10 / alignment
-- centered transfer
-- further geometric decomposition
-
-Out of scope as substitutes: Ring without dynamical bridge; swirl as
+Out of scope as substitutes: shell-count upgrades; Young reshuffles;
+generic instantaneous phase; Ring without dynamical bridge; swirl as
 full 3-D substitute; B41 promoted into NSE dynamics; random-phase fishing.
 
 ---

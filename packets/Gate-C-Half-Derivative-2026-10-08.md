@@ -9,5 +9,6 @@ Exact missing exponent after shared energy:
 Full note:
 [`docs/GATE-C-HALF-DERIVATIVE-2026-10-08.md`](../docs/GATE-C-HALF-DERIVATIVE-2026-10-08.md).
 
-Gate D:
+Gate D main line: quartic forcing / normalized block evolution
+(time integration, damping, structural cancellation) —
 [`docs/GATE-D-HALF-DERIVATIVE-ATTACK-2026-10-08.md`](../docs/GATE-D-HALF-DERIVATIVE-ATTACK-2026-10-08.md).

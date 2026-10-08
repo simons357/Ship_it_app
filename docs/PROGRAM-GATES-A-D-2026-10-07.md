@@ -20,7 +20,9 @@ Gate B forced shared energy. Gate C named the deficit:
 \[
 \boxed{\text{We need a dynamical mechanism worth one half derivative.}}
 \]
-Gate D attacks **only** that half.
+Gate D attacks **only** that half — via the quartic forcing /
+normalized block-evolution identity (time integration, damping, or
+structural cancellation). Not shell-count, Young, or generic phase.
 
 ---
 
@@ -34,7 +36,7 @@ Gate D attacks **only** that half.
 \to
 \text{exact deficit }(\tfrac12)
 \to
-\text{structural attack}
+\text{block-evolution }H^{1/2}\text{ attack}
 }
 \]
 
@@ -43,13 +45,15 @@ Gate D attacks **only** that half.
 | **A** | Positive all-shape load vs viscous gain | **CLOSED — Outcome B** |
 | **B** | Shared-energy accounting | **CLOSED** — setup for the exponent |
 | **C** | Exact missing exponent | **CLOSED — \(\tfrac12\)** |
-| **D** | Recover the half derivative, or kill the candidate | **ACTIVE** |
+| **D** | Quartic forcing / normalized block evolution → recover \(H^{1/2}\) | **ACTIVE** |
 
 ---
 
 ## Parked
 
 - No more 51→70→100 family extensions
+- No shell-count or Young-allocation “improvements” as the next step
+- No generic instantaneous phase cancellation as the main line
 - No random-phase fishing
 - Ring without a dynamical bridge
 - Swirl as substitute for full 3-D target
@@ -59,13 +63,14 @@ Gate D attacks **only** that half.
 
 ## Immediate work (Gate D)
 
-One question per candidate: does this recover \(\tfrac12\)?
-Signed / phase / B41 / C10 / centered / geometric — only if yes.
+1. Quartic forcing / normalized block-evolution identity.
+2. Test: time integration, damping, structural cancellation.
+3. Kill quickly if none recovers \(\tfrac12\); promote if one does.
 
 ---
 
 ## STATUS
 
 GATES A–C: CLOSED.
-GATE D: ACTIVE — HALF DERIVATIVE ONLY.
+GATE D: ACTIVE — BLOCK EVOLUTION / \(H^{1/2}\) ONLY.
 NS NOT SOLVED.
