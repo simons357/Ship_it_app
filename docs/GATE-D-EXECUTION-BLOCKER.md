@@ -1,10 +1,6 @@
 # Gate D — execution status
 
-8 October 2026.
-**Conceptual blocker cleared. Need six-box packet bytes to run.**
+Dated: [`GATE-D-EXECUTION-BLOCKER-2026-10-08.md`](GATE-D-EXECUTION-BLOCKER-2026-10-08.md).
 
-Full note:
-[`GATE-D-EXECUTION-BLOCKER-2026-10-08.md`](GATE-D-EXECUTION-BLOCKER-2026-10-08.md).
-
-Brief:
-[`GATE-D-ADVERSARIAL-RUN-BRIEF.md`](GATE-D-ADVERSARIAL-RUN-BRIEF.md).
+Packet ingested; \(n=1,2\) episode measurements filed.
+No theorem stamp.

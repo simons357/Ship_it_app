@@ -58,14 +58,14 @@ for recurrence. Prototype: small-\(\ell^1\) \(R_4\) with \(\int UW\).
 
 ## Immediate work (Gate D)
 
-1. **Ingest six-box Signed-Gate bytes** — see [`GATE-D-EXECUTION-BLOCKER.md`](GATE-D-EXECUTION-BLOCKER.md).
-2. Execute [`GATE-D-ADVERSARIAL-RUN-BRIEF.md`](GATE-D-ADVERSARIAL-RUN-BRIEF.md): \(E=1\), \(H=63n\), full Galerkin; score \(B_H\) vs resource. No Gaussian substitute.
-3. Plain energy dissipation ruled out as \(\mathcal R\) at critical turnover (\(\int_{I_H}X\,dt\sim H^{-1/2}\)).
+1. Extend adversarial family beyond \(n=1,2\) — see [`GATE-D-ADVERSARIAL-RUN-RESULTS.md`](GATE-D-ADVERSARIAL-RUN-RESULTS.md).
+2. Decide whether \(B_H\) trends to \(0\) or stays \(O(1)\) with a globally finite resource.
+3. Lemma remains recorded, not stamped.
 
 ---
 
 ## STATUS
 
 GATES A–C: CLOSED.
-GATE D: ACTIVE — LEMMA RECORDED; BRIEF READY; BLOCKED ON PACKET BYTES.
+GATE D: ACTIVE — FIRST EPISODE DATA ON FILE; NO STAMP.
 NS NOT SOLVED.

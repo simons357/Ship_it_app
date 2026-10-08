@@ -73,8 +73,6 @@ controlling \(\lvert R_4\rvert\lesssim UWX\).
 ## STATUS
 
 PROTOCOL READY — RESOURCE-WEIGHTED.
-Executable brief: [`GATE-D-ADVERSARIAL-RUN-BRIEF.md`](GATE-D-ADVERSARIAL-RUN-BRIEF.md).
-Orbit-R4 + episode-balance excerpts: filed under `docs/sources/`.
-EXECUTION: **BLOCKED** on six-box Signed-Gate packet bytes — see
-[`GATE-D-EXECUTION-BLOCKER.md`](GATE-D-EXECUTION-BLOCKER.md).
+First measurements: [`GATE-D-ADVERSARIAL-RUN-RESULTS.md`](GATE-D-ADVERSARIAL-RUN-RESULTS.md)
+(\(n=1,2\) complete episodes; no theorem stamp).
 NS NOT SOLVED.

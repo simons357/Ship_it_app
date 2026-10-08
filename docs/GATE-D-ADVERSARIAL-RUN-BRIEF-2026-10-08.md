@@ -104,22 +104,18 @@ B_I=\int_I\frac{D}{X}\,dt
 
 | Item | Status in this vault |
 |---|---|
-| Orbit R4 prototype identities | **Filed** (author paste excerpt) |
-| Episode balance identity | **Filed** (author paste excerpt) |
-| Adversary named (six-box Signed-Gate) | **Named** |
-| `Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt` bytes | **Pending drop** |
-| `verify_signed_gate.py` / `Signed-Gate-Checks.json` | **Pending drop** |
-| Galerkin evolution + \(B_{I_H}\)/resource score | **Blocked on packet bytes** |
-
-Conceptual blocker: **cleared**.
-Operational blocker: **packet binary ingest** for the evolution run.
+| Orbit R4 prototype identities | **Filed** (full ZIP) |
+| Episode balance identity | **Filed** (full ZIP) |
+| Adversary (six-box Signed-Gate) | **Ingested** |
+| `verify_signed_gate.py` / `Signed-Gate-Checks.json` | **PASS** |
+| Galerkin evolution + \(B_{I_H}\)/resource | **Filed for \(n=1,2\)** — [`GATE-D-ADVERSARIAL-RUN-RESULTS.md`](GATE-D-ADVERSARIAL-RUN-RESULTS.md) |
 
 ---
 
 ## STATUS
 
-GATE D: OPERATIONAL BRIEF READY.
+GATE D: FIRST EPISODE DATA ON FILE (\(n=1,2\)).
 LEMMA: RECORDED, NOT STAMPED.
-NEXT JOB: GET SIX-BOX GATE-C PACKET THROUGH EPISODE/RESOURCE MEASUREMENT.
+NEXT JOB: MORE \(H=63n\) FOR FAMILY SCORE.
 (17) NOT CLAIMED.
 NS NOT SOLVED.
