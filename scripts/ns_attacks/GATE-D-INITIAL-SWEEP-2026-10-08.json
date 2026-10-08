@@ -1,128 +1,25 @@
 {
-  "title": "Gate D initial static sweep \u2014 author gated_initial.py",
-  "driver": "gated_initial.py",
-  "nu": 1e-05,
-  "cutmul": 8,
-  "cutoff": "8H",
-  "theorem_stamp": false,
-  "computes_B_IH": false,
-  "warning": "Static t=0 / local-clock only. Not I_H, not B_IH.",
-  "fits_log_log": {
-    "X": {
-      "exponent": 2.0033388797736436,
-      "prefactor": 10.017344052588026
-    },
-    "D": {
-      "exponent": 3.7723021023907917,
-      "prefactor": 0.0025467609342961573
-    },
-    "D_over_X": {
-      "exponent": 1.768963222617147,
-      "prefactor": 0.000254235146654287
-    },
-    "tau_local": {
-      "exponent": -2.313288924754792,
-      "prefactor": 77.08313780063142
-    },
-    "height_x_tau": {
-      "exponent": -0.5443257021376462,
-      "prefactor": 0.019597242843316254
-    }
-  },
-  "height_times_tau_local": [
-    0.0021470721086986897,
-    0.001305063914350196,
-    0.001099763623669479,
-    0.0010256718818773653
+  "status": "NUMERICAL EVIDENCE ONLY; initial-time Gate D measurements, no complete episode",
+  "viscosity": 1e-5,
+  "normalization": "E=1",
+  "adversary": "imaginary-coefficient six-box Gate-C signed packet",
+  "cutoffs": ["4H", "8H"],
+  "rows_8H": [
+    {"n":1,"H":63,"D0":16404.9040479154,"Dprime0":3109989.5742406,"D0_over_X0":0.407035106922445,"tau_local":0.00527490644463693,"H_5_2_tau":166.175171270022},
+    {"n":2,"H":126,"D0":195728.271161724,"Dprime0":181547688.07326,"D0_over_X0":1.21051156806238,"tau_local":0.00107810941157643,"H_5_2_tau":192.127353323412},
+    {"n":3,"H":189,"D0":957681.87785166,"Dprime0":2289891907.70148,"D0_over_X0":2.62962042037854,"tau_local":0.000418221434221736,"H_5_2_tau":205.381252229299},
+    {"n":4,"H":252,"D0":3113884.59611625,"Dprime0":14593333169.9037,"D0_over_X0":4.80684849846627,"tau_local":0.000213377201757999,"H_5_2_tau":215.104436338531}
   ],
-  "rows": [
-    {
-      "n": 1,
-      "H": 63,
-      "N": 504,
-      "modes": 358,
-      "generated": 5930,
-      "E": 1.0,
-      "X": 40303.41306908724,
-      "Y": 1629206796.94365,
-      "Z": 65960395022619.43,
-      "T": 20477.92104027453,
-      "D": 16404.904047915406,
-      "Q": 3131453.916584524,
-      "V": -16788.06048157107,
-      "U2": 1594860322.6967545,
-      "M": -4676.2818623528,
-      "Dprime": 3109989.5742405998,
-      "D_over_X": 0.4070351069224454,
-      "tau_local": 0.005274906444636932,
-      "scaled_tau": 166.17517127002202,
-      "elapsed": 0.42882657051086426
-    },
-    {
-      "n": 2,
-      "H": 126,
-      "N": 1008,
-      "modes": 1958,
-      "generated": 38146,
-      "E": 1.0,
-      "X": 161690.54168975755,
-      "Y": 26208483149.333694,
-      "Z": 4253636770703295.5,
-      "T": 261249.47903505818,
-      "D": 195728.27116172394,
-      "Q": 182598405.60138685,
-      "V": -856542.648931139,
-      "U2": 81371343546.17421,
-      "M": -194174.87919570625,
-      "Dprime": 181547688.07325998,
-      "D_over_X": 1.2105115680623795,
-      "tau_local": 0.001078109411576432,
-      "scaled_tau": 192.12735332341222,
-      "elapsed": 14.40317988395691
-    },
-    {
-      "n": 3,
-      "H": 189,
-      "N": 1512,
-      "modes": 5766,
-      "generated": 119322,
-      "E": 1.0,
-      "X": 364190.15856052545,
-      "Y": 132937945410.7076,
-      "Z": 4.858366197336784e+16,
-      "T": 1290026.7413784273,
-      "D": 957681.8778516583,
-      "Q": 2301498598.1784835,
-      "V": -9515853.463416966,
-      "U2": 904004022451.533,
-      "M": -2090837.0135892727,
-      "Dprime": 2289891907.701477,
-      "D_over_X": 2.629620420378546,
-      "tau_local": 0.00041822143422173575,
-      "scaled_tau": 205.38125222929915,
-      "elapsed": 132.82907032966614
-    },
-    {
-      "n": 4,
-      "H": 252,
-      "N": 2016,
-      "modes": 12742,
-      "generated": 272114,
-      "E": 1.0,
-      "X": 647801.6931696151,
-      "Y": 420567202535.63824,
-      "Z": 2.733557558159195e+17,
-      "T": 4165302.602455346,
-      "D": 3113884.5961162504,
-      "Q": 14660231281.686354,
-      "V": -54620986.390827365,
-      "U2": 5188982636517.541,
-      "M": -12277125.39179173,
-      "Dprime": 14593333169.903734,
-      "D_over_X": 4.806848498466237,
-      "tau_local": 0.00021337720175799914,
-      "scaled_tau": 215.10443633853134,
-      "elapsed": 695.2724606990814
-    }
+  "cutoff_check_Dprime_relative_4H_vs_8H": [
+    {"H":63,"relative_difference":0.00027713},
+    {"H":126,"relative_difference":0.00024700},
+    {"H":189,"relative_difference":0.00023864},
+    {"H":252,"relative_difference":0.00023502}
+  ],
+  "notes": [
+    "D0>0 and Dprime0>0 at all tested H, so the first positive episode begins at t=0 and is initially rising for nu=1e-5.",
+    "tau_local=D0/Dprime0 is a local diagnostic timescale, not the complete episode duration.",
+    "A log-log fit over H=63,126,189,252 gives tau_local approximately H^-2.31; over H=126,189,252 approximately H^-2.34. This is suggestive but not a theorem and not yet H^-5/2.",
+    "Complete full spherical Galerkin evolution at cutoff >=4H is computationally large; no BI_H has been measured here."
   ]
 }

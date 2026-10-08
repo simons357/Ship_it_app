@@ -1,22 +1,18 @@
 # Gate D — execution status
 
 8 October 2026.
-**Author attachments ingested. Lemma not stamped. Not (17).**
+**Author attachment drop ingested (incl. gated_initial_fast.cpp). Not (17).**
 
-## NS-agent files (individual)
+## Files in `handoff/gate-d-signed-packet-2026-10-08/`
 
-`handoff/gate-d-signed-packet-2026-10-08/`
+- `gated_initial_fast.cpp` (+ `.AUTHOR.cpp` verbatim)
+- `NS_ORBIT_R4_SMALL_DATA_2026-09-20.md`
+- `GATE-D-INITIAL-SWEEP-2026-10-08.json` — author static sweep; **not** \(B_{I_H}\)
+- `gated_initial.py`
+- `Signed-Gate-Checks.json`
+- plus Signed-Gate `.txt` and `verify_signed_gate.py`
 
-1. `Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt`
-2. `verify_signed_gate.py`
-3. `Signed-Gate-Checks.json`
-4. `gated_initial.py` — author driver for `GATE-D-INITIAL-SWEEP-2026-10-08.json`
-
-Verified at \(\nu=10^{-5}\), cutoff \(8H\):
-\(X\sim H^{2.00}\), \(D\sim H^{3.77}\), \(D/X\sim H^{1.77}\), \(\tau_{\mathrm{local}}\sim H^{-2.31}\);
-height×clock falls \(0.00215\to0.00103\). **Not \(B_{I_H}\).**
-
-Next: copy these four files onto the NS machine and run \(H=63n\) Galerkin evolution for \(I_H\), \(B_{I_H}\).
+Author notes in the sweep JSON: \(D_0>0\), \(D_0'>0\) so the first episode starts at \(t=0\) and is initially rising at \(\nu=10^{-5}\); \(\tau_{\mathrm{local}}\sim H^{-2.31}\) is suggestive, not a theorem; no \(B_{I_H}\) measured.
 
 ## STATUS
 
