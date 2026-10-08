@@ -47,9 +47,15 @@ branches, local disk, Drive title/fullText — no hits on the named files):
 | `NS_EPISODE_BALANCE_NOTE_2026-09…` | Exact episode identity for \(B_I\) |
 | Coherent Gate-C packet (explicit modes / amplitudes) | \(D(0)\), \(D'(0)\), \(I_H\), \(B_{I_H}\); Gate C note has only schematic \(X\sim H^2\), \(Y\sim H^4\), \(\mathcal T_{\mathrm{sc}}\sim H^{9/2}\) |
 
-Nearby Orbit / R4 material from ~2026-09-20 may exist under other names
-(named-orbit conditional-enstrophy, large-shear notes). **Not used** —
-different filenames; do not substitute without author confirmation.
+Nearby Orbit / R4 material from ~2026-09-20 was reported elsewhere
+(named-orbit conditional-enstrophy packet; large-shear note). **Not used:**
+those filenames are not on this machine, and a vault/remote/Drive search
+did not recover files under those names. Do not substitute
+`UNAUGMENTED-R4-VORTICITY-PLAN.md` or L3-5 shear obstruction for
+`NS_ORBIT_R4_SMALL_DATA` / `NS_EPISODE_BALANCE_NOTE`.
+
+**Confirmed:** lemma recorded, not stamped; no \(D(0)\), \(D'(0)\), or
+measured \(B_{I_H}\); Domain Architect gate unchanged; (17) not claimed.
 
 ---
 
