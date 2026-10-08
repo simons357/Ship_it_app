@@ -51,17 +51,17 @@ Stop saying “something is missing.” The enemy is named.
 
 ## Gate D contract
 
-Shot (not shell-count, Young, or generic instantaneous phase):
+\[
+\boxed{\textbf{Resource-Weighted Turnover Lemma}}
+\]
+\(B_I\le C\mathcal R_I\) with \(\sum_I\mathcal R_I\) controlled.
+Critical turnover \(H^{-5/2}\) erases static \(H^{1/2}\); resource pays
+for recurrence. Adversarial: coherent packet → \(B_{I_H}\)/resource ratio.
 
-> Does **nonlinear turnover** supply exactly the missing half derivative —
-> dangerous-window duration \(\sim H^{-5/2}\) (or height drop \(H^{-1/2}\))
-> on the coherent Gate-C packet?
+Bridge: onset \(O(\rho^{-2})\) (amplitude) ↔ \(H^{1/2}\) (frequency).
 
-Bridge required: onset \(O(\rho^{-2})\) (amplitude) ↔ \(H^{1/2}\) (frequency).
-
-Out of scope as substitutes: shell-count upgrades; Young reshuffles;
-generic instantaneous phase; Ring without dynamical bridge; swirl as
-full 3-D substitute; B41 promoted into NSE dynamics; random-phase fishing.
+Out of scope as substitutes: shell-count; Young; generic instantaneous
+phase; Ring without bridge; swirl-as-substitute; B41→NSE; random-phase.
 
 ---
 
@@ -69,6 +69,6 @@ full 3-D substitute; B41 promoted into NSE dynamics; random-phase fishing.
 
 GATE C: **CLOSED — DEFICIT = HALF DERIVATIVE.**
 GATE B: SHARED-ENERGY CORRECTION ACCEPTED AS THE SETUP FOR THIS EXPONENT.
-GATE D: ACTIVE — RECOVER \(\tfrac12\) OR KILL THE CANDIDATE.
+GATE D: ACTIVE — RESOURCE-WEIGHTED TURNOVER.
 (17) NOT CLAIMED.
 NS NOT SOLVED.

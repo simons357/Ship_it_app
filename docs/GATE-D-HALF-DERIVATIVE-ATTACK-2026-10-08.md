@@ -1,4 +1,4 @@
-# Gate D — Turnover Lemma / height × duration
+# Gate D — Resource-Weighted Turnover Lemma
 
 8 October 2026.
 **ACTIVE shot — refined. Not (17).**
@@ -6,11 +6,14 @@
 Parent deficit:
 [`GATE-C-HALF-DERIVATIVE-2026-10-08.md`](GATE-C-HALF-DERIVATIVE-2026-10-08.md).
 
+Adversarial protocol:
+[`GATE-D-TURNOVER-ADVERSARIAL-TEST-2026-10-08.md`](GATE-D-TURNOVER-ADVERSARIAL-TEST-2026-10-08.md).
+
 Program: [`PROGRAM-GATES-A-D.md`](PROGRAM-GATES-A-D.md).
 
-Archive pointer (not in this workspace binary):
-`NS_EPISODE_BALANCE_NOTE_2026-09…` — exact episode identity below
-(**Source-backed** from author note).
+Archive pointers (may be absent as binaries here):
+`NS_EPISODE_BALANCE_NOTE_2026-09…`, `NS_ORBIT_R4_SMALL_DATA_2026-09…`
+(**Source-backed** from author notes).
 
 ---
 
@@ -20,110 +23,98 @@ Archive pointer (not in this workspace binary):
 \boxed{\text{We need a dynamical mechanism worth one half derivative.}}
 \]
 
-**Important refinement.** The onset law’s \(O(\rho^{-2})\) window is an
-**amplitude** statement. The obstruction we must erase is a
-**frequency** statement \(H^{1/2}\). Gate D needs an explicit bridge
-between those two scales.
+**Bridge.** Onset \(O(\rho^{-2})\) is an **amplitude** statement; the
+obstruction is a **frequency** statement \(H^{1/2}\). Connect them.
 
-### Sharp coherent packet (Gate C) after \(E=1\) normalization
+### Sharp coherent packet (Gate C), \(E=1\)
 
-Schematically
 \[
 X\sim H^2,\qquad
 Y\sim H^4,\qquad
-\mathcal T_{\mathrm{sc}}\sim H^{9/2}.
-\]
-Dangerous normalized height:
-\[
+\mathcal T_{\mathrm{sc}}\sim H^{9/2},
+\qquad
 \frac{\mathcal T_{\mathrm{sc}}}{X}\sim H^{5/2}.
 \]
 
-### Two time scales
+Viscosity alone: \(\tau_\nu\sim H^{-2}\) gives
+\(H^{5/2}\cdot H^{-2}=H^{1/2}\) — still short by a half derivative.
 
-Viscosity alone gives
+Need:
 \[
-\tau_\nu\sim H^{-2}.
+\boxed{\text{effective dangerous-window duration of order }H^{-5/2}}
 \]
-Product with height:
-\[
-H^{5/2}\cdot H^{-2}=H^{1/2}.
-\]
-There is the missing half derivative again — viscosity is not enough.
+(or an equivalent \(H^{-1/2}\) height drop).
 
-So Gate D, sharpened:
-\[
-\boxed{\text{We need an effective dangerous-window duration of order }H^{-5/2}}
-\]
-— or an equivalent \(H^{-1/2}\) reduction in episode height.
-
-### Dimensional match — nonlinear turnover
-
-For an \(E=1\) field occupying \(O(H^3)\) modes in a band of size \(H\),
-Bernstein-scale estimates naturally give
-\[
-\|\nabla u\|_\infty\sim H^{5/2}
-\]
-at the worst concentration scale. Nonlinear turnover time:
+Bernstein / concentration: \(\|\nabla u\|_\infty\sim H^{5/2}\) ⇒
 \[
 \boxed{\tau_{\mathrm{nl}}\sim H^{-5/2}.}
 \]
-Exactly the scale required. Clean dimensional match (not a proof):
+Dimensional match (not a proof):
 \[
-\underbrace{H^{5/2}}_{\text{normalized dangerous height}}
-\times
-\underbrace{H^{-5/2}}_{\text{nonlinear turnover window}}
-\sim 1.
+H^{5/2}\times H^{-5/2}\sim 1.
 \]
 
 ---
 
-## Budget object
+## Target theorem
 
 \[
-\boxed{
-\sum_I B_I
-\le
-C(u_0,\nu,K,T)
-}
+\boxed{\textbf{Resource-Weighted Turnover Lemma}}
 \]
-uniformly in Galerkin cutoff \(N\). That would directly control
+
+Find a nonnegative resource \(\mathcal R_I\) such that
 \[
-\mathcal S_{K,N}(T)
-=
-\int_0^T
-\frac{\bigl[\mathcal T_{\mathrm{sc}}(h_{K,N})-\nu Y_N/4\bigr]_+}{X_N}\,dt.
+B_I\le C\,\mathcal R_I,
+\qquad
+\sum_I\mathcal R_I
+\le C(u_0,\nu,K,T).
 \]
+Then critical \(H^{-5/2}\) turnover can remove the static \(H^{1/2}\)
+loss, while the resource pays for **repetition**.
 
----
-
-## Gate D target — Turnover Lemma
-
-For a positive all-high scalene episode \(I\) concentrated near frequency
-\(H\), prove one of the following equivalent kinds of statements:
-
+Equivalent episode forms (weaker → stronger for practice):
 \[
 |I|\lesssim H^{-5/2}
+\quad\text{(near worst-case height \(H^{5/2}\))}
 \]
-when the normalized transfer is near its worst-case \(H^{5/2}\) size; or,
-more robustly,
+or
 \[
-\boxed{
 \int_I
 \frac{[\mathcal T_{\mathrm{sc}}-\nu Y/4]_+}{X}\,dt
 \le C\,\mathcal R_I
-}
 \]
-where the resources \(\mathcal R_I\) are summable over episodes.
+with \(\sum_I\mathcal R_I\) controlled. The resource-weighted form is
+preferred: not every episode needs a hard duration bound.
 
-The second form is better: we do **not** need every episode to carry a
-hard duration bound.
+Budget consequence:
+\[
+\sum_I B_I
+\le C(u_0,\nu,K,T)
+\quad\text{(uniformly in Galerkin \(N\))}
+\]
+⇒ control of \(\mathcal S_{K,N}(T)\).
+
+---
+
+## Prototype already in the archive
+
+In the small Fourier-\(\ell^1\) class (`NS_ORBIT_R4_SMALL_DATA_2026-09…`,
+**Source-backed**), the quartic remainder satisfies
+\[
+\lvert R_4\rvert\lesssim UWX,
+\]
+while dynamics supplies an integrated bound on \(UW\). Resource:
+\[
+\mathcal R\sim\int UW\,dt
+\]
+— summable. That is the pattern to imitate for all-high scalene
+episodes.
 
 ---
 
 ## Exact episode identity (archive)
 
-From `NS_EPISODE_BALANCE_NOTE_2026-09…` (**Source-backed**; retrieve full
-note when available in-workspace):
+From `NS_EPISODE_BALANCE_NOTE_2026-09…` (**Source-backed**):
 \[
 B_I
 =
@@ -135,73 +126,76 @@ B_I
 -\frac{DX'}{X^2}
 \right]ds.
 \]
-Finite trajectories show block viscosity contributes a large negative
-moment and can terminate episodes even while quartic feeding remains
-positive. That is the laboratory hint that duration can compress while
-instantaneous height looks dangerous.
+Finite trajectories: block viscosity can contribute a large negative
+moment and terminate episodes even while quartic feeding stays positive.
 
 ---
 
-## Onset clue (amplitude side)
+## Program stack (what Gate D is now)
 
-Onset law: a dangerous-looking positive crossing can carry only
-\(O(\rho^{-2})\) normalized cost on its first shrinking window.
-Amplitude growth ≠ budget cost; dynamics compresses the window.
-**Bridge still required** to the frequency form \(H^{-5/2}\) above.
+\[
+\boxed{
+\text{static deficit}
+\to H^{1/2}
+\to
+\text{critical turnover }H^{-5/2}
+\to
+\textbf{find the resource that pays for recurrence}.
+}
+\]
 
 ---
 
-## Adversarial test (next calculation)
+## Adversarial packet (decisive test)
 
-Do **not** test Gate D on an arbitrary field. Use the same coherent
-packet that proves the sharp static \(H^{1/2}\) obstruction.
+Still use the coherent Gate-C packet — but do **not** ask only
+\(\lvert I_H\rvert\stackrel{?}{\lesssim}H^{-5/2}\). Measure
+\[
+\boxed{
+B_{I_H}
+\quad\text{and}\quad
+\frac{B_{I_H}}{\text{candidate resource consumed on }I_H}
+}
+\]
+as \(H\to\infty\).
 
-Decisive question:
-
-> Does the configuration that is worst possible **instantaneously**
-> also remain dangerous **long enough** to make the time-integrated
-> budget bad?
-
-| Outcome | Meaning |
+| Reading | Meaning |
 |---|---|
-| Episode lasts only \(\sim H^{-5/2}\) | Static obstruction may neutralize itself dynamically |
-| Persists \(\gtrsim H^{-2}\) at full height | Gate D in serious trouble |
+| \(B_{I_H}\sim O(1)\) | Consistent with critical turnover — not enough alone for infinitely many episodes |
+| \(B_{I_H}\to 0\) | Extra dynamical gain — excellent |
+| \(B_{I_H}\sim O(1)\) consuming \(O(1)\) of a globally finite resource | Works — only finitely much total episode cost accumulates |
+| \(B_{I_H}\sim O(1)\) consuming \(o(1)\) resource | **Gate D in trouble** |
 
 Pipeline:
 \[
-\boxed{
 \text{coherent Gate-C packet}
-\longrightarrow
-\text{exact }D(0),\,D'(0)
-\longrightarrow
-\text{turnover-scale episode law}
-}
-\]
-Measure the scale of
-\[
-H^{5/2}\lvert I_H\rvert.
+\to
+\text{exact }D(0),D'(0)
+\to
+B_{I_H}\text{ vs resource on }I_H.
 \]
 
-The test is not merely “dynamics.” It is:
+Core question:
 \[
 \boxed{\textbf{Does nonlinear turnover supply exactly the missing half derivative?}}
 \]
+— and what resource pays when it must happen again.
 
 ---
 
 ## Not the next target
 
-Shell-count upgrades; Young reshuffles; generic instantaneous phase;
-52/70/100 families; random-phase fishing; Ring without bridge;
-swirl-as-substitute; B41→NSE.
+Shell-count; Young reshuffles; generic instantaneous phase;
+52/70/100 families; random-phase fishing; Ring / swirl-as-substitute;
+B41→NSE.
 
 ---
 
 ## STATUS
 
-GATE D: ACTIVE — TURNOVER LEMMA.
-NEED: DANGEROUS-WINDOW DURATION \(\sim H^{-5/2}\) (OR HEIGHT DROP \(H^{-1/2}\)).
-BRIDGE: AMPLITUDE ONSET \(O(\rho^{-2})\) ↔ FREQUENCY \(H^{1/2}\).
-NEXT: COHERENT GATE-C PACKET → \(D(0),D'(0)\) → \(H^{5/2}\lvert I_H\rvert\).
+GATE D: ACTIVE — RESOURCE-WEIGHTED TURNOVER LEMMA.
+NEED: \(B_I\le C\mathcal R_I\) WITH \(\sum\mathcal R_I\) CONTROLLED.
+CRITICAL SCALE: \(\tau_{\mathrm{nl}}\sim H^{-5/2}\).
+NEXT: COHERENT PACKET → \(B_{I_H}\) / RESOURCE RATIO AS \(H\to\infty\).
 (17) NOT CLAIMED.
 NS NOT SOLVED.

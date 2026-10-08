@@ -1,15 +1,18 @@
 # Program gates A–D
 
 8 October 2026.
-**A–C closed. D active on block evolution. Not (17).**
+**A–C closed. D: Resource-Weighted Turnover Lemma. Not (17).**
 
 \[
-\boxed{\text{We need a dynamical mechanism worth one half derivative.}}
+\boxed{
+\text{static deficit}
+\to H^{1/2}
+\to
+\text{critical turnover }H^{-5/2}
+\to
+\text{resource for recurrence}
+}
 \]
-
-Shot: Turnover Lemma — dangerous window \(\sim H^{-5/2}\)
-(\(\tau_{\mathrm{nl}}\) match). Adversarial: coherent Gate-C packet.
-Not shell-count, Young, or generic instantaneous phase.
 
 Full note:
 [`PROGRAM-GATES-A-D-2026-10-07.md`](PROGRAM-GATES-A-D-2026-10-07.md).

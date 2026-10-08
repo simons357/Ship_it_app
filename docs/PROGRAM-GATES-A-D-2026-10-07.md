@@ -1,7 +1,7 @@
 # Program gates A–D — narrowed order
 
 8 October 2026 (A–C closed; D active).
-**All-shape load → shared energy → exact deficit → structural attack.
+**All-shape load → shared energy → exact deficit → resource-weighted turnover.
 Not (17).**
 
 Desk: [`PROGRAM-GATES-A-D.md`](PROGRAM-GATES-A-D.md).
@@ -15,17 +15,14 @@ Attack D: [`GATE-D-HALF-DERIVATIVE-ATTACK.md`](GATE-D-HALF-DERIVATIVE-ATTACK.md)
 
 **Do not add a 52nd, 70th, or 100th finite family.**
 
-Gate A killed positive all-shape assembly (\(L_{z_n}\to\infty\)).
-Gate B forced shared energy. Gate C named the deficit:
+Gate A killed positive all-shape assembly. Gate B shared energy.
+Gate C named deficit \(\tfrac12\). Gate D target:
 \[
-\boxed{\text{We need a dynamical mechanism worth one half derivative.}}
+\boxed{\textbf{Resource-Weighted Turnover Lemma}}
 \]
-Gate D shot: **Turnover Lemma** — need dangerous-window duration
-\(\sim H^{-5/2}\) (or height drop \(H^{-1/2}\)) so that
-height\(\times\)duration erases \(H^{1/2}\). Bridge onset amplitude
-\(O(\rho^{-2})\) to frequency \(H^{1/2}\). Dimensional match
-\(\tau_{\mathrm{nl}}\sim H^{-5/2}\). Next: coherent Gate-C packet
-adversarial test.
+\(B_I\le C\mathcal R_I\), \(\sum_I\mathcal R_I\le C(u_0,\nu,K,T)\).
+Critical turnover \(H^{-5/2}\) erases static \(H^{1/2}\); resource pays
+for recurrence. Prototype: small-\(\ell^1\) \(R_4\) with \(\int UW\).
 
 ---
 
@@ -33,47 +30,42 @@ adversarial test.
 
 \[
 \boxed{
-\text{all-shape load}
+\text{static deficit}
+\to H^{1/2}
 \to
-\text{shared-energy correction}
+\text{critical turnover }H^{-5/2}
 \to
-\text{exact deficit }(\tfrac12)
-\to
-\text{Turnover Lemma }(\tau_{\mathrm{nl}}\sim H^{-5/2})
+\text{resource for recurrence}
 }
 \]
 
 | Gate | Mission | Status |
 |---|---|---|
-| **A** | Positive all-shape load vs viscous gain | **CLOSED — Outcome B** |
-| **B** | Shared-energy accounting | **CLOSED** — setup for the exponent |
+| **A** | Positive all-shape load | **CLOSED — Outcome B** |
+| **B** | Shared-energy accounting | **CLOSED** |
 | **C** | Exact missing exponent | **CLOSED — \(\tfrac12\)** |
-| **D** | Turnover Lemma / \(H^{5/2}\lvert I_H\rvert\) adversarial test | **ACTIVE** |
+| **D** | Resource-Weighted Turnover Lemma | **ACTIVE** |
 
 ---
 
 ## Parked
 
-- No more 51→70→100 family extensions
-- No shell-count or Young-allocation “improvements” as the next step
-- No generic instantaneous phase cancellation as the main line
-- No random-phase fishing
-- Ring without a dynamical bridge
-- Swirl as substitute for full 3-D target
-- B41 promoted into NSE dynamics
+- No 51→70→100 family extensions
+- No shell-count / Young / generic instantaneous phase as main line
+- No random-phase fishing; Ring without bridge; swirl-as-substitute; B41→NSE
 
 ---
 
 ## Immediate work (Gate D)
 
-1. Coherent Gate-C packet → exact \(D(0),D'(0)\) → measure \(H^{5/2}\lvert I_H\rvert\).
-2. State / prove Turnover Lemma (duration \(\lesssim H^{-5/2}\) or summable \(\mathcal R_I\)).
-3. Bridge onset \(O(\rho^{-2})\) amplitude clue to frequency \(H^{-5/2}\).
+1. Coherent Gate-C packet → \(B_{I_H}\) and resource ratio as \(H\to\infty\).
+2. Identify \(\mathcal R_I\) (prototype \(\int UW\)).
+3. Bridge onset amplitude \(O(\rho^{-2})\) to frequency \(H^{-5/2}\).
 
 ---
 
 ## STATUS
 
 GATES A–C: CLOSED.
-GATE D: ACTIVE — TURNOVER LEMMA / ADVERSARIAL PACKET TEST.
+GATE D: ACTIVE — RESOURCE-WEIGHTED TURNOVER.
 NS NOT SOLVED.

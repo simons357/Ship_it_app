@@ -229,7 +229,7 @@ real Fourier field.
 | **A** | Positive all-shape load | **CLOSED — Outcome B** ([`GATE-A-KILL-CERTIFICATE.md`](GATE-A-KILL-CERTIFICATE.md)): \(L_{z_n}\to\infty\) |
 | **B** | Shared-energy accounting | **CLOSED** ([`GATE-B-SHARED-ENERGY.md`](GATE-B-SHARED-ENERGY.md)) |
 | **C** | Exact missing exponent | **CLOSED — \(\tfrac12\)** ([`GATE-C-HALF-DERIVATIVE.md`](GATE-C-HALF-DERIVATIVE.md)): need a dynamical mechanism worth one half derivative |
-| **D** | Turnover Lemma | **ACTIVE** ([`GATE-D-HALF-DERIVATIVE-ATTACK.md`](GATE-D-HALF-DERIVATIVE-ATTACK.md)): need window \(\sim H^{-5/2}\); adversarial test [`GATE-D-TURNOVER-ADVERSARIAL-TEST.md`](GATE-D-TURNOVER-ADVERSARIAL-TEST.md) — coherent Gate-C packet → \(H^{5/2}\lvert I_H\rvert\) |
+| **D** | Resource-Weighted Turnover Lemma | **ACTIVE** ([`GATE-D-HALF-DERIVATIVE-ATTACK.md`](GATE-D-HALF-DERIVATIVE-ATTACK.md)): \(B_I\le C\mathcal R_I\), \(\sum\mathcal R_I\) controlled; critical \(\tau_{\mathrm{nl}}\sim H^{-5/2}\); adversarial [`GATE-D-TURNOVER-ADVERSARIAL-TEST.md`](GATE-D-TURNOVER-ADVERSARIAL-TEST.md) — \(B_{I_H}\) / resource ratio |
 | Parked | 52/70/100 family extensions; random-phase fishing; Ring without bridge | — |
 
 Spectral target remains (15)–(17) on all-high scalene; a
@@ -266,7 +266,7 @@ ZIP RETRIEVAL: NO LONGER THE RESEARCH BLOCKER (RECOVERED IN SOURCE CONVERSATION)
 GATE A: CLOSED — OUTCOME B (\(L_{z_n}\to\infty\)).
 GATE B: CLOSED (SHARED ENERGY).
 GATE C: CLOSED — DEFICIT = HALF DERIVATIVE.
-GATE D: ACTIVE — TURNOVER LEMMA (NEED WINDOW \(\sim H^{-5/2}\); PACKET TEST NEXT).
+GATE D: ACTIVE — RESOURCE-WEIGHTED TURNOVER (\(B_I\le C\mathcal R_I\); PACKET → RESOURCE RATIO).
 RESTRICTED-FAMILY THEOREM: PROVED AT STATED SCOPE (AUDIT VERDICT).
 (17) / CLAY / SWIRL CLOSURE: OPEN.
 PHASE: NARROWED — NOT A BLANKET DEAD END.
