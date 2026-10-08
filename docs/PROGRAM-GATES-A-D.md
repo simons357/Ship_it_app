@@ -1,10 +1,11 @@
 # Program gates A–D
 
-7 October 2026.
-**Gate A closed (Outcome B). Gate B active. Not (17).**
+8 October 2026.
+**A–C closed. D active. Deficit = half derivative. Not (17).**
+
+\[
+\boxed{\text{We need a dynamical mechanism worth one half derivative.}}
+\]
 
 Full note:
 [`PROGRAM-GATES-A-D-2026-10-07.md`](PROGRAM-GATES-A-D-2026-10-07.md).
-
-Kill certificate:
-[`GATE-A-KILL-CERTIFICATE.md`](GATE-A-KILL-CERTIFICATE.md).

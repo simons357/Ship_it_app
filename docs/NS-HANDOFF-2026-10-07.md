@@ -226,10 +226,10 @@ real Fourier field.
 
 | Priority | Task | Status |
 |---|---|---|
-| **A** | Positive all-shape load | **CLOSED — Outcome B** ([`GATE-A-KILL-CERTIFICATE.md`](GATE-A-KILL-CERTIFICATE.md)): \(L_{z_n}\to\infty\) along \(z_n=2n^2\) |
-| **B** | Shared-energy accounting | **ACTIVE** ([`GATE-B-SHARED-ENERGY.md`](GATE-B-SHARED-ENERGY.md)) |
-| **C** | Exact missing exponent | Queued after B |
-| **D** | Structural attack on that deficit only | Queued — only if recovers exponent |
+| **A** | Positive all-shape load | **CLOSED — Outcome B** ([`GATE-A-KILL-CERTIFICATE.md`](GATE-A-KILL-CERTIFICATE.md)): \(L_{z_n}\to\infty\) |
+| **B** | Shared-energy accounting | **CLOSED** ([`GATE-B-SHARED-ENERGY.md`](GATE-B-SHARED-ENERGY.md)) |
+| **C** | Exact missing exponent | **CLOSED — \(\tfrac12\)** ([`GATE-C-HALF-DERIVATIVE.md`](GATE-C-HALF-DERIVATIVE.md)): need a dynamical mechanism worth one half derivative |
+| **D** | Structural attack on that deficit only | **ACTIVE** ([`GATE-D-HALF-DERIVATIVE-ATTACK.md`](GATE-D-HALF-DERIVATIVE-ATTACK.md)) — recover \(\tfrac12\) or kill |
 | Parked | 52/70/100 family extensions; random-phase fishing; Ring without bridge | — |
 
 Spectral target remains (15)–(17) on all-high scalene; a
@@ -263,8 +263,10 @@ regularity or novelty claim.
 
 ZIP RETRIEVAL: NO LONGER THE RESEARCH BLOCKER (RECOVERED IN SOURCE CONVERSATION).
 17/32 FINITE CHECKS: RERUN HERE (lists, R=216×4, ρ+3ρ′, individual mult 3).
-GATE A: CLOSED — OUTCOME B (\(L_{z_n}\to\infty\) ALONG \(z_n=2n^2\)).
-GATE B: ACTIVE (SHARED ENERGY → EXACT DEFICIT).
+GATE A: CLOSED — OUTCOME B (\(L_{z_n}\to\infty\)).
+GATE B: CLOSED (SHARED ENERGY).
+GATE C: CLOSED — DEFICIT = HALF DERIVATIVE.
+GATE D: ACTIVE — RECOVER \(\tfrac12\) OR KILL.
 RESTRICTED-FAMILY THEOREM: PROVED AT STATED SCOPE (AUDIT VERDICT).
 (17) / CLAY / SWIRL CLOSURE: OPEN.
 PHASE: NARROWED — NOT A BLANKET DEAD END.

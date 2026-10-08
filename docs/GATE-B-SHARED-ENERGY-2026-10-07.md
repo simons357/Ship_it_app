@@ -1,41 +1,47 @@
 # Gate B — shared-energy correction
 
-7 October 2026.
-**ACTIVE after Gate A Outcome B. Not (17).**
+8 October 2026.
+**CLOSED — delivered the setup for Gate C. Not (17).**
 
 Kill certificate:
 [`GATE-A-KILL-CERTIFICATE-2026-10-07.md`](GATE-A-KILL-CERTIFICATE-2026-10-07.md).
+
+Deficit:
+[`GATE-C-HALF-DERIVATIVE.md`](GATE-C-HALF-DERIVATIVE.md).
 
 Program: [`PROGRAM-GATES-A-D.md`](PROGRAM-GATES-A-D.md).
 
 ---
 
-## Mission
+## Mission (done)
 
-Present bounds repeatedly let different interactions borrow the same
-full \(\sqrt{E_0}\). Force low-frequency factors to share actual energy:
+Present bounds let different interactions borrow the same full
+\(\sqrt{E_0}\). Force low-frequency factors to share actual energy
 \[
-\sum_k\lvert u_k\rvert^2=E.
+\sum_k\lvert u_k\rvert^2=E
 \]
-Redo the aggregate under that constraint.
+and redo the aggregate.
 
 ---
 
-## Desired output
+## Output → Gate C
 
-The **exact missing exponent**. Schematic enemy:
+After that correction the residual is schematic
 \[
 \mathcal T_{\mathrm{bad}}
 \lesssim
 \nu Y\times\Lambda^{1/2}.
 \]
-Then \(\tfrac12\) is the research target. Gate D candidates each get one
-question: does this recover that exponent?
+Exact missing exponent: \(\tfrac12\).
+\[
+\boxed{\text{We need a dynamical mechanism worth one half derivative.}}
+\]
 
 ---
 
 ## STATUS
 
-GATE B: ACTIVE.
-GATE A: CLOSED (OUTCOME B).
+GATE B: CLOSED.
+GATE C: CLOSED (DEFICIT = \(\tfrac12\)).
+GATE D: ACTIVE.
 NS NOT SOLVED.
