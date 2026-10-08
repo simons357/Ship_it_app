@@ -1,22 +1,16 @@
-# Gate D — quartic forcing / normalized block evolution
+# Gate D — height × duration on normalized blocks
 
 8 October 2026.
-**ACTIVE main line. Not (17).**
+**ACTIVE shot. Not (17).**
 
 Parent deficit:
 [`GATE-C-HALF-DERIVATIVE-2026-10-08.md`](GATE-C-HALF-DERIVATIVE-2026-10-08.md).
-
-Related laboratory (separate scope, not the main line):
-older fixed-block \(\mathcal Q\)-identity / integrable majorant for
-\((5,8,25)\) — proved at fixed-block scope only; see cover note /
-32-shape extension. That is a precedent for block evolution, not a
-substitute for the all-shape \(H^{1/2}\) recovery.
 
 Program: [`PROGRAM-GATES-A-D.md`](PROGRAM-GATES-A-D.md).
 
 ---
 
-## Sole target
+## Deficit (from Gate C)
 
 \[
 \boxed{\text{We need a dynamical mechanism worth one half derivative.}}
@@ -27,70 +21,110 @@ Schematic residual after shared energy:
 \mathcal T_{\mathrm{bad}}
 \lesssim
 \nu Y\times\Lambda^{1/2}
-\quad\text{(equivalently: an \(H^{1/2}\) deficit).}
+\quad\text{(an \(H^{1/2}\) deficit).}
 \]
 
 ---
 
-## Where we put the work
+## The shot
 
-**Not** another shell-count improvement.
-**Not** another Young allocation.
-**Not** generic instantaneous phase cancellation.
+Control the missing budget by summing normalized block costs:
+\[
+\boxed{
+\sum_I B_I
+\le
+C(u_0,\nu,K,T)
+}
+\]
+uniformly in the Galerkin cutoff \(N\).
 
-**Yes:** the **quartic forcing / normalized block-evolution identity**,
-and whether any of the following recovers the exact \(H^{1/2}\) deficit:
-
-| Lever | Question |
-|---|---|
-| **Time integration** | Does integrating the normalized block identity in time buy the half derivative? |
-| **Damping** | Does viscous / block damping close the \(H^{1/2}\) gap on the forced block? |
-| **Structural cancellation** | Does a structural (not generic-phase) cancellation inside the quartic forcing recover \(\tfrac12\)? |
-
-One question for the identity as a whole:
-
-> Does the quartic forcing / normalized block-evolution route recover the missing half derivative?
-
-If no — kill that lever quickly and record why.
-If yes — that becomes the main line.
+That bound would directly control
+\[
+\mathcal S_{K,N}(T)
+=
+\int_0^T
+\frac{\bigl[\mathcal T_{\mathrm{sc}}(h_{K,N})-\nu Y_N/4\bigr]_+}{X_N}\,dt
+\]
+and close the path to the high-pass criterion at the level of (17)’s
+budget object — still **not** a Clay claim, still scoped.
 
 ---
 
-## Explicitly not the next target
+## Promising clue (onset law)
 
-| Non-target | Why parked here |
+The onset law already shows a dangerous-looking **positive crossing**
+can carry only
+\[
+O(\rho^{-2})
+\]
+normalized cost on its **first shrinking window**.
+
+So:
+
+- amplitude growth ≠ budget cost;
+- dynamics is compressing the time window.
+
+That is the seed of a mechanism, not yet a theorem.
+
+---
+
+## Mechanism to prove or kill
+
+Ask whether the onset clue upgrades to a **general** law:
+\[
+\boxed{
+\text{height}\times\text{duration}
+}
+\]
+with enough decay (in the normalized block variables) to recover the
+missing half derivative.
+
+| Object | Role |
 |---|---|
-| Shell-count / multiplicity bookkeeping upgrades | Gate A already killed positive assembly; counting more shells does not buy \(H^{1/2}\) |
-| Further Young / equal-allocation reshuffles | Same budget face; does not address the dynamical deficit |
-| Generic instantaneous phase cancellation | Already narrowed: ratio-1 ≠ bound saturation; not a dynamical half-derivative mechanism |
+| **Height** | Size of the positive / dangerous crossing in the normalized block |
+| **Duration** | Length of the shrinking time window supporting that crossing |
+| **Product** | Normalized block cost \(B_I\) (onset clue: first window \(O(\rho^{-2})\)) |
+| **Sum** | \(\sum_I B_I\) — must stay \(\le C(u_0,\nu,K,T)\) uniformly in \(N\) |
+
+This is the dynamical content of the quartic forcing / normalized
+block-evolution identity: time integration sees height×duration;
+damping and structural cancellation are the levers that may force
+the product to decay hard enough for \(H^{1/2}\).
+
+---
+
+## Not the next target
+
+| Non-target | Why |
+|---|---|
+| Shell-count / multiplicity upgrades | Does not buy height×duration decay |
+| Young / equal-allocation reshuffles | Instantaneous budget face, not window compression |
+| Generic instantaneous phase cancellation | Not a dynamical duration mechanism |
 | Finite family extensions (52/70/100) | Parked at Gate A |
 | Random-phase fishing | Parked |
-| Ring without dynamical bridge | Parked |
-| Swirl as full 3-D substitute | Separate branch |
-| B41 promoted into NSE dynamics | Finite-network only unless it speaks to this identity |
+| Ring / swirl-as-substitute / B41→NSE | Parked as before |
 
-Signed assembly / C10 / centered transfer stay available **only** if they
-are used as structural input to the block-evolution identity — not as
-standalone shell-pot improvements.
+Older fixed-block \(\mathcal Q\)-identity for \((5,8,25)\): laboratory
+precedent only — do not silently promote to all-shape (17).
 
 ---
 
 ## Immediate work
 
-1. State the normalized block-evolution identity and the quartic forcing
-   term in the form needed for the \(H^{1/2}\) comparison.
-2. Test the three levers (time integration, damping, structural
-   cancellation) against the exact deficit \(\tfrac12\).
-3. Keep the older fixed-block \(\mathcal Q\)-identity as scope-separated
-   laboratory evidence — do not silently promote it to all-shape (17).
+1. Define \(B_I\) precisely from the normalized block-evolution /
+   quartic forcing identity (onset-law normalization).
+2. Prove or refute: first-window cost \(O(\rho^{-2})\) extends to a
+   general height×duration bound with summable / uniform control.
+3. Check whether that decay is enough to erase the \(H^{1/2}\) deficit
+   in \(\mathcal S_{K,N}(T)\).
 
 ---
 
 ## STATUS
 
-GATE D: ACTIVE — QUARTIC FORCING / NORMALIZED BLOCK EVOLUTION ONLY.
-TARGET: RECOVER \(H^{1/2}\) VIA TIME INTEGRATION, DAMPING, OR STRUCTURAL CANCELLATION.
+GATE D: ACTIVE — THE SHOT IS \(\sum B_I\le C\) VIA HEIGHT×DURATION.
+CLUE: ONSET LAW, FIRST WINDOW \(O(\rho^{-2})\); AMPLITUDE ≠ BUDGET COST.
+TARGET: RECOVER \(H^{1/2}\) IN \(\mathcal S_{K,N}(T)\).
 SHELL-COUNT / YOUNG / GENERIC PHASE: NOT THE NEXT TARGET.
-GATES A–C: CLOSED.
 (17) NOT CLAIMED.
 NS NOT SOLVED.

@@ -51,14 +51,14 @@ Stop saying “something is missing.” The enemy is named.
 
 ## Gate D contract
 
-Main line (not shell-count, Young, or generic instantaneous phase):
+Shot (not shell-count, Young, or generic instantaneous phase):
 
-> Does the **quartic forcing / normalized block-evolution identity**
-> recover the missing half derivative — via time integration, damping,
-> or structural cancellation?
+> Does **height×duration** on normalized block costs \(B_I\) give
+> \(\sum_I B_I\le C(u_0,\nu,K,T)\) uniformly in \(N\), with enough decay
+> to recover \(H^{1/2}\) in \(\mathcal S_{K,N}(T)\)?
+> (Clue: onset law, first shrinking window \(O(\rho^{-2})\).)
 
-If no — kill that lever quickly.
-If yes — that becomes the main line.
+If no — kill quickly. If yes — that is the main line.
 
 Out of scope as substitutes: shell-count upgrades; Young reshuffles;
 generic instantaneous phase; Ring without dynamical bridge; swirl as

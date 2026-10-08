@@ -20,9 +20,10 @@ Gate B forced shared energy. Gate C named the deficit:
 \[
 \boxed{\text{We need a dynamical mechanism worth one half derivative.}}
 \]
-Gate D attacks **only** that half — via the quartic forcing /
-normalized block-evolution identity (time integration, damping, or
-structural cancellation). Not shell-count, Young, or generic phase.
+Gate D shot: \(\sum_I B_I\le C(u_0,\nu,K,T)\) uniformly in \(N\),
+via **height×duration** decay on normalized blocks (onset clue:
+first window \(O(\rho^{-2})\)). That would control \(\mathcal S_{K,N}(T)\)
+and recover \(H^{1/2}\). Not shell-count, Young, or generic phase.
 
 ---
 
@@ -36,7 +37,7 @@ structural cancellation). Not shell-count, Young, or generic phase.
 \to
 \text{exact deficit }(\tfrac12)
 \to
-\text{block-evolution }H^{1/2}\text{ attack}
+\text{height}\times\text{duration on }B_I
 }
 \]
 
@@ -45,7 +46,7 @@ structural cancellation). Not shell-count, Young, or generic phase.
 | **A** | Positive all-shape load vs viscous gain | **CLOSED — Outcome B** |
 | **B** | Shared-energy accounting | **CLOSED** — setup for the exponent |
 | **C** | Exact missing exponent | **CLOSED — \(\tfrac12\)** |
-| **D** | Quartic forcing / normalized block evolution → recover \(H^{1/2}\) | **ACTIVE** |
+| **D** | \(\sum B_I\le C\) via height×duration → \(\mathcal S_{K,N}\) / \(H^{1/2}\) | **ACTIVE** |
 
 ---
 
@@ -63,14 +64,14 @@ structural cancellation). Not shell-count, Young, or generic phase.
 
 ## Immediate work (Gate D)
 
-1. Quartic forcing / normalized block-evolution identity.
-2. Test: time integration, damping, structural cancellation.
-3. Kill quickly if none recovers \(\tfrac12\); promote if one does.
+1. Define \(B_I\) from the normalized block / quartic forcing identity.
+2. Upgrade onset \(O(\rho^{-2})\) first-window clue → general height×duration.
+3. Sum \(\sum_I B_I\) uniformly in \(N\); check \(H^{1/2}\) recovery in \(\mathcal S_{K,N}\).
 
 ---
 
 ## STATUS
 
 GATES A–C: CLOSED.
-GATE D: ACTIVE — BLOCK EVOLUTION / \(H^{1/2}\) ONLY.
+GATE D: ACTIVE — \(\sum B_I\) / HEIGHT×DURATION SHOT.
 NS NOT SOLVED.

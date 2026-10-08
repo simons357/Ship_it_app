@@ -7,8 +7,8 @@
 \boxed{\text{We need a dynamical mechanism worth one half derivative.}}
 \]
 
-Main line: quartic forcing / normalized block-evolution identity
-(time integration, damping, or structural cancellation).
+Shot: \(\sum_I B_I\le C\) via height×duration (onset clue \(O(\rho^{-2})\)).
+Controls \(\mathcal S_{K,N}(T)\); targets \(H^{1/2}\).
 Not shell-count, Young, or generic instantaneous phase.
 
 Full note:

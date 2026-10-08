@@ -1,14 +1,14 @@
-# Gate D — half-derivative attack
+# Gate D — height × duration
 
 8 October 2026.
-**Active main line: quartic forcing / normalized block evolution.**
+**Active shot.**
 
 \[
-\boxed{\text{We need a dynamical mechanism worth one half derivative.}}
+\boxed{\sum_I B_I\le C(u_0,\nu,K,T)}
+\quad\text{(uniformly in \(N\))}
 \]
-
-Not shell-count. Not Young. Not generic instantaneous phase.
-Levers: time integration, damping, structural cancellation.
+controls \(\mathcal S_{K,N}(T)\). Mechanism: height×duration with enough
+decay for \(H^{1/2}\). Clue: onset first window \(O(\rho^{-2})\).
 
 Full note:
 [`GATE-D-HALF-DERIVATIVE-ATTACK-2026-10-08.md`](GATE-D-HALF-DERIVATIVE-ATTACK-2026-10-08.md).

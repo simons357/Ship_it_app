@@ -229,7 +229,7 @@ real Fourier field.
 | **A** | Positive all-shape load | **CLOSED — Outcome B** ([`GATE-A-KILL-CERTIFICATE.md`](GATE-A-KILL-CERTIFICATE.md)): \(L_{z_n}\to\infty\) |
 | **B** | Shared-energy accounting | **CLOSED** ([`GATE-B-SHARED-ENERGY.md`](GATE-B-SHARED-ENERGY.md)) |
 | **C** | Exact missing exponent | **CLOSED — \(\tfrac12\)** ([`GATE-C-HALF-DERIVATIVE.md`](GATE-C-HALF-DERIVATIVE.md)): need a dynamical mechanism worth one half derivative |
-| **D** | Quartic forcing / normalized block evolution | **ACTIVE** ([`GATE-D-HALF-DERIVATIVE-ATTACK.md`](GATE-D-HALF-DERIVATIVE-ATTACK.md)) — recover \(H^{1/2}\) via time integration, damping, or structural cancellation; not shell-count / Young / generic phase |
+| **D** | Height×duration on \(\sum B_I\) | **ACTIVE** ([`GATE-D-HALF-DERIVATIVE-ATTACK.md`](GATE-D-HALF-DERIVATIVE-ATTACK.md)) — \(\sum_I B_I\le C\) unif. in \(N\) ⇒ \(\mathcal S_{K,N}\); onset clue first window \(O(\rho^{-2})\); recover \(H^{1/2}\) |
 | Parked | 52/70/100 family extensions; random-phase fishing; Ring without bridge | — |
 
 Spectral target remains (15)–(17) on all-high scalene; a
@@ -266,7 +266,7 @@ ZIP RETRIEVAL: NO LONGER THE RESEARCH BLOCKER (RECOVERED IN SOURCE CONVERSATION)
 GATE A: CLOSED — OUTCOME B (\(L_{z_n}\to\infty\)).
 GATE B: CLOSED (SHARED ENERGY).
 GATE C: CLOSED — DEFICIT = HALF DERIVATIVE.
-GATE D: ACTIVE — BLOCK EVOLUTION / \(H^{1/2}\) (NOT SHELL-COUNT / YOUNG / GENERIC PHASE).
+GATE D: ACTIVE — \(\sum B_I\) VIA HEIGHT×DURATION (ONSET \(O(\rho^{-2})\) CLUE).
 RESTRICTED-FAMILY THEOREM: PROVED AT STATED SCOPE (AUDIT VERDICT).
 (17) / CLAY / SWIRL CLOSURE: OPEN.
 PHASE: NARROWED — NOT A BLANKET DEAD END.
