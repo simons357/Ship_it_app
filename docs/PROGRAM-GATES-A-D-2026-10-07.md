@@ -58,14 +58,14 @@ for recurrence. Prototype: small-\(\ell^1\) \(R_4\) with \(\int UW\).
 
 ## Immediate work (Gate D)
 
-1. Coherent Gate-C packet → \(B_{I_H}\) and resource ratio as \(H\to\infty\).
-2. Identify \(\mathcal R_I\) (prototype \(\int UW\)).
-3. Bridge onset amplitude \(O(\rho^{-2})\) to frequency \(H^{-5/2}\).
+1. **Retrieve sources** — see [`GATE-D-EXECUTION-BLOCKER.md`](GATE-D-EXECUTION-BLOCKER.md).
+2. Coherent Gate-C packet → \(B_{I_H}\) and resource ratio as \(H\to\infty\).
+3. Identify \(\mathcal R_I\) (prototype \(\int UW\)) from Orbit-R4 small-data source.
 
 ---
 
 ## STATUS
 
 GATES A–C: CLOSED.
-GATE D: ACTIVE — RESOURCE-WEIGHTED TURNOVER.
+GATE D: ACTIVE — LEMMA RECORDED; EXECUTION BLOCKED ON SOURCES.
 NS NOT SOLVED.

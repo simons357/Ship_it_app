@@ -72,5 +72,7 @@ controlling \(\lvert R_4\rvert\lesssim UWX\).
 
 ## STATUS
 
-PROTOCOL READY — RESOURCE-WEIGHTED; EXECUTION PENDING.
+PROTOCOL READY — RESOURCE-WEIGHTED.
+EXECUTION: **BLOCKED** — see [`GATE-D-EXECUTION-BLOCKER.md`](GATE-D-EXECUTION-BLOCKER.md)
+(missing Orbit-R4 small-data, episode-balance note, coherent Gate-C packet).
 NS NOT SOLVED.
