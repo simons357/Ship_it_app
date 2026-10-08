@@ -58,14 +58,14 @@ for recurrence. Prototype: small-\(\ell^1\) \(R_4\) with \(\int UW\).
 
 ## Immediate work (Gate D)
 
-1. **Retrieve sources** — see [`GATE-D-EXECUTION-BLOCKER.md`](GATE-D-EXECUTION-BLOCKER.md).
-2. Coherent Gate-C packet → \(B_{I_H}\) and resource ratio as \(H\to\infty\).
-3. Identify \(\mathcal R_I\) (prototype \(\int UW\)) from Orbit-R4 small-data source.
+1. **Ingest six-box Signed-Gate bytes** — see [`GATE-D-EXECUTION-BLOCKER.md`](GATE-D-EXECUTION-BLOCKER.md).
+2. Execute [`GATE-D-ADVERSARIAL-RUN-BRIEF.md`](GATE-D-ADVERSARIAL-RUN-BRIEF.md): \(E=1\), \(H=63n\), full Galerkin; score \(B_H\) vs resource. No Gaussian substitute.
+3. Plain energy dissipation ruled out as \(\mathcal R\) at critical turnover (\(\int_{I_H}X\,dt\sim H^{-1/2}\)).
 
 ---
 
 ## STATUS
 
 GATES A–C: CLOSED.
-GATE D: ACTIVE — LEMMA RECORDED; EXECUTION BLOCKED ON SOURCES.
+GATE D: ACTIVE — LEMMA RECORDED; BRIEF READY; BLOCKED ON PACKET BYTES.
 NS NOT SOLVED.

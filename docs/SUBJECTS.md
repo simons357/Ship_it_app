@@ -3,7 +3,7 @@
 One page to see **what this repo is about** and **where each thread lives**.
 
 Update this file when a subject changes status (merge, park, abandon, or rename).  
-Last reviewed: **2026-10-08** (Gate D: Resource-Weighted Turnover Lemma).
+Last reviewed: **2026-10-08** (Gate D: adversarial brief ready; packet bytes pending).
 
 ---
 
@@ -39,7 +39,7 @@ Last reviewed: **2026-10-08** (Gate D: Resource-Weighted Turnover Lemma).
 | **Related gate stack** | Gates / SAG / lemmas / Fourier-triangle / MIN-CYCLE / channel algebra — dozens of open PRs (see GitHub “Open”) |
 | **32-shape shared-budget extension** | 17 + 15 nonzero from \((9,25)\); mult 4 zero-pruned; [`SHARED-BUDGET-32-SHAPE-EXTENSION.md`](SHARED-BUDGET-32-SHAPE-EXTENSION.md). ZIP no longer the blocker. Not (17). |
 | **NS handoff (7 Oct 2026)** | Cross-device update: [`NS-HANDOFF.md`](NS-HANDOFF.md). Finite verify: `scripts/ns_attacks/verify_families.py`. |
-| **Gates A–D** | A–C closed. **D:** Resource-Weighted Turnover Lemma — \(B_I\le C\mathcal R_I\); \(\tau_{\mathrm{nl}}\sim H^{-5/2}\); coherent packet → \(B_{I_H}\)/resource. [`GATE-D-HALF-DERIVATIVE-ATTACK.md`](GATE-D-HALF-DERIVATIVE-ATTACK.md). |
+| **Gates A–D** | A–C closed. **D:** Resource-Weighted Turnover Lemma recorded; adversarial brief ready (six-box Signed-Gate, \(E=1\), \(H=63n\)). Operational blocker: packet bytes. [`GATE-D-ADVERSARIAL-RUN-BRIEF.md`](GATE-D-ADVERSARIAL-RUN-BRIEF.md). |
 | **Phase cancellation** | Narrowed: ratio 1 = common signs, not bound saturation; not all signed routes dead — [`PHASE-CANCELLATION-EXPLORATION.md`](PHASE-CANCELLATION-EXPLORATION.md). |
 
 ### 3. Phi-renorm / swirl papers

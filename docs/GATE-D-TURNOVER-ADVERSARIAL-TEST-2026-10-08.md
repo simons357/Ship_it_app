@@ -73,6 +73,8 @@ controlling \(\lvert R_4\rvert\lesssim UWX\).
 ## STATUS
 
 PROTOCOL READY — RESOURCE-WEIGHTED.
-EXECUTION: **BLOCKED** — see [`GATE-D-EXECUTION-BLOCKER.md`](GATE-D-EXECUTION-BLOCKER.md)
-(missing Orbit-R4 small-data, episode-balance note, coherent Gate-C packet).
+Executable brief: [`GATE-D-ADVERSARIAL-RUN-BRIEF.md`](GATE-D-ADVERSARIAL-RUN-BRIEF.md).
+Orbit-R4 + episode-balance excerpts: filed under `docs/sources/`.
+EXECUTION: **BLOCKED** on six-box Signed-Gate packet bytes — see
+[`GATE-D-EXECUTION-BLOCKER.md`](GATE-D-EXECUTION-BLOCKER.md).
 NS NOT SOLVED.
