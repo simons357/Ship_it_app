@@ -3,7 +3,7 @@
 One page to see **what this repo is about** and **where each thread lives**.
 
 Update this file when a subject changes status (merge, park, abandon, or rename).  
-Last reviewed: **2026-10-09** (uploaded Gate B notes filed; nonnegative \(Q\) exponent stays in \([1/2,2]\); signed static \(R(H)\) stays complete).
+Last reviewed: **2026-10-09** (dilation sentence restricted to the original blocks; 7 October handoff row stays under review).
 
 ---
 
@@ -38,7 +38,7 @@ Last reviewed: **2026-10-09** (uploaded Gate B notes filed; nonnegative \(Q\) ex
 | **Start here** | Newest open: [#145](https://github.com/simons357/Ship_it_app/pull/145) audit package · [#142](https://github.com/simons357/Ship_it_app/pull/142) Sprint 01 |
 | **Related gate stack** | Gates / SAG / lemmas / Fourier-triangle / MIN-CYCLE / channel algebra — dozens of open PRs (see GitHub “Open”) |
 | **32-shape shared-budget extension** | 17 + 15 nonzero from \((9,25)\); mult 4 zero-pruned; [`SHARED-BUDGET-32-SHAPE-EXTENSION.md`](SHARED-BUDGET-32-SHAPE-EXTENSION.md). ZIP no longer the blocker. Not (17). |
-| **NS handoff (7 Oct 2026)** | Cross-device update: [`NS-HANDOFF.md`](NS-HANDOFF.md). Finite verify: `scripts/ns_attacks/verify_families.py`. |
+| **NS handoff (7 Oct 2026)** | **Stays under review.** Cross-device update: [`NS-HANDOFF.md`](NS-HANDOFF.md). Finite verify: `scripts/ns_attacks/verify_families.py`. The accepted dilation correction is in that handoff and does not close this row. |
 | **Gates A–D** | **C:** signed static test complete; sharp uniform exponent \(H^{1/2}\) for \(R(H)\) (where \(\Lambda\) appears, \(\Lambda\sim H\)). Does not settle \(Q_x\) or a time budget on one solution. Dynamical target \(\mathcal S_{K,N}\) has denominator \(X_N\), no extra \(Y_N\). **A:** unresolved, not a premise. **D:** open. Measurement module is a tested reference; full six-box episode unrun. A separate packet shows the beginning of a third transfer (93.68% cross-feed from \(\lvert k\rvert\le 8\) into \(8<\lvert k\rvert\le 16\)). Independent daughter drive is not demonstrated at this snapshot. Viscosity offsets the nonlinear input; tail growth \(0.00048543\) is the positive residual. 12.56% of the threshold; not a rerun — [`GATE-D-THIRD-TRANSFER-PACKET.md`](GATE-D-THIRD-TRANSFER-PACKET.md). Next test: six-box signed-scalene episode. |
 | **Phase cancellation** | Narrowed: ratio 1 = common signs, not bound saturation; not all signed routes dead — [`PHASE-CANCELLATION-EXPLORATION.md`](PHASE-CANCELLATION-EXPLORATION.md). |
 

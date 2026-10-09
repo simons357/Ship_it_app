@@ -4,5 +4,9 @@
 
 Full note: [`NS-HANDOFF-2026-10-07.md`](NS-HANDOFF-2026-10-07.md).
 
+The 7 October row stays under review. The accepted 9 October correction
+restricts the dilation sentence only: the exact \(d^{-1}\) law is for an
+assembly of the dilated original blocks, not for the full lattice-admissible \(Q\).
+
 32-family ZIP recovered (source conversation). Finite checks
 rerun here: `scripts/ns_attacks/verify_families.py`.

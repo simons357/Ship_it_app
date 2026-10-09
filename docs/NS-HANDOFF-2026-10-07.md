@@ -259,6 +259,37 @@ regularity or novelty claim.
 
 ---
 
+## 9. Accepted correction — dilation sentence only (9 October 2026)
+
+The correction is accepted and belongs with this handoff. The 7 October
+row stays under review.
+
+The all-radii lemma and the growing-box lower bound do not use the
+dilation paragraph, and those arguments remain intact. The overstatement
+was only the claim that integer dilation of a fixed configuration gives
+an exact \(d^{-1}\) law for the full assembly quotient.
+
+The coefficient of a preserved block scales as \(d^3\). The exact
+\(d^{-1}\) quotient law is restricted to an assembly that contains only
+the dilated original blocks and their output labels. It is not asserted
+for the full lattice-admissible \(Q\).
+
+The full \(Q\) can acquire additional output shells. At \(H=1\),
+\(f_2=f_5=1/\sqrt{2}\) and every other entry is zero, so only \(Q_1\) is
+nonzero. After dilation by \(d=3\) the occupied shells are \(18\) and
+\(45\), with \(H=3\). Output \(9\) is the scaled original block, and
+\(Q_9(3)=27\,Q_1\). Output \(11\) is also admissible:
+\((1,3,1)+(4,1,1)+(-5,-4,-2)=0\), with squared lengths \(11,18,45\) and
+Gram determinant \(134>0\). Thus \(Q_{11}(3)>0\), so
+\(\lVert Q^{(3)}\rVert_2>27\lVert Q\rVert_2\).
+
+No other claim in the four attached files is changed. DA still has the
+lemma, the assembly note, the signed-transfer check, and the
+initial-derivative audit to rule on. The restricted sentence is in
+[`sources/Gate-B-All-Radii-Multiplicity-Lemma-2026-10-07.txt`](sources/Gate-B-All-Radii-Multiplicity-Lemma-2026-10-07.txt).
+
+---
+
 ## STATUS
 
 ZIP RETRIEVAL: NO LONGER THE RESEARCH BLOCKER (RECOVERED IN SOURCE CONVERSATION).
@@ -271,6 +302,8 @@ MEASUREMENT MODULE: TESTED REFERENCE. FULL SIX-BOX EPISODE: UNRUN.
 THIRD-TRANSFER PACKET: BEGINNING ONLY; TAIL GROWTH \(0.00048543\); NOT A RERUN.
 A FINITE EPISODE CANNOT ESTABLISH CUTOFF-UNIFORM CONTROL OR SUMMABLE RECURRENCE.
 (17) NOT ESTABLISHED.
+DILATION SENTENCE: RESTRICTED. EXACT \(d^{-1}\) ONLY FOR THE DILATED ORIGINAL BLOCKS, NOT THE FULL LATTICE-ADMISSIBLE \(Q\).
+7 OCTOBER ROW: STAYS UNDER REVIEW. DA STILL RULES ON THE FOUR ATTACHED FILES.
 RESTRICTED-FAMILY THEOREM: PROVED AT STATED SCOPE (AUDIT VERDICT).
 (17) / CLAY / SWIRL CLOSURE: OPEN.
 PHASE: NARROWED — NOT A BLANKET DEAD END.
