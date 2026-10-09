@@ -1,0 +1,9 @@
+{
+  "note": "Single rerun on this machine. Not a production projection. Does not reproduce the timings printed in FAST_EVALUATOR_REVIEW.md.",
+  "rows": [
+    {"n": 12, "ref_seconds": 0.01501931001257617, "fft_seconds": 0.012447802000679076, "speedup": 1.20658329974696, "abs_error": 8.326672684688674e-16},
+    {"n": 18, "ref_seconds": 0.011141622002469376, "fft_seconds": 0.044393019008566625, "speedup": 0.2509768934687535, "abs_error": 2.7755575615628914e-17},
+    {"n": 24, "ref_seconds": 0.012407889007590711, "fft_seconds": 0.07337512300000526, "speedup": 0.16910212208557146, "abs_error": 1.1709383462843448e-17}
+  ],
+  "maxrss_kib": 51212
+}

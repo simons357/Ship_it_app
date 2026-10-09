@@ -1,0 +1,14 @@
+test_random_fields (test_fast_signed.TestFastSigned.test_random_fields) ... ok
+test_witness (test_fast_signed.TestFastSigned.test_witness) ... ok
+test_connected_X_Y_D_and_mask (test_connected.ConnectedTests.test_connected_X_Y_D_and_mask) ... ok
+test_reject_unresolved_N (test_connected.ConnectedTests.test_reject_unresolved_N) ... ok
+test_witness_physical_scaling_and_independent_convolution (test_connected.ConnectedTests.test_witness_physical_scaling_and_independent_convolution) ... ok
+test_mask_is_spherical_and_highpass_distinct (test_mask_repair.TestMaskRepair.test_mask_is_spherical_and_highpass_distinct) ... ok
+test_resolution_rejected (test_mask_repair.TestMaskRepair.test_resolution_rejected) ... ok
+test_step_preserves_one_mask (test_mask_repair.TestMaskRepair.test_step_preserves_one_mask) ... ok
+test_threshold_rejected (test_mask_repair.TestMaskRepair.test_threshold_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.300s
+
+OK
