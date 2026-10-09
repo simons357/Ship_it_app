@@ -12,7 +12,7 @@ rows are **provisional — not Gate D evidence**.
 
 | Check | At `18a267f3` | At HEAD (`3f82c8fa`) |
 |---|---|---|
-| \(B_I=\int d\,dt\) only (no extra \((b-a)d(a)\)) | Fail — added boundary on top of �int d\,dt\) only (no extra \((b-a)d(a)\)) | Fail — added boundary on top of ∫d | **Pass** — `B_IH = B_direct` |
+| \(B_I=\int d\,dt\) only (no extra \((b-a)d(a)\)) | Fail — added boundary on top of ∫d | **Pass** — `B_IH = B_direct` |
 | Nonlinear product dealiased at used cutoff | Fail — \(N=512\), \(k_{\max}=252\) | **Pass** — default \(N=\texttt{next_dealias_n}(k_{\max})\ge 3k_{\max}\) (768) |
 | Fixed \(K\), full \(X,Y\); score \(B_I/\mathcal R_I\) | Fail — \(H\)-filter \(X_H,Y_H\) | **Pass** — `K2_fixed=1`, `D=T_{\mathrm{sc}}-\nu Y/4`, `d=D/X` |
 
