@@ -1,7 +1,13 @@
 # Gate A — legitimate kill certificate
 
 7 October 2026.
-**Outcome B: analytic sequence \(L_{z_n}\to\infty\). Not (17).**
+**\(L_{z_n}\) load note only. Not (17).**
+
+Scope warning (9 October 2026).
+[`sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt`](sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt)
+explicitly leaves Gate A diagnostic and unresolved. This \(L_{z_n}\)
+argument is not that source’s Gate A, and it is not a premise of Gate C.
+Do not carry “Gate A killed” into the band-exponent chain.
 
 Parent: [`GATE-A-POSITIVE-ASSEMBLY-2026-10-07.md`](GATE-A-POSITIVE-ASSEMBLY-2026-10-07.md).
 Probe: `scripts/ns_attacks/analytic_load_lower_bound.py`.
@@ -152,15 +158,15 @@ L_{z_n}\to\infty.
 
 ## Program consequence
 
-**Outcome B.** Stop extending finite families by brute force.
-Proceed to Gate B: shared-energy correction, then extract the exact
-missing exponent.
+The subnet forces \(L_{z_n}\to\infty\) for this positive load. That is not
+the sharp-band source’s Gate A, and it does not close Gate C.
 
 ---
 
 ## STATUS
 
-GATE A: **CLOSED — OUTCOME B (ANALYTIC KILL).**
-SEQUENCE: \(z_n=2n^2\), \(L_{z_n}\to\infty\).
+\(L_{z_n}\to\infty\) FOR THIS LOAD (\(z_n=2n^2\)).
+GATE A, AS NAMED BY THE SHARP-BAND SOURCE: DIAGNOSTIC AND UNRESOLVED.
+NOT A PREMISE OF GATE C.
 (17) NOT CLAIMED.
 NS NOT SOLVED.

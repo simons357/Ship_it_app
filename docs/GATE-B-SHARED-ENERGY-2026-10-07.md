@@ -1,10 +1,12 @@
 # Gate B — shared-energy correction
 
 8 October 2026.
-**CLOSED — delivered the setup for Gate C. Not (17).**
+**Shared-energy accounting note. Not the sharp-band exponent. Not (17).**
 
-Kill certificate:
-[`GATE-A-KILL-CERTIFICATE-2026-10-07.md`](GATE-A-KILL-CERTIFICATE-2026-10-07.md).
+The exponent is the sharp-band ratio in
+[`sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt`](sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt).
+That source leaves Gate A diagnostic and unresolved. This note does not
+kill Gate A.
 
 Deficit:
 [`GATE-C-HALF-DERIVATIVE.md`](GATE-C-HALF-DERIVATIVE.md).
@@ -24,27 +26,17 @@ and redo the aggregate.
 
 ---
 
-## Output → Gate C
+## Output
 
-After that correction the residual of this assembly is schematic
-\[
-\mathcal T_{\mathrm{bad}}
-\lesssim
-\nu Y\times\Lambda^{1/2}.
-\]
-Here \(\Lambda\) means frequency, \(\Lambda\sim H\), not squared frequency.
-Then \(\Lambda^{1/2}\sim H^{1/2}\) is one half derivative. Exact missing
-exponent of this assembly: \(\tfrac12\). Scope and the rejected
-\(\Lambda=H^2\) reading are in the Gate C note.
-\[
-\boxed{\text{We need a dynamical mechanism worth one half derivative.}}
-\]
+The band exponent is not this accounting rewrite. Gate C records the
+source ratio \(R(H)\), with deficit \(H^{1/2}\) for wavenumber \(H\).
+If squared frequency is \(L=H^2\), the same factor is \(L^{1/4}\).
 
 ---
 
 ## STATUS
 
-GATE B: CLOSED.
-GATE C: CLOSED FOR THE AUDITED ASSEMBLY (DEFICIT = \(\tfrac12\), \(\Lambda\sim H\)).
-GATE D: ACTIVE.
+GATE C: CLOSED FOR THE SHARP INSTANTANEOUS SIGNED BAND (\(H^{1/2}\)).
+GATE A: UNRESOLVED IN THAT SOURCE.
+GATE D: TURNOVER AND RECURRENCE OPEN.
 NS NOT SOLVED.

@@ -1,17 +1,18 @@
 # Gate C — exact missing exponent
 
-8 October 2026. Wording tightened 9 October 2026.
-**CLOSED for the audited assembly. Deficit \(\tfrac12\) with \(\Lambda\sim H\) (frequency). Not every estimate. Not (17).**
+8 October 2026. Notation fixed 9 October 2026.
+**CLOSED for the sharp instantaneous signed band estimate. Deficit \(H^{1/2}\), \(H\) = wavenumber. Not (17).**
 
 \[
-\boxed{\text{We need a dynamical mechanism worth one half derivative.}}
+\boxed{H^{1/2}}
 \]
 
-\(\Lambda\) in \(\mathcal T_{\mathrm{bad}}\lesssim\nu Y\times\Lambda^{1/2}\) is frequency, the same scale as \(H\). It is not squared frequency. Then \(\Lambda^{1/2}\sim H^{1/2}\).
+If squared frequency is \(L=H^2\), the same factor is \(L^{1/4}\).
+Gate D turnover and recurrence remain open.
+The sharp-band source leaves Gate A diagnostic and unresolved.
 
 Full note:
 [`GATE-C-HALF-DERIVATIVE-2026-10-08.md`](GATE-C-HALF-DERIVATIVE-2026-10-08.md).
 
-Gate D (active, not stamped; dynamical evidence pending):
-[`GATE-D-HALF-DERIVATIVE-ATTACK.md`](GATE-D-HALF-DERIVATIVE-ATTACK.md),
-[`GATE-D-REVIEW.md`](GATE-D-REVIEW.md).
+Source:
+[`sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt`](sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt).

@@ -1,7 +1,10 @@
 # Gate A — positive shared-budget all-shape load
 
 7 October 2026.
-**CLOSED — Outcome B (analytic kill). Not (17).**
+**\(L_{z_n}\) load note only. Not the sharp-band Gate A. Not (17).**
+
+The sharp-band source leaves Gate A diagnostic and unresolved. Do not
+carry “Gate A killed” into Gate C.
 
 Kill certificate:
 [`GATE-A-KILL-CERTIFICATE-2026-10-07.md`](GATE-A-KILL-CERTIFICATE-2026-10-07.md).
@@ -25,10 +28,10 @@ Program: [`PROGRAM-GATES-A-D.md`](PROGRAM-GATES-A-D.md).
 | Charging convention F1/F2 | **FROZEN** |
 | \(\rho_5,\rho_9,\rho_{13}\) | **Exact match** (**Rerun here**) |
 | General-\(c\) \(\rho\) | **Authorized** |
-| Four-shell numeric table | Diagnostic only — not the kill |
-| Analytic sequence \(L_{z_n}\to\infty\) | **PROVED** — \(z_n=2n^2\) subnet |
-| Straight positive assembly → all shapes | **KILL CERTIFICATE** |
-| Next | **Gate B** — shared energy → exact missing exponent |
+| Four-shell numeric table | Diagnostic only |
+| Analytic sequence \(L_{z_n}\to\infty\) | Load lower bound for this subnet — not the sharp-band Gate A |
+| Straight positive assembly → all shapes | Not closed by the sharp-band source |
+| Next | Gate C uses the sharp-band ratio, not this load |
 
 ---
 
@@ -63,7 +66,7 @@ L_z:=\sum_a\rho_a(z)\quad\text{(Convention F2)}.
 
 ---
 
-## 3. Legitimate kill
+## 3. Load lower bound (not the sharp-band Gate A)
 
 \[
 \boxed{
@@ -104,8 +107,7 @@ No more 52/70/100 family extensions.
 
 ## STATUS
 
-GATE A: **CLOSED — OUTCOME B.**
-KILL: \(L_{z_n}\to\infty\) ALONG \(z_n=2n^2\).
-NEXT: GATE B.
+SHARP-BAND GATE A: DIAGNOSTIC AND UNRESOLVED.
+\(L_{z_n}\to\infty\) IS THIS LOAD ONLY. NOT A PREMISE OF GATE C.
 (17) NOT CLAIMED.
 NS NOT SOLVED.

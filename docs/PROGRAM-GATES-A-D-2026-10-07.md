@@ -1,8 +1,8 @@
 # Program gates A–D — narrowed order
 
-8 October 2026 (A–B closed; C closed for the audited assembly; D active); updated 9 October 2026.
-**All-shape load → shared energy → exact deficit → resource-weighted turnover.
-Not (17).**
+8 October 2026; notation fixed 9 October 2026 from the sharp-band source.
+**Sharp signed band \(H^{1/2}\) → resource-weighted turnover.
+Not (17). Gate A is not closed by that source.**
 
 Desk: [`PROGRAM-GATES-A-D.md`](PROGRAM-GATES-A-D.md).
 Kill A: [`GATE-A-KILL-CERTIFICATE.md`](GATE-A-KILL-CERTIFICATE.md).
@@ -16,11 +16,15 @@ Review D: [`GATE-D-REVIEW-2026-10-09.md`](GATE-D-REVIEW-2026-10-09.md).
 
 **Do not add a 52nd, 70th, or 100th finite family.**
 
-Gate A killed positive all-shape assembly. Gate B shared energy.
-Gate C named the deficit of **that audited assembly** as \(\tfrac12\),
-with \(\Lambda\) the frequency (\(\Lambda\sim H\)), so
-\(\Lambda^{1/2}\sim H^{1/2}\). It does not claim every estimate loses
-the same exponent. Gate D **target** (not stamped lemma):
+[`sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt`](sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt)
+defines \(H\) as wavenumber through \(H\le|k|\le 4H\). Its signed ratio
+\(R(H)\) has matching power bounds of exponent \(1/2\). Gate C is closed
+for that sharp instantaneous signed band estimate: the deficit is
+\(H^{1/2}\). If squared frequency is \(L=H^2\), the same factor is
+\(L^{1/4}\). The same source leaves Gate A diagnostic and unresolved.
+Do not carry “Gate A killed.” The separate \(L_{z_n}\) note is not that
+closure and is not a premise of Gate C. This does not prove (17).
+Gate D **target** (not stamped lemma):
 \[
 \boxed{\textbf{Resource-Weighted Turnover Lemma}}
 \]
@@ -53,10 +57,10 @@ repetition resource still open.
 
 | Gate | Mission | Status |
 |---|---|---|
-| **A** | Positive all-shape load | **CLOSED — Outcome B** |
-| **B** | Shared-energy accounting | **CLOSED** |
-| **C** | Exact missing exponent of the audited assembly | **CLOSED — \(\tfrac12\)** (\(\Lambda\sim H\); not every estimate) |
-| **D** | Resource-Weighted Turnover Lemma | **ACTIVE — not stamped; evidence pending** |
+| **A** | As named by the sharp-band source | **Diagnostic and unresolved** |
+| **B** | Shared-energy accounting | Not the band exponent |
+| **C** | Sharp instantaneous signed band | **CLOSED — deficit \(H^{1/2}\)** (wavenumber; \(L^{1/4}\) if \(L=H^2\)) |
+| **D** | Turnover and recurrence | **OPEN — not stamped; evidence pending** |
 
 ---
 
@@ -85,9 +89,9 @@ repetition resource still open.
 
 ## STATUS
 
-GATES A–B: CLOSED.
-GATE C: CLOSED FOR THE AUDITED ASSEMBLY (\(\Lambda\sim H\), DEFICIT \(\tfrac12\)).
-GATE D: ACTIVE — RESOURCE-WEIGHTED TURNOVER (LEMMA NOT STAMPED).
+GATE A: DIAGNOSTIC AND UNRESOLVED IN THE SHARP-BAND SOURCE.
+GATE C: CLOSED FOR THE SHARP INSTANTANEOUS SIGNED BAND — DEFICIT \(H^{1/2}\).
+GATE D: TURNOVER AND RECURRENCE OPEN (LEMMA NOT STAMPED).
 IMPLEMENTATION CORRECTED; DYNAMICAL EVIDENCE PENDING.
 FULL CORRECTED EPISODE THROUGH REGENERATION: UNRUN.
 NS NOT SOLVED.
