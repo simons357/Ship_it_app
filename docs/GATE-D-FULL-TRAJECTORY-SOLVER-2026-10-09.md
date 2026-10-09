@@ -111,7 +111,7 @@ Prior \(N=512\) / double-counted / \(X_H,Y_H\) runs are **not** Gate D evidence.
 | top-\(M\) | **false** |
 | Episode complete | **No** — `MODE_BUDGET_HIT` (~82k modes) |
 
-### FFT Galerkin — corrections pending re-smoke
+### FFT Galerkin — host limit at adversary cutoff
 
 See [`GATE-D-FFT-CORRECTIONS-2026-10-09.md`](GATE-D-FFT-CORRECTIONS-2026-10-09.md).
 
@@ -121,13 +121,27 @@ See [`GATE-D-FFT-CORRECTIONS-2026-10-09.md`](GATE-D-FFT-CORRECTIONS-2026-10-09.m
 | \(N=512\) aliases at \(k_{\max}=252\) | \(N=768\) Orszag |
 | \(H\)-filter \(X_H,Y_H\) | fixed \(K\), full \(X,Y\) |
 
-Prior FFT smoke / “\(D\) rising” partial: **PROVISIONAL_INVALID**.
+Signed-Gate packet for \(n=1\) has \(\max\lvert k\rvert\sim 205\), so
+\(k_{\max}\ge 4H=252\) is required to embed the adversary. That forces
+Orszag \(N=768\). On a 16 GiB host, stacking spectral + physical FFT
+buffers OOMs; memmapped phys RHS is I/O-bound (no completed step).
+`cut_mul=2` (\(N=384\)) is Orszag-correct for its cutoff but **truncates
+the packet** (\(T_{\mathrm{sc}}\) mismatch) — not Gate D evidence.
+
+Prior unpadded FFT smoke / “\(D\) rising” partial: **PROVISIONAL_INVALID**.
+
+### Sparse tiled — corrected path (active)
+
+Exact truncated Galerkin (no FFT alias). Corrections in HEAD match the
+FFT checklist. Prior smoke: \(T_{\mathrm{sc}}\) err \(0\), then
+`MODE_BUDGET_HIT` ~82k modes. High-budget continuation filed separately.
 
 ---
 
 ## STATUS
 
-CORRECTIONS FILED; PRIOR FFT EVIDENCE DEMOTED.
-FULL FIRST EPISODE: UNRUN.
-LEMMA: NOT STAMPED.
+GATE C: CLOSED — DEFICIT = HALF DERIVATIVE.
+GATE D: ACTIVE — RESOURCE-WEIGHTED TURNOVER (LEMMA NOT STAMPED).
+FFT \(N=768\) @ 4H: HOST-BLOCKED ON 16 GiB.
+SPARSE CORRECTED FULL EPISODE: IN PROGRESS / UNRUN.
 NS NOT SOLVED.

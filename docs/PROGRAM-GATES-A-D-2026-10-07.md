@@ -47,7 +47,7 @@ repetition resource still open.
 | **A** | Positive all-shape load | **CLOSED — Outcome B** |
 | **B** | Shared-energy accounting | **CLOSED** |
 | **C** | Exact missing exponent | **CLOSED — \(\tfrac12\)** |
-| **D** | Resource-Weighted Turnover Lemma | **VALID TARGET — not stamped** |
+| **D** | Resource-Weighted Turnover Lemma | **ACTIVE — not stamped** |
 
 ---
 
@@ -64,7 +64,8 @@ repetition resource still open.
 
 1. Feasible full-trajectory six-box solver preserving signed-scalene
    diagnostic — [`GATE-D-FULL-TRAJECTORY-SOLVER.md`](GATE-D-FULL-TRAJECTORY-SOLVER.md).
-2. Score \(B_{I_H}/\mathcal R_{I_H}\) with boundary term \((b-a)d(a)\).
+2. Score \(B_{I_H}/\mathcal R_{I_H}\) with \(B_I=\int d\,dt\) only
+   (boundary term is reconstruction, not additive).
 3. Demote prior top-\(M\) “complete episode” rows
    ([`GATE-D-ADVERSARIAL-RUN-RESULTS.md`](GATE-D-ADVERSARIAL-RUN-RESULTS.md)).
 4. Lemma remains a target, not a stamp.
@@ -74,5 +75,6 @@ repetition resource still open.
 ## STATUS
 
 GATES A–C: CLOSED.
-GATE D: VALID TARGET; LEMMA NOT STAMPED; FULL-TRAJECTORY UNRUN.
+GATE D: ACTIVE — RESOURCE-WEIGHTED TURNOVER (LEMMA NOT STAMPED).
+FULL FIRST EPISODE AFTER CORRECTIONS: UNRUN.
 NS NOT SOLVED.

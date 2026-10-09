@@ -79,12 +79,15 @@ diagnostic. Recorded score: \(B_I/\mathcal R_I\).
 |---|---|
 | Three corrections in FFT + sparse solvers | **In HEAD** |
 | Review ZIP on this mount | **Absent** (`scratch/ec43035008f2/` empty) |
-| Full first episode after corrections | **Unrun** |
+| Alias self-test / grid sizes | **Pass** — \(N_{\mathrm{dealiased}}=768\) for \(k_{\max}=252\) |
+| FFT smoke @ \(4H\) / \(N=768\) on 16 GiB | **Host-blocked** (OOM or memmap I/O stall) |
+| FFT smoke @ \(2H\) / \(N=384\) | Orszag OK; **packet truncated** — not adversary evidence |
+| Sparse corrected full episode | **In progress** (raise mode budget) |
 | Pre-correction FFT partial / smoke | **PROVISIONAL_INVALID** |
 
 ## STATUS
 
 CORRECTIONS VERIFIED IN WORKSPACE VS `18a267f3` CHECK.
 PRIOR FFT EVIDENCE DEMOTED.
-GATE D: VALID TARGET; LEMMA NOT STAMPED.
+GATE D: ACTIVE — RESOURCE-WEIGHTED TURNOVER (LEMMA NOT STAMPED).
 NS NOT SOLVED.

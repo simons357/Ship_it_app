@@ -28,7 +28,9 @@ from verify_signed_gate import packet
 from gate_d_adversarial_run import build_packet_arrays, choose_nu, normalize_E
 from gate_d_adversarial_run import transfer_scalene
 
-_FFT_WORKERS = max(1, int(os.environ.get("GATE_D_FFT_WORKERS", "4")))
+# Default 1 worker: multi-threaded FFT duplicates large temporaries and OOMs
+# a 16 GiB host at N=768 alongside the resident state.
+_FFT_WORKERS = max(1, int(os.environ.get("GATE_D_FFT_WORKERS", "1")))
 
 # Recovered episode-balance / gated_initial mask: fixed K, not H.
 DEFAULT_K2 = 1.0
@@ -70,10 +72,45 @@ def _spectral_nbytes(N: int) -> int:
     return N * N * (N // 2 + 1) * 3 * 8
 
 
-def alloc_spectral(N: int, scratch_dir: str, name: str):
-    """Allocate spectral field in RAM if small, else memmap under scratch_dir."""
+def _avail_ram_bytes() -> int:
+    """Best-effort MemAvailable (Linux); conservative fallback."""
+    try:
+        with open("/proc/meminfo", "r", encoding="utf-8") as f:
+            for line in f:
+                if line.startswith("MemAvailable:"):
+                    return int(line.split()[1]) * 1024
+    except OSError:
+        pass
+    return 0
+
+
+def alloc_spectral(
+    N: int,
+    scratch_dir: str,
+    name: str,
+    *,
+    force_memmap: bool = False,
+    prefer_ram: bool = False,
+):
+    """Allocate a spectral field.
+
+    N=768 fields are ~5.45 GiB. On a 16 GiB host only the evolved state
+    ``uh`` may sit in RAM; RHS/mid must be memmapped or the FFT temps OOM.
+    """
     shape = (N, N, N // 2 + 1, 3)
-    if _spectral_nbytes(N) <= int(2.5e9):
+    need = _spectral_nbytes(N)
+    avail = _avail_ram_bytes()
+    # Small grids always RAM. Large grids: RAM only if prefer_ram and ample headroom
+    # for FFT workspace (~need again).
+    use_ram = (not force_memmap) and (
+        need <= int(2.5e9)
+        or (
+            prefer_ram
+            and avail > 0
+            and avail >= need + int(4.0e9)
+        )
+    )
+    if use_ram:
         return np.zeros(shape, dtype=np.complex64), None
     os.makedirs(scratch_dir, exist_ok=True)
     path = os.path.join(scratch_dir, f"{name}.dat")
@@ -134,26 +171,78 @@ def leray_project(fx, fy, fz, kx, ky, kz, K2):
     return fx, fy, fz
 
 
+_PHYS_CACHE: dict[tuple[int, str], tuple[np.ndarray, np.ndarray, np.ndarray]] = {}
+
+
+def need_mm(N: int) -> bool:
+    """True when a spectral field should not share RAM with FFT workspace."""
+    return _spectral_nbytes(N) > int(2.5e9)
+
+
+def _phys_buffers(N: int, scratch_dir: str):
+    """Reuse float32 physical scratch across RHS calls.
+
+    Prefer RAM for physical buffers: Orszag N=768 RHS does ~15 real FFTs
+    per call; memmapped phys fields thrash disk for tens of minutes/step.
+    Spectral uh/mid/out stay memmapped when large so peak fits in 16 GiB.
+    """
+    key = (N, scratch_dir)
+    hit = _PHYS_CACHE.get(key)
+    if hit is not None:
+        return hit
+    os.makedirs(scratch_dir, exist_ok=True)
+    phys_bytes = N * N * N * 3 * 4
+    plane_bytes = N * N * N * 4
+    avail = _avail_ram_bytes()
+    # Need u_phys + adv + tmp + ~one float64 FFT plane headroom.
+    want = phys_bytes + 2 * plane_bytes + int(4.0e9)
+    if avail > 0 and avail >= want:
+        u_phys = np.empty((N, N, N, 3), dtype=np.float32)
+        adv = np.empty((N, N, N), dtype=np.float32)
+        tmp = np.empty((N, N, N), dtype=np.float32)
+        print(
+            f"  phys_buffers=RAM (~{(phys_bytes + 2 * plane_bytes) / 1e9:.1f} GiB)",
+            flush=True,
+        )
+    else:
+        u_phys = np.memmap(
+            os.path.join(scratch_dir, "u_phys.dat"),
+            dtype=np.float32,
+            mode="w+",
+            shape=(N, N, N, 3),
+        )
+        adv = np.memmap(
+            os.path.join(scratch_dir, "adv.dat"),
+            dtype=np.float32,
+            mode="w+",
+            shape=(N, N, N),
+        )
+        tmp = np.memmap(
+            os.path.join(scratch_dir, "tmp.dat"),
+            dtype=np.float32,
+            mode="w+",
+            shape=(N, N, N),
+        )
+        print("  phys_buffers=memmap (low MemAvailable)", flush=True)
+    _PHYS_CACHE[key] = (u_phys, adv, tmp)
+    return u_phys, adv, tmp
+
+
 def rhs_fft(uh, nu, kx, ky, kz, k_max2, N, scratch_dir: str | None = None):
     """∂t û = -ν|k|²û - P[(u·∇)u] on a dealiased grid, truncated to the ball.
 
     ``uh`` stores Fourier coefficients in the sum-convention
     (phys = ∑ û e^{ik·x}). SciPy/NumPy irfftn(uh) returns phys/N³.
 
-    Large physical buffers are memmapped under ``scratch_dir`` so peak RAM
-    stays near one spectral field (~5.5 GB at N=768) plus FFT workspace.
+    Physical buffers are reused under ``scratch_dir``. Spectral RHS stays in
+    RAM when MemAvailable allows; otherwise memmap.
     """
-    import tempfile
-
     axes = (0, 1, 2)
     n3 = float(N**3)
-    tmpdir = scratch_dir or tempfile.mkdtemp(prefix="gate_d_fft_")
-    up_path = os.path.join(tmpdir, "u_phys.dat")
-    adv_path = os.path.join(tmpdir, "adv.dat")
-    tmp_path = os.path.join(tmpdir, "tmp.dat")
-    u_phys = np.memmap(up_path, dtype=np.float32, mode="w+", shape=(N, N, N, 3))
-    adv = np.memmap(adv_path, dtype=np.float32, mode="w+", shape=(N, N, N))
-    tmp = np.memmap(tmp_path, dtype=np.float32, mode="w+", shape=(N, N, N))
+    tmpdir = scratch_dir or os.environ.get(
+        "GATE_D_FFT_SCRATCH", "/tmp/gate_d_fft_scratch"
+    )
+    u_phys, adv, tmp = _phys_buffers(N, tmpdir)
 
     with sp_fft.set_workers(_FFT_WORKERS):
         for c in range(3):
@@ -163,55 +252,50 @@ def rhs_fft(uh, nu, kx, ky, kz, k_max2, N, scratch_dir: str | None = None):
                 )
                 * n3
             )
-        u_phys.flush()
+        if hasattr(u_phys, "flush"):
+            u_phys.flush()
 
-        # Keep nonlinear spectral result in RAM (one field ~5GB). Physical
-        # buffers stay on disk via memmap.
-        out = np.empty((N, N, N // 2 + 1, 3), dtype=np.complex64)
+        # RHS spectral always memmap at large N — never stack with uh in RAM.
+        out, _ = alloc_spectral(N, tmpdir, "rhs_out", force_memmap=need_mm(N))
+        # Scratch spectral plane for one derivative at a time (avoids a full
+        # complex64 copy of uh for (1j*k)*uh).
+        uk = np.empty((N, N, N // 2 + 1), dtype=np.complex64)
         for c in range(3):
             adv[:] = 0.0
-            tmp[:] = (
-                sp_fft.irfftn(
-                    (1j * kx[:, None, None] * uh[..., c]).astype(np.complex64),
-                    s=(N, N, N),
-                    axes=axes,
-                ).real.astype(np.float32)
-                * n3
-            )
-            adv += u_phys[..., 0] * tmp
-            tmp[:] = (
-                sp_fft.irfftn(
-                    (1j * ky[None, :, None] * uh[..., c]).astype(np.complex64),
-                    s=(N, N, N),
-                    axes=axes,
-                ).real.astype(np.float32)
-                * n3
-            )
-            adv += u_phys[..., 1] * tmp
-            tmp[:] = (
-                sp_fft.irfftn(
-                    (1j * kz[None, None, :] * uh[..., c]).astype(np.complex64),
-                    s=(N, N, N),
-                    axes=axes,
-                ).real.astype(np.float32)
-                * n3
-            )
-            adv += u_phys[..., 2] * tmp
-            adv.flush()
+            for k1d, idx in (
+                (kx, 0),
+                (ky, 1),
+                (kz, 2),
+            ):
+                if idx == 0:
+                    np.multiply(
+                        uh[..., c],
+                        (1j * kx[:, None, None]).astype(np.complex64),
+                        out=uk,
+                    )
+                elif idx == 1:
+                    np.multiply(
+                        uh[..., c],
+                        (1j * ky[None, :, None]).astype(np.complex64),
+                        out=uk,
+                    )
+                else:
+                    np.multiply(
+                        uh[..., c],
+                        (1j * kz[None, None, :]).astype(np.complex64),
+                        out=uk,
+                    )
+                tmp[:] = (
+                    sp_fft.irfftn(uk, s=(N, N, N), axes=axes).real.astype(np.float32)
+                    * n3
+                )
+                adv += u_phys[..., idx] * tmp
+            if hasattr(adv, "flush"):
+                adv.flush()
             out[..., c] = sp_fft.rfftn(adv, axes=axes).astype(np.complex64) / n3
+        del uk
 
-    del u_phys, adv, tmp
-    for p in (up_path, adv_path, tmp_path):
-        try:
-            os.remove(p)
-        except OSError:
-            pass
-    try:
-        os.rmdir(tmpdir)
-    except OSError:
-        pass
-
-    # Leray + viscosity + ball on the in-RAM spectral RHS, slabbed in z.
+    # Leray + viscosity + ball, slabbed in z.
     for iz in range(out.shape[2]):
         k2 = (
             kx[:, None].astype(np.float64) ** 2
@@ -408,7 +492,25 @@ def measure_episode(
         f"K2={K2_fixed}; scratch={scratch}) ...",
         flush=True,
     )
-    uh = embed_packet_rfft(k, u, N, k_max2, scratch_dir=scratch)
+    # At N=768 keep spectral state on memmap so physical FFT buffers can
+    # occupy RAM (RHS is phys-bound). Mid/RHS always memmap when large.
+    uh, uh_path = alloc_spectral(
+        N, scratch, "uh", prefer_ram=False, force_memmap=need_mm(N)
+    )
+    # embed into preallocated uh
+    for i in range(k.shape[0]):
+        kx_i, ky_i, kz_i = int(k[i, 0]), int(k[i, 1]), int(k[i, 2])
+        a = kx_i * kx_i + ky_i * ky_i + kz_i * kz_i
+        if a == 0 or a > k_max2 or kz_i < 0:
+            continue
+        uh[kx_i % N, ky_i % N, kz_i] = u[i].astype(np.complex64)
+    if hasattr(uh, "flush"):
+        uh.flush()
+    print(
+        f"  uh_storage={'memmap:'+uh_path if uh_path else 'RAM'} "
+        f"bytes~{_spectral_nbytes(N)} avail~{_avail_ram_bytes()}",
+        flush=True,
+    )
     kx, ky, kz = freq_1d(N)
     project_ball_slab(uh, kx, ky, kz, k_max2)
 
@@ -430,15 +532,19 @@ def measure_episode(
     print("  computing RHS for D'(0) ...", flush=True)
     f0 = rhs_fft(uh, nu, kx, ky, kz, k_max2, N, scratch_dir=scratch)
     eps = 1e-5
-    uh_eps, _ = alloc_spectral(N, scratch, "uh_eps")
-    for iz in range(uh.shape[2]):
-        uh_eps[:, :, iz, :] = (
-            np.asarray(uh[:, :, iz, :])
-            + np.float32(eps) * np.asarray(f0[:, :, iz, :])
-        )
-    if hasattr(uh_eps, "flush"):
-        uh_eps.flush()
-    del f0
+    # Reuse f0 storage as uh+εf (avoids a third ~5.5 GiB spectral array).
+    uh_eps = f0
+    if isinstance(uh, np.memmap) or isinstance(uh_eps, np.memmap):
+        for iz in range(uh.shape[2]):
+            uh_eps[:, :, iz, :] = (
+                np.asarray(uh[:, :, iz, :])
+                + np.float32(eps) * np.asarray(uh_eps[:, :, iz, :])
+            )
+        if hasattr(uh_eps, "flush"):
+            uh_eps.flush()
+    else:
+        uh_eps *= np.float32(eps)
+        uh_eps += uh
     project_ball_slab(uh_eps, kx, ky, kz, k_max2)
     _, _, Yeps_m, _, _ = moments_grid(uh_eps, kx, ky, kz)
     ks_e, us_e = sparse_from_grid(uh_eps, kx, ky, kz, k_max2, floor_mag2)
@@ -448,7 +554,7 @@ def measure_episode(
     _, Xeps, Yeps, _, _ = moments_grid(uh_eps, kx, ky, kz)
     Xp = (Xeps - X0) / eps
     identity_residual = Xp - (-2 * nu * Y0 + 2 * T0)
-    del uh_eps
+    del uh_eps, f0
 
     tau_nl = float(H ** (-2.5))
     dt = dt_factor * tau_nl
@@ -480,26 +586,34 @@ def measure_episode(
         flush=True,
     )
 
-    mid, _ = alloc_spectral(N, scratch, "mid")
+    mid, _ = alloc_spectral(N, scratch, "mid", force_memmap=need_mm(N))
+    uh_is_mm = isinstance(uh, np.memmap) or isinstance(mid, np.memmap)
     while t < t_max and steps < max_steps:
         f1 = rhs_fft(uh, nu, kx, ky, kz, k_max2, N, scratch_dir=scratch)
-        for iz in range(uh.shape[2]):
-            mid[:, :, iz, :] = (
-                np.asarray(uh[:, :, iz, :])
-                + np.float32(0.5 * dt) * np.asarray(f1[:, :, iz, :])
-            )
-        if hasattr(mid, "flush"):
-            mid.flush()
+        if uh_is_mm or isinstance(f1, np.memmap):
+            for iz in range(uh.shape[2]):
+                mid[:, :, iz, :] = (
+                    np.asarray(uh[:, :, iz, :])
+                    + np.float32(0.5 * dt) * np.asarray(f1[:, :, iz, :])
+                )
+            if hasattr(mid, "flush"):
+                mid.flush()
+        else:
+            np.multiply(f1, np.float32(0.5 * dt), out=mid)
+            mid += uh
         del f1
         project_ball_slab(mid, kx, ky, kz, k_max2)
         f2 = rhs_fft(mid, nu, kx, ky, kz, k_max2, N, scratch_dir=scratch)
-        for iz in range(uh.shape[2]):
-            uh[:, :, iz, :] = (
-                np.asarray(uh[:, :, iz, :])
-                + np.float32(dt) * np.asarray(f2[:, :, iz, :])
-            )
-        if hasattr(uh, "flush"):
-            uh.flush()
+        if uh_is_mm or isinstance(f2, np.memmap):
+            for iz in range(uh.shape[2]):
+                uh[:, :, iz, :] = (
+                    np.asarray(uh[:, :, iz, :])
+                    + np.float32(dt) * np.asarray(f2[:, :, iz, :])
+                )
+            if hasattr(uh, "flush"):
+                uh.flush()
+        else:
+            uh += np.float32(dt) * f2
         del f2
         project_ball_slab(uh, kx, ky, kz, k_max2)
         t += dt
