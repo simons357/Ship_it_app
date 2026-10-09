@@ -56,12 +56,18 @@ Stop saying “something is missing.” The enemy is named.
 \]
 \(B_I\le C\mathcal R_I\) with \(\sum_I\mathcal R_I\) controlled.
 Critical turnover \(H^{-5/2}\) erases static \(H^{1/2}\); resource pays
-for recurrence. Adversarial: coherent packet → \(B_{I_H}\)/resource ratio.
+for recurrence. Adversarial: coherent packet → \(B_{I_H}/\mathcal R_{I_H}\)
+(duration ≢ resource; score the ratio, not mere \(O(1)/o(1)\)).
 
 Bridge: onset \(O(\rho^{-2})\) (amplitude) ↔ \(H^{1/2}\) (frequency).
 
 Out of scope as substitutes: shell-count; Young; generic instantaneous
-phase; Ring without bridge; swirl-as-substitute; B41→NSE; random-phase.
+phase; Ring without bridge; swirl-as-substitute; B41→NSE; random-phase;
+Gaussian as substitute for the six-box Signed-Gate adversary.
+
+Execution status (9 Oct): valid target, lemma **not** stamped —
+[`GATE-D-REVIEW-2026-10-09.md`](GATE-D-REVIEW-2026-10-09.md),
+[`GATE-D-FFT-CORRECTIONS-2026-10-09.md`](GATE-D-FFT-CORRECTIONS-2026-10-09.md).
 
 ---
 
@@ -69,6 +75,6 @@ phase; Ring without bridge; swirl-as-substitute; B41→NSE; random-phase.
 
 GATE C: **CLOSED — DEFICIT = HALF DERIVATIVE.**
 GATE B: SHARED-ENERGY CORRECTION ACCEPTED AS THE SETUP FOR THIS EXPONENT.
-GATE D: ACTIVE — RESOURCE-WEIGHTED TURNOVER.
+GATE D: VALID TARGET — RESOURCE-WEIGHTED TURNOVER (LEMMA NOT STAMPED).
 (17) NOT CLAIMED.
 NS NOT SOLVED.
