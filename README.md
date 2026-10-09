@@ -20,6 +20,18 @@ python -m domain_architect --registry
 python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units
 ```
 
+## Gate D v1.2 (physical-cutoff preregistration)
+
+New preregistration, not an amendment of v1.1. Attached as a file so the
+cutoff convention can be approved or rejected.
+
+- [`docs/GATE-D/GATE-D-V1.2-PHYSICAL-CUTOFF-PREREGISTRATION.md`](docs/GATE-D/GATE-D-V1.2-PHYSICAL-CUTOFF-PREREGISTRATION.md)
+- [`packets/GATE-D-V1.2-PHYSICAL-CUTOFF-PREREGISTRATION.md`](packets/GATE-D-V1.2-PHYSICAL-CUTOFF-PREREGISTRATION.md)
+- [`packets/gate_d/GATE-D-V1.2-PHYSICAL-CUTOFF-PREREGISTRATION.md`](packets/gate_d/GATE-D-V1.2-PHYSICAL-CUTOFF-PREREGISTRATION.md)
+
+Frozen \(\kappa_\star=8\), grids \(n=64,96\), ceiling 2 GiB peak RSS.
+DA decision pending. Memory benchmark not done. Gate D OPEN. NS not solved.
+
 ## Harmonic Blueprint Experiment 01
 
 Cross-event spectral selection test on black-hole ringdown modes.
