@@ -1,7 +1,7 @@
 # Program gates A–D
 
 8 / 9 October 2026.
-**A–C closed. D: valid target, not stamped. Not (17).**
+**A–C closed. D: ACTIVE — resource-weighted turnover (lemma not stamped). Not (17).**
 
 \[
 \boxed{

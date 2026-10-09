@@ -15,6 +15,6 @@ Full note:
 After Gate A kill and Gate B shared-energy correction,
 \(\mathcal T_{\mathrm{bad}}\lesssim\nu Y\times\Lambda^{1/2}\).
 
-Gate D contract (resource-weighted turnover; lemma not stamped):
+Gate D contract: **ACTIVE — Resource-Weighted Turnover** (lemma not stamped).
 [`docs/GATE-D-HALF-DERIVATIVE-ATTACK.md`](../docs/GATE-D-HALF-DERIVATIVE-ATTACK.md),
 [`docs/GATE-D-REVIEW-2026-10-09.md`](../docs/GATE-D-REVIEW-2026-10-09.md).

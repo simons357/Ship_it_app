@@ -15,7 +15,7 @@ trajectory (all interactions among modes retained in the ball), measure
 
 - \(D_H(0)\), \(D_H'(0)\),
 - first positive episode \(I_H\),
-- \(B_{I_H}=\int_{I_H}D/X\,dt\) **plus** \((b-a)d(a)\) when \(d(a)>0\),
+- \(B_{I_H}=\int_{I_H}d\,dt\) only (\(d=D/X\); do **not** add \((b-a)d(a)\)),
 - candidate \(\mathcal R_{I_H}\) and the ratio \(B_{I_H}/\mathcal R_{I_H}\),
 
 without substituting a Gaussian packet and without top-\(M\) mode pruning.
@@ -60,8 +60,8 @@ Reuse the ordered scalene transfer \(T_{\mathrm{sc}}\) from
 
 - Explicit RK2 or RK4 with viscous CFL from \(\nu N^2\).
 - Record \(D(t)\), \(X(t)\), \(U(t)\), \(W(t)\) every step.
-- Detect first downward \(D\)-crossing; quadrature for \(B_I\) includes
-  \((b-a)d(a)\).
+- Detect first downward \(d\)-crossing; quadrature \(B_I=\int d\,dt\) only
+  (boundary term is reconstruction, not additive).
 
 ### Scoring
 
@@ -94,8 +94,8 @@ Prior \(N=512\) / double-counted / \(X_H,Y_H\) runs are **not** Gate D evidence.
 1. `verify_signed_gate` PASS on the same packet bytes.
 2. Method string does **not** contain `topM`.
 3. \(t=0\) \(T_{\mathrm{sc}}\) matches verifier; energy-identity residual small.
-4. \(B_{I_H}\) includes boundary term when \(d(0)>0\).
-5. JSON reports `B_over_R` explicitly.
+4. \(B_{I_H}=\int d\,dt\) only; boundary field is documentation-only.
+5. JSON reports `B_over_R` for fixed \(K\), full \(X,Y\); `dealiased: true`.
 6. No theorem stamp from a single \(n\).
 
 ---

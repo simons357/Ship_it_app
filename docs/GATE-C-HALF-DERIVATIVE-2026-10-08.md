@@ -56,16 +56,16 @@ Stop saying “something is missing.” The enemy is named.
 \]
 \(B_I\le C\mathcal R_I\) with \(\sum_I\mathcal R_I\) controlled.
 Critical turnover \(H^{-5/2}\) erases static \(H^{1/2}\); resource pays
-for recurrence. Adversarial: coherent packet → \(B_{I_H}/\mathcal R_{I_H}\)
-(duration ≢ resource; score the ratio, not mere \(O(1)/o(1)\)).
+for recurrence. Adversarial: coherent packet → \(B_{I_H}/\)resource ratio.
 
 Bridge: onset \(O(\rho^{-2})\) (amplitude) ↔ \(H^{1/2}\) (frequency).
 
 Out of scope as substitutes: shell-count; Young; generic instantaneous
-phase; Ring without bridge; swirl-as-substitute; B41→NSE; random-phase;
-Gaussian as substitute for the six-box Signed-Gate adversary.
+phase; Ring without bridge; swirl-as-substitute; B41→NSE; random-phase.
 
-Execution status (9 Oct): valid target, lemma **not** stamped —
+Execution status (9 Oct; not part of the 8 Oct closure): lemma **not**
+stamped; duration ≢ resource; score \(B_I/\mathcal R_I\); six-box
+Signed-Gate adversary required —
 [`GATE-D-REVIEW-2026-10-09.md`](GATE-D-REVIEW-2026-10-09.md),
 [`GATE-D-FFT-CORRECTIONS-2026-10-09.md`](GATE-D-FFT-CORRECTIONS-2026-10-09.md).
 
@@ -73,8 +73,8 @@ Execution status (9 Oct): valid target, lemma **not** stamped —
 
 ## STATUS
 
-GATE C: **CLOSED — DEFICIT = HALF DERIVATIVE.**
+GATE C: CLOSED — DEFICIT = HALF DERIVATIVE.
 GATE B: SHARED-ENERGY CORRECTION ACCEPTED AS THE SETUP FOR THIS EXPONENT.
-GATE D: VALID TARGET — RESOURCE-WEIGHTED TURNOVER (LEMMA NOT STAMPED).
+GATE D: ACTIVE — RESOURCE-WEIGHTED TURNOVER.
 (17) NOT CLAIMED.
 NS NOT SOLVED.
