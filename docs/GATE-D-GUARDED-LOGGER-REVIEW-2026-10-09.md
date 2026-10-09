@@ -76,28 +76,24 @@ Memory enforcement does fire. `preflight(200, 10)` raises `MemoryError` because 
 
 ### 6. \(L\) and \(2L\) — BLOCKED
 
-The integer labels stay integer labels. \(N=128\) and \(N=160\) are not renamed. \(\Phi_{abc}\) still cuts on \(a=|k|^2\) for \(k\in\mathbb Z^3\). Physical wavenumber \(2\pi|k|/L\) is written beside that cut. The smoke header records both `physical_kmax` \(=2\pi N/L\) and `physical_kmax_doubled_box_same_N` \(=\pi N/L\). For the smoke, \(N=6\), \(L=12\), those values are \(\pi\) and \(\pi/2\).
+This item is not waiting on a logger patch. The frozen labels \(N=128\) and \(N=160\) still have to be declared as integer-mode cutoffs or as physical cutoffs. At a fixed physical cutoff, doubling the box doubles the integer-mode cutoff. The logger’s smoke header instead keeps the same integer \(N\) and records the halved physical edge `physical_kmax_doubled_box_same_N`. That is the other reading. It does not make the declaration.
 
-`assess` certifies a \(D\) sign only when \(L\) is exactly \(2\pi\). At \(L=4\pi\), `make_pair(52)` returns `physical_box_sign_unverified`, `T_sc` absent, `D_sign` unknown, and `crossing_certified` false. The smoke uses \(L=12\), so its rows stay unverified. This refusal is not a choice of the frozen experiment’s box. DA still has to preregister which physical band the integer labels \(N=128\) and \(N=160\) mean. This review does not choose \(L\) or \(2L\).
+`assess` certifies a \(D\) sign only when \(L\) is exactly \(2\pi\). At \(L=4\pi\), `make_pair(52)` returns `physical_box_sign_unverified`, with no \(T_{\mathrm{sc}}\), `D_sign` unknown, and `crossing_certified` false. A sign of \(D\) on a frozen coefficient array does not certify the trajectory that produced the array.
 
 ### 7. \(\mathbb R^3\) comparison — BLOCKED
 
-The archive does not contain that comparison. These requirements have to be fixed before one is attempted.
+Blocked as an audit of a completed comparison. The requirements are already fixed. The periodic sample on a box is not the \(\mathbb R^3\) packet until periodization, box size, and domain convergence are shown (`scripts/ns_attacks/gate_d_gaussian_scaffold/README.md`).
 
-- The periodic sample of the curl Gaussian on \([-L/2,L/2)^3\), then projected, is not the \(\mathbb R^3\) datum (`scripts/ns_attacks/gate_d_gaussian_scaffold/README.md`).
-- Name the physical box and the physical spectral cutoff. Keep \(N=128\) and \(N=160\) as integer labels. Grid size \(n\) must satisfy \(N<n/3\), and \(n\) is not that frozen cutoff.
-- State a periodization error between the \(\mathbb R^3\) field and the periodic sample, in a named norm, as the box grows.
-- Compare the \(\mathbb R^3\) initial derivative with the periodic Galerkin derivative at the initial time. Fix the tolerance before the run.
-- State which \(Y\) enters \(D\): the integer-lattice moment, or the stepper’s physical moment. They differ by the factor \((2\pi)^4/L\) on the bridge convention already recorded for \(L\) and \(2L\).
-- Fix tolerances for energy, divergence, and the signed diagnostic before the run.
+## Metadata repair
+
+`packets/gate_d/da_review/` contains no archive. No metadata-repair package was in the uploads folder, so that package was not hashed, extracted, or tested, and it was not compared with the guarded logger.
 
 ## Next required patch
 
-One patch, with the four RK4 bodies still matching the locked file.
+The logger patch is separate from items 6 and 7. The four RK4 bodies stay matched to the locked file.
 
 - On every `sign_unverified` record, including `adaptive_certified.evaluate`, omit `fast_value` and every other numeric transfer. In safe-sidecar mode set `T_sc_implemented` and `D_implemented` false, and make the periodization sentence name the spherical mask that `step` actually receives.
-- Build the viscosity as `Fraction(1, c)` from the integer \(c\). Certify a \(D\) sign only from that rational. Put the normalized exact \(Y\), and a float enclosure of both \(T_{\mathrm{sc}}\) and \(Y\), on the log record. Keep `rigorous_error_bound` false until a bound exists.
-- Leave \(L\) versus \(2L\) unchosen. Leave \(N=128\) and \(N=160\) as integer labels.
+- Build the viscosity as `Fraction(1, c)` from the integer \(c\). Certify a \(D\) sign only from that rational. Put the normalized exact \(Y\), and a float enclosure of both \(T_{\mathrm{sc}}\) and \(Y\), on the log record. Keep `rigorous_error_bound` false until a bound exists. That sign still does not certify the trajectory.
 
 The frozen \(c=200\), \(s\ge 4\) trajectory stays unlaunched.
 
@@ -110,8 +106,10 @@ ITEM 2 MASKS: PASS.
 ITEM 3 `sign_unverified`: FAIL. NUMERIC `fast_value` STILL RETURNED. HEADER STILL CLAIMS \(T_{\mathrm{sc}}\) IMPLEMENTED.
 ITEM 4 GUARDED BYPASS: PASS.
 ITEM 5 EXACT \(D\) AND UNCERTAINTY: FAIL. VISCOSITY RATIONAL IS NOT \(1/200\). LOGGED \(Y\) HAS NO ENCLOSURE.
-ITEM 6 \(L\) VERSUS \(2L\): BLOCKED. LABELS \(N=128\) AND \(N=160\) KEPT.
-ITEM 7 \(\mathbb R^3\): BLOCKED. REQUIREMENTS LISTED. COMPARISON NOT RUN.
+ITEM 6 \(L\) VERSUS \(2L\): BLOCKED. NOT A LOGGER PATCH. \(N=128\) AND \(N=160\) STILL UNDECLARED AS INTEGER OR PHYSICAL. AT FIXED PHYSICAL CUTOFF, DOUBLING THE BOX DOUBLES THE INTEGER-MODE CUTOFF.
+ITEM 7 \(\mathbb R^3\): BLOCKED. REQUIREMENTS ALREADY FIXED. PERIODIZATION, BOX SIZE, AND DOMAIN CONVERGENCE NOT SHOWN.
+METADATA REPAIR ARCHIVE: NOT IN `packets/gate_d/da_review/`. NOT HASHED. NOT TESTED.
+A SIGN OF \(D\) ON A FROZEN COEFFICIENT ARRAY DOES NOT CERTIFY THE TRAJECTORY.
 LEMMA 19: NOT CERTIFIED. PACKAGED WITNESS AGREEMENT \(+32\) ONLY.
 FROZEN \(c=200\), \(s\ge 4\): NOT LAUNCHED.
 NO TURNOVER, REGENERATION, SHARED BUDGET, OR REGULARITY.
