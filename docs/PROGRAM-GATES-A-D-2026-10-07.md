@@ -18,10 +18,10 @@ Review D: [`GATE-D-REVIEW-2026-10-09.md`](GATE-D-REVIEW-2026-10-09.md).
 
 [`sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt`](sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt)
 defines \(H\) as wavenumber through \(H\le|k|\le 4H\). Its signed ratio
-\(R(H)\) has matching power bounds of exponent \(1/2\). Gate C is closed
-for that sharp instantaneous signed band estimate: the deficit is
-\(H^{1/2}\). If squared frequency is \(L=H^2\), the same factor is
-\(L^{1/4}\). The same source leaves Gate A diagnostic and unresolved.
+\(R(H)\) has matching power bounds of exponent \(1/2\). Gate C is closed for that audited assembly: the deficit is a
+half derivative, with \(\Lambda\sim H\) denoting frequency, so
+\(\Lambda^{1/2}\sim H^{1/2}\). If squared frequency is \(L=H^2\), the same
+factor is \(L^{1/4}\). The same source leaves Gate A diagnostic and unresolved.
 Do not carry “Gate A killed.” The separate \(L_{z_n}\) note is not that
 closure and is not a premise of Gate C. This does not prove (17).
 Gate D **target** (not stamped lemma):
@@ -81,17 +81,18 @@ repetition resource still open.
    (boundary term is reconstruction, not additive).
 3. Demote prior top-\(M\) “complete episode” rows
    ([`GATE-D-ADVERSARIAL-RUN-RESULTS.md`](GATE-D-ADVERSARIAL-RUN-RESULTS.md)).
-4. Next decisive test: a completed, corrected episode followed through
-   regeneration. The resource must pay for repeated episodes without
-   reusing the same budget. Lemma remains a target, not a stamp.
+4. Next test: a completed, corrected episode followed through
+   regeneration, measuring both \(B_I/\mathcal R_I\) and cumulative
+   resource use. A successful finite run would support the target, not
+   prove the uniform bound. Lemma remains a target, not a stamp.
 
 ---
 
 ## STATUS
 
 GATE A: DIAGNOSTIC AND UNRESOLVED IN THE SHARP-BAND SOURCE.
-GATE C: CLOSED FOR THE SHARP INSTANTANEOUS SIGNED BAND — DEFICIT \(H^{1/2}\).
-GATE D: TURNOVER AND RECURRENCE OPEN (LEMMA NOT STAMPED).
+GATE C: CLOSED FOR THE AUDITED ASSEMBLY — \(\Lambda^{1/2}\sim H^{1/2}\) (\(\Lambda\sim H\) = FREQUENCY).
+GATE D: OPEN — BOTH OBLIGATIONS REQUIRED, UNIFORM IN CUTOFF (NOT STAMPED).
 IMPLEMENTATION CORRECTED; DYNAMICAL EVIDENCE PENDING.
 FULL CORRECTED EPISODE THROUGH REGENERATION: UNRUN.
 NS NOT SOLVED.

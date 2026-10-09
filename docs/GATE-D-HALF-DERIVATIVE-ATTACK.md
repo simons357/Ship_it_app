@@ -14,8 +14,10 @@ B_I=\int_I d(t)\,dt\le C\mathcal R_I,
 constants uniform in the Galerkin cutoff.
 Score \(B_I/\mathcal R_I\). Duration ≢ resource.
 \((b-a)d(a)\) reconstructs \(\int d\) from \(d'\); it is not added on top.
-Next test: completed corrected episode through regeneration.
-Implementation corrected; dynamical evidence pending.
+Next test: completed corrected episode through regeneration, measuring
+both \(B_I/\mathcal R_I\) and cumulative resource use. A successful finite
+run would support the target, not prove the uniform bound.
+FFT setup corrected; partial runs provisional.
 
 Full note:
 [`GATE-D-HALF-DERIVATIVE-ATTACK-2026-10-08.md`](GATE-D-HALF-DERIVATIVE-ATTACK-2026-10-08.md).

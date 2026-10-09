@@ -1,7 +1,12 @@
 # Gate C — exact missing exponent
 
 8 October 2026. Notation fixed 9 October 2026 from the sharp-band source.
-**CLOSED for the sharp instantaneous signed band estimate. Not (17).**
+**CLOSED for the audited assembly’s \(\tfrac12\)-derivative deficit. Not (17).**
+
+\(\Lambda\sim H\) explicitly denotes frequency. In the sharp-band source, that
+frequency is wavenumber: fields supported in \(H\le|k|\le 4H\). The deficit
+is \(\Lambda^{1/2}\sim H^{1/2}\). If squared frequency is \(L=H^2\), the same
+factor is \(L^{1/4}\).
 
 Source:
 [`sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt`](sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt).
@@ -36,9 +41,9 @@ R(H)\le 1728\sqrt{H},
 \qquad
 R(63n)\ge c_*\sqrt{63n}.
 \]
-The deficit is therefore \(H^{1/2}\): one half derivative in wavenumber.
-
-If squared frequency is denoted by \(L=H^2\), the same factor is \(L^{1/4}\).
+Write \(\Lambda\) for this same frequency, so \(\Lambda\sim H\) and the deficit
+is \(\Lambda^{1/2}\sim H^{1/2}\): one half derivative. If squared frequency
+is denoted by \(L=H^2\), the same factor is \(L^{1/4}\).
 
 ---
 
@@ -59,8 +64,9 @@ determination of the earlier unsigned \(Q_x\) operator norm.
 
 ## Scope of CLOSED
 
-CLOSED applies to the sharp instantaneous signed band estimate above.
-It does not prove (17). Gate D’s turnover and recurrence bounds remain open.
+CLOSED applies to this audited assembly: the sharp instantaneous signed
+band estimate. It does not prove (17). Gate D’s episode bound and summable
+recurrence resource both remain required, uniformly in the cutoff.
 
 ---
 
@@ -68,7 +74,7 @@ It does not prove (17). Gate D’s turnover and recurrence bounds remain open.
 
 | Claim | Status |
 |---|---|
-| Sharp instantaneous signed band | **CLOSED** — deficit \(H^{1/2}\) (wavenumber) |
+| Audited assembly (sharp signed band) | **CLOSED** — deficit \(\Lambda^{1/2}\sim H^{1/2}\) (\(\Lambda\sim H\) = frequency) |
 | Same factor in squared frequency \(L=H^2\) | \(L^{1/4}\) |
 | Gate A killed by this source | **No** — source leaves Gate A diagnostic and unresolved |
 | Proof of (17) | **Not claimed** |
@@ -90,8 +96,9 @@ Critical turnover \(H^{-5/2}\) is a duration scale. Fast turnover alone does
 not settle recurrence. The resource must pay for repeated episodes without
 reusing the same budget.
 
-Next decisive test: a completed, corrected episode followed through
-regeneration.
+Next test: a completed, corrected episode followed through regeneration,
+measuring both \(B_I/\mathcal R_I\) and cumulative resource use. A
+successful finite run would support the target, not prove the uniform bound.
 
 Out of scope as substitutes: shell-count; Young; generic instantaneous
 phase; Ring without bridge; swirl-as-substitute; B41→NSE; random-phase.
@@ -103,10 +110,11 @@ Status: implementation corrected; dynamical evidence pending.
 
 ## STATUS
 
-GATE C: CLOSED FOR THE SHARP INSTANTANEOUS SIGNED BAND ESTIMATE.
-DEFICIT \(H^{1/2}\) (WAVENUMBER): ONE HALF DERIVATIVE.
+GATE C: CLOSED FOR THE AUDITED ASSEMBLY — DEFICIT \(\Lambda^{1/2}\sim H^{1/2}\)
+(\(\Lambda\sim H\) = FREQUENCY / WAVENUMBER).
 IF \(L=H^2\), THE SAME FACTOR IS \(L^{1/4}\).
 GATE A: NOT CLOSED BY THIS SOURCE.
-GATE D: TURNOVER AND RECURRENCE OPEN.
+GATE D: OPEN — EPISODE BOUND AND SUMMABLE RESOURCE BOTH REQUIRED,
+UNIFORM IN CUTOFF. A FINITE RUN DOES NOT PROVE THAT BOUND.
 (17) NOT CLAIMED.
 NS NOT SOLVED.

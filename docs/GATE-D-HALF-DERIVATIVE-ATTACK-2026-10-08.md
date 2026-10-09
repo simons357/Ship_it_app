@@ -102,11 +102,13 @@ No large-packet (Gate-C / six-box scale) resource has yet been shown to
 pay for **repeated** episodes. The small-\(\ell^1\) Orbit-R4 prototype
 \(\int UW\,dt\le U_0^2/(2(\nu-U_0))\) remains restricted-class only.
 
-Next decisive test: a completed, corrected episode followed through
-regeneration. Fast turnover alone cannot settle recurrence. The resource
-must pay for repeated episodes without reusing the same budget.
+Next test: a completed, corrected episode followed through regeneration,
+measuring both \(B_I/\mathcal R_I\) and cumulative resource use. Fast
+turnover alone cannot settle recurrence. The resource must pay for
+repeated episodes without reusing the same budget. A successful finite
+run would support the target, not prove the uniform bound.
 Solver setup corrections do not supply that episode. Status:
-implementation corrected; dynamical evidence pending.
+implementation corrected; partial runs provisional.
 
 ---
 
@@ -209,7 +211,7 @@ Core question:
 | Prior top-\(M\) Euler “episodes” | **Demoted** — not full-trajectory evidence |
 | Solver setup ( \(B_I=\int d\), Orszag, fixed \(K\) ) | **Corrected** — not Gate D evidence |
 | Six-box corrected episode through regeneration | **Unrun** |
-| Next decisive test | Completed corrected episode, then regeneration, without reusing the same resource |
+| Next test | Completed corrected episode through regeneration; score \(B_I/\mathcal R_I\) and cumulative resource. A finite run does not prove the uniform bound |
 
 See [`GATE-D-REVIEW-2026-10-09.md`](GATE-D-REVIEW-2026-10-09.md),
 [`GATE-D-FULL-TRAJECTORY-SOLVER.md`](GATE-D-FULL-TRAJECTORY-SOLVER.md).

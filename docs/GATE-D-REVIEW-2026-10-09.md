@@ -75,12 +75,12 @@ FFT path must: (i) score \(B_I=\int d\,dt\) without double-counting
 Those three corrections fix the stated setup errors. They do not validate
 Gate D. Partial runs stay provisional.
 
-**Next decisive test:** a completed, corrected episode followed through
-regeneration. Fast turnover alone cannot settle recurrence. The resource
-must pay for repeated episodes without reusing the same budget.
-Comparison of the corrected solver against the old partial supports
-“implementation corrected; dynamical evidence pending.” It is not an
-independent audit of the commits.
+**Next test:** a completed, corrected episode followed through
+regeneration, measuring both \(B_I/\mathcal R_I\) and cumulative resource
+use. Fast turnover alone cannot settle recurrence. The resource must pay
+for repeated episodes without reusing the same budget. A successful finite
+run would support the target, not prove the uniform bound.
+FFT setup is corrected as reported; partial runs remain provisional.
 
 ---
 
