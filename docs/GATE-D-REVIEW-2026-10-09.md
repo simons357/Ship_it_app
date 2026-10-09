@@ -78,8 +78,9 @@ Gate D. Partial runs stay provisional.
 **Next test:** a completed, corrected episode followed through
 regeneration, measuring both \(B_I/\mathcal R_I\) and cumulative resource
 use. Fast turnover alone cannot settle recurrence. The resource must pay
-for repeated episodes without reusing the same budget. A successful finite
-run would support the target, not prove the uniform bound.
+for repeated episodes without reusing the same budget. A completed finite
+episode can support Gate D, but cannot establish cutoff-uniform control
+or summable recurrence.
 FFT setup is corrected as reported; partial runs remain provisional.
 
 ---

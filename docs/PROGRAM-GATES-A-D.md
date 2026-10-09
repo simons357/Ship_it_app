@@ -1,7 +1,7 @@
 # Program gates A–D
 
 8 / 9 October 2026.
-**C closed for the sharp instantaneous signed band estimate; optimal wavenumber exponent \(1/2\). Gate A unresolved and not a premise. D open on episode control and recurrence funding. (17) not established.**
+**C closed for the sharp instantaneous signed band estimate; optimal wavenumber exponent \(H^{1/2}\) (where \(\Lambda\) appears, \(\Lambda\sim H\)). Gate A unresolved and not a premise. D open. A finite episode cannot establish cutoff-uniform control or summable recurrence. (17) not established.**
 
 \[
 \boxed{

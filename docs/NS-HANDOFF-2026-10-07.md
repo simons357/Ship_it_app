@@ -229,7 +229,7 @@ real Fourier field.
 | **A** | As named by the sharp-band source | **Diagnostic and unresolved.** The \(L_{z_n}\) note is a separate load bound, not this closure ([`sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt`](sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt)) |
 | **B** | Shared-energy accounting | Not the band exponent ([`GATE-B-SHARED-ENERGY.md`](GATE-B-SHARED-ENERGY.md)) |
 | **C** | Sharp instantaneous signed band | **CLOSED — optimal wavenumber exponent \(1/2\)**. Gate A is not a premise. (17) not established ([`GATE-C-HALF-DERIVATIVE.md`](GATE-C-HALF-DERIVATIVE.md)) |
-| **D** | Episode control and recurrence funding | **OPEN** ([`GATE-D-REVIEW.md`](GATE-D-REVIEW.md)): both \(B_I\le C\mathcal R_I\) and \(\sum\mathcal R_I\le C_{\mathrm{data},\nu,T}\), uniform in cutoff. A finite run does not prove the bound |
+| **D** | Episode control and recurrence funding | **OPEN** ([`GATE-D-REVIEW.md`](GATE-D-REVIEW.md)): both \(B_I\le C\mathcal R_I\) and \(\sum\mathcal R_I\le C_{\mathrm{data},\nu,T}\). A completed finite episode can support this and cannot establish cutoff-uniform control or summable recurrence |
 | Parked | 52/70/100 family extensions; random-phase fishing; Ring without bridge | — |
 
 Spectral target remains (15)–(17) on all-high scalene; a

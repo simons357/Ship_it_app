@@ -15,8 +15,9 @@ constants uniform in the Galerkin cutoff.
 Score \(B_I/\mathcal R_I\). Duration ≢ resource.
 \((b-a)d(a)\) reconstructs \(\int d\) from \(d'\); it is not added on top.
 Next test: completed corrected episode through regeneration, measuring
-both \(B_I/\mathcal R_I\) and cumulative resource use. A successful finite
-run would support the target, not prove the uniform bound.
+both \(B_I/\mathcal R_I\) and cumulative resource use. A completed finite
+episode can support Gate D, but cannot establish cutoff-uniform control
+or summable recurrence.
 FFT setup corrected; partial runs provisional.
 
 Full note:

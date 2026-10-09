@@ -19,8 +19,8 @@ Review D: [`GATE-D-REVIEW-2026-10-09.md`](GATE-D-REVIEW-2026-10-09.md).
 [`sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt`](sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt)
 defines \(H\) as wavenumber through \(H\le|k|\le 4H\). Its signed ratio
 \(R(H)\) has matching power bounds of exponent \(1/2\). Gate C is closed for that sharp instantaneous signed band estimate.
-Its optimal wavenumber exponent is \(1/2\) (\(\Lambda\sim H\) denotes
-frequency; if \(L=H^2\), the factor is \(L^{1/4}\)). Gate A remains
+Its optimal wavenumber exponent is \(H^{1/2}\). Where \(\Lambda\) is
+written, \(\Lambda\sim H\). If \(L=H^2\), the factor is \(L^{1/4}\). Gate A remains
 unresolved and is not a premise. (17) is not established. Gate D remains
 open on both episode control and recurrence funding.
 Gate D **target** (not stamped lemma):
@@ -82,16 +82,19 @@ repetition resource still open.
    ([`GATE-D-ADVERSARIAL-RUN-RESULTS.md`](GATE-D-ADVERSARIAL-RUN-RESULTS.md)).
 4. Next test: a completed, corrected episode followed through
    regeneration, measuring both \(B_I/\mathcal R_I\) and cumulative
-   resource use. A successful finite run would support the target, not
-   prove the uniform bound. Lemma remains a target, not a stamp.
+   resource use. A completed finite episode can support Gate D, but cannot
+   establish cutoff-uniform control or summable recurrence. Lemma remains
+   a target, not a stamp.
 
 ---
 
 ## STATUS
 
-GATE C: CLOSED FOR THE SHARP INSTANTANEOUS SIGNED BAND — OPTIMAL WAVENUMBER EXPONENT \(1/2\).
+GATE C: CLOSED FOR THE SHARP INSTANTANEOUS SIGNED BAND — OPTIMAL WAVENUMBER EXPONENT \(H^{1/2}\).
+WHERE \(\Lambda\) APPEARS, \(\Lambda\sim H\). REFERENCE: SHARP-BAND SOURCE.
 GATE A: UNRESOLVED — NOT A PREMISE.
 GATE D: OPEN ON EPISODE CONTROL AND RECURRENCE FUNDING.
+A FINITE EPISODE CANNOT ESTABLISH CUTOFF-UNIFORM CONTROL OR SUMMABLE RECURRENCE.
 (17) NOT ESTABLISHED.
 IMPLEMENTATION CORRECTED; DYNAMICAL EVIDENCE PENDING.
 FULL CORRECTED EPISODE THROUGH REGENERATION: UNRUN.

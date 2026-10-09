@@ -105,8 +105,9 @@ pay for **repeated** episodes. The small-\(\ell^1\) Orbit-R4 prototype
 Next test: a completed, corrected episode followed through regeneration,
 measuring both \(B_I/\mathcal R_I\) and cumulative resource use. Fast
 turnover alone cannot settle recurrence. The resource must pay for
-repeated episodes without reusing the same budget. A successful finite
-run would support the target, not prove the uniform bound.
+repeated episodes without reusing the same budget. A completed finite
+episode can support Gate D, but cannot establish cutoff-uniform control
+or summable recurrence.
 Solver setup corrections do not supply that episode. Status:
 implementation corrected; partial runs provisional.
 
@@ -211,7 +212,7 @@ Core question:
 | Prior top-\(M\) Euler “episodes” | **Demoted** — not full-trajectory evidence |
 | Solver setup ( \(B_I=\int d\), Orszag, fixed \(K\) ) | **Corrected** — not Gate D evidence |
 | Six-box corrected episode through regeneration | **Unrun** |
-| Next test | Completed corrected episode through regeneration; score \(B_I/\mathcal R_I\) and cumulative resource. A finite run does not prove the uniform bound |
+| Next test | Completed corrected episode through regeneration; score \(B_I/\mathcal R_I\) and cumulative resource. Supports Gate D; does not establish cutoff-uniform control or summable recurrence |
 
 See [`GATE-D-REVIEW-2026-10-09.md`](GATE-D-REVIEW-2026-10-09.md),
 [`GATE-D-FULL-TRAJECTORY-SOLVER.md`](GATE-D-FULL-TRAJECTORY-SOLVER.md).

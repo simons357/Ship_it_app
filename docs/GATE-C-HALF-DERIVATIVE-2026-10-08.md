@@ -3,10 +3,10 @@
 8 October 2026. Notation fixed 9 October 2026 from the sharp-band source.
 **CLOSED for the sharp instantaneous signed band estimate. Optimal wavenumber exponent \(1/2\). Gate A is not a premise. (17) is not established.**
 
-The basis is independent of Gate A. \(\Lambda\sim H\) denotes frequency, and
-in this source that frequency is wavenumber on \(H\le|k|\le 4H\). The optimal
-exponent is \(\Lambda^{1/2}\sim H^{1/2}\). If squared frequency is \(L=H^2\),
-the same factor is \(L^{1/4}\).
+The sharp-band source is the reference. \(H\) is the wavenumber, on the band
+\(H\le|k|\le 4H\). The optimal exponent is \(H^{1/2}\). Where \(\Lambda\)
+appears, it is defined there by \(\Lambda\sim H\), so \(\Lambda^{1/2}\) is
+the same factor. If squared frequency is \(L=H^2\), the factor is \(L^{1/4}\).
 
 Source:
 [`sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt`](sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt).
@@ -40,9 +40,9 @@ R(H)\le 1728\sqrt{H},
 \qquad
 R(63n)\ge c_*\sqrt{63n}.
 \]
-Write \(\Lambda\) for this same frequency, so \(\Lambda\sim H\) and the deficit
-is \(\Lambda^{1/2}\sim H^{1/2}\): one half derivative. If squared frequency
-is denoted by \(L=H^2\), the same factor is \(L^{1/4}\).
+The deficit is \(H^{1/2}\): one half derivative in wavenumber. Where
+\(\Lambda\) is written, \(\Lambda\sim H\), so \(\Lambda^{1/2}=H^{1/2}\). If
+squared frequency is \(L=H^2\), the same factor is \(L^{1/4}\).
 
 ---
 
@@ -75,7 +75,7 @@ control and recurrence funding, with constants uniform in the cutoff.
 | Claim | Status |
 |---|---|
 | Sharp instantaneous signed band | **CLOSED** — optimal wavenumber exponent \(1/2\) |
-| Same factor if \(L=H^2\) | \(L^{1/4}\) (\(\Lambda\sim H\) = frequency) |
+| Same factor if \(L=H^2\) | \(L^{1/4}\) (and \(\Lambda^{1/2}\) only where \(\Lambda\sim H\)) |
 | Gate A | **Unresolved** — not a premise |
 | (17) | **Not established** |
 | Gate D episode control and recurrence funding | **Open** |
@@ -98,7 +98,8 @@ reusing the same budget.
 
 Next test: a completed, corrected episode followed through regeneration,
 measuring both \(B_I/\mathcal R_I\) and cumulative resource use. A
-successful finite run would support the target, not prove the uniform bound.
+completed finite episode can support Gate D, but cannot establish
+cutoff-uniform control or summable recurrence.
 
 Out of scope as substitutes: shell-count; Young; generic instantaneous
 phase; Ring without bridge; swirl-as-substitute; B41→NSE; random-phase.
@@ -111,9 +112,11 @@ Status: implementation corrected; dynamical evidence pending.
 ## STATUS
 
 GATE C: CLOSED FOR THE SHARP INSTANTANEOUS SIGNED BAND ESTIMATE.
-OPTIMAL WAVENUMBER EXPONENT \(1/2\) (\(\Lambda\sim H\) = FREQUENCY; \(L^{1/4}\) IF \(L=H^2\)).
+OPTIMAL WAVENUMBER EXPONENT \(H^{1/2}\). WHERE \(\Lambda\) APPEARS, \(\Lambda\sim H\).
+IF \(L=H^2\), THE SAME FACTOR IS \(L^{1/4}\).
 GATE A: UNRESOLVED — NOT A PREMISE.
 GATE D: OPEN ON EPISODE CONTROL AND RECURRENCE FUNDING.
-A FINITE RUN DOES NOT PROVE THE UNIFORM BOUND.
+A FINITE EPISODE CAN SUPPORT GATE D AND CANNOT ESTABLISH CUTOFF-UNIFORM
+CONTROL OR SUMMABLE RECURRENCE.
 (17) NOT ESTABLISHED.
 NS NOT SOLVED.
