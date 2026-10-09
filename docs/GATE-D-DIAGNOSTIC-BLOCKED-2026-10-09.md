@@ -75,13 +75,17 @@ That page does not define a diagnostic named \(G\). The episode-balance note def
 
 Until the 20 September scalene-target pages are attached, the reconstruction is not implemented and a crossing detector is not built. Gate D remains open and blocked.
 
+## Working derivation
+
+\(T_{\mathrm{sc}}\) is derived from the Galerkin equation and the filed distinct-radii cut in [`GATE-D-DERIVED-TSC-2026-10-09.md`](GATE-D-DERIVED-TSC-2026-10-09.md). That derivation is not the 20 September original and not an adoption of the PR #165 reconstruction. The project \(G\) does not follow from the same identity. No crossing detector is built.
+
 ## STATUS
 
-DEFINITIONS OF \(T_{\mathrm{sc}}\) AND THE PROJECT \(G\): NOT ON HAND. UNDEFINED FOR IMPLEMENTATION.
 20 SEPTEMBER ORIGINALS: NOT IN THE REPOSITORY.
 FOURIER-TRIANGLE ON PR #165: RECONSTRUCTION, NOT ADOPTED AS THE MISSING SOURCE.
+\(T_{\mathrm{sc}}\): DERIVED WORKING DEFINITION. NOT THE SEPTEMBER ORIGINAL.
+PROJECT \(G\): NOT DETERMINED.
 RECONSTRUCTION: NOT IMPLEMENTED. CROSSING DETECTOR: NOT BUILT.
-DIAGNOSTIC IMPLEMENTATION: BLOCKED.
-GATE D: OPEN AND BLOCKED.
+GATE D: OPEN.
 \(\mathcal S_{K,N}\) IS NOT THE EPISODE BUDGET \(B_I\).
 NS NOT SOLVED.

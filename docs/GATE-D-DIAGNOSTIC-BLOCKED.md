@@ -2,4 +2,4 @@
 
 Dated: [`GATE-D-DIAGNOSTIC-BLOCKED-2026-10-09.md`](GATE-D-DIAGNOSTIC-BLOCKED-2026-10-09.md).
 
-\(T_{\mathrm{sc}}\) and the project \(G\) remain undefined for implementation. The 20 September originals are not in the repository. `docs/FOURIER-TRIANGLE.md` on PR #165 is a reconstruction and is not adopted as the missing source. The reconstruction is not implemented. A crossing detector is not built. Gate D remains open and blocked.
+The 20 September originals are not in the repository. \(T_{\mathrm{sc}}\) now has a derived working definition ([`GATE-D-DERIVED-TSC-2026-10-09.md`](GATE-D-DERIVED-TSC-2026-10-09.md)); it is not those originals. The project \(G\) does not follow. A crossing detector is not built. Gate D remains open.

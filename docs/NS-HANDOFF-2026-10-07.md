@@ -328,12 +328,14 @@ blocked. Gate D remains open
 those originals, and it is not adopted as the missing source.
 `NS_LEMMA_19_COUNTEREXAMPLE_2026-09-20.md` and
 `NS_SCALENE_EVOLUTION_IDENTITY_2026-09-20.md` are not filed.
-\(T_{\mathrm{sc}}\) and the project \(G\) remain undefined for
-implementation. The integrated \(\mathcal S_{K,N}\) on that page is not
+\(T_{\mathrm{sc}}\) now has a derived working definition from the Galerkin
+equation and the distinct-radii cut
+([`GATE-D-DERIVED-TSC-2026-10-09.md`](GATE-D-DERIVED-TSC-2026-10-09.md)).
+It is not the September original. The project \(G\) does not follow.
+The integrated \(\mathcal S_{K,N}\) on the reconstruction page is not
 the episode budget \(B_I\). The orbit note’s \(G_T\) is a resource
 constant, not a pointwise diagnostic. The reconstruction is not
-implemented, and a crossing detector is not built. Gate D remains open
-and blocked.
+implemented, and a crossing detector is not built. Gate D remains open.
 
 ---
 
@@ -348,9 +350,10 @@ GATE B: INDEPENDENT REVIEW. NOT THE PRIMARY EFFORT. APPROVAL WOULD GIVE ONLY \(\
 GATE D: PRIMARY TARGET. CONVERGED TURNOVER, REGENERATION, FINITE SHARED RESOURCE, AND A CUTOFF-INDEPENDENT PROOF ALL REMAIN OPEN.
 RESEARCH STATUS: ACTIVE, ADVANCING, AND MATHEMATICALLY UNFINISHED. NO GLOBAL REGULARITY RESULT.
 GAUSSIAN SCAFFOLD: SMOKE ONLY THROUGH \(s=0.02\). \(T_{\mathrm{sc}}\), \(D\), AND \(G\) NULL. NOT AN EPISODE.
-DIAGNOSTIC IMPLEMENTATION: BLOCKED. \(T_{\mathrm{sc}}\) AND PROJECT \(G\): UNDEFINED FOR IMPLEMENTATION.
-PR #165 FOURIER-TRIANGLE: RECONSTRUCTION, NOT ADOPTED. NOT IMPLEMENTED. CROSSING DETECTOR: NOT BUILT.
-GATE D: OPEN AND BLOCKED. \(\mathcal S_{K,N}\) IS NOT \(B_I\).
+\(T_{\mathrm{sc}}\): DERIVED WORKING DEFINITION FROM THE GALERKIN EQUATION AND THE DISTINCT-RADII CUT. NOT THE 20 SEPTEMBER ORIGINAL.
+PROJECT \(G\): NOT DETERMINED. CROSSING DETECTOR: NOT BUILT.
+PR #165 FOURIER-TRIANGLE: RECONSTRUCTION, NOT ADOPTED.
+GATE D: OPEN. \(\mathcal S_{K,N}\) IS NOT \(B_I\).
 MEASUREMENT MODULE: TESTED REFERENCE. FULL SIX-BOX EPISODE: UNRUN.
 THIRD-TRANSFER PACKET: BEGINNING ONLY; TAIL GROWTH \(0.00048543\); NOT A RERUN.
 A FINITE EPISODE CANNOT ESTABLISH CUTOFF-UNIFORM CONTROL OR SUMMABLE RECURRENCE.
