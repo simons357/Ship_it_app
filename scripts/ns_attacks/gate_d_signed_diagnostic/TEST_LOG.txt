@@ -1,0 +1,8 @@
+test_direct_matches_pseudospectral_full_when_all_triads_scalene (test_signed_scalene.SignedTests.test_direct_matches_pseudospectral_full_when_all_triads_scalene) ... ok
+test_no_scalene_on_one_shell (test_signed_scalene.SignedTests.test_no_scalene_on_one_shell) ... ok
+test_exact_fourier_triad_production (test_G.TestG.test_exact_fourier_triad_production) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.015s
+
+OK
