@@ -14,15 +14,21 @@ Files: `scripts/ns_attacks/gate_d_vorticity_evaluator/`.
 
 The archive’s one-off timing table was not rerun. No vorticity benchmark script is in the zip. That table is not a certified speedup.
 
+## After the independent audit
+
+The conditional pass and the hardening are in [`GATE-D-VORTICITY-INDEPENDENT-AUDIT-2026-10-09.md`](GATE-D-VORTICITY-INDEPENDENT-AUDIT-2026-10-09.md). Entry now checks Hermitian symmetry and the divergence-free condition, and it enforces an explicit byte estimate. `return_parts` reports the cancellation ratio and marks that ratio as not an error bound. Three tests passed here in 1.188 s. Their combined regression finished in 1.818 s, and their four-field comparison was not rerun here.
+
 ## Still blocked
 
-No \(N=128/160\) benchmark, no hard memory cap, no forward-error bound, no \(\mathbb R^3\) convergence, and no \(L\) versus \(2L\) approval. Measured agreement is not a cancellation certificate for \(T_{\mathrm{full}}-T_{\mathrm{rep}}\). The original Lemma 19 coefficients remain uncertified. The locked \(G\) unit test was not rerun. No turnover, regeneration, or cutoff-independent budget is claimed.
+No certified numerical-error bound on \(T_{\mathrm{full}}-T_{\mathrm{rep}}\). The byte estimate does not cover every NumPy temporary and is not a peak-RSS certificate. No \(N=128/160\) benchmark, no \(\mathbb R^3\) convergence, and no \(L\) versus \(2L\) approval. The original Lemma 19 coefficients remain uncertified. The locked \(G\) unit test was not rerun. No turnover, regeneration, or cutoff-independent budget is claimed.
 
 ## STATUS
 
-CANDIDATE: FILED. NOT PRODUCTION CERTIFIED.
-TWO TESTS: PASSED HERE.
-ARCHIVE TIMING TABLE: NOT RERUN.
+CANDIDATE: CONDITIONAL PASS, THEN HARDENED. NOT PRODUCTION CERTIFIED.
+PACKAGED TESTS BEFORE HARDENING: 2 PASSED HERE.
+TESTS AFTER HARDENING: 3 PASSED HERE, 1.188 s.
+THEIR REGRESSION: 1.818 s. THEIR FOUR-FIELD TABLE: NOT RERUN HERE.
+CANCELLATION RATIO: REPORTED. NOT AN ERROR BOUND.
 LOCKED STEPPER: UNCHANGED.
 FROZEN TRAJECTORY: NOT RUN.
 GATE D: OPEN / BLOCKED.
