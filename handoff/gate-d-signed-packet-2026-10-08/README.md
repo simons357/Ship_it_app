@@ -1,25 +1,19 @@
-# Gate D — NS-agent attachment pack
+# Gate D — Signed packet execution pack
 
-## This drop (named files)
+## Named attachments
 
 | File | Role |
 |---|---|
-| `verify_signed_gate.py` | Exact signed-gate checks |
-| `Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt` | Six-box adversary note |
-| `Gate-D-Signed-Packet-Execution.zip` | Bundle: Orbit R4, episode balance, Signed-Gate txt, verifier, run brief |
+| `verify_signed_gate.py` | Exact six-box construction + checks |
+| `Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt` | Adversary note |
+| `Gate-D-Signed-Packet-Execution.zip` | Bundle (Orbit R4, episode balance, signed-gate txt, verify, run brief) |
 | `GATE-D-INITIAL-SWEEP-2026-10-08.json` | Author static sweep (**not** \(B_{I_H}\)) |
 
-`from-zip/` is the unpack of the ZIP for convenience.
-
-Also present: `gated_initial.py`, `gated_initial_fast.cpp`, `Signed-Gate-Checks.json`, full Orbit/episode notes.
-
-## Commands
+Also: `Signed-Gate-Checks.json` (from `python3 verify_signed_gate.py`), `gated_initial.py`, `gated_initial_fast.cpp`.
 
 ```bash
-python3 verify_signed_gate.py
-# or
-unzip -o Gate-D-Signed-Packet-Execution.zip -d from-zip
-python3 from-zip/verify_signed_gate.py
+python3 verify_signed_gate.py   # PASS
+python3 gated_initial.py 1 8    # static only
 ```
 
-Initial sweep ≠ episode cost. Lemma not stamped. (17) not claimed.
+Lemma not stamped. (17) not claimed.

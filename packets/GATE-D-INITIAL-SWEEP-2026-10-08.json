@@ -1,0 +1,25 @@
+{
+  "status": "NUMERICAL EVIDENCE ONLY; initial-time Gate D measurements, no complete episode",
+  "viscosity": 1e-5,
+  "normalization": "E=1",
+  "adversary": "imaginary-coefficient six-box Gate-C signed packet",
+  "cutoffs": ["4H", "8H"],
+  "rows_8H": [
+    {"n":1,"H":63,"D0":16404.9040479154,"Dprime0":3109989.5742406,"D0_over_X0":0.407035106922445,"tau_local":0.00527490644463693,"H_5_2_tau":166.175171270022},
+    {"n":2,"H":126,"D0":195728.271161724,"Dprime0":181547688.07326,"D0_over_X0":1.21051156806238,"tau_local":0.00107810941157643,"H_5_2_tau":192.127353323412},
+    {"n":3,"H":189,"D0":957681.87785166,"Dprime0":2289891907.70148,"D0_over_X0":2.62962042037854,"tau_local":0.000418221434221736,"H_5_2_tau":205.381252229299},
+    {"n":4,"H":252,"D0":3113884.59611625,"Dprime0":14593333169.9037,"D0_over_X0":4.80684849846627,"tau_local":0.000213377201757999,"H_5_2_tau":215.104436338531}
+  ],
+  "cutoff_check_Dprime_relative_4H_vs_8H": [
+    {"H":63,"relative_difference":0.00027713},
+    {"H":126,"relative_difference":0.00024700},
+    {"H":189,"relative_difference":0.00023864},
+    {"H":252,"relative_difference":0.00023502}
+  ],
+  "notes": [
+    "D0>0 and Dprime0>0 at all tested H, so the first positive episode begins at t=0 and is initially rising for nu=1e-5.",
+    "tau_local=D0/Dprime0 is a local diagnostic timescale, not the complete episode duration.",
+    "A log-log fit over H=63,126,189,252 gives tau_local approximately H^-2.31; over H=126,189,252 approximately H^-2.34. This is suggestive but not a theorem and not yet H^-5/2.",
+    "Complete full spherical Galerkin evolution at cutoff >=4H is computationally large; no BI_H has been measured here."
+  ]
+}
