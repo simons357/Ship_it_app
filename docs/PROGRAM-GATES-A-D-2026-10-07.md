@@ -82,11 +82,14 @@ repetition resource still open.
    (boundary term is reconstruction, not additive).
 3. Demote prior top-\(M\) “complete episode” rows
    ([`GATE-D-ADVERSARIAL-RUN-RESULTS.md`](GATE-D-ADVERSARIAL-RUN-RESULTS.md)).
-4. Next test: a completed, corrected episode followed through
-   regeneration, measuring both \(B_I/\mathcal R_I\) and cumulative
-   resource use. A completed finite episode can support Gate D, but cannot
-   establish cutoff-uniform control or summable recurrence. Lemma remains
-   a target, not a stamp.
+4. A separate packet shows the beginning of a third transfer, not a
+   completed one
+   ([`GATE-D-THIRD-TRANSFER-PACKET.md`](GATE-D-THIRD-TRANSFER-PACKET.md)).
+   It is feeding evidence from a consistency review, not a rerun.
+5. Next test: the six-box signed-scalene episode, scoring
+   \(B_I/\mathcal R_I\) and cumulative resource. A completed finite episode
+   can support Gate D and cannot establish cutoff-uniform control or
+   summable recurrence. Lemma remains a target, not a stamp.
 
 ---
 
@@ -100,4 +103,5 @@ A FINITE EPISODE CANNOT ESTABLISH CUTOFF-UNIFORM CONTROL OR SUMMABLE RECURRENCE.
 (17) NOT ESTABLISHED.
 IMPLEMENTATION CORRECTED; DYNAMICAL EVIDENCE PENDING.
 MEASUREMENT MODULE: TESTED REFERENCE. FULL SIX-BOX EPISODE: UNRUN.
+THIRD-TRANSFER PACKET: BEGINNING ONLY; NOT A COMPLETED TRANSFER; NOT A RERUN.
 NS NOT SOLVED.

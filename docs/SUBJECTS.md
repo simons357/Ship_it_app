@@ -3,7 +3,7 @@
 One page to see **what this repo is about** and **where each thread lives**.
 
 Update this file when a subject changes status (merge, park, abandon, or rename).  
-Last reviewed: **2026-10-09** (Gate D measurement module is a tested reference; full six-box episode unrun; turnover and recurrence open).
+Last reviewed: **2026-10-09** (third-transfer packet is a beginning, not a completed transfer; next test is the six-box signed-scalene episode).
 
 ---
 
@@ -39,7 +39,7 @@ Last reviewed: **2026-10-09** (Gate D measurement module is a tested reference; 
 | **Related gate stack** | Gates / SAG / lemmas / Fourier-triangle / MIN-CYCLE / channel algebra — dozens of open PRs (see GitHub “Open”) |
 | **32-shape shared-budget extension** | 17 + 15 nonzero from \((9,25)\); mult 4 zero-pruned; [`SHARED-BUDGET-32-SHAPE-EXTENSION.md`](SHARED-BUDGET-32-SHAPE-EXTENSION.md). ZIP no longer the blocker. Not (17). |
 | **NS handoff (7 Oct 2026)** | Cross-device update: [`NS-HANDOFF.md`](NS-HANDOFF.md). Finite verify: `scripts/ns_attacks/verify_families.py`. |
-| **Gates A–D** | **C:** closed for the sharp instantaneous signed band; optimal wavenumber exponent \(H^{1/2}\) (where \(\Lambda\) appears, \(\Lambda\sim H\)). **A:** unresolved, not a premise. **D:** open. Measurement module reported verified (six-box initials, generated modes, initial boundary term, 80-mode check); full six-box episode unrun — [`GATE-D-SIGNED-MEASUREMENT-MODULE.md`](GATE-D-SIGNED-MEASUREMENT-MODULE.md). A finite episode cannot establish cutoff-uniform control or summable recurrence. |
+| **Gates A–D** | **C:** closed for the sharp instantaneous signed band; optimal wavenumber exponent \(H^{1/2}\) (where \(\Lambda\) appears, \(\Lambda\sim H\)). **A:** unresolved, not a premise. **D:** open. Measurement module is a tested reference; full six-box episode unrun. A separate packet shows the beginning of a third transfer (93.68% cross-feed from \(\lvert k\rvert\le 8\) into \(8<\lvert k\rvert\le 16\)); tail growth \(0.00048543\) after viscosity; 12.56% of the threshold; not a rerun — [`GATE-D-THIRD-TRANSFER-PACKET.md`](GATE-D-THIRD-TRANSFER-PACKET.md). Next test: six-box signed-scalene episode. |
 | **Phase cancellation** | Narrowed: ratio 1 = common signs, not bound saturation; not all signed routes dead — [`PHASE-CANCELLATION-EXPLORATION.md`](PHASE-CANCELLATION-EXPLORATION.md). |
 
 ### 3. Phi-renorm / swirl papers
