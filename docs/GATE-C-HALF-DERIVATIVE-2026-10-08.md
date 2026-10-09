@@ -63,12 +63,6 @@ Bridge: onset \(O(\rho^{-2})\) (amplitude) ↔ \(H^{1/2}\) (frequency).
 Out of scope as substitutes: shell-count; Young; generic instantaneous
 phase; Ring without bridge; swirl-as-substitute; B41→NSE; random-phase.
 
-Execution status (9 Oct; not part of the 8 Oct closure): lemma **not**
-stamped; duration ≢ resource; score \(B_I/\mathcal R_I\); six-box
-Signed-Gate adversary required —
-[`GATE-D-REVIEW-2026-10-09.md`](GATE-D-REVIEW-2026-10-09.md),
-[`GATE-D-FFT-CORRECTIONS-2026-10-09.md`](GATE-D-FFT-CORRECTIONS-2026-10-09.md).
-
 ---
 
 ## STATUS
