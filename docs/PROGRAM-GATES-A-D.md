@@ -1,7 +1,7 @@
 # Program gates A–D
 
 8 / 9 October 2026.
-**A–C closed. D: ACTIVE — resource-weighted turnover (lemma not stamped). Not (17).**
+**A–B closed. C closed for the audited assembly (\(\Lambda\sim H\), deficit \(\tfrac12\)). D: ACTIVE — resource-weighted turnover (lemma not stamped; dynamical evidence pending). Not (17).**
 
 \[
 \boxed{

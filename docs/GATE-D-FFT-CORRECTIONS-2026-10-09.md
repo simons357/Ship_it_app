@@ -18,6 +18,14 @@ rows are **provisional — not Gate D evidence**.
 
 “\(D\) rising” on the old partial run stays **provisional**.
 
+The three corrections fix the stated setup errors. They do not validate
+Gate D. A partial run, even on the corrected solver, stays provisional.
+Status of the comparison: **implementation corrected; dynamical evidence
+pending.** The next decisive test is a completed, corrected episode
+followed through regeneration. Fast turnover alone cannot settle
+recurrence; the resource must pay for repeated episodes without reusing
+the same budget.
+
 ---
 
 ## 1. Episode cost — no double count
@@ -87,7 +95,8 @@ diagnostic. Recorded score: \(B_I/\mathcal R_I\).
 
 ## STATUS
 
-CORRECTIONS VERIFIED IN WORKSPACE VS `18a267f3` CHECK.
-PRIOR FFT EVIDENCE DEMOTED.
+SETUP CORRECTIONS PRESENT IN WORKSPACE VS `18a267f3` CHECK.
+PRIOR FFT EVIDENCE DEMOTED. PARTIAL RUNS REMAIN PROVISIONAL.
+IMPLEMENTATION CORRECTED; DYNAMICAL EVIDENCE PENDING.
 GATE D: ACTIVE — RESOURCE-WEIGHTED TURNOVER (LEMMA NOT STAMPED).
 NS NOT SOLVED.

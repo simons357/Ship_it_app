@@ -26,13 +26,16 @@ and redo the aggregate.
 
 ## Output → Gate C
 
-After that correction the residual is schematic
+After that correction the residual of this assembly is schematic
 \[
 \mathcal T_{\mathrm{bad}}
 \lesssim
 \nu Y\times\Lambda^{1/2}.
 \]
-Exact missing exponent: \(\tfrac12\).
+Here \(\Lambda\) means frequency, \(\Lambda\sim H\), not squared frequency.
+Then \(\Lambda^{1/2}\sim H^{1/2}\) is one half derivative. Exact missing
+exponent of this assembly: \(\tfrac12\). Scope and the rejected
+\(\Lambda=H^2\) reading are in the Gate C note.
 \[
 \boxed{\text{We need a dynamical mechanism worth one half derivative.}}
 \]
@@ -42,6 +45,6 @@ Exact missing exponent: \(\tfrac12\).
 ## STATUS
 
 GATE B: CLOSED.
-GATE C: CLOSED (DEFICIT = \(\tfrac12\)).
+GATE C: CLOSED FOR THE AUDITED ASSEMBLY (DEFICIT = \(\tfrac12\), \(\Lambda\sim H\)).
 GATE D: ACTIVE.
 NS NOT SOLVED.

@@ -65,15 +65,16 @@ Duration match alone does not close recurrence.
 \boxed{\textbf{Resource-Weighted Turnover Lemma}}
 \]
 
-Find a nonnegative resource \(\mathcal R_I\) such that
+Find a nonnegative resource \(\mathcal R_I\) such that the two obligations
 \[
-B_I\le C\,\mathcal R_I,
+B_I=\int_I d(t)\,dt\le C\mathcal R_I,
 \qquad
-\sum_I\mathcal R_I
-\le C(u_0,\nu,K,T).
+\sum_I\mathcal R_I\le C_{\mathrm{data},\nu,T}
 \]
-Then critical \(H^{-5/2}\) turnover can remove the static \(H^{1/2}\)
-loss, while the resource pays for **repetition**.
+hold with constants uniform in the Galerkin cutoff. Critical \(H^{-5/2}\)
+turnover is a duration scale. It can match the static \(H^{1/2}\) loss on
+one window. It does not by itself pay for repetition. The resource must
+pay for repeated episodes without reusing the same budget.
 
 Preferred working form (resource-weighted; duration not interchangeable):
 \[
@@ -85,11 +86,11 @@ with \(\sum_I\mathcal R_I\) controlled. Record
 \(H^{5/2}\lvert I\rvert\) as a separate diagnostic — never as a
 substitute for \(\mathcal R_I\).
 
-Budget consequence **if** the lemma holds:
+Budget consequence **if** both obligations hold, with the same uniformity
+in the Galerkin cutoff:
 \[
 \sum_I B_I
-\le C(u_0,\nu,K,T)
-\quad\text{(uniformly in Galerkin \(N\))}
+\le C\,C_{\mathrm{data},\nu,T}
 \]
 ⇒ control of \(\mathcal S_{K,N}(T)\).
 
@@ -100,6 +101,12 @@ Budget consequence **if** the lemma holds:
 No large-packet (Gate-C / six-box scale) resource has yet been shown to
 pay for **repeated** episodes. The small-\(\ell^1\) Orbit-R4 prototype
 \(\int UW\,dt\le U_0^2/(2(\nu-U_0))\) remains restricted-class only.
+
+Next decisive test: a completed, corrected episode followed through
+regeneration. Fast turnover alone cannot settle recurrence. The resource
+must pay for repeated episodes without reusing the same budget.
+Solver setup corrections do not supply that episode. Status:
+implementation corrected; dynamical evidence pending.
 
 ---
 
@@ -182,7 +189,7 @@ Pipeline:
 \to
 \text{exact }D(0),D'(0)
 \to
-B_{I_H}/\mathcal R_{I_H}\text{ (with boundary term)}.
+B_{I_H}/\mathcal R_{I_H}\text{ with }B_I=\int d.
 \]
 
 Core question:
@@ -200,8 +207,9 @@ Core question:
 | Sources (Orbit R4, episode balance, Signed-Gate) | **Recovered — blocker closed** |
 | Static author sweep | Filed (exponents only; not episode cost) |
 | Prior top-\(M\) Euler “episodes” | **Demoted** — not full-trajectory evidence |
-| Six-box **full-trajectory** \(B_{I_H}/\mathcal R_{I_H}\) | **Unrun** (dense path OOM) |
-| Next task | Feasible full-trajectory solver preserving signed-scalene diagnostic |
+| Solver setup ( \(B_I=\int d\), Orszag, fixed \(K\) ) | **Corrected** — not Gate D evidence |
+| Six-box corrected episode through regeneration | **Unrun** |
+| Next decisive test | Completed corrected episode, then regeneration, without reusing the same resource |
 
 See [`GATE-D-REVIEW-2026-10-09.md`](GATE-D-REVIEW-2026-10-09.md),
 [`GATE-D-FULL-TRAJECTORY-SOLVER.md`](GATE-D-FULL-TRAJECTORY-SOLVER.md).
@@ -219,10 +227,11 @@ B41→NSE; Gaussian as substitute for six-box.
 ## STATUS
 
 GATE D: VALID TARGET; LEMMA NOT STAMPED.
-NEED: \(B_I\le C\mathcal R_I\) WITH \(\sum\mathcal R_I\) CONTROLLED.
-SCORE: \(B_I/\mathcal R_I\) (NOT MERE \(O(1)/o(1)\)).
-BOUNDARY TERM: \((b-a)d(a)\) WHEN \(d(a)>0\).
-DURATION ≢ RESOURCE.
-EXECUTION GAP: FULL-TRAJECTORY SIX-BOX SOLVER.
+NEED: \(B_I=\int d\le C\mathcal R_I\) AND \(\sum\mathcal R_I\le C_{\mathrm{data},\nu,T}\),
+CONSTANTS UNIFORM IN THE GALERKIN CUTOFF.
+SCORE: \(B_I/\mathcal R_I\).
+DURATION ≢ RESOURCE. FAST TURNOVER DOES NOT PAY FOR RECURRENCE.
+IMPLEMENTATION CORRECTED; DYNAMICAL EVIDENCE PENDING.
+NEXT TEST: COMPLETED CORRECTED EPISODE THROUGH REGENERATION.
 (17) NOT CLAIMED.
 NS NOT SOLVED.

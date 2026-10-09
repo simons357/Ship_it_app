@@ -39,7 +39,7 @@ Last reviewed: **2026-10-09** (Gate D: valid target not stamped; full-trajectory
 | **Related gate stack** | Gates / SAG / lemmas / Fourier-triangle / MIN-CYCLE / channel algebra — dozens of open PRs (see GitHub “Open”) |
 | **32-shape shared-budget extension** | 17 + 15 nonzero from \((9,25)\); mult 4 zero-pruned; [`SHARED-BUDGET-32-SHAPE-EXTENSION.md`](SHARED-BUDGET-32-SHAPE-EXTENSION.md). ZIP no longer the blocker. Not (17). |
 | **NS handoff (7 Oct 2026)** | Cross-device update: [`NS-HANDOFF.md`](NS-HANDOFF.md). Finite verify: `scripts/ns_attacks/verify_families.py`. |
-| **Gates A–D** | A–C closed. **D:** valid target, lemma **not** stamped. Sources recovered. Prior top-\(M\) episodes demoted. Full-trajectory six-box \(B_I/\mathcal R_I\) unrun — [`GATE-D-REVIEW.md`](GATE-D-REVIEW.md), [`GATE-D-FULL-TRAJECTORY-SOLVER.md`](GATE-D-FULL-TRAJECTORY-SOLVER.md). Gaussian \(s=4\) separate, unresolved. |
+| **Gates A–D** | A–B closed. **C:** closed for the audited assembly only — deficit \(\tfrac12\) with \(\Lambda\sim H\) (frequency), not a claim that every estimate loses that exponent ([`GATE-C-HALF-DERIVATIVE.md`](GATE-C-HALF-DERIVATIVE.md)). **D:** valid target, lemma **not** stamped. Two obligations \(B_I=\int d\le C\mathcal R_I\) and \(\sum\mathcal R_I\le C_{\mathrm{data},\nu,T}\), constants uniform in the cutoff. Setup corrections in; dynamical evidence pending. Next test: completed corrected episode through regeneration — [`GATE-D-REVIEW.md`](GATE-D-REVIEW.md). Gaussian \(s=4\) separate, unresolved. |
 | **Phase cancellation** | Narrowed: ratio 1 = common signs, not bound saturation; not all signed routes dead — [`PHASE-CANCELLATION-EXPLORATION.md`](PHASE-CANCELLATION-EXPLORATION.md). |
 
 ### 3. Phi-renorm / swirl papers

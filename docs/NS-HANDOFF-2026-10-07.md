@@ -228,8 +228,8 @@ real Fourier field.
 |---|---|---|
 | **A** | Positive all-shape load | **CLOSED — Outcome B** ([`GATE-A-KILL-CERTIFICATE.md`](GATE-A-KILL-CERTIFICATE.md)): \(L_{z_n}\to\infty\) |
 | **B** | Shared-energy accounting | **CLOSED** ([`GATE-B-SHARED-ENERGY.md`](GATE-B-SHARED-ENERGY.md)) |
-| **C** | Exact missing exponent | **CLOSED — \(\tfrac12\)** ([`GATE-C-HALF-DERIVATIVE.md`](GATE-C-HALF-DERIVATIVE.md)): need a dynamical mechanism worth one half derivative |
-| **D** | Resource-Weighted Turnover Lemma | **VALID TARGET — not stamped** ([`GATE-D-REVIEW.md`](GATE-D-REVIEW.md)): \(B_I\le C\mathcal R_I\), score \(B_I/\mathcal R_I\); duration ≢ resource; boundary term \((b-a)d(a)\); full-trajectory six-box still unrun ([`GATE-D-FULL-TRAJECTORY-SOLVER.md`](GATE-D-FULL-TRAJECTORY-SOLVER.md)) |
+| **C** | Exact missing exponent of the audited assembly | **CLOSED — \(\tfrac12\)** with \(\Lambda\sim H\) (frequency), so \(\Lambda^{1/2}\sim H^{1/2}\). Not a claim that every estimate loses that exponent ([`GATE-C-HALF-DERIVATIVE.md`](GATE-C-HALF-DERIVATIVE.md)) |
+| **D** | Resource-Weighted Turnover Lemma | **VALID TARGET — not stamped; dynamical evidence pending** ([`GATE-D-REVIEW.md`](GATE-D-REVIEW.md)): \(B_I=\int d\le C\mathcal R_I\) and \(\sum\mathcal R_I\le C_{\mathrm{data},\nu,T}\), constants uniform in the Galerkin cutoff. Next test: completed corrected episode through regeneration. Setup corrections do not validate the lemma ([`GATE-D-FULL-TRAJECTORY-SOLVER.md`](GATE-D-FULL-TRAJECTORY-SOLVER.md)) |
 | Parked | 52/70/100 family extensions; random-phase fishing; Ring without bridge | — |
 
 Spectral target remains (15)–(17) on all-high scalene; a

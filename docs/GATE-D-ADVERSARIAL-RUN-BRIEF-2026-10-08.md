@@ -21,11 +21,12 @@ Sources:
 \boxed{\textbf{Resource-Weighted Turnover Lemma}}
 \]
 \[
-B_I\le C\,\mathcal R_I,
+B_I=\int_I d(t)\,dt\le C\mathcal R_I,
 \qquad
-\sum_I\mathcal R_I
-\le C(u_0,\nu,K,T).
+\sum_I\mathcal R_I\le C_{\mathrm{data},\nu,T},
 \]
+constants uniform in the Galerkin cutoff. Fast turnover does not replace
+the second obligation.
 
 Stack:
 \[

@@ -72,6 +72,16 @@ FFT path must: (i) score \(B_I=\int d\,dt\) without double-counting
 \((b-a)d(a)\); (ii) Orszag-dealias (\(N\ge 3k_{\max}\), ⇒ 768 at \(4H\));
 (iii) use fixed \(K\) and full \(X,Y\). Prior \(N=512\) partials are not evidence.
 
+Those three corrections fix the stated setup errors. They do not validate
+Gate D. Partial runs stay provisional.
+
+**Next decisive test:** a completed, corrected episode followed through
+regeneration. Fast turnover alone cannot settle recurrence. The resource
+must pay for repeated episodes without reusing the same budget.
+Comparison of the corrected solver against the old partial supports
+“implementation corrected; dynamical evidence pending.” It is not an
+independent audit of the commits.
+
 ---
 
 ## Separate Gaussian experiment (through \(s=4\))
@@ -88,7 +98,8 @@ not evidence that regeneration is impossible.
 
 GATE D: VALID TARGET; LEMMA NOT STAMPED.
 SOURCE BLOCKER: CLOSED.
-MATH GAP: LARGE-PACKET RECURRENCE RESOURCE.
-EXECUTION GAP: FULL-TRAJECTORY SIX-BOX SOLVER.
+MATH GAP: LARGE-PACKET RECURRENCE RESOURCE (NO BUDGET REUSE).
+SETUP: IMPLEMENTATION CORRECTED; DYNAMICAL EVIDENCE PENDING.
+NEXT TEST: COMPLETED CORRECTED EPISODE THROUGH REGENERATION.
 (17) NOT CLAIMED.
 NS NOT SOLVED.
