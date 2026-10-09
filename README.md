@@ -58,6 +58,25 @@ python hb_ringdown_test.py --csv data/qnm_events.csv --nodes nodes.json --mc 500
 | `scripts/build_qnm_table.py` | Rebuild CSV from measured + Kerr-fit sources |
 | `tests/test_hb_ringdown.py` | Unit / smoke tests |
 
+## Navier–Stokes gates (not a regularity proof)
+
+Independent Domain Architect audit of the Gate B trilinear claim, plus
+Gate D Fourier measurements. Classical unforced 3-D Navier–Stokes stays
+**open**. Theorem (17) is not claimed.
+
+- Board: [`docs/PROGRAM-GATES-A-D.md`](docs/PROGRAM-GATES-A-D.md)
+- DA audit: [`docs/GATE-B-TRILINEAR-DA-AUDIT.md`](docs/GATE-B-TRILINEAR-DA-AUDIT.md)
+- Gate D: [`docs/GATE-D-DYNAMICAL-BUDGET.md`](docs/GATE-D-DYNAMICAL-BUDGET.md)
+
+```bash
+python -m domain_architect --trilinear-ns
+python3 scripts/ns_attacks/all_radii_counting.py
+python3 scripts/ns_attacks/nonnegative_qx_dilation.py
+PYTHONPATH=scripts python3 scripts/gate_d_fourier_budget.py --n 8 12 --t 0.2 --dt 0.02
+python -m unittest tests.test_all_radii_counting tests.test_trilinear_da_audit \
+  tests.test_nonnegative_qx_dilation tests.test_gate_d_fourier_budget tests.test_ns_solver_core
+```
+
 ## Tests
 
 ```bash

@@ -22,6 +22,7 @@ from .schema import (
 )
 from .audit import audit_expression
 from .report import AuditReport
+from .trilinear_audit import audit_gate_b_trilinear
 
 __all__ = [
     "CANONICAL_SFE_STATUS",
@@ -32,6 +33,7 @@ __all__ = [
     "RecoveryKind",
     "ScaleResponseSubtype",
     "audit_expression",
+    "audit_gate_b_trilinear",
 ]
 
 __version__ = "0.2.0"

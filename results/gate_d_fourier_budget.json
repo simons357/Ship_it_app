@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "gate": "D",
+    "solver": "integrating_factor_rk4",
+    "equation": "classical unforced Navier-Stokes on T^3",
+    "note": "Regeneration / turnover / danger-episode measurements. Not a cutoff-independent budget. Not (17). NS not solved."
+  },
+  "runs": [
+    {
+      "n": 8,
+      "nu": 0.05,
+      "t_end": 0.16,
+      "dt": 0.02,
+      "ic": "taylor_green",
+      "seed": 0,
+      "energy0": 31.006276680299816,
+      "energy_end": 29.551928718677196,
+      "enstrophy0": 93.01883004089947,
+      "enstrophy_end": 88.87732799937996,
+      "max_div_end": 6.259118455947577e-16,
+      "high_shell": {
+        "n_peaks": 0,
+        "n_troughs": 0,
+        "regeneration_events": 0,
+        "turnover_gaps_steps": [],
+        "mean_turnover_steps": null
+      },
+      "enstrophy_extrema": {
+        "n_peaks": 0,
+        "n_troughs": 0,
+        "regeneration_events": 0,
+        "turnover_gaps_steps": [],
+        "mean_turnover_steps": null
+      },
+      "danger_episodes": 0,
+      "danger_ratio": 1.0,
+      "n_steps": 8,
+      "energy_decayed": true,
+      "cutoff_independent_budget": false,
+      "ns_solved": false,
+      "classical_ns_open": true,
+      "series_endpoints": {
+        "t0": 0.0,
+        "t1": 0.16,
+        "energy0": 31.006276680299816,
+        "energy1": 29.551928718677196,
+        "enstrophy0": 93.01883004089947,
+        "enstrophy1": 88.87732799937996
+      }
+    },
+    {
+      "n": 12,
+      "nu": 0.05,
+      "t_end": 0.16,
+      "dt": 0.02,
+      "ic": "taylor_green",
+      "seed": 0,
+      "energy0": 31.006276680299784,
+      "energy_end": 29.551926737343564,
+      "enstrophy0": 93.01883004089916,
+      "enstrophy_end": 88.87792375457943,
+      "max_div_end": 1.1162041419011535e-15,
+      "high_shell": {
+        "n_peaks": 0,
+        "n_troughs": 0,
+        "regeneration_events": 0,
+        "turnover_gaps_steps": [],
+        "mean_turnover_steps": null
+      },
+      "enstrophy_extrema": {
+        "n_peaks": 0,
+        "n_troughs": 0,
+        "regeneration_events": 0,
+        "turnover_gaps_steps": [],
+        "mean_turnover_steps": null
+      },
+      "danger_episodes": 0,
+      "danger_ratio": 1.0,
+      "n_steps": 8,
+      "energy_decayed": true,
+      "cutoff_independent_budget": false,
+      "ns_solved": false,
+      "classical_ns_open": true,
+      "series_endpoints": {
+        "t0": 0.0,
+        "t1": 0.16,
+        "energy0": 31.006276680299752,
+        "energy1": 29.551926737343564,
+        "enstrophy0": 93.01883004089916,
+        "enstrophy1": 88.87792375457943
+      }
+    }
+  ],
+  "cutoff_compare": {
+    "n_pair": [
+      8,
+      12
+    ],
+    "danger_episodes": [
+      0,
+      0
+    ],
+    "high_regeneration": [
+      0,
+      0
+    ],
+    "energy_end_ratio": 0.9999999329541686,
+    "same_episode_count": true,
+    "cutoff_independent_budget": false,
+    "note": "Matching finite-grid episode counts is not a cutoff-independent dynamical budget."
+  },
+  "ns_solved": false,
+  "cutoff_independent_budget": false
+}

@@ -1,0 +1,93 @@
+{
+  "family": "similar_triad_equal_energy",
+  "rows": [
+    {
+      "n": 4,
+      "a": 5,
+      "b": 21,
+      "c": 32,
+      "Lambda": 32,
+      "E": 1.0000000000000002,
+      "Omega": 19.33333333333334,
+      "C_abc": 231.47270100388073,
+      "Q2": 77.1575670012936,
+      "Q2_over_Omega": 3.9909086379979435,
+      "T_plus": 44.546942078213455,
+      "cs1_holds": true,
+      "homogeneity_C_over_n3": 3.6167609531856364,
+      "ratio_over_n": 0.9977271594994859
+    },
+    {
+      "n": 8,
+      "a": 20,
+      "b": 84,
+      "c": 128,
+      "Lambda": 128,
+      "E": 1.0000000000000002,
+      "Omega": 77.33333333333336,
+      "C_abc": 1851.7816080310458,
+      "Q2": 617.2605360103488,
+      "Q2_over_Omega": 7.981817275995887,
+      "T_plus": 356.37553662570764,
+      "cs1_holds": true,
+      "homogeneity_C_over_n3": 3.6167609531856364,
+      "ratio_over_n": 0.9977271594994859
+    },
+    {
+      "n": 16,
+      "a": 80,
+      "b": 336,
+      "c": 512,
+      "Lambda": 512,
+      "E": 1.0000000000000002,
+      "Omega": 309.3333333333334,
+      "C_abc": 14814.252864248367,
+      "Q2": 4938.08428808279,
+      "Q2_over_Omega": 15.963634551991774,
+      "T_plus": 2851.004293005661,
+      "cs1_holds": true,
+      "homogeneity_C_over_n3": 3.6167609531856364,
+      "ratio_over_n": 0.9977271594994859
+    },
+    {
+      "n": 32,
+      "a": 320,
+      "b": 1344,
+      "c": 2048,
+      "Lambda": 2048,
+      "E": 1.0000000000000002,
+      "Omega": 1237.3333333333337,
+      "C_abc": 118514.02291398693,
+      "Q2": 39504.67430466232,
+      "Q2_over_Omega": 31.927269103983548,
+      "T_plus": 22808.03434404529,
+      "cs1_holds": true,
+      "homogeneity_C_over_n3": 3.6167609531856364,
+      "ratio_over_n": 0.9977271594994859
+    }
+  ],
+  "pairwise_theta": [
+    {
+      "from_n": 4,
+      "to_n": 8,
+      "theta_hat": 0.5
+    },
+    {
+      "from_n": 8,
+      "to_n": 16,
+      "theta_hat": 0.5
+    },
+    {
+      "from_n": 16,
+      "to_n": 32,
+      "theta_hat": 0.5
+    }
+  ],
+  "mean_theta_hat": 0.5,
+  "requires_theta_ge_half": true,
+  "theta_proved_equal_half_uniformly": false,
+  "cs1_holds_on_family": true,
+  "depends_on_all_radii_counting": false,
+  "theorem_17_proved": false,
+  "ns_solved": false
+}
