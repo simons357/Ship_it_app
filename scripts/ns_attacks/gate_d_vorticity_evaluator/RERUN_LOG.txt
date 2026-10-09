@@ -1,0 +1,7 @@
+test_dense (test_vorticity_signed.Tests.test_dense) ... ok
+test_witness (test_vorticity_signed.Tests.test_witness) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 1.162s
+
+OK
