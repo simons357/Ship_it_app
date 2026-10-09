@@ -33,7 +33,8 @@ No turnover, regeneration, or cutoff-independent budget is claimed. The frozen e
 2. Insert the exact \(\Phi_{abc}\) formula into the diagnostic evaluator.
 3. Test it against the six-mode witness \(T_{\mathrm{sc}}=4m^3 A^3\).
 4. Compare that value with an independently evaluated ordered Fourier convolution.
-5. DA reviews the implementation, the cutoff geometry, and the periodization protocol before any production run.
+5. Connect the diagnostic to the Gaussian stepper only after those checks.
+6. DA reviews the implementation, the cutoff geometry, and the periodization protocol before any production run.
 
 ## STATUS
 

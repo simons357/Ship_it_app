@@ -18,7 +18,7 @@ The new checks were rerun here and passed:
 
 That second check does not test a field that also contains repeated-radius interactions. It does not verify arbitrary scalene filtering, continuum \(\mathbb R^3\) convergence, or the six-box packet. No turnover, regeneration, or cutoff-independent budget is claimed. The frozen experiment has not been launched.
 
-Next remains: the 20 September signed-scalene definition, then an independent validation of that definition, then preregistration.
+`signed_scalene.py` remains this 7 October reference. It is not a certified substitute for the 20 September \(\Phi_{abc}\). The Gaussian stepper stays disconnected until that formula is ported, the six-mode identity \(T_{\mathrm{sc}}=4m^3 A^3\) is tested, and an independent ordered convolution agrees ([`GATE-D-SIGNED-DIAGNOSTIC-2026-10-09.md`](GATE-D-SIGNED-DIAGNOSTIC-2026-10-09.md)).
 
 ## STATUS
 
