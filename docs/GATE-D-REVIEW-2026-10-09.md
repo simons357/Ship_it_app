@@ -57,8 +57,14 @@ No large-packet (Gate-C / six-box scale) resource has yet been shown to pay for
 
 ## Execution gap
 
-The six-box **full-trajectory** test remains unrun. A straightforward dense
-Galerkin implementation exceeds this session’s memory.
+The six-box **full-trajectory** episode remains unrun.
+
+Reported measurement module
+([`GATE-D-SIGNED-MEASUREMENT-MODULE-2026-10-09.md`](GATE-D-SIGNED-MEASUREMENT-MODULE-2026-10-09.md)):
+reproduces the six-box initial calculations, retains generated-mode
+contributions and the initial boundary term, and passes a separate 80-mode
+trajectory check. That is a tested reference for the large solver. It is
+not the episode. The named zip is not on this mount.
 
 Prior static sweep / truncated-mode experiments are **not** substitutes for that
 full-trajectory signed-scalene diagnostic.
@@ -101,6 +107,8 @@ GATE D: VALID TARGET; LEMMA NOT STAMPED.
 SOURCE BLOCKER: CLOSED.
 MATH GAP: LARGE-PACKET RECURRENCE RESOURCE (NO BUDGET REUSE).
 SETUP: IMPLEMENTATION CORRECTED; DYNAMICAL EVIDENCE PENDING.
+MEASUREMENT MODULE: TESTED REFERENCE (SIX-BOX INITIALS, GENERATED MODES,
+INITIAL BOUNDARY TERM, 80-MODE CHECK). FULL SIX-BOX EPISODE: UNRUN.
 NEXT TEST: COMPLETED CORRECTED EPISODE THROUGH REGENERATION.
 (17) NOT CLAIMED.
 NS NOT SOLVED.

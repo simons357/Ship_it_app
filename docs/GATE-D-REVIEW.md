@@ -2,5 +2,6 @@
 
 Dated: [`GATE-D-REVIEW-2026-10-09.md`](GATE-D-REVIEW-2026-10-09.md).
 
-Valid target; not a proved lemma. Sources recovered. Full-trajectory six-box
-test still unrun. Next: feasible solver preserving signed-scalene diagnostic.
+Valid target; not a proved lemma. Measurement module is a tested reference
+for the large solver. Full six-box episode still unrun. Turnover and
+recurrence remain open.

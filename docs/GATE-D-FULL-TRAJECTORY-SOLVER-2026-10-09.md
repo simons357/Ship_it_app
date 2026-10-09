@@ -4,6 +4,8 @@
 **Engineering task. Preserves signed-scalene diagnostic. Not (17).**
 
 Parent review: [`GATE-D-REVIEW-2026-10-09.md`](GATE-D-REVIEW-2026-10-09.md).
+Measurement reference: [`GATE-D-SIGNED-MEASUREMENT-MODULE.md`](GATE-D-SIGNED-MEASUREMENT-MODULE.md).
+The full six-box episode is still unrun.
 Protocol: [`GATE-D-TURNOVER-ADVERSARIAL-TEST.md`](GATE-D-TURNOVER-ADVERSARIAL-TEST.md).
 
 ---

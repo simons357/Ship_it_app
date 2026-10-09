@@ -74,8 +74,10 @@ repetition resource still open.
 
 ## Immediate work (Gate D)
 
-1. Feasible full-trajectory six-box solver preserving signed-scalene
-   diagnostic — [`GATE-D-FULL-TRAJECTORY-SOLVER.md`](GATE-D-FULL-TRAJECTORY-SOLVER.md).
+1. Large solver uses the signed measurement module as reference
+   ([`GATE-D-SIGNED-MEASUREMENT-MODULE.md`](GATE-D-SIGNED-MEASUREMENT-MODULE.md)):
+   six-box initials, generated modes, initial boundary term, 80-mode check.
+   Full six-box episode still unrun.
 2. Score \(B_{I_H}/\mathcal R_{I_H}\) with \(B_I=\int d\,dt\) only
    (boundary term is reconstruction, not additive).
 3. Demote prior top-\(M\) “complete episode” rows
@@ -97,5 +99,5 @@ GATE D: OPEN ON EPISODE CONTROL AND RECURRENCE FUNDING.
 A FINITE EPISODE CANNOT ESTABLISH CUTOFF-UNIFORM CONTROL OR SUMMABLE RECURRENCE.
 (17) NOT ESTABLISHED.
 IMPLEMENTATION CORRECTED; DYNAMICAL EVIDENCE PENDING.
-FULL CORRECTED EPISODE THROUGH REGENERATION: UNRUN.
+MEASUREMENT MODULE: TESTED REFERENCE. FULL SIX-BOX EPISODE: UNRUN.
 NS NOT SOLVED.
