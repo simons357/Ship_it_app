@@ -3,7 +3,7 @@
 One page to see **what this repo is about** and **where each thread lives**.
 
 Update this file when a subject changes status (merge, park, abandon, or rename).  
-Last reviewed: **2026-10-09** (first-step \(8H\) vs \(12H\) cutoff check about \(1.27\times 10^{-9}\) in \(L^2\); continuation has no further accepted state; solver not tuned).
+Last reviewed: **2026-10-09** (first-step \(8H\) vs \(12H\) difference about \(1.27\times 10^{-9}\) in \(L^2\) supports only that step; continuation still running, unchanged; next derivative about \(8.1\) billion ordered pairs; no further accepted state).
 
 ---
 
