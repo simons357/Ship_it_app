@@ -1,0 +1,169 @@
+{
+  "lemma_two_planes_sphere": {
+    "statement": "Two linearly independent affine planes and a sphere in R^3 meet in at most two points.",
+    "euclidean_n_real": [
+      2,
+      2,
+      2,
+      1,
+      2
+    ],
+    "max_n_real": 2,
+    "status": "pass"
+  },
+  "distinct_shell_not_enough": {
+    "p": [
+      1,
+      0,
+      0
+    ],
+    "q": [
+      2,
+      0,
+      0
+    ],
+    "distinct_shells": true,
+    "linearly_independent": false,
+    "independent_normals": false,
+    "degeneracy": "parallel_planes"
+  },
+  "one_input_two_shell_circle": {
+    "p": [
+      0,
+      0,
+      2
+    ],
+    "beta": 5,
+    "gamma": 5,
+    "n_lattice": 4,
+    "partners": [
+      [
+        -2,
+        0,
+        -1
+      ],
+      [
+        0,
+        -2,
+        -1
+      ],
+      [
+        0,
+        2,
+        -1
+      ],
+      [
+        2,
+        0,
+        -1
+      ]
+    ],
+    "exceeds_two": true
+  },
+  "finite_radius_scan": {
+    "two_input_pairs_checked": 12096,
+    "two_input_max_lattice": 2,
+    "two_input_failures_gt_2": 0,
+    "one_input_max_lattice": 12,
+    "one_input_circle_examples": [
+      {
+        "p": [
+          1,
+          0,
+          0
+        ],
+        "a": 1,
+        "beta": 1,
+        "gamma": 2,
+        "n": 4
+      },
+      {
+        "p": [
+          1,
+          0,
+          0
+        ],
+        "a": 1,
+        "beta": 2,
+        "gamma": 1,
+        "n": 4
+      },
+      {
+        "p": [
+          1,
+          0,
+          0
+        ],
+        "a": 1,
+        "beta": 2,
+        "gamma": 3,
+        "n": 4
+      },
+      {
+        "p": [
+          1,
+          0,
+          0
+        ],
+        "a": 1,
+        "beta": 2,
+        "gamma": 5,
+        "n": 4
+      },
+      {
+        "p": [
+          1,
+          0,
+          0
+        ],
+        "a": 1,
+        "beta": 3,
+        "gamma": 2,
+        "n": 4
+      },
+      {
+        "p": [
+          1,
+          0,
+          0
+        ],
+        "a": 1,
+        "beta": 3,
+        "gamma": 6,
+        "n": 4
+      },
+      {
+        "p": [
+          1,
+          0,
+          0
+        ],
+        "a": 1,
+        "beta": 4,
+        "gamma": 5,
+        "n": 4
+      },
+      {
+        "p": [
+          1,
+          0,
+          0
+        ],
+        "a": 1,
+        "beta": 5,
+        "gamma": 2,
+        "n": 4
+      }
+    ],
+    "vectors_enumerated_box": 6
+  },
+  "verdicts": {
+    "euclidean_two_planes_sphere_le_2": true,
+    "distinct_shell_implies_independent_normals": false,
+    "one_input_two_shell_multiplicity_le_2": false,
+    "two_input_common_closer_le_2_when_independent": true,
+    "counting_implies_trilinear_norm_bound": false
+  },
+  "ns_solved": false,
+  "theorem_17_proved": false
+}

@@ -11,3 +11,14 @@ Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS p
 **Open barrier (unchanged):** \(\|u^r/r\|_{L^\infty}\) uniform in \(\eps\) — equivalent to axisymmetric-with-swirl global regularity. Paper remains a conditional reduction. Clay is not closed.
 
 **Do not conflate** with Lemma★ PRODUCT-BLOCK packaging.
+
+## Gate B / Gate D (9 Oct 2026)
+
+Independent DA audit of the claimed all-radii trilinear inequality:
+[`../GATE-B-TRILINEAR-DA-AUDIT.md`](../GATE-B-TRILINEAR-DA-AUDIT.md).
+CS-3 (counting → weighted \(\lVert Q\rVert_2\)) **fails**. The
+nonnegative obstruction \(\theta\ge\tfrac12\) is a dilation identity,
+not a counting corollary. Gate D dynamical budget remains **open**:
+[`../GATE-D-DYNAMICAL-BUDGET.md`](../GATE-D-DYNAMICAL-BUDGET.md).
+Board: [`../PROGRAM-GATES-A-D.md`](../PROGRAM-GATES-A-D.md).
+Clay / (17) not claimed.

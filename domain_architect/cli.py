@@ -9,6 +9,7 @@ import sys
 from .audit import audit_expression
 from .registry import EquationRegistry
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
+from .trilinear_audit import audit_gate_b_trilinear
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -22,7 +23,21 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="print equation provenance and conflict summary",
     )
+    parser.add_argument(
+        "--trilinear-ns",
+        action="store_true",
+        help="independent Gate B trilinear / all-radii / Cauchy–Schwarz audit",
+    )
     args = parser.parse_args(argv)
+
+    if args.trilinear_ns:
+        audit = audit_gate_b_trilinear()
+        if args.json:
+            json.dump(audit.as_dict(), sys.stdout, indent=2)
+            sys.stdout.write("\n")
+        else:
+            print(audit.narrative())
+        return 0
 
     if args.registry:
         registry = EquationRegistry.load_default()

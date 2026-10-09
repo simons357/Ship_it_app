@@ -1,0 +1,184 @@
+{
+  "object_audited": "Gate B nonnegative Q_x: all-radii counting, distinct-shell hypothesis, Cauchy\u2013Schwarz chain, and the exponent obstruction",
+  "steps": [
+    {
+      "step_id": "G1",
+      "claim": "Two linearly independent affine planes and a sphere in R^3 meet in at most two points, at every radius.",
+      "hypotheses": [
+        "normals n1, n2 linearly independent",
+        "ambient space R^3 (then Z^3 by restriction)"
+      ],
+      "cauchy_schwarz": null,
+      "functional_roles": {
+        "P": "admissibility: independent plane constraints",
+        "g": "geometry: Euclidean R^3 / integer lattice",
+        "\u03bb": "scale-response: radius R is a spectral coordinate; the count is radius-independent",
+        "\u03a6": "realized output: at most two candidate points"
+      },
+      "verdict": "pass",
+      "reason": "The two planes cut out an affine line. A line meets a sphere in a quadratic, hence in at most two real points. No Cauchy\u2013Schwarz is used. This is Euclidean geometry, not a Navier\u2013Stokes estimate.",
+      "math_status": "passed"
+    },
+    {
+      "step_id": "H-shell",
+      "claim": "The distinct-shell hypothesis |p|\u00b2 \u2260 |q|\u00b2 makes the two plane normals independent.",
+      "hypotheses": [
+        "|p|\u00b2 \u2260 |q|\u00b2"
+      ],
+      "cauchy_schwarz": null,
+      "functional_roles": {
+        "P": "admissibility: distinct squared radii",
+        "\u03c8": "state: two input wavevectors"
+      },
+      "verdict": "fail",
+      "reason": "Distinct shells do not imply linear independence. Counterexample: p=(1,0,0), q=(2,0,0) have |p|\u00b2=1 \u2260 4=|q|\u00b2 but p \u2225 q, so the two radical planes are parallel. The intersection is then empty, a plane, or inconsistent \u2014 not a uniformly two-point set. The correct extra hypothesis is linear independence of the wavevectors.",
+      "math_status": "failed"
+    },
+    {
+      "step_id": "G2",
+      "claim": "For one fixed input vector and two prescribed partner shells, there are at most two closing lattice vectors, at arbitrarily large frequency.",
+      "hypotheses": [
+        "p fixed",
+        "|q|\u00b2 = \u03b2",
+        "|p+q|\u00b2 = \u03b3"
+      ],
+      "cauchy_schwarz": null,
+      "functional_roles": {
+        "P": "admissibility: two sphere constraints on q",
+        "g": "geometry: radical plane of two spheres, residual sphere",
+        "\u03a6": "locus is a circle, not two points"
+      },
+      "verdict": "fail",
+      "reason": "Two spheres in R^3 intersect in a circle (one radical plane plus a sphere). Lattice occupancy can exceed two. Explicit counterexample: p=(0,0,2), \u03b2=\u03b3=5 yields four partners {(\u00b12,0,-1),(0,\u00b12,-1)}. Finite-radius scans reproduce occupancy well above two. The two-point count requires a second independent linear constraint, which this one-input geometry does not supply.",
+      "math_status": "failed"
+    },
+    {
+      "step_id": "G3",
+      "claim": "For two linearly independent input wavevectors, a common closer of prescribed radii satisfies two independent planes and a sphere, hence at most two candidates.",
+      "hypotheses": [
+        "p, q linearly independent (not merely distinct shells)",
+        "|r|\u00b2, |r+p|\u00b2, |r+q|\u00b2 prescribed"
+      ],
+      "cauchy_schwarz": null,
+      "functional_roles": {
+        "P": "admissibility: two radical planes from three spheres",
+        "g": "two-input / two-output common-closer geometry",
+        "\u03a6": "at most two common closers"
+      },
+      "verdict": "pass",
+      "reason": "This is G1 applied to the two-input common-closer system. Finite-radius lattice scans with independent p, q did not exceed two. This is a counting statement about a different incidence geometry than Dish #3's one-output Q_x sum.",
+      "math_status": "passed"
+    },
+    {
+      "step_id": "CS-1",
+      "claim": "Dish #3 energy sharing: \u2211_x f_x Q_x \u2264 \u221aE (\u2211_x Q_x\u00b2)^{1/2}.",
+      "hypotheses": [
+        "E = \u2211_x f_x\u00b2 < \u221e",
+        "Q \u2208 \u2113\u00b2",
+        "no sign restriction required for this inequality"
+      ],
+      "cauchy_schwarz": "\u2113\u00b2 inner product \u27e8f, Q\u27e9 \u2264 ||f||_2 ||Q||_2 with ||f||_2 = \u221aE. Used once, on the low index. No inner sum over partners.",
+      "functional_roles": {
+        "\u03c8": "state: shell amplitudes f_x",
+        "H": "interaction: already-assembled Q_x",
+        "\u03bb": "scale-response: none introduced by this step",
+        "\u03a6": "realized output: T_sc\u207a bound \u221aE ||Q||_2"
+      },
+      "verdict": "pass",
+      "reason": "Standard Cauchy\u2013Schwarz on \u2113\u00b2. It is valid for every real f, Q. It does not use distinct shells, multiplicity, or nonnegativity. It also does not bound ||Q||_2.",
+      "math_status": "passed"
+    },
+    {
+      "step_id": "CS-2",
+      "claim": "Inner Cauchy\u2013Schwarz on partners, with Y-charge f_b \u2264 \u221aY/b, f_c \u2264 \u221aY/c, produces Q_x \u2264 (Y/c) (\u2211_b C_{xbc}\u00b2 / b\u00b2)^{1/2} and the \u03c1-face T\u207a \u2264 2 S \u221aE Y.",
+      "hypotheses": [
+        "C_abc \u2265 0 is an upper majorant, not a coercive cost",
+        "Y-charge on middle and high legs",
+        "diagnostic 1/(2c) factor is not a general-c lemma"
+      ],
+      "cauchy_schwarz": "Second, inner CS: |\u2211_b C_{xbc} f_b f_c| \u2264 f_c (\u2211 C\u00b2/b\u00b2)^{1/2} (\u2211 b\u00b2 f_b\u00b2)^{1/2} after the Y-weight. This CS is applied to a different object than CS-1.",
+      "functional_roles": {
+        "H": "interaction: C-majorant",
+        "\u03bb": "scale-response: Y-charge is a high-frequency weight, not energy",
+        "\u03a6": "\u03c1-face remainder S, not ||Q||_2 of Dish #3"
+      },
+      "verdict": "pass_as_upper_bound_on_a_different_object",
+      "reason": "The inner CS is algebraically valid under the Y-charge. It changes the object: the resulting S is not ||Q||_2 of the explicit nonnegative assembly. Reading \u03b8 \u2248 0 from S does not control the Dish #3 power. Equation (16) of the September 20 note remains an upper bound, not a cost.",
+      "math_status": "passed"
+    },
+    {
+      "step_id": "CS-3",
+      "claim": "A uniform two-point counting bound on closing vectors implies a weighted trilinear (or ||Q||_2) inequality for the nonnegative assembly.",
+      "hypotheses": [
+        "\u03bc \u2264 2 at all radii",
+        "the counted incidence graph is the same graph summed in Q_x"
+      ],
+      "cauchy_schwarz": "Would have to be a third CS / Schur bound of the form ||Q||_2\u00b2 = \u2211_x (\u2211_{yz} C_{xyz} f_y f_z)\u00b2 \u2264 \u03bc \u2211 C\u00b2 f_y\u00b2 f_z\u00b2 or an operator-norm estimate on the incidence graph. No such identification is supplied.",
+      "functional_roles": {
+        "H": "interaction: C-weighted triads of Dish #3",
+        "P": "admissibility: would require the Q-sum to run over G3 pairs",
+        "\u03a6": "claimed: a radius-independent trilinear norm bound"
+      },
+      "verdict": "fail",
+      "reason": "Counting possible outputs is not a trilinear estimate. Dish #3 groups by the low shell x, summing C_xyz f_y f_z over partner shells, not over two-input common closers. The one-input two-shell locus that does appear in a single triad is a circle (G2 failed). Even if some other incidence graph had \u03bc \u2264 2, converting that into ||Q(f)||_2 \u2264 K \u039b^\u03b8 \u03a9(f) still requires a Cauchy\u2013Schwarz or Schur step on that graph with the C-weights, and a proof that C does not reintroduce a positive power of \u039b. That step is missing. Status of the full multiplicity inequality: gap.",
+      "math_status": "failed"
+    },
+    {
+      "step_id": "LB",
+      "claim": "For the specified nonnegative Q_x, any uniform power bound ||Q(f)||_2 \u2264 K \u039b^\u03b8 \u03a9(f) requires \u03b8 \u2265 1/2.",
+      "hypotheses": [
+        "Q_x = \u2211 C_xyz f_y f_z with C the September 20 majorant \u2265 0",
+        "f \u2265 0",
+        "similar-triad family: one lattice triad dilated by t, equal-energy split f_a = f_b = f_c = 1/\u221a3"
+      ],
+      "cauchy_schwarz": "None. Homogeneity: C(t\u00b2a, t\u00b2b, t\u00b2c) = t\u00b3 C(a,b,c), \u03a9 \u21a6 t\u00b2 \u03a9, so ||Q||_2 / \u03a9 scales as t = \u039b^{1/2}.",
+      "functional_roles": {
+        "H": "interaction: nonnegative C-majorant",
+        "\u03c8": "state: nonnegative shell amplitudes",
+        "\u03bb": "scale-response: dilation t, \u039b = t\u00b2 \u039b_0",
+        "\u03a6": "lower bound \u03b8 \u2265 1/2 on every uniform power"
+      },
+      "verdict": "pass",
+      "reason": "This lower bound does not use all-radii counting, distinct shells as a two-point theorem, or CS-3. It is a homogeneity identity on an explicit family, checked on n = 4, 8, 16, 32 to machine precision and holding for every dilation t because C is homogeneous of degree three in t. Optimal \u03b8 remains open: the family saturates 1/2 as a lower bound, not as a uniform upper bound on overlapping assemblies.",
+      "math_status": "passed"
+    },
+    {
+      "step_id": "PROMOTE",
+      "claim": "If the all-radii / trilinear audit passes, promote the Gate B exponent obstruction to a proved result for the specified nonnegative Q.",
+      "hypotheses": [
+        "CS-3 passes",
+        "G2 or G3 identified with Q_x"
+      ],
+      "cauchy_schwarz": "CS-3 is the missing step; it failed.",
+      "functional_roles": {
+        "P": "admissibility of promotion",
+        "\u03a6": "program status of Gate B"
+      },
+      "verdict": "split",
+      "reason": "Promote the obstruction \u03b8 \u2265 1/2 by LB (dilation), which already passed and does not depend on the failed counting-to-norm link. Do not promote a new all-radii trilinear upper bound: CS-3 failed. Do not condition LB on G1. Signed transfer control remains open. (17) remains open. NS is not solved.",
+      "math_status": "inconclusive"
+    }
+  ],
+  "board": {
+    "Finite-radius multiplicity checks": "Verified, with a circle counterexample: one-input two-shell occupancy can exceed two",
+    "All-radii geometric counting": "Pass as Euclidean two-plane+sphere; does not bind generic triads",
+    "Distinct-shell hypothesis": "Insufficient; linear independence of wavevectors is required",
+    "Full multiplicity / trilinear inequality": "Gap \u2014 counting does not yield the weighted ||Q||_2 bound",
+    "Gate B lower bound (nonnegative Q)": "Proved by similar-triad dilation: \u03b8 \u2265 1/2. Not conditional on CS-3",
+    "Optimal exponent": "Open",
+    "Signed transfer control": "Open",
+    "Gate D dynamical budget": "Measurement campaign; cutoff-independent budget open",
+    "Theorem (17)": "Open",
+    "Classical unforced 3-D Navier\u2013Stokes": "Open"
+  },
+  "highest_evidence_level": 1,
+  "canonical_sfe_status": "unresolved",
+  "theorem_17_proved": false,
+  "ns_solved": false,
+  "notes": [
+    "Agreement between previous agents is not independent validation.",
+    "C_abc remains an upper majorant, not a coercive cost.",
+    "Gate A remains UNRESOLVED / DIAGNOSTIC ONLY.",
+    "This audit is Functional Role Analysis plus explicit geometry. It is not a Clay / Millennium claim."
+  ]
+}
