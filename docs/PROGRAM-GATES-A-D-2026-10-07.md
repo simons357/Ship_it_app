@@ -99,6 +99,11 @@ Current state of that work:
   completed one
   ([`GATE-D-THIRD-TRANSFER-PACKET.md`](GATE-D-THIRD-TRANSFER-PACKET.md)).
   It is feeding evidence from a consistency review, not a rerun.
+- A Gaussian replacement scaffold smoked at \(n=12\), \(L=12\), \(c=200\),
+  through \(s=0.02\)
+  ([`GATE-D-GAUSSIAN-SCAFFOLD-2026-10-09.md`](GATE-D-GAUSSIAN-SCAFFOLD-2026-10-09.md)).
+  \(T_{\mathrm{sc}}\), \(D\), and \(G\) are null. It is not an episode and
+  not a substitute for the six-box field.
 - The next test is the six-box field: how long the positive episode lasts,
   and what resource pays for the accumulated budget of \(\mathcal S_{K,N}\)
   (denominator \(X_N\), no extra \(Y_N\)). One episode is evidence.

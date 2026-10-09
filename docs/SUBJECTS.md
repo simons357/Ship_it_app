@@ -3,7 +3,7 @@
 One page to see **what this repo is about** and **where each thread lives**.
 
 Update this file when a subject changes status (merge, park, abandon, or rename).  
-Last reviewed: **2026-10-09** (Gate B stays in independent review; primary effort is Gate D; no global regularity result).
+Last reviewed: **2026-10-09** (Gaussian scaffold smoke reproduced; \(T_{\mathrm{sc}}\), \(D\), and \(G\) null; not a Gate D episode).
 
 ---
 

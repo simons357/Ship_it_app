@@ -25,6 +25,10 @@ This is **not** evidence that regeneration is impossible.
 Do **not** substitute this Gaussian packet for the six-box Signed-Gate adversary
 in the Gate D full-trajectory test.
 
+The 9 October replacement scaffold is a different object
+([`GATE-D-GAUSSIAN-SCAFFOLD-2026-10-09.md`](GATE-D-GAUSSIAN-SCAFFOLD-2026-10-09.md)).
+Its smoke leaves \(T_{\mathrm{sc}}\), \(D\), and \(G\) null. It is not this \(s=4\) run.
+
 ## STATUS
 
 GAUSSIAN \(s=4\): UNRESOLVED AT DECLARED HORIZON.
