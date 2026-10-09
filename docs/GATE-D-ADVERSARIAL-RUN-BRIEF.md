@@ -1,7 +1,5 @@
-# Gate D — adversarial run brief
+# Gate D — executable adversarial run brief
 
-8 October 2026.
-**Operational. Six-box packet; \(H=63n\); score \(B_H\) vs resource.**
+Dated: [`GATE-D-ADVERSARIAL-RUN-BRIEF-2026-10-08.md`](GATE-D-ADVERSARIAL-RUN-BRIEF-2026-10-08.md).
 
-Full note:
-[`GATE-D-ADVERSARIAL-RUN-BRIEF-2026-10-08.md`](GATE-D-ADVERSARIAL-RUN-BRIEF-2026-10-08.md).
+Six-box packet; full trajectory; score \(B_H/\mathcal R_H\) with boundary term.

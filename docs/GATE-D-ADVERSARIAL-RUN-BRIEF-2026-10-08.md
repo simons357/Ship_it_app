@@ -1,11 +1,12 @@
 # Gate D — executable adversarial run brief
 
-8 October 2026.
-**Operational brief. Lemma recorded, not stamped. Not (17).**
+8 October 2026 (corrections from 9 Oct review).
+**Operational brief. Target recorded, not stamped. Not (17).**
 
 Parents:
 [`GATE-D-HALF-DERIVATIVE-ATTACK-2026-10-08.md`](GATE-D-HALF-DERIVATIVE-ATTACK-2026-10-08.md),
-[`GATE-D-EXECUTION-BLOCKER-2026-10-08.md`](GATE-D-EXECUTION-BLOCKER-2026-10-08.md).
+[`GATE-D-EXECUTION-BLOCKER-2026-10-08.md`](GATE-D-EXECUTION-BLOCKER-2026-10-08.md),
+[`GATE-D-REVIEW-2026-10-09.md`](GATE-D-REVIEW-2026-10-09.md).
 
 Sources:
 - [`sources/NS_ORBIT_R4_SMALL_DATA_2026-09-20.md`](sources/NS_ORBIT_R4_SMALL_DATA_2026-09-20.md)
@@ -14,7 +15,7 @@ Sources:
 
 ---
 
-## Target (unchanged)
+## Target (unchanged as program goal; not proved)
 
 \[
 \boxed{\textbf{Resource-Weighted Turnover Lemma}}
@@ -43,26 +44,30 @@ Stack:
 > **Gate D adversarial run:** use the six-box Gate-C packet
 > (`Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt` +
 > `verify_signed_gate.py` / `Signed-Gate-Checks.json`), normalize to
-> \(E=1\), evolve the full Galerkin system, and compute \(D_H(0)\),
+> \(E=1\), evolve the **full** Galerkin trajectory (no top-\(M\)
+> substitute; no Gaussian substitute), and compute \(D_H(0)\),
 > \(D_H'(0)\), the first positive episode \(I_H\), its cost
 > \[
-> B_{I_H}=\int_{I_H}\frac{D_H}{X_H}\,dt,
+> B_{I_H}=\int_{I_H}\frac{D_H}{X_H}\,dt
 > \]
-> and candidate resource spends. Test increasing \(H=63n\).
-> **Do not substitute the Gaussian packet.**
+> **plus** \((b-a)d(a)\) when the episode starts with \(d(a)>0\),
+> and the ratio \(B_{I_H}/\mathcal R_{I_H}\). Test increasing \(H=63n\).
 
 ---
 
 ## Score outcomes
 
+Score the measured ratio \(B_{I_H}/\mathcal R_{I_H}\) and global
+summability of \(\mathcal R\). Do not rely on coarse \(O(1)/o(1)\) alone.
+
 | Outcome | Reading |
 |---|---|
 | \(B_H\to 0\) | Extra dynamical gain — excellent |
-| \(B_H=O(1)\) with \(O(1)\) spend of a globally finite resource | OK — recurrence paid |
-| \(B_H=O(1)\) while resource spend is \(o(1)\) | **Dangerous — damages Gate D** (recurrence too cheap) |
+| \(B_H/\mathcal R_H\) bounded with \(\sum\mathcal R<\infty\) | OK — recurrence paid |
+| \(B_H\) order-one while resource spend collapses too fast for a global sum | **Dangerous — damages Gate D** |
 
-Also record \(H^{5/2}\lvert I_H\rvert\) as a diagnostic against critical
-turnover scaling.
+Also record \(H^{5/2}\lvert I_H\rvert\) as a **duration diagnostic only**
+(duration ≢ resource).
 
 ---
 
@@ -84,19 +89,25 @@ Prototype that *does* work on a restricted class (Orbit R4 small-data):
 \le
 \frac{U_0^2}{2(\nu-U_0)}.
 \]
+Large-packet repetition resource: **open mathematical gap**.
 
 ---
 
 ## Episode identity (measurement)
 
 \[
-B_I=\int_I\frac{D}{X}\,dt
+B_I=\int_I\frac{D}{X}\,dt.
+\]
+First-moment form (when \(D(a)=0\)):
+\[
+B_I
 =
 \int_a^b(b-s)
 \left[
 \frac{Q_\Sigma}{X}+\frac{V}{X}+\frac{M}{X}-\frac{DX'}{X^2}
 \right]ds.
 \]
+**If \(d(a)>0\) at initial time, add \((b-a)d(a)\).**
 
 ---
 
@@ -104,18 +115,21 @@ B_I=\int_I\frac{D}{X}\,dt
 
 | Item | Status in this vault |
 |---|---|
-| Orbit R4 prototype identities | **Filed** (full ZIP) |
-| Episode balance identity | **Filed** (full ZIP) |
+| Orbit R4 prototype identities | **Filed** |
+| Episode balance identity | **Filed** (boundary term restored in protocol) |
 | Adversary (six-box Signed-Gate) | **Ingested** |
 | `verify_signed_gate.py` / `Signed-Gate-Checks.json` | **PASS** |
-| Galerkin evolution + \(B_{I_H}\)/resource | **Filed for \(n=1,2\)** — [`GATE-D-ADVERSARIAL-RUN-RESULTS.md`](GATE-D-ADVERSARIAL-RUN-RESULTS.md) |
+| Static author sweep | **Filed** (not episode cost) |
+| Prior top-\(M\) evolution | **Demoted** — not full-trajectory |
+| Full-trajectory \(B_{I_H}/\mathcal R_{I_H}\) | **Unrun** — next solver task |
 
 ---
 
 ## STATUS
 
-GATE D: FIRST EPISODE DATA ON FILE (\(n=1,2\)).
-LEMMA: RECORDED, NOT STAMPED.
-NEXT JOB: MORE \(H=63n\) FOR FAMILY SCORE.
+GATE D: VALID TARGET; LEMMA NOT STAMPED.
+SOURCE BLOCKER: CLOSED.
+FULL-TRAJECTORY TEST: UNRUN.
+NEXT: FEASIBLE SOLVER PRESERVING SIGNED-SCALENE DIAGNOSTIC.
 (17) NOT CLAIMED.
 NS NOT SOLVED.

@@ -1,18 +1,17 @@
 # Gate D — Resource-Weighted Turnover Lemma
 
-8 October 2026.
-**Active shot.**
+8 / 9 October 2026.
+**Valid target — not a proved lemma.**
 
 \[
 \boxed{\textbf{Resource-Weighted Turnover Lemma}}
 \]
 \(B_I\le C\mathcal R_I\) with \(\sum_I\mathcal R_I\) controlled.
-Critical scale \(\tau_{\mathrm{nl}}\sim H^{-5/2}\).
-
-Adversarial: coherent Gate-C packet → \(B_{I_H}\) / resource ratio.
+Score \(B_I/\mathcal R_I\) (not mere \(O(1)/o(1)\)).
+Duration ≢ resource. Boundary term \((b-a)d(a)\) when \(d(a)>0\).
 
 Full note:
 [`GATE-D-HALF-DERIVATIVE-ATTACK-2026-10-08.md`](GATE-D-HALF-DERIVATIVE-ATTACK-2026-10-08.md).
 
-Protocol:
-[`GATE-D-TURNOVER-ADVERSARIAL-TEST.md`](GATE-D-TURNOVER-ADVERSARIAL-TEST.md).
+Review: [`GATE-D-REVIEW-2026-10-09.md`](GATE-D-REVIEW-2026-10-09.md).
+Solver: [`GATE-D-FULL-TRAJECTORY-SOLVER.md`](GATE-D-FULL-TRAJECTORY-SOLVER.md).

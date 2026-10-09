@@ -3,7 +3,7 @@
 One page to see **what this repo is about** and **where each thread lives**.
 
 Update this file when a subject changes status (merge, park, abandon, or rename).  
-Last reviewed: **2026-10-08** (Gate D: \(n=1,2\) episode data filed; no stamp).
+Last reviewed: **2026-10-09** (Gate D: valid target not stamped; full-trajectory unrun; Gaussian \(s=4\) unresolved).
 
 ---
 
@@ -39,7 +39,7 @@ Last reviewed: **2026-10-08** (Gate D: \(n=1,2\) episode data filed; no stamp).
 | **Related gate stack** | Gates / SAG / lemmas / Fourier-triangle / MIN-CYCLE / channel algebra — dozens of open PRs (see GitHub “Open”) |
 | **32-shape shared-budget extension** | 17 + 15 nonzero from \((9,25)\); mult 4 zero-pruned; [`SHARED-BUDGET-32-SHAPE-EXTENSION.md`](SHARED-BUDGET-32-SHAPE-EXTENSION.md). ZIP no longer the blocker. Not (17). |
 | **NS handoff (7 Oct 2026)** | Cross-device update: [`NS-HANDOFF.md`](NS-HANDOFF.md). Finite verify: `scripts/ns_attacks/verify_families.py`. |
-| **Gates A–D** | A–C closed. **D:** six-box Signed-Gate Galerkin run filed for \(n=1,2\) — \(B_{I_H}\sim0.055\), UW spend huge; no dangerous cheap-recurrence case yet; no lemma stamp. [`GATE-D-ADVERSARIAL-RUN-RESULTS.md`](GATE-D-ADVERSARIAL-RUN-RESULTS.md). |
+| **Gates A–D** | A–C closed. **D:** valid target, lemma **not** stamped. Sources recovered. Prior top-\(M\) episodes demoted. Full-trajectory six-box \(B_I/\mathcal R_I\) unrun — [`GATE-D-REVIEW.md`](GATE-D-REVIEW.md), [`GATE-D-FULL-TRAJECTORY-SOLVER.md`](GATE-D-FULL-TRAJECTORY-SOLVER.md). Gaussian \(s=4\) separate, unresolved. |
 | **Phase cancellation** | Narrowed: ratio 1 = common signs, not bound saturation; not all signed routes dead — [`PHASE-CANCELLATION-EXPLORATION.md`](PHASE-CANCELLATION-EXPLORATION.md). |
 
 ### 3. Phi-renorm / swirl papers

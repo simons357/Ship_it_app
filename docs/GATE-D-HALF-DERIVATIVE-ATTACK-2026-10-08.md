@@ -1,7 +1,7 @@
 # Gate D — Resource-Weighted Turnover Lemma
 
-8 October 2026.
-**ACTIVE shot — refined. Not (17).**
+8 October 2026 (corrections from 9 Oct review).
+**VALID TARGET — not a proved lemma. Not (17).**
 
 Parent deficit:
 [`GATE-C-HALF-DERIVATIVE-2026-10-08.md`](GATE-C-HALF-DERIVATIVE-2026-10-08.md).
@@ -9,11 +9,14 @@ Parent deficit:
 Adversarial protocol:
 [`GATE-D-TURNOVER-ADVERSARIAL-TEST-2026-10-08.md`](GATE-D-TURNOVER-ADVERSARIAL-TEST-2026-10-08.md).
 
+Review: [`GATE-D-REVIEW-2026-10-09.md`](GATE-D-REVIEW-2026-10-09.md).
+
 Program: [`PROGRAM-GATES-A-D.md`](PROGRAM-GATES-A-D.md).
 
-Archive pointers (may be absent as binaries here):
-`NS_EPISODE_BALANCE_NOTE_2026-09…`, `NS_ORBIT_R4_SMALL_DATA_2026-09…`
-(**Source-backed** from author notes).
+Sources recovered:
+[`sources/NS_ORBIT_R4_SMALL_DATA_2026-09-20.md`](sources/NS_ORBIT_R4_SMALL_DATA_2026-09-20.md),
+[`sources/NS_EPISODE_BALANCE_NOTE_2026-09-20.md`](sources/NS_EPISODE_BALANCE_NOTE_2026-09-20.md),
+Signed-Gate packet under `handoff/gate-d-signed-packet-2026-10-08/`.
 
 ---
 
@@ -39,12 +42,6 @@ Y\sim H^4,\qquad
 Viscosity alone: \(\tau_\nu\sim H^{-2}\) gives
 \(H^{5/2}\cdot H^{-2}=H^{1/2}\) — still short by a half derivative.
 
-Need:
-\[
-\boxed{\text{effective dangerous-window duration of order }H^{-5/2}}
-\]
-(or an equivalent \(H^{-1/2}\) height drop).
-
 Bernstein / concentration: \(\|\nabla u\|_\infty\sim H^{5/2}\) ⇒
 \[
 \boxed{\tau_{\mathrm{nl}}\sim H^{-5/2}.}
@@ -54,9 +51,15 @@ Dimensional match (not a proof):
 H^{5/2}\times H^{-5/2}\sim 1.
 \]
 
+**Correction (9 Oct):** an effective-window estimate
+\(\lvert I\rvert\lesssim H^{-5/2}\) is a **duration diagnostic only**.
+It is **not** equivalent to the resource-weighted lemma
+\(B_I\le C\mathcal R_I\) with \(\sum\mathcal R_I\) controlled.
+Duration match alone does not close recurrence.
+
 ---
 
-## Target theorem
+## Target theorem (not stamped)
 
 \[
 \boxed{\textbf{Resource-Weighted Turnover Lemma}}
@@ -72,21 +75,17 @@ B_I\le C\,\mathcal R_I,
 Then critical \(H^{-5/2}\) turnover can remove the static \(H^{1/2}\)
 loss, while the resource pays for **repetition**.
 
-Equivalent episode forms (weaker → stronger for practice):
-\[
-|I|\lesssim H^{-5/2}
-\quad\text{(near worst-case height \(H^{5/2}\))}
-\]
-or
+Preferred working form (resource-weighted; duration not interchangeable):
 \[
 \int_I
 \frac{[\mathcal T_{\mathrm{sc}}-\nu Y/4]_+}{X}\,dt
 \le C\,\mathcal R_I
 \]
-with \(\sum_I\mathcal R_I\) controlled. The resource-weighted form is
-preferred: not every episode needs a hard duration bound.
+with \(\sum_I\mathcal R_I\) controlled. Record
+\(H^{5/2}\lvert I\rvert\) as a separate diagnostic — never as a
+substitute for \(\mathcal R_I\).
 
-Budget consequence:
+Budget consequence **if** the lemma holds:
 \[
 \sum_I B_I
 \le C(u_0,\nu,K,T)
@@ -96,9 +95,17 @@ Budget consequence:
 
 ---
 
+## Mathematical gap (open)
+
+No large-packet (Gate-C / six-box scale) resource has yet been shown to
+pay for **repeated** episodes. The small-\(\ell^1\) Orbit-R4 prototype
+\(\int UW\,dt\le U_0^2/(2(\nu-U_0))\) remains restricted-class only.
+
+---
+
 ## Prototype already in the archive
 
-In the small Fourier-\(\ell^1\) class (`NS_ORBIT_R4_SMALL_DATA_2026-09…`,
+In the small Fourier-\(\ell^1\) class (`NS_ORBIT_R4_SMALL_DATA_2026-09-20`,
 **Source-backed**), the quartic remainder satisfies
 \[
 \lvert R_4\rvert\lesssim UWX,
@@ -107,14 +114,15 @@ while dynamics supplies an integrated bound on \(UW\). Resource:
 \[
 \mathcal R\sim\int UW\,dt
 \]
-— summable. That is the pattern to imitate for all-high scalene
-episodes.
+— summable on that class. That is the pattern to imitate for all-high
+scalene episodes — **not yet established** for the six-box packet.
 
 ---
 
 ## Exact episode identity (archive)
 
-From `NS_EPISODE_BALANCE_NOTE_2026-09…` (**Source-backed**):
+From `NS_EPISODE_BALANCE_NOTE_2026-09-20` (**Source-backed**).
+For an episode \((a,b)\) with \(D(a)=0\), \(D>0\) inside, \(X>0\):
 \[
 B_I
 =
@@ -126,8 +134,15 @@ B_I
 -\frac{DX'}{X^2}
 \right]ds.
 \]
-Finite trajectories: block viscosity can contribute a large negative
-moment and terminate episodes even while quartic feeding stays positive.
+
+**Correction (9 Oct) — restore the initial boundary term.**
+If an episode starts at initial time with \(d(a)>0\), add
+\[
+(b-a)\,d(a)
+\]
+to the first-time-moment integral. Do not omit it. Adversarial first
+episodes from the signed packet typically begin with \(D(0)>0\), so this
+term is live.
 
 ---
 
@@ -148,23 +163,18 @@ moment and terminate episodes even while quartic feeding stays positive.
 
 ## Adversarial packet (decisive test)
 
-Still use the coherent Gate-C packet — but do **not** ask only
-\(\lvert I_H\rvert\stackrel{?}{\lesssim}H^{-5/2}\). Measure
+Still use the coherent Gate-C six-box packet — Gaussian not substituted.
+Do **not** ask only \(\lvert I_H\rvert\stackrel{?}{\lesssim}H^{-5/2}\).
+Score the family by the measured ratio
 \[
 \boxed{
-B_{I_H}
-\quad\text{and}\quad
-\frac{B_{I_H}}{\text{candidate resource consumed on }I_H}
+\frac{B_{I_H}}{\mathcal R_{I_H}}
 }
 \]
-as \(H\to\infty\).
+and whether \(\sum\mathcal R_I\) stays globally finite.
+Coarse “\(O(1)\) versus \(o(1)\)” slogans are insufficient (9 Oct).
 
-| Reading | Meaning |
-|---|---|
-| \(B_{I_H}\sim O(1)\) | Consistent with critical turnover — not enough alone for infinitely many episodes |
-| \(B_{I_H}\to 0\) | Extra dynamical gain — excellent |
-| \(B_{I_H}\sim O(1)\) consuming \(O(1)\) of a globally finite resource | Works — only finitely much total episode cost accumulates |
-| \(B_{I_H}\sim O(1)\) consuming \(o(1)\) resource | **Gate D in trouble** |
+Also record \(H^{5/2}\lvert I_H\rvert\) as a **duration diagnostic only**.
 
 Pipeline:
 \[
@@ -172,7 +182,7 @@ Pipeline:
 \to
 \text{exact }D(0),D'(0)
 \to
-B_{I_H}\text{ vs resource on }I_H.
+B_{I_H}/\mathcal R_{I_H}\text{ (with boundary term)}.
 \]
 
 Core question:
@@ -183,20 +193,36 @@ Core question:
 
 ---
 
+## Execution status (9 Oct)
+
+| Item | Status |
+|---|---|
+| Sources (Orbit R4, episode balance, Signed-Gate) | **Recovered — blocker closed** |
+| Static author sweep | Filed (exponents only; not episode cost) |
+| Prior top-\(M\) Euler “episodes” | **Demoted** — not full-trajectory evidence |
+| Six-box **full-trajectory** \(B_{I_H}/\mathcal R_{I_H}\) | **Unrun** (dense path OOM) |
+| Next task | Feasible full-trajectory solver preserving signed-scalene diagnostic |
+
+See [`GATE-D-REVIEW-2026-10-09.md`](GATE-D-REVIEW-2026-10-09.md),
+[`GATE-D-FULL-TRAJECTORY-SOLVER.md`](GATE-D-FULL-TRAJECTORY-SOLVER.md).
+
+---
+
 ## Not the next target
 
 Shell-count; Young reshuffles; generic instantaneous phase;
 52/70/100 families; random-phase fishing; Ring / swirl-as-substitute;
-B41→NSE.
+B41→NSE; Gaussian as substitute for six-box.
 
 ---
 
 ## STATUS
 
-GATE D: ACTIVE — RESOURCE-WEIGHTED TURNOVER LEMMA (**RECORDED, NOT STAMPED**).
+GATE D: VALID TARGET; LEMMA NOT STAMPED.
 NEED: \(B_I\le C\mathcal R_I\) WITH \(\sum\mathcal R_I\) CONTROLLED.
-CRITICAL SCALE: \(\tau_{\mathrm{nl}}\sim H^{-5/2}\).
-ADVERSARIAL EXECUTION: **BLOCKED ON SOURCES** —
-[`GATE-D-EXECUTION-BLOCKER.md`](GATE-D-EXECUTION-BLOCKER.md).
+SCORE: \(B_I/\mathcal R_I\) (NOT MERE \(O(1)/o(1)\)).
+BOUNDARY TERM: \((b-a)d(a)\) WHEN \(d(a)>0\).
+DURATION ≢ RESOURCE.
+EXECUTION GAP: FULL-TRAJECTORY SIX-BOX SOLVER.
 (17) NOT CLAIMED.
 NS NOT SOLVED.
