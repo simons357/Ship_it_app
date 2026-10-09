@@ -11,7 +11,8 @@ The continuation is still running with the same field, viscosity, cutoff, and ti
 
 At the last accepted state, the signed excess had risen from about \(16405\) to \(16602\). That step showed growth, not turnover.
 
-The practical bottleneck is the next derivative: this sparse solver evaluates roughly \(8.1\) billion ordered mode pairs. The first-step cutoff comparison is complete. Continuing the trajectory is much more expensive.
+The practical bottleneck is the next derivative. On the reproduced first accepted state (66242 modes, \(4.388\times 10^9\) ordered pairs) a separate copy agrees at roundoff and is 1.52× faster on that pair loop. The reference solver is unchanged, and the continuation was not resumed
+([`GATE-D-RHS-SPEEDUP.md`](GATE-D-RHS-SPEEDUP.md)).
 
 One completed six-box episode would be evidence. Cutoff-uniform control and summable recurrence remain unproved. The signed static test stays complete. Dynamical control stays open.
 
