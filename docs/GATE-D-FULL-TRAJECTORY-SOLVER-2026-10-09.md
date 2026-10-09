@@ -99,27 +99,42 @@ spherical arrays without rfft OOM. FFT keeps the full ball without top-\(M\).
 
 ## Smoke check (9 Oct)
 
-`python3 gate_d_full_trajectory.py --smoke --n 1`
+### Sparse tiled (`gate_d_full_trajectory.py`)
 
 | Check | Result |
 |---|---|
 | \(T_{\mathrm{sc}}\) vs verifier | rel err \(0\) |
-| Energy identity \(X'\) residual | \(\sim 4\times10^{-11}\) |
-| \(D_H(0)\), \(D_H'(0)\) | match prior signed-packet \(t=0\) |
+| \(D_H(0)\), \(D_H'(0)\) | match signed-packet \(t=0\) |
 | top-\(M\) | **false** |
-| Mode growth (step 1→2) | \(358\to 4.2\times10^4\to 8.2\times10^4\) |
-| Episode complete | **No** — `MODE_BUDGET_HIT` under default 80k cap |
+| Episode complete | **No** — `MODE_BUDGET_HIT` (~82k modes) |
 
-JSON: [`scripts/ns_attacks/GATE-D-FULL-TRAJECTORY-SMOKE.json`](../scripts/ns_attacks/GATE-D-FULL-TRAJECTORY-SMOKE.json).
+### FFT Galerkin (`gate_d_full_trajectory_fft.py`) — feasible path
 
-The full first-episode trajectory at \(4H\) without top-\(M\) still needs a
-higher mode budget / longer wall time; the diagnostic path is live.
+`python3 gate_d_full_trajectory_fft.py --smoke --n 1 --max-steps 2`
+
+| Check | Result |
+|---|---|
+| FFT \(N\) | 512 at cutoff \(4H=252\) |
+| \(T_{\mathrm{sc}}\) vs verifier | rel err \(\sim 2\times10^{-7}\) |
+| \(D_H(0)\) | \(1.536\times10^{4}\) (match) |
+| \(D_H'(0)\) | \(3.712\times10^{6}\) (match) |
+| Boundary term | included in \(B_{I_H}\) |
+| top-\(M\) | **false** |
+| Extract growth (steps 0→2) | \(424\to 1.3\times10^{4}\to 1.8\times10^{4}\) |
+| \(D\) evolution | matches sparse smoke (\(1.536\to 1.559\times10^{4}\)) |
+| Episode complete | **No** — smoke window only (~2–3 min/step) |
+
+JSON: [`scripts/ns_attacks/GATE-D-FULL-TRAJECTORY-FFT-SMOKE.json`](../scripts/ns_attacks/GATE-D-FULL-TRAJECTORY-FFT-SMOKE.json).
+
+Full first-episode at \(dt=2\tau_{\mathrm{nl}}\) is wall-time heavy; engine is no
+longer memory-blocked. Review ZIP was **not** present under
+`scratch/ec43035008f2/` this session — review text filed from the handoff message.
 
 ---
 
 ## STATUS
 
-SOLVER SPEC + SMOKE FILED.
-FULL FIRST EPISODE: STILL UNRUN (MODE BUDGET).
+FEASIBLE FFT SOLVER + SMOKE FILED.
+FULL FIRST EPISODE: STILL UNRUN (WALL TIME).
 LEMMA: NOT STAMPED.
 NS NOT SOLVED.
