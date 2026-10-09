@@ -3,7 +3,7 @@
 One page to see **what this repo is about** and **where each thread lives**.
 
 Update this file when a subject changes status (merge, park, abandon, or rename).  
-Last reviewed: **2026-10-09** (diagnostic implementation blocked; \(T_{\mathrm{sc}}\) triad sum and project \(G\) not on hand).
+Last reviewed: **2026-10-09** (block stays; Fourier-triangle reconstruction not adopted; crossing detector not built).
 
 ---
 
@@ -39,7 +39,7 @@ Last reviewed: **2026-10-09** (diagnostic implementation blocked; \(T_{\mathrm{s
 | **Related gate stack** | Gates / SAG / lemmas / Fourier-triangle / MIN-CYCLE / channel algebra — dozens of open PRs (see GitHub “Open”) |
 | **32-shape shared-budget extension** | 17 + 15 nonzero from \((9,25)\); mult 4 zero-pruned; [`SHARED-BUDGET-32-SHAPE-EXTENSION.md`](SHARED-BUDGET-32-SHAPE-EXTENSION.md). ZIP no longer the blocker. Not (17). |
 | **NS handoff (7 Oct 2026)** | **Stays under review.** Cross-device update: [`NS-HANDOFF.md`](NS-HANDOFF.md). Finite verify: `scripts/ns_attacks/verify_families.py`. The accepted dilation correction is in that handoff and does not close this row. |
-| **Gates A–D** | Research status: active, advancing, and mathematically unfinished. No global regularity result. **B:** independent review. The all-radii lemma is promising; the full inequality still needs independent verification. Approval would give only \(\theta\ge 1/2\) for the specified nonnegative \(Q\), not the optimal exponent and not signed-transfer control. **C:** signed static test complete; sharp uniform exponent \(H^{1/2}\) for \(R(H)\) (where \(\Lambda\) appears, \(\Lambda\sim H\)). **A:** unresolved, not a premise. **D:** primary target, and the diagnostic implementation is blocked until the 20 September scalene-target pages and the project \(G\) are attached. Still needed: a numerically converged turnover episode; whether dangerous transfer regenerates; whether repeated episodes consume a finite shared resource; a cutoff-independent proof. Measurement module is a tested reference; full six-box episode unrun — [`GATE-D-THIRD-TRANSFER-PACKET.md`](GATE-D-THIRD-TRANSFER-PACKET.md). |
+| **Gates A–D** | Research status: active, advancing, and mathematically unfinished. No global regularity result. **B:** independent review. The all-radii lemma is promising; the full inequality still needs independent verification. Approval would give only \(\theta\ge 1/2\) for the specified nonnegative \(Q\), not the optimal exponent and not signed-transfer control. **C:** signed static test complete; sharp uniform exponent \(H^{1/2}\) for \(R(H)\) (where \(\Lambda\) appears, \(\Lambda\sim H\)). **A:** unresolved, not a premise. **D:** primary target, open and blocked. \(T_{\mathrm{sc}}\) and the project \(G\) remain undefined for implementation. The PR #165 Fourier-triangle page is a reconstruction and is not adopted. The reconstruction is not implemented, and a crossing detector is not built. Still needed: a numerically converged turnover episode; whether dangerous transfer regenerates; whether repeated episodes consume a finite shared resource; a cutoff-independent proof. Measurement module is a tested reference; full six-box episode unrun — [`GATE-D-THIRD-TRANSFER-PACKET.md`](GATE-D-THIRD-TRANSFER-PACKET.md). |
 | **Phase cancellation** | Narrowed: ratio 1 = common signs, not bound saturation; not all signed routes dead — [`PHASE-CANCELLATION-EXPLORATION.md`](PHASE-CANCELLATION-EXPLORATION.md). |
 
 ### 3. Phi-renorm / swirl papers
