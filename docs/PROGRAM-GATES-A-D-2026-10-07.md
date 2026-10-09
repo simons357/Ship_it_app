@@ -18,12 +18,11 @@ Review D: [`GATE-D-REVIEW-2026-10-09.md`](GATE-D-REVIEW-2026-10-09.md).
 
 [`sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt`](sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt)
 defines \(H\) as wavenumber through \(H\le|k|\le 4H\). Its signed ratio
-\(R(H)\) has matching power bounds of exponent \(1/2\). Gate C is closed for that audited assembly: the deficit is a
-half derivative, with \(\Lambda\sim H\) denoting frequency, so
-\(\Lambda^{1/2}\sim H^{1/2}\). If squared frequency is \(L=H^2\), the same
-factor is \(L^{1/4}\). The same source leaves Gate A diagnostic and unresolved.
-Do not carry “Gate A killed.” The separate \(L_{z_n}\) note is not that
-closure and is not a premise of Gate C. This does not prove (17).
+\(R(H)\) has matching power bounds of exponent \(1/2\). Gate C is closed for that sharp instantaneous signed band estimate.
+Its optimal wavenumber exponent is \(1/2\) (\(\Lambda\sim H\) denotes
+frequency; if \(L=H^2\), the factor is \(L^{1/4}\)). Gate A remains
+unresolved and is not a premise. (17) is not established. Gate D remains
+open on both episode control and recurrence funding.
 Gate D **target** (not stamped lemma):
 \[
 \boxed{\textbf{Resource-Weighted Turnover Lemma}}
@@ -59,8 +58,8 @@ repetition resource still open.
 |---|---|---|
 | **A** | As named by the sharp-band source | **Diagnostic and unresolved** |
 | **B** | Shared-energy accounting | Not the band exponent |
-| **C** | Sharp instantaneous signed band | **CLOSED — deficit \(H^{1/2}\)** (wavenumber; \(L^{1/4}\) if \(L=H^2\)) |
-| **D** | Turnover and recurrence | **OPEN — not stamped; evidence pending** |
+| **C** | Sharp instantaneous signed band | **CLOSED — optimal wavenumber exponent \(1/2\)** |
+| **D** | Episode control and recurrence funding | **OPEN — not stamped; evidence pending** |
 
 ---
 
@@ -90,9 +89,10 @@ repetition resource still open.
 
 ## STATUS
 
-GATE A: DIAGNOSTIC AND UNRESOLVED IN THE SHARP-BAND SOURCE.
-GATE C: CLOSED FOR THE AUDITED ASSEMBLY — \(\Lambda^{1/2}\sim H^{1/2}\) (\(\Lambda\sim H\) = FREQUENCY).
-GATE D: OPEN — BOTH OBLIGATIONS REQUIRED, UNIFORM IN CUTOFF (NOT STAMPED).
+GATE C: CLOSED FOR THE SHARP INSTANTANEOUS SIGNED BAND — OPTIMAL WAVENUMBER EXPONENT \(1/2\).
+GATE A: UNRESOLVED — NOT A PREMISE.
+GATE D: OPEN ON EPISODE CONTROL AND RECURRENCE FUNDING.
+(17) NOT ESTABLISHED.
 IMPLEMENTATION CORRECTED; DYNAMICAL EVIDENCE PENDING.
 FULL CORRECTED EPISODE THROUGH REGENERATION: UNRUN.
 NS NOT SOLVED.

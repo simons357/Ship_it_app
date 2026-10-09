@@ -1,20 +1,19 @@
 # Gate C — exact missing exponent
 
 8 October 2026. Notation fixed 9 October 2026 from the sharp-band source.
-**CLOSED for the audited assembly’s \(\tfrac12\)-derivative deficit. Not (17).**
+**CLOSED for the sharp instantaneous signed band estimate. Optimal wavenumber exponent \(1/2\). Gate A is not a premise. (17) is not established.**
 
-\(\Lambda\sim H\) explicitly denotes frequency. In the sharp-band source, that
-frequency is wavenumber: fields supported in \(H\le|k|\le 4H\). The deficit
-is \(\Lambda^{1/2}\sim H^{1/2}\). If squared frequency is \(L=H^2\), the same
-factor is \(L^{1/4}\).
+The basis is independent of Gate A. \(\Lambda\sim H\) denotes frequency, and
+in this source that frequency is wavenumber on \(H\le|k|\le 4H\). The optimal
+exponent is \(\Lambda^{1/2}\sim H^{1/2}\). If squared frequency is \(L=H^2\),
+the same factor is \(L^{1/4}\).
 
 Source:
 [`sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt`](sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt).
 
 Program: [`PROGRAM-GATES-A-D.md`](PROGRAM-GATES-A-D.md).
 
-The same source leaves Gate A diagnostic and unresolved. This note does
-not use “Gate A killed” as a premise.
+Gate A remains unresolved and is not a premise.
 
 ---
 
@@ -64,9 +63,10 @@ determination of the earlier unsigned \(Q_x\) operator norm.
 
 ## Scope of CLOSED
 
-CLOSED applies to this audited assembly: the sharp instantaneous signed
-band estimate. It does not prove (17). Gate D’s episode bound and summable
-recurrence resource both remain required, uniformly in the cutoff.
+CLOSED applies to the sharp instantaneous signed band estimate, whose
+optimal wavenumber exponent is \(1/2\). Gate A remains unresolved and is
+not a premise. (17) is not established. Gate D remains open on both episode
+control and recurrence funding, with constants uniform in the cutoff.
 
 ---
 
@@ -74,11 +74,11 @@ recurrence resource both remain required, uniformly in the cutoff.
 
 | Claim | Status |
 |---|---|
-| Audited assembly (sharp signed band) | **CLOSED** — deficit \(\Lambda^{1/2}\sim H^{1/2}\) (\(\Lambda\sim H\) = frequency) |
-| Same factor in squared frequency \(L=H^2\) | \(L^{1/4}\) |
-| Gate A killed by this source | **No** — source leaves Gate A diagnostic and unresolved |
-| Proof of (17) | **Not claimed** |
-| Gate D turnover and recurrence | **Open** |
+| Sharp instantaneous signed band | **CLOSED** — optimal wavenumber exponent \(1/2\) |
+| Same factor if \(L=H^2\) | \(L^{1/4}\) (\(\Lambda\sim H\) = frequency) |
+| Gate A | **Unresolved** — not a premise |
+| (17) | **Not established** |
+| Gate D episode control and recurrence funding | **Open** |
 | Further finite-family extensions | **Parked** |
 
 ---
@@ -110,11 +110,10 @@ Status: implementation corrected; dynamical evidence pending.
 
 ## STATUS
 
-GATE C: CLOSED FOR THE AUDITED ASSEMBLY — DEFICIT \(\Lambda^{1/2}\sim H^{1/2}\)
-(\(\Lambda\sim H\) = FREQUENCY / WAVENUMBER).
-IF \(L=H^2\), THE SAME FACTOR IS \(L^{1/4}\).
-GATE A: NOT CLOSED BY THIS SOURCE.
-GATE D: OPEN — EPISODE BOUND AND SUMMABLE RESOURCE BOTH REQUIRED,
-UNIFORM IN CUTOFF. A FINITE RUN DOES NOT PROVE THAT BOUND.
-(17) NOT CLAIMED.
+GATE C: CLOSED FOR THE SHARP INSTANTANEOUS SIGNED BAND ESTIMATE.
+OPTIMAL WAVENUMBER EXPONENT \(1/2\) (\(\Lambda\sim H\) = FREQUENCY; \(L^{1/4}\) IF \(L=H^2\)).
+GATE A: UNRESOLVED — NOT A PREMISE.
+GATE D: OPEN ON EPISODE CONTROL AND RECURRENCE FUNDING.
+A FINITE RUN DOES NOT PROVE THE UNIFORM BOUND.
+(17) NOT ESTABLISHED.
 NS NOT SOLVED.

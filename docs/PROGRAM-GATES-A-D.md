@@ -1,7 +1,7 @@
 # Program gates A–D
 
 8 / 9 October 2026.
-**C closed for the audited assembly’s \(\tfrac12\)-derivative deficit (\(\Lambda\sim H\) = frequency). D open: episode bound and summable resource, uniform in cutoff. A finite run supports the target and does not prove that bound. Not (17).**
+**C closed for the sharp instantaneous signed band estimate; optimal wavenumber exponent \(1/2\). Gate A unresolved and not a premise. D open on episode control and recurrence funding. (17) not established.**
 
 \[
 \boxed{

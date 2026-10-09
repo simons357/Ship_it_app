@@ -228,8 +228,8 @@ real Fourier field.
 |---|---|---|
 | **A** | As named by the sharp-band source | **Diagnostic and unresolved.** The \(L_{z_n}\) note is a separate load bound, not this closure ([`sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt`](sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt)) |
 | **B** | Shared-energy accounting | Not the band exponent ([`GATE-B-SHARED-ENERGY.md`](GATE-B-SHARED-ENERGY.md)) |
-| **C** | Sharp instantaneous signed band | **CLOSED — deficit \(H^{1/2}\)** with \(H\) wavenumber. If \(L=H^2\), the factor is \(L^{1/4}\). Does not prove (17) ([`GATE-C-HALF-DERIVATIVE.md`](GATE-C-HALF-DERIVATIVE.md)) |
-| **D** | Turnover and recurrence | **OPEN — not stamped; dynamical evidence pending** ([`GATE-D-REVIEW.md`](GATE-D-REVIEW.md)): \(B_I=\int d\le C\mathcal R_I\) and \(\sum\mathcal R_I\le C_{\mathrm{data},\nu,T}\), constants uniform in the Galerkin cutoff |
+| **C** | Sharp instantaneous signed band | **CLOSED — optimal wavenumber exponent \(1/2\)**. Gate A is not a premise. (17) not established ([`GATE-C-HALF-DERIVATIVE.md`](GATE-C-HALF-DERIVATIVE.md)) |
+| **D** | Episode control and recurrence funding | **OPEN** ([`GATE-D-REVIEW.md`](GATE-D-REVIEW.md)): both \(B_I\le C\mathcal R_I\) and \(\sum\mathcal R_I\le C_{\mathrm{data},\nu,T}\), uniform in cutoff. A finite run does not prove the bound |
 | Parked | 52/70/100 family extensions; random-phase fishing; Ring without bridge | — |
 
 Spectral target remains (15)–(17) on all-high scalene; a
@@ -264,8 +264,10 @@ regularity or novelty claim.
 ZIP RETRIEVAL: NO LONGER THE RESEARCH BLOCKER (RECOVERED IN SOURCE CONVERSATION).
 17/32 FINITE CHECKS: RERUN HERE (lists, R=216×4, ρ+3ρ′, individual mult 3).
 GATE A: DIAGNOSTIC AND UNRESOLVED IN THE SHARP-BAND SOURCE.
-GATE C: CLOSED FOR THE AUDITED ASSEMBLY — \(\Lambda^{1/2}\sim H^{1/2}\) (\(\Lambda\sim H\) = FREQUENCY).
-GATE D: OPEN. FFT SETUP CORRECTED; PARTIALS PROVISIONAL. A FINITE RUN DOES NOT PROVE THE UNIFORM BOUND.
+GATE C: CLOSED FOR THE SHARP INSTANTANEOUS SIGNED BAND — OPTIMAL WAVENUMBER EXPONENT \(1/2\).
+GATE A: UNRESOLVED — NOT A PREMISE.
+GATE D: OPEN ON EPISODE CONTROL AND RECURRENCE FUNDING.
+(17) NOT ESTABLISHED.
 RESTRICTED-FAMILY THEOREM: PROVED AT STATED SCOPE (AUDIT VERDICT).
 (17) / CLAY / SWIRL CLOSURE: OPEN.
 PHASE: NARROWED — NOT A BLANKET DEAD END.
