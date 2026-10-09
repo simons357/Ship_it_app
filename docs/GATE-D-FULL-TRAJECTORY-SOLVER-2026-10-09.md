@@ -80,10 +80,12 @@ prototype candidate, plus \(\int X\) (already ruled out analytically) and
 | Demoted top-\(M\) runner | [`scripts/ns_attacks/gate_d_adversarial_run.py`](../scripts/ns_attacks/gate_d_adversarial_run.py) — do not use for Gate D score |
 | Static reference | [`scripts/ns_attacks/gated_initial.py`](../scripts/ns_attacks/gated_initial.py) |
 
-**Preferred engine:** FFT rfft `complex64` on \(N=512\) for cutoff \(4H\) (\(n=1\)),
-with threaded SciPy FFTs (`GATE_D_FFT_WORKERS=4`, ~23 s/RHS on this host).
-Sparse \(O(m^2)\) after mode birth exceeds the session mode budget; dense
-spherical arrays without rfft OOM. FFT keeps the full ball without top-\(M\).
+**Preferred engine:** FFT rfft `complex64` with **Orszag dealias**
+\(N\ge 3k_{\max}\) (⇒ \(N=768\) at cutoff \(4H=252\)), fixed \(K\), full
+\(X,Y\), and \(B_I=\int d\,dt\) only. See
+[`GATE-D-FFT-CORRECTIONS-2026-10-09.md`](GATE-D-FFT-CORRECTIONS-2026-10-09.md).
+
+Prior \(N=512\) / double-counted / \(X_H,Y_H\) runs are **not** Gate D evidence.
 
 ---
 
@@ -109,33 +111,23 @@ spherical arrays without rfft OOM. FFT keeps the full ball without top-\(M\).
 | top-\(M\) | **false** |
 | Episode complete | **No** — `MODE_BUDGET_HIT` (~82k modes) |
 
-### FFT Galerkin (`gate_d_full_trajectory_fft.py`) — feasible path
+### FFT Galerkin — corrections pending re-smoke
 
-`python3 gate_d_full_trajectory_fft.py --smoke --n 1 --max-steps 2`
+See [`GATE-D-FFT-CORRECTIONS-2026-10-09.md`](GATE-D-FFT-CORRECTIONS-2026-10-09.md).
 
-| Check | Result |
+| Issue in `18a267f3` | Fix |
 |---|---|
-| FFT \(N\) | 512 at cutoff \(4H=252\) |
-| \(T_{\mathrm{sc}}\) vs verifier | rel err \(\sim 2\times10^{-7}\) |
-| \(D_H(0)\) | \(1.536\times10^{4}\) (match) |
-| \(D_H'(0)\) | \(3.712\times10^{6}\) (match) |
-| Boundary term | included in \(B_{I_H}\) |
-| top-\(M\) | **false** |
-| Extract growth (steps 0→2) | \(424\to 1.3\times10^{4}\to 1.8\times10^{4}\) |
-| \(D\) evolution | matches sparse smoke (\(1.536\to 1.559\times10^{4}\)) |
-| Episode complete | **No** — smoke window only (~2–3 min/step) |
+| \(B_I\) double-counted \((b-a)d(a)\) | \(B_I=\int d\,dt\) only |
+| \(N=512\) aliases at \(k_{\max}=252\) | \(N=768\) Orszag |
+| \(H\)-filter \(X_H,Y_H\) | fixed \(K\), full \(X,Y\) |
 
-JSON: [`scripts/ns_attacks/GATE-D-FULL-TRAJECTORY-FFT-SMOKE.json`](../scripts/ns_attacks/GATE-D-FULL-TRAJECTORY-FFT-SMOKE.json).
-
-Full first-episode at \(dt=2\tau_{\mathrm{nl}}\) is wall-time heavy; engine is no
-longer memory-blocked. Review ZIP was **not** present under
-`scratch/ec43035008f2/` this session — review text filed from the handoff message.
+Prior FFT smoke / “\(D\) rising” partial: **PROVISIONAL_INVALID**.
 
 ---
 
 ## STATUS
 
-FEASIBLE FFT SOLVER + SMOKE FILED.
-FULL FIRST EPISODE: STILL UNRUN (WALL TIME).
+CORRECTIONS FILED; PRIOR FFT EVIDENCE DEMOTED.
+FULL FIRST EPISODE: UNRUN.
 LEMMA: NOT STAMPED.
 NS NOT SOLVED.

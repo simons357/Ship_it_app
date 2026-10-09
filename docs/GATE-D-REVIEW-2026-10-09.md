@@ -66,7 +66,11 @@ full-trajectory signed-scalene diagnostic.
 **Next Gate D task:** a feasible full-trajectory solver that preserves the exact
 signed-scalene diagnostic (six-box adversary, no Gaussian substitute) —
 [`GATE-D-FULL-TRAJECTORY-SOLVER-2026-10-09.md`](GATE-D-FULL-TRAJECTORY-SOLVER-2026-10-09.md),
-[`scripts/ns_attacks/gate_d_full_trajectory.py`](../scripts/ns_attacks/gate_d_full_trajectory.py).
+[`GATE-D-FFT-CORRECTIONS-2026-10-09.md`](GATE-D-FFT-CORRECTIONS-2026-10-09.md).
+
+FFT path must: (i) score \(B_I=\int d\,dt\) without double-counting
+\((b-a)d(a)\); (ii) Orszag-dealias (\(N\ge 3k_{\max}\), ⇒ 768 at \(4H\));
+(iii) use fixed \(K\) and full \(X,Y\). Prior \(N=512\) partials are not evidence.
 
 ---
 

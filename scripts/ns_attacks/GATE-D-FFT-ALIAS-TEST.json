@@ -1,0 +1,16 @@
+{
+  "alias_self_test": {
+    "k_max": 100,
+    "support": 33,
+    "N_unpadded": 256,
+    "N_dealiased": 320,
+    "spurious_retained_unpadded": 4.820140020456165e-06,
+    "spurious_retained_dealiased": 1.2042419257340953e-05,
+    "pass": false
+  },
+  "gate_d_grid_sizes": {
+    "gate_d_n1_k_max": 252,
+    "N_unpadded_would_be": 512,
+    "N_dealiased": 768
+  }
+}

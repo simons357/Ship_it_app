@@ -6,7 +6,8 @@ cutoff >=4H OOMs; this path uses tiled sparse convolution among all active
 modes in the ball. Amplitude floor drops only numerical zeros — never an
 energy-ranking prune.
 
-Score: B_I / R_I with initial boundary term (b-a)*d(a) when d(a)>0.
+Score: B_I / R_I with B_I = ∫ d(t) dt only (do not add (b-a)d(a) on top).
+Diagnostic: fixed K (default K²=1), full X,Y — not H-high-pass X_H,Y_H.
 Numerical evidence only. No theorem stamp. Not (17).
 """
 from __future__ import annotations
@@ -260,7 +261,7 @@ def measure_episode(
 ):
     meta = packet(n)
     H = int(meta["H"])
-    k_high2 = H * H
+    K2_fixed = 1.0  # recovered Gate D / episode-balance target
     k_max = cut_mul * H
     k_max2 = k_max * k_max
     k, u = build_packet_arrays(n)
@@ -270,14 +271,15 @@ def measure_episode(
     T_expected = float(meta["T_scalene"]) / (float(meta["E"]) ** 1.5)
 
     # Warm JIT
-    _ = transfer_scalene(k, u, float(k_high2))
+    _ = transfer_scalene(k, u, float(K2_fixed))
     _ = rhs_tiled(k, u, nu, k_max2, floor_rel, tile, hash_capacity)
 
     t_wall = time.time()
-    E0, X0, Y0, X_H0, Y_H0, U0, W0 = moments(k, u, float(k_high2))
-    T0, n0 = transfer_scalene(k, u, float(k_high2))
-    D0 = T0 - nu * Y_H0 / 4.0
-    d0 = D0 / max(X_H0, 1e-300)
+    # moments(..., k_high2) still returns full X,Y as slots 1,2
+    E0, X0, Y0, _X_H0, _Y_H0, U0, W0 = moments(k, u, float(H * H))
+    T0, n0 = transfer_scalene(k, u, float(K2_fixed))
+    D0 = T0 - nu * Y0 / 4.0
+    d0 = D0 / max(X0, 1e-300)
 
     fk, fu, _, _ = rhs_tiled(k, u, nu, k_max2, 0.0, tile, hash_capacity)
     fd = {
@@ -296,9 +298,9 @@ def measure_episode(
 
     eps = 1e-8
     be_k, be_u = merge_axpy(k, u, fk, fu, eps, k_max2, 0.0)
-    Te, _ = transfer_scalene(be_k, be_u, float(k_high2))
-    _, _, _, _, YHe, _, _ = moments(be_k, be_u, float(k_high2))
-    Dp = ((Te - nu * YHe / 4.0) - D0) / eps
+    Te, _ = transfer_scalene(be_k, be_u, float(K2_fixed))
+    _, _, Ye, _, _, _, _ = moments(be_k, be_u, float(H * H))
+    Dp = ((Te - nu * Ye / 4.0) - D0) / eps
 
     tau_nl = float(H ** (-2.5))
     dt = dt_factor * tau_nl
@@ -308,7 +310,7 @@ def measure_episode(
 
     times = [0.0]
     Ds = [float(D0)]
-    Xs = [float(X_H0)]
+    Xs = [float(X0)]
     UWs = [float(U0 * W0)]
     Ts = [float(T0)]
 
@@ -316,7 +318,7 @@ def measure_episode(
     # First episode starts at t=0 with d(a)>0 for the signed packet.
     episode_start = 0.0 if D0 > 0 else None
     episode_end = None
-    B_trap = 0.0
+    B_direct = 0.0  # ∫ d dt only
     R_UW_acc = 0.0
     R_X_acc = 0.0
     steps = 0
@@ -345,12 +347,12 @@ def measure_episode(
             status_detail = "HASH_OVERFLOW"
             break
 
-        E, X, Y, X_H, Y_H, U, W = moments(k, u, float(k_high2))
-        Tsc, _ = transfer_scalene(k, u, float(k_high2))
-        D = Tsc - nu * Y_H / 4.0
+        E, X, Y, _X_H, _Y_H, U, W = moments(k, u, float(H * H))
+        Tsc, _ = transfer_scalene(k, u, float(K2_fixed))
+        D = Tsc - nu * Y / 4.0
         times.append(t)
         Ds.append(float(D))
-        Xs.append(float(X_H))
+        Xs.append(float(X))
         UWs.append(float(U * W))
         Ts.append(float(Tsc))
 
@@ -358,26 +360,26 @@ def measure_episode(
             if Ds[-2] <= 0.0 < D:
                 frac = -Ds[-2] / (D - Ds[-2])
                 episode_start = times[-2] + frac * dt
-                B_trap = 0.5 * (D / max(X_H, 1e-300)) * (t - episode_start)
+                B_direct = 0.5 * (D / max(X, 1e-300)) * (t - episode_start)
                 uw_c = UWs[-2] + frac * (UWs[-1] - UWs[-2])
                 R_UW_acc = 0.5 * (uw_c + UWs[-1]) * (t - episode_start)
                 x_c = Xs[-2] + frac * (Xs[-1] - Xs[-2])
                 R_X_acc = 0.5 * (x_c + Xs[-1]) * (t - episode_start)
         else:
             Xp_, Xc = max(Xs[-2], 1e-300), max(Xs[-1], 1e-300)
-            B_trap += 0.5 * (Ds[-2] / Xp_ + Ds[-1] / Xc) * dt
+            B_direct += 0.5 * (Ds[-2] / Xp_ + Ds[-1] / Xc) * dt
             R_UW_acc += 0.5 * (UWs[-2] + UWs[-1]) * dt
             R_X_acc += 0.5 * (Xs[-2] + Xs[-1]) * dt
             if Ds[-2] > 0.0 >= D:
                 frac = Ds[-2] / (Ds[-2] - D)
                 episode_end = times[-2] + frac * dt
-                B_trap -= 0.5 * (Ds[-2] / Xp_ + Ds[-1] / Xc) * dt
+                B_direct -= 0.5 * (Ds[-2] / Xp_ + Ds[-1] / Xc) * dt
                 R_UW_acc -= 0.5 * (UWs[-2] + UWs[-1]) * dt
                 R_X_acc -= 0.5 * (Xs[-2] + Xs[-1]) * dt
                 seg = episode_end - times[-2]
                 x_end = Xs[-2] + frac * (Xs[-1] - Xs[-2])
                 uw_end = UWs[-2] + frac * (UWs[-1] - UWs[-2])
-                B_trap += 0.5 * (Ds[-2] / Xp_) * seg
+                B_direct += 0.5 * (Ds[-2] / Xp_) * seg
                 R_UW_acc += 0.5 * (UWs[-2] + uw_end) * seg
                 R_X_acc += 0.5 * (Xs[-2] + x_end) * seg
                 status_detail = "COMPLETE_FIRST_EPISODE"
@@ -386,7 +388,7 @@ def measure_episode(
         if steps <= 5 or steps % 25 == 0:
             print(
                 f"  step={steps} t/tau={t / tau_nl:.2f} D={D:.4e} T={Tsc:.4e} "
-                f"B_trap={B_trap:.4e} modes={k.shape[0]} E={E:.5f}",
+                f"B_direct={B_direct:.4e} modes={k.shape[0]} E={E:.5f}",
                 flush=True,
             )
 
@@ -406,16 +408,16 @@ def measure_episode(
         else float(episode_end - episode_start)
     )
 
-    # Restore initial boundary term: if episode starts with d(a)>0, add (b-a)*d(a).
-    boundary = 0.0
+    # Boundary term belongs in the d' reconstruction only — not added to ∫d.
+    boundary_for_reconstruction = 0.0
     if (
         episode_start is not None
         and episode_end is not None
         and d0 > 0
         and abs(episode_start) < 1e-30
     ):
-        boundary = float(I_len) * float(d0)
-    B_IH = None if episode_start is None else float(B_trap + boundary)
+        boundary_for_reconstruction = float(I_len) * float(d0)
+    B_IH = None if episode_start is None else float(B_direct)
     R_UW = None if episode_start is None else float(R_UW_acc)
     B_over_R = (
         None
@@ -428,7 +430,8 @@ def measure_episode(
         "H": H,
         "nu": nu,
         "E": 1.0,
-        "k_high": H,
+        "K2_fixed": K2_fixed,
+        "diagnostic": "fixed_K_full_XY_signed_scalene",
         "k_max": k_max,
         "cut_mul": cut_mul,
         "method": "sparse_Galerkin_tiled_full_trajectory_rk2_no_topM",
@@ -444,23 +447,23 @@ def measure_episode(
         "T_sc_E1_expected_from_verifier": float(T_expected),
         "T_sc_rel_err_vs_verifier": float((T0 - T_expected) / abs(T_expected)),
         "energy_identity_Xprime_residual": float(identity_residual),
-        "active_high_modes_t0": int(n0),
-        "X_H(0)": float(X_H0),
-        "Y_H(0)": float(Y_H0),
+        "active_modes_t0": int(n0),
+        "X(0)_full": float(X0),
+        "Y(0)_full": float(Y0),
         "U(0)": float(U0),
         "W(0)": float(W0),
-        "D_H(0)": float(D0),
+        "D(0)": float(D0),
         "d(0)": float(d0),
-        "D_H_prime(0)": float(Dp),
+        "D_prime(0)": float(Dp),
         "episode_start": episode_start,
         "episode_end": episode_end,
-        "I_H_length": I_len,
-        "H^{5/2}|I_H|_duration_diagnostic_only": (
+        "I_length": I_len,
+        "H^{5/2}|I|_duration_diagnostic_only": (
             None if I_len is None else float((H**2.5) * I_len)
         ),
-        "B_trap_integral": None if episode_start is None else float(B_trap),
-        "boundary_term_(b-a)d(a)": boundary,
         "B_IH": B_IH,
+        "B_IH_definition": "direct_integral_int_d_dt",
+        "boundary_term_for_dprime_reconstruction_only": boundary_for_reconstruction,
         "resource_UW_integral": R_UW,
         "resource_X_integral_DIAGNOSTIC_ruled_out": (
             None if episode_start is None else float(R_X_acc)
@@ -534,15 +537,15 @@ def main():
             "nu",
             "method",
             "topM",
-            "D_H(0)",
+            "K2_fixed",
+            "diagnostic",
+            "D(0)",
             "d(0)",
-            "D_H_prime(0)",
-            "I_H_length",
-            "H^{5/2}|I_H|_duration_diagnostic_only",
-            "B_trap_integral",
-            "boundary_term_(b-a)d(a)",
+            "D_prime(0)",
+            "I_length",
             "B_IH",
-            "resource_UW_integral",
+            "B_IH_definition",
+            "boundary_term_for_dprime_reconstruction_only",
             "B_over_R",
             "status_detail",
             "full_trajectory_complete",
@@ -556,12 +559,12 @@ def main():
         runs.append(rec)
 
     payload = {
-        "title": "Gate D full-trajectory solver — numerical evidence",
+        "title": "Gate D full-trajectory solver — corrected diagnostics",
         "adversary": "Signed-Gate-B-Sharp-Band-Exponent-2026-10-07 six-box",
         "theorem_stamp": False,
         "gaussian_substituted": False,
         "topM": False,
-        "scoring": "B_IH / R_UW with boundary term (b-a)d(a); duration diagnostic separate",
+        "scoring": "B_IH / R_UW with B_IH = int d dt (no double-count)",
         "review": "GATE-D-REVIEW-2026-10-09",
         "runs": runs,
     }

@@ -48,5 +48,11 @@
       "full_trajectory_complete": false,
       "theorem_stamp": false
     }
+  ],
+  "status": "PROVISIONAL_INVALID",
+  "invalid_reason": [
+    "N=512 aliases at k_max=252",
+    "B_I double-counted (b-a)d(a)",
+    "H-filter X_H,Y_H not fixed-K full XY"
   ]
 }

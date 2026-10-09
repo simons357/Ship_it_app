@@ -1,10 +1,10 @@
 {
-  "title": "Gate D full-trajectory solver \u2014 numerical evidence",
+  "title": "Gate D full-trajectory solver \u2014 corrected diagnostics",
   "adversary": "Signed-Gate-B-Sharp-Band-Exponent-2026-10-07 six-box",
   "theorem_stamp": false,
   "gaussian_substituted": false,
   "topM": false,
-  "scoring": "B_IH / R_UW with boundary term (b-a)d(a); duration diagnostic separate",
+  "scoring": "B_IH / R_UW with B_IH = int d dt (no double-count)",
   "review": "GATE-D-REVIEW-2026-10-09",
   "runs": [
     {
@@ -12,7 +12,8 @@
       "H": 63,
       "nu": 1.2569258291022742e-05,
       "E": 1.0,
-      "k_high": 63,
+      "K2_fixed": 1.0,
+      "diagnostic": "fixed_K_full_XY_signed_scalene",
       "k_max": 252,
       "cut_mul": 4,
       "method": "sparse_Galerkin_tiled_full_trajectory_rk2_no_topM",
@@ -28,31 +29,31 @@
       "T_sc_E1_expected_from_verifier": 20477.92104027458,
       "T_sc_rel_err_vs_verifier": 0.0,
       "energy_identity_Xprime_residual": -4.18367562815547e-11,
-      "active_high_modes_t0": 358,
-      "X_H(0)": 40303.41306908727,
-      "Y_H(0)": 1629206796.9436517,
+      "active_modes_t0": 358,
+      "X(0)_full": 40303.41306908727,
+      "Y(0)_full": 1629206796.9436517,
       "U(0)": 17.71969294815145,
       "W(0)": 702808.2736088303,
-      "D_H(0)": 15358.440780205932,
+      "D(0)": 15358.440780205932,
       "d(0)": 0.38107047544283196,
-      "D_H_prime(0)": 3711435.005243402,
+      "D_prime(0)": 3104677.7778101387,
       "episode_start": 0.0,
-      "episode_end": null,
-      "I_H_length": null,
-      "H^{5/2}|I_H|_duration_diagnostic_only": null,
-      "B_trap_integral": 2.4378240133821332e-05,
-      "boundary_term_(b-a)d(a)": 0.0,
-      "B_IH": 2.4378240133821332e-05,
+      "episode_end": 0.00012697219215897446,
+      "I_length": 0.00012697219215897446,
+      "H^{5/2}|I|_duration_diagnostic_only": 4.0,
+      "B_IH": 2.434789727610137e-05,
+      "B_IH_definition": "direct_integral_int_d_dt",
+      "boundary_term_for_dprime_reconstruction_only": 4.8385353634039015e-05,
       "resource_UW_integral": 793.4902636580607,
-      "resource_X_integral_DIAGNOSTIC_ruled_out": 2.55870674860481,
-      "B_over_R": 3.072279680085232e-08,
+      "resource_X_integral_DIAGNOSTIC_ruled_out": 2.558706749071341,
+      "B_over_R": 3.068455706545837e-08,
       "episode_truncated": false,
       "steps": 2,
       "dt": 6.348609607948723e-05,
       "dt_factor": 2.0,
       "t_max": 0.00015871524019871807,
       "tau_nl_H^{-5/2}": 3.1743048039743615e-05,
-      "wall_seconds": 236.95706486701965,
+      "wall_seconds": 267.2105152606964,
       "status": "NUMERICAL_EVIDENCE_ONLY",
       "status_detail": "MODE_BUDGET_HIT",
       "theorem_stamp": false,
@@ -66,11 +67,11 @@
         ],
         "D": [
           15358.440780205932,
-          15594.051031267905
+          15555.525401228435
         ],
         "T_sc": [
           20477.92104027458,
-          20713.841646812023
+          20675.316016932407
         ]
       }
     }
