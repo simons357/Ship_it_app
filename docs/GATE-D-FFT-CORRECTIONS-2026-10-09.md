@@ -2,52 +2,74 @@
 
 **Valid target; lemma not stamped. Not (17).**
 
-Review check on commit `18a267f3`. Prior unpadded / double-counted /
-H-filtered FFT rows are **provisional — not Gate D evidence**.
+Binding text: review check against commit `18a267f3` (ZIP not on this mount).
+HEAD with fixes: `3f82c8fa`. Prior unpadded / double-counted / H-filtered FFT
+rows are **provisional — not Gate D evidence**.
 
 ---
 
-## Three binding fixes
+## Checklist vs workspace
 
-### 1. Episode cost — no double count
+| Check | At `18a267f3` | At HEAD (`3f82c8fa`) |
+|---|---|---|
+| \(B_I=\int d\,dt\) only (no extra \((b-a)d(a)\)) | Fail — added boundary on top of �int d\,dt\) only (no extra \((b-a)d(a)\)) | Fail — added boundary on top of ∫d | **Pass** — `B_IH = B_direct` |
+| Nonlinear product dealiased at used cutoff | Fail — \(N=512\), \(k_{\max}=252\) | **Pass** — default \(N=\texttt{next_dealias_n}(k_{\max})\ge 3k_{\max}\) (768) |
+| Fixed \(K\), full \(X,Y\); score \(B_I/\mathcal R_I\) | Fail — \(H\)-filter \(X_H,Y_H\) | **Pass** — `K2_fixed=1`, `D=T_{\mathrm{sc}}-\nu Y/4`, `d=D/X` |
+
+“\(D\) rising” on the old partial run stays **provisional**.
+
+---
+
+## 1. Episode cost — no double count
 
 \[
 B_I=\int_a^b d(t)\,dt
-=
-(b-a)d(a)+\int_a^b(b-s)d'(s)\,ds.
 \]
+is already the episode cost when \(d=D/X\) is integrated directly.
 
-The solver must use **one** of these forms. Adding \((b-a)d(a)\) on top of
-the direct integral double-counts. The boundary term belongs only in the
-\(d'\) reconstruction.
+\[
+\int_a^b d(t)\,dt=(b-a)d(a)+\int_a^b(b-s)d'(s)\,ds
+\]
+reconstructs that **same** integral. Adding \((b-a)d(a)\) after the direct
+integral counts the initial boundary twice. Use one side only.
 
-Code: `B_IH = B_direct` with
-`boundary_term_for_dprime_reconstruction_only` recorded separately.
+Code: `B_IH = B_direct`; field
+`boundary_term_for_dprime_reconstruction_only` is documentation only.
 
-### 2. Dealias the nonlinear product
+---
 
-At cutoff \(k_{\max}=252\) (\(4H\), \(n=1\)), an unpadded \(512^3\) grid
-aliases. Orszag requirement: \(N/3\ge k_{\max}\) ⇒ \(N\ge 768\).
+## 2. Dealias at the cutoff actually used
 
-| Grid | \(N\) |
+Quadratic product of modes through cutoff \(252\) reaches wavenumber \(504\).
+On unpadded \(512^3\):
+
+| Quantity | Value |
 |---|---|
-| Unpadded (invalid for Gate D) | 512 |
-| Dealiased | **768** |
+| Nyquist | \(256\) |
+| \(2/3\) keep | \(\lfloor 512/3\rfloor=170\) |
+| Cutoff \(252\) vs keep \(170\) | **fails** |
 
-Prior “\(D\) rising” partial run used \(N=512\) — **invalid**.
+So interactions fold back into the retained band. Initial smoke agreement
+does not control accumulated alias.
 
-### 3. Restored diagnostic (fixed \(K\), full \(X,Y\))
+Orszag fix used here: \(N/3\ge k_{\max}\) ⇒ \(N\ge 756\) ⇒ **\(N=768`**
+(\(N/3=256\ge 252\)). Padding (or a cutoff that actually satisfies the rule)
+must be in the trajectory RHS before extending any run.
 
-Recovered Gate D / episode-balance target:
+---
+
+## 3. Target: fixed \(K\), full \(X,Y\)
+
+Recovered Gate D / episode-balance diagnostic:
 
 \[
 D=T_{\mathrm{sc}}-\nu Y/4,\qquad d=D/X,
 \]
 
-with **fixed** \(K\) (default \(K^2=1\)) and **full** \(X,Y\).
-Not an \(H\)-dependent high-pass with \(X_H,Y_H\).
-
-(Initially these agree on the six-box packet; they diverge under evolution.)
+fixed \(K\) (default \(K^2=1\)), **full** \(X,Y\). Not an \(H\)-dependent
+high-pass with \(X_H,Y_H\). Those can match at \(t=a\) and separate under
+evolution, so a rise in filtered \(D\) does not read as a rise in the stated
+diagnostic. Recorded score: \(B_I/\mathcal R_I\).
 
 ---
 
@@ -55,16 +77,14 @@ Not an \(H\)-dependent high-pass with \(X_H,Y_H\).
 
 | Item | Status |
 |---|---|
-| Corrections in `gate_d_full_trajectory_fft.py` / sparse twin | **Filed** |
-| Alias grid sizes (512 vs 768) | **Documented** |
-| Full first episode on dealiased grid | **Unrun** (wall / memmap cost) |
-| Prior FFT smoke / partial JSON | **PROVISIONAL_INVALID** |
-
-Author ZIP transfer: still not on this agent disk under
-`scratch/ec43035008f2/`; vault pack remains under `handoff/`.
+| Three corrections in FFT + sparse solvers | **In HEAD** |
+| Review ZIP on this mount | **Absent** (`scratch/ec43035008f2/` empty) |
+| Full first episode after corrections | **Unrun** |
+| Pre-correction FFT partial / smoke | **PROVISIONAL_INVALID** |
 
 ## STATUS
 
-CORRECTIONS FILED; PRIOR FFT EVIDENCE DEMOTED.
+CORRECTIONS VERIFIED IN WORKSPACE VS `18a267f3` CHECK.
+PRIOR FFT EVIDENCE DEMOTED.
 GATE D: VALID TARGET; LEMMA NOT STAMPED.
 NS NOT SOLVED.
