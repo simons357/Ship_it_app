@@ -311,7 +311,18 @@ global regularity result has been established.
 A Gaussian replacement scaffold smoked through \(s=0.02\) at \(n=12\)
 ([`GATE-D-GAUSSIAN-SCAFFOLD-2026-10-09.md`](GATE-D-GAUSSIAN-SCAFFOLD-2026-10-09.md)).
 \(T_{\mathrm{sc}}\), \(D\), and \(G\) are null. It is not a turnover episode
-and not a substitute for the six-box field.
+and not a substitute for the six-box field. The scaffold audit cannot
+supply the definitions.
+
+The notes on hand use \(T_{\mathrm{sc}}\) and \(D\). They do not define
+the triad sum inside \(T_{\mathrm{sc}}\), and they do not define the
+project \(G\). The missing pages are the 20 September scalene-target
+note, equations (15)–(18), and whatever note defines the project \(G\)
+used in \(D\). Those conventions are not to be reconstructed from the
+majorant, the production integral, or the scaffold’s null fields.
+Until those pages are attached, the diagnostic implementation stays
+blocked. Gate D remains open
+([`GATE-D-DIAGNOSTIC-BLOCKED-2026-10-09.md`](GATE-D-DIAGNOSTIC-BLOCKED-2026-10-09.md)).
 
 ---
 
@@ -326,6 +337,7 @@ GATE B: INDEPENDENT REVIEW. NOT THE PRIMARY EFFORT. APPROVAL WOULD GIVE ONLY \(\
 GATE D: PRIMARY TARGET. CONVERGED TURNOVER, REGENERATION, FINITE SHARED RESOURCE, AND A CUTOFF-INDEPENDENT PROOF ALL REMAIN OPEN.
 RESEARCH STATUS: ACTIVE, ADVANCING, AND MATHEMATICALLY UNFINISHED. NO GLOBAL REGULARITY RESULT.
 GAUSSIAN SCAFFOLD: SMOKE ONLY THROUGH \(s=0.02\). \(T_{\mathrm{sc}}\), \(D\), AND \(G\) NULL. NOT AN EPISODE.
+DIAGNOSTIC IMPLEMENTATION: BLOCKED. \(T_{\mathrm{sc}}\) TRIAD SUM AND PROJECT \(G\): NOT ON HAND. DO NOT RECONSTRUCT.
 MEASUREMENT MODULE: TESTED REFERENCE. FULL SIX-BOX EPISODE: UNRUN.
 THIRD-TRANSFER PACKET: BEGINNING ONLY; TAIL GROWTH \(0.00048543\); NOT A RERUN.
 A FINITE EPISODE CANNOT ESTABLISH CUTOFF-UNIFORM CONTROL OR SUMMABLE RECURRENCE.

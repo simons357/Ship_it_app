@@ -32,7 +32,9 @@ Through \(s=0.02\), energy, \(X\), \(Y\), and production all decline slightly.
 
 `T_sc`, `D`, and `G` are recorded as null. The code sets
 `T_sc_implemented` and `D_implemented` to false. No downward crossing
-can be read from this output.
+can be read from this output. This audit cannot supply the missing
+definitions
+([`GATE-D-DIAGNOSTIC-BLOCKED-2026-10-09.md`](GATE-D-DIAGNOSTIC-BLOCKED-2026-10-09.md)).
 
 ---
 
@@ -50,5 +52,6 @@ No global regularity result has been established.
 ## STATUS
 
 SCAFFOLD SMOKE: REPRODUCED. NOT AN EPISODE. \(T_{\mathrm{sc}}\), \(D\), AND \(G\): NULL.
+AUDIT CANNOT SUPPLY THE DEFINITIONS. DIAGNOSTIC IMPLEMENTATION: BLOCKED.
 NOT THE SIX-BOX ADVERSARY. NOT THE \(s=4\) GAUSSIAN RUN.
 NS NOT SOLVED.
