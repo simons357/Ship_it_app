@@ -75,9 +75,14 @@ prototype candidate, plus \(\int X\) (already ruled out analytically) and
 
 | Piece | Path |
 |---|---|
-| Solver | [`scripts/ns_attacks/gate_d_full_trajectory.py`](../scripts/ns_attacks/gate_d_full_trajectory.py) |
+| Sparse tiled (hits mode budget) | [`scripts/ns_attacks/gate_d_full_trajectory.py`](../scripts/ns_attacks/gate_d_full_trajectory.py) |
+| **FFT Galerkin (feasible path)** | [`scripts/ns_attacks/gate_d_full_trajectory_fft.py`](../scripts/ns_attacks/gate_d_full_trajectory_fft.py) |
 | Demoted top-\(M\) runner | [`scripts/ns_attacks/gate_d_adversarial_run.py`](../scripts/ns_attacks/gate_d_adversarial_run.py) — do not use for Gate D score |
 | Static reference | [`scripts/ns_attacks/gated_initial.py`](../scripts/ns_attacks/gated_initial.py) |
+
+**Preferred engine:** FFT rfft `complex64` on \(N=512\) for cutoff \(4H\) (\(n=1\)).
+Sparse \(O(m^2)\) after mode birth exceeds the session mode budget; dense
+spherical arrays without rfft OOM. FFT keeps the full ball without top-\(M\).
 
 ---
 

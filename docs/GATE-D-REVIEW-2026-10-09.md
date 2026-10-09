@@ -3,8 +3,9 @@
 **Review complete. Gate D remains a valid target — not a proved lemma.
 Not (17).**
 
-Source pack (when present):
-`Gate-D-Review-and-Separate-Gaussian-Extension-2026-10-09.zip`.
+Source pack (expected path; **not on disk this session**):
+`scratch/ec43035008f2/Gate-D-Review-and-Separate-Gaussian-Extension-2026-10-09.zip`.
+Review content filed from the handoff message; merge ZIP extras when it lands.
 
 Parents:
 [`GATE-D-HALF-DERIVATIVE-ATTACK-2026-10-08.md`](GATE-D-HALF-DERIVATIVE-ATTACK-2026-10-08.md),
