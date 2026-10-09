@@ -3,7 +3,7 @@
 One page to see **what this repo is about** and **where each thread lives**.
 
 Update this file when a subject changes status (merge, park, abandon, or rename).  
-Last reviewed: **2026-10-09** (dilation sentence restricted to the original blocks; 7 October handoff row stays under review).
+Last reviewed: **2026-10-09** (Gate B stays in independent review; primary effort is Gate D; no global regularity result).
 
 ---
 
@@ -39,7 +39,7 @@ Last reviewed: **2026-10-09** (dilation sentence restricted to the original bloc
 | **Related gate stack** | Gates / SAG / lemmas / Fourier-triangle / MIN-CYCLE / channel algebra — dozens of open PRs (see GitHub “Open”) |
 | **32-shape shared-budget extension** | 17 + 15 nonzero from \((9,25)\); mult 4 zero-pruned; [`SHARED-BUDGET-32-SHAPE-EXTENSION.md`](SHARED-BUDGET-32-SHAPE-EXTENSION.md). ZIP no longer the blocker. Not (17). |
 | **NS handoff (7 Oct 2026)** | **Stays under review.** Cross-device update: [`NS-HANDOFF.md`](NS-HANDOFF.md). Finite verify: `scripts/ns_attacks/verify_families.py`. The accepted dilation correction is in that handoff and does not close this row. |
-| **Gates A–D** | **C:** signed static test complete; sharp uniform exponent \(H^{1/2}\) for \(R(H)\) (where \(\Lambda\) appears, \(\Lambda\sim H\)). Does not settle \(Q_x\) or a time budget on one solution. Dynamical target \(\mathcal S_{K,N}\) has denominator \(X_N\), no extra \(Y_N\). **A:** unresolved, not a premise. **D:** open. Measurement module is a tested reference; full six-box episode unrun. A separate packet shows the beginning of a third transfer (93.68% cross-feed from \(\lvert k\rvert\le 8\) into \(8<\lvert k\rvert\le 16\)). Independent daughter drive is not demonstrated at this snapshot. Viscosity offsets the nonlinear input; tail growth \(0.00048543\) is the positive residual. 12.56% of the threshold; not a rerun — [`GATE-D-THIRD-TRANSFER-PACKET.md`](GATE-D-THIRD-TRANSFER-PACKET.md). Next test: six-box signed-scalene episode. |
+| **Gates A–D** | Research status: active, advancing, and mathematically unfinished. No global regularity result. **B:** independent review. The all-radii lemma is promising; the full inequality still needs independent verification. Approval would give only \(\theta\ge 1/2\) for the specified nonnegative \(Q\), not the optimal exponent and not signed-transfer control. **C:** signed static test complete; sharp uniform exponent \(H^{1/2}\) for \(R(H)\) (where \(\Lambda\) appears, \(\Lambda\sim H\)). **A:** unresolved, not a premise. **D:** primary target. Still needed: a numerically converged turnover episode; whether dangerous transfer regenerates; whether repeated episodes consume a finite shared resource; a cutoff-independent proof. Measurement module is a tested reference; full six-box episode unrun — [`GATE-D-THIRD-TRANSFER-PACKET.md`](GATE-D-THIRD-TRANSFER-PACKET.md). |
 | **Phase cancellation** | Narrowed: ratio 1 = common signs, not bound saturation; not all signed routes dead — [`PHASE-CANCELLATION-EXPLORATION.md`](PHASE-CANCELLATION-EXPLORATION.md). |
 
 ### 3. Phi-renorm / swirl papers

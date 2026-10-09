@@ -19,3 +19,5 @@ R(H)=\sup_{h\neq 0}\frac{\lvert T_{\mathrm{sc}}(h)\rvert}{\sqrt{E}\,Y}.
 The assembly note says a different Gate B operator must be compared with its definitions before its verdict is imported. The signed static test of \(R(H)\) remains complete at exponent \(1/2\). Dynamical control of \(\mathcal S_{K,N}\) remains open.
 
 The 7 October row stays under review. The accepted correction is filed with the handoff ([`../NS-HANDOFF-2026-10-07.md`](../NS-HANDOFF-2026-10-07.md), §9). It changes only the dilation sentence. DA still has these four files to rule on.
+
+Gate B stays in independent review. Even an approval of the all-radii lemma would establish only the \(\theta\ge 1/2\) obstruction for this nonnegative \(Q\), not the optimal exponent and not control of signed transfer. Primary effort is Gate D.

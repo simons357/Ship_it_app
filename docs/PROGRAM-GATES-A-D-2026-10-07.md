@@ -57,9 +57,9 @@ repetition resource still open.
 | Gate | Mission | Status |
 |---|---|---|
 | **A** | As named by the sharp-band source | **Diagnostic and unresolved** |
-| **B** | Shared-energy accounting | Not the band exponent |
+| **B** | Specified nonnegative \(Q\); all-radii multiplicity lemma | **Independent review.** Promising lemma; the full inequality still needs independent verification. Approval would establish only the \(\theta\ge 1/2\) obstruction for this \(Q\), not the optimal exponent and not control of signed transfer. Not the primary effort. |
 | **C** | Sharp instantaneous signed band | **CLOSED — optimal wavenumber exponent \(1/2\)** |
-| **D** | Episode control and recurrence funding | **OPEN — not stamped; evidence pending** |
+| **D** | Episode control and recurrence funding | **Primary target. OPEN.** Active, advancing, and mathematically unfinished. |
 
 ---
 
@@ -72,25 +72,38 @@ repetition resource still open.
 
 ---
 
+## Research status
+
+Active, advancing, and mathematically unfinished. No global regularity result has been established. Gate B stays in independent review. Primary effort is Gate D.
+
 ## Immediate work (Gate D)
 
-1. Large solver uses the signed measurement module as reference
-   ([`GATE-D-SIGNED-MEASUREMENT-MODULE.md`](GATE-D-SIGNED-MEASUREMENT-MODULE.md)):
-   six-box initials, generated modes, initial boundary term, 80-mode check.
-   Full six-box episode still unrun.
-2. Score \(B_{I_H}/\mathcal R_{I_H}\) with \(B_I=\int d\,dt\) only
-   (boundary term is reconstruction, not additive).
-3. Demote prior top-\(M\) “complete episode” rows
-   ([`GATE-D-ADVERSARIAL-RUN-RESULTS.md`](GATE-D-ADVERSARIAL-RUN-RESULTS.md)).
-4. A separate packet shows the beginning of a third transfer, not a
-   completed one
-   ([`GATE-D-THIRD-TRANSFER-PACKET.md`](GATE-D-THIRD-TRANSFER-PACKET.md)).
-   It is feeding evidence from a consistency review, not a rerun.
-5. Next test: the six-box field, measuring how long the positive episode
-   lasts and what resource pays for the accumulated budget of
-   \(\mathcal S_{K,N}\) (denominator \(X_N\), no extra \(Y_N\)). One episode
-   is evidence. Cutoff-uniform control and summable recurrence still
-   require proof. Lemma remains a target, not a stamp.
+The main unresolved target is Gate D:
+
+1. Complete a numerically converged turnover episode.
+2. Determine whether dangerous transfer regenerates.
+3. Establish whether repeated episodes consume a finite shared resource.
+4. Prove a cutoff-independent bound, not merely observe one numerically.
+
+Current state of that work:
+
+- The signed measurement module is the reference
+  ([`GATE-D-SIGNED-MEASUREMENT-MODULE.md`](GATE-D-SIGNED-MEASUREMENT-MODULE.md)):
+  six-box initials, generated modes, initial boundary term, 80-mode check.
+  The full six-box episode is still unrun.
+- Score \(B_{I_H}/\mathcal R_{I_H}\) with \(B_I=\int d\,dt\) only
+  (the boundary term is reconstruction, not additive).
+- Prior top-\(M\) “complete episode” rows stay demoted
+  ([`GATE-D-ADVERSARIAL-RUN-RESULTS.md`](GATE-D-ADVERSARIAL-RUN-RESULTS.md)).
+- A separate packet shows the beginning of a third transfer, not a
+  completed one
+  ([`GATE-D-THIRD-TRANSFER-PACKET.md`](GATE-D-THIRD-TRANSFER-PACKET.md)).
+  It is feeding evidence from a consistency review, not a rerun.
+- The next test is the six-box field: how long the positive episode lasts,
+  and what resource pays for the accumulated budget of \(\mathcal S_{K,N}\)
+  (denominator \(X_N\), no extra \(Y_N\)). One episode is evidence.
+  Cutoff-uniform control and summable recurrence still require proof.
+  The lemma remains a target, not a stamp.
 
 ---
 
@@ -101,7 +114,9 @@ DOES NOT SETTLE \(Q_x\) OR A TIME BUDGET ON ONE FIXED SOLUTION.
 DYNAMICAL TARGET: \(\mathcal S_{K,N}\) WITH DENOMINATOR \(X_N\), NO EXTRA \(Y_N\).
 WHERE \(\Lambda\) APPEARS, \(\Lambda\sim H\). REFERENCE: SHARP-BAND SOURCE.
 GATE A: UNRESOLVED — NOT A PREMISE.
-GATE D: OPEN ON EPISODE CONTROL AND RECURRENCE FUNDING.
+GATE B: INDEPENDENT REVIEW. ALL-RADII LEMMA IS PROMISING; THE FULL INEQUALITY STILL NEEDS INDEPENDENT VERIFICATION. APPROVAL WOULD GIVE ONLY \(\theta\ge 1/2\) FOR THE SPECIFIED NONNEGATIVE \(Q\), NOT THE OPTIMAL EXPONENT AND NOT SIGNED-TRANSFER CONTROL.
+GATE D: PRIMARY TARGET. OPEN. NEEDS A CONVERGED TURNOVER EPISODE, A REGENERATION DECISION, A FINITE SHARED RESOURCE FOR REPEATED EPISODES, AND A CUTOFF-INDEPENDENT PROOF.
+RESEARCH STATUS: ACTIVE, ADVANCING, AND MATHEMATICALLY UNFINISHED. NO GLOBAL REGULARITY RESULT.
 A FINITE EPISODE CANNOT ESTABLISH CUTOFF-UNIFORM CONTROL OR SUMMABLE RECURRENCE.
 (17) NOT ESTABLISHED.
 IMPLEMENTATION CORRECTED; DYNAMICAL EVIDENCE PENDING.

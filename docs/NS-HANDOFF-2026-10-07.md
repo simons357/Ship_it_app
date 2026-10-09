@@ -227,9 +227,9 @@ real Fourier field.
 | Priority | Task | Status |
 |---|---|---|
 | **A** | As named by the sharp-band source | **Diagnostic and unresolved.** The \(L_{z_n}\) note is a separate load bound, not this closure ([`sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt`](sources/Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt)) |
-| **B** | Shared-energy accounting | Not the band exponent ([`GATE-B-SHARED-ENERGY.md`](GATE-B-SHARED-ENERGY.md)) |
+| **B** | Specified nonnegative \(Q\); all-radii multiplicity lemma | **Independent review.** Promising; the full inequality still needs independent verification. Approval would give only \(\theta\ge 1/2\) for this \(Q\), not the optimal exponent and not signed-transfer control ([`sources/GATE-B-UPLOADED-SOURCES-2026-10-09.md`](sources/GATE-B-UPLOADED-SOURCES-2026-10-09.md)). Shared-energy accounting remains a separate note ([`GATE-B-SHARED-ENERGY.md`](GATE-B-SHARED-ENERGY.md)). Not the primary effort. |
 | **C** | Sharp instantaneous signed band | **CLOSED — optimal wavenumber exponent \(1/2\)**. Gate A is not a premise. (17) not established ([`GATE-C-HALF-DERIVATIVE.md`](GATE-C-HALF-DERIVATIVE.md)) |
-| **D** | Episode control and recurrence funding | **OPEN** ([`GATE-D-REVIEW.md`](GATE-D-REVIEW.md)): both \(B_I\le C\mathcal R_I\) and \(\sum\mathcal R_I\le C_{\mathrm{data},\nu,T}\). A completed finite episode can support this and cannot establish cutoff-uniform control or summable recurrence |
+| **D** | Episode control and recurrence funding | **Primary target. OPEN** ([`GATE-D-REVIEW.md`](GATE-D-REVIEW.md)). Complete a numerically converged turnover episode; determine whether dangerous transfer regenerates; establish whether repeated episodes consume a finite shared resource; prove a cutoff-independent bound. A finite episode can support this and cannot establish cutoff-uniform control or summable recurrence. |
 | Parked | 52/70/100 family extensions; random-phase fishing; Ring without bridge | — |
 
 Spectral target remains (15)–(17) on all-high scalene; a
@@ -290,6 +290,26 @@ initial-derivative audit to rule on. The restricted sentence is in
 
 ---
 
+## 10. Effort (9 October 2026)
+
+Gate B stays in independent review. The all-radii multiplicity lemma is
+promising, and the full inequality still needs independent verification.
+Even if DA approves it, that establishes only the \(\theta\ge 1/2\)
+obstruction for the specified nonnegative \(Q\), not the optimal exponent
+and not control of signed transfer.
+
+Primary effort is Gate D:
+
+1. Complete a numerically converged turnover episode.
+2. Determine whether dangerous transfer regenerates.
+3. Establish whether repeated episodes consume a finite shared resource.
+4. Prove a cutoff-independent bound, not merely observe one numerically.
+
+Research status: active, advancing, and mathematically unfinished. No
+global regularity result has been established.
+
+---
+
 ## STATUS
 
 ZIP RETRIEVAL: NO LONGER THE RESEARCH BLOCKER (RECOVERED IN SOURCE CONVERSATION).
@@ -297,7 +317,9 @@ ZIP RETRIEVAL: NO LONGER THE RESEARCH BLOCKER (RECOVERED IN SOURCE CONVERSATION)
 SIGNED STATIC TEST: COMPLETE — EXPONENT \(H^{1/2}\) FOR \(R(H)\). DYNAMICAL CONTROL OPEN: \(\mathcal S_{K,N}\) DENOMINATOR \(X_N\), NO EXTRA \(Y_N\).
 WHERE \(\Lambda\) APPEARS, \(\Lambda\sim H\). REFERENCE: SHARP-BAND SOURCE.
 GATE A: UNRESOLVED — NOT A PREMISE.
-GATE D: OPEN ON EPISODE CONTROL AND RECURRENCE FUNDING.
+GATE B: INDEPENDENT REVIEW. NOT THE PRIMARY EFFORT. APPROVAL WOULD GIVE ONLY \(\theta\ge 1/2\) FOR THE SPECIFIED NONNEGATIVE \(Q\).
+GATE D: PRIMARY TARGET. CONVERGED TURNOVER, REGENERATION, FINITE SHARED RESOURCE, AND A CUTOFF-INDEPENDENT PROOF ALL REMAIN OPEN.
+RESEARCH STATUS: ACTIVE, ADVANCING, AND MATHEMATICALLY UNFINISHED. NO GLOBAL REGULARITY RESULT.
 MEASUREMENT MODULE: TESTED REFERENCE. FULL SIX-BOX EPISODE: UNRUN.
 THIRD-TRANSFER PACKET: BEGINNING ONLY; TAIL GROWTH \(0.00048543\); NOT A RERUN.
 A FINITE EPISODE CANNOT ESTABLISH CUTOFF-UNIFORM CONTROL OR SUMMABLE RECURRENCE.

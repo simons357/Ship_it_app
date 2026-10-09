@@ -1,7 +1,7 @@
 # Program gates A–D
 
 8 / 9 October 2026.
-**Signed static test complete: sharp uniform exponent \(H^{1/2}\) for \(R(H)\). Dynamical control open: \(\mathcal S_{K,N}\) has denominator \(X_N\), no extra \(Y_N\). One episode is evidence, not cutoff-uniform or summable-recurrence proof. (17) not established.**
+**Signed static test complete: sharp uniform exponent \(H^{1/2}\) for \(R(H)\). Gate B stays in independent review. Primary effort is Gate D. Research status: active, advancing, and mathematically unfinished. No global regularity result. (17) not established.**
 
 \[
 \boxed{
