@@ -1,0 +1,61 @@
+test_no_exploratory_signed_call (test_guarded_loop.Tests.test_no_exploratory_signed_call) ... ok
+test_step_unchanged (test_guarded_loop.Tests.test_step_unchanged) ... ok
+test_logged_uncertified (test_loop_sidecar.TestLoop.test_logged_uncertified) ... ok
+test_large_fail_closed (test_logger_bridge.Tests.test_large_fail_closed) ... ok
+test_sparse (test_logger_bridge.Tests.test_sparse) ... ok
+test_dense_fails_closed (test_integrated_gate.Tests.test_dense_fails_closed) ... ok
+test_negative_near_cancellation (test_integrated_gate.Tests.test_negative_near_cancellation) ... ok
+test_other_box_uncertified (test_integrated_gate.Tests.test_other_box_uncertified) ... ok
+test_outside_mask_rejected (test_integrated_gate.Tests.test_outside_mask_rejected) ... ok
+test_zero_near_cancellation (test_integrated_gate.Tests.test_zero_near_cancellation) ... ok
+test_exact_zero (test_adaptive_certified.Tests.test_exact_zero) ... ok
+test_fail_closed_large (test_adaptive_certified.Tests.test_fail_closed_large) ... ok
+test_near_cancellation (test_adaptive_certified.Tests.test_near_cancellation) ... ok
+test_metadata_is_not_certificate (test_metadata_repair.Tests.test_metadata_is_not_certificate) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 1.985s
+
+OK
+{
+  "output": "/tmp/tmpg02i3xn9/log.jsonl",
+  "kind": "NEW REPLACEMENT SCAFFOLD; NOT ORIGINAL DRIVER",
+  "c": 200.0,
+  "n": 24,
+  "L": 12.0,
+  "ds": 0.01,
+  "s_end": 0.01,
+  "periodization": "sample Gaussian on periodic cube, then project and 2/3 filter",
+  "cutoff": "spherical integer radius N intersect componentwise 2/3 mask",
+  "physical_kmax": 3.141592653589793,
+  "physical_kmax_doubled_box_same_N": 1.5707963267948966,
+  "T_sc_code_available": true,
+  "D_code_available": true,
+  "G_implemented": true,
+  "accepted_T_sc_verified": false,
+  "accepted_D_verified": false,
+  "crossing_certified": false,
+  "safe_sidecar_enabled": true,
+  "source_sha256": "adc8c6a491501989fdb2d964be3bfd5fc85ffe0912a6e03ab3404427e3294846"
+}
+{
+  "output": "/tmp/tmprd8ty8rt/log.jsonl",
+  "kind": "NEW REPLACEMENT SCAFFOLD; NOT ORIGINAL DRIVER",
+  "c": 200.0,
+  "n": 24,
+  "L": 12.0,
+  "ds": 0.01,
+  "s_end": 0.01,
+  "periodization": "sample Gaussian on periodic cube, then project and 2/3 filter",
+  "cutoff": "spherical integer radius N intersect componentwise 2/3 mask",
+  "physical_kmax": 3.141592653589793,
+  "physical_kmax_doubled_box_same_N": 1.5707963267948966,
+  "T_sc_code_available": true,
+  "D_code_available": true,
+  "G_implemented": true,
+  "accepted_T_sc_verified": false,
+  "accepted_D_verified": false,
+  "crossing_certified": false,
+  "safe_sidecar_enabled": true,
+  "source_sha256": "adc8c6a491501989fdb2d964be3bfd5fc85ffe0912a6e03ab3404427e3294846"
+}

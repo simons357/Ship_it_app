@@ -45,8 +45,8 @@ The guarded sidecar path itself does what this item asks of that path. `assess` 
 
 Two holes remain in the same archive.
 
-- `adaptive_certified.evaluate` still returns `fast_value` equal to the vorticity transfer on a record whose status is `sign_unverified`. On `make_pair(52)` with `max_exact_modes=2`, that value was about \(5.594\times 10^{-12}\) while `T_sc` was null.
-- The safe-sidecar log header sets `T_sc_implemented` and `D_implemented` true whenever `--signed-K` is present, including the smoke whose data rows are unverified (`gaussian_gate_d_with_sidecar.py`).
+- `adaptive_certified.evaluate` still returns `fast_value` equal to the vorticity transfer on a record whose status is `sign_unverified`. On `make_pair(52)` with `max_exact_modes=2`, that value was about \(5.594\times 10^{-12}\) while `T_sc` was null. The metadata repair does not change this file.
+- The original header set `T_sc_implemented` and `D_implemented` true. The metadata repair replaces those with `T_sc_code_available` and `D_code_available`, and it sets `accepted_T_sc_verified`, `accepted_D_verified`, and `crossing_certified` false. That header hole is closed. The `fast_value` hole is not.
 
 A `sign_unverified` record in this package can still carry a numeric signed transfer, and the header can still say the signed diagnostic is implemented.
 
@@ -86,13 +86,17 @@ Blocked as an audit of a completed comparison. The requirements are already fixe
 
 ## Metadata repair
 
-`packets/gate_d/da_review/` contains no archive. No metadata-repair package was in the uploads folder, so that package was not hashed, extracted, or tested, and it was not compared with the guarded logger.
+`gate_d_metadata_repair_candidate_2026-10-09.zip`, SHA-256 `8d07445a462f880bf96126010231c559ef27e968de5c2a13f52c9140c76db8d6`, is filed at `scripts/ns_attacks/gate_d_metadata_repair/`. The guarded-logger zip in the same review folder is the archive already tested: SHA-256 `ca01fa9ab93950174ae3ca25a932c8778910e1fc71d075deda559df914f9e020`.
+
+Every shared file matches that logger except `gaussian_gate_d_with_sidecar.py`. The header no longer has `T_sc_implemented` or `D_implemented`. It sets `T_sc_code_available` and `D_code_available` from the signed cutoffs, and it sets `accepted_T_sc_verified`, `accepted_D_verified`, and `crossing_certified` false. `grid`, `project`, `nonlinear`, and `step` still match the locked stepper.
+
+Fourteen tests passed here in 1.985 s, including `test_metadata_is_not_certificate`. The smoke is \(s=0.01\). The periodization sentence still says “project and 2/3 filter” on a run whose cutoff is the spherical intersection. `adaptive_certified.py` and `integrated_gate.py` are unchanged, so `fast_value` is still returned on `sign_unverified`, and the viscosity is still `Fraction(float(1/200))`.
 
 ## Next required patch
 
 The logger patch is separate from items 6 and 7. The four RK4 bodies stay matched to the locked file.
 
-- On every `sign_unverified` record, including `adaptive_certified.evaluate`, omit `fast_value` and every other numeric transfer. In safe-sidecar mode set `T_sc_implemented` and `D_implemented` false, and make the periodization sentence name the spherical mask that `step` actually receives.
+- On every `sign_unverified` record, including `adaptive_certified.evaluate`, omit `fast_value` and every other numeric transfer. Make the periodization sentence name the spherical mask that `step` actually receives.
 - Build the viscosity as `Fraction(1, c)` from the integer \(c\). Certify a \(D\) sign only from that rational. Put the normalized exact \(Y\), and a float enclosure of both \(T_{\mathrm{sc}}\) and \(Y\), on the log record. Keep `rigorous_error_bound` false until a bound exists. That sign still does not certify the trajectory.
 
 The frozen \(c=200\), \(s\ge 4\) trajectory stays unlaunched.
@@ -108,7 +112,7 @@ ITEM 4 GUARDED BYPASS: PASS.
 ITEM 5 EXACT \(D\) AND UNCERTAINTY: FAIL. VISCOSITY RATIONAL IS NOT \(1/200\). LOGGED \(Y\) HAS NO ENCLOSURE.
 ITEM 6 \(L\) VERSUS \(2L\): BLOCKED. NOT A LOGGER PATCH. \(N=128\) AND \(N=160\) STILL UNDECLARED AS INTEGER OR PHYSICAL. AT FIXED PHYSICAL CUTOFF, DOUBLING THE BOX DOUBLES THE INTEGER-MODE CUTOFF.
 ITEM 7 \(\mathbb R^3\): BLOCKED. REQUIREMENTS ALREADY FIXED. PERIODIZATION, BOX SIZE, AND DOMAIN CONVERGENCE NOT SHOWN.
-METADATA REPAIR ARCHIVE: NOT IN `packets/gate_d/da_review/`. NOT HASHED. NOT TESTED.
+METADATA REPAIR: SHA `8d07445a462f880bf96126010231c559ef27e968de5c2a13f52c9140c76db8d6`. HEADER NO LONGER CLAIMS ACCEPTED \(T_{\mathrm{sc}}\). 14 TESTS PASSED IN 1.985 s. `fast_value` AND THE VISCOSITY RATIONAL UNCHANGED.
 A SIGN OF \(D\) ON A FROZEN COEFFICIENT ARRAY DOES NOT CERTIFY THE TRAJECTORY.
 LEMMA 19: NOT CERTIFIED. PACKAGED WITNESS AGREEMENT \(+32\) ONLY.
 FROZEN \(c=200\), \(s\ge 4\): NOT LAUNCHED.
