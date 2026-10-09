@@ -1,0 +1,8 @@
+test_five_checks (test_connected.ConnectedChecks.test_five_checks) ... ok
+test_roundtrip_and_D_uses_torus_Y (test_connected.ConnectedChecks.test_roundtrip_and_D_uses_torus_Y) ... ok
+test_stepper_source_and_one_witness_step (test_connected.ConnectedChecks.test_stepper_source_and_one_witness_step) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.020s
+
+OK
