@@ -7,6 +7,12 @@ The review checked saved JSON arithmetic and both scripts. The solver and
 checkpoints are missing from the ZIP, so this is an internal consistency
 review. It is not a rerun.
 
+Checked wording (`Gate-D-Third-Transfer-Wording-2026-10-09.patch` is not
+on this mount; the sentences below are that clarification):
+
+Independent daughter drive is not demonstrated at this snapshot. Viscosity
+offsets the nonlinear input. Tail growth is the positive residual.
+
 Gate D target remains the six-box signed-scalene episode:
 [`GATE-D-SIGNED-MEASUREMENT-MODULE.md`](GATE-D-SIGNED-MEASUREMENT-MODULE.md),
 [`GATE-D-HALF-DERIVATIVE-ATTACK.md`](GATE-D-HALF-DERIVATIVE-ATTACK.md).
@@ -24,21 +30,20 @@ Of the productive source that feeds finer motion:
 
 The dominant cross-interaction changes by 0.068% between the two resolutions.
 
-The middle band is helping feed finer motion. It has not become an
-independently driving daughter packet.
+The middle band is helping feed finer motion. Independent daughter drive
+is not demonstrated at this snapshot.
 
 ---
 
 ## Tail energy
 
-The reported \(0.00702181\) “net influx” is the signed nonlinear input.
-The saved viscous loss is \(0.00653638\). Their difference is the
-tail-energy growth:
+The reported \(0.00702181\) is the signed nonlinear input, not a net
+energy gain. Viscosity offsets that input by the saved loss
+\(0.00653638\). Tail growth is the positive residual:
 \[
 0.00702181-0.00653638=0.00048543
 \]
-(approximately \(0.00048544\)). Growth remains positive. Viscosity absorbs
-most of the input.
+(approximately \(0.00048544\)).
 
 ---
 
@@ -69,8 +74,8 @@ cutoff-uniform control or summable recurrence.
 ## STATUS
 
 THIRD TRANSFER: BEGUN, NOT COMPLETED.
-DAUGHTER PACKET: NOT INDEPENDENTLY DRIVING.
-TAIL GROWTH: POSITIVE AND MOSTLY ABSORBED BY VISCOSITY.
+INDEPENDENT DAUGHTER DRIVE: NOT DEMONSTRATED AT THIS SNAPSHOT.
+VISCOSITY OFFSETS THE NONLINEAR INPUT. TAIL GROWTH IS THE POSITIVE RESIDUAL.
 REVIEW: INTERNAL CONSISTENCY ONLY — NOT A RERUN.
 NEXT: SIX-BOX SIGNED-SCALENE EPISODE.
 TURNOVER AND RECURRENCE: OPEN.
