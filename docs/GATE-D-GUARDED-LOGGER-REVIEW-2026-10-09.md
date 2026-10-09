@@ -1,7 +1,7 @@
 # Gate D guarded-logger review
 
 9 October 2026.
-**Archive hash matches. Thirteen packaged tests passed here. Items 1, 2, and 4 pass. Items 3 and 5 fail. Items 6 and 7 stay blocked. The frozen \(c=200\), \(s\ge 4\) experiment was not launched. Gate D remains OPEN / BLOCKED. No turnover, regeneration, shared-budget, or regularity result is claimed.**
+**Local review, not DA sign-off. Items 1–4 pass. Items 5–7 stay blocked. The frozen \(c=200\), \(s\ge 4\) experiment was not launched. Gate D remains OPEN / BLOCKED. No turnover, regeneration, shared-budget, or regularity result is claimed.**
 
 Archive: `gate_d_guarded_logger_fix_2026-10-09.zip`, filed at `scripts/ns_attacks/gate_d_guarded_logger/`.
 SHA-256: `ca01fa9ab93950174ae3ca25a932c8778910e1fc71d075deda559df914f9e020`. This matches the reported hash. An earlier check in this environment found the file absent; this verdict uses the upload that arrived afterward.
@@ -19,11 +19,11 @@ The smoke inside those tests is \(n=24\), \(L=12\), \(c=200\), \(s\) to \(0.01\)
 | 0. Archive integrity | **PASS** |
 | 1. Gaussian RK4 stepper unchanged | **PASS** |
 | 2. Spherical Galerkin mask, separate high-pass | **PASS** |
-| 3. `sign_unverified` emits no accepted \(T_{\mathrm{sc}}\) or crossing | **FAIL** |
+| 3. `sign_unverified` cannot establish a crossing | **PASS** |
 | 4. Exploratory signed evaluator bypassed in guarded mode | **PASS** |
-| 5. Rational fallback, cancellation, memory, uncertainty in \(T_{\mathrm{sc}}\) and \(Y\) | **FAIL** |
-| 6. \(L\) versus \(2L\), frozen \(N=128,160\) labels kept | **BLOCKED** |
-| 7. Remaining \(\mathbb R^3\) Gaussian comparison | **BLOCKED** |
+| 5. Rational fallback, cancellation, memory, and numerical uncertainty | **BLOCKED** |
+| 6. Fixed-physical-cutoff convention for \(L\) and \(2L\) | **BLOCKED** |
+| 7. Comparison with the original \(\mathbb R^3\) Gaussian | **BLOCKED** |
 
 ### 1. Stepper — PASS
 
@@ -39,7 +39,7 @@ With `--signed-N`, `run` replaces the \(2/3\) cube by `make_galerkin_mask` befor
 
 The log sentence `periodization: sample Gaussian on periodic cube, then project and 2/3 filter` still names only the cube on a run whose `cutoff` field correctly names the spherical intersection. That sentence is a label defect. It does not change the mask passed to `step`. `high_fraction` remains a separate physical energy shell and is not the integer high-pass \(K\).
 
-### 3. `sign_unverified` — FAIL
+### 3. `sign_unverified` — PASS
 
 The guarded sidecar path itself does what this item asks of that path. `assess` returns `T_sc: None`, `D_sign: 'unknown'`, and `sign_certified_for_stored_coefficients: False` when the mode budget is exceeded (`integrated_gate.py`). `diagnostic_record` sets `crossing_certified: False` on every record (`logger_bridge.py`). The \(n=24\) smoke rows have `diagnostic_status=sign_unverified`, `T_sc` null, `D` null, and `crossing_certified` false.
 
@@ -48,7 +48,7 @@ Two holes remain in the same archive.
 - `adaptive_certified.evaluate` still returns `fast_value` equal to the vorticity transfer on a record whose status is `sign_unverified`. On `make_pair(52)` with `max_exact_modes=2`, that value was about \(5.594\times 10^{-12}\) while `T_sc` was null. The metadata repair does not change this file.
 - The original header set `T_sc_implemented` and `D_implemented` true. The metadata repair replaces those with `T_sc_code_available` and `D_code_available`, and it sets `accepted_T_sc_verified`, `accepted_D_verified`, and `crossing_certified` false. That header hole is closed. The `fast_value` hole is not.
 
-A `sign_unverified` record in this package can still carry a numeric signed transfer, and the header can still say the signed diagnostic is implemented.
+Under this requirement, `sign_unverified` does not establish a crossing. `fast_value` can still sit on that record. It is not an accepted crossing.
 
 ### 4. Guarded bypass — PASS
 
@@ -56,7 +56,7 @@ With `--safe-sidecar`, `run` calls `diagnostics` with both signed cutoffs forced
 
 `adaptive_certified.evaluate` is not on this path. It still calls `vorticity_scalene` before deciding the status. Item 4 is the guarded mode only.
 
-### 5. Exact fallback, cancellation, memory, uncertainty — FAIL
+### 5. Exact fallback, cancellation, memory, uncertainty — BLOCKED
 
 On the packaged witness \(m=2\), \(A=1\), \(K=1\), \(N=6\), `phi_scalene`, `ordered_transfer`, and `transfer_exact` each returned \(+32\). That is the packaged-witness agreement. It is not a Lemma 19 certification. The original-coefficient sign gap stays unresolved.
 
@@ -76,7 +76,7 @@ Memory enforcement does fire. `preflight(200, 10)` raises `MemoryError` because 
 
 ### 6. \(L\) and \(2L\) — BLOCKED
 
-This item is not waiting on a logger patch. The frozen labels \(N=128\) and \(N=160\) still have to be declared as integer-mode cutoffs or as physical cutoffs. At a fixed physical cutoff, doubling the box doubles the integer-mode cutoff. The logger’s smoke header instead keeps the same integer \(N\) and records the halved physical edge `physical_kmax_doubled_box_same_N`. That is the other reading. It does not make the declaration.
+DA approval is pending. The recommended interpretation is filed in [`GATE-D-CUTOFF-CONVENTION-2026-10-09.md`](GATE-D-CUTOFF-CONVENTION-2026-10-09.md): \((L,N=128)\) matches \((2L,N=256)\), and \((L,N=160)\) matches \((2L,N=320)\). The original labels stay the reference-box cutoffs. The doubled-box runs are extra matched-resolution comparisons, and they are resource-blocked. The logger header that keeps the same integer \(N\) on a doubled box is the other reading. It is not this recommendation.
 
 `assess` certifies a \(D\) sign only when \(L\) is exactly \(2\pi\). At \(L=4\pi\), `make_pair(52)` returns `physical_box_sign_unverified`, with no \(T_{\mathrm{sc}}\), `D_sign` unknown, and `crossing_certified` false. A sign of \(D\) on a frozen coefficient array does not certify the trajectory that produced the array.
 
@@ -107,11 +107,11 @@ ARCHIVE SHA-256: MATCHES.
 TESTS HERE: 13 PASSED, 1.979 s. SMOKE \(s=0.01\) ONLY.
 ITEM 1 STEPPER BODIES: PASS. LOCKED FILE UNCHANGED.
 ITEM 2 MASKS: PASS.
-ITEM 3 `sign_unverified`: FAIL. NUMERIC `fast_value` STILL RETURNED. HEADER STILL CLAIMS \(T_{\mathrm{sc}}\) IMPLEMENTED.
+ITEM 3 `sign_unverified`: PASS. IT DOES NOT ESTABLISH A CROSSING. `fast_value` IS STILL RETURNED AND IS NOT A CROSSING.
 ITEM 4 GUARDED BYPASS: PASS.
-ITEM 5 EXACT \(D\) AND UNCERTAINTY: FAIL. VISCOSITY RATIONAL IS NOT \(1/200\). LOGGED \(Y\) HAS NO ENCLOSURE.
-ITEM 6 \(L\) VERSUS \(2L\): BLOCKED. NOT A LOGGER PATCH. \(N=128\) AND \(N=160\) STILL UNDECLARED AS INTEGER OR PHYSICAL. AT FIXED PHYSICAL CUTOFF, DOUBLING THE BOX DOUBLES THE INTEGER-MODE CUTOFF.
-ITEM 7 \(\mathbb R^3\): BLOCKED. REQUIREMENTS ALREADY FIXED. PERIODIZATION, BOX SIZE, AND DOMAIN CONVERGENCE NOT SHOWN.
+ITEM 5 LARGE-FIELD CERTIFICATION: BLOCKED. VISCOSITY RATIONAL IS NOT \(1/200\). LOGGED \(Y\) HAS NO ENCLOSURE. NOT A PRODUCTION CERTIFICATE.
+ITEM 6 FIXED PHYSICAL CUTOFF: BLOCKED. RECOMMENDED \((L,128)\leftrightarrow(2L,256)\) AND \((L,160)\leftrightarrow(2L,320)\). DA APPROVAL PENDING. MATCHED RUNS RESOURCE-BLOCKED.
+ITEM 7 \(\mathbb R^3\): BLOCKED. DOMAIN CONVERGENCE NOT SHOWN.
 METADATA REPAIR: SHA `8d07445a462f880bf96126010231c559ef27e968de5c2a13f52c9140c76db8d6`. HEADER NO LONGER CLAIMS ACCEPTED \(T_{\mathrm{sc}}\). 14 TESTS PASSED IN 1.985 s. `fast_value` AND THE VISCOSITY RATIONAL UNCHANGED.
 A SIGN OF \(D\) ON A FROZEN COEFFICIENT ARRAY DOES NOT CERTIFY THE TRAJECTORY.
 LEMMA 19: NOT CERTIFIED. PACKAGED WITNESS AGREEMENT \(+32\) ONLY.
