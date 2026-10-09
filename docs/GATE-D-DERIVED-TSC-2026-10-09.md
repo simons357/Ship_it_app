@@ -66,20 +66,22 @@ On the modes \((2,0,0)\), \((0,3,0)\), \((2,3,0)\) with coefficients \(iA e_2\),
 
 ## What this does not determine
 
-The project \(G\) does not follow. Nothing in the enstrophy identity names it.
+The enstrophy identity does not name a second diagnostic \(G\).
 
-These are not it:
+The production probe now implemented in a copy of the Gaussian driver is
+\[
+G(s)=T(v(s))-Y(v(s))/200
+\]
+([`GATE-D-G-PROBE-2026-10-09.md`](GATE-D-G-PROBE-2026-10-09.md)).
+That \(T\) is production, not \(T_{\mathrm{sc}}\). The orbit note’s \(G_T\) remains a resource constant. \(D\) and \(d\) remain unimplemented.
 
-- the 8 October probe \(G(s)=T(v)-Y(v)/c\), which uses production, not \(T_{\mathrm{sc}}\);
-- the orbit note’s \(G_T\), a resource constant;
-- \(D\) and \(d\), which are already named.
-
-No crossing detector is built. Gate D remains open.
+No crossing detector is built. Gate D remains OPEN / BLOCKED.
 
 ## STATUS
 
 \(T_{\mathrm{sc}}\): DERIVED WORKING DEFINITION. NOT THE 20 SEPTEMBER ORIGINAL.
-PROJECT \(G\): NOT DETERMINED.
+PRODUCTION PROBE \(G(s)=T-Y/200\): IMPLEMENTED IN A DRIVER COPY. NOT \(T_{\mathrm{sc}}\).
+\(T_{\mathrm{sc}}\) AND \(D\): UNIMPLEMENTED. AUTHORITATIVE \(T_{\mathrm{sc}}\) STILL THE BLOCKER.
 CROSSING DETECTOR: NOT BUILT.
-GATE D: OPEN.
+GATE D: OPEN / BLOCKED.
 NS NOT SOLVED.
