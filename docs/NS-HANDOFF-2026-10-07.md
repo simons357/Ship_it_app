@@ -345,9 +345,10 @@ The confirmed diagnostics are \(D\), \(d=D/X_N\), \(B_I=\int_I d\), and
 ([`GATE-D-SIGNED-DIAGNOSTIC-2026-10-09.md`](GATE-D-SIGNED-DIAGNOSTIC-2026-10-09.md)).
 The small-field reference in
 [`GATE-D-PHI-REFERENCE-2026-10-09.md`](GATE-D-PHI-REFERENCE-2026-10-09.md)
-passed the six-mode check and the ordered-convolution comparison.
-The September markdown page is not in that zip. The Gaussian stepper
-stays disconnected.
+is not a certified six-mode pass. Lemma 19 requires \(+4m^3 A^3\) on the
+original witness coefficients. One polarization gives \(-4m^3 A^3\) under
+\(T=-\operatorname{Re}\langle B,-\Delta h\rangle\), and that negative value
+is not a pass. The sign gap is unresolved. The Gaussian stepper is unchanged.
 
 ---
 
@@ -364,7 +365,7 @@ RESEARCH STATUS: ACTIVE, ADVANCING, AND MATHEMATICALLY UNFINISHED. NO GLOBAL REG
 GAUSSIAN SCAFFOLD: SMOKE ONLY THROUGH \(s=0.02\). \(T_{\mathrm{sc}}\), \(D\), AND \(G\) NULL. NOT AN EPISODE.
 20 SEPTEMBER SIGNED-SCALENE SOURCE: REPORTED RECOVERED IN THE FILE LIBRARY. NOT YET COPIED INTO THIS CHECKOUT. IMPLEMENTATION NOT CERTIFIED.
 SIGNED DIAGNOSTICS CONFIRMED: \(D\), \(d=D/X_N\), \(B_I=\int_I d\), \(\mathcal S_{K,N}=\int(d)_+\). STATIC \(1/2\) DOES NOT ESTABLISH THE DYNAMICAL ESTIMATE.
-\(\Phi_{abc}\) SMALL-FIELD REFERENCE: SIX-MODE AND ORDERED CONVOLUTION PASSED HERE. STEPPER NOT CONNECTED. DA REVIEW PENDING.
+SIX-MODE TEST: NOT CERTIFIED. LEMMA 19 REQUIRES \(+4m^3 A^3\). ONE POLARIZATION GIVES \(-4m^3 A^3\) UNDER \(T=-\operatorname{Re}\langle B,-\Delta h\rangle\). NOT A PASS. SIGN GAP UNRESOLVED. GAUSSIAN STEPPER: UNCHANGED.
 7 OCTOBER `signed_scalene.py`: SEPARATE REFERENCE. DIFFERS BY \((2\pi)^3\) ON THE SAME WITNESS COEFFICIENTS.
 \(G\) UNIT TEST: NOT RERUN. NO TURNOVER, REGENERATION, OR CUTOFF-INDEPENDENT BUDGET. GATE D: OPEN AND BLOCKED.
 MEASUREMENT MODULE: TESTED REFERENCE. FULL SIX-BOX EPISODE: UNRUN.

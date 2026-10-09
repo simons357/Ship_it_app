@@ -31,7 +31,7 @@ Port the original 20 September \(\Phi_{abc}\) into the diagnostic evaluator, kee
 
 The Gaussian stepper stays disconnected until those checks pass. `scripts/ns_attacks/gate_d_signed_diagnostic/signed_scalene.py` remains the 7 October reference implementation. It is not a certified substitute for the September definition.
 
-A later archive, `gate_d_phi_reference_2026-10-09.zip`, supplies a small-field implementation and is recorded in [`GATE-D-PHI-REFERENCE-2026-10-09.md`](GATE-D-PHI-REFERENCE-2026-10-09.md). The September markdown page itself is not in that zip. The six-mode identity and the ordered-convolution comparison passed on that reference. The Gaussian stepper is still disconnected. The locked \(G=T-Y/200\) unit test was not rerun.
+A later archive, `gate_d_phi_reference_2026-10-09.zip`, is recorded in [`GATE-D-PHI-REFERENCE-2026-10-09.md`](GATE-D-PHI-REFERENCE-2026-10-09.md). Its internal \(+4m^3 A^3\) agreement is not a certification of the Lemma 19 witness. One polarization gives \(-4m^3 A^3\) under \(T=-\operatorname{Re}\langle B,-\Delta h\rangle\), and that negative value is not a pass. The Gaussian stepper is unchanged. The locked \(G=T-Y/200\) unit test was not rerun.
 
 DA still reviews the implementation, the cutoff geometry, and the periodization protocol before any production run.
 
@@ -40,8 +40,8 @@ DA still reviews the implementation, the cutoff geometry, and the periodization 
 SIGNED STATIC RATIO: CLOSED AT EXPONENT \(1/2\). DYNAMICAL ESTIMATE: NOT ESTABLISHED.
 DIAGNOSTICS CONFIRMED: \(D\), \(d=D/X_N\), \(B_I=\int_I d\), \(\mathcal S_{K,N}=\int(d)_+\).
 \(\Phi_{abc}\) REFERENCE: SMALL-FIELD MODULE FILED. SEPTEMBER MARKDOWN PAGE NOT IN THE ZIP.
-SIX-MODE WITNESS AND ORDERED CONVOLUTION: PASSED ON THAT REFERENCE.
-GAUSSIAN STEPPER: NOT CONNECTED.
+SIX-MODE WITNESS: NOT CERTIFIED. SIGN GAP UNRESOLVED.
+GAUSSIAN STEPPER: UNCHANGED.
 7 OCTOBER `signed_scalene.py`: REFERENCE ONLY.
 \(G\) UNIT TEST: NOT RERUN.
 GATE D: OPEN / BLOCKED.

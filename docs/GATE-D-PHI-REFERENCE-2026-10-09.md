@@ -1,7 +1,7 @@
 # Gate D September 20 \(\Phi_{abc}\) reference
 
 9 October 2026.
-**Small-field reference. Tests rerun here. Not connected to the Gaussian stepper. Not a DA approval. Gate D remains OPEN / BLOCKED.**
+**The six-mode test is not certified. The Gaussian stepper is unchanged. Gate D remains OPEN / BLOCKED.**
 
 Archive: `gate_d_phi_reference_2026-10-09.zip`.
 SHA-256: `bfe47670a892531547dd713173c594ac0048ec2d45e7f3ff54e19afd39ed2f85`.
@@ -9,7 +9,15 @@ Files: `scripts/ns_attacks/gate_d_phi_reference/`.
 
 The archive contains `signed_phi.py`, `test_signed_phi.py`, and a README. It does not contain `NS_SCALENE_EVOLUTION_IDENTITY_2026-09-20.md`. The README states that `phi_scalene` implements that note’s equation (4) on the normalized \(2\pi\) torus: sum over \(p+q+r=0\) with \(K^2<a<b<c\le N^2\), both Hermitian partners, no extra factor of two, bilinear products.
 
-## Checks rerun here
+## Correction
+
+The Lemma 19 witness requires \(+4m^3 A^3\). Under \(T=-\operatorname{Re}\langle B,-\Delta h\rangle\), the ordered convolution for one polarization is \(-4m^3 A^3\). A negative value on a different polarization is not a contradiction, and it is not a pass.
+
+Acceptance still requires the original witness coefficients to reproduce \(+4m^3 A^3\) under the documented convention, with the three terms of \(\Phi_{abc}\), the Hermitian-conjugate contributions, and an independent ordered convolution in agreement. The difference may be polarization, Fourier sign, or an implementation error. That is unresolved.
+
+## Numerical observation, not a certification
+
+The packaged `witness()` coefficients and the two functions in `signed_phi.py` agree with each other at \(+4m^3 A^3\). That internal agreement is not the Lemma 19 audit.
 
 `python3 -m unittest -v test_signed_phi` passed: six-mode cases \(m=1,2,3\) and \(A=1,2\), and the cutoff checks.
 
@@ -39,11 +47,12 @@ The locked \(G\) unit test was not rerun. No turnover, regeneration, or cutoff-i
 ## STATUS
 
 ZIP SHA-256: `bfe47670a892531547dd713173c594ac0048ec2d45e7f3ff54e19afd39ed2f85`.
-SIX-MODE IDENTITY: PASSED HERE, BOTH FORMULAS, EXACT ON THE TESTED \((m,A)\).
-ORDERED CONVOLUTION: AGREES WITH \(\Phi_{abc}\) ON THAT WITNESS.
-OCTOBER 7 EVALUATOR: DIFFERS BY \((2\pi)^3\) ON THE SAME COEFFICIENTS.
-STEPPER: NOT CONNECTED.
+SIX-MODE TEST: NOT CERTIFIED.
+LEMMA 19 REQUIREMENT: \(+4m^3 A^3\) ON THE ORIGINAL WITNESS COEFFICIENTS.
+ONE POLARIZATION, ORDERED CONVOLUTION, \(T=-\operatorname{Re}\langle B,-\Delta h\rangle\): \(-4m^3 A^3\). NOT A PASS.
+SIGN GAP: UNRESOLVED. POLARIZATION, FOURIER SIGN, OR IMPLEMENTATION ERROR.
+PACKAGED `witness()` INTERNAL AGREEMENT AT \(+4m^3 A^3\): NOT THE LEMMA 19 AUDIT.
+STEPPER: UNCHANGED.
 \(G\) UNIT TEST: NOT RERUN.
-DA APPROVAL: PENDING.
 GATE D: OPEN / BLOCKED.
 NS NOT SOLVED.
