@@ -1,7 +1,7 @@
 # Program gates A–D
 
 8 / 9 October 2026.
-**C closed for the sharp instantaneous signed band estimate; optimal wavenumber exponent \(H^{1/2}\) (where \(\Lambda\) appears, \(\Lambda\sim H\)). Gate A unresolved and not a premise. D open. A finite episode cannot establish cutoff-uniform control or summable recurrence. (17) not established.**
+**Signed static test complete: sharp uniform exponent \(H^{1/2}\) for \(R(H)\). Dynamical control open: \(\mathcal S_{K,N}\) has denominator \(X_N\), no extra \(Y_N\). One episode is evidence, not cutoff-uniform or summable-recurrence proof. (17) not established.**
 
 \[
 \boxed{

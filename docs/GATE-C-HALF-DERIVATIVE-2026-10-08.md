@@ -56,17 +56,35 @@ squared frequency is \(L=H^2\), the same factor is \(L^{1/4}\).
 \boxed{\text{We need a dynamical mechanism worth one half derivative.}}
 \]
 
-This is the exponent of this explicitly defined signed ratio. It is not a
-determination of the earlier unsigned \(Q_x\) operator norm.
+The normalization is the key. \(1/2\) is the sharp uniform exponent for
+this signed static ratio. It does not settle the unsigned \(Q_x\) exponent
+(\(\tfrac12\le\theta_Q\le 2\) in the source) or a time budget along one
+fixed solution.
 
 ---
 
 ## Scope of CLOSED
 
+The signed static test is complete. Dynamical control is open.
+
 CLOSED applies to the sharp instantaneous signed band estimate, whose
 optimal wavenumber exponent is \(1/2\). Gate A remains unresolved and is
-not a premise. (17) is not established. Gate D remains open on both episode
-control and recurrence funding, with constants uniform in the cutoff.
+not a premise. (17) is not established.
+
+The remaining dynamical target, with \(h_{K,N}=P_{>K}u_N\), is
+\[
+\mathcal S_{K,N}(T)
+=
+\int_0^T
+\frac{\bigl(\mathcal T_{\mathrm{sc}}(h_{K,N})-\nu Y_N/4\bigr)_+}{X_N}\,dt.
+\]
+The denominator is \(X_N\). There is no extra \(Y_N\) factor. \(Y_N\) appears
+only inside the positive-part threshold.
+
+The six-box test must measure how long the positive episode lasts and what
+resource pays for its accumulated budget. Completing one episode would
+provide evidence. Cutoff-uniform control and summable recurrence would
+still require proof.
 
 ---
 
@@ -74,11 +92,12 @@ control and recurrence funding, with constants uniform in the cutoff.
 
 | Claim | Status |
 |---|---|
-| Sharp instantaneous signed band | **CLOSED** — optimal wavenumber exponent \(1/2\) |
+| Signed static ratio \(R(H)\) | **Complete** — sharp uniform exponent \(1/2\) |
+| Unsigned \(Q_x\) exponent, or a time budget on one solution | **Not settled** |
 | Same factor if \(L=H^2\) | \(L^{1/4}\) (and \(\Lambda^{1/2}\) only where \(\Lambda\sim H\)) |
 | Gate A | **Unresolved** — not a premise |
 | (17) | **Not established** |
-| Gate D episode control and recurrence funding | **Open** |
+| Dynamical control of \(\mathcal S_{K,N}\) | **Open** — denominator \(X_N\), no extra \(Y_N\) |
 | Further finite-family extensions | **Parked** |
 
 ---
@@ -111,6 +130,7 @@ Status: implementation corrected; dynamical evidence pending.
 
 ## STATUS
 
+SIGNED STATIC TEST: COMPLETE. DYNAMICAL CONTROL: OPEN.
 GATE C: CLOSED FOR THE SHARP INSTANTANEOUS SIGNED BAND ESTIMATE.
 OPTIMAL WAVENUMBER EXPONENT \(H^{1/2}\). WHERE \(\Lambda\) APPEARS, \(\Lambda\sim H\).
 IF \(L=H^2\), THE SAME FACTOR IS \(L^{1/4}\).

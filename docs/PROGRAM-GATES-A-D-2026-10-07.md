@@ -86,16 +86,19 @@ repetition resource still open.
    completed one
    ([`GATE-D-THIRD-TRANSFER-PACKET.md`](GATE-D-THIRD-TRANSFER-PACKET.md)).
    It is feeding evidence from a consistency review, not a rerun.
-5. Next test: the six-box signed-scalene episode, scoring
-   \(B_I/\mathcal R_I\) and cumulative resource. A completed finite episode
-   can support Gate D and cannot establish cutoff-uniform control or
-   summable recurrence. Lemma remains a target, not a stamp.
+5. Next test: the six-box field, measuring how long the positive episode
+   lasts and what resource pays for the accumulated budget of
+   \(\mathcal S_{K,N}\) (denominator \(X_N\), no extra \(Y_N\)). One episode
+   is evidence. Cutoff-uniform control and summable recurrence still
+   require proof. Lemma remains a target, not a stamp.
 
 ---
 
 ## STATUS
 
-GATE C: CLOSED FOR THE SHARP INSTANTANEOUS SIGNED BAND — OPTIMAL WAVENUMBER EXPONENT \(H^{1/2}\).
+SIGNED STATIC TEST: COMPLETE — SHARP UNIFORM EXPONENT \(H^{1/2}\) FOR \(R(H)\).
+DOES NOT SETTLE \(Q_x\) OR A TIME BUDGET ON ONE FIXED SOLUTION.
+DYNAMICAL TARGET: \(\mathcal S_{K,N}\) WITH DENOMINATOR \(X_N\), NO EXTRA \(Y_N\).
 WHERE \(\Lambda\) APPEARS, \(\Lambda\sim H\). REFERENCE: SHARP-BAND SOURCE.
 GATE A: UNRESOLVED — NOT A PREMISE.
 GATE D: OPEN ON EPISODE CONTROL AND RECURRENCE FUNDING.

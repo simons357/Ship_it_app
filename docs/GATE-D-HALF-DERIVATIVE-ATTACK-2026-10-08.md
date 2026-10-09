@@ -76,7 +76,20 @@ turnover is a duration scale. It can match the static \(H^{1/2}\) loss on
 one window. It does not by itself pay for repetition. The resource must
 pay for repeated episodes without reusing the same budget.
 
-Preferred working form (resource-weighted; duration not interchangeable):
+The source target is
+\[
+\mathcal S_{K,N}(T)
+=
+\int_0^T
+\frac{\bigl(\mathcal T_{\mathrm{sc}}(h_{K,N})-\nu Y_N/4\bigr)_+}{X_N}\,dt,
+\]
+with \(h_{K,N}=P_{>K}u_N\). The denominator is \(X_N\). There is no extra
+\(Y_N\) factor. The six-box test measures how long the positive episode
+lasts and what resource pays for that accumulated budget. Completing one
+episode is evidence. Cutoff-uniform control and summable recurrence still
+require proof.
+
+Preferred working form on one episode (duration not interchangeable):
 \[
 \int_I
 \frac{[\mathcal T_{\mathrm{sc}}-\nu Y/4]_+}{X}\,dt
