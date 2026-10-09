@@ -1,0 +1,197 @@
+GATE B: EXPLICIT SOURCE ASSEMBLY AND CONCENTRATION TEST
+7 October 2026
+
+DECISION
+
+For the explicit source-faithful nonnegative assembly defined below, a uniform
+estimate ||Q(f)||_2/Y <= C H^theta requires theta >= 1/2. In particular,
+theta=0 or theta<0 is impossible for this assembly on arbitrary inputs.
+This is an analytic obstruction, supported by exact finite checks. It does
+not determine the optimal exponent: the bounds proved here give
+1/2 <= theta_opt <= 2. It does not rule out a signed-transfer estimate,
+time-integrated control, or a separately specified operator with more structure.
+
+The source does not define Q_x or this theta. We explicitly define both here
+to avoid attributing a newly chosen grouping or normalization to an older note.
+If another Gate B operator or exponent convention is intended, it must be
+compared with these definitions before importing this verdict.
+
+SOURCE AND PRESERVED SCOPES
+
+Primary source: NS_REPEATED_RADII_AND_SCALENE_TARGET_2026-09-20.md,
+Section 5, equations (15)–(18). Its complete-block majorant is the input,
+including the sqrt(3) coefficient. No sharper shell lemma is substituted.
+
+The scalar triple-product formulation of the same fixed-shell lemma is
+explicitly stated in Section 1 of NS-51-Shape-Extension-2026-10-07.md:
+scalar triple-product factor sqrt(3), taking the largest shell as output.
+The present lower-bound argument uses that stated lemma. Its independent
+specialist-review status is inherited, not upgraded by the finite tests.
+
+Gate A remains unresolved/diagnostic; the multiplicity-5 freeze and rho
+diagnostics are untouched. The restricted 17/32/51 results and the 51-shape
+rebalancing keep their own stated families and budgets. This note does not
+identify that multiplicity-5 object with the separately defined multiplicity-8
+accounting in the 51-shape source. No ledger or GitHub file was changed.
+
+1. PINNED OBJECT: ALL RECEIVER CHOICES, EACH RADIUS TRIPLE ONCE
+
+Take a finite real divergence-free field h supported in H <= |k| <= 4H,
+with integer H>=1. Here x,y,z are SQUARED radii, not wavevectors.
+Set f_s=||Pi_s h||_2, E=sum_s f_s^2 and Y=sum_s s^2 f_s^2.
+
+Let I_H consist of all x<y<z in [H^2,16H^2] for which there exist integer
+wavevectors p+q+r=0 with squared lengths x,y,z and positive Gram determinant.
+This is the exact lattice-admissibility mask, not just triangle inequalities.
+
+Delta(x,y,z)=xy-(z-x-y)^2/4,
+
+C(x,y,z)=sqrt(3*Delta)*[(z-y)/sqrt(x)
+                      +(z-x)/sqrt(y)+(y-x)/sqrt(z)].
+
+Define, with zero value outside the band,
+
+Q_x(f) = sum_{(x,y,z) in I_H} C(x,y,z)*f_y*f_z.
+
+The sum has x<y<z: x is the unique smallest-radius anchor of a COMPLETE
+radius block. The other two radii are summed once, not as both ordered
+pairs. All three advecting/paired-receiver contributions from source (15)
+are already present in C. This is not a single receiver-current operator.
+There is no additional factor 2 or 3, no additional absolute value, and
+no newly inserted rho weight. The rho constants in the restricted-family
+notes arise after their separate Cauchy–Schwarz sums over selected labels.
+
+The source-majorant assembly is exactly
+M_H(f)=sum_{(x,y,z) in I_H} C(x,y,z)*f_x*f_y*f_z
+      =sum_x f_x*Q_x(f).
+
+Consequently
+|T_sc(h)| <= M_H(f) <= sqrt(E)*||Q(f)||_2.
+
+Define the diagnostic assembly quotient R_H(f)=||Q(f)||_2/Y for nonzero f.
+Its candidate growth exponent theta is the exponent in a uniform estimate
+R_H(f)<=C H^theta, with C independent of H, cutoff and amplitudes.
+
+2. EXACT COMPARISON TO THE VISCOUS BUDGET
+
+For h extracted from a full solution u_N, E_h<=E_0 and Y_h<=Y_N. An upper
+estimate R_H<=C H^theta would give
+|T_sc(h)| <= C sqrt(E_0) H^theta Y_N.
+Absorption into an allowance eta*nu*Y_N requires control of the coefficient
+C sqrt(E_0) H^theta relative to eta*nu. This comparison uses the actual
+quadratic viscous quantity Y_N, not a second copy of the majorant.
+
+For the counterexample family below, choose the full initial field to be h.
+Then Y_N=Y_h, so replacing Y_h by the full-solution denominator does not
+remove the obstruction. Choose N>=4H and any fixed all-high cutoff K<H.
+
+3. ELEMENTARY UPPER ESTIMATE
+
+There are at most L=15H^2+1<=16H^2 squared-radius labels in this band.
+Source (18) gives C(x,y,z)<=320*sqrt(3)*H^3. Therefore
+
+Q_x <= (320*sqrt(3)*H^3)/2 * (sum_s f_s)^2
+    <= 160*sqrt(3)*H^3*L*E,
+
+||Q||_2 <= 160*sqrt(3)*H^3*L^(3/2)*E.
+
+Since Y>=H^4 E, this proves the deliberately crude uniform bound
+R_H <= 10240*sqrt(3)*H^2.
+This is an upper estimate, not the asserted optimal value of theta.
+
+4. SOURCE-FAITHFUL LOWER OBSTRUCTION
+
+For every positive integer r, put H=m=100r. Define lattice boxes
+A=(2m,0,0)+[-r,r]^3,
+B=(0,3m,0)+[-r,r]^3,
+C=(-2m,-3m,0)+[-2r,2r]^3,
+and let S=A union B union C union (-A) union (-B) union (-C).
+
+These six boxes are disjoint. Write A0=(2r+1)^3 and
+N0=|S|=4*(2r+1)^3+2*(4r+1)^3.
+Assign every occupied Fourier mode the amplitude g_k=1/sqrt(N0).
+Thus E=sum_k g_k^2=1. Shell norms are f_s=sqrt(n_s/N0), where n_s is
+the number of occupied modes of squared radius s.
+
+All modes lie between m and 4m. For each p in A and q in B, z=-p-q
+lies in C. With a=|p|^2, b=|q|^2, c=|z|^2, exact bounds give
+
+a/m^2 <= 40403/10000,
+b/m^2 >= 89401/10000,
+b/m^2 <= 90603/10000,
+c/m^2 >= 16001/1250,
+c/m^2 <= 33003/2500.
+
+In particular a<b<c, c-b>3m^2 and |p|<3m. The third component of
+p cross q is at least (119/20)m^2>5m^2, so the triangles are nondegenerate.
+
+Define the pointwise geometric coefficient without the scalar shell factor,
+K(a,b,c)=sqrt(Delta)*[(c-b)/sqrt(a)+(c-a)/sqrt(b)+(b-a)/sqrt(c)].
+The preceding inequalities imply K>=5m^3 on every selected pair.
+
+For a fixed radius triple, the source scalar three-shell lemma states
+sum_{p+q+z=0, radii a,b,c} g_p*g_q*g_z <= sqrt(3)*f_a*f_b*f_c.
+Multiplying by K shows that the corresponding source term
+C(a,b,c)*f_a*f_b*f_c dominates the positive modal sum for that block.
+Restricting the modal sum to p in A, q in B only reduces it. Summing the
+blocks proves, with NO change to the defined Q,
+
+M_H(f) >= 5m^3*A0^2/N0^(3/2).
+
+Because E=1, Cauchy–Schwarz in the exact identity M_H=sum f_x Q_x gives
+||Q||_2 >= M_H. Also Y<=256m^4. Hence
+
+R_m(f) >= 5*A0^2/[256*m*N0^(3/2)].
+
+For r>=1, A0>=8r^3 and N0<=358r^3. Using m=100r yields the explicit
+uniform lower bound along this infinite family:
+
+R_m(f) >= sqrt(m)/[800*358^(3/2)].
+
+The positive constant is about 1.84538e-7. It is intentionally conservative;
+its size is irrelevant to the exponent obstruction. If a uniform power bound
+R_H<=C H^theta held with theta<1/2, this family would contradict it as r grows.
+Thus theta>=1/2 is necessary. The finite runs do not establish this scaling;
+the all-r box argument does.
+
+5. REALITY, DIVERGENCE FREEDOM AND WHAT IS NOT CLAIMED
+
+These amplitudes can be realized by smooth finite real divergence-free fields.
+For example, take the normalized projection of e_3 onto k-perpendicular as
+the real unit polarization at each occupied mode. No occupied k is parallel
+to e_3, and this choice is even under k->-k. Then u_-k=conjugate(u_k).
+
+Indeed, with all coefficients real, the instantaneous signed transfer is zero.
+This deliberately separates a large nonnegative majorant from the signed
+quantity it bounds. The construction is NOT an enstrophy-growth or blow-up
+example. It shows that this majorant cannot supply a high-frequency gain
+uniformly over all data, even after the proposed ell^2 assembly.
+
+6. WHY CHANGING THE NONNEGATIVE ALLOCATION ALONE CANNOT FIX THIS
+
+Suppose another nonnegative allocation has components Q_tilde_x and preserves
+exactly M_H(f)=sum_x f_x Q_tilde_x(f), with the same shell vector f.
+Then M_H<=sqrt(E)||Q_tilde||_2. The same E=1 witness gives the same
+sqrt(H) lower obstruction. Moving complete-block charges between shells,
+without reducing the original majorant itself, cannot eliminate it.
+
+This statement does NOT apply to signed cancellations retained before
+majorization, different norms or outside factors, a restricted family of
+inputs, or a genuinely different dynamical/time-integrated estimate.
+
+7. EXECUTED CHECKS AND NEXT DECISION
+
+verify_gate_b_assembly.py verifies all box inequalities with exact rational
+arithmetic, then enumerates r=1,2,3. These have 358,1958,5766 occupied modes
+and 729,15625,117649 selected closed triads. It checks closure, ordering,
+nondegeneracy, exact energy/viscous normalization and the finite incidence
+inequality used by the scalar lemma. Radical evaluations of restricted
+Q quotients are explicitly numerical diagnostics, not certificates of a
+global optimum or of theta=1/2.
+
+Decision: do not spend further work trying to obtain theta<=0 by merely
+regrouping this same unrestricted nonnegative source majorant. A Gate B
+continuation must retain signed structure before that loss, restrict its
+input scope explicitly, or target a different time-integrated mechanism.
+The optimal exponent for the Q defined here remains unresolved between
+1/2 and 2. No claim is made about an unspecified alternative Gate B object.

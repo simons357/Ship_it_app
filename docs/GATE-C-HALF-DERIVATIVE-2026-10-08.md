@@ -59,7 +59,9 @@ squared frequency is \(L=H^2\), the same factor is \(L^{1/4}\).
 The normalization is the key. \(1/2\) is the sharp uniform exponent for
 this signed static ratio. It does not settle the unsigned \(Q_x\) exponent
 (\(\tfrac12\le\theta_Q\le 2\) in the source) or a time budget along one
-fixed solution.
+fixed solution. The uploaded nonnegative assembly defines a separate
+quotient \(R_H=\lVert Q\rVert_2/Y\) with the same unresolved interval, and
+must be compared with that definition before its verdict is imported.
 
 ---
 
@@ -93,6 +95,7 @@ still require proof.
 | Claim | Status |
 |---|---|
 | Signed static ratio \(R(H)\) | **Complete** — sharp uniform exponent \(1/2\) |
+| Nonnegative \(Q\) quotient \(R_H=\lVert Q\rVert_2/Y\) | **Not this test** — \(1/2\le\theta\le 2\), optimum unresolved ([`sources/GATE-B-UPLOADED-SOURCES-2026-10-09.md`](sources/GATE-B-UPLOADED-SOURCES-2026-10-09.md)) |
 | Unsigned \(Q_x\) exponent, or a time budget on one solution | **Not settled** |
 | Same factor if \(L=H^2\) | \(L^{1/4}\) (and \(\Lambda^{1/2}\) only where \(\Lambda\sim H\)) |
 | Gate A | **Unresolved** — not a premise |

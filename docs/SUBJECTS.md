@@ -3,7 +3,7 @@
 One page to see **what this repo is about** and **where each thread lives**.
 
 Update this file when a subject changes status (merge, park, abandon, or rename).  
-Last reviewed: **2026-10-09** (interaction-sum copy agrees at roundoff; 1.52× on the first-accepted pair loop; continuation not resumed).
+Last reviewed: **2026-10-09** (uploaded Gate B notes filed; nonnegative \(Q\) exponent stays in \([1/2,2]\); signed static \(R(H)\) stays complete).
 
 ---
 
