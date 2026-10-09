@@ -1,0 +1,71 @@
+{
+  "id": "GATE-D-V1.2",
+  "kind": "new_preregistration",
+  "amends_v1_1": false,
+  "reuses_v1_1_runs": false,
+  "dated": "2026-10-09",
+  "approved": false,
+  "ns_solved": false,
+  "cutoff_independent_budget": false,
+  "physical_cutoff": {
+    "kappa_star": 8,
+    "units": "physical_wavenumber_2pi_m_over_L",
+    "independent_of_n": true,
+    "chosen_from_v1_1_tail_gate_s_0_75": false,
+    "relative_high_fraction_forbidden": true,
+    "boxes": [
+      {"L": 6.283185307179586, "L_exact": "2*pi", "N": 8, "K": 4},
+      {"L": 12.566370614359172, "L_exact": "4*pi", "N": 16, "K": 8}
+    ]
+  },
+  "memory": {
+    "ceiling_bytes": 2147483648,
+    "ceiling_label": "2 GiB peak RSS",
+    "preflight_bytes": "576 * n**3",
+    "preflight_is_peak_rss_certificate": false,
+    "v1_1_assumed_about_7_GB": true,
+    "heavy_anchor": {"n": 192, "about_GB": 7, "kind": "one_measurement_not_benchmark"},
+    "scaled_estimate_GB": {"64": 0.26, "96": 0.9, "128": 2.1, "160": 4, "192": 7},
+    "grids_allowed_pending_rss": [64, 96],
+    "grids_excluded": [128, 160, 192]
+  },
+  "certification": {
+    "grids": [64, 96],
+    "timesteps": [0.01, 0.005],
+    "domains_L_exact": ["2*pi", "4*pi"],
+    "rel_tol_s0": 1e-8,
+    "rel_tol_s_positive": 1e-3,
+    "tail_energy_ratio_max": 1e-3,
+    "energy_identity_rel_max": 1e-6,
+    "enstrophy_identity_rel_max": 1e-6,
+    "galerkin_closure_max": 1e-12,
+    "max_fourier_divergence": 1e-10,
+    "initial_datum_rel_max": 1e-12,
+    "failures_are_exclusions": true,
+    "rigorous_error_bound": false
+  },
+  "viscosity": {
+    "c": 200,
+    "nu_exact": "1/200",
+    "fraction_must_be": [1, 200],
+    "forbid_Fraction_of_float": true
+  },
+  "horizon": {
+    "s_end": 4,
+    "completion_is_not_evidence": true
+  },
+  "scaffold_regression_stamps_not_production": {
+    "n": 12,
+    "L": 12,
+    "c": 200,
+    "s": 0,
+    "source_sha256": "a591e95657eadbe9f1027939ec08f696e5fbba3de67d2cdf1f15060123c15534",
+    "energy": 5.1207283333063645,
+    "X": 32.611124080320636,
+    "Y": 120.67914364422008,
+    "production": 0.19602790351705981
+  },
+  "production_stamps": {},
+  "locked_stepper_sha256": "0da006cdcbfdc437c660159ff1c019eaf3eb9fb19f1baa35178e05142f82dc56",
+  "T_sc_and_D": "unscored_until_20_Sep_original_attached"
+}
