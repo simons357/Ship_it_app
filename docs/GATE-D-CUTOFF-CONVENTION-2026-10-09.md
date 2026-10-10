@@ -14,7 +14,7 @@ Physical wavenumber at an integer cutoff \(N\) on a box of side \(L\) is \(2\pi 
 
 The logger rule \(N<n/3\) then requires \(n>960\) for \(N=320\). The smallest such grid is \(n=961\). The current preflight estimates \(576 n^3\) bytes and uses a 2 GiB ceiling (`fail_closed.preflight`). That estimate is about 476 GiB at \(n=961\), so the run is rejected before any transfer. The same ceiling also rejects the reference grids: \(N=128\) needs \(n>384\) (about 31 GiB at \(n=385\)), and \(N=160\) needs \(n>480\) (about 60 GiB at \(n=481\)). The estimate is not a peak-RSS certificate. It is enough to mark these configurations infeasible in the current implementation.
 
-This states the mathematical comparison. It does not run it. DA approval of the interpretation is still pending, so item 6 stays blocked. After that approval, the remaining priorities are a scalable numerical-error certificate and a feasible domain-convergence protocol. A sign of \(D\) on a frozen coefficient array does not certify the trajectory.
+The v1.2 preregistration in [`GATE-D-GAUSSIAN-PREREGISTRATION-2026-10-09.md`](GATE-D-GAUSSIAN-PREREGISTRATION-2026-10-09.md) uses this matched reading and also keeps \((2L,128)\) and \((2L,160)\) in the protocol as separate reported cases. They are not replacements and they are not deleted. This states the mathematical comparison. It does not run it. DA approval of the interpretation is still pending, so item 6 stays blocked. After that approval, the remaining priorities are a scalable numerical-error certificate and a feasible domain-convergence protocol. A sign of \(D\) on a frozen coefficient array does not certify the trajectory.
 
 ## STATUS
 
