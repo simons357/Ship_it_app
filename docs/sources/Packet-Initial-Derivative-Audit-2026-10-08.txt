@@ -1,0 +1,187 @@
+INITIAL DERIVATIVE PACKET: EXACT AUDIT AND THRESHOLD DISTINCTION
+Date: 2026-10-08
+
+Verdict
+
+The supplied packet's production, Euler production derivative, viscous
+production derivative, and parallel/orthogonal production split agree with
+an independent exact Gaussian-polynomial calculation on R^3. This audit
+also identifies the zero viscous strain term analytically and distinguishes
+production growth from enstrophy growth. It supplies no finite-time estimate.
+
+The uploaded source is preserved separately as original_packet.md. Its
+finite-grid convergence claim and spectral-centroid values are not checked
+here: domain, centroid definition, and the original numerical runner were
+not supplied. The exact calculations below concern the stated Gaussian on
+R^3, integrated with unnormalized Lebesgue measure. A periodic computation
+must specify its periodization and box size before being identified with it.
+
+1. Definitions and exact profile integrals
+
+A(x,y,z) = exp(-|x|^2/2) (xy, xz, x+yz), U = curl A,
+omega = curl U, S(v) = (grad v + grad v^T)/2.
+
+E0 = integral |U|^2                 = (5/2) pi^(3/2)
+X0 = integral |omega|^2             = (41/4) pi^(3/2)
+Y0 = integral |Delta U|^2           = (423/8) pi^(3/2)
+T0 = integral omega . S(U) omega    = (4 sqrt(6)/27) pi^(3/2)
+                                   = 2.020675898176543.
+
+Here X is the full squared L2 vorticity norm, without a factor 1/2.
+For smooth divergence-free fields, Y = integral |grad omega|^2.
+
+2. The zero viscous strain term is a general identity
+
+For any smooth divergence-free u on R^3 with sufficient decay, or on a
+periodic domain, write w = curl u. Then
+
+I = integral w . S(Delta u) w
+  = integral w . (w . grad) Delta u
+  = -integral Delta u . (w . grad) w
+  = integral curl w . (w . grad) w
+  = integral curl w . grad(|w|^2/2)
+  = 0.
+
+The third line uses div w = 0. The fourth uses Delta u = -curl w.
+The fifth uses (w . grad)w = grad(|w|^2/2) - w cross curl w.
+The last uses div(curl w) = 0 and vanishing boundary terms.
+
+Thus the numerical zero in the source is explained analytically. It is
+not a special cancellation unique to this Gaussian packet. This assertion
+does not automatically apply to bounded domains with nonzero boundary terms.
+
+For the stated packet, exact Gaussian integration additionally gives
+
+DT(U)[Delta U] = 2 integral Delta omega . S(U) omega
+              = -16 T0
+              = -32.33081437082469.
+
+The factor -16 is profile-specific; the zero strain term is general.
+
+3. Exact Euler derivative, including the pressure contribution
+
+Let f = -(U . grad)U and v = P f = f - grad p, Delta p = div f.
+Let w_E = curl v = (omega . grad)U - (U . grad)omega.
+Then
+
+DT(U)[v] = 2 integral w_E . S(U) omega
+           + integral omega . S(v) omega.
+
+All constants in the following list multiply (pi/2)^(3/2):
+
+Vorticity contribution:              77/8
+Unprojected strain contribution:    -519/128
+Pressure strain contribution:      -371539/274560
+Total strain contribution:         -742397/137280
+Total Euler derivative:             578923/137280
+
+Consequently
+
+C_E = DT(U)[-P((U . grad)U)]
+    = (578923/137280) (pi/2)^(3/2)
+    = 8.302203014466292.
+
+The full strain contribution is -10.646546451480994. These exact values
+agree with the rounded +8.302 and -10.647 in the uploaded packet.
+
+How the nonlocal term was evaluated:
+
+Set g = div f and h = sum_ij partial_i partial_j(omega_i omega_j).
+The pressure contribution is -integral h Delta^(-1)g. Both h and g are
+polynomials times exp(-|x|^2). With the Fourier transform
+F(k) = integral exp(-i k.x) f(x) dx, Parseval writes this as
+
+(2 pi)^(-3) integral conjugate(h_hat(k)) g_hat(k) / |k|^2 dk.
+
+Fourier transforms of polynomial Gaussians follow from
+FT[x^alpha exp(-|x|^2)] = i^|alpha| partial_k^alpha
+                         [pi^(3/2) exp(-|k|^2/4)].
+
+Their product has Gaussian weight exp(-|k|^2/2). For an even monomial
+k^alpha of total degree d, its normalized Gaussian integral divided by
+|k|^2 is its ordinary normalized Gaussian moment divided by d+1. This
+follows by separating radial and angular integration in three dimensions.
+Odd moments vanish. The checker implements these operations with exact
+rational arithmetic; floating point is used only to display final values.
+A Parseval normalization equality without |k|^(-2) is checked separately.
+
+4. Orthogonality labels
+
+integral omega . w_E = T0,
+||w_E||_2^2 = (87/8) (pi/2)^(3/2).
+
+With alpha = T0/X0 and w_perp = w_E - alpha omega:
+
+alpha = 0.03540364578548405
+||w_perp||_2^2 / ||w_E||_2^2 = 0.9966585453814284
+||w_perp||_2   / ||w_E||_2   = 0.9983278746891867.
+
+The source's 0.9967 is correct as a squared-norm fraction. Its label
+"orthogonal fraction" should specify this convention.
+
+The parallel contribution to DT is 2 T0^2/X0 = 0.14307858749261432.
+The orthogonal contribution is 18.80567087845467. The sum is
+18.948749465947284, agreeing with the reported split.
+
+Orthogonality here means orthogonality in the L2 space of vorticity fields.
+It does not by itself mean disjoint Fourier support. A polynomial Gaussian
+is not supported on finitely many Fourier modes. "Newly generated modes"
+should be read as deformation of the initial profile unless a specific
+spectral projection is defined. The reported centroid shift may provide
+additional spectral information, but it is not reproduced in this audit.
+
+5. Two different critical thresholds
+
+For u(x,0) = a U(Kx), a = c nu K, with a,K,nu,c positive,
+three-dimensional whole-space scaling gives
+
+T(0) = a^3 T0,
+X(0) = a^2 K^(-1) X0,
+Y(0) = a^2 K Y0,
+
+T'(0) = a^4 K C_E - 16 nu a^3 K^2 T0
+      = nu^4 K^5 c^3 (c C_E - 16 T0).
+
+Production increases initially exactly when
+
+c > c_T = 16 T0/C_E = 3.894245215937192.
+
+But the enstrophy identity is X'/2 = T - nu Y, and therefore
+
+X'(0)/2 = nu^3 K^3 c^2 (c T0 - Y0).
+
+Enstrophy increases initially exactly when
+
+c > c_X = Y0/T0 = 3807 sqrt(6)/64 = 145.70636641836813.
+
+In particular, throughout c_T < c < c_X, production is rising while
+enstrophy is falling. At c = c_X, the first enstrophy derivative is zero;
+this audit does not determine the next nonzero derivative there.
+Neither threshold is a blow-up or regularity threshold.
+
+6. Consequence for the next experiment
+
+The packet verifies genuine initial nonlinear reinforcement. The available
+margin remains an initial derivative and says nothing quantitative about
+how long the reinforcing configuration persists. Smooth local evolution
+provides continuity, but no controlled turnover-window lower bound is proved.
+
+Use s = a K t and u = a v(Kx,s). Then
+v_s = -P((v . grad)v) + c^(-1) Delta v, v(0) = U.
+
+A useful next numerical probe would bracket both thresholds, for example
+c = 3, 4, 100, 150, 200, over 0 <= s <= 1. Record T(v), Y(v), X(v),
+the net balance G(s) = T(v) - Y(v)/c, and its cumulative integral.
+Check X(s)-X(0) = 2 integral_0^s G(sigma) d sigma with domain and resolution
+controls. This is a proposed experiment, not a run completed by this audit.
+
+Any finite simulation remains numerical evidence. A result relevant to the
+research gap still needs a quantitative window estimate with its constants,
+scaling, and assumptions stated, and a bridge to the exact target quantity.
+No Gate B, centered-flux, regeneration-integral, or regularity claim is closed.
+
+Reproduction
+
+Run: python3 check_packet.py
+Requirements: Python standard library only; no external packages.
+results.json is the recorded output. SHA256SUMS lists the packaged files.

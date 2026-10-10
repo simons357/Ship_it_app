@@ -1,0 +1,79 @@
+{
+  "title": "Gate D full-trajectory solver \u2014 corrected diagnostics",
+  "adversary": "Signed-Gate-B-Sharp-Band-Exponent-2026-10-07 six-box",
+  "theorem_stamp": false,
+  "gaussian_substituted": false,
+  "topM": false,
+  "scoring": "B_IH / R_UW with B_IH = int d dt (no double-count)",
+  "review": "GATE-D-REVIEW-2026-10-09",
+  "runs": [
+    {
+      "n": 1,
+      "H": 63,
+      "nu": 1.2569258291022742e-05,
+      "E": 1.0,
+      "K2_fixed": 1.0,
+      "diagnostic": "fixed_K_full_XY_signed_scalene",
+      "k_max": 252,
+      "cut_mul": 4,
+      "method": "sparse_Galerkin_tiled_full_trajectory_rk2_no_topM",
+      "topM": false,
+      "floor_rel": 1e-30,
+      "tile": 64,
+      "hash_capacity": 1048576,
+      "max_modes_budget": 80000,
+      "modes_initial": 358,
+      "modes_max_observed": 81936,
+      "hash_overflow_events": 0,
+      "T_sc_E1": 20477.92104027458,
+      "T_sc_E1_expected_from_verifier": 20477.92104027458,
+      "T_sc_rel_err_vs_verifier": 0.0,
+      "energy_identity_Xprime_residual": -4.18367562815547e-11,
+      "active_modes_t0": 358,
+      "X(0)_full": 40303.41306908727,
+      "Y(0)_full": 1629206796.9436517,
+      "U(0)": 17.71969294815145,
+      "W(0)": 702808.2736088303,
+      "D(0)": 15358.440780205932,
+      "d(0)": 0.38107047544283196,
+      "D_prime(0)": 3104677.7778101387,
+      "episode_start": 0.0,
+      "episode_end": 0.00012697219215897446,
+      "I_length": 0.00012697219215897446,
+      "H^{5/2}|I|_duration_diagnostic_only": 4.0,
+      "B_IH": 2.434789727610137e-05,
+      "B_IH_definition": "direct_integral_int_d_dt",
+      "boundary_term_for_dprime_reconstruction_only": 4.8385353634039015e-05,
+      "resource_UW_integral": 793.4902636580607,
+      "resource_X_integral_DIAGNOSTIC_ruled_out": 2.558706749071341,
+      "B_over_R": 3.068455706545837e-08,
+      "episode_truncated": false,
+      "steps": 2,
+      "dt": 6.348609607948723e-05,
+      "dt_factor": 2.0,
+      "t_max": 0.00015871524019871807,
+      "tau_nl_H^{-5/2}": 3.1743048039743615e-05,
+      "wall_seconds": 267.2105152606964,
+      "status": "NUMERICAL_EVIDENCE_ONLY",
+      "status_detail": "MODE_BUDGET_HIT",
+      "theorem_stamp": false,
+      "full_trajectory_complete": false,
+      "U0": 17.71969294815145,
+      "small_l1_hypothesis_U0_le_nu/4": false,
+      "D_trajectory": {
+        "t_over_tau_nl": [
+          0.0,
+          2.0
+        ],
+        "D": [
+          15358.440780205932,
+          15555.525401228435
+        ],
+        "T_sc": [
+          20477.92104027458,
+          20675.316016932407
+        ]
+      }
+    }
+  ]
+}

@@ -5,3 +5,8 @@ __pycache__/
 venv/
 *.egg-info/
 .DS_Store
+
+# built sweep binary
+gated_initial_fast
+handoff/**/gated_initial_fast
+scripts/ns_attacks/gated_initial_fast

@@ -1,0 +1,1 @@
+Gate D metadata repair. Distinguishes code availability from accepted verification. Tests: 11/11 PASS. RK4 step unchanged. Metadata remains conservative even if future data are verified; it is not a proof. No production run, DA signoff, or physical-cutoff approval. Gate D OPEN/BLOCKED.

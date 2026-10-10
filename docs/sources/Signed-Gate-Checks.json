@@ -1,0 +1,45 @@
+{
+  "status": "PASS: exact signed finite checks; analytical all-scale proof in companion note.",
+  "signed_kernel_uniform_lower": "2329130643/1073741824",
+  "sharp_uniform_band_exponent": "1/2",
+  "upper_bound_constant": 1728,
+  "scope": "Actual instantaneous signed scalene transfer in H<=|k|<=4H.",
+  "checks": [
+    {
+      "n": 1,
+      "H": 63,
+      "modes": 358,
+      "positive_pairs": 729,
+      "E": "493917511224",
+      "X": "19906561476916408",
+      "Y": "804693766415632406904",
+      "T_scalene": "7108328663202825907200",
+      "ordered_full_transfer": "7108328663202825907200",
+      "T_over_sqrtE_Y_diagnostic": 1.2569258291022742e-05
+    },
+    {
+      "n": 2,
+      "H": 126,
+      "modes": 1958,
+      "positive_pairs": 15625,
+      "E": "44655886839392",
+      "X": "7220434532697808160",
+      "Y": "1170363057748757471046368",
+      "T_scalene": "77960301677727250279680000",
+      "ordered_full_transfer": null,
+      "T_over_sqrtE_Y_diagnostic": 9.96812663848137e-06
+    },
+    {
+      "n": 3,
+      "H": 189,
+      "modes": 5766,
+      "positive_pairs": 117649,
+      "E": "673781719794328",
+      "X": "245384671367079821592",
+      "Y": "89571157484751058850213848",
+      "T_scalene": "22561997622535344956630409216",
+      "ordered_full_transfer": null,
+      "T_over_sqrtE_Y_diagnostic": 9.703976824622737e-06
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+test_dense (test_vorticity_signed.Tests.test_dense) ... ok
+test_rejects_bad_input_and_reports_cancellation (test_vorticity_signed.Tests.test_rejects_bad_input_and_reports_cancellation) ... ok
+test_witness (test_vorticity_signed.Tests.test_witness) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.188s
+
+OK

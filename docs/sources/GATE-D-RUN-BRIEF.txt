@@ -1,0 +1,19 @@
+# Gate D execution packet
+
+Adversary: Signed-Gate-B-Sharp-Band-Exponent-2026-10-07.txt six-box imaginary-coefficient packet.
+Do not substitute the Gaussian packet or the real-coefficient Gate-B construction.
+
+Run target:
+- Normalize packet to E=1.
+- Evolve full Galerkin system at H=63n.
+- Record D_H(0), D_H_prime(0), first positive episode I_H, B_IH=integral_I D_H/X_H dt.
+- Record candidate resource spent on the same interval.
+- Plain energy loss is not an eligible recurrence resource at critical turnover scaling.
+- Compare against the small-l1 prototype integral U W dt <= U0^2/[2(nu-U0)].
+
+Score the scaling family only after multiple H:
+(a) B_H -> 0.
+(b) B_H = O(1) with an O(1) globally finite resource.
+(c) B_H = O(1) with o(1) resource spend: recurrence too cheap.
+
+All outputs are numerical evidence, not estimates or theorem stamps.
