@@ -80,3 +80,13 @@ A good year of about $2 million covers the $1 million operating guess and puts a
 ## The sentence for a funder
 
 We are raising $2 million to $4 million to fly one unmanned weather ship at 65,000 to 70,000 ft, hold it for days and then for weeks, and bring it down on purpose. Prime Field leads. A proven balloon maker builds and launches it. A weather group supplies the instruments. Income, if earned, is pictures and instrument time sold to civil users and, later, a military trial. The large hull, the crew, and the long list of modules wait until this ship has landed.
+
+## What an investor is offered
+
+The product is one unmanned ship that stays over one region and sells the view: weather, fire, or a science box. The return is fee income from that view. A good year in the guess above covers operations and starts to repay the pathfinder. A thin year does not. That is the whole offer.
+
+Buyers already pay companies that fly this layer. Aerostar, World View, and Sceye have flights and contracts. NASA already flies science balloons. Our opening is a smaller node aimed at one region, at a cost per flying day we have not earned the right to quote yet. A model that pretends we are already cheaper than an airplane would be a false pitch.
+
+A simulation we can stand behind, when we build it, uses published winds, a helium-loss assumption, solar power by day and night, and a planned landing. It prints days aloft and dollars per day. It does not show a fleet, a crew, or a buyer we do not have.
+
+No famous acquisition is part of this case. A later sale happens only if the ship flies, lands, and has a paying user. Until then the company is a plan in a market that already has operators.
