@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OMEN Decision Window</title>
+  <style>
+    :root {
+      --ink: #1c1914;
+      --paper: #efe6d4;
+      --paper-deep: #e4d8c0;
+      --field: #1a1713;
+      --brass: #a56b24;
+      --move: #8a4e12;
+      --watch: #1f4d63;
+      --shelter: #8d2d24;
+      --muted: #6d6458;
+      --line: #cbbfa8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--field);
+      color: #f4efe6;
+      font: 16px/1.45 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    }
+    header, .toolbar, main { width: min(1120px, calc(100% - 28px)); margin: 0 auto; }
+    header { padding: 22px 0 8px; }
+    .eyebrow {
+      margin: 0;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font: 600 12px/1.2 ui-sans-serif, system-ui, sans-serif;
+      color: #d7b57a;
+    }
+    h1 { margin: 4px 0 0; font-size: 28px; font-weight: 600; }
+    #comms {
+      margin: 6px 0 0;
+      color: #c8bfb0;
+      font: 14px/1.4 ui-sans-serif, system-ui, sans-serif;
+    }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 14px 0;
+    }
+    button, .file {
+      border: 1px solid #8d8374;
+      background: transparent;
+      color: #f4efe6;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font: 14px/1 ui-sans-serif, system-ui, sans-serif;
+      cursor: pointer;
+    }
+    button[aria-pressed="true"] { background: #f4efe6; color: var(--ink); border-color: #f4efe6; }
+    .file input { display: none; }
+    main {
+      display: grid;
+      grid-template-columns: minmax(260px, 380px) 1fr;
+      gap: 16px;
+      padding-bottom: 28px;
+    }
+    #clock, .board {
+      border-radius: 18px;
+      padding: 18px;
+    }
+    #clock { background: #262119; }
+    #clock[data-urgency="move"] { box-shadow: inset 0 0 0 1px #a56b24; }
+    #clock[data-urgency="watch"] { box-shadow: inset 0 0 0 1px #6ea0b5; }
+    #clock[data-urgency="shelter_now"] { box-shadow: inset 0 0 0 1px #c46a60; }
+    .urgency {
+      margin: 0;
+      font: 600 12px/1 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #d7b57a;
+    }
+    .seconds {
+      margin: 8px 0 0;
+      font-variant-numeric: tabular-nums;
+      font-size: 92px;
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+    }
+    #clock[data-urgency="move"] .seconds { color: #f0c36a; }
+    #clock[data-urgency="watch"] .seconds { color: #b7d6e2; }
+    #clock[data-urgency="shelter_now"] .seconds { color: #f0b2aa; }
+    #clock[data-urgency="none"] .seconds { color: #d9d0c3; }
+    .unit { font-size: 28px; margin-left: 4px; }
+    .decide { margin: 0; color: #c8bfb0; font: 14px/1.3 ui-sans-serif, system-ui, sans-serif; }
+    #where { margin: 16px 0 0; font-size: 22px; }
+    #guidance { margin: 8px 0 0; color: #f4efe6; }
+    #note { margin: 10px 0 0; color: #b7ad9e; font: 13px/1.4 ui-sans-serif, system-ui, sans-serif; }
+    dl { margin: 16px 0 0; display: grid; grid-template-columns: 140px 1fr; gap: 6px 10px; }
+    dt { color: #b7ad9e; font: 12px/1.3 ui-sans-serif, system-ui, sans-serif; }
+    dd { margin: 0; font: 14px/1.3 ui-sans-serif, system-ui, sans-serif; }
+    .board { background: var(--paper); color: var(--ink); }
+    svg { width: 100%; height: auto; display: block; background: var(--paper-deep); border-radius: 12px; }
+    .caption, .listeners { font: 13px/1.4 ui-sans-serif, system-ui, sans-serif; color: #4e463c; }
+    .caption { margin: 10px 0 0; }
+    .listeners { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 6px; }
+    .listeners li { display: flex; gap: 8px; align-items: baseline; }
+    .swatch { width: 9px; height: 9px; border-radius: 50%; display: inline-block; transform: translateY(1px); }
+    .swatch.phone { background: #2f5f9e; }
+    .swatch.treetop { background: #2f7d4a; }
+    .swatch.wearable { background: #8a5a12; }
+    .swatch.other { background: #5c564c; }
+    #status { margin: 8px 0 0; color: #e0b4a8; font: 14px/1.4 ui-sans-serif, system-ui, sans-serif; }
+    @media (max-width: 800px) {
+      main { grid-template-columns: 1fr; }
+      .seconds { font-size: 76px; }
+      h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">OMEN Decision Window</p>
+    <h1 id="community">Listener</h1>
+    <p id="comms"></p>
+    <p id="status" role="status"></p>
+  </header>
+  <div class="toolbar">
+    <button type="button" id="fresh" aria-pressed="true">Fresh track</button>
+    <button type="button" id="later" aria-pressed="false">15s later, comms down</button>
+    <label class="file">Open a JSON file
+      <input id="file" type="file" accept="application/json,.json">
+    </label>
+  </div>
+  <main>
+    <section id="clock" aria-live="polite" data-urgency="none">
+      <p class="urgency" id="urgency">Window</p>
+      <p class="seconds"><span id="seconds">—</span><span class="unit">s</span></p>
+      <p class="decide" id="decide">to decide</p>
+      <p id="where"></p>
+      <p id="guidance"></p>
+      <p id="note"></p>
+      <dl id="facts"></dl>
+    </section>
+    <section class="board">
+      <svg id="plot" viewBox="0 0 640 520" role="img" aria-label="Plot of listeners and the contact"></svg>
+      <p class="caption">North is up. Distances are meters from the protected point. The sheet is drawn on this device, with no map tiles, so it still works when comms are down.</p>
+      <ul class="listeners" id="listeners"></ul>
+    </section>
+  </main>
+  <script src="../portable/omen_listener.js"></script>
+  <script>
+    const KIND_COLOR = { phone: "#2f5f9e", treetop: "#2f7d4a", wearable: "#8a5a12" };
+    const COMPASS = ["north", "northeast", "east", "southeast", "south", "southwest", "west", "northwest"];
+
+    function esc(value) {
+      return String(value).replace(/[&<>"]/g, function (ch) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch];
+      });
+    }
+
+    function headingName(deg) {
+      if (deg == null || Number.isNaN(deg)) return "unknown";
+      return COMPASS[Math.floor(((deg + 22.5) % 360) / 45) % 8];
+    }
+
+    function render(picture) {
+      const omen = picture.omen;
+      const clock = document.getElementById("clock");
+      clock.dataset.urgency = omen.urgency || "none";
+      document.getElementById("community").textContent = picture.community_id || "Listener";
+      const commsLabel = picture.comms === "down" ? "Comms down — last cues on hand" : picture.comms === "idle" ? "Idle" : "Listeners on hand";
+      document.getElementById("comms").textContent = commsLabel + (picture.opened_by ? " · opened by " + picture.opened_by : "");
+      document.getElementById("urgency").textContent = omen.open ? omen.urgency.replace("_", " ") : "Window closed";
+      document.getElementById("seconds").textContent = omen.open ? String(omen.decision_seconds) : "—";
+      document.getElementById("decide").textContent = omen.open ? "to decide" : "no countdown";
+      document.getElementById("where").textContent = omen.where || "";
+      document.getElementById("guidance").textContent = omen.guidance || "";
+      document.getElementById("note").textContent = picture.comms_note || "";
+      const facts = [];
+      if (omen.time_to_closest_s != null) {
+        facts.push(["Closest approach", Math.round(omen.time_to_closest_s) + "s"]);
+      }
+      if (omen.time_uncertainty_s != null) {
+        facts.push(["Place error", Math.round(omen.time_uncertainty_s) + "s already removed"]);
+      }
+      if (omen.open) facts.push(["Time to get inside", Math.round(omen.lead_s) + "s already removed"]);
+      if (omen.speed_m_s != null) {
+        facts.push(["Movement", Math.round(omen.speed_m_s) + " m/s " + headingName(omen.heading_deg)]);
+      }
+      facts.push(["Systems", (picture.systems || []).join(", ") || "none yet"]);
+      document.getElementById("facts").innerHTML = facts.map(function (row) {
+        return "<dt>" + esc(row[0]) + "</dt><dd>" + esc(row[1]) + "</dd>";
+      }).join("");
+      document.getElementById("listeners").innerHTML = (picture.listeners || []).map(function (item) {
+        const kind = KIND_COLOR[item.kind] ? item.kind : "other";
+        const alt = item.alt_m != null ? " · " + item.alt_m + " m up" : "";
+        return "<li><span class=\"swatch " + kind + "\"></span><span>" + esc(item.node_id) + " · " + esc(item.kind) + esc(alt) + "</span></li>";
+      }).join("");
+      draw(picture);
+      document.getElementById("status").textContent = "";
+    }
+
+    function draw(picture) {
+      const width = 640;
+      const height = 520;
+      const points = [{ e: 0, n: 0 }];
+      (picture.listeners || []).forEach(function (item) { points.push({ e: item.east_m, n: item.north_m }); });
+      (picture.layers || []).forEach(function (layer) {
+        if (layer.type === "threat" || layer.type === "bearing") {
+          points.push({ e: layer.east_m, n: layer.north_m });
+          if (layer.uncertainty_m) {
+            points.push({ e: layer.east_m + layer.uncertainty_m, n: layer.north_m });
+            points.push({ e: layer.east_m - layer.uncertainty_m, n: layer.north_m });
+            points.push({ e: layer.east_m, n: layer.north_m + layer.uncertainty_m });
+            points.push({ e: layer.east_m, n: layer.north_m - layer.uncertainty_m });
+          }
+        }
+        if (layer.type === "bearing") {
+          const rad = layer.azimuth_deg * Math.PI / 180;
+          points.push({
+            e: layer.east_m + Math.sin(rad) * layer.length_m,
+            n: layer.north_m + Math.cos(rad) * layer.length_m,
+          });
+        }
+        if (layer.type === "track") {
+          layer.points.forEach(function (point) { points.push({ e: point.east_m, n: point.north_m }); });
+        }
+      });
+      let minE = Infinity, maxE = -Infinity, minN = Infinity, maxN = -Infinity;
+      points.forEach(function (point) {
+        minE = Math.min(minE, point.e); maxE = Math.max(maxE, point.e);
+        minN = Math.min(minN, point.n); maxN = Math.max(maxN, point.n);
+      });
+      const spanE = Math.max(160, maxE - minE);
+      const spanN = Math.max(160, maxN - minN);
+      const padE = spanE * 0.12;
+      const padN = spanN * 0.14;
+      minE -= padE; maxE += padE; minN -= padN; maxN += padN;
+      const scale = Math.min((width - 36) / (maxE - minE), (height - 36) / (maxN - minN));
+      const midE = (minE + maxE) / 2;
+      const midN = (minN + maxN) / 2;
+      function X(e) { return width / 2 + (e - midE) * scale; }
+      function Y(n) { return height / 2 - (n - midN) * scale; }
+      const parts = [];
+      const span = Math.max(maxE - minE, maxN - minN);
+      const step = span > 3000 ? 1000 : span > 1200 ? 500 : span > 400 ? 200 : 100;
+      const startE = Math.ceil(minE / step) * step;
+      const startN = Math.ceil(minN / step) * step;
+      for (let e = startE; e <= maxE; e += step) {
+        parts.push('<line x1="' + X(e) + '" y1="' + Y(maxN) + '" x2="' + X(e) + '" y2="' + Y(minN) + '" stroke="#d9cdb6" stroke-width="1"/>');
+      }
+      for (let n = startN; n <= maxN; n += step) {
+        parts.push('<line x1="' + X(minE) + '" y1="' + Y(n) + '" x2="' + X(maxE) + '" y2="' + Y(n) + '" stroke="#d9cdb6" stroke-width="1"/>');
+      }
+      parts.push('<polygon points="' + (width - 36) + ',28 ' + (width - 30) + ',48 ' + (width - 42) + ',48" fill="#1c1914"/>');
+      parts.push('<text x="' + (width - 36) + '" y="66" text-anchor="middle" font-size="13" font-family="ui-sans-serif, system-ui, sans-serif" fill="#1c1914">N</text>');
+      (picture.layers || []).forEach(function (layer) {
+        if (layer.type === "bearing") {
+          const rad = layer.azimuth_deg * Math.PI / 180;
+          const e2 = layer.east_m + Math.sin(rad) * layer.length_m;
+          const n2 = layer.north_m + Math.cos(rad) * layer.length_m;
+          parts.push('<line x1="' + X(layer.east_m) + '" y1="' + Y(layer.north_m) + '" x2="' + X(e2) + '" y2="' + Y(n2) + '" stroke="#8a5a12" stroke-dasharray="4 4" stroke-width="1.5"/>');
+        }
+      });
+      const track = (picture.layers || []).find(function (layer) { return layer.type === "track"; });
+      if (track && track.points.length) {
+        const solid = track.points.filter(function (point) { return !point.estimated; });
+        const estimated = track.points.filter(function (point) { return point.estimated; });
+        function path(points) {
+          return points.map(function (point, index) {
+            return (index ? "L" : "M") + X(point.east_m) + " " + Y(point.north_m);
+          }).join(" ");
+        }
+        if (solid.length) parts.push('<path d="' + path(solid) + '" fill="none" stroke="#8d2d24" stroke-width="2.5"/>');
+        if (estimated.length && solid.length) {
+          const bridge = [solid[solid.length - 1]].concat(estimated);
+          parts.push('<path d="' + path(bridge) + '" fill="none" stroke="#8d2d24" stroke-width="2.5" stroke-dasharray="6 5"/>');
+        }
+      }
+      const threat = (picture.layers || []).find(function (layer) { return layer.type === "threat"; });
+      if (threat) {
+        const radius = Math.max(6, threat.uncertainty_m * scale);
+        parts.push('<circle cx="' + X(threat.east_m) + '" cy="' + Y(threat.north_m) + '" r="' + radius + '" fill="#8d2d24" fill-opacity="0.13" stroke="#8d2d24" stroke-width="1.5"/>');
+        parts.push('<circle cx="' + X(threat.east_m) + '" cy="' + Y(threat.north_m) + '" r="5" fill="#8d2d24"/>');
+        parts.push('<text x="' + (X(threat.east_m) + 8) + '" y="' + (Y(threat.north_m) - 8) + '" font-size="13" font-family="ui-sans-serif, system-ui, sans-serif" fill="#8d2d24">contact</text>');
+      }
+      (picture.listeners || []).forEach(function (item) {
+        const color = KIND_COLOR[item.kind] || "#5c564c";
+        parts.push('<circle cx="' + X(item.east_m) + '" cy="' + Y(item.north_m) + '" r="6" fill="' + color + '" stroke="#efe6d4" stroke-width="1"/>');
+      });
+      parts.push('<rect x="' + (X(0) - 5) + '" y="' + (Y(0) - 5) + '" width="10" height="10" fill="#1c1914"/>');
+      parts.push('<text x="' + (X(0) + 8) + '" y="' + (Y(0) - 8) + '" font-size="12" font-family="ui-sans-serif, system-ui, sans-serif" fill="#1c1914">' + esc(picture.protected.label || "protected") + "</text>");
+      document.getElementById("plot").innerHTML = parts.join("");
+    }
+
+    function show(doc) {
+      const picture = doc && doc.system === "omen-decision-window" ? doc : OmenListener.buildPicture(doc);
+      render(picture);
+    }
+
+    function load(url, button) {
+      document.getElementById("fresh").setAttribute("aria-pressed", button === "fresh" ? "true" : "false");
+      document.getElementById("later").setAttribute("aria-pressed", button === "later" ? "true" : "false");
+      fetch(url).then(function (response) {
+        if (!response.ok) throw new Error("missing " + url);
+        return response.json();
+      }).then(show).catch(function () {
+        document.getElementById("status").textContent = "Could not read " + url + ". Use Open a JSON file, or serve this folder over http.";
+      });
+    }
+
+    document.getElementById("fresh").addEventListener("click", function () { load("state.json", "fresh"); });
+    document.getElementById("later").addEventListener("click", function () { load("state_later.json", "later"); });
+    document.getElementById("file").addEventListener("change", function (event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+      file.text().then(function (text) {
+        show(JSON.parse(text));
+        document.getElementById("fresh").setAttribute("aria-pressed", "false");
+        document.getElementById("later").setAttribute("aria-pressed", "false");
+      }).catch(function () {
+        document.getElementById("status").textContent = "That file is not listener JSON.";
+      });
+    });
+    const sample = new URLSearchParams(location.search).get("sample");
+    load(sample === "later" ? "state_later.json" : "state.json", sample === "later" ? "later" : "fresh");
+  </script>
+</body>
+</html>
