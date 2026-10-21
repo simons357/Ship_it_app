@@ -634,6 +634,41 @@
       commsNote = "No server required.";
     }
 
+    let lockT = null;
+    let sharedFix = false;
+    if (track) {
+      lockT = track.t;
+      sharedFix = true;
+    } else if (placed) {
+      lockT = placed.t;
+      sharedFix = true;
+    } else if (heardBy.length && newestT != null) {
+      lockT = newestT;
+    }
+    const lit = [];
+    for (let i = 0; i < listeners.length; i += 1) {
+      const item = listeners[i];
+      const coherent =
+        lockT != null && item.last_score >= MIN_SCORE && Math.abs(item.last_t - lockT) <= BIN_S;
+      item.coherent = coherent;
+      if (coherent) lit.push(item.node_id);
+    }
+    let coherenceState = "quiet";
+    let coherenceLabel = "Field quiet";
+    if (sharedFix && lit.length >= 2) {
+      coherenceState = "locked";
+      coherenceLabel = "Field locked";
+    } else if (lit.length) {
+      coherenceState = "partial";
+      coherenceLabel = "Field partial";
+    }
+    const coherence = {
+      state: coherenceState,
+      value: listeners.length ? lit.length / listeners.length : 0,
+      lit: lit,
+      label: coherenceLabel,
+    };
+
     const label = (state.protected && state.protected.label) || "protected point";
     const layers = [
       {
@@ -665,6 +700,7 @@
         lon: item.lon,
         east_m: item.east_m,
         north_m: item.north_m,
+        coherent: Boolean(item.coherent),
       };
       layers.push(layer);
     }
@@ -722,11 +758,54 @@
         clock_estimated: clockEstimated,
         guidance: guidanceText,
       },
+      coherence: coherence,
       contact: contact,
       listeners: listeners,
       systems: systems,
       layers: layers,
     };
+  }
+
+  const PRESETS = {
+    inside: "Inside",
+    hear: "I hear it",
+    quiet: "I don't hear it",
+    clear: "Clear here",
+  };
+
+  function smartText(picture) {
+    const omen = (picture && picture.omen) || {};
+    const field = (picture && picture.coherence && picture.coherence.state) || "quiet";
+    if (omen.open && omen.decision_seconds != null) {
+      return omen.decision_seconds + "s · " + (omen.where || "unplaced") + " · field " + field;
+    }
+    if (omen.where && omen.where !== "no contact") return omen.where + " · field " + field;
+    return "field " + field;
+  }
+
+  function makeFieldNote(nodeId, t, text, preset, noteId) {
+    let compact = String(text).replace(/\s+/g, " ").trim();
+    if (compact.length > 160) compact = compact.slice(0, 157) + "...";
+    return {
+      type: "omen.field_note",
+      id: noteId || preset + ":" + nodeId + ":" + Number(t).toFixed(3),
+      node_id: String(nodeId),
+      t: Number(t),
+      text: compact,
+      preset: preset,
+      status: "sent",
+    };
+  }
+
+  function smartFieldNote(picture, nodeId, t, noteId) {
+    return makeFieldNote(nodeId, t, smartText(picture), "smart", noteId);
+  }
+
+  function presetFieldNote(preset, nodeId, t, noteId) {
+    if (!Object.prototype.hasOwnProperty.call(PRESETS, preset)) {
+      throw new Error("unknown field note preset: " + preset);
+    }
+    return makeFieldNote(nodeId, t, PRESETS[preset], preset, noteId);
   }
 
   function observationKey(obs) {
@@ -800,6 +879,9 @@
     azimuthFromPair: azimuthFromPair,
     buildPicture: buildPicture,
     mergeBundles: mergeBundles,
+    smartFieldNote: smartFieldNote,
+    presetFieldNote: presetFieldNote,
+    PRESETS: PRESETS,
     MIN_SCORE: MIN_SCORE,
     OVERHEAD_M: OVERHEAD_M,
   };

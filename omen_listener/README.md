@@ -89,6 +89,14 @@ sound still show up, so the block can see who has a cue.
 A phone with two microphones can pass `array` (`left`, `right`, `spacing_m`,
 `heading_deg`) instead of a hand-aimed azimuth.
 
+## Coherence
+
+Listeners that report in the same second as the shared fix are the lit part of the field. Two or more of them, plus a fix, is `locked`. One cue with no shared fix is `partial`. Nothing heard is `quiet`. The overlay draws the locked field in neon yellow. Idle listeners stay dim, because a grey mark is easy to miss and is not the event.
+
+## Field notes
+
+Personal notes stay on this listener until you send them. `send_smart` writes one line from the picture you are looking at (`38s · 1.5 km north of the protected point · field locked`) and puts it on the bundle. Presets are `Inside`, `I hear it`, `I don't hear it`, and `Clear here`. `click_off` removes a note from this listener, including a copy you received.
+
 ## Overlay
 
 Open `omen_listener/overlay/index.html` from a local server (the page fetches

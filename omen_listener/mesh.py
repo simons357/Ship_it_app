@@ -66,6 +66,7 @@ def make_bundle(
     observations: list[dict[str, Any]],
     hop: int = 0,
     community_token: str | None = None,
+    field_notes: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     bundle: dict[str, Any] = {
         "type": "omen.bundle",
@@ -77,6 +78,8 @@ def make_bundle(
         "hop": int(hop),
         "observations": observations,
     }
+    if field_notes is not None:
+        bundle["field_notes"] = field_notes
     if community_token is not None:
         bundle["community_token"] = community_token
     return bundle

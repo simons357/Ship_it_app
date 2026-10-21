@@ -15,5 +15,6 @@ const out = {
     alertId: "alert-1",
     communityToken: "oak",
   }).length,
+  note: api.smartFieldNote(api.buildPicture(msg.picture), "phone-maple", 1005),
 };
 process.stdout.write(JSON.stringify(out));

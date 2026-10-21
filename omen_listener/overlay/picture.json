@@ -54,6 +54,17 @@
     "clock_estimated": false,
     "guidance": "You have 38s to decide. The contact is 1.5 km north of the protected point. Move inside, away from windows."
   },
+  "coherence": {
+    "state": "locked",
+    "value": 1.0,
+    "lit": [
+      "phone-maple",
+      "treetop-east",
+      "treetop-west",
+      "wearable-1"
+    ],
+    "label": "Field locked"
+  },
   "contact": {
     "visible": true,
     "placed": true,
@@ -80,7 +91,8 @@
       "north_m": -160.00000000030468,
       "last_score": 0.92,
       "last_t": 1005.0,
-      "alt_m": 1.5
+      "alt_m": 1.5,
+      "coherent": true
     },
     {
       "node_id": "treetop-east",
@@ -92,7 +104,8 @@
       "last_score": 0.92,
       "last_t": 1005.0,
       "alt_m": 14.0,
-      "azimuth_deg": 341.0954241573883
+      "azimuth_deg": 341.0954241573883,
+      "coherent": true
     },
     {
       "node_id": "treetop-west",
@@ -104,7 +117,8 @@
       "last_score": 0.92,
       "last_t": 1005.0,
       "alt_m": 14.0,
-      "azimuth_deg": 18.904575842611656
+      "azimuth_deg": 18.904575842611656,
+      "coherent": true
     },
     {
       "node_id": "wearable-1",
@@ -115,7 +129,8 @@
       "north_m": -90.00000000017138,
       "last_score": 0.92,
       "last_t": 1005.0,
-      "alt_m": 1.2
+      "alt_m": 1.2,
+      "coherent": true
     }
   ],
   "systems": [
@@ -139,7 +154,8 @@
       "lat": 39.99856270212001,
       "lon": -74.0,
       "east_m": 0.0,
-      "north_m": -160.00000000030468
+      "north_m": -160.00000000030468,
+      "coherent": true
     },
     {
       "type": "listener",
@@ -148,7 +164,8 @@
       "lat": 40.00035932447,
       "lon": -73.99413669022039,
       "east_m": 500.00000000031196,
-      "north_m": 40.00000000007617
+      "north_m": 40.00000000007617,
+      "coherent": true
     },
     {
       "type": "listener",
@@ -157,7 +174,8 @@
       "lat": 40.00035932447,
       "lon": -74.00586330977961,
       "east_m": -500.00000000031196,
-      "north_m": 40.00000000007617
+      "north_m": 40.00000000007617,
+      "coherent": true
     },
     {
       "type": "listener",
@@ -166,7 +184,8 @@
       "lat": 39.99919151994251,
       "lon": -73.99917913663086,
       "east_m": 69.99999999975283,
-      "north_m": -90.00000000017138
+      "north_m": -90.00000000017138,
+      "coherent": true
     },
     {
       "type": "track",

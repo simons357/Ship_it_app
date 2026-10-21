@@ -12,6 +12,7 @@ from typing import Any
 
 from omen_listener.detect import azimuth_from_pair, rotor_cue
 from omen_listener.mesh import make_bundle, merge_bundles, normalize_observation, observation_key
+from omen_listener.notes import preset_field_note, smart_field_note
 from omen_listener.picture import build_picture
 
 
@@ -43,6 +44,8 @@ class ListenerSession:
         self.opened_by: str | None = None
         self._listen_until: float | None = None
         self._observations: list[dict[str, Any]] = []
+        self._notes: dict[str, dict[str, Any]] = {}
+        self._off: set[str] = set()
 
     def listening(self, now: float) -> bool:
         return self._listen_until is not None and now <= self._listen_until
@@ -168,7 +171,29 @@ class ListenerSession:
             alert_id=self.alert_id,
             community_token=self.community_token,
         )
+        if str(bundle.get("community_id") or self.community_id) == self.community_id:
+            self._take_notes(bundle)
         return max(0, len(self._observations) - before)
+
+    def send_smart(self, node_id: str, now: float, note_id: str | None = None) -> dict[str, Any]:
+        """One line from the current picture, already marked sent."""
+        note = smart_field_note(self.picture(now), node_id=node_id, t=now, note_id=note_id)
+        self._remember(note)
+        return note
+
+    def send_preset(self, preset: str, node_id: str, t: float, note_id: str | None = None) -> dict[str, Any]:
+        note = preset_field_note(preset, node_id=node_id, t=t, note_id=note_id)
+        self._remember(note)
+        return note
+
+    def click_off(self, note_id: str) -> bool:
+        """Drop a personal note. A later copy of the same id stays off."""
+        self._off.add(str(note_id))
+        self._notes.pop(str(note_id), None)
+        return True
+
+    def field_notes(self) -> list[dict[str, Any]]:
+        return [self._notes[key] for key in sorted(self._notes) if key not in self._off]
 
     def export_bundle(self, origin_id: str, now: float) -> dict[str, Any]:
         return make_bundle(
@@ -178,6 +203,7 @@ class ListenerSession:
             sent_at=now,
             observations=list(self._observations),
             community_token=self.community_token,
+            field_notes=self.field_notes(),
         )
 
     def state(self, now: float) -> dict[str, Any]:
@@ -200,6 +226,34 @@ class ListenerSession:
 
     def picture(self, now: float) -> dict[str, Any]:
         return build_picture(self.state(now))
+
+    def _remember(self, note: dict[str, Any]) -> None:
+        self._off.discard(note["id"])
+        self._notes[note["id"]] = note
+
+    def _take_notes(self, bundle: dict[str, Any]) -> None:
+        for raw in bundle.get("field_notes") or []:
+            if not isinstance(raw, dict):
+                continue
+            note_id = str(raw.get("id") or "")
+            text = " ".join(str(raw.get("text") or "").split())
+            if not note_id or not text or note_id in self._off or note_id in self._notes:
+                continue
+            if len(text) > 160:
+                text = text[:157] + "..."
+            try:
+                t = float(raw.get("t") or 0.0)
+            except (TypeError, ValueError):
+                continue
+            self._notes[note_id] = {
+                "type": "omen.field_note",
+                "id": note_id,
+                "node_id": str(raw.get("node_id") or ""),
+                "t": t,
+                "text": text,
+                "preset": str(raw.get("preset") or "personal"),
+                "status": "received",
+            }
 
     def _local_bundle(self) -> dict[str, Any]:
         return {

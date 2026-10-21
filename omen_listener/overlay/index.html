@@ -9,13 +9,10 @@
       --ink: #1c1914;
       --paper: #efe6d4;
       --paper-deep: #e4d8c0;
-      --field: #1a1713;
-      --brass: #a56b24;
-      --move: #8a4e12;
-      --watch: #1f4d63;
-      --shelter: #8d2d24;
-      --muted: #6d6458;
-      --line: #cbbfa8;
+      --field: #07080a;
+      --live: #f6ff00;
+      --dim: #6a6a6a;
+      --idle: #2c2c2c;
     }
     * { box-sizing: border-box; }
     body {
@@ -32,7 +29,7 @@
       letter-spacing: 0.14em;
       text-transform: uppercase;
       font: 600 12px/1.2 ui-sans-serif, system-ui, sans-serif;
-      color: #d7b57a;
+      color: var(--live);
     }
     h1 { margin: 4px 0 0; font-size: 28px; font-weight: 600; }
     #comms {
@@ -67,47 +64,77 @@
       border-radius: 18px;
       padding: 18px;
     }
-    #clock { background: #262119; }
-    #clock[data-urgency="move"] { box-shadow: inset 0 0 0 1px #a56b24; }
-    #clock[data-urgency="watch"] { box-shadow: inset 0 0 0 1px #6ea0b5; }
-    #clock[data-urgency="shelter_now"] { box-shadow: inset 0 0 0 1px #c46a60; }
+    #clock { background: #101105; }
+    #clock[data-live="on"] { box-shadow: inset 0 0 0 1px var(--live), 0 0 28px rgba(246, 255, 0, 0.18); }
     .urgency {
       margin: 0;
       font: 600 12px/1 ui-sans-serif, system-ui, sans-serif;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #d7b57a;
+      color: var(--dim);
     }
+    #clock[data-live="on"] .urgency { color: var(--live); }
     .seconds {
       margin: 8px 0 0;
       font-variant-numeric: tabular-nums;
       font-size: 92px;
       line-height: 0.9;
       letter-spacing: -0.04em;
+      color: var(--dim);
     }
-    #clock[data-urgency="move"] .seconds { color: #f0c36a; }
-    #clock[data-urgency="watch"] .seconds { color: #b7d6e2; }
-    #clock[data-urgency="shelter_now"] .seconds { color: #f0b2aa; }
-    #clock[data-urgency="none"] .seconds { color: #d9d0c3; }
+    #clock[data-live="on"] .seconds {
+      color: var(--live);
+      text-shadow: 0 0 18px rgba(246, 255, 0, 0.85);
+    }
     .unit { font-size: 28px; margin-left: 4px; }
     .decide { margin: 0; color: #c8bfb0; font: 14px/1.3 ui-sans-serif, system-ui, sans-serif; }
-    #where { margin: 16px 0 0; font-size: 22px; }
-    #guidance { margin: 8px 0 0; color: #f4efe6; }
-    #note { margin: 10px 0 0; color: #b7ad9e; font: 13px/1.4 ui-sans-serif, system-ui, sans-serif; }
+    #where { margin: 16px 0 0; font-size: 22px; color: var(--dim); }
+    #where.live { color: var(--live); text-shadow: 0 0 12px rgba(246, 255, 0, 0.45); }
+    #guidance { margin: 8px 0 0; color: #f4f4f4; }
+    #note { margin: 10px 0 0; color: var(--dim); font: 13px/1.4 ui-sans-serif, system-ui, sans-serif; }
     dl { margin: 16px 0 0; display: grid; grid-template-columns: 140px 1fr; gap: 6px 10px; }
-    dt { color: #b7ad9e; font: 12px/1.3 ui-sans-serif, system-ui, sans-serif; }
-    dd { margin: 0; font: 14px/1.3 ui-sans-serif, system-ui, sans-serif; }
-    .board { background: var(--paper); color: var(--ink); }
-    svg { width: 100%; height: auto; display: block; background: var(--paper-deep); border-radius: 12px; }
-    .caption, .listeners { font: 13px/1.4 ui-sans-serif, system-ui, sans-serif; color: #4e463c; }
+    dt { color: var(--dim); font: 12px/1.3 ui-sans-serif, system-ui, sans-serif; }
+    dd { margin: 0; font: 14px/1.3 ui-sans-serif, system-ui, sans-serif; color: var(--dim); }
+    #notes { margin-top: 18px; padding-top: 14px; border-top: 1px solid #2a2a12; }
+    .notes-label {
+      margin: 0 0 10px;
+      font: 600 12px/1 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+    .notes-label.live { color: var(--live); }
+    #smart-note {
+      background: var(--live);
+      color: #111;
+      border-color: var(--live);
+      font-weight: 700;
+    }
+    .presets { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .presets button { border-color: var(--live); color: var(--live); }
+    #note-list { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 8px; }
+    #note-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      color: var(--live);
+      font: 14px/1.3 ui-sans-serif, system-ui, sans-serif;
+    }
+    #note-list li.empty { color: var(--dim); }
+    #note-list button { padding: 6px 10px; }
+    #note-status { margin: 8px 0 0; min-height: 1.2em; color: var(--live); font: 13px/1.3 ui-sans-serif, system-ui, sans-serif; }
+    .board { background: #07080a; color: #f4f4f4; }
+    svg { width: 100%; height: auto; display: block; background: #07080a; border-radius: 12px; }
+    .caption, .listeners { font: 13px/1.4 ui-sans-serif, system-ui, sans-serif; color: var(--dim); }
     .caption { margin: 10px 0 0; }
     .listeners { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 6px; }
     .listeners li { display: flex; gap: 8px; align-items: baseline; }
     .swatch { width: 9px; height: 9px; border-radius: 50%; display: inline-block; transform: translateY(1px); }
-    .swatch.phone { background: #2f5f9e; }
-    .swatch.treetop { background: #2f7d4a; }
-    .swatch.wearable { background: #8a5a12; }
-    .swatch.other { background: #5c564c; }
+    .listeners li.live { color: var(--live); }
+    .listeners li.idle { color: var(--dim); }
+    .swatch.live { background: var(--live); box-shadow: 0 0 8px var(--live); }
+    .swatch.idle { background: var(--dim); }
     #status { margin: 8px 0 0; color: #e0b4a8; font: 14px/1.4 ui-sans-serif, system-ui, sans-serif; }
     @media (max-width: 800px) {
       main { grid-template-columns: 1fr; }
@@ -139,17 +166,32 @@
       <p id="guidance"></p>
       <p id="note"></p>
       <dl id="facts"></dl>
+      <div id="notes">
+        <p class="notes-label" id="coherence-label">Field quiet</p>
+        <button type="button" id="smart-note">Send smart field note</button>
+        <div class="presets">
+          <button type="button" data-preset="inside">Inside</button>
+          <button type="button" data-preset="hear">I hear it</button>
+          <button type="button" data-preset="quiet">I don't hear it</button>
+          <button type="button" data-preset="clear">Clear here</button>
+        </div>
+        <ul id="note-list"></ul>
+        <p id="note-status" role="status"></p>
+      </div>
     </section>
     <section class="board">
-      <svg id="plot" viewBox="0 0 640 520" role="img" aria-label="Plot of listeners and the contact"></svg>
+      <svg id="plot" viewBox="0 0 640 520" role="img" aria-label="Coherence of the listener field"></svg>
       <p class="caption">North is up. Distances are meters from the protected point. The sheet is drawn on this device, with no map tiles, so it still works when comms are down.</p>
       <ul class="listeners" id="listeners"></ul>
     </section>
   </main>
   <script src="../portable/omen_listener.js"></script>
   <script>
-    const KIND_COLOR = { phone: "#2f5f9e", treetop: "#2f7d4a", wearable: "#8a5a12" };
     const COMPASS = ["north", "northeast", "east", "southeast", "south", "southwest", "west", "northwest"];
+    const NOTE_KEY = "omen.field_notes";
+    const LIVE = "#f6ff00";
+    const DIM = "#6a6a6a";
+    let currentPicture = null;
 
     function esc(value) {
       return String(value).replace(/[&<>"]/g, function (ch) {
@@ -162,19 +204,61 @@
       return COMPASS[Math.floor(((deg + 22.5) % 360) / 45) % 8];
     }
 
+    function readNotes() {
+      try {
+        const parsed = JSON.parse(localStorage.getItem(NOTE_KEY) || "[]");
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (err) {
+        return [];
+      }
+    }
+
+    function writeNotes(notes) {
+      localStorage.setItem(NOTE_KEY, JSON.stringify(notes));
+    }
+
+    function renderNotes() {
+      const notes = readNotes();
+      const list = document.getElementById("note-list");
+      if (!notes.length) {
+        list.innerHTML = '<li class="empty">No personal notes yet.</li>';
+        return;
+      }
+      list.innerHTML = notes.map(function (note) {
+        return '<li><span>' + esc(note.text) + '</span><button type="button" data-off="' + esc(note.id) + '">Click off</button></li>';
+      }).join("");
+    }
+
+    function pushNote(note) {
+      const notes = readNotes();
+      notes.unshift(note);
+      writeNotes(notes);
+      renderNotes();
+      document.getElementById("note-status").textContent = "Sent · on this listener's bundle";
+    }
+
     function render(picture) {
+      currentPicture = picture;
       const omen = picture.omen;
+      const coherence = picture.coherence || { state: "quiet", label: "Field quiet" };
+      const live = coherence.state !== "quiet" || omen.open;
       const clock = document.getElementById("clock");
       clock.dataset.urgency = omen.urgency || "none";
+      clock.dataset.live = live ? "on" : "off";
       document.getElementById("community").textContent = picture.community_id || "Listener";
       const commsLabel = picture.comms === "down" ? "Comms down — last cues on hand" : picture.comms === "idle" ? "Idle" : "Listeners on hand";
       document.getElementById("comms").textContent = commsLabel + (picture.opened_by ? " · opened by " + picture.opened_by : "");
-      document.getElementById("urgency").textContent = omen.open ? omen.urgency.replace("_", " ") : "Window closed";
+      document.getElementById("urgency").textContent = omen.open ? omen.urgency.replace("_", " ") : (coherence.label || "Window closed");
       document.getElementById("seconds").textContent = omen.open ? String(omen.decision_seconds) : "—";
       document.getElementById("decide").textContent = omen.open ? "to decide" : "no countdown";
-      document.getElementById("where").textContent = omen.where || "";
+      const where = document.getElementById("where");
+      where.textContent = omen.where || "";
+      where.className = omen.open || (picture.contact && picture.contact.placed) ? "live" : "";
       document.getElementById("guidance").textContent = omen.guidance || "";
       document.getElementById("note").textContent = picture.comms_note || "";
+      const coherenceLabel = document.getElementById("coherence-label");
+      coherenceLabel.textContent = coherence.label || "Field quiet";
+      coherenceLabel.className = "notes-label" + (coherence.state === "quiet" ? "" : " live");
       const facts = [];
       if (omen.time_to_closest_s != null) {
         facts.push(["Closest approach", Math.round(omen.time_to_closest_s) + "s"]);
@@ -191,11 +275,12 @@
         return "<dt>" + esc(row[0]) + "</dt><dd>" + esc(row[1]) + "</dd>";
       }).join("");
       document.getElementById("listeners").innerHTML = (picture.listeners || []).map(function (item) {
-        const kind = KIND_COLOR[item.kind] ? item.kind : "other";
+        const lit = item.coherent ? "live" : "idle";
         const alt = item.alt_m != null ? " · " + item.alt_m + " m up" : "";
-        return "<li><span class=\"swatch " + kind + "\"></span><span>" + esc(item.node_id) + " · " + esc(item.kind) + esc(alt) + "</span></li>";
+        return "<li class=\"" + lit + "\"><span class=\"swatch " + lit + "\"></span><span>" + esc(item.node_id) + " · " + esc(item.kind) + esc(alt) + "</span></li>";
       }).join("");
       draw(picture);
+      renderNotes();
       document.getElementById("status").textContent = "";
     }
 
@@ -241,24 +326,34 @@
       function X(e) { return width / 2 + (e - midE) * scale; }
       function Y(n) { return height / 2 - (n - midN) * scale; }
       const parts = [];
+      parts.push('<defs><filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>');
       const span = Math.max(maxE - minE, maxN - minN);
       const step = span > 3000 ? 1000 : span > 1200 ? 500 : span > 400 ? 200 : 100;
       const startE = Math.ceil(minE / step) * step;
       const startN = Math.ceil(minN / step) * step;
       for (let e = startE; e <= maxE; e += step) {
-        parts.push('<line x1="' + X(e) + '" y1="' + Y(maxN) + '" x2="' + X(e) + '" y2="' + Y(minN) + '" stroke="#d9cdb6" stroke-width="1"/>');
+        parts.push('<line x1="' + X(e) + '" y1="' + Y(maxN) + '" x2="' + X(e) + '" y2="' + Y(minN) + '" stroke="#2a2a2a" stroke-width="1"/>');
       }
       for (let n = startN; n <= maxN; n += step) {
-        parts.push('<line x1="' + X(minE) + '" y1="' + Y(n) + '" x2="' + X(maxE) + '" y2="' + Y(n) + '" stroke="#d9cdb6" stroke-width="1"/>');
+        parts.push('<line x1="' + X(minE) + '" y1="' + Y(n) + '" x2="' + X(maxE) + '" y2="' + Y(n) + '" stroke="#2a2a2a" stroke-width="1"/>');
       }
-      parts.push('<polygon points="' + (width - 36) + ',28 ' + (width - 30) + ',48 ' + (width - 42) + ',48" fill="#1c1914"/>');
-      parts.push('<text x="' + (width - 36) + '" y="66" text-anchor="middle" font-size="13" font-family="ui-sans-serif, system-ui, sans-serif" fill="#1c1914">N</text>');
+      const coherence = picture.coherence || { state: "quiet", label: "Field quiet" };
+      const lit = coherence.state !== "quiet";
+      parts.push('<text x="18" y="28" font-size="13" font-family="ui-sans-serif, system-ui, sans-serif" fill="' + (lit ? LIVE : DIM) + '" font-weight="700">' + esc(coherence.label || "") + "</text>");
+      parts.push('<polygon points="' + (width - 36) + ',28 ' + (width - 30) + ',48 ' + (width - 42) + ',48" fill="' + DIM + '"/>');
+      parts.push('<text x="' + (width - 36) + '" y="66" text-anchor="middle" font-size="13" font-family="ui-sans-serif, system-ui, sans-serif" fill="' + DIM + '">N</text>');
+      const coherent = (picture.listeners || []).filter(function (item) { return item.coherent; });
+      for (let i = 0; i < coherent.length; i += 1) {
+        for (let j = i + 1; j < coherent.length; j += 1) {
+          parts.push('<line x1="' + X(coherent[i].east_m) + '" y1="' + Y(coherent[i].north_m) + '" x2="' + X(coherent[j].east_m) + '" y2="' + Y(coherent[j].north_m) + '" stroke="' + LIVE + '" stroke-opacity="0.85" stroke-width="1.6" filter="url(#glow)"/>');
+        }
+      }
       (picture.layers || []).forEach(function (layer) {
         if (layer.type === "bearing") {
           const rad = layer.azimuth_deg * Math.PI / 180;
           const e2 = layer.east_m + Math.sin(rad) * layer.length_m;
           const n2 = layer.north_m + Math.cos(rad) * layer.length_m;
-          parts.push('<line x1="' + X(layer.east_m) + '" y1="' + Y(layer.north_m) + '" x2="' + X(e2) + '" y2="' + Y(n2) + '" stroke="#8a5a12" stroke-dasharray="4 4" stroke-width="1.5"/>');
+          parts.push('<line x1="' + X(layer.east_m) + '" y1="' + Y(layer.north_m) + '" x2="' + X(e2) + '" y2="' + Y(n2) + '" stroke="' + LIVE + '" stroke-dasharray="4 4" stroke-width="1.5"/>');
         }
       });
       const track = (picture.layers || []).find(function (layer) { return layer.type === "track"; });
@@ -270,25 +365,30 @@
             return (index ? "L" : "M") + X(point.east_m) + " " + Y(point.north_m);
           }).join(" ");
         }
-        if (solid.length) parts.push('<path d="' + path(solid) + '" fill="none" stroke="#8d2d24" stroke-width="2.5"/>');
+        if (solid.length) parts.push('<path d="' + path(solid) + '" fill="none" stroke="' + LIVE + '" stroke-width="2.5" filter="url(#glow)"/>');
         if (estimated.length && solid.length) {
           const bridge = [solid[solid.length - 1]].concat(estimated);
-          parts.push('<path d="' + path(bridge) + '" fill="none" stroke="#8d2d24" stroke-width="2.5" stroke-dasharray="6 5"/>');
+          parts.push('<path d="' + path(bridge) + '" fill="none" stroke="' + LIVE + '" stroke-width="2.5" stroke-dasharray="6 5" filter="url(#glow)"/>');
         }
       }
       const threat = (picture.layers || []).find(function (layer) { return layer.type === "threat"; });
       if (threat) {
-        const radius = Math.max(6, threat.uncertainty_m * scale);
-        parts.push('<circle cx="' + X(threat.east_m) + '" cy="' + Y(threat.north_m) + '" r="' + radius + '" fill="#8d2d24" fill-opacity="0.13" stroke="#8d2d24" stroke-width="1.5"/>');
-        parts.push('<circle cx="' + X(threat.east_m) + '" cy="' + Y(threat.north_m) + '" r="5" fill="#8d2d24"/>');
-        parts.push('<text x="' + (X(threat.east_m) + 8) + '" y="' + (Y(threat.north_m) - 8) + '" font-size="13" font-family="ui-sans-serif, system-ui, sans-serif" fill="#8d2d24">contact</text>');
+        const radius = Math.max(8, threat.uncertainty_m * scale);
+        parts.push('<circle cx="' + X(threat.east_m) + '" cy="' + Y(threat.north_m) + '" r="' + radius + '" fill="' + LIVE + '" fill-opacity="0.16" stroke="' + LIVE + '" stroke-width="1.5"/>');
+        parts.push('<circle cx="' + X(threat.east_m) + '" cy="' + Y(threat.north_m) + '" r="6" fill="' + LIVE + '" filter="url(#glow)"/>');
+        parts.push('<text x="' + (X(threat.east_m) + 10) + '" y="' + (Y(threat.north_m) - 10) + '" font-size="13" font-family="ui-sans-serif, system-ui, sans-serif" fill="' + LIVE + '" font-weight="700">contact</text>');
       }
       (picture.listeners || []).forEach(function (item) {
-        const color = KIND_COLOR[item.kind] || "#5c564c";
-        parts.push('<circle cx="' + X(item.east_m) + '" cy="' + Y(item.north_m) + '" r="6" fill="' + color + '" stroke="#efe6d4" stroke-width="1"/>');
+        if (item.coherent) {
+          parts.push('<circle cx="' + X(item.east_m) + '" cy="' + Y(item.north_m) + '" r="11" fill="' + LIVE + '" fill-opacity="0.28"/>');
+          parts.push('<circle cx="' + X(item.east_m) + '" cy="' + Y(item.north_m) + '" r="5.5" fill="' + LIVE + '" filter="url(#glow)"/>');
+        } else {
+          parts.push('<circle cx="' + X(item.east_m) + '" cy="' + Y(item.north_m) + '" r="4" fill="' + DIM + '"/>');
+        }
       });
-      parts.push('<rect x="' + (X(0) - 5) + '" y="' + (Y(0) - 5) + '" width="10" height="10" fill="#1c1914"/>');
-      parts.push('<text x="' + (X(0) + 8) + '" y="' + (Y(0) - 8) + '" font-size="12" font-family="ui-sans-serif, system-ui, sans-serif" fill="#1c1914">' + esc(picture.protected.label || "protected") + "</text>");
+      const home = lit || (picture.omen && picture.omen.open) ? LIVE : DIM;
+      parts.push('<rect x="' + (X(0) - 5) + '" y="' + (Y(0) - 5) + '" width="10" height="10" fill="' + home + '"/>');
+      parts.push('<text x="' + (X(0) + 8) + '" y="' + (Y(0) - 8) + '" font-size="12" font-family="ui-sans-serif, system-ui, sans-serif" fill="' + home + '">' + esc(picture.protected.label || "protected") + "</text>");
       document.getElementById("plot").innerHTML = parts.join("");
     }
 
@@ -307,6 +407,27 @@
         document.getElementById("status").textContent = "Could not read " + url + ". Use Open a JSON file, or serve this folder over http.";
       });
     }
+
+    document.getElementById("smart-note").addEventListener("click", function () {
+      if (!currentPicture || !window.OmenListener) return;
+      pushNote(OmenListener.smartFieldNote(currentPicture, "this-listener", currentPicture.generated_at, "smart:this-listener:" + Date.now()));
+    });
+    document.querySelectorAll("[data-preset]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        if (!currentPicture || !window.OmenListener) return;
+        const preset = button.getAttribute("data-preset");
+        pushNote(OmenListener.presetFieldNote(preset, "this-listener", currentPicture.generated_at, preset + ":this-listener:" + Date.now()));
+      });
+    });
+    document.getElementById("note-list").addEventListener("click", function (event) {
+      const button = event.target.closest("[data-off]");
+      if (!button) return;
+      const id = button.getAttribute("data-off");
+      writeNotes(readNotes().filter(function (note) { return note.id !== id; }));
+      renderNotes();
+      document.getElementById("note-status").textContent = "Clicked off";
+    });
+    renderNotes();
 
     document.getElementById("fresh").addEventListener("click", function () { load("state.json", "fresh"); });
     document.getElementById("later").addEventListener("click", function () { load("state_later.json", "later"); });

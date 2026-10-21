@@ -240,6 +240,51 @@ def _guidance(reason: str, urgency: str, decision_seconds: int | None, where: st
     return text
 
 
+def _mark_coherence(
+    listeners: list[dict[str, Any]],
+    track: dict[str, Any] | None,
+    placed: dict[str, Any] | None,
+    newest_t: float | None,
+    heard: bool,
+) -> dict[str, Any]:
+    """Light listeners that reported in the same second as the shared fix.
+
+    Locked means at least two listeners agree on that second and a fix exists.
+    Partial means somebody heard it, but the field is not yet one picture.
+    Quiet means nothing in this window is happening.
+    """
+    shared = False
+    lock_t: float | None
+    if track is not None:
+        lock_t = float(track["t"])
+        shared = True
+    elif placed is not None:
+        lock_t = float(placed["t"])
+        shared = True
+    elif heard and newest_t is not None:
+        lock_t = float(newest_t)
+    else:
+        lock_t = None
+    lit: list[str] = []
+    for item in listeners:
+        coherent = (
+            lock_t is not None
+            and float(item["last_score"]) >= MIN_SCORE
+            and abs(float(item["last_t"]) - lock_t) <= BIN_S
+        )
+        item["coherent"] = coherent
+        if coherent:
+            lit.append(str(item["node_id"]))
+    if shared and len(lit) >= 2:
+        state, label = "locked", "Field locked"
+    elif lit:
+        state, label = "partial", "Field partial"
+    else:
+        state, label = "quiet", "Field quiet"
+    value = (len(lit) / len(listeners)) if listeners else 0.0
+    return {"state": state, "value": value, "lit": lit, "label": label}
+
+
 def _point(east: float, north: float, origin_lat: float, origin_lon: float) -> dict[str, float]:
     lat, lon = to_geo(east, north, origin_lat, origin_lon)
     return {
@@ -409,6 +454,7 @@ def build_picture(state: dict[str, Any]) -> dict[str, Any]:
     if threat is None and recent:
         where = "heard, not placed yet"
 
+    coherence = _mark_coherence(listeners, track, placed, newest_t, bool(heard_by))
     guidance = _guidance(reason, urgency, decision_seconds, where)
     if comms == "down" and (threat is not None or recent):
         comms_note = "No new cue. Showing the last listeners on hand. No server required."
@@ -436,6 +482,7 @@ def build_picture(state: dict[str, Any]) -> dict[str, Any]:
             "lon": item["lon"],
             "east_m": item["east_m"],
             "north_m": item["north_m"],
+            "coherent": bool(item.get("coherent")),
         }
         if item.get("azimuth_deg") is not None and threat is None:
             layer_bearing = {
@@ -514,6 +561,7 @@ def build_picture(state: dict[str, Any]) -> dict[str, Any]:
             "clock_estimated": clock_estimated,
             "guidance": guidance,
         },
+        "coherence": coherence,
         "contact": contact,
         "listeners": listeners,
         "systems": systems,

@@ -14,6 +14,7 @@ from pathlib import Path
 
 from omen_listener.demo import demo_picture, demo_state
 from omen_listener.detect import azimuth_from_pair, rotor_cue
+from omen_listener.notes import smart_field_note
 from omen_listener.geo import compass_deg, to_geo
 from omen_listener.picture import SHELTER_WORDS, build_picture
 from omen_listener.session import GeoPoint, ListenerSession
@@ -364,6 +365,67 @@ class TestSessionAndMesh(unittest.TestCase):
         self.assertEqual(later["omen"]["decision_seconds"], demo_picture(1020.0)["omen"]["decision_seconds"])
 
 
+class TestCoherenceAndNotes(unittest.TestCase):
+    def test_tree_line_locks_the_field(self):
+        pic = demo_picture(1005.0)
+        self.assertEqual(pic["coherence"]["state"], "locked")
+        self.assertEqual(pic["coherence"]["label"], "Field locked")
+        self.assertEqual(pic["coherence"]["lit"], [item["node_id"] for item in pic["listeners"]])
+        self.assertTrue(all(item["coherent"] for item in pic["listeners"]))
+        self.assertEqual(pic["coherence"]["value"], 1.0)
+
+    def test_quiet_field_stays_dark(self):
+        pic = picture_from([], 1005.0)
+        self.assertEqual(pic["coherence"]["state"], "quiet")
+        self.assertEqual(pic["coherence"]["lit"], [])
+        self.assertEqual(pic["coherence"]["value"], 0.0)
+
+    def test_one_listener_is_partial(self):
+        heard = [cue("only", "phone", 0.0, 0.0, 1000.0, (0.0, 400.0), 8.0)]
+        pic = picture_from(heard, 1000.0)
+        self.assertEqual(pic["coherence"]["state"], "partial")
+        self.assertEqual(pic["coherence"]["lit"], ["only"])
+        self.assertTrue(pic["listeners"][0]["coherent"])
+
+    def test_stale_listener_is_not_lit(self):
+        late = cue("late", "phone", 0.0, -100.0, 980.0, (0.0, 200.0), 8.0)
+        late["azimuth_deg"] = None
+        pic = picture_from(track_pair() + [late], 1005.0)
+        self.assertEqual(pic["coherence"]["state"], "locked")
+        self.assertIn("west", pic["coherence"]["lit"])
+        self.assertNotIn("late", pic["coherence"]["lit"])
+        stale = next(item for item in pic["listeners"] if item["node_id"] == "late")
+        self.assertFalse(stale["coherent"])
+
+    def test_smart_note_sends_in_one_line_and_clicks_off(self):
+        session = ListenerSession("north-oak", GeoPoint(40.0, -74.0), community_token="oak")
+        picture = demo_picture(1005.0)
+        expected = smart_field_note(picture, node_id="phone-maple", t=1005.0)
+        self.assertEqual(
+            expected["text"],
+            f"{picture['omen']['decision_seconds']}s · {picture['omen']['where']} · field locked",
+        )
+        self.assertNotIn("\n", expected["text"])
+        note = session.send_smart("phone-maple", 1005.0)
+        self.assertEqual(note["status"], "sent")
+        self.assertEqual(note["text"], "field quiet")
+        preset = session.send_preset("inside", "phone-maple", 1004.0)
+        self.assertEqual(preset["text"], "Inside")
+        exported = session.export_bundle("phone-maple", 1005.0)
+        self.assertEqual(len(exported["field_notes"]), 2)
+        other = ListenerSession("north-oak", GeoPoint(40.0, -74.0), community_token="oak")
+        other.ingest_bundle(exported)
+        self.assertEqual([item["text"] for item in other.field_notes()], ["Inside", note["text"]])
+        self.assertTrue(all(item["status"] == "received" for item in other.field_notes()))
+        other.click_off(note["id"])
+        other.ingest_bundle(exported)
+        self.assertEqual([item["text"] for item in other.field_notes()], ["Inside"])
+        session.click_off(note["id"])
+        session.click_off(preset["id"])
+        self.assertEqual(session.field_notes(), [])
+        self.assertEqual(session.export_bundle("phone-maple", 1005.0)["field_notes"], [])
+
+
 class TestJavaScriptPort(unittest.TestCase):
     def test_node_port_matches_python(self):
         fresh = demo_picture(1005.0)
@@ -428,6 +490,9 @@ class TestJavaScriptPort(unittest.TestCase):
         self.assertTrue(out["cue"]["detected"])
         self.assertEqual(out["cue"]["fundamentalHz"], 140.0)
         self.assertEqual(out["merged"], 1)
+        self.assertEqual(out["picture"]["coherence"]["state"], fresh["coherence"]["state"])
+        self.assertEqual(out["picture"]["coherence"]["lit"], fresh["coherence"]["lit"])
+        self.assertEqual(out["note"]["text"], smart_field_note(fresh, node_id="phone-maple", t=1005.0)["text"])
 
 
 if __name__ == "__main__":
