@@ -7,7 +7,7 @@ import json
 import sys
 from pathlib import Path
 
-from omen_listener.demo import demo_picture, demo_state
+from omen_listener.demo import demo_close_picture, demo_close_state, demo_picture, demo_state
 from omen_listener.picture import build_picture
 
 
@@ -43,6 +43,8 @@ def main(argv: list[str] | None = None) -> int:
         (out / "state_later.json").write_text(json.dumps(later_state, indent=2) + "\n", encoding="utf-8")
         (out / "picture.json").write_text(json.dumps(demo_picture(1005.0), indent=2) + "\n", encoding="utf-8")
         (out / "picture_later.json").write_text(json.dumps(demo_picture(1020.0), indent=2) + "\n", encoding="utf-8")
+        (out / "state_close.json").write_text(json.dumps(demo_close_state(), indent=2) + "\n", encoding="utf-8")
+        (out / "picture_close.json").write_text(json.dumps(demo_close_picture(), indent=2) + "\n", encoding="utf-8")
         return 0
     return 2
 

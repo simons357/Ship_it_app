@@ -12,11 +12,11 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from omen_listener.demo import demo_picture, demo_state
+from omen_listener.demo import demo_close_picture, demo_close_state, demo_picture, demo_state
 from omen_listener.detect import azimuth_from_pair, rotor_cue
 from omen_listener.notes import smart_field_note
 from omen_listener.geo import compass_deg, to_geo
-from omen_listener.picture import SHELTER_WORDS, build_picture
+from omen_listener.picture import PLATE_RANGE_M, PLATE_RMSE_M, SHELTER_WORDS, build_picture
 from omen_listener.session import GeoPoint, ListenerSession
 
 
@@ -230,8 +230,9 @@ class TestWindow(unittest.TestCase):
             demo_picture(1005.0),
             demo_picture(1020.0),
         ]
+        pictures.append(demo_close_picture())
         for pic in pictures:
-            text = pic["omen"]["guidance"].lower()
+            text = (pic["omen"]["guidance"] + " " + pic["rmse"]["label"]).lower()
             for banned in SHELTER_WORDS:
                 self.assertNotIn(banned, text)
 
@@ -426,6 +427,51 @@ class TestCoherenceAndNotes(unittest.TestCase):
         self.assertEqual(session.export_bundle("phone-maple", 1005.0)["field_notes"], [])
 
 
+class TestRmse(unittest.TestCase):
+    def test_far_track_keeps_the_shelter_floor_and_skips_a_plate(self):
+        pic = demo_picture(1005.0)
+        rmse = pic["rmse"]
+        self.assertFalse(rmse["try_plate"])
+        self.assertFalse(rmse["close"])
+        self.assertGreater(rmse["rmse_m"], PLATE_RANGE_M)
+        shown = int(math.floor(rmse["rmse_m"] + 0.5))
+        self.assertEqual(rmse["label"], f"RMSE {shown} m")
+        self.assertAlmostEqual(rmse["rmse_m"], pic["omen"]["threat"]["uncertainty_m"], delta=1e-6)
+        self.assertEqual(rmse["samples"], 2)
+        self.assertIn(rmse["nearest_node_id"], ("treetop-east", "treetop-west"))
+
+    def test_close_contact_hands_a_plate_patch(self):
+        pic = demo_close_picture()
+        rmse = pic["rmse"]
+        self.assertTrue(rmse["close"])
+        self.assertTrue(rmse["try_plate"])
+        self.assertLessEqual(rmse["rmse_m"], PLATE_RMSE_M)
+        self.assertLessEqual(rmse["range_m"], PLATE_RANGE_M)
+        self.assertGreater(pic["omen"]["threat"]["uncertainty_m"], rmse["rmse_m"] + 1)
+        self.assertEqual(pic["omen"]["threat"]["uncertainty_m"], 20.0)
+        self.assertIn("plate", rmse["label"])
+        self.assertNotIn("\n", rmse["label"])
+        note = smart_field_note(pic, node_id="curb-west", t=2000.0)
+        self.assertEqual(note["text"], f"{pic['omen']['where']} · field locked · {rmse['label']}")
+        self.assertNotIn("\n", note["text"])
+
+    def test_close_but_loose_does_not_ask_for_a_plate(self):
+        west = cue("curb-west", "phone", -10.0, 0.0, 2000.0, (0.0, 28.0), 40.0)
+        east = cue("curb-east", "phone", 10.0, 0.0, 2000.0, (0.0, 28.0), 40.0)
+        pic = picture_from([west, east], 2000.0)
+        rmse = pic["rmse"]
+        self.assertTrue(rmse["close"])
+        self.assertFalse(rmse["try_plate"])
+        self.assertGreater(rmse["rmse_m"], PLATE_RMSE_M)
+        self.assertNotIn("plate", rmse["label"])
+
+    def test_no_fix_has_no_rmse(self):
+        pic = picture_from([cue("only", "phone", 0.0, 0.0, 1000.0, (0.0, 40.0), 8.0)], 1000.0)
+        self.assertEqual(pic["rmse"]["label"], "No RMSE")
+        self.assertIsNone(pic["rmse"]["rmse_m"])
+        self.assertFalse(pic["rmse"]["try_plate"])
+
+
 class TestJavaScriptPort(unittest.TestCase):
     def test_node_port_matches_python(self):
         fresh = demo_picture(1005.0)
@@ -434,6 +480,7 @@ class TestJavaScriptPort(unittest.TestCase):
         payload = {
             "picture": demo_state(1005.0),
             "later": demo_state(1020.0),
+            "close": demo_close_state(),
             "samples": samples,
             "sampleRate": 16000,
             "bundles": [
@@ -493,6 +540,12 @@ class TestJavaScriptPort(unittest.TestCase):
         self.assertEqual(out["picture"]["coherence"]["state"], fresh["coherence"]["state"])
         self.assertEqual(out["picture"]["coherence"]["lit"], fresh["coherence"]["lit"])
         self.assertEqual(out["note"]["text"], smart_field_note(fresh, node_id="phone-maple", t=1005.0)["text"])
+        close = demo_close_picture()
+        self.assertEqual(out["close"]["rmse"]["label"], close["rmse"]["label"])
+        self.assertEqual(out["close"]["rmse"]["try_plate"], True)
+        self.assertAlmostEqual(out["close"]["rmse"]["rmse_m"], close["rmse"]["rmse_m"], delta=1e-6)
+        self.assertAlmostEqual(out["picture"]["rmse"]["rmse_m"], fresh["rmse"]["rmse_m"], delta=1e-6)
+        self.assertEqual(out["picture"]["rmse"]["try_plate"], False)
 
 
 if __name__ == "__main__":

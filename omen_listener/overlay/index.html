@@ -90,6 +90,14 @@
     .decide { margin: 0; color: #c8bfb0; font: 14px/1.3 ui-sans-serif, system-ui, sans-serif; }
     #where { margin: 16px 0 0; font-size: 22px; color: var(--dim); }
     #where.live { color: var(--live); text-shadow: 0 0 12px rgba(246, 255, 0, 0.45); }
+    #rmse {
+      margin: 8px 0 0;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      color: var(--dim);
+    }
+    #rmse.live { color: var(--live); text-shadow: 0 0 14px rgba(246, 255, 0, 0.8); }
     #guidance { margin: 8px 0 0; color: #f4f4f4; }
     #note { margin: 10px 0 0; color: var(--dim); font: 13px/1.4 ui-sans-serif, system-ui, sans-serif; }
     dl { margin: 16px 0 0; display: grid; grid-template-columns: 140px 1fr; gap: 6px 10px; }
@@ -153,6 +161,7 @@
   <div class="toolbar">
     <button type="button" id="fresh" aria-pressed="true">Fresh track</button>
     <button type="button" id="later" aria-pressed="false">15s later, comms down</button>
+    <button type="button" id="close" aria-pressed="false">Close contact</button>
     <label class="file">Open a JSON file
       <input id="file" type="file" accept="application/json,.json">
     </label>
@@ -163,6 +172,7 @@
       <p class="seconds"><span id="seconds">—</span><span class="unit">s</span></p>
       <p class="decide" id="decide">to decide</p>
       <p id="where"></p>
+      <p id="rmse">No RMSE</p>
       <p id="guidance"></p>
       <p id="note"></p>
       <dl id="facts"></dl>
@@ -254,6 +264,10 @@
       const where = document.getElementById("where");
       where.textContent = omen.where || "";
       where.className = omen.open || (picture.contact && picture.contact.placed) ? "live" : "";
+      const rmse = picture.rmse || { label: "No RMSE" };
+      const rmseEl = document.getElementById("rmse");
+      rmseEl.textContent = rmse.label || "No RMSE";
+      rmseEl.className = rmse.rmse_m == null ? "" : "live";
       document.getElementById("guidance").textContent = omen.guidance || "";
       document.getElementById("note").textContent = picture.comms_note || "";
       const coherenceLabel = document.getElementById("coherence-label");
@@ -373,10 +387,18 @@
       }
       const threat = (picture.layers || []).find(function (layer) { return layer.type === "threat"; });
       if (threat) {
+        const rmse = picture.rmse || {};
+        const tighter = rmse.rmse_m != null && rmse.rmse_m + 1 < threat.uncertainty_m;
+        const ring = tighter ? DIM : LIVE;
         const radius = Math.max(8, threat.uncertainty_m * scale);
-        parts.push('<circle cx="' + X(threat.east_m) + '" cy="' + Y(threat.north_m) + '" r="' + radius + '" fill="' + LIVE + '" fill-opacity="0.16" stroke="' + LIVE + '" stroke-width="1.5"/>');
+        parts.push('<circle cx="' + X(threat.east_m) + '" cy="' + Y(threat.north_m) + '" r="' + radius + '" fill="' + ring + '" fill-opacity="0.12" stroke="' + ring + '" stroke-width="1.5"/>');
+        if (tighter) {
+          const patch = Math.max(5, rmse.rmse_m * scale);
+          parts.push('<circle cx="' + X(threat.east_m) + '" cy="' + Y(threat.north_m) + '" r="' + patch + '" fill="' + LIVE + '" fill-opacity="0.28" stroke="' + LIVE + '" stroke-width="2" filter="url(#glow)"/>');
+        }
         parts.push('<circle cx="' + X(threat.east_m) + '" cy="' + Y(threat.north_m) + '" r="6" fill="' + LIVE + '" filter="url(#glow)"/>');
-        parts.push('<text x="' + (X(threat.east_m) + 10) + '" y="' + (Y(threat.north_m) - 10) + '" font-size="13" font-family="ui-sans-serif, system-ui, sans-serif" fill="' + LIVE + '" font-weight="700">contact</text>');
+        const tag = rmse.try_plate ? "plate" : "contact";
+        parts.push('<text x="' + (X(threat.east_m) + 10) + '" y="' + (Y(threat.north_m) - 10) + '" font-size="13" font-family="ui-sans-serif, system-ui, sans-serif" fill="' + LIVE + '" font-weight="700">' + tag + "</text>");
       }
       (picture.listeners || []).forEach(function (item) {
         if (item.coherent) {
@@ -398,8 +420,9 @@
     }
 
     function load(url, button) {
-      document.getElementById("fresh").setAttribute("aria-pressed", button === "fresh" ? "true" : "false");
-      document.getElementById("later").setAttribute("aria-pressed", button === "later" ? "true" : "false");
+      ["fresh", "later", "close"].forEach(function (id) {
+        document.getElementById(id).setAttribute("aria-pressed", id === button ? "true" : "false");
+      });
       fetch(url).then(function (response) {
         if (!response.ok) throw new Error("missing " + url);
         return response.json();
@@ -431,19 +454,22 @@
 
     document.getElementById("fresh").addEventListener("click", function () { load("state.json", "fresh"); });
     document.getElementById("later").addEventListener("click", function () { load("state_later.json", "later"); });
+    document.getElementById("close").addEventListener("click", function () { load("state_close.json", "close"); });
     document.getElementById("file").addEventListener("change", function (event) {
       const file = event.target.files && event.target.files[0];
       if (!file) return;
       file.text().then(function (text) {
         show(JSON.parse(text));
-        document.getElementById("fresh").setAttribute("aria-pressed", "false");
-        document.getElementById("later").setAttribute("aria-pressed", "false");
+        ["fresh", "later", "close"].forEach(function (id) {
+          document.getElementById(id).setAttribute("aria-pressed", "false");
+        });
       }).catch(function () {
         document.getElementById("status").textContent = "That file is not listener JSON.";
       });
     });
     const sample = new URLSearchParams(location.search).get("sample");
-    load(sample === "later" ? "state_later.json" : "state.json", sample === "later" ? "later" : "fresh");
+    const sampleUrl = sample === "later" ? "state_later.json" : sample === "close" ? "state_close.json" : "state.json";
+    load(sampleUrl, sample === "later" ? "later" : sample === "close" ? "close" : "fresh");
   </script>
 </body>
 </html>

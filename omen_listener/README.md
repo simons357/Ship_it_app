@@ -93,15 +93,24 @@ A phone with two microphones can pass `array` (`left`, `right`, `spacing_m`,
 
 Listeners that report in the same second as the shared fix are the lit part of the field. Two or more of them, plus a fix, is `locked`. One cue with no shared fix is `partial`. Nothing heard is `quiet`. The overlay draws the locked field in neon yellow. Idle listeners stay dim, because a grey mark is easy to miss and is not the event.
 
+## RMSE
+
+The shelter circle never draws smaller than 20 m. That floor is right for a decision to go inside, and too coarse for a plate. RMSE is the same crossing with the floor left off: the root-mean-square miss of the bearings, in meters.
+
+`picture["rmse"]` is the patch your plate software already knows how to read. `try_plate` is true when the contact is within 40 m of an aiming listener and the RMSE is 12 m or less. The label is one line, for example `RMSE 6 m · 30 m out · plate`. This package does not read a plate, store a plate, or open a camera.
+
+On the overlay the RMSE line is neon yellow whenever a fix exists. The wide shelter circle stays dim when the RMSE patch is tighter, so the eye stays on the patch.
+
 ## Field notes
 
-Personal notes stay on this listener until you send them. `send_smart` writes one line from the picture you are looking at (`38s · 1.5 km north of the protected point · field locked`) and puts it on the bundle. Presets are `Inside`, `I hear it`, `I don't hear it`, and `Clear here`. `click_off` removes a note from this listener, including a copy you received.
+Personal notes stay on this listener until you send them. `send_smart` writes one line from the picture you are looking at (`38s · 1.5 km north of the protected point · field locked`) and puts it on the bundle. When `try_plate` is set, that line also carries the RMSE label, so one tap hands your plate software the patch. Presets are `Inside`, `I hear it`, `I don't hear it`, and `Clear here`. `click_off` removes a note from this listener, including a copy you received.
 
 ## Overlay
 
 Open `omen_listener/overlay/index.html` from a local server (the page fetches
 `state.json`). It shows the decision time, where the contact is, and the
 listeners. "15s later, comms down" is the same track with no new cue.
+"Close contact" is a curb pair with the contact about 28 m out, where the RMSE line says plate.
 "Open a JSON file" accepts either a picture or a state document.
 
 ```bash

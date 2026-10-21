@@ -65,6 +65,15 @@
     ],
     "label": "Field locked"
   },
+  "rmse": {
+    "rmse_m": 131.8101939248913,
+    "range_m": 1543.2433379097956,
+    "nearest_node_id": "treetop-west",
+    "samples": 2,
+    "close": false,
+    "try_plate": false,
+    "label": "RMSE 132 m"
+  },
   "contact": {
     "visible": true,
     "placed": true,

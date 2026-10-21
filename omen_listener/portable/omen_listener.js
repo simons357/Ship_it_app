@@ -58,6 +58,8 @@
   const FUTURE_SKEW_S = 5;
   const MOVE_WITHIN_S = 180;
   const APPROX_WHEN_M = 150;
+  const PLATE_RANGE_M = 40;
+  const PLATE_RMSE_M = 12;
   const DEFAULT_SIGMA_DEG = { treetop: 3, phone: 8, wearable: 12 };
 
   function mod(value, cycle) {
@@ -314,8 +316,10 @@
       let weightedE = 0;
       let weightedN = 0;
       let weightedU = 0;
+      let weightedR = 0;
       let weightSum = 0;
       const times = [];
+      const used = {};
       for (let i = 0; i < nodes.length; i += 1) {
         const left = nodes[i];
         const leftXy = toLocal(Number(left.lat), Number(left.lon), originLat, originLon);
@@ -325,23 +329,31 @@
           const hit = intersectBearings(leftXy, Number(left.azimuth_deg), rightXy, Number(right.azimuth_deg));
           if (!hit) continue;
           const sigma = (Math.max(sigmaDeg(left), sigmaDeg(right)) * Math.PI) / 180;
-          let uncertainty = (sigma * Math.max(hit.rangeA, hit.rangeB)) / Math.max(hit.sinCross, MIN_CROSS);
-          uncertainty = Math.max(20, uncertainty);
+          const pairRmse = (sigma * Math.max(hit.rangeA, hit.rangeB)) / Math.max(hit.sinCross, MIN_CROSS);
+          const uncertainty = Math.max(20, pairRmse);
           weightedE += hit.east * hit.sinCross;
           weightedN += hit.north * hit.sinCross;
           weightedU += uncertainty * hit.sinCross;
+          weightedR += pairRmse * hit.sinCross;
           weightSum += hit.sinCross;
           times.push(0.5 * (Number(left.t) + Number(right.t)));
+          used[String(left.node_id)] = leftXy;
+          used[String(right.node_id)] = rightXy;
         }
       }
       if (weightSum <= 0) continue;
       let tSum = 0;
       for (let i = 0; i < times.length; i += 1) tSum += times[i];
+      const aimerIds = Object.keys(used).sort();
       fixes.push({
         t: tSum / times.length,
         east_m: weightedE / weightSum,
         north_m: weightedN / weightSum,
         uncertainty_m: weightedU / weightSum,
+        rmse_m: weightedR / weightSum,
+        aimers: aimerIds.map(function (nodeId) {
+          return { node_id: nodeId, east_m: used[nodeId][0], north_m: used[nodeId][1] };
+        }),
       });
     }
     return fixes;
@@ -383,7 +395,55 @@
       speed_m_s: speed,
       heading_deg: heading,
       uncertainty_m: end.uncertainty_m,
+      rmse_m: end.rmse_m,
+      aimers: end.aimers,
       fixes: usable,
+    };
+  }
+
+  function shownM(value) {
+    return Math.floor(Number(value) + 0.5);
+  }
+
+  function rmseReport(rmseM, east, north, aimers, extrapolatedS) {
+    if (rmseM == null || east == null || north == null) {
+      return {
+        rmse_m: null,
+        range_m: null,
+        nearest_node_id: null,
+        samples: 0,
+        close: false,
+        try_plate: false,
+        label: "No RMSE",
+      };
+    }
+    const grown = Number(rmseM) + EXTRAP_GROWTH_M_PER_S * Number(extrapolatedS);
+    let nearestId = null;
+    let rangeM = null;
+    let best = null;
+    const rows = aimers || [];
+    for (let i = 0; i < rows.length; i += 1) {
+      const dist = Math.hypot(Number(east) - Number(rows[i].east_m), Number(north) - Number(rows[i].north_m));
+      if (best === null || dist < best) {
+        best = dist;
+        nearestId = String(rows[i].node_id);
+        rangeM = dist;
+      }
+    }
+    const close = rangeM != null && rangeM <= PLATE_RANGE_M;
+    const tryPlate = Boolean(close && grown <= PLATE_RMSE_M && rows.length >= 2);
+    const shown = shownM(grown);
+    let label = "RMSE " + shown + " m";
+    if (tryPlate && rangeM != null) label = "RMSE " + shown + " m · " + shownM(rangeM) + " m out · plate";
+    else if (close && rangeM != null) label = "RMSE " + shown + " m · " + shownM(rangeM) + " m out";
+    return {
+      rmse_m: grown,
+      range_m: rangeM,
+      nearest_node_id: nearestId,
+      samples: rows.length,
+      close: close,
+      try_plate: tryPlate,
+      label: label,
     };
   }
 
@@ -624,6 +684,10 @@
     }
 
     if (!threat && recent.length) where = "heard, not placed yet";
+    let rmse;
+    if (track) rmse = rmseReport(track.rmse_m, east, north, track.aimers, extrapolatedS);
+    else if (placed) rmse = rmseReport(placed.rmse_m, east, north, placed.aimers, 0);
+    else rmse = rmseReport(null, null, null, [], 0);
     const guidanceText = guidance(reason, urgency, decisionSeconds, where);
     let commsNote;
     if (comms === "down" && (threat || recent.length)) {
@@ -759,6 +823,7 @@
         guidance: guidanceText,
       },
       coherence: coherence,
+      rmse: rmse,
       contact: contact,
       listeners: listeners,
       systems: systems,
@@ -776,11 +841,17 @@
   function smartText(picture) {
     const omen = (picture && picture.omen) || {};
     const field = (picture && picture.coherence && picture.coherence.state) || "quiet";
+    const rmse = (picture && picture.rmse) || {};
+    let text;
     if (omen.open && omen.decision_seconds != null) {
-      return omen.decision_seconds + "s · " + (omen.where || "unplaced") + " · field " + field;
+      text = omen.decision_seconds + "s · " + (omen.where || "unplaced") + " · field " + field;
+    } else if (omen.where && omen.where !== "no contact") {
+      text = omen.where + " · field " + field;
+    } else {
+      text = "field " + field;
     }
-    if (omen.where && omen.where !== "no contact") return omen.where + " · field " + field;
-    return "field " + field;
+    if (rmse.try_plate && rmse.label) return text + " · " + rmse.label;
+    return text;
   }
 
   function makeFieldNote(nodeId, t, text, preset, noteId) {

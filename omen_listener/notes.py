@@ -22,12 +22,18 @@ def smart_text(picture: dict[str, Any]) -> str:
     omen = picture.get("omen") or {}
     coherence = picture.get("coherence") or {}
     field = str(coherence.get("state") or "quiet")
+    rmse = picture.get("rmse") or {}
     if omen.get("open") and omen.get("decision_seconds") is not None:
-        return f"{omen['decision_seconds']}s · {omen.get('where') or 'unplaced'} · field {field}"
-    where = str(omen.get("where") or "")
-    if where and where != "no contact":
-        return f"{where} · field {field}"
-    return f"field {field}"
+        text = f"{omen['decision_seconds']}s · {omen.get('where') or 'unplaced'} · field {field}"
+    else:
+        where = str(omen.get("where") or "")
+        if where and where != "no contact":
+            text = f"{where} · field {field}"
+        else:
+            text = f"field {field}"
+    if rmse.get("try_plate") and rmse.get("label"):
+        return f"{text} · {rmse['label']}"
+    return text
 
 
 def make_field_note(

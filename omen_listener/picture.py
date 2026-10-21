@@ -44,6 +44,11 @@ EXTRAP_GROWTH_M_PER_S = 5.0
 FUTURE_SKEW_S = 5.0
 MOVE_WITHIN_S = 180.0
 APPROX_WHEN_M = 150.0
+# A plate read is a patch, not a detection this package performs.
+# Inside 40 m of an aiming listener, with an RMS miss of 12 m or less,
+# the crossing is tight enough for plate software you already run.
+PLATE_RANGE_M = 40.0
+PLATE_RMSE_M = 12.0
 
 DEFAULT_SIGMA_DEG = {
     "treetop": 3.0,
@@ -102,8 +107,10 @@ def _fixes(
         weighted_e = 0.0
         weighted_n = 0.0
         weighted_u = 0.0
+        weighted_r = 0.0
         weight_sum = 0.0
         times = []
+        used: dict[str, tuple[float, float]] = {}
         for i, left in enumerate(nodes):
             left_xy = to_local(left["lat"], left["lon"], origin_lat, origin_lon)
             for right in nodes[i + 1 :]:
@@ -120,14 +127,17 @@ def _fixes(
                     continue
                 east, north, sin_cross, range_a, range_b = hit
                 sigma = math.radians(max(_sigma_deg(left), _sigma_deg(right)))
-                uncertainty = (sigma * max(range_a, range_b)) / max(sin_cross, MIN_CROSS)
-                uncertainty = max(20.0, uncertainty)
+                pair_rmse = (sigma * max(range_a, range_b)) / max(sin_cross, MIN_CROSS)
+                uncertainty = max(20.0, pair_rmse)
                 weight = sin_cross
                 weighted_e += east * weight
                 weighted_n += north * weight
                 weighted_u += uncertainty * weight
+                weighted_r += pair_rmse * weight
                 weight_sum += weight
                 times.append(0.5 * (float(left["t"]) + float(right["t"])))
+                used[str(left["node_id"])] = left_xy
+                used[str(right["node_id"])] = right_xy
         if weight_sum <= 0.0:
             continue
         fixes.append(
@@ -136,6 +146,11 @@ def _fixes(
                 "east_m": weighted_e / weight_sum,
                 "north_m": weighted_n / weight_sum,
                 "uncertainty_m": weighted_u / weight_sum,
+                "rmse_m": weighted_r / weight_sum,
+                "aimers": [
+                    {"node_id": node_id, "east_m": xy[0], "north_m": xy[1]}
+                    for node_id, xy in sorted(used.items())
+                ],
             }
         )
     return fixes
@@ -179,7 +194,66 @@ def _trajectory(fixes: list[dict[str, Any]]) -> dict[str, Any] | None:
         "speed_m_s": speed,
         "heading_deg": heading,
         "uncertainty_m": end["uncertainty_m"],
+        "rmse_m": end["rmse_m"],
+        "aimers": end["aimers"],
         "fixes": usable,
+    }
+
+
+def _shown_m(value: float) -> int:
+    return int(math.floor(float(value) + 0.5))
+
+
+def _rmse_report(
+    rmse_m: float | None,
+    east: float | None,
+    north: float | None,
+    aimers: list[dict[str, Any]],
+    extrapolated_s: float,
+) -> dict[str, Any]:
+    """RMS miss of the crossing, with the 20 m shelter floor left off.
+
+    Plate software you already run can try an ID when this miss is at most
+    12 m and the contact is within 40 m of an aiming listener. This report
+    is the patch. It does not read a plate.
+    """
+    if rmse_m is None or east is None or north is None:
+        return {
+            "rmse_m": None,
+            "range_m": None,
+            "nearest_node_id": None,
+            "samples": 0,
+            "close": False,
+            "try_plate": False,
+            "label": "No RMSE",
+        }
+    grown = float(rmse_m) + EXTRAP_GROWTH_M_PER_S * float(extrapolated_s)
+    nearest_id = None
+    range_m = None
+    best = None
+    for aimer in aimers:
+        dist = math.hypot(float(east) - float(aimer["east_m"]), float(north) - float(aimer["north_m"]))
+        if best is None or dist < best:
+            best = dist
+            nearest_id = str(aimer["node_id"])
+            range_m = dist
+    close = range_m is not None and range_m <= PLATE_RANGE_M
+    try_plate = bool(close and grown <= PLATE_RMSE_M and len(aimers) >= 2)
+    shown = _shown_m(grown)
+    if try_plate and range_m is not None:
+        label = f"RMSE {shown} m · {_shown_m(range_m)} m out · plate"
+    elif close and range_m is not None:
+        label = f"RMSE {shown} m · {_shown_m(range_m)} m out"
+    else:
+        label = f"RMSE {shown} m"
+    return {
+        "rmse_m": grown,
+        "range_m": range_m,
+        "nearest_node_id": nearest_id,
+        "samples": len(aimers),
+        "close": close,
+        "try_plate": try_plate,
+        "label": label,
     }
 
 
@@ -454,6 +528,13 @@ def build_picture(state: dict[str, Any]) -> dict[str, Any]:
     if threat is None and recent:
         where = "heard, not placed yet"
 
+    if track is not None:
+        rmse = _rmse_report(track["rmse_m"], east, north, track["aimers"], extrapolated_s)
+    elif placed is not None:
+        rmse = _rmse_report(placed["rmse_m"], east, north, placed["aimers"], 0.0)
+    else:
+        rmse = _rmse_report(None, None, None, [], 0.0)
+
     coherence = _mark_coherence(listeners, track, placed, newest_t, bool(heard_by))
     guidance = _guidance(reason, urgency, decision_seconds, where)
     if comms == "down" and (threat is not None or recent):
@@ -562,6 +643,7 @@ def build_picture(state: dict[str, Any]) -> dict[str, Any]:
             "guidance": guidance,
         },
         "coherence": coherence,
+        "rmse": rmse,
         "contact": contact,
         "listeners": listeners,
         "systems": systems,

@@ -9,6 +9,7 @@ const msg = JSON.parse(raw);
 const out = {
   picture: api.buildPicture(msg.picture),
   later: api.buildPicture(msg.later),
+  close: api.buildPicture(msg.close),
   cue: api.rotorCue(msg.samples, msg.sampleRate),
   merged: api.mergeBundles(msg.bundles, {
     communityId: "north-oak",

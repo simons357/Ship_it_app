@@ -90,3 +90,29 @@ def demo_state(now: float) -> dict[str, Any]:
 
 def demo_picture(now: float = 1005.0) -> dict[str, Any]:
     return build_picture(demo_state(now))
+
+
+def demo_close_state(now: float = 2000.0) -> dict[str, Any]:
+    """Two phones on a curb, contact about 28 m north. Close enough for a plate patch."""
+    west = _node("curb-west", "phone", -10.0, 0.0, 1.5)
+    east = _node("curb-east", "phone", 10.0, 0.0, 1.5)
+    threat = (0.0, 28.0)
+    return {
+        "version": 1,
+        "community_id": COMMUNITY_ID,
+        "alert_id": ALERT_ID,
+        "protected": {"lat": ORIGIN[0], "lon": ORIGIN[1], "label": "north oak"},
+        "lead_s": 30.0,
+        "watch_radius_m": 1000.0,
+        "now": now,
+        "listening": True,
+        "opened_by": "wearable",
+        "observations": [
+            _cue(west, now, *threat, with_azimuth=True),
+            _cue(east, now, *threat, with_azimuth=True),
+        ],
+    }
+
+
+def demo_close_picture(now: float = 2000.0) -> dict[str, Any]:
+    return build_picture(demo_close_state(now))
