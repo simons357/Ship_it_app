@@ -4,6 +4,10 @@ New product. Isolated under `listener/`. Not Ship It. Not the parked Listener se
 
 Owner: Jonathan Simons.
 
+## If someone in Savannah government asks
+
+Do not explain the product from memory. Give them `SAVANNAH.md`, or open `app/savannah.html`. It says what Listener is, what it is not, and the small ask (one listening hour — not a contract, not surveillance). Home is Wilmington Island / Chatham County. City offices are a separate door.
+
 ## Hand this to Base44
 
 Do not explain the product. Paste `BASE44_PROMPT.txt` into a new Base44 app. Steps are in `BASE44.md`.

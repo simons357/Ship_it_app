@@ -310,6 +310,22 @@ test("someone can teach listening — older and rarer, no invented expert", () =
   assert.match(corpus, /rarer|Rarer/);
 });
 
+test("Savannah government note is a handout, not a civic portal or marsh demo", async () => {
+  const note = await readFile(new URL("../SAVANNAH.md", import.meta.url), "utf8");
+  const page = await readFile(new URL("../app/savannah.html", import.meta.url), "utf8");
+  const html = await readFile(new URL("../app/index.html", import.meta.url), "utf8");
+  const both = note + page;
+  assert.match(both, /Wilmington Island/);
+  assert.match(both, /Chatham County/);
+  assert.match(both, /conversation, not a contract/);
+  assert.match(both, /Not surveillance/);
+  assert.equal(both.includes("Savannah marsh"), false);
+  assert.equal(both.includes("0.91"), false);
+  assert.equal(both.includes("Clapper rail"), false);
+  assert.equal(both.includes("official City of Savannah app") || both.includes("Not an official City of Savannah app"), true);
+  assert.equal(html.includes("savannah.html"), false);
+});
+
 test("relative plot stays finite", () => {
   const start = { lat: 32.0, lon: -81.0 };
   const p = projectRelative(start, { lat: 32.0004, lon: -80.9996 });

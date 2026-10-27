@@ -167,6 +167,8 @@ Someone can teach listening. The teacher is whoever is there — not an invented
 
 The green-screen reader is `app/bedtime.html` (chroma `#00FF00`) so a parent or guest can stand in front of their screen and read or teach. Do not paste copyrighted picture-book text.
 
+A Savannah government conversation is invited by a real person the owner knows. It is not a product feature and not an official City app. See `SAVANNAH.md`.
+
 ## Consumer onboarding
 
 Screen 1: LISTENER — What the wild is saying.
