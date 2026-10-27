@@ -51,9 +51,10 @@ Do not ask yet for a press release, a refuge research permit, exclusive marsh ri
 
 Open in Safari, then Add to Home Screen:
 
-- Listener: see `README.md` for the current phone URL, or `app/savannah.html` once that page is live
-- Green screen story: `app/bedtime.html`
-- Green screen lesson: `app/bedtime.html?kind=lesson`
+- Listener: https://angled-vortex-nqn9n24.shipstatic.com/
+- This note on a phone: https://angled-vortex-nqn9n24.shipstatic.com/savannah.html
+- Green screen story: https://angled-vortex-nqn9n24.shipstatic.com/bedtime.html
+- Green screen lesson: https://angled-vortex-nqn9n24.shipstatic.com/bedtime.html?kind=lesson
 
 ## Email you can forward
 

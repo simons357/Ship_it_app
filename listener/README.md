@@ -23,13 +23,15 @@ Do not explain the product. Paste `BASE44_PROMPT.txt` into a new Base44 app. Ste
 
 ## Open on iPhone (Session app — not the parked Listener search)
 
-**This build (older and rarer first):** https://plasma-relay-wcu2z9g.shipstatic.com/
+**This build:** https://angled-vortex-nqn9n24.shipstatic.com/
 
-Green screen story: https://plasma-relay-wcu2z9g.shipstatic.com/bedtime.html
+Savannah government note (handout, not a city portal): https://angled-vortex-nqn9n24.shipstatic.com/savannah.html
 
-Green screen lesson: https://plasma-relay-wcu2z9g.shipstatic.com/bedtime.html?kind=lesson
+Green screen story: https://angled-vortex-nqn9n24.shipstatic.com/bedtime.html
 
-Claim: https://my.shipstatic.com/claim/4bb591f7f5cdef47cb7c262339ab4ee2
+Green screen lesson: https://angled-vortex-nqn9n24.shipstatic.com/bedtime.html?kind=lesson
+
+Claim: https://my.shipstatic.com/claim/e6d3fddbed3afc2114074d48fb8ce45a
 
 **TITAN-X story for an investor (read aloud / LISTEN):** https://precise-prism-3ad673t.shipstatic.com/
 
