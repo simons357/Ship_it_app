@@ -217,6 +217,9 @@ test("ON AIR stays hidden until recording — display:flex must not leak past [h
   const html = await readFile(new URL("../app/index.html", import.meta.url), "utf8");
   assert.match(html, /id="onAir"[^>]*hidden/);
   assert.match(html, /id="recordBtn"[^>]*>LISTEN TO THE FIELD</);
+  assert.match(html, /id="rings"/);
+  assert.match(html, /class="house"/);
+  assert.match(html, /data-tab="home"/);
   assert.match(html, /storyListen/);
   assert.match(html, /maybeIds/);
   assert.match(html, /OPEN FIELD/);
@@ -225,7 +228,7 @@ test("ON AIR stays hidden until recording — display:flex must not leak past [h
   assert.match(html, /GREEN SCREEN · READ TO THE CHILDREN/);
   assert.match(html, /id="greenLink"/);
   assert.equal(/id="recordBtn"[^>]*\bstart\b/.test(html), false);
-  assert.match(html, /icon-192\.png/);
+  assert.match(css, /home-node\.png/);
   assert.equal(html.includes("LISTEN TO THIS RAIN"), false);
   assert.equal(html.includes("A STORY IS SOMETHING YOU LISTEN TO"), false);
   assert.equal(html.includes("MANKIND GETS ENOUGH AIRTIME"), false);

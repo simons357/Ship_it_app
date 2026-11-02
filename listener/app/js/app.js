@@ -243,8 +243,10 @@ function refreshRecordHome() {
     if (recording) status.textContent = "RECORDING. Original stays on this phone.";
     else if (denied) status.textContent = FAILURE.micDenied;
     else if (pendingKeep) status.textContent = "What was that?";
-    else status.textContent = "Original stays on this phone.";
+    else status.textContent = "";
   }
+  $("onboard")?.classList.toggle("live", recording);
+  if (!recording) paintMeter(0);
   if (btn) {
     btn.disabled = false;
     btn.textContent = recording ? "STOP THE FIELD" : "LISTEN TO THE FIELD";
@@ -252,7 +254,7 @@ function refreshRecordHome() {
   }
   if (air) air.hidden = !recording;
   const meter = $("liveMeter");
-  if (meter) meter.hidden = !recording;
+  if (meter) meter.hidden = true;
   if (timer) {
     timer.hidden = !recording;
     if (recording) timer.textContent = elapsedLabel(recStarted);
@@ -290,10 +292,8 @@ function bindRecordHome() {
     paintMaybes(lastMaybes);
   });
   $("openField")?.addEventListener("click", async () => {
-    if (!session()) await beginDoor("listen");
-    showInstrument = true;
-    showOnboard();
-    renderAll();
+    if (!session()) await beginDoor("listen", { stayOnboard: true });
+    showTab("field");
   });
   $("heardSearch")?.addEventListener("input", () => renderHeard());
 }
@@ -355,6 +355,8 @@ function paintMeter(level) {
   bars.forEach((el, i) => {
     el.classList.toggle("on", level * bars.length > i);
   });
+  const rings = $("rings");
+  if (rings) rings.style.setProperty("--level", String(Math.max(0, Math.min(1, level))));
 }
 
 function showOnboard() {
@@ -716,7 +718,23 @@ function setMapMode(mode) {
   persist();
 }
 
+function goHome() {
+  showInstrument = false;
+  $("library").style.display = "none";
+  $("broadcast").style.display = "none";
+  document.querySelectorAll(".tabs button").forEach((b) => {
+    b.classList.toggle("on", b.dataset.tab === "home");
+  });
+  showOnboard();
+}
+
 function showTab(name) {
+  if (name === "home") {
+    goHome();
+    return;
+  }
+  showInstrument = true;
+  showOnboard();
   document.querySelectorAll(".tabs button").forEach((b) => {
     b.classList.toggle("on", b.dataset.tab === name);
   });
@@ -759,7 +777,7 @@ function renderField() {
     const p0 = projectRelative(start, start) || { left: 22, top: 62 };
     markers.insertAdjacentHTML(
       "beforeend",
-      `<button class="session-origin" style="left:${p0.left}%;top:${p0.top}%"><i></i><b>START</b></button>`
+      `<button class="session-origin" style="left:${p0.left}%;top:${p0.top}%"><i></i><b>HOME</b></button>`
     );
   }
 
@@ -1414,6 +1432,7 @@ function renderAll() {
   renderBroadcast();
 }
 
+$("goHome")?.addEventListener("click", () => goHome());
 $("overlay").addEventListener("click", (e) => {
   if (e.target === $("overlay")) closeSheet();
 });

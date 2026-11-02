@@ -13,47 +13,57 @@
   <meta name="listener-build" content="cursor-grok-try-id">
   <!-- LISTENER: listen, try to ID birds/dolphins/house critters. Candidates, not claims. -->
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png?v=21">
-  <link rel="stylesheet" href="./css/app.css?v=21">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png?v=22">
+  <link rel="stylesheet" href="./css/app.css?v=22">
 </head>
 <body class="listening">
   <div id="onboard" class="onboard show sky-night">
     <div id="sky" class="sky" aria-hidden="true"></div>
+    <div class="trees" aria-hidden="true"></div>
+    <div class="house" aria-hidden="true"></div>
+    <div class="rings" id="rings" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
     <div id="onboardInner">
-      <img class="rune" src="./icons/icon-192.png?v=17" alt="" width="88" height="88">
-      <div class="word">LISTENER</div>
-      <div class="tag">WHAT THE WILD IS SAYING</div>
-      <div class="field-clock" id="fieldClock"></div>
-      <div class="field-wx" id="fieldWeather" hidden></div>
-      <div class="field-role" id="fieldRole" hidden></div>
-      <p class="record-status" id="recordStatus">Original stays on this phone.</p>
-      <div class="on-air" id="onAir" hidden><i></i><span>ON AIR</span></div>
-      <div class="rec-timer" id="recTimer" hidden>00:00</div>
-      <div class="live-meter" id="liveMeter" hidden aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-      <button class="listen-pill" id="recordBtn" type="button">LISTEN TO THE FIELD</button>
-      <form id="whatWasThat" class="what-was hidden">
-        <label for="whatText">What was that?</label>
-        <input id="whatText" type="text" placeholder="rain, a bird, a dolphin, or leave UNKNOWN" autocomplete="off" enterkeyhint="done">
-        <div id="maybeIds" class="maybe-ids" hidden></div>
-        <label class="photo-link" for="whatPhoto">Add a picture</label>
-        <input id="whatPhoto" type="file" accept="image/*" capture="environment">
-        <button class="wide" id="keepBtn" type="button">KEEP</button>
-        <button class="ghost" id="unknownBtn" type="button">I don't know</button>
-      </form>
-      <div id="heardList" class="heard-list"></div>
-      <button class="ghost" id="openField" type="button">OPEN FIELD</button>
-      <details class="storybook" id="storybook">
-        <summary>STORY · LESSON</summary>
-        <div class="story-nav" id="storyNav"></div>
-        <h2 class="story-title" id="storyTitle"></h2>
-        <p class="story-source" id="storySource"></p>
-        <div class="story-page" id="storyPage"></div>
-        <div class="story-actions">
-          <button class="wide" id="storyListen" type="button">LISTEN</button>
-          <button class="ghost" id="storyStop" type="button">STOP</button>
-          <a class="ghost green-link" id="greenLink" href="./bedtime.html">GREEN SCREEN · READ TO THE CHILDREN</a>
+      <div class="mast">
+        <div class="word">LISTENER</div>
+        <div class="tag">WHAT THE WILD IS SAYING</div>
+        <div class="field-clock" id="fieldClock"></div>
+        <div class="field-wx" id="fieldWeather" hidden></div>
+        <div class="field-role" id="fieldRole" hidden></div>
+      </div>
+      <div class="ear">
+        <div class="on-air" id="onAir" hidden><i></i><span>ON AIR</span></div>
+        <div class="rec-timer" id="recTimer" hidden>00:00</div>
+        <button class="listen-pill" id="recordBtn" type="button">LISTEN TO THE FIELD</button>
+        <p class="record-status" id="recordStatus"></p>
+        <div class="live-meter" id="liveMeter" hidden aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="dock">
+        <form id="whatWasThat" class="what-was hidden">
+          <label for="whatText">What was that?</label>
+          <input id="whatText" type="text" placeholder="a bird, a dolphin, a cricket, or leave UNKNOWN" autocomplete="off" enterkeyhint="done">
+          <div id="maybeIds" class="maybe-ids" hidden></div>
+          <label class="photo-link" for="whatPhoto">Add a picture</label>
+          <input id="whatPhoto" type="file" accept="image/*" capture="environment">
+          <button class="wide" id="keepBtn" type="button">KEEP</button>
+          <button class="ghost" id="unknownBtn" type="button">UNKNOWN</button>
+        </form>
+        <div id="heardList" class="heard-list"></div>
+        <div class="dock-row">
+          <button class="ghost" id="openField" type="button">OPEN FIELD</button>
         </div>
-      </details>
+        <details class="storybook" id="storybook">
+          <summary>STORY · LESSON</summary>
+          <div class="story-nav" id="storyNav"></div>
+          <h2 class="story-title" id="storyTitle"></h2>
+          <p class="story-source" id="storySource"></p>
+          <div class="story-page" id="storyPage"></div>
+          <div class="story-actions">
+            <button class="wide" id="storyListen" type="button">LISTEN</button>
+            <button class="ghost" id="storyStop" type="button">STOP</button>
+            <a class="ghost green-link" id="greenLink" href="./bedtime.html">GREEN SCREEN · READ TO THE CHILDREN</a>
+          </div>
+        </details>
+      </div>
     </div>
   </div>
 
@@ -63,11 +73,12 @@
   </div>
 
   <header>
-    <div class="brand">LISTENER<small>WHAT THE WILD IS SAYING</small></div>
+    <button class="brand" id="goHome" type="button">LISTENER<small>WHAT THE WILD IS SAYING</small></button>
     <div class="network" id="network">● WAITING<br>NO SESSION</div>
   </header>
 
   <div class="tabs">
+    <button data-tab="home">HOME</button>
     <button class="on" data-tab="field">FIELD</button>
     <button data-tab="broadcast">BROADCAST</button>
     <button data-tab="library">SIGNALS</button>
@@ -122,6 +133,6 @@
   <div class="toast" id="toast" hidden></div>
   <div class="overlay" id="overlay"><div class="sheet" id="sheet"></div></div>
 
-  <script type="module" src="./js/app.js?v=21"></script>
+  <script type="module" src="./js/app.js?v=22"></script>
 </body>
 </html>

@@ -29,7 +29,7 @@ Claim (or it expires in about three days): https://my.shipstatic.com/claim/81657
 
 The hostname is random Shipstatic junk, not the product name. Safari → Add to Home Screen. The icon is the name.
 
-If the first screen says **LISTENER** / **WHAT THE WILD IS SAYING** and **LISTEN TO THE FIELD**, then after STOP shows **maybe** ID chips, you have this build. If it says Savannah marsh, Air mode, Water mode, Party mode, or lists clapper rails / painted buntings as live animals on a map, that is Claude’s demo, not this app.
+If the first screen is a porch with the amber home node and rings, **LISTENER** / **WHAT THE WILD IS SAYING**, and **LISTEN TO THE FIELD**, you have this build. After STOP, **maybe** ID chips. The field has HOME, trail, PARK CAR, RETURN. If it says Savannah marsh, Air mode, Water mode, Party mode, or lists clapper rails / painted buntings as live animals on a map, that is Claude’s demo, not this app.
 
 The hostname is still random Shipstatic junk, not the product name. A name like Listener needs your Shipstatic or GitHub Pages account. Old hosts such as `dreamy-dust-…` and `spectral-rune-…` are leftovers.
 
