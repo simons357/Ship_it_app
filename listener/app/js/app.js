@@ -246,6 +246,7 @@ function refreshRecordHome() {
     else status.textContent = "";
   }
   $("onboard")?.classList.toggle("live", recording);
+  $("onboard")?.classList.toggle("asking", Boolean(pendingKeep) && !recording);
   if (!recording) paintMeter(0);
   if (btn) {
     btn.disabled = false;
@@ -355,8 +356,10 @@ function paintMeter(level) {
   bars.forEach((el, i) => {
     el.classList.toggle("on", level * bars.length > i);
   });
+  const n = Math.max(0, Math.min(1, level));
   const rings = $("rings");
-  if (rings) rings.style.setProperty("--level", String(Math.max(0, Math.min(1, level))));
+  if (rings) rings.style.setProperty("--level", String(n));
+  $("onboard")?.style.setProperty("--level", String(n));
 }
 
 function showOnboard() {
@@ -784,6 +787,7 @@ function renderField() {
   state.nodes
     .filter((n) => s && n.sessionId === s.id && n.lat != null)
     .forEach((n) => {
+      if (start && (distanceM(start, n) || 0) < 4) return;
       const p = (start && projectRelative(start, n)) || { left: 58, top: 46 };
       markers.insertAdjacentHTML(
         "beforeend",

@@ -79,43 +79,55 @@ struct RecordHomeView: View {
     var session: Session? { sessions.first }
 
     var body: some View {
-        VStack(spacing: 18) {
-            Text("LISTENER").tracking(6).font(.caption.weight(.black))
-            Text("WHAT THE WILD IS SAYING")
-                .font(.system(size: 8))
-                .tracking(2)
-                .foregroundStyle(Color(red: 0.57, green: 0.64, blue: 0.60))
-            Text(statusLine)
-                .multilineTextAlignment(.center)
-                .foregroundStyle(.secondary)
-                .padding(.horizontal, 28)
-            if audio.recording {
-                HStack(spacing: 10) {
-                    Circle().fill(Color.red).frame(width: 16, height: 16).opacity(0.2)
-                        .overlay(Circle().fill(Color.red).frame(width: 16, height: 16).opacity(airPulse ? 1 : 0.15))
-                    Text("ON AIR").font(.title2.weight(.black)).tracking(4).foregroundStyle(.red)
+        ZStack {
+            LinearGradient(
+                colors: [
+                    Color(red: 0.05, green: 0.04, blue: 0.16),
+                    Color(red: 0.77, green: 0.48, blue: 0.24),
+                    Color(red: 0.16, green: 0.08, blue: 0.12)
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
+            VStack(spacing: 18) {
+                Text("LISTENER").tracking(6).font(.caption.weight(.black))
+                Text("WHAT THE WILD IS SAYING")
+                    .font(.system(size: 8))
+                    .tracking(2)
+                    .foregroundStyle(Color(red: 0.84, green: 0.90, blue: 0.86))
+                Text(statusLine)
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(.secondary)
+                    .padding(.horizontal, 28)
+                if audio.recording {
+                    HStack(spacing: 10) {
+                        Circle().fill(Color.red).frame(width: 16, height: 16).opacity(0.2)
+                            .overlay(Circle().fill(Color.red).frame(width: 16, height: 16).opacity(airPulse ? 1 : 0.15))
+                        Text("ON AIR").font(.title2.weight(.black)).tracking(4).foregroundStyle(.red)
+                    }
                 }
+                Spacer()
+                Button(audio.recording ? "STOP THE FIELD" : "LISTEN TO THE FIELD") {
+                    if audio.recording { stopRecord() } else { startRecord() }
+                }
+                .padding(.vertical, 16)
+                .padding(.horizontal, 22)
+                .frame(maxWidth: 280)
+                .background(audio.recording ? Color(red: 0.36, green: 0.12, blue: 0.14).opacity(0.85) : Color(red: 0.07, green: 0.12, blue: 0.10).opacity(0.55))
+                .foregroundStyle(.white)
+                .font(.system(size: 13, weight: .bold))
+                .clipShape(Capsule())
+                Spacer()
+                Button("OPEN FIELD") {
+                    if session == nil { ensureSession() }
+                    openInstrument()
+                }
+                .font(.footnote)
+                .foregroundStyle(.secondary)
             }
-            Spacer()
-            Button(audio.recording ? "STOP THE FIELD" : "LISTEN TO THE FIELD") {
-                if audio.recording { stopRecord() } else { startRecord() }
-            }
-            .padding(.vertical, 16)
-            .padding(.horizontal, 22)
-            .frame(maxWidth: 280)
-            .background(audio.recording ? Color(red: 0.36, green: 0.12, blue: 0.14) : Color(red: 0.10, green: 0.22, blue: 0.16))
-            .foregroundStyle(.white)
-            .font(.system(size: 13, weight: .bold))
-            .clipShape(Capsule())
-            Spacer()
-            Button("Field instrument") {
-                if session == nil { ensureSession() }
-                openInstrument()
-            }
-            .font(.footnote)
-            .foregroundStyle(.secondary)
+            .padding(28)
         }
-        .padding(28)
         .onChange(of: audio.recording) { _, on in
             if on { airPulse.toggle() }
         }

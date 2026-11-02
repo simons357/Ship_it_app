@@ -228,7 +228,10 @@ test("ON AIR stays hidden until recording — display:flex must not leak past [h
   assert.match(html, /GREEN SCREEN · READ TO THE CHILDREN/);
   assert.match(html, /id="greenLink"/);
   assert.equal(/id="recordBtn"[^>]*\bstart\b/.test(html), false);
-  assert.match(css, /home-node\.png/);
+  assert.match(html, /class="node-glow"/);
+  assert.match(html, /class="marsh"/);
+  assert.match(css, /home-node-glow\.png/);
+  assert.match(css, /mix-blend-mode:\s*screen/);
   assert.equal(html.includes("LISTEN TO THIS RAIN"), false);
   assert.equal(html.includes("A STORY IS SOMETHING YOU LISTEN TO"), false);
   assert.equal(html.includes("MANKIND GETS ENOUGH AIRTIME"), false);
