@@ -8,6 +8,11 @@ contact is and how many seconds are left to decide to get inside.
 The window is a shelter clock. It does not name an airframe, and it does not
 aim, jam, or intercept anything.
 
+OMEN is the name of that window. An omen is a prediction, and the word by
+itself sounds like a bad one. This one is the good prediction: you still have
+seconds to get inside. The contact is the bad news. The window is the part
+that arrived in time.
+
 Fans, mowers, and helicopters can make the same sound. Treat a cue as a
 prompt to look and to move indoors, not as identification.
 
@@ -88,6 +93,16 @@ sound still show up, so the block can see who has a cue.
 
 A phone with two microphones can pass `array` (`left`, `right`, `spacing_m`,
 `heading_deg`) instead of a hand-aimed azimuth.
+
+## What can join
+
+Anything that can hand over an `omen.bundle` can sit on the mesh. Coverage is not the same for each kind.
+
+- AirPods, or any earbuds, are a wearable. They cover the room you are standing in. Apple does not publish a meter range for the Bluetooth 5.3 link; one ordinary room is the practical bubble. The cue they add is "I hear it." They do not aim a bearing. The phone on the table is the computer, and it hears the rotor band (80–250 Hz) more usefully than a voice mic in your ear.
+- The coverage sphere is a play model of that room, in `overlay/sphere.html`. AirPods are a 3 m sphere centered at the ear (1.6 m). A phone on listen is a 6 m sphere centered at the pocket (1.0 m). Outdoors the AirPods sphere tops out at 4.6 m. Indoors a 2.7 m ceiling cuts it. Another member with a phone is inside your AirPods sphere only when the mic-to-mic gap is 3 m or less. Handing the bundle across is a separate 10 m phone-to-phone step. The tree line is still the kilometer.
+- A pointed phone defaults to 8°. A wearable defaults to 12°. A tree-top pair defaults to 3°, which is what reaches out toward a kilometer.
+- A desk, including this screen, can hold the picture, the notes, and the RMSE line with no microphone at all. It speaks the sentence. It does not hear the air.
+- A hydrophone is a water listener. Keep it off the shelter clock. A $75 underwater mic is a toy for splashes. The current Aquarian H2d lists at $256 and is the general-purpose piece; the older H2a was advertised nearer $170. Dolphin whistles need a recorder that samples well above this listener's 16 kHz frames. Clicks need on the order of 192 kHz. Listening from shore is the whole lab. Playback into the water is not part of this package.
 
 ## Coherence
 

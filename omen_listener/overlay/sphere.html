@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OMEN coverage sphere</title>
+  <style>
+    :root { color-scheme: dark; --live: #f6ff00; --dim: #6a6a6a; --field: #07080a; --ink: #101105; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--field); color: #f4f4f4; font: 16px/1.4 ui-sans-serif, system-ui, sans-serif; }
+    body, button, input { font-family: ui-sans-serif, system-ui, sans-serif; }
+    header, main { width: min(1100px, calc(100% - 32px)); margin: 0 auto; }
+    header { padding-top: 28px; }
+    .eyebrow { margin: 0; font: 600 12px/1 ui-sans-serif, system-ui, sans-serif; letter-spacing: 0.14em; text-transform: uppercase; color: var(--live); }
+    h1 { margin: 8px 0 0; font-size: 40px; letter-spacing: -0.04em; }
+    .back { color: var(--dim); font-size: 14px; }
+    a { color: var(--live); }
+    main { display: grid; grid-template-columns: minmax(260px, 360px) 1fr; gap: 16px; padding: 16px 0 32px; }
+    .panel, .board { background: #101105; border-radius: 18px; padding: 18px; }
+    .choices, .sliders { display: grid; gap: 10px; }
+    .choices { margin-top: 8px; }
+    label.row { display: grid; gap: 6px; color: var(--dim); font-size: 13px; }
+    .seg { display: flex; flex-wrap: wrap; gap: 8px; }
+    button { border: 1px solid var(--live); background: transparent; color: var(--live); border-radius: 999px; padding: 8px 14px; cursor: pointer; }
+    button[aria-pressed="true"] { background: var(--live); color: #111; font-weight: 700; }
+    #fafo { margin-top: 12px; }
+    input[type="range"] { width: 100%; accent-color: var(--live); }
+    #result { margin: 16px 0 0; display: grid; gap: 8px; }
+    #result p { margin: 0; }
+    #result p.hot { color: var(--live); font-weight: 700; text-shadow: 0 0 12px rgba(246, 255, 0, 0.45); }
+    #result p.dim { color: var(--dim); }
+    .note { margin: 14px 0 0; color: var(--dim); font-size: 13px; }
+    canvas { width: 100%; height: auto; display: block; background: var(--field); border-radius: 12px; touch-action: none; }
+    @media (max-width: 800px) { main { grid-template-columns: 1fr; } h1 { font-size: 32px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">A good omen · the room you can still hear</p>
+    <h1>Coverage</h1>
+    <p class="back"><a href="./">Back to the decision window</a></p>
+  </header>
+  <main>
+    <section class="panel">
+      <div class="choices">
+        <label class="row">You
+          <span class="seg">
+            <button type="button" id="you-airpods" data-you="airpods" aria-pressed="true">AirPods</button>
+            <button type="button" id="you-phone" data-you="phone" aria-pressed="false">Phone on listen</button>
+          </span>
+        </label>
+        <label class="row">The room
+          <span class="seg">
+            <button type="button" id="indoors" data-place="indoors" aria-pressed="true">Indoors</button>
+            <button type="button" id="outdoors" data-place="outdoors" aria-pressed="false">Outdoors</button>
+          </span>
+        </label>
+        <label class="row">Another member
+          <span class="seg">
+            <button type="button" id="them-airpods" data-them="airpods" aria-pressed="false">AirPods</button>
+            <button type="button" id="them-phone" data-them="phone" aria-pressed="true">Phone on listen</button>
+          </span>
+        </label>
+      </div>
+      <div class="sliders">
+        <label class="row">Distance along the floor <output id="distance-out"></output>
+          <input id="distance" type="range" min="0" max="15" step="0.1" value="4">
+        </label>
+        <label class="row">Their head height <output id="height-out"></output>
+          <input id="height" type="range" min="0.8" max="6" step="0.1" value="1.6">
+        </label>
+      </div>
+      <button type="button" id="fafo">FAFO</button>
+      <div id="result" aria-live="polite"></div>
+      <p class="note">Drag the view to turn it. This is a play sphere for one room. The tree line is still the piece that reaches toward a kilometer. Apple does not publish an AirPods meter range.</p>
+    </section>
+    <section class="board">
+      <canvas id="view" width="720" height="640" aria-label="Sphere of coverage around a listener"></canvas>
+    </section>
+  </main>
+  <script src="../portable/coverage_sphere.js"></script>
+  <script>
+    const LIVE = "#f6ff00";
+    const DIM = "#6a6a6a";
+    const state = { you: "airpods", them: "phone", place: "indoors", yaw: 0.7 };
+    const params = new URLSearchParams(location.search);
+    if (params.get("you") === "phone" || params.get("you") === "airpods") state.you = params.get("you");
+    if (params.get("them") === "phone" || params.get("them") === "airpods") state.them = params.get("them");
+    if (params.get("place") === "indoors" || params.get("place") === "outdoors") state.place = params.get("place");
+    if (params.get("d") != null) document.getElementById("distance").value = params.get("d");
+    if (params.get("h") != null) document.getElementById("height").value = params.get("h");
+
+    function press(group, value) {
+      document.querySelectorAll("[data-" + group + "]").forEach(function (button) {
+        button.setAttribute("aria-pressed", button.getAttribute("data-" + group) === value ? "true" : "false");
+      });
+    }
+
+    function current() {
+      return OmenCoverage.assess({
+        you: state.you,
+        them: state.them,
+        place: state.place,
+        distanceM: Number(document.getElementById("distance").value),
+        theirHeadM: Number(document.getElementById("height").value),
+      });
+    }
+
+    function renderText() {
+      const picture = current();
+      const distance = Number(document.getElementById("distance").value);
+      const head = Number(document.getElementById("height").value);
+      document.getElementById("distance-out").textContent = distance.toFixed(1) + " m";
+      document.getElementById("height-out").textContent = head.toFixed(1) + " m";
+      const result = document.getElementById("result");
+      result.innerHTML = picture.lines.map(function (line, index) {
+        const hot = index === 0 || (line.indexOf("inside") !== -1 && line.indexOf("outside") === -1) || line.indexOf("spheres overlap.") !== -1 || line.indexOf("can hand") !== -1;
+        return '<p class="' + (hot ? "hot" : "dim") + '">' + line.replace(/[&<>]/g, function (ch) {
+          return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[ch];
+        }) + "</p>";
+      }).join("");
+      press("you", state.you);
+      press("them", state.them);
+      press("place", state.place);
+      draw(picture, distance, head);
+    }
+
+    function project(x, y, z, w, h) {
+      const cy = Math.cos(state.yaw);
+      const sy = Math.sin(state.yaw);
+      const xr = x * cy + z * sy;
+      const zr = -x * sy + z * cy;
+      const pitch = -0.55;
+      const cp = Math.cos(pitch);
+      const sp = Math.sin(pitch);
+      const yr = y * cp - zr * sp;
+      const zd = y * sp + zr * cp;
+      const scale = 280 / (16 - zd);
+      return [w / 2 + xr * scale, h * 0.72 - yr * scale];
+    }
+
+    function draw(picture, distance, head) {
+      const canvas = document.getElementById("view");
+      const ctx = canvas.getContext("2d");
+      const w = canvas.width;
+      const h = canvas.height;
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = "#07080a";
+      ctx.fillRect(0, 0, w, h);
+      function line(x1, y1, z1, x2, y2, z2, color, width) {
+        const a = project(x1, y1, z1, w, h);
+        const b = project(x2, y2, z2, w, h);
+        ctx.beginPath();
+        ctx.moveTo(a[0], a[1]);
+        ctx.lineTo(b[0], b[1]);
+        ctx.strokeStyle = color;
+        ctx.lineWidth = width;
+        ctx.stroke();
+      }
+      for (let g = -12; g <= 12; g += 2) {
+        line(g, 0, -12, g, 0, 12, "#2a2a2a", 1);
+        line(-12, 0, g, 12, 0, g, "#2a2a2a", 1);
+      }
+      if (state.place === "indoors") {
+        ctx.beginPath();
+        [[-6, OmenCoverage.COVERAGE.ceilingM, -6], [6, OmenCoverage.COVERAGE.ceilingM, -6], [6, OmenCoverage.COVERAGE.ceilingM, 6], [-6, OmenCoverage.COVERAGE.ceilingM, 6]].forEach(function (p, i) {
+          const q = project(p[0], p[1], p[2], w, h);
+          if (i) ctx.lineTo(q[0], q[1]);
+          else ctx.moveTo(q[0], q[1]);
+        });
+        ctx.closePath();
+        ctx.strokeStyle = DIM;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+      function sphere(cx, cy0, cz, radius, color) {
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 1.4;
+        for (let lat = 1; lat < 6; lat += 1) {
+          const phi = (lat / 6) * Math.PI;
+          const py = cy0 + radius * Math.cos(phi);
+          const pr = radius * Math.sin(phi);
+          ctx.beginPath();
+          for (let k = 0; k <= 40; k += 1) {
+            const a = (k / 40) * Math.PI * 2;
+            const p = project(cx + pr * Math.cos(a), py, cz + pr * Math.sin(a), w, h);
+            if (k) ctx.lineTo(p[0], p[1]);
+            else ctx.moveTo(p[0], p[1]);
+          }
+          ctx.stroke();
+        }
+        for (let mer = 0; mer < 6; mer += 1) {
+          const a = (mer / 6) * Math.PI;
+          ctx.beginPath();
+          for (let k = 0; k <= 30; k += 1) {
+            const phi = (k / 30) * Math.PI;
+            const p = project(
+              cx + radius * Math.sin(phi) * Math.cos(a),
+              cy0 + radius * Math.cos(phi),
+              cz + radius * Math.sin(phi) * Math.sin(a),
+              w,
+              h
+            );
+            if (k) ctx.lineTo(p[0], p[1]);
+            else ctx.moveTo(p[0], p[1]);
+          }
+          ctx.stroke();
+        }
+      }
+      sphere(distance, picture.theirY, 0, picture.theirR, DIM);
+      sphere(0, picture.yourY, 0, picture.yourR, LIVE);
+      line(0, 0, 0, 0, picture.usableTopM, 0, LIVE, 2);
+      function person(x, headY, color) {
+        line(x, 0, 0, x, headY, 0, color, 3);
+        const p = project(x, headY, 0, w, h);
+        ctx.beginPath();
+        ctx.arc(p[0], p[1], 5, 0, Math.PI * 2);
+        ctx.fillStyle = color;
+        ctx.fill();
+      }
+      person(0, OmenCoverage.COVERAGE.earM, LIVE);
+      person(distance, head, picture.insideYours ? LIVE : DIM);
+      const top = project(0, picture.usableTopM, 0, w, h);
+      ctx.fillStyle = LIVE;
+      ctx.font = "700 14px ui-sans-serif, system-ui, sans-serif";
+      ctx.fillText(picture.usableTopM.toFixed(1) + " m high", top[0] + 8, top[1]);
+    }
+
+    document.querySelectorAll("[data-you]").forEach(function (button) {
+      button.addEventListener("click", function () { state.you = button.getAttribute("data-you"); renderText(); });
+    });
+    document.querySelectorAll("[data-them]").forEach(function (button) {
+      button.addEventListener("click", function () { state.them = button.getAttribute("data-them"); renderText(); });
+    });
+    document.querySelectorAll("[data-place]").forEach(function (button) {
+      button.addEventListener("click", function () { state.place = button.getAttribute("data-place"); renderText(); });
+    });
+    document.getElementById("distance").addEventListener("input", renderText);
+    document.getElementById("height").addEventListener("input", renderText);
+    document.getElementById("fafo").addEventListener("click", function () {
+      const gears = ["airpods", "phone"];
+      state.them = gears[Math.floor(Math.random() * gears.length)];
+      state.place = Math.random() < 0.5 ? "indoors" : "outdoors";
+      document.getElementById("distance").value = (Math.random() * 14).toFixed(1);
+      document.getElementById("height").value = (1 + Math.random() * 4.5).toFixed(1);
+      renderText();
+    });
+    const view = document.getElementById("view");
+    let dragging = false;
+    let lastX = 0;
+    view.addEventListener("pointerdown", function (event) {
+      dragging = true;
+      lastX = event.clientX;
+      view.setPointerCapture(event.pointerId);
+    });
+    view.addEventListener("pointermove", function (event) {
+      if (!dragging) return;
+      state.yaw += (event.clientX - lastX) * 0.01;
+      lastX = event.clientX;
+      renderText();
+    });
+    view.addEventListener("pointerup", function () { dragging = false; });
+    renderText();
+  </script>
+</body>
+</html>

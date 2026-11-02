@@ -548,5 +548,32 @@ class TestJavaScriptPort(unittest.TestCase):
         self.assertEqual(out["picture"]["rmse"]["try_plate"], False)
 
 
+class TestCoverageSphere(unittest.TestCase):
+    def test_airpods_sphere_stops_at_the_ceiling(self):
+        proc = subprocess.run(
+            [
+                "node",
+                "-e",
+                "const c=require('./omen_listener/portable/coverage_sphere.js');"
+                "const room=c.assess({you:'airpods',them:'phone',place:'indoors',distanceM:4,theirHeadM:1.6});"
+                "const up=c.assess({you:'airpods',them:'airpods',place:'outdoors',distanceM:2,theirHeadM:4});"
+                "process.stdout.write(JSON.stringify({room,up}));",
+            ],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        out = json.loads(proc.stdout)
+        room = out["room"]
+        self.assertTrue(room["ceilingCuts"])
+        self.assertAlmostEqual(room["rawTopM"], 4.6, places=5)
+        self.assertAlmostEqual(room["usableTopM"], 2.7, places=5)
+        self.assertFalse(room["insideYours"])
+        self.assertTrue(room["youInsideTheirs"])
+        self.assertFalse(out["up"]["insideYours"])
+        self.assertIn("ceiling stops it at 2.7 m", room["lines"][0])
+
+
 if __name__ == "__main__":
     unittest.main()
