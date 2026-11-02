@@ -216,16 +216,19 @@ test("ON AIR stays hidden until recording — display:flex must not leak past [h
   assert.match(html, /id="onAir"[^>]*hidden/);
   assert.match(html, /id="recordBtn"[^>]*>LISTEN TO THE FIELD</);
   assert.match(html, /storyListen/);
-  assert.match(html, /A STORY IS SOMETHING YOU LISTEN TO/);
+  assert.match(html, /MANKIND GETS ENOUGH AIRTIME/);
+  assert.match(html, /We listen\./);
   assert.match(html, /bedtime\.html/);
   assert.match(html, /GREEN SCREEN · READ TO THE CHILDREN/);
   assert.match(html, /id="greenLink"/);
-  assert.match(html, /older and rarer/);
   assert.equal(/id="recordBtn"[^>]*\bstart\b/.test(html), false);
   assert.match(html, /icon-192\.png/);
   assert.equal(html.includes("LISTEN TO THIS RAIN"), false);
+  assert.equal(html.includes("A STORY IS SOMETHING YOU LISTEN TO"), false);
   const app = await readFile(new URL("../app/js/app.js", import.meta.url), "utf8");
   assert.equal(app.includes("Tap START"), false);
+  assert.equal(app.includes("Start a session to listen"), false);
+  assert.match(app, /We listen\./);
   assert.match(css, /\.on-air\[hidden\][\s\S]*display:\s*none\s*!important/);
   assert.match(css, /\.live-meter\[hidden\]/);
 });
@@ -308,6 +311,24 @@ test("someone can teach listening — older and rarer, no invented expert", () =
   const corpus = LESSONS.flatMap((l) => [l.title, ...l.pages]).join(" ");
   assert.match(corpus, /older|Older/);
   assert.match(corpus, /rarer|Rarer/);
+  assert.match(corpus, /Mankind gets enough airtime/);
+  assert.equal(corpus.includes("Now you try"), false);
+});
+
+test("mankind gets enough airtime — first screen states, it does not instruct or sell", async () => {
+  const html = await readFile(new URL("../app/index.html", import.meta.url), "utf8");
+  const agents = await readFile(new URL("../AGENTS.md", import.meta.url), "utf8");
+  const spec = await readFile(new URL("../MASTER_SPEC.md", import.meta.url), "utf8");
+  const app = await readFile(new URL("../app/js/app.js", import.meta.url), "utf8");
+  const lessons = await readFile(new URL("../app/js/lessons.js", import.meta.url), "utf8");
+  assert.match(html, /MANKIND GETS ENOUGH AIRTIME/);
+  assert.match(html, /We listen\./);
+  assert.match(agents, /Mankind gets enough airtime/);
+  assert.match(spec, /does not tell anyone what to do/);
+  assert.match(spec, /does not sell/);
+  assert.equal(app.includes("Start a session to listen"), false);
+  assert.equal(lessons.includes("Now you try"), false);
+  assert.equal(html.includes("Tap START"), false);
 });
 
 test("Savannah government note is a handout, not a civic portal or marsh demo", async () => {

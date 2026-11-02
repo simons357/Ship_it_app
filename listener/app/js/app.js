@@ -238,7 +238,7 @@ function refreshRecordHome() {
     if (recording) status.textContent = "RECORDING. Original stays on this phone.";
     else if (denied) status.textContent = FAILURE.micDenied;
     else if (pendingKeep) status.textContent = "What was that?";
-    else status.textContent = "The older and rarer, the better.";
+    else status.textContent = "We listen.";
   }
   if (btn) {
     btn.disabled = false;
@@ -726,7 +726,7 @@ function renderField() {
   live.classList.toggle("rain", Boolean((s && !shown && !rec && !s.returnActive) || (rec && firstSoundArmed)));
   if (!s) {
     live.classList.remove("cta", "rec", "rain");
-    live.querySelector("b").textContent = "Start a session to listen";
+    live.querySelector("b").textContent = "The field.";
     live.querySelectorAll("small")[0].textContent = "LIVE FIELD";
     live.querySelectorAll("small")[1].textContent = "Private by default.";
     $("liveMeta").innerHTML = "PRIVATE<br>ON DEVICE";

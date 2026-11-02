@@ -10,13 +10,13 @@ What the wild is saying.
 
 ## Promotional text (170)
 
-Leave one phone still. Walk with the other. LISTENER records wildlife sound, a breadcrumb home, and field notes — privately, until you choose to share or contribute.
+Mankind gets enough airtime. Listener does not tell anyone what to do. It does not sell. It listens to the wild, and to an old story.
 
 ## Description
 
-LISTENER is a field instrument for the non-human world.
+LISTENER is a field instrument for the non-human world. Mankind gets enough airtime. We listen.
 
-Leave one iPhone as your still Base. Take another as Scout. LISTENER records what the microphones hear, marks where you started, and draws the trail back. RETURN is a safety aid — not a replacement for a map you already trust.
+One iPhone can stay still as Base. Another can walk as Scout. LISTENER records what the microphones hear, marks where you started, and draws the trail back. RETURN is a safety aid — not a replacement for a map you already trust.
 
 Wildlife only. If something sounds like human speech, LISTENER does not transcribe it, does not guess who is speaking, and does not add it to the wildlife record.
 

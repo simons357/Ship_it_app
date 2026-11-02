@@ -79,8 +79,16 @@ struct RecordHomeView: View {
     var session: Session? { sessions.first }
 
     var body: some View {
-        VStack(spacing: 28) {
+        VStack(spacing: 18) {
             Text("LISTENER").tracking(6).font(.caption.weight(.black))
+            Text("WHAT THE WILD IS SAYING")
+                .font(.system(size: 8))
+                .tracking(2)
+                .foregroundStyle(Color(red: 0.57, green: 0.64, blue: 0.60))
+            Text("MANKIND GETS ENOUGH AIRTIME")
+                .font(.system(size: 8))
+                .tracking(1.4)
+                .foregroundStyle(.secondary)
             Text(statusLine)
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.secondary)
@@ -93,15 +101,16 @@ struct RecordHomeView: View {
                 }
             }
             Spacer()
-            Button(audio.recording ? ListenerCopy.stop : ListenerCopy.start) {
+            Button(audio.recording ? "STOP THE FIELD" : "LISTEN TO THE FIELD") {
                 if audio.recording { stopRecord() } else { startRecord() }
             }
-            .frame(width: 260, height: 260)
-            .background(audio.recording ? Color(red: 0.36, green: 0.12, blue: 0.14) : Color(red: 0.12, green: 0.36, blue: 0.24))
+            .padding(.vertical, 16)
+            .padding(.horizontal, 22)
+            .frame(maxWidth: 280)
+            .background(audio.recording ? Color(red: 0.36, green: 0.12, blue: 0.14) : Color(red: 0.10, green: 0.22, blue: 0.16))
             .foregroundStyle(.white)
-            .font(.system(size: 52, weight: .black))
-            .clipShape(Circle())
-            .shadow(color: audio.recording ? Color.red.opacity(0.45) : Color.green.opacity(0.45), radius: 28)
+            .font(.system(size: 13, weight: .bold))
+            .clipShape(Capsule())
             Spacer()
             Button("Field instrument") {
                 if session == nil { ensureSession() }
@@ -122,7 +131,7 @@ struct RecordHomeView: View {
         if saved || encounters.contains(where: { $0.sessionId == session?.id }) {
             return "Saved on this phone. Not sent anywhere. UNKNOWN stays UNKNOWN."
         }
-        return "Tap START. Put the phone down. Tap STOP when you are done."
+        return "We listen."
     }
 
     private func ensureSession() {

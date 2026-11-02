@@ -14,6 +14,8 @@ enum SpeechGate: String, Codable { case pending, excluded, excludedAsHuman }
 
 enum ListenerCopy {
     static let product = "What the wild is saying."
+    static let airtime = "MANKIND GETS ENOUGH AIRTIME"
+    static let weListen = "We listen."
     static let scoutLost = "Scout connection lost. Still recording — we'll sync when you're back."
     static let cohMark = "—"
     static let cohStatus = "INSUFFICIENT FIELD DATA"

@@ -23,30 +23,22 @@ Do not explain the product. Paste `BASE44_PROMPT.txt` into a new Base44 app. Ste
 
 ## Open on iPhone (Session app — not the parked Listener search)
 
-**This build:** https://angled-vortex-nqn9n24.shipstatic.com/
-
-Savannah government note (handout, not a city portal): https://angled-vortex-nqn9n24.shipstatic.com/savannah.html
-
-Green screen story: https://angled-vortex-nqn9n24.shipstatic.com/bedtime.html
-
-Green screen lesson: https://angled-vortex-nqn9n24.shipstatic.com/bedtime.html?kind=lesson
-
-Claim: https://my.shipstatic.com/claim/e6d3fddbed3afc2114074d48fb8ce45a
+Unclaimed Shipstatic hosts expire in about three days. Do not send a random hostname as if it were the product name. Until a claimed host or GitHub Pages exists: local preview, Safari, Add to Home Screen. The icon is the name.
 
 **TITAN-X story for an investor (read aloud / LISTEN):** https://precise-prism-3ad673t.shipstatic.com/
 
 Claim that story page: https://my.shipstatic.com/claim/debe8aa2cc7e6c2f1812e61843bcdf9c
 
-If the first screen says **A STORY IS SOMETHING YOU LISTEN TO** and has **STORY** / **LESSON**, you have this build. If it says Savannah marsh, Air mode, Water mode, Party mode, or lists clapper rails / painted buntings, that is Claude’s demo, not this app.
+If the first screen says **MANKIND GETS ENOUGH AIRTIME** and **We listen.**, you have this build. If it says Savannah marsh, Air mode, Water mode, Party mode, or lists clapper rails / painted buntings, that is Claude’s demo, not this app.
 
 The hostname is still random Shipstatic junk, not the product name. A name like Listener needs your Shipstatic or GitHub Pages account. Old hosts such as `dreamy-dust-…` and `spectral-rune-…` are leftovers.
 
-This is LISTENER. Tonight’s bedtime story first — one a day, from famous public-domain books. Then the field. No grocery-store START ball.
+This is LISTENER. Mankind gets enough airtime. We do not tell anyone what to do. We do not sell. We listen — to the wild, and to an old story. No grocery-store START ball.
 
 1. Open the link in **Safari**.
-2. Share → **Add to Home Screen**.
-3. Tap **LISTEN** to hear tonight’s story, or **LESSON** for a short teaching on listening. **GREEN SCREEN · TEACH LISTENING** is for a real person at the green screen. **I’LL TEACH** turns the pages. The older and rarer the listening, the better.
-4. **LISTEN TO THE FIELD** is the wildlife instrument. Allow the microphone. Put the phone down. Tap **STOP THE FIELD**. If it does not know the sound, type what it was (rain) and tap **KEEP**.
+2. Share → **Add to Home Screen**. The icon is the name.
+3. **LISTEN** reads tonight’s story. **LESSON** is for whoever is teaching. **GREEN SCREEN** is the chroma page. Older/rarer is how the catalog is ranked.
+4. **LISTEN TO THE FIELD** is the wildlife instrument. Microphone, original on this phone, **STOP THE FIELD**, then what it was or UNKNOWN.
 
 Later: your weather and ChatVault can plug in through `app/js/plugins.js`. Not now.
 

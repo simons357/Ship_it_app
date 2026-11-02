@@ -8,6 +8,21 @@ import { dayNumber } from "./stories.js";
 
 export const LESSONS = Object.freeze([
   {
+    id: "enough-airtime",
+    title: "Enough Airtime",
+    source: "For whoever is teaching",
+    rights: "original",
+    rare: true,
+    pages: [
+      "Mankind gets enough airtime.",
+      "Listener does not tell anyone what to do.",
+      "It does not sell.",
+      "It listens.",
+      "To the wild. To an old story. To what is really important.",
+      "That is enough.",
+    ],
+  },
+  {
     id: "older-kind",
     title: "An Older Kind of Listening",
     source: "For whoever is teaching",
@@ -21,7 +36,7 @@ export const LESSONS = Object.freeze([
       "The rarer the listening, the better.",
       "You do not need a new name for the sound.",
       "You need time, and a quiet place, and one true ear.",
-      "That is the lesson. Now you try.",
+      "That is the lesson.",
     ],
   },
   {

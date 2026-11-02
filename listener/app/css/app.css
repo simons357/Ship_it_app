@@ -301,9 +301,11 @@ body.listening #field {
 }
 .build-mark {
   font-size: 8px;
-  letter-spacing: .22em;
+  letter-spacing: .18em;
   color: #9fb0a7;
   text-shadow: 0 1px 10px #000a;
+  max-width: 20rem;
+  padding: 0 12px;
 }
 .onboard.sky-wet .sky {
   background: repeating-linear-gradient(185deg, transparent 0 14px, #ffffff14 15px 16px);

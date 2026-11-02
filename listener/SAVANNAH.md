@@ -8,7 +8,7 @@ This page is a handout. It is not a city partnership. It does not put the City s
 
 ## One sentence
 
-Listener is a wildlife-only field instrument: what the wild is saying. It also reads one little story a day, and someone real can teach listening.
+Listener is a wildlife-only field instrument: what the wild is saying. Mankind gets enough airtime. We do not tell anyone what to do. We do not sell. We listen — to the wild, and to an old story. Someone real can teach listening.
 
 ## What it is
 
@@ -47,20 +47,15 @@ Do not ask yet for a press release, a refuge research permit, exclusive marsh ri
 - Call sharing a contribution
 - Pretend Field Coherence is a number before two real phones are actually synchronized
 
-## What they can try tonight
+## What is on a phone
 
-Open in Safari, then Add to Home Screen:
-
-- Listener: https://angled-vortex-nqn9n24.shipstatic.com/
-- This note on a phone: https://angled-vortex-nqn9n24.shipstatic.com/savannah.html
-- Green screen story: https://angled-vortex-nqn9n24.shipstatic.com/bedtime.html
-- Green screen lesson: https://angled-vortex-nqn9n24.shipstatic.com/bedtime.html?kind=lesson
+Open in Safari, then Add to Home Screen. The icon is the name. Unclaimed Shipstatic hosts expire in about three days — do not send a random hostname as the product. Until a claimed host exists, use a local preview of `app/` and this note at `app/savannah.html`.
 
 ## Email you can forward
 
 Subject: Listener — what the wild is saying
 
-A neighbor built a small field instrument for wildlife sound, plus one old bedtime story a day. It is private. It does not listen to people. It does not invent animals.
+A neighbor built a small field instrument for wildlife sound, plus one old bedtime story a day. Mankind gets enough airtime. It does not tell anyone what to do. It does not sell. It listens. It is private. It does not listen to people. It does not invent animals.
 
 Home is Wilmington Island (Chatham County). We are not asking the City to adopt an app. We are asking for one conversation about a listening hour in a park or community center, and, if anyone films the children’s reading, the ordinary film office.
 
