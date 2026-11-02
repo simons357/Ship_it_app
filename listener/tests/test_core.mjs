@@ -30,6 +30,8 @@ import { skyPeriod, weatherLine } from "../app/js/weather.js";
 import { ownerEndpoints } from "../app/js/plugins.js";
 import { STORIES, tonightStory, tonightPool, dayNumber, listeningRank, ageLine, inferYear, inferRarity } from "../app/js/stories.js";
 import { LESSONS, todayLesson } from "../app/js/lessons.js";
+import { HOUSE_CATALOG } from "../app/js/catalog.js";
+import { tryIdentify, taxaFromInat, taxaFromGbif, mergeCandidates } from "../app/js/identify.js";
 
 test("coarse location rounds to ~11 km and never stays exact", () => {
   const c = coarseLocation(32.01234, -81.09876);
@@ -216,8 +218,9 @@ test("ON AIR stays hidden until recording — display:flex must not leak past [h
   assert.match(html, /id="onAir"[^>]*hidden/);
   assert.match(html, /id="recordBtn"[^>]*>LISTEN TO THE FIELD</);
   assert.match(html, /storyListen/);
-  assert.match(html, /MANKIND GETS ENOUGH AIRTIME/);
-  assert.match(html, /We listen\./);
+  assert.match(html, /maybeIds/);
+  assert.match(html, /OPEN FIELD/);
+  assert.match(html, /PARK CAR/);
   assert.match(html, /bedtime\.html/);
   assert.match(html, /GREEN SCREEN · READ TO THE CHILDREN/);
   assert.match(html, /id="greenLink"/);
@@ -225,10 +228,11 @@ test("ON AIR stays hidden until recording — display:flex must not leak past [h
   assert.match(html, /icon-192\.png/);
   assert.equal(html.includes("LISTEN TO THIS RAIN"), false);
   assert.equal(html.includes("A STORY IS SOMETHING YOU LISTEN TO"), false);
+  assert.equal(html.includes("MANKIND GETS ENOUGH AIRTIME"), false);
   const app = await readFile(new URL("../app/js/app.js", import.meta.url), "utf8");
   assert.equal(app.includes("Tap START"), false);
   assert.equal(app.includes("Start a session to listen"), false);
-  assert.match(app, /We listen\./);
+  assert.match(app, /tryIdentify/);
   assert.match(css, /\.on-air\[hidden\][\s\S]*display:\s*none\s*!important/);
   assert.match(css, /\.live-meter\[hidden\]/);
 });
@@ -315,20 +319,44 @@ test("someone can teach listening — older and rarer, no invented expert", () =
   assert.equal(corpus.includes("Now you try"), false);
 });
 
-test("mankind gets enough airtime — first screen states, it does not instruct or sell", async () => {
+test("try to ID birds, dolphins, and house critters — candidates, never a claim", () => {
+  assert.ok(HOUSE_CATALOG.some((s) => s.group === "bird"));
+  assert.ok(HOUSE_CATALOG.some((s) => s.group === "dolphin" && /tursiops/i.test(s.scientific)));
+  assert.ok(HOUSE_CATALOG.some((s) => /cricket/i.test(s.common)));
+  const bird = tryIdentify({ words: "cardinal", habitat: "house" });
+  assert.equal(bird.claimed, false);
+  assert.ok(bird.candidates.some((c) => /cardinal/i.test(c.common)));
+  const dolphin = tryIdentify({ words: "dolphin click", habitat: "water" });
+  assert.equal(dolphin.claimed, false);
+  assert.ok(dolphin.candidates.some((c) => /dolphin/i.test(c.common)));
+  const unknown = tryIdentify({ words: "" });
+  assert.equal(unknown.claimed, false);
+  assert.equal(unknown.label, "UNKNOWN");
+  const inat = taxaFromInat({
+    results: [{ taxon: { id: 1, preferred_common_name: "Northern Cardinal", name: "Cardinalis cardinalis", iconic_taxon_name: "Aves" } }],
+  });
+  assert.equal(inat[0].source, "inaturalist");
+  assert.equal(inat[0].maybe, true);
+  const gbif = taxaFromGbif({
+    results: [{ species: "Tursiops truncatus", vernacularName: "Common Bottlenose Dolphin", class: "Mammalia", speciesKey: 1 }],
+  });
+  assert.ok(/dolphin/i.test(gbif[0].common) || /tursiops/i.test(gbif[0].scientific));
+  const merged = mergeCandidates(bird.candidates, inat);
+  assert.ok(merged.length >= 1);
+  assert.equal(merged.every((c) => c.maybe), true);
+});
+
+test("first screen is the instrument, not a manifesto", async () => {
   const html = await readFile(new URL("../app/index.html", import.meta.url), "utf8");
-  const agents = await readFile(new URL("../AGENTS.md", import.meta.url), "utf8");
-  const spec = await readFile(new URL("../MASTER_SPEC.md", import.meta.url), "utf8");
   const app = await readFile(new URL("../app/js/app.js", import.meta.url), "utf8");
   const lessons = await readFile(new URL("../app/js/lessons.js", import.meta.url), "utf8");
-  assert.match(html, /MANKIND GETS ENOUGH AIRTIME/);
-  assert.match(html, /We listen\./);
-  assert.match(agents, /Mankind gets enough airtime/);
-  assert.match(spec, /does not tell anyone what to do/);
-  assert.match(spec, /does not sell/);
+  assert.match(html, /WHAT THE WILD IS SAYING/);
+  assert.match(html, /LISTEN TO THE FIELD/);
+  assert.equal(html.includes("MANKIND GETS ENOUGH AIRTIME"), false);
   assert.equal(app.includes("Start a session to listen"), false);
   assert.equal(lessons.includes("Now you try"), false);
   assert.equal(html.includes("Tap START"), false);
+  assert.equal(html.includes("Savannah marsh"), false);
 });
 
 test("Savannah government note is a handout, not a civic portal or marsh demo", async () => {

@@ -8,7 +8,7 @@ This page is a handout. It is not a city partnership. It does not put the City s
 
 ## One sentence
 
-Listener is a wildlife-only field instrument: what the wild is saying. Mankind gets enough airtime. We do not tell anyone what to do. We do not sell. We listen — to the wild, and to an old story. Someone real can teach listening.
+Listener is a wildlife-only field instrument: what the wild is saying. It listens to non-human sound, tries to ID birds and other wild life around the house, and keeps the original on the phone. Someone real can teach listening.
 
 ## What it is
 

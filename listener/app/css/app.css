@@ -158,6 +158,10 @@ header {
   background: var(--amber);
   box-shadow: 0 0 25px var(--amber);
 }
+.event.parked i {
+  background: var(--cyan);
+  box-shadow: 0 0 24px var(--cyan);
+}
 .event span { font-size: 8px; }
 .instrument {
   position: fixed;
@@ -397,6 +401,30 @@ body.listening #field {
   border-color: #ff8078;
   background: #5c1f24;
 }
+.maybe-ids {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 4px;
+}
+.maybe-ids button {
+  border: 1px solid var(--line);
+  background: #0d1a15;
+  color: #d7e6dc;
+  border-radius: 999px;
+  padding: 7px 10px;
+  font-size: 10px;
+  letter-spacing: .04em;
+  text-align: left;
+}
+.maybe-ids button small {
+  display: block;
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: .08em;
+}
+.maybe-ids button.on { border-color: var(--amber); color: var(--amber); }
+.maybe-ids[hidden] { display: none !important; }
 .storybook {
   width: min(360px, 100%);
   text-align: left;
@@ -404,6 +432,12 @@ body.listening #field {
   border: 1px solid #416d58;
   border-radius: 20px;
   padding: 14px 14px 12px;
+}
+.storybook summary {
+  cursor: pointer;
+  letter-spacing: .14em;
+  font-size: 10px;
+  color: var(--muted);
 }
 .story-nav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; align-items: center; }
 .tonight-mark {

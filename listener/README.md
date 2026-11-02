@@ -23,22 +23,23 @@ Do not explain the product. Paste `BASE44_PROMPT.txt` into a new Base44 app. Ste
 
 ## Open on iPhone (Session app — not the parked Listener search)
 
-Unclaimed Shipstatic hosts expire in about three days. Do not send a random hostname as if it were the product name. Until a claimed host or GitHub Pages exists: local preview, Safari, Add to Home Screen. The icon is the name.
+**This build:** https://elastic-synth-m3c7jrm.shipstatic.com/
 
-**TITAN-X story for an investor (read aloud / LISTEN):** https://precise-prism-3ad673t.shipstatic.com/
+Claim (or it expires in about three days): https://my.shipstatic.com/claim/8165721fba56179f005ee1441ef7649a
 
-Claim that story page: https://my.shipstatic.com/claim/debe8aa2cc7e6c2f1812e61843bcdf9c
+The hostname is random Shipstatic junk, not the product name. Safari → Add to Home Screen. The icon is the name.
 
-If the first screen says **MANKIND GETS ENOUGH AIRTIME** and **We listen.**, you have this build. If it says Savannah marsh, Air mode, Water mode, Party mode, or lists clapper rails / painted buntings, that is Claude’s demo, not this app.
+If the first screen says **LISTENER** / **WHAT THE WILD IS SAYING** and **LISTEN TO THE FIELD**, then after STOP shows **maybe** ID chips, you have this build. If it says Savannah marsh, Air mode, Water mode, Party mode, or lists clapper rails / painted buntings as live animals on a map, that is Claude’s demo, not this app.
 
 The hostname is still random Shipstatic junk, not the product name. A name like Listener needs your Shipstatic or GitHub Pages account. Old hosts such as `dreamy-dust-…` and `spectral-rune-…` are leftovers.
 
-This is LISTENER. Mankind gets enough airtime. We do not tell anyone what to do. We do not sell. We listen — to the wild, and to an old story. No grocery-store START ball.
+This is LISTENER. Listen to sounds. Try to ID birds, dolphins, and critters around the house. Keep what you heard. Field trail home, steps, parked car. No grocery-store START ball. IDs are maybe, not claims.
 
 1. Open the link in **Safari**.
 2. Share → **Add to Home Screen**. The icon is the name.
-3. **LISTEN** reads tonight’s story. **LESSON** is for whoever is teaching. **GREEN SCREEN** is the chroma page. Older/rarer is how the catalog is ranked.
-4. **LISTEN TO THE FIELD** is the wildlife instrument. Microphone, original on this phone, **STOP THE FIELD**, then what it was or UNKNOWN.
+3. **LISTEN TO THE FIELD**. **STOP THE FIELD**. Type what it was or tap a maybe chip, or leave UNKNOWN.
+4. **OPEN FIELD** for the trail, steps, **PARK CAR**, **RETURN**.
+5. **STORY · LESSON** is still there, folded. **GREEN SCREEN** is the chroma page.
 
 Later: your weather and ChatVault can plug in through `app/js/plugins.js`. Not now.
 

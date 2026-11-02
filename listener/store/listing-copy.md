@@ -14,7 +14,7 @@ Mankind gets enough airtime. Listener does not tell anyone what to do. It does n
 
 ## Description
 
-LISTENER is a field instrument for the non-human world. Mankind gets enough airtime. We listen.
+LISTENER is a field instrument for the non-human world. It listens, tries to ID birds and other wild sound, and keeps the original on the phone.
 
 One iPhone can stay still as Base. Another can walk as Scout. LISTENER records what the microphones hear, marks where you started, and draws the trail back. RETURN is a safety aid — not a replacement for a map you already trust.
 

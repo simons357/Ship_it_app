@@ -20,7 +20,8 @@ WHAT THE FIRST TWO SCREENS ARE
 SCREEN 1 — HOME (this house)
 - Full-screen home field. Sky follows the real clock: night / dawn / day / dusk. Do not invent rain or snow unless the owner’s weather is actually connected.
 - The house / porch is the subject. Let the owner set a photo of their real house (camera roll). Until they do, show a quiet house + porch, not a cartoon, with the amber listen mark on the porch and faint rings going out over the yard.
-- Copy: LISTENER / WHAT THE WILD IS SAYING / MANKIND GETS ENOUGH AIRTIME / We listen.
+- Copy: LISTENER / WHAT THE WILD IS SAYING
+- After STOP: What was that? plus maybe-ID chips from the house catalog (birds, dolphins, porch critters) and nearby wildlife lists. UNKNOWN is allowed. A chip is a candidate, not a claim.
 - Actions only: OPEN FIELD    and    ＋ START SESSION
 - Optional: “Use a picture of this house”
 - No Air mode. No Water mode. No Party mode. No species list. No coherence numbers. No giant START circle.

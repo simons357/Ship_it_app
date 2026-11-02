@@ -9,12 +9,12 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="LISTENER">
   <title>LISTENER</title>
-  <meta name="description" content="Mankind gets enough airtime. We listen. What the wild is saying.">
-  <meta name="listener-build" content="cursor-grok-listen-stories">
-  <!-- LISTENER: mankind gets enough airtime. We do not tell. We do not sell. We listen. -->
+  <meta name="description" content="What the wild is saying. Wildlife-only field instrument.">
+  <meta name="listener-build" content="cursor-grok-try-id">
+  <!-- LISTENER: listen, try to ID birds/dolphins/house critters. Candidates, not claims. -->
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png?v=20">
-  <link rel="stylesheet" href="./css/app.css?v=20">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png?v=21">
+  <link rel="stylesheet" href="./css/app.css?v=21">
 </head>
 <body class="listening">
   <div id="onboard" class="onboard show sky-night">
@@ -23,12 +23,27 @@
       <img class="rune" src="./icons/icon-192.png?v=17" alt="" width="88" height="88">
       <div class="word">LISTENER</div>
       <div class="tag">WHAT THE WILD IS SAYING</div>
-      <div class="build-mark">MANKIND GETS ENOUGH AIRTIME</div>
       <div class="field-clock" id="fieldClock"></div>
       <div class="field-wx" id="fieldWeather" hidden></div>
       <div class="field-role" id="fieldRole" hidden></div>
-      <p class="record-status" id="recordStatus">We listen.</p>
-      <div class="storybook" id="storybook">
+      <p class="record-status" id="recordStatus">Original stays on this phone.</p>
+      <div class="on-air" id="onAir" hidden><i></i><span>ON AIR</span></div>
+      <div class="rec-timer" id="recTimer" hidden>00:00</div>
+      <div class="live-meter" id="liveMeter" hidden aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <button class="listen-pill" id="recordBtn" type="button">LISTEN TO THE FIELD</button>
+      <form id="whatWasThat" class="what-was hidden">
+        <label for="whatText">What was that?</label>
+        <input id="whatText" type="text" placeholder="rain, a bird, a dolphin, or leave UNKNOWN" autocomplete="off" enterkeyhint="done">
+        <div id="maybeIds" class="maybe-ids" hidden></div>
+        <label class="photo-link" for="whatPhoto">Add a picture</label>
+        <input id="whatPhoto" type="file" accept="image/*" capture="environment">
+        <button class="wide" id="keepBtn" type="button">KEEP</button>
+        <button class="ghost" id="unknownBtn" type="button">I don't know</button>
+      </form>
+      <div id="heardList" class="heard-list"></div>
+      <button class="ghost" id="openField" type="button">OPEN FIELD</button>
+      <details class="storybook" id="storybook">
+        <summary>STORY · LESSON</summary>
         <div class="story-nav" id="storyNav"></div>
         <h2 class="story-title" id="storyTitle"></h2>
         <p class="story-source" id="storySource"></p>
@@ -38,20 +53,7 @@
           <button class="ghost" id="storyStop" type="button">STOP</button>
           <a class="ghost green-link" id="greenLink" href="./bedtime.html">GREEN SCREEN · READ TO THE CHILDREN</a>
         </div>
-      </div>
-      <div class="on-air" id="onAir" hidden><i></i><span>ON AIR</span></div>
-      <div class="rec-timer" id="recTimer" hidden>00:00</div>
-      <div class="live-meter" id="liveMeter" hidden aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-      <button class="listen-pill" id="recordBtn" type="button">LISTEN TO THE FIELD</button>
-      <form id="whatWasThat" class="what-was hidden">
-        <label for="whatText">What was that?</label>
-        <input id="whatText" type="text" placeholder="rain, a bird, or leave UNKNOWN" autocomplete="off" enterkeyhint="done">
-        <label class="photo-link" for="whatPhoto">Add a picture</label>
-        <input id="whatPhoto" type="file" accept="image/*" capture="environment">
-        <button class="wide" id="keepBtn" type="button">KEEP</button>
-        <button class="ghost" id="unknownBtn" type="button">I don't know</button>
-      </form>
-      <div id="heardList" class="heard-list"></div>
+      </details>
     </div>
   </div>
 
@@ -98,6 +100,7 @@
     <button id="btnSession">＋ SESSION</button>
     <button id="btnNote">FIELD NOTE</button>
     <button id="btnReturn">↶ RETURN</button>
+    <button id="btnPark">PARK CAR</button>
     <button class="primary" id="btnScout">GO SCOUT</button>
   </div>
 
@@ -119,6 +122,6 @@
   <div class="toast" id="toast" hidden></div>
   <div class="overlay" id="overlay"><div class="sheet" id="sheet"></div></div>
 
-  <script type="module" src="./js/app.js?v=20"></script>
+  <script type="module" src="./js/app.js?v=21"></script>
 </body>
 </html>

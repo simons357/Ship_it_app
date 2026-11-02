@@ -12,7 +12,9 @@ Listener is a distributed, wildlife-only acoustic exploration platform that turn
 
 Complex underneath. Obvious on top.
 
-Mankind gets enough airtime. Listener does not tell anyone what to do. It does not sell. It listens to what is really important: the wild, the old and rare story, the field. The first screen states this. It does not instruct and it does not pitch.
+Listener is still morphing. The first screen is LISTENER / What the wild is saying. It listens. It does not instruct and it does not pitch.
+
+Try to identify non-human sounds against a house catalog (birds, dolphins, porch/yard critters) and, when online, nearby public wildlife lists. A match is a candidate, never a claim. UNKNOWN stays first-class. No invented pins.
 
 If a normal user must understand networking, routing, synchronization or signal processing to use a feature, the feature is not finished.
 
@@ -163,7 +165,7 @@ Later: Multipeer Connectivity, hydrophones, ultrasonic microphones, external vis
 
 Classic public-domain children's stories and one original house story. They are something to listen to. They are not wildlife encounters and do not go in the Signal Library.
 
-One little bedtime story a day. Same calendar day, same story. Ranking underneath: the older and rarer, the better — daily pick ranks rare public-domain tales first, then older years (Perrault before Potter). Famous common tales stay under MORE STORIES. That ranking is not the first-screen identity. The first screen is: mankind gets enough airtime. We listen.
+One little bedtime story a day. Same calendar day, same story. Ranking underneath: the older and rarer, the better — daily pick ranks rare public-domain tales first, then older years (Perrault before Potter). Famous common tales stay under MORE STORIES. Stories are not the first-screen identity.
 
 Someone can teach listening. The teacher is whoever is there — not an invented expert. Lessons live in `app/js/lessons.js`. Lessons state how listening is. They do not tell anyone what to do.
 
@@ -173,7 +175,7 @@ A Savannah government conversation is invited by a real person the owner knows. 
 
 ## Consumer onboarding
 
-Screen 1: LISTENER — What the wild is saying. MANKIND GETS ENOUGH AIRTIME. We listen.
+Screen 1: LISTENER — What the wild is saying. Listen to the field. Try to ID. Keep. OPEN FIELD for the trail home, steps, and parked car.
 
 Screen 2:
 

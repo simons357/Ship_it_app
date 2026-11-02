@@ -107,6 +107,68 @@ export async function startRecording(deviceId) {
   };
 }
 
+/** Acoustic snapshot for try-to-ID. Not a transcript. Not a species claim. */
+export function attachFeatures(stream) {
+  if (!stream || typeof AudioContext === "undefined") {
+    return { snapshot: () => null, stop() {} };
+  }
+  const ctx = new AudioContext();
+  const src = ctx.createMediaStreamSource(stream);
+  const analyser = ctx.createAnalyser();
+  analyser.fftSize = 2048;
+  src.connect(analyser);
+  const bins = new Uint8Array(analyser.frequencyBinCount);
+  const time = new Uint8Array(analyser.fftSize);
+  let last = { rms: 0, peakHz: 0, modulationHz: 0, bandEnergySpeech: 0, bandEnergyTotal: 1 };
+  let raf = 0;
+  const tick = () => {
+    analyser.getByteFrequencyData(bins);
+    analyser.getByteTimeDomainData(time);
+    let sum = 0;
+    for (let i = 0; i < time.length; i++) {
+      const v = (time[i] - 128) / 128;
+      sum += v * v;
+    }
+    const rms = Math.sqrt(sum / time.length);
+    let peakI = 0;
+    let peakV = 0;
+    let speech = 0;
+    let total = 0;
+    const hzPerBin = ctx.sampleRate / analyser.fftSize;
+    for (let i = 1; i < bins.length; i++) {
+      const v = bins[i];
+      total += v;
+      const hz = i * hzPerBin;
+      if (hz >= 85 && hz <= 3500) speech += v;
+      if (v > peakV) {
+        peakV = v;
+        peakI = i;
+      }
+    }
+    last = {
+      rms,
+      peakHz: peakI * hzPerBin,
+      modulationHz: 0,
+      bandEnergySpeech: speech,
+      bandEnergyTotal: total || 1,
+    };
+    raf = requestAnimationFrame(tick);
+  };
+  tick();
+  return {
+    snapshot: () => ({ ...last }),
+    stop() {
+      cancelAnimationFrame(raf);
+      try {
+        src.disconnect();
+        ctx.close();
+      } catch {
+        /* already closed */
+      }
+    },
+  };
+}
+
 /** Live field level. Not a transcript. Not a species. */
 export function attachLevelMeter(stream, onLevel) {
   if (!stream || typeof AudioContext === "undefined") return () => {};

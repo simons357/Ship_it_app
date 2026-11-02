@@ -85,10 +85,6 @@ struct RecordHomeView: View {
                 .font(.system(size: 8))
                 .tracking(2)
                 .foregroundStyle(Color(red: 0.57, green: 0.64, blue: 0.60))
-            Text("MANKIND GETS ENOUGH AIRTIME")
-                .font(.system(size: 8))
-                .tracking(1.4)
-                .foregroundStyle(.secondary)
             Text(statusLine)
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.secondary)
@@ -131,7 +127,7 @@ struct RecordHomeView: View {
         if saved || encounters.contains(where: { $0.sessionId == session?.id }) {
             return "Saved on this phone. Not sent anywhere. UNKNOWN stays UNKNOWN."
         }
-        return "We listen."
+        return "Original stays on this phone."
     }
 
     private func ensureSession() {

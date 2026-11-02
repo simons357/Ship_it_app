@@ -17,10 +17,12 @@ import {
   isMicUnavailable,
   listInputs,
   pickPreferredInput,
+  attachFeatures,
   attachLevelMeter,
   startLocalOriginalRecording,
   startRecording,
 } from "./audio.js";
+import { tryIdentify, mergeCandidates, pipeNearbyWildlife } from "./identify.js";
 import { clockLabel, fetchFieldWeather, skyPeriod, weatherLine } from "./weather.js";
 import { indexOwnerSearch, ownerEndpoints, queryOwnerSearch } from "./plugins.js";
 import { STORIES, ageLine, listeningRank, storyById, tonightStory } from "./stories.js";
@@ -50,6 +52,8 @@ let stopMeter = null;
 let airpodsOn = false;
 let recordBound = false;
 let storyBound = false;
+let pickedMaybe = null;
+let lastMaybes = [];
 
 function persist() {
   saveState(state);
@@ -217,7 +221,8 @@ async function renderHeard() {
   list.innerHTML = rows
     .map((e) => {
       const wx = e.weather?.label ? ` · ${e.weather.label}` : "";
-      return `<div class="signal"><small>${new Date(e.t).toLocaleString()}${wx}</small><b>${e.label}</b><span>${e.originalAudioId ? "Original on this phone" : "No original"}</span></div>`;
+      const maybe = e.candidateId ? " · maybe" : "";
+      return `<div class="signal"><small>${new Date(e.t).toLocaleString()}${wx}${maybe}</small><b>${e.label}</b><span>${e.originalAudioId ? "Original on this phone" : "No original"}</span></div>`;
     })
     .join("");
 }
@@ -238,7 +243,7 @@ function refreshRecordHome() {
     if (recording) status.textContent = "RECORDING. Original stays on this phone.";
     else if (denied) status.textContent = FAILURE.micDenied;
     else if (pendingKeep) status.textContent = "What was that?";
-    else status.textContent = "We listen.";
+    else status.textContent = "Original stays on this phone.";
   }
   if (btn) {
     btn.disabled = false;
@@ -253,6 +258,7 @@ function refreshRecordHome() {
     if (recording) timer.textContent = elapsedLabel(recStarted);
   }
   showWhatWasThat(Boolean(pendingKeep) && !recording);
+  if (!pendingKeep) paintMaybes([]);
   applySky();
   renderHeard();
 }
@@ -268,8 +274,72 @@ function bindRecordHome() {
     };
   }
   $("keepBtn")?.addEventListener("click", () => keepHeard($("whatText")?.value || "", $("whatPhoto")?.files?.[0] || null));
-  $("unknownBtn")?.addEventListener("click", () => keepHeard("", $("whatPhoto")?.files?.[0] || null));
+  $("unknownBtn")?.addEventListener("click", () => {
+    pickedMaybe = null;
+    keepHeard("", $("whatPhoto")?.files?.[0] || null);
+  });
+  $("whatText")?.addEventListener("input", () => refreshMaybes($("whatText").value));
+  $("maybeIds")?.addEventListener("click", (ev) => {
+    const b = ev.target.closest("[data-maybe]");
+    if (!b) return;
+    const hit = lastMaybes.find((c) => c.id === b.dataset.maybe);
+    if (!hit) return;
+    pickedMaybe = hit;
+    const box = $("whatText");
+    if (box) box.value = hit.common;
+    paintMaybes(lastMaybes);
+  });
+  $("openField")?.addEventListener("click", async () => {
+    if (!session()) await beginDoor("listen");
+    showInstrument = true;
+    showOnboard();
+    renderAll();
+  });
   $("heardSearch")?.addEventListener("input", () => renderHeard());
+}
+
+function habitatNow() {
+  const s = session();
+  if (s?.role === "scout") return "woods";
+  return "house";
+}
+
+function paintMaybes(list) {
+  const box = $("maybeIds");
+  if (!box) return;
+  lastMaybes = list || [];
+  if (!lastMaybes.length) {
+    box.hidden = true;
+    box.innerHTML = "";
+    return;
+  }
+  box.hidden = false;
+  box.innerHTML = lastMaybes
+    .map((c) => {
+      const src = c.source === "house-catalog" ? "around the house" : c.source === "inaturalist" || c.source === "gbif" ? "nearby list" : "maybe";
+      const on = pickedMaybe?.id === c.id ? "on" : "";
+      return `<button type="button" data-maybe="${c.id}" class="${on}"><b>${c.common}</b><small>maybe · ${src}</small></button>`;
+    })
+    .join("");
+}
+
+function refreshMaybes(words) {
+  const local = tryIdentify({
+    words,
+    features: pendingKeep?.features || null,
+    hour: new Date().getHours(),
+    habitat: habitatNow(),
+  });
+  const merged = mergeCandidates(local.candidates, pendingKeep?.nearby || []);
+  paintMaybes(merged);
+}
+
+async function loadNearbyMaybes() {
+  const lat = fix?.lat ?? session()?.startLat;
+  const lon = fix?.lon ?? session()?.startLon;
+  const pipe = await pipeNearbyWildlife(lat, lon).catch(() => ({ taxa: [] }));
+  if (pendingKeep) pendingKeep.nearby = pipe.taxa || [];
+  refreshMaybes($("whatText")?.value || "");
 }
 
 function tap() {
@@ -303,7 +373,7 @@ function showOnboard() {
 }
 
 function recordHomeHTML() {
-  return "LISTEN TO THE FIELD What was that? LOCAL FIELD STORIES";
+  return "LISTEN TO THE FIELD What was that? LOCAL FIELD maybe PARK CAR No invented animals";
 }
 
 let bookKind = "story";
@@ -439,18 +509,22 @@ async function ensureGeo() {
       fix = next;
       heading = next.heading ?? heading;
       const s = session();
-      if (s && s.role === "scout" && s.status === "active" && next.lat != null) {
-        state.breadcrumbs.push({
-          id: newId("bc"),
-          sessionId: s.id,
-          t: next.t,
-          lat: next.lat,
-          lon: next.lon,
-          accuracy: next.accuracy,
-          heading: next.heading,
-          quality: next.quality,
-        });
-        persist();
+      if (s && s.status === "active" && next.lat != null) {
+        const last = sessionCrumbs().at(-1);
+        const moved = !last || (distanceM(last, next) || 0) >= 4;
+        if (moved) {
+          state.breadcrumbs.push({
+            id: newId("bc"),
+            sessionId: s.id,
+            t: next.t,
+            lat: next.lat,
+            lon: next.lon,
+            accuracy: next.accuracy,
+            heading: next.heading,
+            quality: next.quality,
+          });
+          persist();
+        }
       }
       refreshWeather();
       renderField();
@@ -558,6 +632,7 @@ async function startRecord() {
       tap();
       startRecClock();
       stopMeter?.();
+      rec.featureProbe = rec.stream ? attachFeatures(rec.stream) : null;
       stopMeter = rec.stream ? attachLevelMeter(rec.stream, paintMeter) : () => {};
     }
     refreshWeather();
@@ -576,9 +651,12 @@ async function stopRecord() {
   try {
     let audioId = null;
     let localOriginal = false;
+    let features = null;
     const started = recStarted;
     if (rec) {
       localOriginal = Boolean(rec.localOriginal);
+      features = rec.featureProbe?.snapshot?.() || null;
+      rec.featureProbe?.stop?.();
       audioId = await stopMicToOriginal();
     }
     stopMeter?.();
@@ -593,7 +671,12 @@ async function stopRecord() {
       ended: Date.now(),
       weather: lastWeather,
       airpods: airpodsOn,
+      features,
+      nearby: [],
     };
+    pickedMaybe = null;
+    refreshMaybes("");
+    loadNearbyMaybes();
     showOnboard();
   } finally {
     recordBusy = false;
@@ -603,6 +686,9 @@ async function stopRecord() {
 async function keepHeard(text, photoFile) {
   await saveFirstSound("heard", text, photoFile);
   pendingKeep = null;
+  pickedMaybe = null;
+  lastMaybes = [];
+  paintMaybes([]);
   const box = $("whatText");
   const pic = $("whatPhoto");
   if (box) box.value = "";
@@ -650,9 +736,11 @@ function renderField() {
     const n = state.nodes.filter((x) => x.sessionId === s.id).length;
     const fading = s.startGpsQuality === "fading" || fix?.quality === "fading" || (!fix && s.startGpsQuality === "unknown");
     net.classList.toggle("warn", fading);
+    const steps = stepCount();
+    const stepBit = steps ? `${steps} STEPS` : `${n} LISTENER${n === 1 ? "" : "S"}`;
     net.innerHTML = fading
-      ? `● GPS ${fix?.quality === "fading" ? "FADING" : "UNAVAILABLE"}<br>${n} LISTENER${n === 1 ? "" : "S"}`
-      : `● FIELD READY<br>${n} LISTENER${n === 1 ? "" : "S"}`;
+      ? `● GPS ${fix?.quality === "fading" ? "FADING" : "UNAVAILABLE"}<br>${stepBit}`
+      : `● FIELD READY<br>${stepBit}`;
   }
 
   $("coh").textContent = COH_INSUFFICIENT.display;
@@ -705,6 +793,16 @@ function renderField() {
     );
   });
 
+  if (s?.parkedCar?.lat != null && start) {
+    const p = projectRelative(start, s.parkedCar);
+    if (p) {
+      markers.insertAdjacentHTML(
+        "beforeend",
+        `<button class="event parked" style="left:${p.left}%;top:${p.top}%"><i></i><span>CAR</span></button>`
+      );
+    }
+  }
+
   const pts = sessionCrumbs();
   if (start && pts.length) {
     const d = pts
@@ -752,16 +850,20 @@ function renderField() {
       : "Original kept on this phone.";
     $("liveMeta").innerHTML = shown.contributed ? "IN LIBRARY" : "NOT<br>CONTRIBUTED";
   } else if (s.returnActive && start && you) {
-    const m = distanceM(you, start);
-    const brg = bearingDeg(you, start);
+    const car = s.parkedCar?.lat != null ? s.parkedCar : start;
+    const home = distanceM(you, start);
+    const toCar = s.parkedCar?.lat != null ? distanceM(you, s.parkedCar) : null;
+    const brg = bearingDeg(you, car);
     live.querySelectorAll("small")[0].textContent = "RETURN · SAFETY AID";
-    live.querySelector("b").textContent = "Trail back to Session Start";
+    live.querySelector("b").textContent = s.parkedCar ? "Trail back · car and start" : "Trail back to Session Start";
     live.querySelectorAll("small")[1].textContent =
-      m != null ? `${Math.round(m)} m · not a map replacement` : "Highlighting your breadcrumb";
+      home != null
+        ? `${Math.round(home)} m to start${toCar != null ? ` · ${Math.round(toCar)} m to car` : ""} · not a map replacement`
+        : "Highlighting your breadcrumb";
     $("liveMeta").innerHTML = brg != null ? `BEARING<br>${Math.round((brg + 360) % 360)}°` : "START";
   } else {
     live.querySelectorAll("small")[0].textContent = "LOCAL FIELD";
-    live.querySelector("b").textContent = "Listen to the field when you are ready";
+    live.querySelector("b").textContent = "The field.";
     live.querySelectorAll("small")[1].textContent =
       s.startGpsQuality === "fading" || fix?.quality === "fading"
         ? "GPS fading — original will still stay on this phone."
@@ -859,7 +961,7 @@ function firstSoundHTML() {
   const local = Boolean(rec?.localOriginal);
   return `
     <small class="label">FIRST SOUND · ON THIS PHONE</small>
-    <h2>${denied ? "Microphone is off" : "Listening to this rain"}</h2>
+    <h2>${denied ? "Microphone is off" : "Listening"}</h2>
     <p>${
       denied
         ? FAILURE.micDenied
@@ -1189,6 +1291,15 @@ async function saveFirstSound(kind, text, photoFile = null) {
   enc.shared = false;
   enc.humanSpeechGate = "pending";
   enc.localOriginal = localOriginal;
+  if (pickedMaybe) {
+    enc.candidateId = pickedMaybe.id;
+    enc.candidateSource = pickedMaybe.source;
+    enc.label = fieldNoteLabel(text) === "UNKNOWN" ? pickedMaybe.common : fieldNoteLabel(text);
+    enc.kind = "unknown";
+    enc.provenance = "user";
+  }
+  enc.idTried = true;
+  enc.candidates = lastMaybes.slice(0, 8);
   enc.weather = note.weather;
   enc.sky = note.sky;
   enc.durationMs = note.durationMs;
@@ -1265,12 +1376,36 @@ function shareCard(id) {
   alert("Card ready to share. The original was not sent to the library.");
 }
 
+function stepCount() {
+  const crumbs = sessionCrumbs();
+  let m = 0;
+  for (let i = 1; i < crumbs.length; i++) {
+    m += distanceM(crumbs[i - 1], crumbs[i]) || 0;
+  }
+  if (!m) return 0;
+  return Math.max(1, Math.round(m / 0.78));
+}
+
 function toggleReturn() {
   const s = session();
   if (!s) return;
   s.returnActive = !s.returnActive;
   persist();
   renderField();
+}
+
+async function parkTheCar() {
+  if (!session()) await beginDoor("scout");
+  const s = session();
+  if (!s) return;
+  if (fix?.lat == null) {
+    toast("No GPS yet. Parked mark waits for a fix.");
+    return;
+  }
+  s.parkedCar = { lat: fix.lat, lon: fix.lon, t: Date.now() };
+  persist();
+  renderField();
+  toast("Parked car marked on this phone.");
 }
 
 function renderAll() {
@@ -1291,6 +1426,7 @@ $("mapmodes").querySelectorAll("button").forEach((b) => {
 $("btnSession").onclick = () => openSheet("session");
 $("btnNote").onclick = () => openSheet("note");
 $("btnReturn").onclick = toggleReturn;
+if ($("btnPark")) $("btnPark").onclick = () => parkTheCar();
 $("btnScout").onclick = async () => {
   if (!session()) await beginDoor("scout");
   else openSheet("scout");
