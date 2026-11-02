@@ -23,15 +23,15 @@ Do not explain the product. Paste `BASE44_PROMPT.txt` into a new Base44 app. Ste
 
 ## Open on iPhone (Session app — not the parked Listener search)
 
-**This build:** https://edgy-outpost-8k424wz.shipstatic.com/
+**This build:** https://split-loop-d3d9cz5.shipstatic.com/
 
-Claim (or it expires in about three days): https://my.shipstatic.com/claim/f2a5dbc7b815e72ff1983f1d10397be1
+Claim (or it expires in about three days): https://my.shipstatic.com/claim/bb85031cb1ccc4ca0716f06298a8263e
 
 The hostname is random Shipstatic junk, not the product name. Safari → Add to Home Screen. The icon is the name.
 
-If the first screen is a porch with the amber home node and rings, **LISTENER** / **WHAT THE WILD IS SAYING**, and **LISTEN TO THE FIELD**, you have this build. After STOP, **maybe** ID chips. The field has HOME, trail, PARK CAR, RETURN. If it says Savannah marsh, Air mode, Water mode, Party mode, or lists clapper rails / painted buntings as live animals on a map, that is Claude’s demo, not this app.
+If the first screen is a porch — sky as it actually is, handmade amber rings sitting in that sky (not a black tile), a house with a porch light, **LISTENER** / **WHAT THE WILD IS SAYING**, and **LISTEN TO THE FIELD** — you have this build. After STOP, **maybe** ID chips. UNKNOWN stays a door. The field has HOME, trail, PARK CAR, RETURN. If it says Savannah marsh, Air mode, Water mode, Party mode, or lists clapper rails / painted buntings as live animals on a map, that is Claude’s demo, not this app.
 
-The hostname is still random Shipstatic junk, not the product name. A name like Listener needs your Shipstatic or GitHub Pages account. Old hosts such as `dreamy-dust-…` and `spectral-rune-…` are leftovers.
+The hostname is still random Shipstatic junk, not the product name. A name like Listener needs your Shipstatic or GitHub Pages account. Old hosts such as `ghosted-rift-…`, `dreamy-dust-…` and `spectral-rune-…` are leftovers.
 
 This is LISTENER. Listen to sounds. Try to ID birds, dolphins, and critters around the house. Keep what you heard. Field trail home, steps, parked car. No grocery-store START ball. IDs are maybe, not claims.
 
