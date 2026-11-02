@@ -1,0 +1,250 @@
+{
+  "system": "omen-decision-window",
+  "version": 1,
+  "community_id": "north-oak",
+  "alert_id": "alert-tree-line",
+  "listening": true,
+  "opened_by": "wearable",
+  "comms": "down",
+  "stale": true,
+  "comms_note": "No new cue. Showing the last listeners on hand. No server required.",
+  "generated_at": 1020.0,
+  "protected": {
+    "lat": 40.0,
+    "lon": -74.0,
+    "label": "north oak"
+  },
+  "omen": {
+    "open": true,
+    "reason": "trajectory",
+    "urgency": "move",
+    "time_to_closest_s": 60.0000000000024,
+    "time_uncertainty_s": 10.3405096962381,
+    "decision_seconds": 19,
+    "lead_s": 30.0,
+    "where": "about 1.2 km north of the protected point",
+    "threat": {
+      "lat": 40.0107797340999,
+      "lon": -74.0,
+      "east_m": -4.1800794691202055e-13,
+      "north_m": 1200.0000000007983,
+      "uncertainty_m": 206.8101939248913
+    },
+    "track": [
+      {
+        "lat": 40.01437297879986,
+        "lon": -74.0,
+        "east_m": -4.547473508864641e-13,
+        "north_m": 1600.0000000010484,
+        "t": 1000.0,
+        "estimated": false
+      },
+      {
+        "lat": 40.01347466762488,
+        "lon": -74.0,
+        "east_m": -4.547473508864641e-13,
+        "north_m": 1500.000000000986,
+        "t": 1005.0,
+        "estimated": false
+      },
+      {
+        "lat": 40.0107797340999,
+        "lon": -74.0,
+        "east_m": -4.1800794691202055e-13,
+        "north_m": 1200.0000000007983,
+        "t": 1020.0,
+        "estimated": true
+      }
+    ],
+    "heading_deg": 180.0,
+    "speed_m_s": 20.000000000012506,
+    "extrapolated_s": 15.0,
+    "clock_estimated": true,
+    "guidance": "You have 19s to decide. The contact is about 1.2 km north of the protected point. Move inside, away from windows."
+  },
+  "coherence": {
+    "state": "locked",
+    "value": 1.0,
+    "lit": [
+      "phone-maple",
+      "treetop-east",
+      "treetop-west",
+      "wearable-1"
+    ],
+    "label": "Field locked"
+  },
+  "rmse": {
+    "rmse_m": 206.8101939248913,
+    "range_m": 1263.1706139718367,
+    "nearest_node_id": "treetop-west",
+    "samples": 2,
+    "close": false,
+    "try_plate": false,
+    "label": "RMSE 207 m"
+  },
+  "contact": {
+    "visible": true,
+    "placed": true,
+    "heard_by": [
+      "phone-maple",
+      "treetop-east",
+      "treetop-west",
+      "wearable-1"
+    ],
+    "where": "about 1.2 km north of the protected point",
+    "lat": 40.0107797340999,
+    "lon": -74.0,
+    "east_m": -4.1800794691202055e-13,
+    "north_m": 1200.0000000007983,
+    "uncertainty_m": 206.8101939248913
+  },
+  "listeners": [
+    {
+      "node_id": "phone-maple",
+      "kind": "phone",
+      "lat": 39.99856270212001,
+      "lon": -74.0,
+      "east_m": 0.0,
+      "north_m": -160.00000000030468,
+      "last_score": 0.92,
+      "last_t": 1005.0,
+      "alt_m": 1.5,
+      "coherent": true
+    },
+    {
+      "node_id": "treetop-east",
+      "kind": "treetop",
+      "lat": 40.00035932447,
+      "lon": -73.99413669022039,
+      "east_m": 500.00000000031196,
+      "north_m": 40.00000000007617,
+      "last_score": 0.92,
+      "last_t": 1005.0,
+      "alt_m": 14.0,
+      "azimuth_deg": 341.0954241573883,
+      "coherent": true
+    },
+    {
+      "node_id": "treetop-west",
+      "kind": "treetop",
+      "lat": 40.00035932447,
+      "lon": -74.00586330977961,
+      "east_m": -500.00000000031196,
+      "north_m": 40.00000000007617,
+      "last_score": 0.92,
+      "last_t": 1005.0,
+      "alt_m": 14.0,
+      "azimuth_deg": 18.904575842611656,
+      "coherent": true
+    },
+    {
+      "node_id": "wearable-1",
+      "kind": "wearable",
+      "lat": 39.99919151994251,
+      "lon": -73.99917913663086,
+      "east_m": 69.99999999975283,
+      "north_m": -90.00000000017138,
+      "last_score": 0.92,
+      "last_t": 1005.0,
+      "alt_m": 1.2,
+      "coherent": true
+    }
+  ],
+  "systems": [
+    "phone",
+    "treetop",
+    "wearable"
+  ],
+  "layers": [
+    {
+      "type": "protected",
+      "lat": 40.0,
+      "lon": -74.0,
+      "east_m": 0.0,
+      "north_m": 0.0,
+      "label": "north oak"
+    },
+    {
+      "type": "listener",
+      "node_id": "phone-maple",
+      "kind": "phone",
+      "lat": 39.99856270212001,
+      "lon": -74.0,
+      "east_m": 0.0,
+      "north_m": -160.00000000030468,
+      "coherent": true
+    },
+    {
+      "type": "listener",
+      "node_id": "treetop-east",
+      "kind": "treetop",
+      "lat": 40.00035932447,
+      "lon": -73.99413669022039,
+      "east_m": 500.00000000031196,
+      "north_m": 40.00000000007617,
+      "coherent": true
+    },
+    {
+      "type": "listener",
+      "node_id": "treetop-west",
+      "kind": "treetop",
+      "lat": 40.00035932447,
+      "lon": -74.00586330977961,
+      "east_m": -500.00000000031196,
+      "north_m": 40.00000000007617,
+      "coherent": true
+    },
+    {
+      "type": "listener",
+      "node_id": "wearable-1",
+      "kind": "wearable",
+      "lat": 39.99919151994251,
+      "lon": -73.99917913663086,
+      "east_m": 69.99999999975283,
+      "north_m": -90.00000000017138,
+      "coherent": true
+    },
+    {
+      "type": "track",
+      "points": [
+        {
+          "lat": 40.01437297879986,
+          "lon": -74.0,
+          "east_m": -4.547473508864641e-13,
+          "north_m": 1600.0000000010484,
+          "t": 1000.0,
+          "estimated": false
+        },
+        {
+          "lat": 40.01347466762488,
+          "lon": -74.0,
+          "east_m": -4.547473508864641e-13,
+          "north_m": 1500.000000000986,
+          "t": 1005.0,
+          "estimated": false
+        },
+        {
+          "lat": 40.0107797340999,
+          "lon": -74.0,
+          "east_m": -4.1800794691202055e-13,
+          "north_m": 1200.0000000007983,
+          "t": 1020.0,
+          "estimated": true
+        }
+      ]
+    },
+    {
+      "type": "threat",
+      "lat": 40.0107797340999,
+      "lon": -74.0,
+      "east_m": -4.1800794691202055e-13,
+      "north_m": 1200.0000000007983,
+      "uncertainty_m": 206.8101939248913
+    },
+    {
+      "type": "decision",
+      "seconds": 19,
+      "urgency": "move"
+    }
+  ]
+}

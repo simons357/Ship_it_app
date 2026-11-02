@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "community_id": "north-oak",
+  "alert_id": "alert-tree-line",
+  "protected": {
+    "lat": 40.0,
+    "lon": -74.0,
+    "label": "north oak"
+  },
+  "lead_s": 30.0,
+  "watch_radius_m": 1000.0,
+  "now": 1020.0,
+  "listening": true,
+  "opened_by": "wearable",
+  "observations": [
+    {
+      "node_id": "treetop-west",
+      "kind": "treetop",
+      "t": 1000.0,
+      "lat": 40.00035932447,
+      "lon": -74.00586330977961,
+      "alt_m": 14.0,
+      "score": 0.92,
+      "azimuth_deg": 17.771320822908756,
+      "alert_id": "alert-tree-line",
+      "community_id": "north-oak"
+    },
+    {
+      "node_id": "treetop-east",
+      "kind": "treetop",
+      "t": 1000.0,
+      "lat": 40.00035932447,
+      "lon": -73.99413669022039,
+      "alt_m": 14.0,
+      "score": 0.92,
+      "azimuth_deg": 342.22867917709124,
+      "alert_id": "alert-tree-line",
+      "community_id": "north-oak"
+    },
+    {
+      "node_id": "treetop-west",
+      "kind": "treetop",
+      "t": 1005.0,
+      "lat": 40.00035932447,
+      "lon": -74.00586330977961,
+      "alt_m": 14.0,
+      "score": 0.92,
+      "azimuth_deg": 18.904575842611656,
+      "alert_id": "alert-tree-line",
+      "community_id": "north-oak"
+    },
+    {
+      "node_id": "treetop-east",
+      "kind": "treetop",
+      "t": 1005.0,
+      "lat": 40.00035932447,
+      "lon": -73.99413669022039,
+      "alt_m": 14.0,
+      "score": 0.92,
+      "azimuth_deg": 341.0954241573883,
+      "alert_id": "alert-tree-line",
+      "community_id": "north-oak"
+    },
+    {
+      "node_id": "phone-maple",
+      "kind": "phone",
+      "t": 1005.0,
+      "lat": 39.99856270212001,
+      "lon": -74.0,
+      "alt_m": 1.5,
+      "score": 0.92,
+      "azimuth_deg": null,
+      "alert_id": "alert-tree-line",
+      "community_id": "north-oak"
+    },
+    {
+      "node_id": "wearable-1",
+      "kind": "wearable",
+      "t": 1005.0,
+      "lat": 39.99919151994251,
+      "lon": -73.99917913663086,
+      "alt_m": 1.2,
+      "score": 0.92,
+      "azimuth_deg": null,
+      "alert_id": "alert-tree-line",
+      "community_id": "north-oak"
+    }
+  ]
+}

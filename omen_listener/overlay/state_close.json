@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "community_id": "north-oak",
+  "alert_id": "alert-tree-line",
+  "protected": {
+    "lat": 40.0,
+    "lon": -74.0,
+    "label": "north oak"
+  },
+  "lead_s": 30.0,
+  "watch_radius_m": 1000.0,
+  "now": 2000.0,
+  "listening": true,
+  "opened_by": "wearable",
+  "observations": [
+    {
+      "node_id": "curb-west",
+      "kind": "phone",
+      "t": 2000.0,
+      "lat": 40.0,
+      "lon": -74.00011726619559,
+      "alt_m": 1.5,
+      "score": 0.92,
+      "azimuth_deg": 19.65382405805331,
+      "alert_id": "alert-tree-line",
+      "community_id": "north-oak"
+    },
+    {
+      "node_id": "curb-east",
+      "kind": "phone",
+      "t": 2000.0,
+      "lat": 40.0,
+      "lon": -73.99988273380441,
+      "alt_m": 1.5,
+      "score": 0.92,
+      "azimuth_deg": 340.3461759419467,
+      "alert_id": "alert-tree-line",
+      "community_id": "north-oak"
+    }
+  ]
+}

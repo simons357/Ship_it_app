@@ -1,0 +1,141 @@
+{
+  "system": "omen-decision-window",
+  "version": 1,
+  "community_id": "north-oak",
+  "alert_id": "alert-tree-line",
+  "listening": true,
+  "opened_by": "wearable",
+  "comms": "local",
+  "stale": false,
+  "comms_note": "Built from listeners on hand. No server required.",
+  "generated_at": 2000.0,
+  "protected": {
+    "lat": 40.0,
+    "lon": -74.0,
+    "label": "north oak"
+  },
+  "omen": {
+    "open": false,
+    "reason": "no_trajectory",
+    "urgency": "none",
+    "time_to_closest_s": null,
+    "time_uncertainty_s": null,
+    "decision_seconds": null,
+    "lead_s": 30.0,
+    "where": "28 m north of the protected point",
+    "threat": {
+      "lat": 40.00025152712899,
+      "lon": -74.0,
+      "east_m": -5.329070518200751e-15,
+      "north_m": 27.99999999893163,
+      "uncertainty_m": 20.0
+    },
+    "track": [],
+    "heading_deg": null,
+    "speed_m_s": null,
+    "extrapolated_s": 0.0,
+    "clock_estimated": false,
+    "guidance": "Rotor-like sound, no track yet. You can see the cue. The decision window stays closed until the contact is clearly moving."
+  },
+  "coherence": {
+    "state": "locked",
+    "value": 1.0,
+    "lit": [
+      "curb-east",
+      "curb-west"
+    ],
+    "label": "Field locked"
+  },
+  "rmse": {
+    "rmse_m": 6.553264921983852,
+    "range_m": 29.732137493502552,
+    "nearest_node_id": "curb-west",
+    "samples": 2,
+    "close": true,
+    "try_plate": true,
+    "label": "RMSE 7 m \u00b7 30 m out \u00b7 plate"
+  },
+  "contact": {
+    "visible": true,
+    "placed": true,
+    "heard_by": [
+      "curb-east",
+      "curb-west"
+    ],
+    "where": "28 m north of the protected point",
+    "lat": 40.00025152712899,
+    "lon": -74.0,
+    "east_m": -5.329070518200751e-15,
+    "north_m": 27.99999999893163,
+    "uncertainty_m": 20.0
+  },
+  "listeners": [
+    {
+      "node_id": "curb-east",
+      "kind": "phone",
+      "lat": 40.0,
+      "lon": -73.99988273380441,
+      "east_m": 9.999999999618447,
+      "north_m": 0.0,
+      "last_score": 0.92,
+      "last_t": 2000.0,
+      "alt_m": 1.5,
+      "azimuth_deg": 340.3461759419467,
+      "coherent": true
+    },
+    {
+      "node_id": "curb-west",
+      "kind": "phone",
+      "lat": 40.0,
+      "lon": -74.00011726619559,
+      "east_m": -9.999999999618447,
+      "north_m": 0.0,
+      "last_score": 0.92,
+      "last_t": 2000.0,
+      "alt_m": 1.5,
+      "azimuth_deg": 19.65382405805331,
+      "coherent": true
+    }
+  ],
+  "systems": [
+    "phone"
+  ],
+  "layers": [
+    {
+      "type": "protected",
+      "lat": 40.0,
+      "lon": -74.0,
+      "east_m": 0.0,
+      "north_m": 0.0,
+      "label": "north oak"
+    },
+    {
+      "type": "listener",
+      "node_id": "curb-east",
+      "kind": "phone",
+      "lat": 40.0,
+      "lon": -73.99988273380441,
+      "east_m": 9.999999999618447,
+      "north_m": 0.0,
+      "coherent": true
+    },
+    {
+      "type": "listener",
+      "node_id": "curb-west",
+      "kind": "phone",
+      "lat": 40.0,
+      "lon": -74.00011726619559,
+      "east_m": -9.999999999618447,
+      "north_m": 0.0,
+      "coherent": true
+    },
+    {
+      "type": "threat",
+      "lat": 40.00025152712899,
+      "lon": -74.0,
+      "east_m": -5.329070518200751e-15,
+      "north_m": 27.99999999893163,
+      "uncertainty_m": 20.0
+    }
+  ]
+}
