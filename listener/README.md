@@ -23,9 +23,9 @@ Do not explain the product. Paste `BASE44_PROMPT.txt` into a new Base44 app. Ste
 
 ## Open on iPhone (Session app — not the parked Listener search)
 
-**This build:** https://elastic-synth-m3c7jrm.shipstatic.com/
+**This build:** https://edgy-outpost-8k424wz.shipstatic.com/
 
-Claim (or it expires in about three days): https://my.shipstatic.com/claim/8165721fba56179f005ee1441ef7649a
+Claim (or it expires in about three days): https://my.shipstatic.com/claim/f2a5dbc7b815e72ff1983f1d10397be1
 
 The hostname is random Shipstatic junk, not the product name. Safari → Add to Home Screen. The icon is the name.
 
