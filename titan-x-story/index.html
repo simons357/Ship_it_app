@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>The Quiet Fish Who Waited in the High Dark — TITAN-X</title>
+  <meta name="description" content="A story for listening. Then the investor plan.">
+  <style>
+    :root { --ink:#1b140c; --paper:#f4ead4; --amber:#9a6a1a; --soft:#6a5a48; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: #2a2118; color: var(--ink); font-family: Georgia, "Times New Roman", serif; }
+    body { min-height: 100vh; }
+    .page {
+      max-width: 42rem;
+      margin: 0 auto;
+      min-height: 100vh;
+      padding: 3rem 1.5rem 5rem;
+      background: var(--paper);
+      box-shadow: 0 0 0 12px #1b140c inset;
+    }
+    h1 { font-weight: 500; font-size: 1.7rem; line-height: 1.25; margin: 0 0 .4rem; }
+    .sub { color: var(--soft); font-size: .95rem; margin: 0 0 1.5rem; }
+    p { font-size: 1.35rem; line-height: 1.55; margin: 0 0 1rem; }
+    p.on { background: #ead8a8; }
+    .bar {
+      position: sticky; top: 0; display: flex; gap: .6rem; flex-wrap: wrap;
+      padding: .8rem 0 1rem; background: var(--paper);
+    }
+    button {
+      font: inherit; border: 1px solid var(--ink); background: transparent;
+      padding: .45rem .9rem; border-radius: 999px; cursor: pointer;
+    }
+    button.primary { background: var(--ink); color: var(--paper); }
+    a { color: var(--amber); }
+    .foot { margin-top: 2.5rem; font-size: .95rem; color: var(--soft); }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <div class="bar">
+      <button class="primary" id="listen" type="button">LISTEN</button>
+      <button id="stop" type="button">STOP</button>
+    </div>
+    <h1>The Quiet Fish Who Waited in the High Dark</h1>
+    <p class="sub">A story for listening. TITAN-X · Prime Field Technologies LLC</p>
+    <div id="lines"></div>
+    <p class="foot">
+      After you have heard it, the numbers are in the
+      <a href="https://github.com/simons357/Ship_it_app/blob/cursor/titan-x-business-plan-7465/TITAN-X-FINAL-Investor-Plan.pdf">TITAN-X FINAL Investor Plan</a>.
+    </p>
+  </article>
+  <script>
+    const lines = [
+      "Once, the fire came first and the help came after.",
+      "The help came in a hurry. The help came too late.",
+      "The airplanes were brave. The airplanes were few. The airplanes could not stay.",
+      "So a quiet fish was made to live in the high dark.",
+      "Not a fish of the sea. A fish of the sky.",
+      "It was wide, like a manta. It was light, like a held breath.",
+      "The sun fed it. The quiet air held it up.",
+      "It did not scramble. It waited.",
+      "It waited over the trees while the trees were still green.",
+      "When the fire came, the quiet fish was already there.",
+      "It could watch. It could carry. It could drop what the ground needed, and stay.",
+      "One fish. Then another. Twelve, if the years are kind.",
+      "California first — because that is where the story is already burning.",
+      "That is TITAN-X. It is not a shout. It is a wait.",
+    ];
+    const box = document.getElementById("lines");
+    box.innerHTML = lines.map((t) => `<p>${t}</p>`).join("");
+    const paras = [...box.querySelectorAll("p")];
+    let speaking = false;
+    function clearOn() { paras.forEach((p) => p.classList.remove("on")); }
+    function stop() {
+      speaking = false;
+      window.speechSynthesis?.cancel();
+      clearOn();
+      document.getElementById("listen").textContent = "LISTEN";
+    }
+    function listen() {
+      if (!window.speechSynthesis) return;
+      if (speaking) { stop(); return; }
+      speaking = true;
+      document.getElementById("listen").textContent = "LISTENING";
+      let i = 0;
+      const next = () => {
+        if (!speaking || i >= lines.length) { stop(); return; }
+        clearOn();
+        paras[i].classList.add("on");
+        paras[i].scrollIntoView({ block: "center", behavior: "smooth" });
+        const u = new SpeechSynthesisUtterance(lines[i]);
+        u.rate = 0.92;
+        u.onend = () => { i += 1; next(); };
+        u.onerror = () => stop();
+        speechSynthesis.speak(u);
+      };
+      speechSynthesis.cancel();
+      next();
+    }
+    document.getElementById("listen").onclick = listen;
+    document.getElementById("stop").onclick = stop;
+  </script>
+</body>
+</html>
