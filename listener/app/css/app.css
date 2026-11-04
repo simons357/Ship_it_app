@@ -21,10 +21,10 @@ button { font: inherit; }
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse at 50% 118%, #071410 0 32%, transparent 48%),
-    radial-gradient(circle at 68% 32%, #5d7258 0 4%, transparent 5%),
-    linear-gradient(24deg, transparent 45%, #86917c45 46% 49%, transparent 50%),
-    repeating-linear-gradient(116deg, #102017 0 30px, #1d3324 31px 65px, #0b1912 66px 94px);
+    radial-gradient(circle at 50% 62%, #ffd17622 0 1.2%, transparent 7%),
+    radial-gradient(ellipse at 50% 118%, #071410 0 34%, transparent 52%),
+    linear-gradient(24deg, transparent 45%, #86917c28 46% 49%, transparent 50%),
+    linear-gradient(180deg, #0a1020 0%, #102017 38%, #0b1912 72%, #07110e 100%);
 }
 #field.satellite {
   background:
@@ -52,9 +52,9 @@ button { font: inherit; }
 }
 #crumbs path {
   fill: none;
-  stroke: var(--green);
+  stroke: var(--amber);
   stroke-width: 3;
-  filter: drop-shadow(0 0 7px var(--green));
+  filter: drop-shadow(0 0 7px #ffd17699);
   opacity: 0.85;
 }
 #crumbs.return path {
@@ -420,6 +420,13 @@ body.listening #field {
   box-shadow: 0 0 28px #ffd17655;
 }
 .onboard.live .node-glow { filter: saturate(1.25) brightness(1.18) drop-shadow(0 0 28px #ffd17666); }
+.onboard.live .house:after {
+  animation: lamplisten 1.2s ease-in-out infinite;
+}
+@keyframes lamplisten {
+  0%, 100% { box-shadow: 0 0 26px 10px #ffd17677, 0 22px 48px 18px #ffd17633; }
+  50% { box-shadow: 0 0 38px 16px #ffd176aa, 0 22px 56px 22px #ffd17655; }
+}
 .onboard.live .dock-row,
 .onboard.live .storybook,
 .onboard.live .heard-list {
@@ -749,11 +756,39 @@ body.listening #field {
 }
 .heard-list {
   width: min(360px, 100%);
-  max-height: 14vh;
+  max-height: 16vh;
   overflow: auto;
   text-align: left;
 }
-.heard-list .signal { margin: 6px 0; }
+.heard-list .signal {
+  margin: 6px 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px 10px;
+  align-items: center;
+}
+.heard-list .signal small { grid-column: 1; }
+.heard-list .signal b { grid-column: 1; }
+.heard-list .signal span { grid-column: 1; }
+.heard-list .play-heard {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  border: 1px solid var(--line);
+  background: #0d1a15;
+  color: var(--amber);
+  border-radius: 999px;
+  padding: 8px 10px;
+  font-size: 8px;
+  letter-spacing: .12em;
+}
+.hike-line {
+  margin: 8px 0 0;
+  color: var(--amber);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-shadow: 0 1px 10px #000a;
+}
+.hike-line[hidden] { display: none !important; }
 @keyframes recpulse {
   0%, 100% { box-shadow: 0 0 48px #ff807866; }
   50% { box-shadow: 0 0 92px #ff8078aa; }

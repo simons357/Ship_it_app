@@ -8,7 +8,7 @@ import {
   fieldNoteLabel,
   newId,
 } from "./contracts.js";
-import { hydrate, loadState, putOriginal, rememberDevice, saveState } from "./db.js";
+import { hydrate, loadOriginal, loadState, putOriginal, rememberDevice, saveState } from "./db.js";
 import { confirmNonHuman, excludeProbableHuman, firstSoundDecision, markUnknown, processSignal } from "./wildlife.js";
 import { HubTransport, LocalBroadcastTransport, OfflineQueue, flushQueue } from "./sync.js";
 import { bearingDeg, distanceM, projectRelative, watchPosition } from "./geo.js";
@@ -22,7 +22,7 @@ import {
   startLocalOriginalRecording,
   startRecording,
 } from "./audio.js";
-import { tryIdentify, mergeCandidates, pipeNearbyWildlife } from "./identify.js";
+import { tryIdentify, mergeCandidates, pipeNearbyWildlife, habitatFromWalk } from "./identify.js";
 import { clockLabel, fetchFieldWeather, skyPeriod, weatherLine } from "./weather.js";
 import { indexOwnerSearch, ownerEndpoints, queryOwnerSearch } from "./plugins.js";
 import { STORIES, ageLine, listeningRank, storyById, tonightStory } from "./stories.js";
@@ -54,6 +54,8 @@ let recordBound = false;
 let storyBound = false;
 let pickedMaybe = null;
 let lastMaybes = [];
+let heardAudio = null;
+let playingOriginalId = null;
 
 function persist() {
   saveState(state);
@@ -199,6 +201,76 @@ function localHeard(q = "") {
     .reverse();
 }
 
+function esc(s) {
+  return String(s ?? "").replace(/[&<>"']/g, (c) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;",
+  }[c]));
+}
+
+function stopHeardPlay() {
+  if (heardAudio) {
+    try {
+      heardAudio.pause();
+    } catch {
+      /* ignore */
+    }
+    heardAudio = null;
+  }
+  playingOriginalId = null;
+}
+
+async function playHeard(id) {
+  if (!id) return;
+  if (playingOriginalId === id) {
+    stopHeardPlay();
+    renderHeard();
+    return;
+  }
+  stopHeardPlay();
+  const row = await loadOriginal(id);
+  if (!row?.blob) {
+    toast("Original is not on this phone.");
+    return;
+  }
+  const url = URL.createObjectURL(row.blob);
+  heardAudio = new Audio(url);
+  playingOriginalId = id;
+  heardAudio.onended = () => {
+    stopHeardPlay();
+    renderHeard();
+  };
+  try {
+    await heardAudio.play();
+  } catch {
+    stopHeardPlay();
+    toast("This phone will not play the original.");
+  }
+  renderHeard();
+}
+
+function paintHikeLine() {
+  const el = $("hikeLine");
+  if (!el) return;
+  const s = session();
+  const steps = stepCount();
+  const car = Boolean(s?.parkedCar?.lat);
+  if (!s || (!steps && !car && !s.returnActive)) {
+    el.hidden = true;
+    el.textContent = "";
+    return;
+  }
+  el.hidden = false;
+  const bits = [];
+  if (steps) bits.push(`${steps} steps`);
+  if (car) bits.push("car marked");
+  if (s.returnActive) bits.push("trail home");
+  el.textContent = bits.join(" · ");
+}
+
 async function renderHeard() {
   const list = $("heardList");
   const search = $("heardSearch");
@@ -213,16 +285,26 @@ async function renderHeard() {
         t: r.t || Date.now(),
         label: r.label || "UNKNOWN",
         weather: r.weather,
-        originalAudioId: r.hasOriginal,
+        originalAudioId: r.hasOriginal ? r.originalAudioId : null,
       }));
     }
   }
   if (search) search.hidden = true;
+  rows = rows.slice(0, 4);
+  if (!rows.length) {
+    list.innerHTML = "";
+    list.hidden = true;
+    return;
+  }
+  list.hidden = false;
   list.innerHTML = rows
     .map((e) => {
-      const wx = e.weather?.label ? ` · ${e.weather.label}` : "";
+      const wx = e.weather?.label ? ` · ${esc(e.weather.label)}` : "";
       const maybe = e.candidateId ? " · maybe" : "";
-      return `<div class="signal"><small>${new Date(e.t).toLocaleString()}${wx}${maybe}</small><b>${e.label}</b><span>${e.originalAudioId ? "Original on this phone" : "No original"}</span></div>`;
+      const play = e.originalAudioId
+        ? `<button type="button" class="play-heard" data-play="${esc(e.originalAudioId)}">${playingOriginalId === e.originalAudioId ? "STOP" : "PLAY"}</button>`
+        : "";
+      return `<div class="signal"><small>${esc(new Date(e.t).toLocaleString())}${wx}${maybe}</small><b>${esc(e.label)}</b><span>${e.originalAudioId ? "Original on this phone" : "No original"}</span>${play}</div>`;
     })
     .join("");
 }
@@ -263,6 +345,7 @@ function refreshRecordHome() {
   showWhatWasThat(Boolean(pendingKeep) && !recording);
   if (!pendingKeep) paintMaybes([]);
   applySky();
+  paintHikeLine();
   renderHeard();
 }
 
@@ -297,12 +380,23 @@ function bindRecordHome() {
     showTab("field");
   });
   $("heardSearch")?.addEventListener("input", () => renderHeard());
+  $("heardList")?.addEventListener("click", (ev) => {
+    const b = ev.target.closest("[data-play]");
+    if (!b) return;
+    playHeard(b.dataset.play);
+  });
 }
 
 function habitatNow() {
   const s = session();
-  if (s?.role === "scout") return "woods";
-  return "house";
+  const start = s && s.startLat != null ? { lat: s.startLat, lon: s.startLon } : null;
+  const you = fix && fix.lat != null ? { lat: fix.lat, lon: fix.lon } : start;
+  const meters = start && you ? distanceM(start, you) || 0 : 0;
+  return habitatFromWalk({
+    role: s?.role,
+    meters,
+    hour: new Date().getHours(),
+  });
 }
 
 function paintMaybes(list) {
@@ -378,7 +472,7 @@ function showOnboard() {
 }
 
 function recordHomeHTML() {
-  return "LISTEN TO THE FIELD What was that? LOCAL FIELD maybe PARK CAR No invented animals";
+  return "LISTEN TO THE FIELD What was that? LOCAL FIELD maybe PARK CAR No invented animals PLAY steps trail home";
 }
 
 let bookKind = "story";
@@ -804,14 +898,25 @@ function renderField() {
     );
   }
 
+  sessionEncounters().forEach((e) => {
+    if (e.lat == null || !start) return;
+    const p = projectRelative(start, e);
+    if (!p) return;
+    const name = String(e.label || "UNKNOWN").slice(0, 22);
+    markers.insertAdjacentHTML(
+      "beforeend",
+      `<button class="event ${e.kind === "unknown" ? "unknown" : ""}" style="left:${p.left}%;top:${p.top}%"><i></i><span>${esc(name)}</span></button>`
+    );
+  });
+
   sessionNotes().forEach((note) => {
-    if (note.excluded || note.lat == null || !start) return;
+    if (note.excluded || note.lat == null || !start || note.firstSound) return;
     const p = projectRelative(start, note);
     if (!p) return;
     const mystery = note.kind === "mystery";
     markers.insertAdjacentHTML(
       "beforeend",
-      `<button class="event ${mystery ? "unknown" : ""}" style="left:${p.left}%;top:${p.top}%"><i></i><span>${note.kind.toUpperCase()}</span></button>`
+      `<button class="event ${mystery ? "unknown" : ""}" style="left:${p.left}%;top:${p.top}%"><i></i><span>${esc(note.kind.toUpperCase())}</span></button>`
     );
   });
 
@@ -885,13 +990,17 @@ function renderField() {
     $("liveMeta").innerHTML = brg != null ? `BEARING<br>${Math.round((brg + 360) % 360)}°` : "START";
   } else {
     live.querySelectorAll("small")[0].textContent = "LOCAL FIELD";
-    live.querySelector("b").textContent = "The field.";
+    const steps = stepCount();
+    live.querySelector("b").textContent = steps ? `${steps} steps.` : "The field.";
     live.querySelectorAll("small")[1].textContent =
       s.startGpsQuality === "fading" || fix?.quality === "fading"
         ? "GPS fading — original will still stay on this phone."
-        : "Original stays on this phone. Not contributed.";
+        : s.parkedCar
+          ? "Car marked. Original stays on this phone. Not contributed."
+          : "Original stays on this phone. Not contributed.";
     $("liveMeta").innerHTML = "ON<br>PHONE";
   }
+  paintHikeLine();
 }
 
 function renderLibrary() {

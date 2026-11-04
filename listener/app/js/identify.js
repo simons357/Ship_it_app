@@ -52,8 +52,24 @@ function scoreSpecies(sp, { q, guild, hour, habitat }) {
     if ((guild === "insect" || guild === "frog") && sp.group === "critter") score += 2;
   }
   if (habitat && (sp.habitats || []).includes(habitat)) score += 1;
-  if (hourWrap(hour, sp.hour)) score += 0.5;
+  if (sp.hour) {
+    if (hourWrap(hour, sp.hour)) score += 2;
+    else score -= 3;
+  } else if (sp.group === "bird" && Number.isFinite(hour) && (hour >= 20 || hour < 5)) {
+    score -= 1.5;
+  }
   return score;
+}
+
+/** Where you are, not a species. House / porch / yard / woods from the walk. */
+export function habitatFromWalk({ role, meters, hour } = {}) {
+  const d = Number(meters) || 0;
+  const h = Number.isFinite(hour) ? hour : new Date().getHours();
+  if (d > 200) return "woods";
+  if (d > 50) return "yard";
+  if (role === "scout" && d > 20) return "yard";
+  if (h >= 18 || h < 6) return "porch";
+  return "house";
 }
 
 function asCandidate(sp, extra = {}) {
@@ -83,16 +99,6 @@ export function tryIdentify({ words = "", features = null, hour = null, habitat 
     .sort((a, b) => b.score - a.score)
     .slice(0, 6)
     .map((row) => asCandidate(row.sp, { score: row.score, source: "house-catalog" }));
-
-  if (!q) {
-    const around = HOUSE_CATALOG.filter((sp) => (sp.habitats || []).includes(habitat || "house")).slice(0, 5);
-    const ids = new Set(scored.map((c) => c.id));
-    for (const sp of around) {
-      if (ids.has(sp.id)) continue;
-      scored.push(asCandidate(sp, { score: 1, source: "house-catalog" }));
-    }
-    scored = scored.slice(0, 6);
-  }
 
   return {
     claimed: false,

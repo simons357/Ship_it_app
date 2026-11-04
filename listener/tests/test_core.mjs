@@ -31,7 +31,7 @@ import { ownerEndpoints } from "../app/js/plugins.js";
 import { STORIES, tonightStory, tonightPool, dayNumber, listeningRank, ageLine, inferYear, inferRarity } from "../app/js/stories.js";
 import { LESSONS, todayLesson } from "../app/js/lessons.js";
 import { HOUSE_CATALOG } from "../app/js/catalog.js";
-import { tryIdentify, taxaFromInat, taxaFromGbif, mergeCandidates } from "../app/js/identify.js";
+import { tryIdentify, taxaFromInat, taxaFromGbif, mergeCandidates, habitatFromWalk } from "../app/js/identify.js";
 
 test("coarse location rounds to ~11 km and never stays exact", () => {
   const c = coarseLocation(32.01234, -81.09876);
@@ -224,6 +224,7 @@ test("ON AIR stays hidden until recording — display:flex must not leak past [h
   assert.match(html, /maybeIds/);
   assert.match(html, /OPEN FIELD/);
   assert.match(html, /PARK CAR/);
+  assert.match(html, /id="hikeLine"/);
   assert.match(html, /bedtime\.html/);
   assert.match(html, /GREEN SCREEN · READ TO THE CHILDREN/);
   assert.match(html, /id="greenLink"/);
@@ -239,6 +240,9 @@ test("ON AIR stays hidden until recording — display:flex must not leak past [h
   assert.equal(app.includes("Tap START"), false);
   assert.equal(app.includes("Start a session to listen"), false);
   assert.match(app, /tryIdentify/);
+  assert.match(app, /playHeard/);
+  assert.match(app, /paintHikeLine/);
+  assert.match(app, /loadOriginal/);
   assert.match(css, /\.on-air\[hidden\][\s\S]*display:\s*none\s*!important/);
   assert.match(css, /\.live-meter\[hidden\]/);
 });
@@ -338,6 +342,14 @@ test("try to ID birds, dolphins, and house critters — candidates, never a clai
   const unknown = tryIdentify({ words: "" });
   assert.equal(unknown.claimed, false);
   assert.equal(unknown.label, "UNKNOWN");
+  const night = tryIdentify({ words: "", hour: 22, habitat: "porch" });
+  assert.equal(night.claimed, false);
+  assert.ok(night.candidates.some((c) => /cricket|katydid|treefrog/i.test(c.common)));
+  assert.equal(night.candidates.some((c) => /cardinal/i.test(c.common)), false);
+  assert.equal(habitatFromWalk({ meters: 0, hour: 22 }), "porch");
+  assert.equal(habitatFromWalk({ meters: 80, hour: 10 }), "yard");
+  assert.equal(habitatFromWalk({ meters: 240, hour: 10 }), "woods");
+  assert.equal(habitatFromWalk({ meters: 0, hour: 10 }), "house");
   const inat = taxaFromInat({
     results: [{ taxon: { id: 1, preferred_common_name: "Northern Cardinal", name: "Cardinalis cardinalis", iconic_taxon_name: "Aves" } }],
   });

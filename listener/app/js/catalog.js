@@ -398,6 +398,7 @@ export const HOUSE_CATALOG = Object.freeze([
     habitats: ["porch", "house", "yard"],
     cues: ["cricket", "chirp", "insect"],
     peakHz: [3000, 7000],
+    hour: [17, 8],
   },
   {
     id: "true-katydid",
