@@ -45,3 +45,5 @@ The freeze you hit is the **Base44 editor** (`app.base44.com/.../editor/preview`
 **Published host:** 404 App not found  
 **Engine (this repo, local):** `cd chatvault && python3 -m http.server 4173` → http://127.0.0.1:4173/  
 **Vercel production:** none
+
+Readiness re-checked 5 November 2026: **personal local vault, yes. Shipped product, no.** See `READINESS-2026-11-05.md`.
