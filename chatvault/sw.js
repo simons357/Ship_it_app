@@ -1,4 +1,4 @@
-const CACHE = "chatvault-engine-v0.3.1";
+const CACHE = "chatvault-engine-v0.4.0";
 const ASSETS = [
   "./",
   "./index.html",
@@ -10,6 +10,9 @@ const ASSETS = [
   "./js/skins.mjs",
   "./js/spectrum.mjs",
   "./js/locators.mjs",
+  "./js/memory.mjs",
+  "./js/persist.mjs",
+  "./js/bench.mjs",
   "./manifest.webmanifest",
   "./icons/apple-touch-icon.png",
   "./icons/icon-192.png",

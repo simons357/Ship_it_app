@@ -12,10 +12,20 @@ import {
   createStore,
 } from "./engine.mjs";
 import { LOCATOR_KINDS, makeLocator } from "./locators.mjs";
-import { SEARCH_ENGINE_VERSION, ndcgAt } from "./search.mjs";
+import { SEARCH_ENGINE_VERSION } from "./search.mjs";
 import { layoutConstellation } from "./atlas.mjs";
 import { SKINS, SKIN_IDS, loadSkin, saveSkin, applySkin } from "./skins.mjs";
 import { ledgerSpectrum } from "./spectrum.mjs";
+import { applySessionContext, loadMemory, MEMORY_KEY, rememberOpen, rememberQuery } from "./memory.mjs";
+import {
+  appendBenchHistory,
+  BENCH_HISTORY_KEY,
+  clearPersistent,
+  loadBenchHistory,
+  loadPersistent,
+  savePersistent,
+} from "./persist.mjs";
+import { runBench } from "./bench.mjs";
 
 const STORAGE_KEY = "chatvault.engine.v1";
 const PAGE_SIZE = 50;
@@ -35,11 +45,22 @@ function loadPersisted() {
 }
 
 const store = createStore(loadPersisted());
+let memory = loadMemory();
 store.subscribe((entries) => {
+  const payload = exportVault(entries);
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(exportVault(entries)));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
   } catch {
     /* quota */
+  }
+  savePersistent(payload).catch(() => {});
+});
+loadPersistent(importVault).then((entries) => {
+  if (Array.isArray(entries) && entries.length) {
+    store.load(entries);
+    render();
+  } else {
+    savePersistent(exportVault(store.list())).catch(() => {});
   }
 });
 
@@ -106,10 +127,14 @@ function renderSpectrum() {
 }
 
 function ranked() {
-  return searchVault(store.list(), state.query, {
+  const raw = searchVault(store.list(), state.query, {
     visibility: state.visibility || undefined,
     source_ai: state.source_ai || undefined,
   });
+  if (!String(state.query || "").trim()) {
+    return { ...raw, context: "none" };
+  }
+  return applySessionContext(raw, memory);
 }
 
 function renderSky(layout, matchIds) {
@@ -190,7 +215,7 @@ function renderVault() {
     : `<div class="atlas-stage">
         <div class="sky-wrap">${renderSky(layout, matchIds)}</div>
         <div class="beams">
-          <p class="meta">${querying ? `${result.hits.length} ranked · ${result.took_ms.toFixed(1)} ms · ${escapeHtml(SEARCH_ENGINE_VERSION)}` : `${result.hits.length} of ${store.list().length} in the sky. Type a query to rank.`}</p>
+          <p class="meta">${querying ? `${result.hits.length} ranked · ${result.took_ms.toFixed(1)} ms · ${escapeHtml(SEARCH_ENGINE_VERSION)} · context ${escapeHtml(result.context || "none")}` : `${result.hits.length} of ${store.list().length} in the sky. Type a query to rank.`}</p>
           ${renderBeams(pageHits, querying)}
           ${pager}
         </div>
@@ -343,7 +368,7 @@ function renderPrivacy() {
       <p class="kicker">Personal vault. No accounts. No inbox.</p>
     </header>
     <div class="panel">
-      <p>Records live in this browser’s local storage unless you export them. There is no ChatVault cloud account in this engine build, so there is no inbox for strangers to message you through the app.</p>
+      <p>Records live in this browser’s local storage and IndexedDB unless you export them. That is persistent on this device, not a cloud memory across phones. Search memory (queries and opens) stays here too.</p>
       <p>Private vs professional is a user-controlled plane. Professional export omits private records.</p>
       <p>On iPhone: Safari → Share → Add to Home Screen. That is the install path. An Apple Developer membership can sign a later binary; it does not make this web vault an App Store listing, and we are not submitting one.</p>
       <p><button class="btn danger" id="wipe">Delete all local ChatVault data…</button></p>
@@ -365,36 +390,34 @@ function renderDisclaimer() {
   `;
 }
 
+let cachedBench = null;
+
 function fixtureBench() {
-  const cases = [
-    { q: "euler identity", title: /Euler/i },
-    { q: '"finite-time blow-up"', title: /Navier/i },
-    { q: "claim:definitional", title: /Euler/i },
-    { q: "gap:blow-up", title: /Navier/i },
-  ];
-  const rows = cases.map((c) => {
-    const result = searchVault(DEMO_ENTRIES, c.q);
-    const top = result.hits[0]?.entry;
-    const grades = {};
-    for (const e of DEMO_ENTRIES) grades[e.id] = c.title.test(e.title) ? 3 : 0;
-    const ndcg = ndcgAt(
-      result.hits.map((h) => h.entry.id),
-      grades,
-      5
-    );
-    const ok = top && c.title.test(top.title);
-    return `<tr>
-      <td><code>${escapeHtml(c.q)}</code></td>
-      <td>${escapeHtml(top?.title || "none")}</td>
-      <td>${result.took_ms.toFixed(1)} ms</td>
-      <td>nDCG@5 ${ndcg.toFixed(2)} ${ok ? "hit" : "miss"}</td>
-    </tr>`;
-  });
-  return `<table class="bench">
+  if (!cachedBench) {
+    cachedBench = runBench();
+    appendBenchHistory(cachedBench);
+  }
+  const summary = cachedBench;
+  const history = loadBenchHistory();
+  const prev = history[1];
+  const rows = summary.rows.map(
+    (r) => `<tr>
+      <td><code>${escapeHtml(r.q)}</code></td>
+      <td>${escapeHtml(r.top || "none")}</td>
+      <td>${r.took_ms.toFixed(1)} ms</td>
+      <td>nDCG@5 ${r.ndcg5.toFixed(2)} · MRR ${r.mrr.toFixed(2)} ${r.hit ? "hit" : "MISS"}</td>
+    </tr>`
+  );
+  const delta = prev
+    ? `Last stored run: nDCG ${prev.mean_ndcg5.toFixed(3)} · ${prev.mean_took_ms.toFixed(1)} ms (${prev.pass ? "pass" : "fail"})`
+    : "No prior stored run on this device.";
+  return `<p class="meta">${summary.pass ? "PASS" : "FAIL"} · mean nDCG@5 ${summary.mean_ndcg5.toFixed(3)} · MRR ${summary.mean_mrr.toFixed(3)} · ${summary.mean_took_ms.toFixed(1)} ms · ${escapeHtml(summary.engine)}</p>
+    <table class="bench">
     <thead><tr><th>Query</th><th>Top hit (fixtures)</th><th>Time</th><th>Grade</th></tr></thead>
     <tbody>${rows.join("")}</tbody>
   </table>
-  <p class="meta">Fixture bench, not your corpus. A miss here is a bug. A hit here does not prove search on your chats.</p>`;
+  <p class="meta">${escapeHtml(delta)} Memory queries on this device: ${memory.queries.length}. Opens: ${memory.opens.length}. Session context: last project ${escapeHtml(memory.lastProject || "none")}.</p>
+  <p class="meta">Fixture bench, not your corpus. Ranker additions that fail this table do not ship. Session memory is a 1.05 same-project nudge, scored separately.</p>`;
 }
 
 function renderGuide() {
@@ -410,6 +433,7 @@ function renderGuide() {
         <li>Source AI and an address (URL / DOI / path) stay attached.</li>
         <li>Claims, theorems, and gaps are searchable fields with statuses.</li>
         <li>Search is hybrid ranker ${SEARCH_ENGINE_VERSION}: boolean gate, then BM25F + character 3-grams + TF-IDF cosine fused by RRF. Field prefixes (<code>claim:</code>, <code>gap:</code>) are hard gates. Ledger status is never a score.</li>
+        <li>Device memory records queries and opens. Same-project hits get a 1.05 nudge after the ranker; last-opened gets 1.02. That is context, not a second engine. It is scored separately from the fixture bench.</li>
         <li>The surface is an atlas (constellation), not an Evernote notebook stack.</li>
         <li>Private material can be kept off professional export.</li>
       </ol>
@@ -500,6 +524,8 @@ root.addEventListener("click", (ev) => {
   }
   const open = ev.target.closest("[data-open]");
   if (open) {
+    const opened = store.get(open.dataset.open);
+    if (opened) memory = rememberOpen(memory, opened);
     set({ view: "detail", selectedId: open.dataset.open, error: "" });
     return;
   }
@@ -518,6 +544,7 @@ root.addEventListener("click", (ev) => {
   }
   if (ev.target.id === "do-search") {
     const q = document.getElementById("q")?.value ?? state.query;
+    memory = rememberQuery(memory, q);
     set({ query: q, error: "", notice: "", page: 0 });
     return;
   }
@@ -526,6 +553,7 @@ root.addEventListener("click", (ev) => {
       const loc = makeLocator(state.locatorValue, state.locatorKind);
       const entry = ingestPaste(state.ingestText, loc ? { locators: [loc] } : {});
       store.add(entry);
+      memory = rememberOpen(memory, entry);
       set({ view: "detail", selectedId: entry.id, ingestText: "", locatorValue: "", error: "" });
     } catch (err) {
       set({ error: err.message });
@@ -570,6 +598,11 @@ root.addEventListener("click", (ev) => {
   if (ev.target.id === "wipe") {
     if (!window.confirm("Delete ALL local ChatVault data on this device?")) return;
     localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem(MEMORY_KEY);
+    localStorage.removeItem(BENCH_HISTORY_KEY);
+    memory = loadMemory();
+    cachedBench = null;
+    clearPersistent().catch(() => {});
     store.load([]);
     set({ view: "vault", selectedId: null, error: "" });
   }
@@ -613,6 +646,7 @@ root.addEventListener("change", (ev) => {
 
 root.addEventListener("keydown", (ev) => {
   if (ev.target.id === "q" && ev.key === "Enter") {
+    memory = rememberQuery(memory, ev.target.value);
     set({ query: ev.target.value, page: 0 });
   }
 });

@@ -17,6 +17,13 @@ This file is the work list. The atlas in the app is the picture.
    project, star size = claims+theorems+gaps, edges = shared tags. Ranked
    beams sit beside the sky. There is no notebook stack.
 3. **Map of the tree** — this file, `js/ENGINE.md`, and the canvas atlas.
+4. **Device memory** (`js/memory.mjs`, IndexedDB + localStorage in `js/persist.mjs`).
+   Queries and opens persist on this device. Same-project ×1.05 and last-opened
+   ×1.02 after the ranker. Not a cloud brain. Not a second ranker.
+5. **Frozen fixture bench** (`js/bench.mjs`, `node bench/run.mjs`). Floors:
+   mean nDCG@5 = 1, mean MRR = 1, mean latency ≤ 250 ms, every gated case hits.
+   Memory is scored separately so it cannot hide a regression. Weekly report:
+   `docs/chatvault-audit/WEEKLY-BENCH.md`.
 
 ## Do next (ordered, cheapest first)
 
@@ -25,12 +32,11 @@ This file is the work list. The atlas in the app is the picture.
 | 1 | Export Base44 glass source yourself | Archive the look. We cannot log in. | 15 min, you |
 | 2 | Open the atlas locally and ingest a week of *your* chats | Search quality is proven on *your* corpus, not fixtures | Low |
 | 3 | Private GitHub repo named `chatvault` | `Ship_it_app` is a workshop. Do not tag `main` as the product | Low |
-| 4 | IndexedDB instead of localStorage | Quota freeze on a real corpus | Medium |
-| 5 | Port morph-glass *skin* onto this atlas | Skin only. Do not copy Base44 list/LLM logic | Medium |
-| 6 | PDF/DOCX text extract | Stubs exist conceptually; OCR is not here | High |
-| 7 | Private HTTPS origin for the PWA | Add to Home Screen off localhost, still no public site | Medium |
-| 8 | Dense MiniLM/E5 into the same RRF | Only if it beats this eval on your corpus | High |
-| 9 | Genuine native layer / private TestFlight | After 2–7. Not a Base44 wrapper. Not a store listing | High |
+| 4 | Port morph-glass *skin* onto this atlas | Skin only. Do not copy Base44 list/LLM logic | Medium |
+| 5 | PDF/DOCX text extract | Stubs exist conceptually; OCR is not here | High |
+| 6 | Private HTTPS origin for the PWA | Add to Home Screen off localhost, still no public site | Medium |
+| 7 | Dense MiniLM/E5 into the same RRF | Only if it beats this eval on your corpus **and** the frozen bench | High |
+| 8 | Genuine native layer / private TestFlight | After 2–6. Not a Base44 wrapper. Not a store listing | High |
 
 ## Three products mixed in the last ask (do not fuse them)
 
@@ -40,7 +46,10 @@ This file is the work list. The atlas in the app is the picture.
 | “Run like a top / stunning / lots of skins” | Design pass on the PWA | **In progress** (Nocturne, Vellum, Observatory, Steel, Ink, Signal, Day). |
 | App Store native, accepted faster because mobile | A second product | **No.** A wrapper is slower and likelier to be rejected (Guideline 4.2). Native tabs + on-device search is the only honest store path, and it is a rebuild, not a shortcut. |
 
-Weekly search evals, persistent memory beyond this device, and a public address are **not** in the PWA until you want a hosted private origin.
+Persistent memory is **this device** (IndexedDB + localStorage). It is not
+multi-phone sync. Weekly search evals run on the fixture corpus and are reported
+in `docs/chatvault-audit/WEEKLY-BENCH.md`. A public address is still not in the
+PWA until you want a hosted private origin.
 
 ## Will not do (locked policy)
 
@@ -54,6 +63,7 @@ Weekly search evals, persistent memory beyond this device, and a public address 
 ```bash
 cd chatvault
 node --test tests/*.mjs
+node bench/run.mjs
 python3 -m http.server 4173
 ```
 

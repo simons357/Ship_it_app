@@ -26,8 +26,13 @@ faster. Skins (sidebar dots): Nocturne, Vellum, Observatory, Steel, Ink, Signal,
 
 ```bash
 cd chatvault
-node --test tests/engine.test.mjs
+node --test tests/*.mjs
+node bench/run.mjs
 ```
+
+That second command writes `docs/chatvault-audit/WEEKLY-BENCH.md`. Ranker
+additions that fail the frozen fixture floors do not ship. Device memory
+(queries / opens) is scored separately from those floors.
 
 ## What this is
 

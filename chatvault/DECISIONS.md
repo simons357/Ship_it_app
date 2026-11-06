@@ -7,6 +7,13 @@
 
 **Format (6 Nov 2026):** Not Evernote. Home screen is an atlas (constellation + ranked beams). Search is `chatvault-hybrid-0.2.0`, not a notebook filter.
 
+**Memory (6 Nov 2026):** Search memory is on-device (queries, opens, last project).
+It may nudge same-project hits ×1.05 and last-opened ×1.02 **after** the ranker.
+It must not hide a ranker regression. Ranker additions are gated on
+`chatvault/bench/BASELINE.json` (nDCG@5 = 1, MRR = 1, mean ≤ 250 ms, every
+fixture case hits). Weekly observation is `docs/chatvault-audit/WEEKLY-BENCH.md`.
+Do not lower the baseline to pass a weaker ranker. Do not invent a cloud memory.
+
 **Why not let Base44 glass win outright:** It holds ~14 conversation records, but they read as SaaS seed data (rate limiter, CRM, investor deck), not Jonathan’s research corpus. Seed data must be archived, not used as “live content wins.” Its `Conversation` schema has no claims, theorems, gaps, or ledger. Rebuilding that model later is the expensive mistake. C2 is a landing page plus Drive OAuth. C3 is an empty paper vault. Claude’s original is historical and still not in this workshop.
 
 **No hassle (12 Sep 2026):** Owner does not want people hassling him. Binding. ChatVault is a personal tool, not a public product, until he says otherwise. See `NO-HASSLE.md`.
