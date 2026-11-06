@@ -32,10 +32,21 @@ This file is the work list. The atlas in the app is the picture.
 | 8 | Dense MiniLM/E5 into the same RRF | Only if it beats this eval on your corpus | High |
 | 9 | Genuine native layer / private TestFlight | After 2–7. Not a Base44 wrapper. Not a store listing | High |
 
+## Three products mixed in the last ask (do not fuse them)
+
+| You asked | What it actually is | Verdict |
+| --- | --- | --- |
+| Personal atlas + hybrid search + skins | This repo | **Do this.** Mobile = PWA on the phone. |
+| “Run like a top / stunning / lots of skins” | Design pass on the PWA | **In progress** (Nocturne, Vellum, Observatory, Steel, Ink, Signal, Day). |
+| App Store native, accepted faster because mobile | A second product | **No.** A wrapper is slower and likelier to be rejected (Guideline 4.2). Native tabs + on-device search is the only honest store path, and it is a rebuild, not a shortcut. |
+
+Weekly search evals, persistent memory beyond this device, and a public address are **not** in the PWA until you want a hosted private origin.
+
 ## Will not do (locked policy)
 
 - App Store listing, Stripe, support inbox, circulating the Base44 preview URL.
 - LLM “semantic” toggle that invents ranks.
+- Calling the ledger spectrum a truth meter.
 - Evernote notebooks, yellow notes, or a clipper grid as the home screen.
 
 ## How to see it

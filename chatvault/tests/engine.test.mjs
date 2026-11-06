@@ -13,6 +13,15 @@ import {
   assertNotAutoProved,
 } from "../js/engine.mjs";
 
+test("ADDRESS / URL / DOI lines store as the record locator", () => {
+  const entry = ingestPaste(
+    "TITLE: Locator probe\nADDRESS: https://doi.org/10.5281/zenodo.22050963\n\nBody stays raw."
+  );
+  assert.equal(entry.source_file, "https://doi.org/10.5281/zenodo.22050963");
+  const viaUrl = ingestPaste("TITLE: u\nURL: https://example.com/note\n\nx");
+  assert.equal(viaUrl.source_file, "https://example.com/note");
+});
+
 test("ingest keeps raw text and will not let a summary replace it", () => {
   const raw = "TITLE: Probe\nCLAIM: 2+2=4\n\nThe identity e^{iπ} + 1 = 0 remains a definitional Euler identity.";
   const entry = ingestPaste(raw, { summary: "A short note." });

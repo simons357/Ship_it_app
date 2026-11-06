@@ -18,8 +18,9 @@ python3 -m http.server 4173
 Then open http://127.0.0.1:4173/
 
 Installable as a PWA from that origin (manifest + `sw.js` + icons). iOS:
-Safari → Share → Add to Home Screen. There is an Apple Developer membership
-on file; there is still no App Store binary, and we are not submitting one.
+Safari → Share → Add to Home Screen. That **is** the mobile app. There is an
+Apple Developer membership on file; a wrapper will not get you into the store
+faster. Skins (sidebar dots): Nocturne, Vellum, Observatory, Steel, Ink, Signal, Day.
 
 ## Engine tests
 

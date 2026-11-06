@@ -26,6 +26,8 @@ One row per feature. Columns are builds we could actually reach.
 | Ranked hybrid (BM25F + n-grams + cosine RRF) | A | A | A | U | W (`chatvault-hybrid-0.2.0`) |
 | Semantic / LLM search | A | W | W (copy) | U | A (deliberate: no invented ranks) |
 | Atlas constellation (not notebook grid) | A | A | A | U | W |
+| Skins (Nocturne/Vellum/Observatory/Steel/Ink/Signal/Day) | A | P (one glass look) | A | U | W |
+| Ledger spectrum (not a truth meter) | A | A | A | U | W |
 | OR / phrase / field search | A | A | A | U | W |
 | Private vs professional | A | A | A | U | W |
 | Per-item JSON export | A | W | A | U | W |

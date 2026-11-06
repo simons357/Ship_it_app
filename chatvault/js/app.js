@@ -10,8 +10,10 @@ import {
   reviewLedgerItem,
   createStore,
 } from "./engine.mjs";
-import { SEARCH_ENGINE_VERSION } from "./search.mjs";
+import { SEARCH_ENGINE_VERSION, ndcgAt } from "./search.mjs";
 import { layoutConstellation } from "./atlas.mjs";
+import { SKINS, SKIN_IDS, loadSkin, saveSkin, applySkin } from "./skins.mjs";
+import { ledgerSpectrum } from "./spectrum.mjs";
 
 const STORAGE_KEY = "chatvault.engine.v1";
 const PAGE_SIZE = 50;
@@ -50,6 +52,7 @@ const state = {
   ingestText: "",
   page: 0,
   fatal: null,
+  skin: applySkin(loadSkin()),
 };
 
 function set(patch) {
@@ -68,6 +71,32 @@ function escapeHtml(s) {
 function nav(id, label) {
   const current = state.view === id ? ' aria-current="page"' : "";
   return `<button class="nav-btn" data-view="${id}"${current}>${label}</button>`;
+}
+
+function skinSwitcher() {
+  return `<div class="skins" role="group" aria-label="Skins">
+    ${SKIN_IDS.map((id) => {
+      const skin = SKINS[id];
+      const pressed = state.skin === id ? "true" : "false";
+      return `<button type="button" class="skin-swatch" data-set-skin="${id}" data-skin="${id}" aria-pressed="${pressed}" title="${escapeHtml(skin.label)} — ${escapeHtml(skin.blurb)}"></button>`;
+    }).join("")}
+  </div>`;
+}
+
+function renderSpectrum() {
+  const spec = ledgerSpectrum(store.list());
+  if (!spec.total) return "";
+  const track = spec.bands
+    .map(
+      (b) =>
+        `<span class="spectrum-band ${escapeHtml(b.status.toLowerCase())}" style="flex:${b.count}" title="${escapeHtml(b.status)} ${b.count}"></span>`
+    )
+    .join("");
+  const mix = spec.bands.map((b) => `${b.status} ${b.count}`).join(" · ");
+  return `<div class="spectrum">
+    <div class="spectrum-track">${track}</div>
+    <p class="caption">${escapeHtml(mix)}. ${escapeHtml(spec.caption)}</p>
+  </div>`;
 }
 
 function ranked() {
@@ -167,6 +196,7 @@ function renderVault() {
       <p class="kicker">OS for your AI · not a notebook</p>
       <p class="meta">${store.list().length} records · engine ${escapeHtml(SCHEMA_VERSION)} · ranker ${escapeHtml(SEARCH_ENGINE_VERSION)}</p>
       <p class="banner">Stars are records. Size is claims + theorems + gaps. Lines are shared tags. Search is a ranked beam (BM25F + 3-grams + cosine, fused). Ledger status is never a score.</p>
+      ${renderSpectrum()}
     </header>
     <div class="toolbar">
       <input type="search" id="q" placeholder='claim:  theorem:  gap:  "phrase"  OR  ai:Grok' value="${escapeHtml(state.query)}" />
@@ -224,7 +254,7 @@ function renderDetail(entry) {
       </div>
       <div class="panel">
         <p><span class="badge ${entry.visibility}">${escapeHtml(entry.visibility)}</span>
-           <span class="badge">${escapeHtml(entry.source_file || "no source file")}</span></p>
+           <span class="badge">${escapeHtml(entry.source_file || "no address")}</span></p>
         <p class="meta">Ingested ${escapeHtml(entry.ingested_at)} · item date ${escapeHtml(entry.item_date)}</p>
         <h3>Claims</h3>${ledgerList(entry, "key_claims")}
         <h3>Theorems</h3>${ledgerList(entry, "theorems")}
@@ -245,7 +275,7 @@ function renderIngest() {
       <h1>Ingest</h1>
       <p class="kicker">Raw text is stored first. Summaries never replace it.</p>
     </header>
-    <p class="banner">Optional structured lines: TITLE, SOURCE_AI, CLAIM, THEOREM, GAP, ACTION, QUESTION, VISIBILITY. CLAIM_LEDGER starts at UNREVIEWED. Nothing is auto-PROVED.</p>
+      <p class="banner">Optional structured lines: TITLE, SOURCE_AI, ADDRESS (or URL / DOI / LOCATOR), CLAIM, THEOREM, GAP, ACTION, QUESTION, VISIBILITY. CLAIM_LEDGER starts at UNREVIEWED. Nothing is auto-PROVED.</p>
     <textarea id="ingest">${escapeHtml(state.ingestText)}</textarea>
     <p class="error">${escapeHtml(state.error)}</p>
     <p><button class="btn" id="do-ingest">Extract &amp; index</button></p>
@@ -299,6 +329,38 @@ function renderDisclaimer() {
   `;
 }
 
+function fixtureBench() {
+  const cases = [
+    { q: "euler identity", title: /Euler/i },
+    { q: '"finite-time blow-up"', title: /Navier/i },
+    { q: "claim:definitional", title: /Euler/i },
+    { q: "gap:blow-up", title: /Navier/i },
+  ];
+  const rows = cases.map((c) => {
+    const result = searchVault(DEMO_ENTRIES, c.q);
+    const top = result.hits[0]?.entry;
+    const grades = {};
+    for (const e of DEMO_ENTRIES) grades[e.id] = c.title.test(e.title) ? 3 : 0;
+    const ndcg = ndcgAt(
+      result.hits.map((h) => h.entry.id),
+      grades,
+      5
+    );
+    const ok = top && c.title.test(top.title);
+    return `<tr>
+      <td><code>${escapeHtml(c.q)}</code></td>
+      <td>${escapeHtml(top?.title || "none")}</td>
+      <td>${result.took_ms.toFixed(1)} ms</td>
+      <td>nDCG@5 ${ndcg.toFixed(2)} ${ok ? "hit" : "miss"}</td>
+    </tr>`;
+  });
+  return `<table class="bench">
+    <thead><tr><th>Query</th><th>Top hit (fixtures)</th><th>Time</th><th>Grade</th></tr></thead>
+    <tbody>${rows.join("")}</tbody>
+  </table>
+  <p class="meta">Fixture bench, not your corpus. A miss here is a bug. A hit here does not prove search on your chats.</p>`;
+}
+
 function renderGuide() {
   return `
     <header class="hero">
@@ -309,12 +371,14 @@ function renderGuide() {
       <p>Clippers already exist. ChatVault competes by refusing to collapse a conversation into a vibes summary.</p>
       <ol>
         <li>Raw text is immutable after ingest.</li>
-        <li>Source AI and source file stay attached.</li>
+        <li>Source AI and an address (URL / DOI / path) stay attached.</li>
         <li>Claims, theorems, and gaps are searchable fields with statuses.</li>
         <li>Search is hybrid ranker ${SEARCH_ENGINE_VERSION}: boolean gate, then BM25F + character 3-grams + TF-IDF cosine fused by RRF. Field prefixes (<code>claim:</code>, <code>gap:</code>) are hard gates. Ledger status is never a score.</li>
         <li>The surface is an atlas (constellation), not an Evernote notebook stack.</li>
         <li>Private material can be kept off professional export.</li>
       </ol>
+      <h3>Fixture bench (honest, simulated on demo records)</h3>
+      ${fixtureBench()}
     </div>
   `;
 }
@@ -332,7 +396,8 @@ function shell(inner) {
       ${nav("guide", "Engine")}
       ${nav("privacy", "Privacy")}
       ${nav("disclaimer", "Disclaimer")}
-      <p class="foot">Local engine · not App Store certified</p>
+      ${skinSwitcher()}
+      <p class="foot">${escapeHtml(SKINS[state.skin].label)} · local · not App Store</p>
     </aside>
     <main class="main">${inner}</main>
   `;
@@ -384,6 +449,12 @@ root.addEventListener("click", (ev) => {
   if (ev.target.id === "recover") {
     state.fatal = null;
     set({ view: "vault", error: "", notice: "Recovered from a render error." });
+    return;
+  }
+  const skinBtn = ev.target.closest("[data-set-skin]");
+  if (skinBtn) {
+    const skin = applySkin(saveSkin(skinBtn.dataset.setSkin));
+    set({ skin, notice: `${SKINS[skin].label} — ${SKINS[skin].blurb}` });
     return;
   }
   const viewBtn = ev.target.closest("[data-view]");

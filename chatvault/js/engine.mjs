@@ -126,7 +126,8 @@ export function emptyEntry(partial = {}) {
   };
 }
 
-const STRUCTURED_LINE = /^(CLAIM|THEOREM|GAP|ACTION|QUESTION|TAG|SOURCE_AI|SOURCE_TYPE|SOURCE_FILE|VISIBILITY|PROJECT|SUMMARY|TITLE|STATUS)\s*:\s*(.+)$/i;
+const STRUCTURED_LINE =
+  /^(CLAIM|THEOREM|GAP|ACTION|QUESTION|TAG|SOURCE_AI|SOURCE_TYPE|SOURCE_FILE|ADDRESS|URL|DOI|LOCATOR|VISIBILITY|PROJECT|SUMMARY|TITLE|STATUS)\s*:\s*(.+)$/i;
 
 export function parseStructuredPaste(raw) {
   const lines = String(raw || "").split(/\r?\n/);
@@ -158,7 +159,9 @@ export function parseStructuredPaste(raw) {
     else if (kind === "SUMMARY") extracted.summary = value;
     else if (kind === "SOURCE_AI" && SOURCE_AIS.includes(value)) extracted.source_ai = value;
     else if (kind === "SOURCE_TYPE" && SOURCE_TYPES.includes(value.toLowerCase())) extracted.source_type = value.toLowerCase();
-    else if (kind === "SOURCE_FILE") extracted.source_file = value;
+    else if (kind === "SOURCE_FILE" || kind === "ADDRESS" || kind === "URL" || kind === "DOI" || kind === "LOCATOR") {
+      extracted.source_file = value;
+    }
     else if (kind === "VISIBILITY" && VISIBILITY.includes(value.toLowerCase())) extracted.visibility = value.toLowerCase();
     else if (kind === "PROJECT") extracted.project_category = value;
     else if (kind === "TAG") extracted.search_tags.push(value);
