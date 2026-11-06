@@ -1,0 +1,63 @@
+{
+  "summary": "Token-bucket rate limiting per API key with burst capacity, graceful 429 responses, and a sliding window fallback. Consider Redis for distributed counters.",
+  "raw_content": null,
+  "book_ids": [
+    "6a58ebb95c1ff863731e359f"
+  ],
+  "harmonic_note": null,
+  "importance": "high",
+  "project": "Engineering",
+  "conversation_date": null,
+  "source": "pasted",
+  "title": "Designing a rate limiter that won't break the API",
+  "media_url": null,
+  "labels": [
+    "Rate Limiting",
+    "API",
+    "Token Bucket",
+    "Redis",
+    "Scalability",
+    "429",
+    "Backend",
+    "Reliability"
+  ],
+  "readiness_score": 85,
+  "starred": false,
+  "media_type": null,
+  "clean_content": "User: How do I rate limit without dropping legitimate traffic?\nAssistant: Use a token bucket per API key with a refill rate...",
+  "tag_tree": [
+    {
+      "children": [
+        "Token bucket",
+        "Sliding window",
+        "Redis counters"
+      ],
+      "subject": "Backend"
+    },
+    {
+      "children": [
+        "429 responses",
+        "Burst capacity",
+        "Per-key limits"
+      ],
+      "subject": "API"
+    },
+    {
+      "children": [
+        "Distributed counters",
+        "Graceful degradation"
+      ],
+      "subject": "Scalability"
+    }
+  ],
+  "location": "Backend",
+  "second_order_labels": [
+    "reliability",
+    "backend patterns"
+  ],
+  "id": "6a58ebc636455b7a18e85f91",
+  "created_date": "2026-07-16T14:33:42.607000",
+  "updated_date": "2026-07-16T14:33:42.607000",
+  "created_by_id": "service_3d25a80a-6eda-4b6b-ab72-cdd30b63eff8",
+  "is_sample": false
+}

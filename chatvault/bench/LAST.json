@@ -1,0 +1,73 @@
+{
+  "version": "chatvault-bench-0.1.0",
+  "engine": "chatvault-hybrid-0.2.0",
+  "at": "2026-11-06T10:12:52.033Z",
+  "mean_ndcg5": 1,
+  "mean_mrr": 1,
+  "mean_took_ms": 11.622564666666669,
+  "hits": 6,
+  "cases": 6,
+  "rows": [
+    {
+      "id": "euler-and",
+      "q": "euler identity",
+      "top": "Euler identity as a definitional fact",
+      "hit": true,
+      "ndcg5": 1,
+      "mrr": 1,
+      "took_ms": 20.389602999999997,
+      "total": 1
+    },
+    {
+      "id": "phrase-blowup",
+      "q": "\"finite-time blow-up\"",
+      "top": "Spectral regularity for Navier–Stokes — status of the claim",
+      "hit": true,
+      "ndcg5": 1,
+      "mrr": 1,
+      "took_ms": 14.410462000000003,
+      "total": 1
+    },
+    {
+      "id": "claim-field",
+      "q": "claim:definitional",
+      "top": "Euler identity as a definitional fact",
+      "hit": true,
+      "ndcg5": 1,
+      "mrr": 1,
+      "took_ms": 8.199584000000002,
+      "total": 1
+    },
+    {
+      "id": "gap-field",
+      "q": "gap:blow-up",
+      "top": "Spectral regularity for Navier–Stokes — status of the claim",
+      "hit": true,
+      "ndcg5": 1,
+      "mrr": 1,
+      "took_ms": 7.235319000000004,
+      "total": 1
+    },
+    {
+      "id": "ai-claude",
+      "q": "ai:Claude",
+      "top": "Spectral regularity for Navier–Stokes — status of the claim",
+      "hit": true,
+      "ndcg5": 1,
+      "mrr": 1,
+      "took_ms": 12.149470000000008,
+      "total": 2
+    },
+    {
+      "id": "or-query",
+      "q": "euler OR navier-stokes",
+      "top": "Euler identity as a definitional fact",
+      "hit": true,
+      "ndcg5": 1,
+      "mrr": 1,
+      "took_ms": 7.350949999999997,
+      "total": 2
+    }
+  ],
+  "pass": true
+}
