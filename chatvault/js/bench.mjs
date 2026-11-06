@@ -72,6 +72,57 @@ export function runBench(corpus = DEMO_ENTRIES, searchFn = searchVault) {
   return summary;
 }
 
+function percentile(sorted, p) {
+  if (!sorted.length) return 0;
+  const idx = Math.min(sorted.length - 1, Math.max(0, Math.ceil((p / 100) * sorted.length) - 1));
+  return sorted[idx];
+}
+
+function latencyStats(arr) {
+  if (!arr.length) {
+    return { n: 0, min: 0, p50: 0, p95: 0, max: 0, mean: 0 };
+  }
+  const s = [...arr].sort((a, b) => a - b);
+  const mean = s.reduce((a, b) => a + b, 0) / s.length;
+  return {
+    n: s.length,
+    min: s[0],
+    p50: percentile(s, 50),
+    p95: percentile(s, 95),
+    max: s[s.length - 1],
+    mean,
+  };
+}
+
+/**
+ * Repeated fixture queries. Reports wall-clock of searchVault only.
+ * Memory nudge is not in this clock.
+ */
+export function runLatencySim({ rounds = 25, corpus = DEMO_ENTRIES, searchFn = searchVault } = {}) {
+  const all = [];
+  const byCase = Object.fromEntries(BENCH_CASES.map((c) => [c.id, []]));
+  for (let i = 0; i < rounds; i += 1) {
+    for (const c of BENCH_CASES) {
+      const took = searchFn(corpus, c.q).took_ms;
+      all.push(took);
+      byCase[c.id].push(took);
+    }
+  }
+  return {
+    version: BENCH_VERSION,
+    engine: SEARCH_ENGINE_VERSION,
+    at: new Date().toISOString(),
+    rounds,
+    queries: all.length,
+    corpus_size: corpus.length,
+    note: "Fixture corpus. Includes JIT warmup. Not Jonathan’s live chats. Memory nudge is after this clock.",
+    overall: latencyStats(all),
+    byCase: Object.fromEntries(
+      BENCH_CASES.map((c) => [c.id, { q: c.q, ...latencyStats(byCase[c.id]) }])
+    ),
+  };
+}
+
 export function formatBenchReport(summary, previous) {
   const delta = previous
     ? `nDCG ${summary.mean_ndcg5.toFixed(3)} (was ${previous.mean_ndcg5.toFixed(3)}) · MRR ${summary.mean_mrr.toFixed(3)} (was ${previous.mean_mrr.toFixed(3)}) · ${summary.mean_took_ms.toFixed(1)} ms (was ${previous.mean_took_ms.toFixed(1)})`

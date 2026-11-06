@@ -25,7 +25,7 @@ import {
   loadPersistent,
   savePersistent,
 } from "./persist.mjs";
-import { runBench } from "./bench.mjs";
+import { runBench, runLatencySim } from "./bench.mjs";
 
 const STORAGE_KEY = "chatvault.engine.v1";
 const PAGE_SIZE = 50;
@@ -112,17 +112,45 @@ function skinSwitcher() {
 
 function renderSpectrum() {
   const spec = ledgerSpectrum(store.list());
-  if (!spec.total) return "";
+  if (!spec.total) {
+    return `<div class="spectrum">
+      <p class="spectrum-label">Ledger spectrum <span class="not-truth">not a truth meter</span></p>
+      <p class="caption">No ledger rows on this device. Empty is not a failed load.</p>
+    </div>`;
+  }
   const track = spec.bands
     .map(
       (b) =>
         `<span class="spectrum-band ${escapeHtml(b.status.toLowerCase())}" style="flex:${b.count}" title="${escapeHtml(b.status)} ${b.count}"></span>`
     )
     .join("");
-  const mix = spec.bands.map((b) => `${b.status} ${b.count}`).join(" · ");
-  return `<div class="spectrum">
-    <div class="spectrum-track">${track}</div>
-    <p class="caption">${escapeHtml(mix)}. ${escapeHtml(spec.caption)}</p>
+  const legend = spec.bands
+    .map(
+      (b) =>
+        `<span class="spectrum-key"><i class="${escapeHtml(b.status.toLowerCase())}"></i>${escapeHtml(b.status)} ${b.count}</span>`
+    )
+    .join("");
+  const provedPct = (spec.provedShare * 100).toFixed(0);
+  return `<div class="spectrum" role="img" aria-label="Ledger spectrum, not a truth meter">
+    <p class="spectrum-label">Ledger spectrum <span class="not-truth">not a truth meter</span></p>
+    <div class="spectrum-track-wrap">
+      <div class="spectrum-track">${track}</div>
+      <span class="spectrum-needle" style="left:${provedPct}%" title="${provedPct}% marked PROVED"></span>
+    </div>
+    <p class="spectrum-legend">${legend}</p>
+    <p class="caption">${provedPct}% of ${spec.total} ledger rows marked PROVED in this vault. That is a human designation, not a proof, journal, or court.</p>
+  </div>`;
+}
+
+function renderPerf(result, querying) {
+  const clock = Number.isFinite(result?.took_ms) ? result.took_ms.toFixed(1) : "—";
+  const line = querying
+    ? `${result.hits.length} ranked in ${clock} ms · ${escapeHtml(SEARCH_ENGINE_VERSION)} · context ${escapeHtml(result.context || "none")}`
+    : `${result.hits.length} listed in ${clock} ms · idle (type a query to rank) · ${escapeHtml(SEARCH_ENGINE_VERSION)}`;
+  return `<div class="perf" aria-live="polite">
+    <p class="perf-label">Search clock</p>
+    <p class="perf-line">${line}</p>
+    <p class="caption">Wall time of this ranker call on this device. Not a marketing number. Memory nudge is after this clock. Fixture nDCG lives on Engine.</p>
   </div>`;
 }
 
@@ -215,7 +243,7 @@ function renderVault() {
     : `<div class="atlas-stage">
         <div class="sky-wrap">${renderSky(layout, matchIds)}</div>
         <div class="beams">
-          <p class="meta">${querying ? `${result.hits.length} ranked · ${result.took_ms.toFixed(1)} ms · ${escapeHtml(SEARCH_ENGINE_VERSION)} · context ${escapeHtml(result.context || "none")}` : `${result.hits.length} of ${store.list().length} in the sky. Type a query to rank.`}</p>
+          ${renderPerf(result, querying)}
           ${renderBeams(pageHits, querying)}
           ${pager}
         </div>
@@ -391,13 +419,16 @@ function renderDisclaimer() {
 }
 
 let cachedBench = null;
+let cachedSim = null;
 
 function fixtureBench() {
   if (!cachedBench) {
     cachedBench = runBench();
     appendBenchHistory(cachedBench);
   }
+  if (!cachedSim) cachedSim = runLatencySim({ rounds: 25 });
   const summary = cachedBench;
+  const sim = cachedSim;
   const history = loadBenchHistory();
   const prev = history[1];
   const rows = summary.rows.map(
@@ -408,16 +439,32 @@ function fixtureBench() {
       <td>nDCG@5 ${r.ndcg5.toFixed(2)} · MRR ${r.mrr.toFixed(2)} ${r.hit ? "hit" : "MISS"}</td>
     </tr>`
   );
+  const simRows = Object.entries(sim.byCase).map(
+    ([id, s]) => `<tr>
+      <td><code>${escapeHtml(id)}</code></td>
+      <td>${s.min.toFixed(1)}</td>
+      <td>${s.p50.toFixed(1)}</td>
+      <td>${s.p95.toFixed(1)}</td>
+      <td>${s.max.toFixed(1)}</td>
+    </tr>`
+  );
   const delta = prev
     ? `Last stored run: nDCG ${prev.mean_ndcg5.toFixed(3)} · ${prev.mean_took_ms.toFixed(1)} ms (${prev.pass ? "pass" : "fail"})`
     : "No prior stored run on this device.";
-  return `<p class="meta">${summary.pass ? "PASS" : "FAIL"} · mean nDCG@5 ${summary.mean_ndcg5.toFixed(3)} · MRR ${summary.mean_mrr.toFixed(3)} · ${summary.mean_took_ms.toFixed(1)} ms · ${escapeHtml(summary.engine)}</p>
+  return `${renderSpectrum()}
+    <p class="meta">${summary.pass ? "PASS" : "FAIL"} · mean nDCG@5 ${summary.mean_ndcg5.toFixed(3)} · MRR ${summary.mean_mrr.toFixed(3)} · ${summary.mean_took_ms.toFixed(1)} ms · ${escapeHtml(summary.engine)}</p>
     <table class="bench">
     <thead><tr><th>Query</th><th>Top hit (fixtures)</th><th>Time</th><th>Grade</th></tr></thead>
     <tbody>${rows.join("")}</tbody>
   </table>
+    <h3>Latency sim (${sim.rounds} rounds × ${summary.cases} queries = ${sim.queries} calls, ${sim.corpus_size} records)</h3>
+    <p class="meta">p50 ${sim.overall.p50.toFixed(1)} ms · p95 ${sim.overall.p95.toFixed(1)} ms · mean ${sim.overall.mean.toFixed(1)} ms · min ${sim.overall.min.toFixed(1)} · max ${sim.overall.max.toFixed(1)}</p>
+    <table class="bench">
+    <thead><tr><th>Case</th><th>min</th><th>p50</th><th>p95</th><th>max</th></tr></thead>
+    <tbody>${simRows.join("")}</tbody>
+  </table>
   <p class="meta">${escapeHtml(delta)} Memory queries on this device: ${memory.queries.length}. Opens: ${memory.opens.length}. Session context: last project ${escapeHtml(memory.lastProject || "none")}.</p>
-  <p class="meta">Fixture bench, not your corpus. Ranker additions that fail this table do not ship. Session memory is a 1.05 same-project nudge, scored separately.</p>`;
+  <p class="meta">${escapeHtml(sim.note)} Ranker additions that fail the nDCG table do not ship. Session memory is a 1.05 same-project nudge, scored separately.</p>`;
 }
 
 function renderGuide() {
@@ -602,6 +649,7 @@ root.addEventListener("click", (ev) => {
     localStorage.removeItem(BENCH_HISTORY_KEY);
     memory = loadMemory();
     cachedBench = null;
+    cachedSim = null;
     clearPersistent().catch(() => {});
     store.load([]);
     set({ view: "vault", selectedId: null, error: "" });
