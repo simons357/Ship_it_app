@@ -63,6 +63,11 @@ const FIELD_ALIASES = Object.freeze({
   visibility: "visibility",
   real: "origin",
   designation: "origin",
+  address: "source",
+  locator: "source",
+  loc: "source",
+  doi: "source",
+  url: "source",
 });
 
 const PHRASE_BONUS = 2.4;
@@ -174,7 +179,8 @@ export function fieldText(entry, field) {
   if (key === "action") return (entry.action_items || []).join(" ");
   if (key === "book") return (entry.related_projects || []).join(" ");
   if (key === "source") {
-    return `${entry.source_type || ""} ${entry.source_file || ""} ${entry.media_path || ""}`;
+    const locs = (entry.locators || []).map((l) => `${l.kind} ${l.value} ${l.code}`).join(" ");
+    return `${entry.source_type || ""} ${entry.source_file || ""} ${entry.media_path || ""} ${locs}`;
   }
   if (key === "ai") return entry.source_ai || "";
   if (key === "status") {

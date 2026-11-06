@@ -8,8 +8,10 @@ import {
   exportVault,
   importVault,
   reviewLedgerItem,
+  attachLocator,
   createStore,
 } from "./engine.mjs";
+import { LOCATOR_KINDS, makeLocator } from "./locators.mjs";
 import { SEARCH_ENGINE_VERSION, ndcgAt } from "./search.mjs";
 import { layoutConstellation } from "./atlas.mjs";
 import { SKINS, SKIN_IDS, loadSkin, saveSkin, applySkin } from "./skins.mjs";
@@ -50,6 +52,10 @@ const state = {
   notice: "",
   error: "",
   ingestText: "",
+  locatorValue: "",
+  locatorKind: "auto",
+  attachValue: "",
+  attachKind: "auto",
   page: 0,
   fatal: null,
   skin: applySkin(loadSkin()),
@@ -199,7 +205,7 @@ function renderVault() {
       ${renderSpectrum()}
     </header>
     <div class="toolbar">
-      <input type="search" id="q" placeholder='claim:  theorem:  gap:  "phrase"  OR  ai:Grok' value="${escapeHtml(state.query)}" />
+      <input type="search" id="q" placeholder='claim:  gap:  address:  "phrase"  OR  ai:Grok' value="${escapeHtml(state.query)}" />
       <button class="btn ghost" id="do-search">Rank</button>
       <button class="btn" data-view="ingest">+ Ingest</button>
     </div>
@@ -256,6 +262,27 @@ function renderDetail(entry) {
         <p><span class="badge ${entry.visibility}">${escapeHtml(entry.visibility)}</span>
            <span class="badge">${escapeHtml(entry.source_file || "no address")}</span></p>
         <p class="meta">Ingested ${escapeHtml(entry.ingested_at)} · item date ${escapeHtml(entry.item_date)}</p>
+        <h3>Addresses</h3>
+        ${
+          (entry.locators || []).length
+            ? `<ul class="locators">${(entry.locators || [])
+                .map(
+                  (l) =>
+                    `<li><code>${escapeHtml(l.code)}</code> · ${escapeHtml(l.kind)} · ${escapeHtml(l.value)}</li>`
+                )
+                .join("")}</ul>`
+            : `<p class="meta">None yet. Attach any URL, DOI, path, coordinates, postal, or handle.</p>`
+        }
+        <p class="locator-row">
+          <input type="text" id="attach-locator" placeholder="Add any address" value="${escapeHtml(state.attachValue)}" />
+          <select id="attach-kind">
+            <option value="auto"${state.attachKind === "auto" ? " selected" : ""}>detect kind</option>
+            ${LOCATOR_KINDS.map(
+              (k) => `<option value="${k}"${state.attachKind === k ? " selected" : ""}>${k}</option>`
+            ).join("")}
+          </select>
+          <button class="btn ghost" id="do-attach">Attach</button>
+        </p>
         <h3>Claims</h3>${ledgerList(entry, "key_claims")}
         <h3>Theorems</h3>${ledgerList(entry, "theorems")}
         <h3>Open gaps</h3>${ledgerList(entry, "open_gaps")}
@@ -275,7 +302,16 @@ function renderIngest() {
       <h1>Ingest</h1>
       <p class="kicker">Raw text is stored first. Summaries never replace it.</p>
     </header>
-      <p class="banner">Optional structured lines: TITLE, SOURCE_AI, ADDRESS (or URL / DOI / LOCATOR), CLAIM, THEOREM, GAP, ACTION, QUESTION, VISIBILITY. CLAIM_LEDGER starts at UNREVIEWED. Nothing is auto-PROVED.</p>
+      <p class="banner">Paste the body. The address field takes any kind of locator — URL, DOI, file path, lat,lng, postal, @handle, or a line that starts ADDRESS: / URL: / DOI:.</p>
+    <p class="locator-row">
+      <input type="text" id="locator" placeholder="Address — any kind" value="${escapeHtml(state.locatorValue)}" />
+      <select id="locator-kind">
+        <option value="auto"${state.locatorKind === "auto" ? " selected" : ""}>detect kind</option>
+        ${LOCATOR_KINDS.map(
+          (k) => `<option value="${k}"${state.locatorKind === k ? " selected" : ""}>${k}</option>`
+        ).join("")}
+      </select>
+    </p>
     <textarea id="ingest">${escapeHtml(state.ingestText)}</textarea>
     <p class="error">${escapeHtml(state.error)}</p>
     <p><button class="btn" id="do-ingest">Extract &amp; index</button></p>
@@ -487,9 +523,22 @@ root.addEventListener("click", (ev) => {
   }
   if (ev.target.id === "do-ingest") {
     try {
-      const entry = ingestPaste(state.ingestText);
+      const loc = makeLocator(state.locatorValue, state.locatorKind);
+      const entry = ingestPaste(state.ingestText, loc ? { locators: [loc] } : {});
       store.add(entry);
-      set({ view: "detail", selectedId: entry.id, ingestText: "", error: "" });
+      set({ view: "detail", selectedId: entry.id, ingestText: "", locatorValue: "", error: "" });
+    } catch (err) {
+      set({ error: err.message });
+    }
+    return;
+  }
+  if (ev.target.id === "do-attach") {
+    const current = store.get(state.selectedId);
+    if (!current) return;
+    try {
+      const next = attachLocator(current, state.attachValue, state.attachKind);
+      store.replaceAfterSuccess(current.id, next);
+      set({ attachValue: "", error: "", notice: "Address attached." });
     } catch (err) {
       set({ error: err.message });
     }
@@ -529,12 +578,16 @@ root.addEventListener("click", (ev) => {
 root.addEventListener("input", (ev) => {
   if (ev.target.id === "q") state.query = ev.target.value;
   if (ev.target.id === "ingest") state.ingestText = ev.target.value;
+  if (ev.target.id === "locator") state.locatorValue = ev.target.value;
+  if (ev.target.id === "attach-locator") state.attachValue = ev.target.value;
 });
 
 root.addEventListener("change", (ev) => {
   if (ev.target.id === "q") set({ query: ev.target.value });
   if (ev.target.id === "vis") set({ visibility: ev.target.value, page: 0 });
   if (ev.target.id === "ai") set({ source_ai: ev.target.value, page: 0 });
+  if (ev.target.id === "locator-kind") set({ locatorKind: ev.target.value });
+  if (ev.target.id === "attach-kind") set({ attachKind: ev.target.value });
   if (ev.target.id === "restore" && ev.target.files?.[0]) {
     const file = ev.target.files[0];
     file.text().then((text) => {

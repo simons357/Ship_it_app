@@ -389,6 +389,14 @@ textarea { width: 100%; min-height: 220px; resize: vertical; }
   color: var(--ok);
   min-height: 0;
 }
+.locator-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.8rem 0;
+}
+.locator-row input[type="text"] { flex: 1; min-width: 180px; }
+.locators { padding-left: 1.1rem; color: var(--muted); font-size: 0.88rem; }
 .pager {
   display: flex;
   flex-wrap: wrap;

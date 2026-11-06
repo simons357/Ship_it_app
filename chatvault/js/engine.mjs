@@ -6,6 +6,8 @@
  * fielded search (AND / OR / phrase). It is not a truth engine.
  */
 
+import { makeLocator, mergeLocators } from "./locators.mjs";
+
 export const SCHEMA_VERSION = "chatvault-engine-0.1.0";
 
 export const LEDGER_STATUSES = Object.freeze([
@@ -88,13 +90,15 @@ export function assertNotAutoProved(status, { humanReviewed } = {}) {
 
 export function emptyEntry(partial = {}) {
   const ingested = asString(partial.ingested_at, nowIso());
+  const locators = mergeLocators(partial.locators, partial.source_file);
   return {
     schema_version: SCHEMA_VERSION,
     id: asString(partial.id, uid("ent")),
     title: asString(partial.title, "Untitled"),
     source_type: SOURCE_TYPES.includes(partial.source_type) ? partial.source_type : "conversation",
     source_ai: SOURCE_AIS.includes(partial.source_ai) ? partial.source_ai : "unknown",
-    source_file: asString(partial.source_file),
+    locators,
+    source_file: asString(partial.source_file) || asString(locators[0]?.value),
     project_tags: asArray(partial.project_tags),
     project_category: asString(partial.project_category),
     content_text: asString(partial.content_text),
@@ -137,6 +141,7 @@ export function parseStructuredPaste(raw) {
     source_ai: "unknown",
     source_type: "conversation",
     source_file: "",
+    locators: [],
     visibility: "professional",
     project_category: "",
     key_claims: [],
@@ -160,7 +165,9 @@ export function parseStructuredPaste(raw) {
     else if (kind === "SOURCE_AI" && SOURCE_AIS.includes(value)) extracted.source_ai = value;
     else if (kind === "SOURCE_TYPE" && SOURCE_TYPES.includes(value.toLowerCase())) extracted.source_type = value.toLowerCase();
     else if (kind === "SOURCE_FILE" || kind === "ADDRESS" || kind === "URL" || kind === "DOI" || kind === "LOCATOR") {
-      extracted.source_file = value;
+      const loc = makeLocator(value, kind === "DOI" ? "doi" : kind === "URL" ? "url" : "auto");
+      if (loc) extracted.locators.push(loc);
+      if (!extracted.source_file) extracted.source_file = value;
     }
     else if (kind === "VISIBILITY" && VISIBILITY.includes(value.toLowerCase())) extracted.visibility = value.toLowerCase();
     else if (kind === "PROJECT") extracted.project_category = value;
@@ -197,6 +204,7 @@ export function ingestPaste(raw, overrides = {}) {
     ...overrides,
     title,
     summary,
+    locators: mergeLocators([...(parsed.locators || []), ...(overrides.locators || [])], parsed.source_file),
     raw_content: rawText,
     content_text: parsed.body || rawText,
     extraction_types: [
@@ -215,6 +223,15 @@ export function reviewLedgerItem(entry, field, itemId, status, { humanReviewed =
     return { ...item, status: nextStatus, human_reviewed: Boolean(humanReviewed && nextStatus === "PROVED") };
   });
   return { ...entry, [field]: list, updated_at: nowIso() };
+}
+
+export function attachLocator(entry, value, kind = "auto") {
+  const loc = makeLocator(value, kind);
+  if (!loc) throw new Error("Address is empty. Paste any URL, DOI, path, coordinates, or place.");
+  return updateEntry(entry, {
+    locators: mergeLocators([...(entry.locators || []), loc]),
+    source_file: entry.source_file || loc.value,
+  });
 }
 
 export function updateEntry(entry, patch) {
