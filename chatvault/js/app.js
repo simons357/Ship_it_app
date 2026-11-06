@@ -4,13 +4,14 @@ import {
   LEDGER_STATUSES,
   SOURCE_AIS,
   ingestPaste,
-  searchEntries,
+  searchVault,
   exportVault,
   importVault,
-  updateEntry,
   reviewLedgerItem,
   createStore,
 } from "./engine.mjs";
+import { SEARCH_ENGINE_VERSION } from "./search.mjs";
+import { layoutConstellation } from "./atlas.mjs";
 
 const STORAGE_KEY = "chatvault.engine.v1";
 const PAGE_SIZE = 50;
@@ -69,57 +70,107 @@ function nav(id, label) {
   return `<button class="nav-btn" data-view="${id}"${current}>${label}</button>`;
 }
 
-function filtered() {
-  return searchEntries(store.list(), state.query, {
+function ranked() {
+  return searchVault(store.list(), state.query, {
     visibility: state.visibility || undefined,
     source_ai: state.source_ai || undefined,
   });
 }
 
+function renderSky(layout, matchIds) {
+  const active = matchIds ? new Set(matchIds) : null;
+  const nodeById = new Map(layout.nodes.map((n) => [n.id, n]));
+  const lines = layout.edges
+    .map((edge) => {
+      const a = nodeById.get(edge.from);
+      const b = nodeById.get(edge.to);
+      if (!a || !b) return "";
+      const on = !active || (active.has(a.id) && active.has(b.id));
+      return `<line class="link${on ? "" : " dim"}" x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" />`;
+    })
+    .join("");
+  const hubs = layout.hubs
+    .map(
+      (h) =>
+        `<text class="hub" x="${h.x}" y="${h.y - 42}">${escapeHtml(h.cluster)}</text>`
+    )
+    .join("");
+  const stars = layout.nodes
+    .map((n) => {
+      const on = !active || active.has(n.id);
+      const klass = `star ${escapeHtml(n.visibility)}${on ? "" : " dim"}`;
+      return `<g class="${klass}" data-open="${escapeHtml(n.id)}">
+        <circle cx="${n.x}" cy="${n.y}" r="${n.r}" />
+        <text x="${n.x}" y="${n.y + n.r + 12}">${escapeHtml(n.title.slice(0, 28))}</text>
+      </g>`;
+    })
+    .join("");
+  return `<svg class="sky" viewBox="0 0 ${layout.width} ${layout.height}" role="img" aria-label="Vault constellation">
+    ${lines}${hubs}${stars}
+  </svg>`;
+}
+
+function renderBeams(hits, querying) {
+  if (!hits.length) {
+    return `<p class="empty">No matching records. An empty vault is different from a failed load — this search simply matched nothing.</p>`;
+  }
+  return hits
+    .map((h, i) => {
+      const snip = h.snippets?.[0]?.text || (h.entry.summary || h.entry.content_text || "").slice(0, 160);
+      const why = (h.matched_fields || []).join(" · ") || (querying ? "ranked" : h.entry.project_category || "unfiled");
+      const score = querying ? h.score.toFixed(1) : "—";
+      return `<article class="beam" data-open="${escapeHtml(h.entry.id)}">
+        <div class="beam-meta">
+          <span class="rank">${i + 1}</span>
+          <span class="score">${score}</span>
+        </div>
+        <h3>${escapeHtml(h.entry.title)}</h3>
+        <p class="why">${escapeHtml(why)} · ${escapeHtml(h.entry.source_ai)}</p>
+        <p>${escapeHtml(snip)}</p>
+      </article>`;
+    })
+    .join("");
+}
+
 function renderVault() {
-  const rows = filtered();
+  const result = ranked();
   const emptyVault = store.list().length === 0;
-  const pageCount = Math.max(1, Math.ceil(rows.length / PAGE_SIZE));
+  const querying = Boolean(state.query.trim());
+  const pageCount = Math.max(1, Math.ceil(result.hits.length / PAGE_SIZE));
   if (state.page >= pageCount) state.page = pageCount - 1;
-  const pageRows = rows.slice(state.page * PAGE_SIZE, (state.page + 1) * PAGE_SIZE);
+  const pageHits = result.hits.slice(state.page * PAGE_SIZE, (state.page + 1) * PAGE_SIZE);
+  const matchIds = querying ? pageHits.map((h) => h.entry.id) : null;
+  const layout = layoutConstellation(store.list());
   const pager =
-    rows.length > PAGE_SIZE
+    result.hits.length > PAGE_SIZE
       ? `<p class="pager">
           <button class="btn ghost" id="page-prev" ${state.page === 0 ? "disabled" : ""}>Previous</button>
-          <span class="meta">Page ${state.page + 1} of ${pageCount} · ${rows.length} matches</span>
+          <span class="meta">Page ${state.page + 1} of ${pageCount} · ${result.hits.length} matches</span>
           <button class="btn ghost" id="page-next" ${state.page >= pageCount - 1 ? "disabled" : ""}>Next</button>
         </p>`
       : "";
-  const cards = emptyVault
+
+  const stage = emptyVault
     ? `<p class="empty">Vault is empty on this device (not a failed load). <button class="btn ghost" id="load-demo">Load example fixtures</button></p>`
-    : rows.length
-    ? pageRows
-        .map((e) => {
-          const statuses = [...(e.key_claims || []), ...(e.theorems || []), ...(e.open_gaps || [])]
-            .map((x) => x.status)
-            .filter(Boolean);
-          const status = statuses[0] || "NOTE";
-          return `<article class="card" data-open="${escapeHtml(e.id)}">
-            <span class="badge">${escapeHtml(e.source_ai)}</span>
-            <span class="badge ${e.visibility}">${escapeHtml(e.visibility)}</span>
-            <span class="badge ${status.toLowerCase()}">${escapeHtml(status)}</span>
-            <h3>${escapeHtml(e.title)}</h3>
-            <p>${escapeHtml((e.summary || e.content_text || "").slice(0, 160))}</p>
-          </article>`;
-        })
-        .join("")
-    : `<p class="empty">No matching records. An empty vault is different from a failed load — this search simply matched nothing.</p>`;
+    : `<div class="atlas-stage">
+        <div class="sky-wrap">${renderSky(layout, matchIds)}</div>
+        <div class="beams">
+          <p class="meta">${querying ? `${result.hits.length} ranked · ${result.took_ms.toFixed(1)} ms · ${escapeHtml(SEARCH_ENGINE_VERSION)}` : "All records by cluster. Type a query to rank."}</p>
+          ${renderBeams(pageHits, querying)}
+          ${pager}
+        </div>
+      </div>`;
 
   return `
     <header class="hero">
-      <h1>Conversation Vault</h1>
-      <p class="kicker">OS for your AI</p>
-      <p class="meta">${store.list().length} records indexed · local-first engine ${escapeHtml(SCHEMA_VERSION)}</p>
-      <p class="banner">This is knowledge capture with provenance and a claim ledger. It does not prove theorems, verify science, or replace a human review.</p>
+      <h1>Atlas</h1>
+      <p class="kicker">OS for your AI · not a notebook</p>
+      <p class="meta">${store.list().length} records · engine ${escapeHtml(SCHEMA_VERSION)} · ranker ${escapeHtml(SEARCH_ENGINE_VERSION)}</p>
+      <p class="banner">Stars are records. Size is claims + theorems + gaps. Lines are shared tags. Search is a ranked beam (BM25F + 3-grams + cosine, fused). Ledger status is never a score.</p>
     </header>
     <div class="toolbar">
-      <input type="search" id="q" placeholder="Search raw text, claims, theorems, gaps… Use OR, quotes, claim:" value="${escapeHtml(state.query)}" />
-      <button class="btn ghost" id="do-search">Search</button>
+      <input type="search" id="q" placeholder='claim:  theorem:  gap:  "phrase"  OR  ai:Grok' value="${escapeHtml(state.query)}" />
+      <button class="btn ghost" id="do-search">Rank</button>
       <button class="btn" data-view="ingest">+ Ingest</button>
     </div>
     <div class="filters">
@@ -135,8 +186,7 @@ function renderVault() {
     </div>
     <p class="error">${escapeHtml(state.error)}</p>
     <p class="notice">${escapeHtml(state.notice)}</p>
-    ${pager}
-    <div class="grid">${cards}</div>
+    ${stage}
   `;
 }
 
@@ -261,7 +311,8 @@ function renderGuide() {
         <li>Raw text is immutable after ingest.</li>
         <li>Source AI and source file stay attached.</li>
         <li>Claims, theorems, and gaps are searchable fields with statuses.</li>
-        <li>Search is AND by default, with OR, "phrases", and field prefixes.</li>
+        <li>Search is hybrid ranker ${SEARCH_ENGINE_VERSION}: boolean gate, then BM25F + character 3-grams + TF-IDF cosine fused by RRF. Field prefixes (<code>claim:</code>, <code>gap:</code>) are hard gates. Ledger status is never a score.</li>
+        <li>The surface is an atlas (constellation), not an Evernote notebook stack.</li>
         <li>Private material can be kept off professional export.</li>
       </ol>
     </div>
@@ -275,7 +326,7 @@ function shell(inner) {
         <div class="dial" aria-hidden="true"></div>
         <strong>CHAT VAULT</strong>
       </div>
-      ${nav("vault", "Vault")}
+      ${nav("vault", "Atlas")}
       ${nav("ingest", "Ingest")}
       ${nav("export", "Export")}
       ${nav("guide", "Engine")}

@@ -15,6 +15,7 @@ The freeze you hit is the **Base44 editor** (`app.base44.com/.../editor/preview`
 - Owner-only glass preview (not the editor; do not circulate — it is world-writable): https://preview--6a58e103fedcde66a0a7710e.base44.app/
 - Local engine: paste ingest, immutable raw text, CLAIM_LEDGER, AND/OR/phrase/`claim:` search, private vs professional export. Tests: `cd chatvault && node --test tests/engine.test.mjs` (7/7).
 - Git-engine freeze mitigations: 50-item pagination, render error panel, PWA service worker. These do not fix the Base44 *editor* freeze.
+- Atlas + hybrid ranker (`chatvault-hybrid-0.2.0`): constellation home screen, ranked beams, not an Evernote grid. See `chatvault/WHAT-NEEDS-DOING.md`.
 - Honest Apple path: PWA first, no wrapper of Base44. Apple Developer membership is owned; we still do not submit.
 
 ## 4. What is still open

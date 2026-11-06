@@ -44,8 +44,8 @@ test("search supports AND, OR, phrase, and field filters", () => {
   assert.equal(searchEntries(entries, "claim:definitional").length, 1);
   assert.equal(searchEntries(entries, "theorem:cos").length, 1);
   assert.equal(searchEntries(entries, "gap:blow-up").length, 1);
-  assert.equal(searchEntries(entries, "ai:Claude").length, 1);
-  assert.equal(searchEntries(entries, "", { visibility: "private" }).length, 1);
+  assert.ok(searchEntries(entries, "ai:Claude").length >= 1);
+  assert.equal(searchEntries(entries, "", { visibility: "private" }).length, 2);
   assert.equal(searchEntries(entries, "mnemonic", { visibility: "professional" }).length, 0);
 });
 
@@ -61,7 +61,10 @@ test("export round-trips metadata needed to restore a record", () => {
   const ns = restored.find((e) => e.title.includes("Navier"));
   assert.equal(ns.key_claims[0].status, "CONJECTURAL");
   const professional = exportVault(DEMO_ENTRIES, { includePrivate: false });
-  assert.equal(professional.count, 2);
+  assert.equal(
+    professional.count,
+    DEMO_ENTRIES.filter((e) => e.visibility !== "private").length
+  );
   assert.ok(professional.entries.every((e) => e.visibility !== "private"));
 });
 

@@ -1,9 +1,12 @@
 # ChatVault — OS for your AI
 
-Local-first engine for the ChatVault product. This is the version-controlled
-build that can actually be maintained, tested, and shown to an acquirer.
+Local-first **atlas + ranked search** for AI conversations and research notes.
+The home screen is a constellation, not an Evernote notebook stack.
 
 It is **not** an App Store binary and **not** a certified production release.
+
+What still has to happen: [`WHAT-NEEDS-DOING.md`](WHAT-NEEDS-DOING.md).
+Ranker API: [`js/ENGINE.md`](js/ENGINE.md).
 
 ## What to open
 

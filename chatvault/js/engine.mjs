@@ -227,103 +227,13 @@ export function updateEntry(entry, patch) {
   return next;
 }
 
-function tokenize(text) {
-  return String(text || "")
-    .toLowerCase()
-    .split(/[^a-z0-9π∞=+\-*/^_{}()[\]|]+/i)
-    .filter((t) => t.length > 0);
-}
-
-function fieldBlob(entry, field) {
-  if (field === "raw" || field === "content") return `${entry.raw_content}\n${entry.content_text}`;
-  if (field === "title") return entry.title;
-  if (field === "summary") return entry.summary;
-  if (field === "tag") return [...entry.search_tags, ...entry.project_tags].join(" ");
-  if (field === "claim") return (entry.key_claims || []).map((c) => c.text).join(" ");
-  if (field === "theorem") return (entry.theorems || []).map((c) => c.text).join(" ");
-  if (field === "gap") return (entry.open_gaps || []).map((c) => c.text).join(" ");
-  if (field === "question") return (entry.open_questions || []).join(" ");
-  if (field === "action") return (entry.action_items || []).join(" ");
-  if (field === "source") return `${entry.source_type} ${entry.source_file}`;
-  if (field === "ai") return entry.source_ai;
-  if (field === "status") {
-    return [...(entry.key_claims || []), ...(entry.theorems || []), ...(entry.open_gaps || [])]
-      .map((c) => c.status)
-      .join(" ");
-  }
-  if (field === "visibility") return entry.visibility;
-  if (field === "all") {
-    return [
-      entry.title,
-      entry.raw_content,
-      entry.content_text,
-      entry.summary,
-      entry.source_ai,
-      entry.source_file,
-      fieldBlob(entry, "tag"),
-      fieldBlob(entry, "claim"),
-      fieldBlob(entry, "theorem"),
-      fieldBlob(entry, "gap"),
-      fieldBlob(entry, "question"),
-      fieldBlob(entry, "action"),
-    ].join("\n");
-  }
-  return fieldBlob(entry, "all");
-}
-
-function parseQuery(q) {
-  const raw = String(q || "").trim();
-  if (!raw) return { mode: "empty" };
-  const orParts = raw.split(/\s+OR\s+|\s+\|\s+/i);
-  if (orParts.length > 1) {
-    return { mode: "or", clauses: orParts.map(parseAndClause) };
-  }
-  return { mode: "and", ...parseAndClause(raw) };
-}
-
-function parseAndClause(text) {
-  const terms = [];
-  const phrases = [];
-  const fields = [];
-  const re = /(?:(\w+):)?(?:"([^"]+)"|(\S+))/g;
-  let m;
-  while ((m = re.exec(text))) {
-    const field = (m[1] || "all").toLowerCase();
-    const phrase = m[2];
-    const term = m[3];
-    if (phrase) phrases.push({ field, phrase: phrase.toLowerCase() });
-    else if (term) terms.push({ field, term: term.toLowerCase() });
-  }
-  return { terms, phrases };
-}
-
-function clauseMatches(entry, clause) {
-  for (const p of clause.phrases) {
-    const blob = fieldBlob(entry, p.field).toLowerCase();
-    if (!blob.includes(p.phrase)) return false;
-  }
-  for (const t of clause.terms) {
-    const blob = fieldBlob(entry, t.field).toLowerCase();
-    const tokens = new Set(tokenize(blob));
-    if (blob.includes(t.term) || tokens.has(t.term)) continue;
-    return false;
-  }
-  return true;
-}
-
-export function searchEntries(entries, query, filters = {}) {
-  const parsed = parseQuery(query);
-  return (entries || []).filter((entry) => {
-    if (entry.archived && !filters.includeArchived) return false;
-    if (filters.visibility && entry.visibility !== filters.visibility) return false;
-    if (filters.source_ai && entry.source_ai !== filters.source_ai) return false;
-    if (filters.source_type && entry.source_type !== filters.source_type) return false;
-    if (filters.starred && !entry.starred) return false;
-    if (parsed.mode === "empty") return true;
-    if (parsed.mode === "or") return parsed.clauses.some((c) => clauseMatches(entry, c));
-    return clauseMatches(entry, parsed);
-  });
-}
+export {
+  SEARCH_ENGINE_VERSION,
+  searchVault,
+  searchEntries,
+  buildIndex,
+  parseQuery,
+} from "./search.mjs";
 
 export function exportVault(entries, { includePrivate = true } = {}) {
   const payload = (entries || []).filter((e) => includePrivate || e.visibility !== "private");
@@ -437,6 +347,72 @@ export const DEMO_ENTRIES = [
       "SUMMARY: Example of the private plane. Not for professional export.",
       "",
       "Private: a teaching mnemonic from OR debrief. Keep this off professional export.",
+    ].join("\n")
+  ),
+  ingestPaste(
+    [
+      "TITLE: ChatVault is a constellation, not a notebook",
+      "SOURCE_AI: Grok",
+      "SOURCE_TYPE: markdown",
+      "PROJECT: product",
+      "TAG: chatvault",
+      "TAG: atlas",
+      "CLAIM: The product surface is a ranked sky of records, not an Evernote notebook stack.",
+      "GAP: Pixel-perfect morph-glass from Base44 is not copied into this engine.",
+      "ACTION: Keep search as BM25F + n-grams + cosine fused by RRF. Do not add an LLM that invents ranks.",
+      "VISIBILITY: professional",
+      "SUMMARY: Fixture describing the UI contract. Not a shipped store listing.",
+      "",
+      "Notebooks hide structure. ChatVault shows claims, theorems, and gaps as mass on a star. Shared tags draw edges. Search is a beam, not a filter chip.",
+    ].join("\n")
+  ),
+  ingestPaste(
+    [
+      "TITLE: Apple 4.2 — PWA first, no Base44 wrapper",
+      "SOURCE_AI: human",
+      "SOURCE_TYPE: markdown",
+      "PROJECT: apple",
+      "TAG: pwa",
+      "TAG: guideline-4-2",
+      "CLAIM: A full-screen WebView of a remote Base44 URL will be rejected under Guideline 4.2.",
+      "ACTION: Safari Share then Add to Home Screen. No App Store submission on this personal vault.",
+      "VISIBILITY: professional",
+      "SUMMARY: Product-policy fixture. Apple Developer membership exists; listing does not.",
+      "",
+      "Membership is not permission to wrap preview--6a58e103fedcde66a0a7710e.base44.app. Private TestFlight only after a genuine native layer.",
+    ].join("\n")
+  ),
+  ingestPaste(
+    [
+      "TITLE: CLAIM_LEDGER never auto-PROVED",
+      "SOURCE_AI: Claude",
+      "SOURCE_TYPE: conversation",
+      "PROJECT: product",
+      "TAG: ledger",
+      "TAG: chatvault",
+      "CLAIM: Ingest and extractors may not mark PROVED. Only an explicit human review path may.",
+      "THEOREM: Status is a designation, never a ranking signal.",
+      "GAP: Dense MiniLM/E5 + cross-encoder is not in this build; RRF has a slot for it later.",
+      "VISIBILITY: professional",
+      "SUMMARY: Engine invariant fixture.",
+      "",
+      "Ledger status, harmonic notes, and lattice scores are display. Retrieval is lexical hybrid search. That split is the product.",
+    ].join("\n")
+  ),
+  ingestPaste(
+    [
+      "TITLE: No-hassle personal vault",
+      "SOURCE_AI: human",
+      "SOURCE_TYPE: markdown",
+      "PROJECT: policy",
+      "TAG: privacy",
+      "TAG: pwa",
+      "CLAIM: ChatVault stays local-first with no support inbox and no public store listing.",
+      "ACTION: Do not circulate the Base44 preview URL; it is world-writable.",
+      "VISIBILITY: private",
+      "SUMMARY: Policy fixture on the private plane.",
+      "",
+      "Owner constraint: I don’t want people hassling me. That forbids Stripe, App Store pages, and a contact form.",
     ].join("\n")
   ),
 ];
