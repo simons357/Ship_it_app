@@ -186,7 +186,14 @@ textarea { width: 100%; min-height: 220px; resize: vertical; }
   font-size: 10px;
   text-anchor: middle;
 }
-.beams { display: flex; flex-direction: column; gap: 0.55rem; min-width: 0; }
+.beams {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-width: 0;
+  max-height: min(70vh, 640px);
+  overflow-y: auto;
+}
 .beam {
   background: var(--glass);
   border: 1px solid var(--line);

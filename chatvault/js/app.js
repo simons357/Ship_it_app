@@ -155,7 +155,7 @@ function renderVault() {
     : `<div class="atlas-stage">
         <div class="sky-wrap">${renderSky(layout, matchIds)}</div>
         <div class="beams">
-          <p class="meta">${querying ? `${result.hits.length} ranked · ${result.took_ms.toFixed(1)} ms · ${escapeHtml(SEARCH_ENGINE_VERSION)}` : "All records by cluster. Type a query to rank."}</p>
+          <p class="meta">${querying ? `${result.hits.length} ranked · ${result.took_ms.toFixed(1)} ms · ${escapeHtml(SEARCH_ENGINE_VERSION)}` : `${result.hits.length} of ${store.list().length} in the sky. Type a query to rank.`}</p>
           ${renderBeams(pageHits, querying)}
           ${pager}
         </div>
