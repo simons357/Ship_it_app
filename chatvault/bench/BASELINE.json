@@ -1,0 +1,7 @@
+{
+  "engine": "chatvault-hybrid-0.2.0",
+  "mean_ndcg5": 1,
+  "mean_mrr": 1,
+  "mean_took_ms_max": 250,
+  "note": "Fixture floors. Live corpus is not this file. Do not lower these to land a weaker ranker."
+}
