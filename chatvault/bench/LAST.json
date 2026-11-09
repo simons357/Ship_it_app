@@ -1,10 +1,10 @@
 {
   "version": "chatvault-bench-0.1.0",
   "engine": "chatvault-hybrid-0.2.0",
-  "at": "2026-11-06T10:12:52.033Z",
+  "at": "2026-11-09T14:00:32.724Z",
   "mean_ndcg5": 1,
   "mean_mrr": 1,
-  "mean_took_ms": 11.622564666666669,
+  "mean_took_ms": 12.321113499999997,
   "hits": 6,
   "cases": 6,
   "rows": [
@@ -15,7 +15,7 @@
       "hit": true,
       "ndcg5": 1,
       "mrr": 1,
-      "took_ms": 20.389602999999997,
+      "took_ms": 21.928702,
       "total": 1
     },
     {
@@ -25,7 +25,7 @@
       "hit": true,
       "ndcg5": 1,
       "mrr": 1,
-      "took_ms": 14.410462000000003,
+      "took_ms": 16.048097,
       "total": 1
     },
     {
@@ -35,7 +35,7 @@
       "hit": true,
       "ndcg5": 1,
       "mrr": 1,
-      "took_ms": 8.199584000000002,
+      "took_ms": 8.014927999999998,
       "total": 1
     },
     {
@@ -45,7 +45,7 @@
       "hit": true,
       "ndcg5": 1,
       "mrr": 1,
-      "took_ms": 7.235319000000004,
+      "took_ms": 7.274135999999999,
       "total": 1
     },
     {
@@ -55,7 +55,7 @@
       "hit": true,
       "ndcg5": 1,
       "mrr": 1,
-      "took_ms": 12.149470000000008,
+      "took_ms": 12.612814999999998,
       "total": 2
     },
     {
@@ -65,7 +65,7 @@
       "hit": true,
       "ndcg5": 1,
       "mrr": 1,
-      "took_ms": 7.350949999999997,
+      "took_ms": 8.048002999999994,
       "total": 2
     }
   ],
