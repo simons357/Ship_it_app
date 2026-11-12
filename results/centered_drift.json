@@ -1,0 +1,221 @@
+{
+  "object": "centered spectral drift",
+  "centered_equation": "Lambda' = 2 (T_c - nu D_s) / X",
+  "identity": "EXACT",
+  "drift_estimate": "OPEN",
+  "uniform_remainder": "KILLED",
+  "need_star": "MISSING",
+  "ns_solved": false,
+  "lemma_star_proved": false,
+  "remainder_open": true,
+  "do_not_put_K_in_the_PDE": true,
+  "note_triad": {
+    "E": 8.0,
+    "X": 10.0,
+    "Y": 14.0,
+    "Z": 22.0,
+    "Lambda": 1.4,
+    "D_s": 2.3999999999999986,
+    "D_s_direct": 2.4,
+    "N": 2.0,
+    "M": 6.0,
+    "T_c": 3.2,
+    "T_c_direct": 3.2,
+    "tau": {
+      "(1, 0, 0)": -0.0,
+      "(-1, 0, 0)": -0.0,
+      "(0, 1, 0)": -1.0,
+      "(0, -1, 0)": -1.0,
+      "(1, 1, 0)": 1.0,
+      "(-1, -1, 0)": 1.0
+    },
+    "shell_energy": {
+      "1.0": 6.0,
+      "2.0": 2.0
+    },
+    "barycenter": {
+      "mean_lambda": 1.4000000000000001,
+      "var_lambda": 0.24,
+      "cov_lambda_t": 0.3200000000000001,
+      "D_s_from_var": 2.4,
+      "T_c_from_cov": 3.200000000000001,
+      "mean_lambda_minus_Lambda": 2.220446049250313e-16,
+      "D_s_check": -1.3322676295501878e-15,
+      "T_c_check": -8.881784197001252e-16
+    },
+    "two_shell": {
+      "alpha": 1.0,
+      "beta": 2.0,
+      "e_alpha": 6.0,
+      "e_beta": 2.0,
+      "D_s_closed": 2.4
+    },
+    "div_free": true,
+    "real": true,
+    "homogeneity": {
+      "T_c_degree": 3,
+      "D_s_degree": 2
+    },
+    "ns_solved": false,
+    "lemma_star_proved": false,
+    "remainder_open": true,
+    "algebra": {
+      "nu": 1.0,
+      "Lambda_prime": 0.16,
+      "rhs": 0.1600000000000003,
+      "residual": -3.0531133177191805e-16,
+      "log_Lambda_prime": 0.11428571428571452
+    },
+    "T_c_over_D_s": 1.3333333333333341,
+    "locked": {
+      "X": 10.0,
+      "Y": 14.0,
+      "Z": 22.0,
+      "Lambda": 1.4,
+      "D_s": 2.4,
+      "N": 2.0,
+      "M": 6.0,
+      "T_c": 3.2,
+      "T_c_over_D_s": 1.3333333333333333
+    }
+  },
+  "single_shell": {
+    "D_s": 0.0,
+    "T_c": 0.0,
+    "vacuous": true
+  },
+  "two_shell": {
+    "E": 4.0,
+    "X": 10.0,
+    "Y": 34.0,
+    "Z": 130.0,
+    "Lambda": 3.4,
+    "D_s": 14.400000000000006,
+    "D_s_direct": 14.400000000000002,
+    "N": 0.0,
+    "M": 0.0,
+    "T_c": 0.0,
+    "T_c_direct": 0.0,
+    "tau": {
+      "(1, 0, 0)": -0.0,
+      "(-1, 0, 0)": -0.0,
+      "(2, 0, 0)": -0.0,
+      "(-2, 0, 0)": -0.0
+    },
+    "shell_energy": {
+      "1.0": 2.0,
+      "4.0": 2.0
+    },
+    "barycenter": {
+      "mean_lambda": 3.4000000000000004,
+      "var_lambda": 1.44,
+      "cov_lambda_t": 0.0,
+      "D_s_from_var": 14.399999999999999,
+      "T_c_from_cov": 0.0,
+      "mean_lambda_minus_Lambda": 4.440892098500626e-16,
+      "D_s_check": 7.105427357601002e-15,
+      "T_c_check": 0.0
+    },
+    "two_shell": {
+      "alpha": 1.0,
+      "beta": 4.0,
+      "e_alpha": 2.0,
+      "e_beta": 2.0,
+      "D_s_closed": 14.4
+    },
+    "div_free": true,
+    "real": true,
+    "homogeneity": {
+      "T_c_degree": 3,
+      "D_s_degree": 2
+    },
+    "ns_solved": false,
+    "lemma_star_proved": false,
+    "remainder_open": true
+  },
+  "sign_flip_T_c": -3.2,
+  "amplitude_kill": {
+    "rows": [
+      {
+        "a": 0.5,
+        "T_c": 0.4,
+        "D_s": 0.5999999999999996,
+        "T_c_over_D_s": 0.6666666666666671
+      },
+      {
+        "a": 1.0,
+        "T_c": 3.2,
+        "D_s": 2.3999999999999986,
+        "T_c_over_D_s": 1.3333333333333341
+      },
+      {
+        "a": 2.0,
+        "T_c": 25.6,
+        "D_s": 9.599999999999994,
+        "T_c_over_D_s": 2.6666666666666683
+      },
+      {
+        "a": 4.0,
+        "T_c": 204.8,
+        "D_s": 38.39999999999998,
+        "T_c_over_D_s": 5.333333333333337
+      }
+    ],
+    "ratio_over_a_constant": [
+      1.3333333333333341,
+      1.3333333333333341,
+      1.3333333333333341,
+      1.3333333333333341
+    ],
+    "pure_absorption_T_c_le_C_nu_Ds": "KILLED",
+    "reason": "T_c(au)=a^3 T_c(u), D_s(au)=a^2 D_s(u), so T_c/D_s scales as |a|."
+  },
+  "near_shell_scan": {
+    "rows": [
+      {
+        "eps": 1.0,
+        "T_c": 3.2,
+        "D_s": 2.3999999999999986,
+        "T_c_over_D_s": 1.3333333333333341,
+        "T_c_over_eps": 3.2,
+        "D_s_over_eps2": 2.3999999999999986
+      },
+      {
+        "eps": 0.5,
+        "T_c": 1.8571428571428572,
+        "D_s": 0.8571428571428577,
+        "T_c_over_D_s": 2.1666666666666656,
+        "T_c_over_eps": 3.7142857142857144,
+        "D_s_over_eps2": 3.4285714285714306
+      },
+      {
+        "eps": 0.25,
+        "T_c": 0.98,
+        "D_s": 0.2400000000000002,
+        "T_c_over_D_s": 4.0833333333333295,
+        "T_c_over_eps": 3.92,
+        "D_s_over_eps2": 3.8400000000000034
+      },
+      {
+        "eps": 0.125,
+        "T_c": 0.49742268041237114,
+        "D_s": 0.061855670103092564,
+        "T_c_over_D_s": 8.041666666666696,
+        "T_c_over_eps": 3.979381443298969,
+        "D_s_over_eps2": 3.958762886597924
+      },
+      {
+        "eps": 0.0625,
+        "T_c": 0.2496753246753247,
+        "D_s": 0.015584415584415368,
+        "T_c_over_D_s": 16.020833333333556,
+        "T_c_over_eps": 3.994805194805195,
+        "D_s_over_eps2": 3.989610389610334
+      }
+    ],
+    "obstruction": "near-shell linearization as eps->0: T_c ~ eps, D_s ~ eps^2, ratio -> inf",
+    "not_a_C_geom_theorem": true
+  },
+  "smooth_split_citation": "PR #149 instantaneous |T_c| <= C g sqrt(Y D_s); not a time budget",
+  "open_target": "T_c <= theta nu D_s + K(t) X with theta < 1 and non-tautological K in L^1_loc from admissible data"
+}
