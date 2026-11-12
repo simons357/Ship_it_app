@@ -102,5 +102,13 @@
     "evidence": "No justified canonical formula exists to compare against SFE-H001.",
     "status": "unresolved",
     "notes": "Canonical SFE status remains unresolved."
+  },
+  {
+    "left_id": "NS-H001",
+    "right_id": "SFE-H001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "DA-NS-2 is a named leftover in classical unaugmented Navier–Stokes. SFE-H001 is a retired public oscillator. Shared letters are not a transformation and do not close the integral.",
+    "status": "recorded",
+    "notes": "C-GLUE-5. Domain Architect may route. It may not derive NS from SFE or green DA-NS-2 as proved."
   }
 ]
