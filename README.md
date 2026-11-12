@@ -57,9 +57,32 @@ python hb_ringdown_test.py --csv data/qnm_events.csv --nodes nodes.json --mc 500
 | `data/qnm_events.csv` | Per-mode ringdown table with TRAIN/TEST splits |
 | `scripts/build_qnm_table.py` | Rebuild CSV from measured + Kerr-fit sources |
 | `tests/test_hb_ringdown.py` | Unit / smoke tests |
+| `scripts/ns_attacks/centered_drift.py` | Centered-drift identities; remainder left open |
+| `scripts/ns_lemma_star_core.py` | Finite-Fourier \(T_c\), \(D_s\) evaluator |
+
+## Centered drift
+
+Exact spectral identity on mean-zero divergence-free fields on
+\(\mathbb T^3\):
+
+\[
+\Lambda' = 2(T_c - \nu D_s)/X.
+\]
+
+The identity is locked. The remainder estimate
+\(T_c\le\theta\nu D_s+K(t)X\) is **OPEN**. Uniform absorption
+\(T_c\le C\nu D_s\) is killed by amplitude. Ordinary NS is not solved.
+
+- Status: [`docs/ns-review/CENTERED-DRIFT.md`](docs/ns-review/CENTERED-DRIFT.md)
+- Equation: [`docs/ns-review/CENTERED-EQUATION.md`](docs/ns-review/CENTERED-EQUATION.md)
+
+```bash
+PYTHONPATH=scripts python3 scripts/ns_attacks/centered_drift.py
+python -m unittest tests.test_centered_drift
+```
 
 ## Tests
 
 ```bash
-python -m unittest tests/test_hb_ringdown.py
+python -m unittest tests.test_hb_ringdown tests.test_centered_drift
 ```

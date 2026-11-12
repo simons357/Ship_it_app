@@ -99,7 +99,7 @@ Language preference: *algebraic identity* / *hypothesis* / *interpretive analogy
 | --- | --- | --- |
 | Setting | Axisymmetric-with-swirl; cylindrical axis | Divergence-free fields on \(\mathbb{T}^3\) |
 | Core move | Change variable so the axis term is non-singular | Bound nonlinear transfer using shape / spectral moments |
-| Danger object | \(1/r^4\) centrifugal / swirl term in wrong variables | Centered cascade \((T_c)_+\) vs spread \(D_s\) |
+| Danger object | \(1/r^4\) centrifugal / swirl term in wrong variables | Centered cascade \((T_c)_+\) vs spread \(D_s\) ([status](CENTERED-DRIFT.md)) |
 | Status | Identity **KEEP**; classical regularity **open** | Packaging **open**; ★ **NOT** proved |
 
 Fundamentals for Lemma★ (field → structures): PR **#65** · `LEMMA-STAR-WHAT-IS-IT.md`.
