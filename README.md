@@ -17,7 +17,8 @@ to treat representation of a known equation as derivation.
 ```bash
 python -m domain_architect "∇²Φ = 4π G ρ"
 python -m domain_architect --registry
-python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units
+python -m domain_architect --da-ns-2
+python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_da_ns_2
 ```
 
 ## Harmonic Blueprint Experiment 01

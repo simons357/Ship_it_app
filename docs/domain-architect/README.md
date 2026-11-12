@@ -19,6 +19,7 @@ Approved plain-language explanation:
 | [04 — Notation collisions](04-NOTATION-COLLISIONS.md) | `P` / `p` / `ℙ`, `Φ` / `φ` / `ϕ`, and other overloaded symbols |
 | [05 — Rectification](05-RECTIFICATION.md) | Software implementation of the August 2026 corrective specification |
 | [NS review / Φ-renorm audit](../ns-review/PHI-RENORM-AUDIT-2026-08-22.md) | Independent audit of June 30 swirl paper; KEEP identity; barrier open; not Clay |
+| [DA-NS-2](../ns-review/DA-NS-2.md) | Y-cousin occupation bound; identities KEEP; Galerkin-uniform integral OPEN; not Clay |
 
 Machine-readable provenance (original expressions are immutable):
 
@@ -29,6 +30,7 @@ Machine-readable provenance (original expressions are immutable):
 ```bash
 python -m domain_architect "∇²Φ = 4π G ρ"
 python -m domain_architect --registry
+python -m domain_architect --da-ns-2
 python -m unittest tests.test_domain_architect_acceptance
 ```
 

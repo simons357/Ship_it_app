@@ -1,0 +1,244 @@
+{
+  "object": "DA-NS-2",
+  "claim": "sup_n int_0^T K_min,theta^(n) dt <= F(nu, T, u0) < infinity",
+  "K_min": "[T_c - theta nu D_s]_+ / Y",
+  "status": "OPEN",
+  "identity": "EXACT",
+  "integral_bound": "OPEN",
+  "jgc_epoch_budget": "NOT_SEATED",
+  "ns_solved": false,
+  "lemma_star_proved": false,
+  "do_not_put_K_in_the_PDE": true,
+  "cousin": {
+    "DA-NS-1": "T_c <= theta nu D_s + K(t) X",
+    "DA-NS-2": "T_c <= theta nu D_s + K_Y(t) Y",
+    "tautological_relation": "K_X = Lambda K_min"
+  },
+  "note_triad": {
+    "E": 8.0,
+    "X": 10.0,
+    "Y": 14.0,
+    "Z": 22.0,
+    "Lambda": 1.4,
+    "D_s": 2.3999999999999986,
+    "D_s_direct": 2.4,
+    "N": 2.0,
+    "M": 6.0,
+    "T_c": 3.2,
+    "T_c_direct": 3.2,
+    "ns_solved": false,
+    "da_ns_2": "OPEN",
+    "lemma_star_proved": false,
+    "locked": {
+      "X": 10.0,
+      "Y": 14.0,
+      "Z": 22.0,
+      "Lambda": 1.4,
+      "D_s": 2.4,
+      "N": 2.0,
+      "M": 6.0,
+      "T_c": 3.2,
+      "T_c_over_D_s": 1.3333333333333333
+    },
+    "K_min_nu1": {
+      "theta_0": 0.2285714285714286,
+      "theta_half": 0.14285714285714293,
+      "locked_theta_0": 0.2285714285714286,
+      "locked_theta_half": 0.14285714285714285
+    },
+    "tautology": {
+      "lhs": 3.2,
+      "rhs": 3.2,
+      "residual": 0.0,
+      "is_identity_not_theorem": true,
+      "reason": "K_min is defined as the positive part over Y."
+    },
+    "log_bound": {
+      "nu": 1.0,
+      "theta": 0.5,
+      "K_min": 0.14285714285714293,
+      "K_X": 0.2000000000000001,
+      "Lambda_K_min": 0.2000000000000001,
+      "frozen_theta_leftover": 0.08571428571428566,
+      "log_Lambda_prime": 0.11428571428571452,
+      "log_Lambda_prime_le_2_K_min": true,
+      "gap": 0.17142857142857135,
+      "log_Lambda_prime_rewritten": 0.11428571428571455,
+      "rewrite_residual": -2.7755575615628914e-17,
+      "theta_lt_1_leftover_survives": true
+    },
+    "cousin": {
+      "nu": 1.0,
+      "theta": 0.5,
+      "K_min": 0.14285714285714293,
+      "K_X": 0.2000000000000001,
+      "Lambda_K_min": 0.2000000000000001,
+      "frozen_theta_leftover": 0.08571428571428566,
+      "log_Lambda_prime": 0.11428571428571452,
+      "log_Lambda_prime_le_2_K_min": true,
+      "gap": 0.17142857142857135
+    }
+  },
+  "single_shell": {
+    "D_s": 0.0,
+    "T_c": 0.0,
+    "vacuous": true
+  },
+  "two_shell_D_s_positive": true,
+  "amplitude_kill": {
+    "rows": [
+      {
+        "a": 0.5,
+        "T_c": 0.4,
+        "D_s": 0.5999999999999996,
+        "Y": 3.5,
+        "K_min": 0.02857142857142863,
+        "T_c_over_D_s": 0.6666666666666671
+      },
+      {
+        "a": 1.0,
+        "T_c": 3.2,
+        "D_s": 2.3999999999999986,
+        "Y": 14.0,
+        "K_min": 0.14285714285714293,
+        "T_c_over_D_s": 1.3333333333333341
+      },
+      {
+        "a": 2.0,
+        "T_c": 25.6,
+        "D_s": 9.599999999999994,
+        "Y": 56.0,
+        "K_min": 0.3714285714285715,
+        "T_c_over_D_s": 2.6666666666666683
+      },
+      {
+        "a": 4.0,
+        "T_c": 204.8,
+        "D_s": 38.39999999999998,
+        "Y": 224.0,
+        "K_min": 0.8285714285714286,
+        "T_c_over_D_s": 5.333333333333337
+      }
+    ],
+    "pure_absorption_T_c_le_theta_nu_Ds": "KILLED",
+    "reason": "T_c(au)=a^3 T_c(u), D_s(au)=a^2 D_s(u); Y(au)=a^2 Y(u). Ratio T_c/D_s scales as |a|."
+  },
+  "near_shell": {
+    "rows": [
+      {
+        "eps": 1.0,
+        "T_c": 3.2,
+        "D_s": 2.3999999999999986,
+        "Y": 14.0,
+        "T_c_over_D_s": 1.3333333333333341,
+        "K_min_theta0": 0.2285714285714286
+      },
+      {
+        "eps": 0.5,
+        "T_c": 1.8571428571428572,
+        "D_s": 0.8571428571428577,
+        "Y": 8.0,
+        "T_c_over_D_s": 2.1666666666666656,
+        "K_min_theta0": 0.23214285714285715
+      },
+      {
+        "eps": 0.25,
+        "T_c": 0.98,
+        "D_s": 0.2400000000000002,
+        "Y": 6.5,
+        "T_c_over_D_s": 4.0833333333333295,
+        "K_min_theta0": 0.15076923076923077
+      },
+      {
+        "eps": 0.125,
+        "T_c": 0.49742268041237114,
+        "D_s": 0.061855670103092564,
+        "Y": 6.125,
+        "T_c_over_D_s": 8.041666666666696,
+        "K_min_theta0": 0.08121186618977488
+      },
+      {
+        "eps": 0.0625,
+        "T_c": 0.2496753246753247,
+        "D_s": 0.015584415584415368,
+        "Y": 6.03125,
+        "T_c_over_D_s": 16.020833333333556,
+        "K_min_theta0": 0.04139694502388803
+      }
+    ],
+    "T_c_over_D_s": "blows as 1/eps",
+    "K_min_on_this_family": "stays O(eps) because Y stays O(1); snapshot smallness is not the integral bound",
+    "not_a_C_geom_theorem": true
+  },
+  "phase_twin": {
+    "same_X": true,
+    "same_Y": true,
+    "same_Z": true,
+    "same_D_s": true,
+    "T_c_plus": 3.2,
+    "T_c_minus": -3.2,
+    "K_min_plus": 0.2285714285714286,
+    "K_min_minus": 0.0,
+    "quadratic_moments_see_the_sign": false,
+    "kill": "phase twins share X,Y,Z,Lambda,D_s and flip T_c, so K_min is not a function of quadratic data"
+  },
+  "inherited_kills": {
+    "charge_only_net_coercivity": "KILLED",
+    "frozen_log_charge_theta_lt_1": "KILLED",
+    "automatic_dephasing": "KILLED",
+    "one_channel_ODE_as_vector_NS": "KILLED",
+    "source": "Sprint 01 / PR #142; not re-swept as a close"
+  },
+  "forbidden_last_lines": [
+    "int D_s/Y",
+    "int (N/X)_+",
+    "sup Lambda",
+    "int Y",
+    "Serrin",
+    "BKM",
+    "continuation norm",
+    "H^1 ceiling",
+    "L^infty",
+    "||u||_H1"
+  ],
+  "last_line_examples": [
+    {
+      "text": "int D_s/Y",
+      "status": "REJECTED",
+      "forbidden_hits": [
+        "int D_s/Y"
+      ],
+      "jgc_hits": [],
+      "da_ns_2": "OPEN",
+      "reason": "last line is a continuation norm or a renamed hole"
+    },
+    {
+      "text": "sup Lambda",
+      "status": "REJECTED",
+      "forbidden_hits": [
+        "sup Lambda"
+      ],
+      "jgc_hits": [],
+      "da_ns_2": "OPEN",
+      "reason": "last line is a continuation norm or a renamed hole"
+    },
+    {
+      "text": "Joint Gap-Charge Epoch Budget: charge, radial covariance, moving-barycenter error, homochiral drift, cross-band flux, phase/far terms, one-use dissipation, summable resets",
+      "status": "SPEC_ONLY",
+      "forbidden_hits": [],
+      "jgc_hits": [
+        "charge",
+        "radial covariance",
+        "moving-barycenter error",
+        "homochiral drift",
+        "cross-band flux",
+        "phase/far terms",
+        "one-use dissipation",
+        "summable resets"
+      ],
+      "da_ns_2": "OPEN",
+      "reason": "named Joint Gap-Charge terms; budget is not seated"
+    }
+  ],
+  "next_write": "Joint Gap-Charge Epoch Budget, cutoff-uniform, theta<1 directly"
+}

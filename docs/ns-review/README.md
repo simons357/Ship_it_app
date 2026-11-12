@@ -11,3 +11,12 @@ Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS p
 **Open barrier (unchanged):** \(\|u^r/r\|_{L^\infty}\) uniform in \(\eps\) — equivalent to axisymmetric-with-swirl global regularity. Paper remains a conditional reduction. Clay is not closed.
 
 **Do not conflate** with Lemma★ PRODUCT-BLOCK packaging.
+
+## DA-NS-2 (Y-cousin occupation; integral OPEN)
+
+- [`DA-NS-2.md`](./DA-NS-2.md) — \(K_{\min,\theta}=[T_c-\theta\nu D_s]_+/Y\); Galerkin-uniform integral is the hole; tautological \(K\) refused; JGC budget not seated.
+- Packet: [`packets/DA-NS-2-2026-11-12.md`](../../packets/DA-NS-2-2026-11-12.md).
+- Machine: `PYTHONPATH=scripts python3 scripts/ns_attacks/da_ns_2.py`.
+- DA card: `python3 -m domain_architect --da-ns-2`.
+
+`ns_solved` is false. Do not glue to Φ-renorm.
