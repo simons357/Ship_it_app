@@ -15,6 +15,7 @@ GitHub user `simons357` public repos (complete list): `Ship_it_app`, `ship-it-co
 | **Voice analysis** | **No** | `https://voice-analysis.replit.app/` is **Navia** (thenavia.com brand-voice marketing). Not attached. No medical voice-analysis source found. | — |
 | **Parkinson micro-vibration detection** | **No** | Public hits are Stanford vCR glove trials, not Jonathan. No repo / Replit / inventory row. | — |
 | **FieldLock (auth / image)** | **Yes** | Live kiosk **https://field-lock.replit.app/** · Replit editor private (`replid/27679f17-…` 404) · already on `gh-pages` `apps/field-lock/` | `engines/fieldlock/` |
+| **QStack / Q-Stack** | **Yes** (13 Nov 2026) | Live **https://primefield.tech/qstack** · Base44 Reference **https://qstack-spectral-flow.base44.app** · Replit paper **https://q-stack-resonant-framework.replit.app/** (two publish emails 28 Mar 2026). Not ChatVault. No RH/NS proof claims. | `engines/qstack/` |
 | **Savannah GA / Wilmington Island marsh wildlife acoustic** | **No** | Not in inventory, GitHub, or guessed Replit slugs. Replit `@winchesterane` editor URLs 404 (profile not public from this IP). Do not claim a Replit we could not download. | — |
 
 ## Field Lock (the one retrieval)
@@ -23,6 +24,15 @@ GitHub user `simons357` public repos (complete list): `Ship_it_app`, `ship-it-co
 - Live: https://field-lock.replit.app/
 - Full clone of public assets on this hunt VM: `/tmp/engine-hunt/fieldlock/`
 - Partner brief (other branch, not copied onto this PR): `cursor/intro-portfolio-e279` `partner-packet/FIELD-LOCK.md`
+
+## QStack (retrieved 13 Nov 2026)
+
+- Snapshot: [`qstack/`](qstack/)
+- Live product: https://primefield.tech/qstack
+- Reference app: https://qstack-spectral-flow.base44.app
+- Replit paper: https://q-stack-resonant-framework.replit.app/
+- Full hunt clone on this VM: `/tmp/qstack-hunt/`
+- searchVault hook (copy only, do not merge): [`qstack/SEARCHVAULT-HOOK.md`](qstack/SEARCHVAULT-HOOK.md)
 
 ## Nearby live apps (not in the eight-name list)
 
@@ -35,6 +45,6 @@ Documented so they are not confused with misses:
 | Kyrana | https://github.com/simons357/kyrana-oracle |
 | `ctw-puf.replit.app` | not live (portfolio already said this) |
 
-## If the missing seven exist
+## If the remaining six exist
 
 They are almost certainly **private Replit / Drive / Mac Downloads**, not public GitHub. Export the Replit or attach a zip. Do not log into Replit with guessed passwords.
