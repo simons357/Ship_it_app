@@ -5,3 +5,23 @@ __pycache__/
 venv/
 *.egg-info/
 .DS_Store
+
+# ChatVault inbox: JSON sidecars are committed. Large media stays local
+# (or future LFS). Never git-add secrets, credentials, or 2GB videos.
+chatvault/inbox/media/*.mp4
+chatvault/inbox/media/*.mov
+chatvault/inbox/media/*.webm
+chatvault/inbox/media/*.mkv
+chatvault/inbox/media/*.avi
+chatvault/inbox/media/*.m4v
+chatvault/inbox/media/*.wav
+chatvault/inbox/media/*.mp3
+chatvault/inbox/media/*.m4a
+chatvault/inbox/media/*.aac
+chatvault/inbox/media/*.flac
+chatvault/inbox/media/*.ogg
+chatvault/inbox/media/*.wma
+chatvault/inbox/media/*.pdf
+chatvault/inbox/media/*.zip
+chatvault/inbox/media/*.gz
+chatvault/inbox/media/*.bz2

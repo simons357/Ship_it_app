@@ -1,0 +1,1027 @@
+Chatvault 2
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatVault - AI Conversation Organizer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.1/dist/umd/lucide.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
+        .code-block { background: #1e1e1e; border-radius: 8px; overflow-x: auto; }
+        .highlight-match { background: #ffd700; color: #000; padding: 2px 4px; border-radius: 2px; }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <div id="root"></div>
+```
+<script type="text/babel">
+    const { useState, useEffect, useMemo } = React;
+    const { Search, Plus, Tag, Code, CheckSquare, Folder, BarChart3, Download, Upload, 
+            Trash2, Link2, Sparkles, Filter, X, Calendar, Zap, GitBranch, Eye, EyeOff,
+            MessageSquare, FileText, TrendingUp, Clock, Star } = lucide;
+    const LucideIcon = ({ icon: Icon, ...props }) => {
+        const [mounted, setMounted] = useState(false);
+        useEffect(() => setMounted(true), []);
+        return mounted ? <Icon {...props} /> : null;
+    };
+    function ChatVault() {
+        // State management
+        const [chats, setChats] = useState([]);
+        const [projects, setProjects] = useState([]);
+        const [selectedChat, setSelectedChat] = useState(null);
+        const [selectedProject, setSelectedProject] = useState(null);
+        const [view, setView] = useState('chats'); // 'chats', 'analytics', 'projects'
+        const [searchQuery, setSearchQuery] = useState('');
+        const [filterTags, setFilterTags] = useState([]);
+        const [filterPlatform, setFilterPlatform] = useState('all');
+        const [filterDateRange, setFilterDateRange] = useState('all');
+        const [isProcessing, setIsProcessing] = useState(false);
+        const [showDropZone, setShowDropZone] = useState(false);
+        const [showCodeOnly, setShowCodeOnly] = useState(false);
+        const [showActionItems, setShowActionItems] = useState(false);
+        // Load from localStorage on mount
+        useEffect(() => {
+            const savedChats = localStorage.getItem('chatVaultChats');
+            const savedProjects = localStorage.getItem('chatVaultProjects');
+            if (savedChats) setChats(JSON.parse(savedChats));
+            if (savedProjects) setProjects(JSON.parse(savedProjects));
+        }, []);
+        // Save to localStorage whenever data changes
+        useEffect(() => {
+            localStorage.setItem('chatVaultChats', JSON.stringify(chats));
+        }, [chats]);
+        useEffect(() => {
+            localStorage.setItem('chatVaultProjects', JSON.stringify(projects));
+        }, [projects]);
+        // AI Analysis
+        const analyzeChat = async (chatText, fileName = 'Pasted Chat') => {
+            setIsProcessing(true);
+            try {
+                const response = await fetch("https://api.anthropic.com/v1/messages", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        model: "claude-sonnet-4-20250514",
+                        max_tokens: 3000,
+                        messages: [{
+                            role: "user",
+                            content: `Analyze this AI chat and extract structured data:
+```
+Chat content:
+${chatText.slice(0, 20000)}
+RESPOND ONLY WITH VALID JSON (NO OTHER TEXT, NO MARKDOWN):
+{
+“summary”: “2-3 sentence summary”,
+“mainCategory”: “one of: Technical, Business, Creative, Research, Medical, Personal, Education, Other”,
+“tags”: [“5-8 specific relevant tags”],
+“codeBlocks”: [{“language”: “python”, “code”: “code here”, “purpose”: “what it does”}],
+“actionItems”: [“extracted todo items”],
+“keyDecisions”: [“important decisions made”],
+“questions”: [“open questions or future research topics”],
+“keywords”: [“important keywords”],
+“suggestedProjectName”: “if this seems part of a project, suggest name, else empty string”
+}`
+}]
+})
+});
+```
+                const data = await response.json();
+                let responseText = data.content[0].text.trim();
+                responseText = responseText.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
+                const analysis = JSON.parse(responseText);
+                const newChat = {
+                    id: Date.now(),
+                    fileName,
+                    content: chatText,
+                    summary: analysis.summary,
+                    mainCategory: analysis.mainCategory,
+                    tags: analysis.tags,
+                    codeBlocks: analysis.codeBlocks || [],
+                    actionItems: analysis.actionItems || [],
+                    keyDecisions: analysis.keyDecisions || [],
+                    questions: analysis.questions || [],
+                    keywords: analysis.keywords,
+                    suggestedProjectName: analysis.suggestedProjectName,
+                    dateAdded: new Date().toISOString(),
+                    platform: detectPlatform(chatText),
+                    projectId: null,
+                    linkedChats: [],
+                    starred: false
+                };
+                setChats(prev => [newChat, ...prev]);
+                setShowDropZone(false);
+                setSelectedChat(newChat);
+                // Auto-create or suggest project
+                if (analysis.suggestedProjectName) {
+                    const existingProject = projects.find(p => 
+                        p.name.toLowerCase() === analysis.suggestedProjectName.toLowerCase()
+                    );
+                    if (existingProject) {
+                        newChat.projectId = existingProject.id;
+                        setChats(prev => prev.map(c => c.id === newChat.id ? newChat : c));
+                    }
+                }
+            } catch (error) {
+                alert('Error processing chat: ' + error.message);
+            } finally {
+                setIsProcessing(false);
+            }
+        };
+        const detectPlatform = (text) => {
+            if (text.includes('ChatGPT') || text.includes('OpenAI')) return 'ChatGPT';
+            if (text.includes('Claude') || text.includes('Anthropic')) return 'Claude';
+            if (text.includes('Grok')) return 'Grok';
+            if (text.includes('Perplexity')) return 'Perplexity';
+            if (text.includes('Gemini') || text.includes('Bard')) return 'Gemini';
+            return 'Other';
+        };
+        // File handling
+        const handleDrop = async (e) => {
+            e.preventDefault();
+            const file = e.dataTransfer.files[0];
+            if (file && file.type === 'text/plain') {
+                const text = await file.text();
+                analyzeChat(text, file.name);
+            }
+        };
+        const handlePaste = (e) => {
+            const text = e.clipboardData.getData('text');
+            if (text.length > 100) {
+                analyzeChat(text);
+            }
+        };
+        // Project management
+        const createProject = (name, description = '') => {
+            const newProject = {
+                id: Date.now(),
+                name,
+                description,
+                color: ['purple', 'blue', 'green', 'yellow', 'red', 'pink'][Math.floor(Math.random() * 6)],
+                dateCreated: new Date().toISOString()
+            };
+            setProjects(prev => [...prev, newProject]);
+            return newProject.id;
+        };
+        const assignToProject = (chatId, projectId) => {
+            setChats(prev => prev.map(chat => 
+                chat.id === chatId ? { ...chat, projectId } : chat
+            ));
+        };
+        // Filtering and search
+        const filteredChats = useMemo(() => {
+            let filtered = chats;
+            // Project filter
+            if (selectedProject) {
+                filtered = filtered.filter(c => c.projectId === selectedProject.id);
+            }
+            // Search
+            if (searchQuery) {
+                const query = searchQuery.toLowerCase();
+                filtered = filtered.filter(chat =>
+                    chat.summary.toLowerCase().includes(query) ||
+                    chat.content.toLowerCase().includes(query) ||
+                    chat.tags.some(tag => tag.toLowerCase().includes(query)) ||
+                    chat.keywords.some(kw => kw.toLowerCase().includes(query))
+                );
+            }
+            // Tag filter
+            if (filterTags.length > 0) {
+                filtered = filtered.filter(chat =>
+                    filterTags.some(tag => chat.tags.includes(tag))
+                );
+            }
+            // Platform filter
+            if (filterPlatform !== 'all') {
+                filtered = filtered.filter(chat => chat.platform === filterPlatform);
+            }
+            // Date filter
+            if (filterDateRange !== 'all') {
+                const now = new Date();
+                const ranges = {
+                    'today': 1,
+                    'week': 7,
+                    'month': 30,
+                    'year': 365
+                };
+                const days = ranges[filterDateRange];
+                if (days) {
+                    const cutoff = new Date(now - days * 24 * 60 * 60 * 1000);
+                    filtered = filtered.filter(chat => new Date(chat.dateAdded) >= cutoff);
+                }
+            }
+            // Code only filter
+            if (showCodeOnly) {
+                filtered = filtered.filter(chat => chat.codeBlocks.length > 0);
+            }
+            // Action items filter
+            if (showActionItems) {
+                filtered = filtered.filter(chat => chat.actionItems.length > 0);
+            }
+            return filtered;
+        }, [chats, searchQuery, filterTags, filterPlatform, filterDateRange, selectedProject, showCodeOnly, showActionItems]);
+        // Analytics
+        const analytics = useMemo(() => {
+            const totalChats = chats.length;
+            const totalCodeBlocks = chats.reduce((sum, c) => sum + c.codeBlocks.length, 0);
+            const totalActionItems = chats.reduce((sum, c) => sum + c.actionItems.length, 0);
+            
+            const platformCounts = {};
+            const categoryCounts = {};
+            const tagCounts = {};
+            
+            chats.forEach(chat => {
+                platformCounts[chat.platform] = (platformCounts[chat.platform] || 0) + 1;
+                categoryCounts[chat.mainCategory] = (categoryCounts[chat.mainCategory] || 0) + 1;
+                chat.tags.forEach(tag => {
+                    tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+                });
+            });
+            const topTags = Object.entries(tagCounts)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 10);
+            return {
+                totalChats,
+                totalCodeBlocks,
+                totalActionItems,
+                platformCounts,
+                categoryCounts,
+                topTags
+            };
+        }, [chats]);
+        // All unique tags
+        const allTags = useMemo(() => {
+            const tagSet = new Set();
+            chats.forEach(chat => chat.tags.forEach(tag => tagSet.add(tag)));
+            return Array.from(tagSet).sort();
+        }, [chats]);
+        // Export/Import
+        const exportData = () => {
+            const data = { chats, projects, version: '1.0' };
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `chatvault-backup-${Date.now()}.json`;
+            link.click();
+        };
+        const importData = (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    try {
+                        const imported = JSON.parse(event.target.result);
+                        if (imported.chats) setChats(imported.chats);
+                        if (imported.projects) setProjects(imported.projects);
+                        alert(`Imported ${imported.chats?.length || 0} chats!`);
+                    } catch (error) {
+                        alert('Error importing: ' + error.message);
+                    }
+                };
+                reader.readAsText(file);
+            }
+        };
+        return (
+            <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white">
+                {/* Header */}
+                <div className="gradient-bg shadow-2xl">
+                    <div className="max-w-7xl mx-auto px-6 py-6">
+                        <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center">
+                                    <LucideIcon icon={Sparkles} className="text-purple-600" size={28} />
+                                </div>
+                                <div>
+                                    <h1 className="text-3xl font-bold">ChatVault</h1>
+                                    <p className="text-purple-200 text-sm">Your AI Conversation Intelligence Platform</p>
+                                </div>
+                            </div>
+                            <div className="flex gap-3">
+                                <button
+                                    onClick={() => setView('chats')}
+                                    className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                                        view === 'chats' ? 'bg-white text-purple-600' : 'bg-purple-600/30 hover:bg-purple-600/50'
+                                    }`}
+                                >
+                                    <LucideIcon icon={MessageSquare} size={20} className="inline mr-2" />
+                                    Chats
+                                </button>
+                                <button
+                                    onClick={() => setView('projects')}
+                                    className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                                        view === 'projects' ? 'bg-white text-purple-600' : 'bg-purple-600/30 hover:bg-purple-600/50'
+                                    }`}
+                                >
+                                    <LucideIcon icon={Folder} size={20} className="inline mr-2" />
+                                    Projects
+                                </button>
+                                <button
+                                    onClick={() => setView('analytics')}
+                                    className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                                        view === 'analytics' ? 'bg-white text-purple-600' : 'bg-purple-600/30 hover:bg-purple-600/50'
+                                    }`}
+                                >
+                                    <LucideIcon icon={BarChart3} size={20} className="inline mr-2" />
+                                    Analytics
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Main Content */}
+                <div className="max-w-7xl mx-auto px-6 py-6">
+                    {view === 'chats' && (
+                        <ChatsView
+                            chats={filteredChats}
+                            selectedChat={selectedChat}
+                            setSelectedChat={setSelectedChat}
+                            searchQuery={searchQuery}
+                            setSearchQuery={setSearchQuery}
+                            filterTags={filterTags}
+                            setFilterTags={setFilterTags}
+                            allTags={allTags}
+                            filterPlatform={filterPlatform}
+                            setFilterPlatform={setFilterPlatform}
+                            showDropZone={showDropZone}
+                            setShowDropZone={setShowDropZone}
+                            handleDrop={handleDrop}
+                            handlePaste={handlePaste}
+                            isProcessing={isProcessing}
+                            showCodeOnly={showCodeOnly}
+                            setShowCodeOnly={setShowCodeOnly}
+                            showActionItems={showActionItems}
+                            setShowActionItems={setShowActionItems}
+                            projects={projects}
+                            assignToProject={assignToProject}
+                            createProject={createProject}
+                            setChats={setChats}
+                            exportData={exportData}
+                            importData={importData}
+                            selectedProject={selectedProject}
+                            setSelectedProject={setSelectedProject}
+                        />
+                    )}
+                    {view === 'projects' && (
+                        <ProjectsView
+                            projects={projects}
+                            setProjects={setProjects}
+                            chats={chats}
+                            createProject={createProject}
+                            setSelectedProject={setSelectedProject}
+                            setView={setView}
+                        />
+                    )}
+                    {view === 'analytics' && (
+                        <AnalyticsView analytics={analytics} chats={chats} />
+                    )}
+                </div>
+            </div>
+        );
+    }
+    // Chats View Component
+    function ChatsView({ chats, selectedChat, setSelectedChat, searchQuery, setSearchQuery,
+                        filterTags, setFilterTags, allTags, filterPlatform, setFilterPlatform,
+                        showDropZone, setShowDropZone, handleDrop, handlePaste, isProcessing,
+                        showCodeOnly, setShowCodeOnly, showActionItems, setShowActionItems,
+                        projects, assignToProject, createProject, setChats, exportData, importData,
+                        selectedProject, setSelectedProject }) {
+        
+        const [showFilters, setShowFilters] = useState(false);
+        return (
+            <>
+                {/* Toolbar */}
+                <div className="bg-gray-800 rounded-xl p-4 mb-6 shadow-lg">
+                    <div className="flex gap-4 flex-wrap items-center">
+                        <div className="flex-1 min-w-[300px]">
+                            <div className="relative">
+                                <LucideIcon icon={Search} className="absolute left-3 top-3 text-gray-400" size={20} />
+                                <input
+                                    type="text"
+                                    placeholder="Search chats..."
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                    className="w-full pl-10 pr-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-purple-500 text-white"
+                                />
+                            </div>
+                        </div>
+                        <button
+                            onClick={() => setShowFilters(!showFilters)}
+                            className="px-4 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg flex items-center gap-2"
+                        >
+                            <LucideIcon icon={Filter} size={20} />
+                            Filters
+                            {(filterTags.length > 0 || filterPlatform !== 'all') && (
+                                <span className="bg-purple-600 text-xs px-2 py-1 rounded-full">
+                                    {filterTags.length + (filterPlatform !== 'all' ? 1 : 0)}
+                                </span>
+                            )}
+                        </button>
+                        <button
+                            onClick={() => setShowCodeOnly(!showCodeOnly)}
+                            className={`px-4 py-3 rounded-lg flex items-center gap-2 ${
+                                showCodeOnly ? 'bg-purple-600' : 'bg-gray-700 hover:bg-gray-600'
+                            }`}
+                        >
+                            <LucideIcon icon={Code} size={20} />
+                            Code Only
+                        </button>
+                        <button
+                            onClick={() => setShowActionItems(!showActionItems)}
+                            className={`px-4 py-3 rounded-lg flex items-center gap-2 ${
+                                showActionItems ? 'bg-purple-600' : 'bg-gray-700 hover:bg-gray-600'
+                            }`}
+                        >
+                            <LucideIcon icon={CheckSquare} size={20} />
+                            Action Items
+                        </button>
+                        <button
+                            onClick={() => setShowDropZone(true)}
+                            className="px-4 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg flex items-center gap-2 font-medium"
+                        >
+                            <LucideIcon icon={Plus} size={20} />
+                            Add Chat
+                        </button>
+                        <button
+                            onClick={exportData}
+                            className="px-4 py-3 bg-green-600 hover:bg-green-700 rounded-lg flex items-center gap-2"
+                        >
+                            <LucideIcon icon={Download} size={20} />
+                        </button>
+                        <label className="px-4 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg flex items-center gap-2 cursor-pointer">
+                            <LucideIcon icon={Upload} size={20} />
+                            <input type="file" accept=".json" onChange={importData} className="hidden" />
+                        </label>
+                    </div>
+                    {/* Filters Panel */}
+                    {showFilters && (
+                        <div className="mt-4 p-4 bg-gray-700 rounded-lg">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label className="block text-sm font-medium mb-2">Platform</label>
+                                    <select
+                                        value={filterPlatform}
+                                        onChange={(e) => setFilterPlatform(e.target.value)}
+                                        className="w-full px-3 py-2 bg-gray-600 border border-gray-500 rounded-lg text-white"
+                                    >
+                                        <option value="all">All Platforms</option>
+                                        <option value="ChatGPT">ChatGPT</option>
+                                        <option value="Claude">Claude</option>
+                                        <option value="Grok">Grok</option>
+                                        <option value="Perplexity">Perplexity</option>
+                                        <option value="Gemini">Gemini</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium mb-2">
+                                        Tags ({filterTags.length} selected)
+                                    </label>
+                                    <div className="flex flex-wrap gap-2 max-h-32 overflow-y-auto">
+                                        {allTags.map(tag => (
+                                            <button
+                                                key={tag}
+                                                onClick={() => {
+                                                    if (filterTags.includes(tag)) {
+                                                        setFilterTags(filterTags.filter(t => t !== tag));
+                                                    } else {
+                                                        setFilterTags([...filterTags, tag]);
+                                                    }
+                                                }}
+                                                className={`px-3 py-1 rounded-full text-sm ${
+                                                    filterTags.includes(tag)
+                                                        ? 'bg-purple-600 text-white'
+                                                        : 'bg-gray-600 text-gray-300 hover:bg-gray-500'
+                                                }`}
+                                            >
+                                                {tag}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                    {/* Active Project Filter */}
+                    {selectedProject && (
+                        <div className="mt-4 flex items-center gap-2 bg-purple-900/50 px-4 py-2 rounded-lg">
+                            <LucideIcon icon={Folder} size={16} />
+                            <span>Viewing: {selectedProject.name}</span>
+                            <button
+                                onClick={() => setSelectedProject(null)}
+                                className="ml-auto text-purple-300 hover:text-white"
+                            >
+                                <LucideIcon icon={X} size={16} />
+                            </button>
+                        </div>
+                    )}
+                </div>
+                {/* Drop Zone */}
+                {showDropZone && (
+                    <div
+                        onDrop={handleDrop}
+                        onDragOver={(e) => e.preventDefault()}
+                        onPaste={handlePaste}
+                        className="border-2 border-dashed border-purple-500 rounded-xl p-12 mb-6 text-center bg-gray-800/50 hover:bg-gray-800 transition-all relative"
+                        tabIndex={0}
+                    >
+                        <button
+                            onClick={() => setShowDropZone(false)}
+                            className="absolute top-4 right-4 text-gray-400 hover:text-white"
+                        >
+                            <LucideIcon icon={X} size={24} />
+                        </button>
+                        <LucideIcon icon={Upload} className="mx-auto mb-4 text-purple-400" size={48} />
+                        <p className="text-xl mb-2">Drop a .txt file or paste chat text</p>
+                        <p className="text-gray-400">Click here and paste (Ctrl+V) your conversation</p>
+                        {isProcessing && (
+                            <div className="mt-4">
+                                <div className="inline-block animate-spin rounded-full h-8 w-8 border-4 border-purple-500 border-t-transparent"></div>
+                                <p className="mt-2 text-purple-400">Analyzing with AI...</p>
+                            </div>
+                        )}
+                    </div>
+                )}
+                {/* Chat List and Detail */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    {/* Chat Cards */}
+                    <div className="space-y-4">
+                        <h2 className="text-2xl font-bold">
+                            {chats.length} {chats.length === 1 ? 'Chat' : 'Chats'}
+                        </h2>
+                        {chats.map(chat => (
+                            <ChatCard
+                                key={chat.id}
+                                chat={chat}
+                                selected={selectedChat?.id === chat.id}
+                                onClick={() => setSelectedChat(chat)}
+                                onDelete={(id) => {
+                                    setChats(prev => prev.filter(c => c.id !== id));
+                                    if (selectedChat?.id === id) setSelectedChat(null);
+                                }}
+                                onStar={(id) => {
+                                    setChats(prev => prev.map(c =>
+                                        c.id === id ? { ...c, starred: !c.starred } : c
+                                    ));
+                                }}
+                                projects={projects}
+                                assignToProject={assignToProject}
+                            />
+                        ))}
+                        {chats.length === 0 && (
+                            <div className="text-center py-12 text-gray-400">
+                                <LucideIcon icon={MessageSquare} size={48} className="mx-auto mb-4 opacity-50" />
+                                <p>No chats yet. Add your first one!</p>
+                            </div>
+                        )}
+                    </div>
+                    {/* Detail View */}
+                    <div className="lg:sticky lg:top-6 lg:h-[calc(100vh-100px)]">
+                        {selectedChat ? (
+                            <ChatDetail chat={selectedChat} projects={projects} />
+                        ) : (
+                            <div className="bg-gray-800 rounded-xl p-6 h-full flex items-center justify-center">
+                                <div className="text-center text-gray-400">
+                                    <LucideIcon icon={Eye} size={48} className="mx-auto mb-4 opacity-50" />
+                                    <p>Select a chat to view details</p>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </>
+        );
+    }
+    // Chat Card Component
+    function ChatCard({ chat, selected, onClick, onDelete, onStar, projects, assignToProject }) {
+        const project = projects.find(p => p.id === chat.projectId);
+        return (
+            <div
+                onClick={onClick}
+                className={`p-4 bg-gray-800 rounded-xl cursor-pointer transition-all hover:bg-gray-700 border-2 ${
+                    selected ? 'border-purple-500 shadow-lg shadow-purple-500/20' : 'border-transparent'
+                }`}
+            >
+                <div className="flex justify-between items-start mb-2">
+                    <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                            <LucideIcon icon={FileText} size={16} className="text-purple-400" />
+                            <span className="font-medium">{chat.fileName}</span>
+                            {chat.starred && (
+                                <LucideIcon icon={Star} size={14} className="text-yellow-400 fill-yellow-400" />
+                            )}
+                        </div>
+                        <p className="text-sm text-gray-300 line-clamp-2">{chat.summary}</p>
+                    </div>
+                    <div className="flex gap-2">
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                onStar(chat.id);
+                            }}
+                            className="text-gray-400 hover:text-yellow-400 p-1"
+                        >
+                            <LucideIcon icon={Star} size={16} />
+                        </button>
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                if (confirm('Delete this chat?')) onDelete(chat.id);
+                            }}
+                            className="text-red-400 hover:text-red-300 p-1"
+                        >
+                            <LucideIcon icon={Trash2} size={16} />
+                        </button>
+                    </div>
+                </div>
+                <div className="flex items-center gap-2 mb-2">
+                    <span className="px-2 py-1 bg-purple-900/50 text-purple-300 text-xs rounded">
+                        {chat.platform}
+                    </span>
+                    <span className="px-2 py-1 bg-blue-900/50 text-blue-300 text-xs rounded">
+                        {chat.mainCategory}
+                    </span>
+                    {chat.codeBlocks.length > 0 && (
+                        <span className="px-2 py-1 bg-green-900/50 text-green-300 text-xs rounded flex items-center gap-1">
+                            <LucideIcon icon={Code} size={12} />
+                            {chat.codeBlocks.length}
+                        </span>
+                    )}
+                    {chat.actionItems.length > 0 && (
+                        <span className="px-2 py-1 bg-orange-900/50 text-orange-300 text-xs rounded flex items-center gap-1">
+                            <LucideIcon icon={CheckSquare} size={12} />
+                            {chat.actionItems.length}
+                        </span>
+                    )}
+                </div>
+                {project && (
+                    <div className="mb-2">
+                        <span className={`px-2 py-1 bg-${project.color}-900/50 text-${project.color}-300 text-xs rounded flex items-center gap-1 w-fit`}>
+                            <LucideIcon icon={Folder} size={12} />
+                            {project.name}
+                        </span>
+                    </div>
+                )}
+                <div className="flex flex-wrap gap-2 mt-3">
+                    {chat.tags.slice(0, 4).map((tag, i) => (
+                        <span key={i} className="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded-full">
+                            {tag}
+                        </span>
+                    ))}
+                    {chat.tags.length > 4 && (
+                        <span className="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded-full">
+                            +{chat.tags.length - 4}
+                        </span>
+                    )}
+                </div>
+                <div className="text-xs text-gray-400 mt-2">
+                    {new Date(chat.dateAdded).toLocaleDateString()} • {new Date(chat.dateAdded).toLocaleTimeString()}
+                </div>
+            </div>
+        );
+    }
+    // Chat Detail Component
+    function ChatDetail({ chat, projects }) {
+        const project = projects.find(p => p.id === chat.projectId);
+        return (
+            <div className="bg-gray-800 rounded-xl p-6 h-full overflow-y-auto">
+                <div className="mb-6">
+                    <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-2xl font-bold">{chat.fileName}</h3>
+                        {chat.starred && (
+                            <LucideIcon icon={Star} size={24} className="text-yellow-400 fill-yellow-400" />
+                        )}
+                    </div>
+                    <div className="flex gap-2 text-sm text-gray-400 flex-wrap">
+                        <span>{chat.platform}</span>
+                        <span>•</span>
+                        <span>{chat.mainCategory}</span>
+                        <span>•</span>
+                        <span>{new Date(chat.dateAdded).toLocaleString()}</span>
+                    </div>
+                    {project && (
+                        <div className="mt-2">
+                            <span className={`px-3 py-1 bg-${project.color}-900/50 text-${project.color}-300 text-sm rounded flex items-center gap-2 w-fit`}>
+                                <LucideIcon icon={Folder} size={16} />
+                                {project.name}
+                            </span>
+                        </div>
+                    )}
+                </div>
+                <div className="space-y-6">
+                    {/* Summary */}
+                    <div>
+                        <h4 className="text-lg font-semibold mb-2 text-purple-400 flex items-center gap-2">
+                            <LucideIcon icon={FileText} size={20} />
+                            Summary
+                        </h4>
+                        <p className="text-gray-300 bg-gray-700/50 p-4 rounded-lg">{chat.summary}</p>
+                    </div>
+                    {/* Code Blocks */}
+                    {chat.codeBlocks.length > 0 && (
+                        <div>
+                            <h4 className="text-lg font-semibold mb-2 text-green-400 flex items-center gap-2">
+                                <LucideIcon icon={Code} size={20} />
+                                Code Blocks ({chat.codeBlocks.length})
+                            </h4>
+                            {chat.codeBlocks.map((block, i) => (
+                                <div key={i} className="mb-4">
+                                    <div className="flex justify-between items-center mb-2">
+                                        <span className="text-sm text-gray-400">{block.language}</span>
+                                        <span className="text-xs text-gray-500">{block.purpose}</span>
+                                    </div>
+                                    <pre className="code-block p-4 text-sm overflow-x-auto text-green-300">
+```
+{block.code}
+</pre>
+</div>
+))}
+</div>
+)}
+```
+                    {/* Action Items */}
+                    {chat.actionItems.length > 0 && (
+                        <div>
+                            <h4 className="text-lg font-semibold mb-2 text-orange-400 flex items-center gap-2">
+                                <LucideIcon icon={CheckSquare} size={20} />
+                                Action Items ({chat.actionItems.length})
+                            </h4>
+                            <ul className="space-y-2">
+                                {chat.actionItems.map((item, i) => (
+                                    <li key={i} className="flex items-start gap-2 text-gray-300 bg-gray-700/50 p-3 rounded-lg">
+                                        <LucideIcon icon={CheckSquare} size={16} className="mt-0.5 text-orange-400" />
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+                    {/* Key Decisions */}
+                    {chat.keyDecisions.length > 0 && (
+                        <div>
+                            <h4 className="text-lg font-semibold mb-2 text-blue-400 flex items-center gap-2">
+                                <LucideIcon icon={Zap} size={20} />
+                                Key Decisions
+                            </h4>
+                            <ul className="space-y-2">
+                                {chat.keyDecisions.map((decision, i) => (
+                                    <li key={i} className="text-gray-300 bg-gray-700/50 p-3 rounded-lg">
+                                        {decision}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+                    {/* Questions */}
+                    {chat.questions.length > 0 && (
+                        <div>
+                            <h4 className="text-lg font-semibold mb-2 text-yellow-400 flex items-center gap-2">
+                                <LucideIcon icon={GitBranch} size={20} />
+                                Open Questions
+                            </h4>
+                            <ul className="space-y-2">
+                                {chat.questions.map((question, i) => (
+                                    <li key={i} className="text-gray-300 bg-gray-700/50 p-3 rounded-lg">
+                                        {question}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+                    {/* Tags */}
+                    <div>
+                        <h4 className="text-lg font-semibold mb-2 text-purple-400 flex items-center gap-2">
+                            <LucideIcon icon={Tag} size={20} />
+                            Tags
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                            {chat.tags.map((tag, i) => (
+                                <span key={i} className="px-3 py-1 bg-purple-900/50 text-purple-300 rounded-full">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                    {/* Keywords */}
+                    <div>
+                        <h4 className="text-lg font-semibold mb-2 text-gray-400 flex items-center gap-2">
+                            Keywords
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                            {chat.keywords.map((kw, i) => (
+                                <span key={i} className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">
+                                    {kw}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                    {/* Full Content */}
+                    <div>
+                        <h4 className="text-lg font-semibold mb-2 text-gray-400">Full Content</h4>
+                        <div className="bg-gray-900 p-4 rounded-lg max-h-96 overflow-y-auto">
+                            <pre className="text-sm text-gray-300 whitespace-pre-wrap">{chat.content}</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+    // Projects View Component
+    function ProjectsView({ projects, setProjects, chats, createProject, setSelectedProject, setView }) {
+        const [newProjectName, setNewProjectName] = useState('');
+        const [showCreateForm, setShowCreateForm] = useState(false);
+        const handleCreateProject = () => {
+            if (newProjectName.trim()) {
+                createProject(newProjectName.trim());
+                setNewProjectName('');
+                setShowCreateForm(false);
+            }
+        };
+        return (
+            <div>
+                <div className="flex justify-between items-center mb-6">
+                    <h2 className="text-3xl font-bold">Projects</h2>
+                    <button
+                        onClick={() => setShowCreateForm(!showCreateForm)}
+                        className="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg flex items-center gap-2 font-medium"
+                    >
+                        <LucideIcon icon={Plus} size={20} />
+                        New Project
+                    </button>
+                </div>
+                {showCreateForm && (
+                    <div className="bg-gray-800 rounded-xl p-6 mb-6">
+                        <h3 className="text-xl font-bold mb-4">Create New Project</h3>
+                        <input
+                            type="text"
+                            placeholder="Project name..."
+                            value={newProjectName}
+                            onChange={(e) => setNewProjectName(e.target.value)}
+                            onKeyPress={(e) => e.key === 'Enter' && handleCreateProject()}
+                            className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white mb-4"
+                            autoFocus
+                        />
+                        <div className="flex gap-3">
+                            <button
+                                onClick={handleCreateProject}
+                                className="px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg font-medium"
+                            >
+                                Create
+                            </button>
+                            <button
+                                onClick={() => setShowCreateForm(false)}
+                                className="px-6 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg"
+                            >
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                )}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {projects.map(project => {
+                        const projectChats = chats.filter(c => c.projectId === project.id);
+                        return (
+                            <div
+                                key={project.id}
+                                className="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-all cursor-pointer"
+                                onClick={() => {
+                                    setSelectedProject(project);
+                                    setView('chats');
+                                }}
+                            >
+                                <div className="flex items-center gap-3 mb-4">
+                                    <div className={`w-12 h-12 bg-${project.color}-600 rounded-lg flex items-center justify-center`}>
+                                        <LucideIcon icon={Folder} size={24} />
+                                    </div>
+                                    <div className="flex-1">
+                                        <h3 className="text-xl font-bold">{project.name}</h3>
+                                        <p className="text-sm text-gray-400">{projectChats.length} chats</p>
+                                    </div>
+                                </div>
+                                {project.description && (
+                                    <p className="text-gray-300 text-sm mb-4">{project.description}</p>
+                                )}
+                                <div className="text-xs text-gray-400">
+                                    Created {new Date(project.dateCreated).toLocaleDateString()}
+                                </div>
+                            </div>
+                        );
+                    })}
+                    {projects.length === 0 && (
+                        <div className="col-span-3 text-center py-12 text-gray-400">
+                            <LucideIcon icon={Folder} size={48} className="mx-auto mb-4 opacity-50" />
+                            <p>No projects yet. Create your first one!</p>
+                        </div>
+                    )}
+                </div>
+            </div>
+        );
+    }
+    // Analytics View Component
+    function AnalyticsView({ analytics, chats }) {
+        return (
+            <div>
+                <h2 className="text-3xl font-bold mb-6">Analytics Dashboard</h2>
+                {/* Stats Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                    <div className="bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl p-6">
+                        <LucideIcon icon={MessageSquare} size={32} className="mb-2" />
+                        <div className="text-3xl font-bold">{analytics.totalChats}</div>
+                        <div className="text-purple-200">Total Chats</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-green-600 to-green-800 rounded-xl p-6">
+                        <LucideIcon icon={Code} size={32} className="mb-2" />
+                        <div className="text-3xl font-bold">{analytics.totalCodeBlocks}</div>
+                        <div className="text-green-200">Code Blocks</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-orange-600 to-orange-800 rounded-xl p-6">
+                        <LucideIcon icon={CheckSquare} size={32} className="mb-2" />
+                        <div className="text-3xl font-bold">{analytics.totalActionItems}</div>
+                        <div className="text-orange-200">Action Items</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl p-6">
+                        <LucideIcon icon={TrendingUp} size={32} className="mb-2" />
+                        <div className="text-3xl font-bold">
+                            {chats.length > 0 ? Math.round(analytics.totalCodeBlocks / chats.length * 10) / 10 : 0}
+                        </div>
+                        <div className="text-blue-200">Avg Code/Chat</div>
+                    </div>
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    {/* Platform Distribution */}
+                    <div className="bg-gray-800 rounded-xl p-6">
+                        <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                            <LucideIcon icon={BarChart3} size={24} />
+                            Platform Distribution
+                        </h3>
+                        <div className="space-y-3">
+                            {Object.entries(analytics.platformCounts).map(([platform, count]) => (
+                                <div key={platform}>
+                                    <div className="flex justify-between mb-1">
+                                        <span>{platform}</span>
+                                        <span className="font-bold">{count}</span>
+                                    </div>
+                                    <div className="bg-gray-700 rounded-full h-2">
+                                        <div
+                                            className="bg-purple-600 h-2 rounded-full transition-all"
+                                            style={{ width: `${(count / analytics.totalChats) * 100}%` }}
+                                        ></div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    {/* Category Distribution */}
+                    <div className="bg-gray-800 rounded-xl p-6">
+                        <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                            <LucideIcon icon={Tag} size={24} />
+                            Category Distribution
+                        </h3>
+                        <div className="space-y-3">
+                            {Object.entries(analytics.categoryCounts).map(([category, count]) => (
+                                <div key={category}>
+                                    <div className="flex justify-between mb-1">
+                                        <span>{category}</span>
+                                        <span className="font-bold">{count}</span>
+                                    </div>
+                                    <div className="bg-gray-700 rounded-full h-2">
+                                        <div
+                                            className="bg-blue-600 h-2 rounded-full transition-all"
+                                            style={{ width: `${(count / analytics.totalChats) * 100}%` }}
+                                        ></div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    {/* Top Tags */}
+                    <div className="bg-gray-800 rounded-xl p-6 lg:col-span-2">
+                        <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                            <LucideIcon icon={TrendingUp} size={24} />
+                            Top 10 Tags
+                        </h3>
+                        <div className="flex flex-wrap gap-3">
+                            {analytics.topTags.map(([tag, count]) => (
+                                <div key={tag} className="px-4 py-2 bg-purple-900/50 rounded-lg">
+                                    <span className="text-purple-300 font-medium">{tag}</span>
+                                    <span className="ml-2 text-gray-400">({count})</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+    // Render app
+    ReactDOM.render(<ChatVault />, document.getElementById('root'));
+</script>
+```
+</body>
+</html>
