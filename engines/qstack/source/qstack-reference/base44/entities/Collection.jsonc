@@ -1,0 +1,37 @@
+{
+  "name": "Collection",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Name of the collection / show"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "artistic",
+        "theoretical"
+      ],
+      "description": "Artistic or theoretical classification"
+    },
+    "description": {
+      "type": "string",
+      "description": "Curator notes"
+    },
+    "rooms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Room IDs included in this collection"
+    },
+    "color": {
+      "type": "string",
+      "description": "Accent color for the show"
+    }
+  },
+  "required": [
+    "title",
+    "type"
+  ]
+}

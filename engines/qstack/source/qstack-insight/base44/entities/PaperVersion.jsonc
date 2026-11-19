@@ -1,0 +1,60 @@
+{
+  "name": "PaperVersion",
+  "type": "object",
+  "properties": {
+    "paper_name": {
+      "type": "string",
+      "description": "Name of the paper this version belongs to"
+    },
+    "version_label": {
+      "type": "string",
+      "description": "Version label e.g. v1, v2.1"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Draft",
+        "Review",
+        "Submitted",
+        "Accepted",
+        "Rejected"
+      ],
+      "default": "Draft",
+      "description": "Current status of this version"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "URL to the uploaded file"
+    },
+    "file_name": {
+      "type": "string",
+      "description": "Original filename"
+    },
+    "file_type": {
+      "type": "string",
+      "enum": [
+        "tex",
+        "pdf",
+        "other"
+      ],
+      "description": "Type of file uploaded"
+    },
+    "change_summary": {
+      "type": "string",
+      "description": "Summary of changes in this version"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes"
+    },
+    "word_count": {
+      "type": "number",
+      "description": "Approximate word or character count"
+    }
+  },
+  "required": [
+    "paper_name",
+    "version_label",
+    "status"
+  ]
+}
