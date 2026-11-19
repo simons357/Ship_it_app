@@ -2,9 +2,18 @@
 
 This directory is a **retrieval**, not a rewrite and not a proof engine.
 
-Hunt date: **13 November 2026**. Request: Jonathan sent **qstack** twice. Get it if it exists. Do not invent.
+Hunt date: **19 November 2026** (refresh of 13 Nov 2026). Request: Jonathan asked for **qstack**, **the most recent**, the ones that were **almost production**. He does **not** want the thin gh-pages / portfolio shell.
 
-**Workshop lock:** ChatVault is **OS for your AI**. This snapshot does **not** claim RH or NS regularity. Documents below that talk about Clay / RH / “proved” are **his artifacts as retrieved**. They are not adopted as workshop results.
+**Workshop lock:** ChatVault is **OS for your AI**. This snapshot does **not** claim RH or NS regularity. Documents and UI copy below that talk about Clay / RH / “proved” are **his artifacts as retrieved**. They are not adopted as workshop results. Do not merge QStack into ChatVault. Hook recipe only: [`SEARCHVAULT-HOOK.md`](SEARCHVAULT-HOOK.md).
+
+## Almost-production (1–2)
+
+| Rank | App | Live URL | Last real activity | Why |
+| --- | --- | --- | --- | --- |
+| **1** | **QStack Reference** | https://qstack-spectral-flow.base44.app | last deploy **2026-05-30** | Only published QStack with operator UI, auth, 3D explorer, gallery. Source: [`source/qstack-reference/`](source/qstack-reference/) |
+| **2** | **QStack Insight** | unpublished (`qstack-proof-flow`) | created **2026-04-18**, never deployed | Complete editorial report + dashboard (Gantt, LaTeX, versions, endorsements). Source: [`source/qstack-insight/`](source/qstack-insight/) |
+
+Not almost-production: War Board (empty, paused on builder questions), Replit Resonant Framework (HTTP **404** as of 19 Nov 2026), `https://primefield.tech/qstack` and gh-pages `apps/primefield/qstack/` (thin company-hub shells).
 
 ## Found?
 
@@ -12,13 +21,15 @@ Hunt date: **13 November 2026**. Request: Jonathan sent **qstack** twice. Get it
 
 | Sense | Found? | Where |
 | --- | --- | --- |
-| Live product page | **Yes** | https://primefield.tech/qstack — title `Qstack \| Prime Field Technologies` (HTTP 200, Base44 shell) |
-| Base44 app (source) | **Yes** | **QStack Reference** `6a19046b717521480f6b9543` · published https://qstack-spectral-flow.base44.app · GitHub `base44dev/qstack-spectral-flow` (private / not cloneable from this VM) |
-| Replit paper (sent twice) | **Yes** | https://replit.com/@simonsmedicalin/QStack-Resonant-Framework · live https://q-stack-resonant-framework.replit.app/ · Gmail: two Replit publish receipts 28 Mar 2026 12:27 UTC and 19:22 UTC |
-| Private research whitepaper | **Yes** | `simons357/research` `whitepaper/QStack_WhitePaper.md` (GitHub API; `gh clone` 404 from this token) |
-| Drive one-pagers | **Yes** | Google Doc `QStack_One_Pagers` |
-| Workshop archive PDF | **Yes** | git `3daa92cd` `docs/archive/qstack/qstack_regularity_paper.pdf` (not on this branch until this snapshot) |
-| ChatVault search consumer | **No** | QStack is a spectral / CFD product, not a vault. Do not merge products. Hook recipe: [`SEARCHVAULT-HOOK.md`](SEARCHVAULT-HOOK.md) |
+| Live product SPA | **Yes** | https://qstack-spectral-flow.base44.app — title `QStack Reference` (HTTP 200, 19 Nov 2026) |
+| Company hub (thin) | **Yes** | https://primefield.tech/qstack — title `Qstack \| Prime Field Technologies` (HTTP 200; not the product) |
+| Base44 source #1 | **Yes** | **QStack Reference** `6a19046b717521480f6b9543` · published · GitHub `base44dev/qstack-spectral-flow` (private / not cloneable from this VM) |
+| Base44 source #2 | **Yes** | **QStack Insight** `69e3fb761bccedecaf393b70` · unpublished · slug `qstack-proof-flow` |
+| Replit paper | **Was** | https://replit.com/@simonsmedicalin/QStack-Resonant-Framework · live URL **404** on 19 Nov 2026 (was 200 on 13 Nov) |
+| Private research whitepaper | **Yes** | `simons357/research` `whitepaper/QStack_WhitePaper.md` (April 2026; GitHub API) |
+| Drive one-pagers | **Yes** | Google Doc `QStack_One_Pagers` (modified 2026-07-12) |
+| Workshop archive PDF | **Yes** | git `3daa92cd` `docs/archive/qstack/qstack_regularity_paper.pdf` |
+| ChatVault search consumer | **No** | QStack is a spectral / CFD product, not a vault. |
 
 ## What it is (from his own product copy, not this workshop)
 
@@ -28,49 +39,45 @@ August 2026 portfolio (`docs/portfolio/APP-PORTFOLIO-2026-08.md` on other commit
 
 Base44 QStack Reference description: *interactive mathematical reference and visualization platform for the QStack spectral operator framework*.
 
-## What is in this snapshot
+## What is in this snapshot (19 Nov 2026)
 
 | Path | What |
 | --- | --- |
-| `snapshot/primefield-qstack.html` | Live GET of https://primefield.tech/qstack (SPA shell) |
-| `snapshot/qstack-spectral-flow.html` | Live GET of https://qstack-spectral-flow.base44.app (SPA shell, title QStack Reference) |
-| `snapshot/replit-qstack-paper.html` | Live GET of https://q-stack-resonant-framework.replit.app/ (SPA shell, title QStack Paper) |
+| `source/qstack-reference/` | Unique product source of published Reference (pages, qstack/explorer/gallery/rh/ns/shared). **Not** rewritten. |
+| `source/qstack-insight/` | Unique product source of unpublished Insight report + dashboard. **Not** rewritten. |
+| `source/2026-11-13-partial/` | Earlier two-file extract (dashboard + operator panel only). |
+| `snapshot/qstack-spectral-flow.html` | Live GET of https://qstack-spectral-flow.base44.app (refreshed 19 Nov) |
+| `snapshot/primefield-qstack.html` | Live GET of https://primefield.tech/qstack (refreshed 19 Nov) |
+| `snapshot/replit-qstack-paper.html` | Live GET of https://q-stack-resonant-framework.replit.app/ (now 404 “isn't live yet”) |
 | `snapshot/gh-pages-qstack.html` | `origin/gh-pages` `apps/primefield/qstack/index.html` (company hub card shell) |
-| `source/QStackDashboard.jsx` | Retrieved Base44 main page (operator tabs). **Not** rewritten. |
-| `source/OperatorPanel.jsx` | Retrieved Q1/Q3/Q6/Q-N operator cards. **Not** rewritten. |
 | `docs/QStack_WhitePaper.md` | Verbatim copy from private `simons357/research` via GitHub API |
 | `docs/QStack_One_Pagers.md` | Retrieved Google Doc text |
 | `docs/replit-attached-paste.txt` | Replit `attached_assets` paste that seeded the paper app |
 | `archive/` | March 2026 Q1-approximation PDF already hashed in workshop git. Archive only. |
 
-Minified vendor JS/CSS (~1 MB Replit bundle, Base44 `/assets/*.js`) stays in `/tmp/qstack-hunt/` on this VM, same as Field Lock. Not re-vendored here.
+Minified vendor JS/CSS stays off-repo. JWT preview tokens are **not** committed.
 
-## Hashes (13 Nov 2026 fetch)
+## Hashes (19 Nov 2026 fetch)
 
 ```
-2bf28f7314503dc36f44e5c7c1ef3c3dfcca6970893ca49235a68de5fa5425e8  snapshot/primefield-qstack.html
-2294d64260bdebe98065e881f367bc267dbfbfc10498999ffc4ebe7220c9f730  snapshot/qstack-spectral-flow.html
-24dc8d172753189fa71515ced762e7a6c2b586ac1774777095e7a3e5aeb585d1  snapshot/replit-qstack-paper.html
+31eb04e2747f3c928bab68968bdd7a72b08fa3c86d7f25a26c45fb44e227b6e5  snapshot/primefield-qstack.html
+2e47899890b44b70f97e53f3aa02c976d3e7970556aecd72847ed9232a51e840  snapshot/qstack-spectral-flow.html
+7635515c8b5a86a74ecc1f676f409a931d49dc9307f7c9498ef6826c84dabb60  snapshot/replit-qstack-paper.html
 67ce64d29586e256927b26e61e72b7391e3aaab55accba98d42bed63c351f346  snapshot/gh-pages-qstack.html
-3ea9a93ac39d35e773f550c12b6f1e643f6fd65247ccf9b094d108789e7f96e8  archive/qstack_regularity_paper.pdf
 ```
 
-Replit published assets (hashed in `/tmp/qstack-hunt/live/replit-assets/`, not copied):
+gh-pages HTML is unchanged from 13 Nov. The three live fetches changed (Replit now a 404 page).
 
-```
-99993a902502d4c38e0acd175831ac909456a65a2c1bc28137199e525d805f40  assets/index-CJc0--au.js
-cf259e3e8a2b0908c58e9a2b3738da3be67f4c295ddc73e13c3f4b68272358ed  assets/index-kEkrByjt.css
-76a513205a172cf4d5f659eb7914c654875eb96ce481f30746ef1ba9066a5436  images/fluid-flow.png
-```
-
-## Other QStack-named apps (his, not snapshotted as engines)
+## Other QStack-named apps (his, not treated as almost-production)
 
 | App | ID / URL | Note |
 | --- | --- | --- |
-| Base44 **QStack Insight** | `69e3fb761bccedecaf393b70` | Unpublished. Internal NS/QStack status report UI (April 2026). Not a CFD SDK. |
-| Base44 **QStack War Board** | `6a2225c86f3f040d6f17e1a7` | Unpublished. Empty routes (PageNotFound only). |
-| Replit **Qsyack Paper** | `4b00d20b-7dc2-4717-9508-55c267f2b1a1` | Name typo. Generic pnpm workspace; **no** `qstack-paper` artifact. |
+| Base44 **QStack War Board** | `6a2225c86f3f040d6f17e1a7` | Unpublished. Empty routes. Build paused on Kanban vs leaderboard vs incident questions. |
+| Replit **QStack Resonant Framework** | `484fdd1a-4107-4a7c-913d-3c7b99772d0c` | Last updated 2026-04-13. Live URL 404 on 19 Nov 2026. |
+| Replit **Qsyack Paper** | (typo name, 13 Nov hunt) | Generic pnpm workspace; **no** `qstack-paper` artifact. |
 | Drive **Navier-stokes** doc | Google Doc | Same resonant-regularity paste as the Replit attached asset. |
+
+Related but **not** the QStack product: Spectral Market Lab, Spectral Phi, SpectralQ, Q-Regular Viewer, Replit Torch Neural Net (`qstack.py` 32³ toy stepper).
 
 ## Not this
 
@@ -78,7 +85,3 @@ cf259e3e8a2b0908c58e9a2b3738da3be67f4c295ddc73e13c3f4b68272358ed  assets/index-k
 - ChatVault PWA, CLAIM_LEDGER, Domain Architect.
 - Desktop path `DIGEST_ChatGPT_*_coherence_Q.md` — not on this VM.
 - `RH_Proof_Chain` as a cloneable product — not found as a repo or app. Workshop git already rejects Q-stack as constitutive NS (`15a456af` and related).
-
-## Full clone on this hunt VM
-
-`/tmp/qstack-hunt/` — live HTML, Replit assets, archive PDF. Research git clone failed (`gh`/`git` 404 for private `simons357/research`; file read succeeded via GitHub API).
