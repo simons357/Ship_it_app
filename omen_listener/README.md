@@ -8,10 +8,9 @@ contact is and how many seconds are left to decide to get inside.
 The window is a shelter clock. It does not name an airframe, and it does not
 aim, jam, or intercept anything.
 
-OMEN is the name of that window. An omen is a prediction, and the word by
-itself sounds like a bad one. This one is the good prediction: you still have
-seconds to get inside. The contact is the bad news. The window is the part
-that arrived in time.
+OMEN is the name of that window. An omen predicts, and this one is bad for
+whoever is coming: they were heard, and the room already has the seconds to
+get inside. For the people in the room, those seconds are the useful part.
 
 Fans, mowers, and helicopters can make the same sound. Treat a cue as a
 prompt to look and to move indoors, not as identification.
